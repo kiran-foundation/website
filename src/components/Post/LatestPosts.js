@@ -4,6 +4,7 @@ import PostItems from "./PostItems"
 import PostItem from "./PostItem"
 import useLatestBlogPost from "../../hooks/use-latest-blog-post"
 import Button from "../Button/Button"
+import { PostItemsStyles } from "./PostStyles"
 
 const LatestPosts = ({ title, introduction }) => {
   const latestBlogPost = useLatestBlogPost()
@@ -22,11 +23,11 @@ const LatestPosts = ({ title, introduction }) => {
           </div>
         ) : null}
 
-        <PostItems>
+        <PostItemsStyles>
           {latestBlogPost.map((node, index) => {
             return <PostItem key={index} node={node} />
           })}
-        </PostItems>
+        </PostItemsStyles>
         <div className="learn__more">
           <Button text="All News Items" as={Link} to="/news" />
         </div>
