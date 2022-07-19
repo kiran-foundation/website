@@ -7,6 +7,9 @@ import PerksModule from "../components/PerksModule/PerksModule"
 import Perk from "../components/PerksModule/Perk"
 import Features from "../components/Features/Features"
 import LatestPosts from "../components/Post/LatestPosts"
+import CarouselComp from "../components/CarouselComp"
+import CarouselSlick from "../components/CarouselSlick"
+
 
 const Index = () => {
   return (
@@ -17,6 +20,8 @@ const Index = () => {
           title="Welcome to Barcadia"
           subTitle="Using a combination of Gatsby and Contentful, Barcadia is ready to deploy and simple to use."
         />
+        <CarouselComp/>
+        <CarouselSlick/> 
         <BasicTextModule
           title="A super-fast theme that is easy to get started, using the power of
             GatsbyJS"
