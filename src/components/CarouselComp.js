@@ -21,7 +21,7 @@ function CarouselComp() {
 
   return (
     <div style={{alignContent:'center', padding: width/30 }}>
-      <h4 style={{textAlign:'center'}}>{window.innerWidth} Carousel Component</h4>
+      <h4 style={{textAlign:'center'}}>Kiran Foundation</h4>
       <Carousel>
         <Carousel.Item>
           <img style={{maxHeight:(2/5)*window.innerWidth}}
