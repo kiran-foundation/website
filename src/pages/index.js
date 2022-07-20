@@ -16,10 +16,10 @@ const Index = () => {
     <>
       <Seo title="Home" />
       <Layout>
-        <BannerModule
+        {/* <BannerModule
           title="Welcome to Barcadia"
           subTitle="Using a combination of Gatsby and Contentful, Barcadia is ready to deploy and simple to use."
-        />
+        /> */}
         <CarouselComp/>
         <CarouselSlick/> 
         <BasicTextModule
