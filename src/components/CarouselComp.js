@@ -33,7 +33,7 @@ function CarouselComp() {
             <div style={{height:width/10}}>
                 <h3>First slide label</h3>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>    
+            </div>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -54,7 +54,7 @@ function CarouselComp() {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h3>Kiran Shakti</h3>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
           </Carousel.Caption>
         </Carousel.Item>
