@@ -69,8 +69,10 @@ var settings = {
 }
 
 function CarouselSlick() {
-    const  isBrowser = typeof window !== "undefined";
-    const [width, setWidth] = isBrowser ? useState(window.innerWidth) : useState(1080);
+  const  isBrowser = typeof window !== "undefined";
+  const myWidth = isBrowser ? window.innerWidth : 1080;
+  
+  const [width, setWidth] =  useState(myWidth);
 
     const updateDimensions = () => {
             setWidth(window.innerWidth);
