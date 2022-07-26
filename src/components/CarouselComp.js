@@ -12,12 +12,13 @@ import img6 from '../../static//imp/6.jpg';
 
 function CarouselComp() {
 
-  const [width, setWidth] = useState(window.innerWidth);
+  const  isBrowser = typeof window !== "undefined";
+  const [width, setWidth] = isBrowser ? useState(window.innerWidth) : useState(1080);
 
-  const updateDimensions = () => {
+   const updateDimensions = () => {
       setWidth(window.innerWidth);
-  }
-
+    }   
+ 
   useEffect(() => {
       window.addEventListener("resize", updateDimensions);
       return () => window.removeEventListener("resize", updateDimensions);
