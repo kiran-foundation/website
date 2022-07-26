@@ -2,9 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
-import img1 from '../../static/boy-studying.jpg';
-import img2 from '../../static/studying-student.png';
-import img3 from '../../static/college-student.png';
+import img1 from '../../static//imp/1.jpg';
+import img2 from '../../static//imp/2.jpg';
+import img3 from '../../static//imp/3.jpg';
+import img4 from '../../static//imp/4.jpg';
+import img5 from '../../static//imp/5.jpg';
+import img6 from '../../static//imp/6.jpg';
+
 
 function CarouselComp() {
 
@@ -20,43 +24,31 @@ function CarouselComp() {
   }, []);
 
   return (
-    <div style={{alignContent:'center', padding: width/30 }}>
-      <h4 style={{textAlign:'center'}}>Kiran Foundation</h4>
-      <Carousel>
+    <div style={{alignContent:'center' }}>
+      <Carousel controls={false}>
         <Carousel.Item>
-          <img style={{maxHeight:(2/5)*window.innerWidth}}
+          <img 
             className="d-block w-100"
             src={img1}
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <div style={{height:width/10}}>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </Carousel.Caption>
+            alt="I am Possible"/>
         </Carousel.Item>
         <Carousel.Item>
-          <img style={{maxHeight:(2/5)*window.innerWidth}}
+          <img 
             className="d-block w-100"
             src={img2}
-            alt="Second slide"
-          />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
+            alt="I am Possible"/>
         </Carousel.Item>
         <Carousel.Item>
-          <img style={{maxHeight:(2/5)*window.innerWidth}}
+          <img 
             className="d-block w-100"
             src={img3}
-            alt="Third slide"
-          />
-          <Carousel.Caption>
-            <h3>Kiran Shakti</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </Carousel.Caption>
+            alt="I am Possible"/>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img 
+            className="d-block w-100"
+            src={img4}
+            alt="I am Possible"/>
         </Carousel.Item>
       </Carousel>
     </div>
