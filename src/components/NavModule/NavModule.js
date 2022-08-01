@@ -12,7 +12,6 @@ import {
   NavTopLevel,
   SubNavStyles,
   HamburgerStyles,
-  LogoImage,
 } from "./NavModuleStyles"
 import {
   barOneVariants,
@@ -67,8 +66,8 @@ const NavModule = () => {
           {title && (
             <StaticImage
              src="../../../static/logos/logo_black.png"
-             width={150}
-             height={150}
+             width={200}
+             height={100}
             />
           )}
         </div>
