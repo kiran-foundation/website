@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
 import MenuContext from "../MenuContext"
+import { StaticImage } from "gatsby-plugin-image"
 import { motion } from "framer-motion"
 import { menuItems } from "./NavConstants"
 import { UseSiteMetadata } from "../../hooks/useSiteMetadata"
@@ -11,7 +12,7 @@ import {
   NavTopLevel,
   SubNavStyles,
   HamburgerStyles,
-  LogoStyles,
+  LogoImage,
 } from "./NavModuleStyles"
 import {
   barOneVariants,
@@ -64,12 +65,11 @@ const NavModule = () => {
           </HamburgerStyles>
 
           {title && (
-            <LogoStyles>
-              <Link to="/">
-                {title}
-                <span>.</span>
-              </Link>
-            </LogoStyles>
+            <StaticImage
+             src="../../../static/logos/logo_black.png"
+             width={150}
+             height={150}
+            />
           )}
         </div>
       </div>
