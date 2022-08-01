@@ -3,7 +3,8 @@ import { motion } from "framer-motion"
 
 export const NavModuleStyles = styled.nav`
   .nav {
-    position: fixed;
+    position: relative;
+    background-color:black;
     top: 0;
     left: 0;
     width: 100%;
@@ -23,7 +24,8 @@ export const NavModuleStyles = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    max-height: 10%;
+    height: 6em;
   }
 
   .menu {
@@ -159,6 +161,12 @@ export const HamburgerStyles = styled(motion.button)`
   }
 `
 
+export const LogoImage = styled.div`
+width:5%;
+height: 4em;
+`
+
+
 export const LogoStyles = styled.div`
   font-weight: 700;
   font-size: 20px;
@@ -184,10 +192,4 @@ export const LogoStyles = styled.div`
       color: var(--primary);
     }
   }
-
-  .backg{
-    background-color: white;
-    border: 10px;
-  }
-
 `
