@@ -12,19 +12,19 @@ import img6 from '../../static//imp/6.jpg';
 
 function CarouselComp() {
 
-  const isBrowser = typeof window !== "undefined";
-  const myWidth = isBrowser ? window.innerWidth : 1080;
+  // const isBrowser = typeof window !== "undefined";
+  // const myWidth = isBrowser ? window.innerWidth : 1080;
 
-  const [width, setWidth] =  useState(myWidth);
+  // const [width, setWidth] =  useState(myWidth);
 
-   const updateDimensions = () => {
-      setWidth(window.innerWidth);
-    }   
+  //  const updateDimensions = () => {
+  //     setWidth(window.innerWidth);
+  //   }   
  
-  useEffect(() => {
-      window.addEventListener("resize", updateDimensions);
-      return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
+  // useEffect(() => {
+  //     window.addEventListener("resize", updateDimensions);
+  //     return () => window.removeEventListener("resize", updateDimensions);
+  // }, []);
 
   return (
     <div style={{alignContent:'center' }}>

@@ -1,13 +1,13 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
 
-export const NavModuleStyles = styled.nav`
+export const NavbarStyles = styled.nav`
   .nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
+    /* z-index: 100; */
     padding: 20px var(--borderSpacing) 0 var(--borderSpacing);
 
     @media (min-width: 1024px) {
@@ -18,34 +18,13 @@ export const NavModuleStyles = styled.nav`
       padding-top: 70px;
     }
   }
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-  }
-
-  .menu {
-    background-color: #000;
-    width: var(--menuWidth);
-    transform: translateX(calc(var(--menuWidth) * -1));
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    z-index: 99;
-    padding: 30px var(--borderSpacing);
-    display: flex;
-    align-items: center;
-  }
 `
 
 export const NavTopLevel = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-left: 50px;
+  align-items: center;
 
   > li,
   > li > button {
@@ -54,6 +33,7 @@ export const NavTopLevel = styled.ul`
     font-weight: 700;
     cursor: pointer;
     transition: color 0.3s ease;
+    
 
     a {
       text-decoration: none;
@@ -78,6 +58,7 @@ export const NavTopLevel = styled.ul`
         transform: rotate(180deg);
       }
     }
+    
   }
 
   > li > button {
@@ -184,10 +165,4 @@ export const LogoStyles = styled.div`
       color: var(--primary);
     }
   }
-
-  .backg{
-    background-color: white;
-    border: 10px;
-  }
-
 `
