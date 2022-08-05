@@ -3,21 +3,20 @@ import { motion } from "framer-motion"
 
 export const NavModuleStyles = styled.nav`
   .nav {
-    position: relative;
-    background-color:black;
-    top: 0;
+    position: fixed;
+    background-color:rgba(0,0,0,0.5);
     left: 0;
     width: 100%;
     z-index: 100;
     padding: 20px var(--borderSpacing) 0 var(--borderSpacing);
 
-    @media (min-width: 1024px) {
+    /* @media (min-width: 1024px) {
       padding-top: 50px;
     }
 
     @media (min-width: 1440px) {
       padding-top: 70px;
-    }
+    } */
   }
 
   .container {

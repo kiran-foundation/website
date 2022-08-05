@@ -39,7 +39,6 @@ const NavModule = () => {
   const { title } = UseSiteMetadata()
 
   return (
-    <div className="backg">
     <NavModuleStyles>
       <div className="nav">
         <div className="container">
@@ -146,7 +145,6 @@ const NavModule = () => {
         </NavTopLevel>
       </motion.div>
     </NavModuleStyles>
-    </div>
   )
 }
 
