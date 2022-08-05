@@ -6,6 +6,7 @@ export const NavModuleStyles = styled.nav`
     position: fixed;
     background-color:rgba(0,0,0,0.5);
     left: 0;
+    top:-27px;
     width: 100%;
     z-index: 100;
     padding: 20px var(--borderSpacing) 0 var(--borderSpacing);
