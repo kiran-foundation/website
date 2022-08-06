@@ -4,6 +4,10 @@ export const menuItems = [
     text: "home",
   },
   {
+    path: "/KiranPratibha",
+    text: "kiran pratibha",
+  },
+  {
     path: "/about",
     text: "about",
   },

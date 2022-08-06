@@ -72,7 +72,7 @@ const NavModule = () => {
             <StaticImage
              src="../../../static/logos/logo_black.png"
              width={200}
-             height={100}
+             height={90}
             />
           )}
         </div>
