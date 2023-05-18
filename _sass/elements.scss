@@ -85,6 +85,7 @@ section {
 		flex-shrink: 1;
 		width: 100%;
 		border: 1px solid #ddd;
+
 		&:focus {
 			box-shadow: 0 0 5px 0 $brand-color;
 			outline: none;
@@ -103,10 +104,10 @@ section {
 
 .button a, input[type="submit"], input[type="text"] {
 	border: 0;
-	padding: 15px 40px;
+	padding: 2px 4px;
 	box-sizing: content-box;
 	font-size: 1em;
-	font-weight: 100;
+	font-weight: 00;
 }
 
 .button a, input[type="submit"] {
