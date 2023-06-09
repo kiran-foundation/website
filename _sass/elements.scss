@@ -132,7 +132,10 @@ input[type="text"]{
 		background: darken($brand-color, 5%);
 	}
 }
-
+.custom-size {
+	height: 531px;
+	width: 287px;
+}
 
 /* Media Queries
 ----------------------*/

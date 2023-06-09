@@ -15,9 +15,10 @@ title: More Updates | Kiran Foundation
 				<div class="container">
 					<div class="posts">
 					    <div class="row">
+							
 				{% endif %}
 				<div class="col-sm-4 col-md-4">
-					<div class="post">
+					<div class="post custom-size">
 						{% if post.more == true %}
 							<a href="{{ post.url }}"><div class="image" style="background-image: url({{ post.featured_image }})"></div></a>
 						{% else %}
@@ -31,8 +32,9 @@ title: More Updates | Kiran Foundation
 							{% endif %}
 						</div>
 					</div>
+					<br/>
 				</div>
-				
+		
 				{% if count == 3 or forloop.last %}
 			         </div>
 					</div>
