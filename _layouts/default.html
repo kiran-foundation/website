@@ -78,137 +78,7 @@
 				</div>
 			</div>
 		</nav-->
-		<style>
-			nav {
-				height: 80px;
-				background: #000;
-			}
-	
-			nav img {
-				width: 85px;
-				position: absolute;
-				top: 5px;
-				left: 12%;
-			}
-	
-			nav ul {
-				float: right;
-				margin-right: 25px;
-				text-align: center;
-			}
-	
-			nav ul li {
-				display: inline-block;
-				line-height: 80px;
-				margin: 0 15px;
-				text-align: center;
-			}
-	
-			nav ul li a {
-				position: relative;
-				
-				text-align: center;
-				color: #F1592A;
-				
-	
-				background: #000 none repeat scroll 0 0;
-	   
-		font-size: 20px;
-		padding: 15px 25px;
-		text-decoration: none;
-		text-transform: capitalize;
-		-webkit-transition: all 0.3s ease;
-				transition: all 0.3s ease;
-			}
-	
-			nav ul li a:before {
-				position: absolute;
-				content: '';
-				left: 0;
-				bottom: 0;
-				height: 3px;
-				width: 100%;
-				
-			}
-			nav ul li a.current,
-			nav ul li a:hover {
-				background: #F1592A;
-				color: #fff ;
-			}
-	
-			label #btn,
-			label #cancel {
-				color: #F1592A;
-				font-size: 30px;
-				align-items: flex-end;
-				text-align: right;
-				line-height: 80px;
-				margin-right: 40px;
-				cursor: pointer;
-				display: none;
-			}
-	
-			#check {
-				display: none;
-			}
-	
-	
-			@media only screen and (max-width: 767px) {
-				label #btn {
-					display: block;
-					margin-left: 365px;
-					margin-top: 5px;
-				}
-	
-				label #cancel {
-					margin-left: 365px;
-					margin-top: 5px;
-				}
-	/* the problem is in this part ul*/
-				ul {
-					position: fixed;
-					width: 100%;
-					height: 100vh;
-					background: #f8f8f8;
-					top: 80px;
-					left: -100%;
-					text-align: center;
-					transition: all .5s;
-				}
-	
-				nav ul li {
-					display: block;
-					margin: 50px 0;
-					line-height: 30px;
-				}
-	
-				nav ul li a {
-				position: relative;
-				text-align: center;
-				color: #F1592A;
-				background: #f8f8f8 none repeat scroll 0 0;
-	        	font-size: 20px;
-	        	padding: 15px 25px;
-		        text-decoration: none;
-	         	text-transform: capitalize;
-		        -webkit-transition: all 0.3s ease;
-				transition: all 0.3s ease;
-			    }
-	
-				#check:checked~ul {
-					left: 0;
-				}
-	
-				#check:checked~label #btn {
-					display: none;
-				}
-	
-				#check:checked~label #cancel {
-					display: block;
-				}
-	
-			}
-		</style>
+		
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<input type="checkbox" id="check">
 			<label for="check">
@@ -218,7 +88,7 @@
 			<a href="{{ site.baseurl }}/"><img class="kf-logo" src="{{ site.baseurl }}/branding/logo_home.png" height="75"
 					alt="Logo" align="left"></a>
 	
-			<ul>
+			<ul class="custom-navbar-menu">
 				<li><a href="{{ site.baseurl }}/pratibha">Pratibha</a></li>
 				<li><a href="{{ site.baseurl }}/shakti">Shakti</a></li>
 				<li><a href="{{ site.baseurl }}/contact">Contact</a></li>
