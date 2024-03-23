@@ -9,6 +9,6 @@ media:
   linkedin: false
   instagram: https://www.instagram.com/roonak_creativity/   
 quote:   “Never give up!!”
-about: Hello Everyone! I join when I was studying for my BFA 2nd year now I'm in 3rd year with the help of the Kiran Foundation which helps all of these children who archive their goals to do more hard work.
+about: Hello Everyone! I joined when I was studying for my BFA 2nd year now I'm in 3rd year with the help of the Kiran Foundation which helps all of these children who achieve their goals to do more hard work.
 ---
     
