@@ -626,3 +626,28 @@ h3.section_title {
     color: #353535;
 }
 
+.update-popup {
+  display: none; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #c9e5ef;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  }
+  
+  .update-popup-content {
+  text-align: center;
+  }
+  
+  .close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  }
+  
