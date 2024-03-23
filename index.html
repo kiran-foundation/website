@@ -9,18 +9,65 @@ carousels:
     - image: /images/imp/5.jpg
 ---
 <header>
-	<div class="container">
+	<div class="container" style="padding-top: 60px;">
 		{% include carousel.html height="50" unit="%" duration="7" number="1" %}
 	</div>
 </header>
+<div id="update-popup" class="update-popup">
+	<div class="update-popup-content">
+		<span class="close-btn" onclick="closeUpdatePopup()">&times;</span>
+		<h2>New Update Available!</h2>
+		<p>Kiran Pratibha 2024 Registration. <a href="2024/02/20/Kiranpratibha2024/" style="color: #F1592A;">Click here</a> to read more or apply.</p>
+	</div>
+</div>
 
+<script>
+	// Function to close the update popup
+	function closeUpdatePopup() {
+		document.getElementById('update-popup').style.display = 'none';
+	}
+
+	// Display the update popup when the page loads
+	window.onload = function() {
+		document.getElementById('update-popup').style.display = 'block';
+	};
+</script>
+<style>
+.update-popup {
+display: none; /* Hide the popup by default */
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #c9e5ef;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+z-index: 9999;
+}
+
+.update-popup-content {
+text-align: center;
+}
+
+.close-btn {
+position: absolute;
+top: 5px;
+right: 10px;
+cursor: pointer;
+}
+
+</style>
 <div class="container">
 	<div class="columns col-wrapper">
 		<div vertical-align="center">
 			<h1 class="editable brand-txt" align="center">KIRAN FOUNDATION</h1>
 			<p class="editable" align="center">
-				If a hardworking, talented youth can not fulfill his dreams due to lack of resources, it is failure of the whole society. We dream of a society where merit and hard work is supported irrespective of the financial, physical or social status. 
-				Kiran Foundation is family of like minded, capable and compassionate people and we are committed to bring a fundamental shift in our society. 
+				If a hardworking, talented youth can not fulfill his/her dreams due to a lack of resources, it is the failure
+of the whole society. We dream of a society where merit and hard work are supported irrespective of
+financial, physical, or social status. Kiran Foundation is a family of like-minded, capable, and
+compassionate people and we are committed to bringing a fundamental shift in our society
 			</p>
 			<br/>	
 			<p>

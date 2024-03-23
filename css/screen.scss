@@ -60,23 +60,23 @@ header {
   /*background-attachment: fixed;*/
   /*background-size: 100% 100%;*/
 }
-/*ul#menu {
+ul#menu {
 background: #40475A none repeat scroll 0 0;
 padding: 6px;
 position: fixed;
 text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 width: 100%;
 z-index: 999;
-    }*/
+    }
 .main-menu {
   margin-top: -234px;
 }
-/*.main-menu ul{}
+.main-menu ul{}
 .main-menu ul li {
   display: inline-block;
   padding: 10px;
-}*/
-/*.main-menu ul li a {
+}
+.main-menu ul li a {
   background: #383E4C none repeat scroll 0 0;
   border: 1px solid #646d7c;
   color: #fff;
@@ -84,12 +84,12 @@ z-index: 999;
   padding: 5px 20px;
   text-decoration: none;
   text-transform: capitalize;
-}*/
+}
 /*.main-menu ul li.active a,*/
-/*.main-menu ul li a:focus,
+.main-menu ul li a:focus,
 .main-menu ul li a:hover {
   background: #49505F;
-}*/
+}
 
 .header-content  h1 {
   color: #F1592A;
@@ -441,139 +441,6 @@ input {
     text-align: center;
 }
 
-nav {
-  height: 80px;
-  background: #000;
-}
-
-nav img {
-  width: 85px;
-  position: absolute;
-  top: 5px;
-  left: 12%;
-}
-
-nav .custom-navbar-menu {
-  float: right;
-  margin-right: 25px;
-  text-align: center;
-}
-
-nav .custom-navbar-menu li {
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 15px;
-  text-align: center;
-}
-
-nav .custom-navbar-menu li a {
-  position: relative;
-  text-align: center;
-  color: #F1592A;
-  background: #000 none repeat scroll 0 0;
-  font-size: 20px;
-  padding: 15px 25px;
-  text-decoration: none;
-  text-transform: capitalize;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-nav .custom-navbar-menu li a:before {
-  position: absolute;
-  content: '';
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 100%;
-}
-
-nav .custom-navbar-menu li a.current,
-nav .custom-navbar-menu li a:hover {
-  background: #F1592A;
-  color: #fff;
-}
-
-label #btn,
-label #cancel {
-  color: #F1592A;
-  font-size: 30px;
-  align-items: flex-end;
-  text-align: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-
-#check {
-  display: none;
-}
-
-@media only screen and (max-width: 767px) {
-  label #btn {
-    display: block;
-    margin-left: 365px;
-    margin-top: 5px;
-  }
-
-  label #cancel {
-    margin-left: 365px;
-    margin-top: 5px;
-  }
-
-  /* Updated class name to .custom-navbar-menu */
-  .custom-navbar-menu {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #f8f8f8;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-    transition: all .5s;
-  }
-
-  nav .custom-navbar-menu li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-
-  nav .custom-navbar-menu li a {
-    position: relative;
-    text-align: center;
-    color: #F1592A;
-    background: #f8f8f8 none repeat scroll 0 0;
-    font-size: 20px;
-    padding: 15px 25px;
-    text-decoration: none;
-    text-transform: capitalize;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-  }
-
-  #check:checked~.custom-navbar-menu {
-    left: 0;
-  }
-
-  #check:checked~label #btn {
-    display: none;
-  }
-
-  #check:checked~label #cancel {
-    display: block;
-  }
-}
-
-    /* Adjust the position of the carousel */
-    @media (max-width: 767px) {
-      header {
-          margin-top: 60px; /* Adjust the value as needed */
-      }
-  }
-
-
 /* Media Queries
 ----------------------*/
 
@@ -634,7 +501,7 @@ label #cancel {
             justify-content: center;
   } 
 
-  /*ul#menu { display:none; }*/
+  ul#menu { display:none; }
 
   .slicknav_menu {
     display: block;

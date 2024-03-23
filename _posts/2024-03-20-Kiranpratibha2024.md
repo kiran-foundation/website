@@ -1,16 +1,16 @@
 ---
 title: "Kiran Pratibha 2024 Registrations Open"
 date: 2024-02-20
-featured_image:  /images/posts/pratibhas2024.png
-summary: Inviting applications for <b>Kiran Pratibha</b> Scholarship 2023. All young achievers, please note that June 15 2023, is the last date to your submit application. 
+featured_image:  /images/posts/pratibhainsta2024.png
+summary: Inviting applications for <b>Kiran Pratibha</b> Scholarship 2024. All young achievers, please note that 30th April 2024, is the last date to your submit application. 
 more: true
 ---
 
 Kiran Foundation will offers "Kiran Pratibha" scholarship and support to exceptional but underprivileged youth in their endeavours of Education, Sports or Art according to their interest and abilities. Foundation will be offering active guidance and personalised mentoring along with Financial Support. The sole aim of foundation to make them capable and successful. Application is open now for Kiran Pratibha 2024. last date of submitting application is 30th April 2024.<br/><br/>
-<b>Elegibility Criteria:</b>
+<b>Eligibility Criteria:</b>
 1. Child should have passed 8th Standard or have crossed age of 14
 2. Child should have shown enormous potential in his/her field of interest
-3. Monthly income of the Family should be less than Rs. 10,000.
+3. Monthly income of the Family should be less than Rs. 20,000.
 
 Please send the application along with following detail:
 1. Name, Address, Phone number etc. 
@@ -34,7 +34,9 @@ If you know any such student who is eligible and can benefit from this scholarsh
 1. Announcement of selected students for interview: 15th May  2024. 
 2. Announcement of selected students for scholarship: 2nd June 2024. 
           <br/>
- 
+ <div class="button" align="center">
+					<a href="https://forms.gle/8Q3Hxxe4jpcLRWbt8">Submit Application Online</a>
+</div>
 <br/> <br/>
 <img src="/images/posts/pratibha2024.png" style="border: 1px solid #888;"/>
 <br/><br/>
