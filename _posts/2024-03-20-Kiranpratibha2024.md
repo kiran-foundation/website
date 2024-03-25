@@ -6,30 +6,28 @@ summary: Inviting applications for <b>Kiran Pratibha</b> Scholarship 2024. All y
 more: true
 ---
 
-Kiran Foundation will offers "Kiran Pratibha" scholarship and support to exceptional but underprivileged youth in their endeavours of Education, Sports or Art according to their interest and abilities. Foundation will be offering active guidance and personalised mentoring along with Financial Support. The sole aim of foundation to make them capable and successful. Application is open now for Kiran Pratibha 2024. last date of submitting application is 30th April 2024.<br/><br/>
+Kiran Foundation will offer "Kiran Pratibha" Scholarship and Support for exceptional and underprivileged youth in their endeavours of Education, Sports or Art according to their interest and abilities. The Foundation will be offering active guidance and personalised mentoring alongwith Financial Support. The sole aim of the Foundation is to make them capable and successful. Application is now open for Kiran Pratibha 2024, last date of submitting application is <b>30th April 2024.</b><br/><br/>
 <b>Eligibility Criteria:</b>
-1. Child should have passed 8th Standard or have crossed age of 14
-2. Child should have shown enormous potential in his/her field of interest
+1. Student should have passed 8th Standard or should be above 14 years.
+2. Student should have shown enormous potential in his/her field of interest.
 3. Monthly income of the Family should be less than Rs. 20,000.
 
-Please send the application along with following detail:
-1. Name, Address, Phone number etc. 
-2. Name of mother and father and means of living.
-3. Date of birth, qualification of the kid.
-4. Why should this scholarship be given to the kid.
+Please send the application alongwith the following details:
+1. Personal details of the student. (Name, Address, Contact number, Date of birth, Qualification) 
+2. Details of parents. (Mother and Father including their occupation)
+3. Mention the reason for  this scholarship to be given to the student.
 
-Please send following document along with the Application:
+Please send the following documents alongwith the Application:
 1. Attested photocopies of Last three years mark sheets.
-2. Attested photocopies of certificates of achievements if any
-3. Recommendation letter from two independent people associated with kid ( along with the phone number, email, address or the person Recommending)
-4. Aadhar Card and Samagra ID
-5. Passport size photo
+2. Attested photocopies of certificates of achievements if any.
+3. Recommendation letter from two independent people associated with student ( alongwith the phone number, email, address of the person Recommending)
+4. Copy of Aadhar Card and Samagra ID.
+5. Passport size photo.
 
-If you know any such student who is eligible and can benefit from this scholarship, please encourage them to apply. 
+If you know any such student who is eligible and can benefit from this scholarship, please encourage them also to apply. 
 <br/> <br/> <br/>
-             <b> NOTE: 
-              Applications for Pratibha 2023 are now closed.</b>  If you have applied for Pratibha 2024 and would like to edit your application,
-                please contact us. We have started the selection process and our team will reach out to you for further information. <br/>
+             <b> NOTE: </b>
+               We have started the selection process and our team will reach out to you for further information. <br/>
 
 1. Announcement of selected students for interview: 15th May  2024. 
 2. Announcement of selected students for scholarship: 2nd June 2024. 
