@@ -1100,7 +1100,7 @@ progress {
   }
   .row-cols-sm-4 > * {
     flex: 0 0 auto;
-    width: 25%;
+    width: 28%;
   }
   .row-cols-sm-5 > * {
     flex: 0 0 auto;
