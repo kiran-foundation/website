@@ -3,14 +3,15 @@ import "aos/dist/aos.css"
 import "jarallax/dist/jarallax.min.css"
 import Footer from "../components/common/Footer.astro";
 import Header from "../components/common/Header.astro";
-import Hero from "../components/common/Hero.astro";
-import State from "../components/common/State.astro";
-import Programs from "../components/common/Programs.astro";
-import Volunteer from "../components/common/Volunteer.astro";
+import Hero from "../components/Home/Hero.astro";
+import Statistics from "../components/Home/Statistics.astro";
+import Programs from "../components/Home/Programs.astro";
+import Volunteer from "../components/Home/Volunteer.astro";
 import Testimonial from "../components/common/Testimonial.astro";
 import Updates from "../components/common/Updates.astro";
-import Partners from "../components/common/Partners.astro";
-import Benefits from "../components/common/Benefits.astro";
+import Partners from "../components/Home/Partners.astro";
+import Benefits from "../components/Home/Benefits.astro";
+import Supporters from "../components/Home/Supporters.astro";
 ---
 <script src="/assets/js/theme.min.js" is:inline></script>
 
@@ -178,12 +179,12 @@ AOS.init();
       <Hero/>
       <Partners/>
       <Benefits/>
-      <State/>
+      <Statistics/>
       <Programs/>
       <Volunteer/>
       <Testimonial/>
       <Updates/>
-      <Partners/>
+      <Supporters/>
       <Footer/>
     </main>
     
