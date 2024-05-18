@@ -1,33 +1,108 @@
-      <!-- Trainers (Grid) -->
-    <section class="container pb-2 pb-sm-3 pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
-        <h2 class="h1 text-center pt-2 pt-sm-4 pt-lg-5 pb-2 mb-3 mb-lg-4 mt-md-3 mt-lg-0">We employ the best trainers</h2>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-          <div class="col text-center pt-2">
-            <a class="card-hover card-lifted d-inline-block text-decoration-none" href="#">
-              <img class="card-lifted d-block rounded-5 mb-3" src="assets/img/landing/yoga-studio/trainers/01.jpg" width="340" alt="Alisa Black">
-              <h3 class="h5 mb-1">Alisa Black</h3>
-              <p class="mb-0 text-body-secondary">Fly-yoga trainer</p>
-            </a>
-          </div>
-          <div class="col text-center pt-2">
-            <a class="card-hover card-lifted d-inline-block text-decoration-none" href="#"><img class="card-lifted d-block rounded-5 mb-3" src="assets/img/landing/yoga-studio/trainers/02.jpg" width="340" alt="Michelle Yang">
-              <h3 class="h5 mb-1">Michelle Yang</h3>
-              <p class="mb-0 text-body-secondary">Fly-yoga and relax trainer</p>
-            </a>
-          </div>
-          <div class="col text-center pt-2">
-            <a class="card-hover card-lifted d-inline-block text-decoration-none" href="#">
-              <img class="card-lifted d-block rounded-5 mb-3" src="assets/img/landing/yoga-studio/trainers/03.jpg" width="340" alt="Robert Fox">
-              <h3 class="h5 mb-1">Robert Fox</h3>
-              <p class="mb-0 text-body-secondary">Stretching trainer</p>
-            </a>
-          </div>
-          <div class="col text-center pt-2">
-            <a class="card-hover card-lifted d-inline-block text-decoration-none" href="#">
-              <img class="card-lifted d-block rounded-5 mb-3" src="assets/img/landing/yoga-studio/trainers/04.jpg" width="340" alt="Jane Cooper">
-              <h3 class="h5 mb-1">Jane Cooper</h3>
-              <p class="mb-0 text-body-secondary">Fly-yoga trainer</p>
-            </a>
-          </div>
+---
+const updates = [
+  {
+    title: "Alisa Black",
+    description: "Fly-yoga trainer",
+    date: "2024-05-10",
+    priority: "high",
+    imgSrc: "assets/img/landing/yoga-studio/trainers/01.jpg",
+    link: "/posts/update1/"
+  },
+  {
+    title: "Michelle Yang",
+    description: "Fly-yoga and relax trainer",
+    date: "2024-05-12",
+    priority: "low",
+    imgSrc: "assets/img/landing/yoga-studio/trainers/02.jpg",
+    link: "/posts/update1/"
+  },
+  {
+    title: "Robert Fox",
+    description: "Stretching trainer",
+    date: "2024-05-14",
+    priority: "high",
+    imgSrc: "assets/img/landing/yoga-studio/trainers/03.jpg",
+    link: "/posts/update1/"
+  },
+  {
+    title: "Jane Cooper",
+    description: "Fly-yoga trainer",
+    date: "2024-05-16",
+    priority: "low",
+    imgSrc: "assets/img/landing/yoga-studio/trainers/04.jpg",
+    link: "/posts/update1/"
+  },
+];
+
+//Priority wise Sorting On Main Page
+
+interface Props {
+  showHighPriorityOnly?: boolean;
+  isMainPage?: boolean;
+}
+
+
+const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;
+const filteredUpdates = updates
+  .filter(update => !showHighPriorityOnly || update.priority === "high")
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const updatesToDisplay = showHighPriorityOnly ? filteredUpdates.slice(0, 3) : filteredUpdates;
+---
+
+<html>
+<head>
+  <!-- other head elements -->
+  <style>
+    .update-title {
+      font-size: 18px; 
+    }
+    .update-description {
+      font-size: 14px; 
+    }
+    .update-date{
+      font-size: 10px; 
+    }
+  </style>
+</head>
+<body>
+  <!-- Update display section -->
+  <section class="container pb-2 pb-sm-3 pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+    <h2 class="h1 text-center pt-2 pt-sm-4 pt-lg-5 pb-2 mb-3 mb-lg-4 mt-md-3 mt-lg-0">Updates</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      {updatesToDisplay.map(update => (
+        <div class="col text-center pt-2">
+          <a class="card-hover card-lifted d-inline-block text-decoration-none" href={update.link}>
+            <img class="card-lifted d-block rounded-5 mb-3" src={update.imgSrc} width="340" alt={update.title} />
+            <h3 class="update-title h5 mb-1">{update.title}</h3>
+            <p class="update-description mb-0 text-body-secondary">{update.description}</p>
+            <p class="update-date mb-0 text-body-secondary"><small>Posted on: {new Date(update.date).toLocaleDateString()}</small></p>
+          </a>
         </div>
-    </section>
+      ))}
+    </div>
+    <!-- See More button -->
+    {isMainPage && (
+      <div class="text-center mt-4">
+        <a href="/update" class="btn btn-primary">See More</a>
+      </div>
+    )}
+  </section>
+  <!-- Sort By Date-->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('cards-container');
+      const cards = Array.from(container.getElementsByClassName('col'));
+  
+      cards.sort((a, b) => {
+          return new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date'));
+      });
+  
+      cards.forEach(card => container.appendChild(card));
+  });
+  </script>
+</body>
+</html>
+
+<!-- To Do: pagination-->
+  
