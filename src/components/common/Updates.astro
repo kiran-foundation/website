@@ -1,48 +1,16 @@
 ---
-const updates = [
-  {
-    title: "Alisa Black",
-    description: "Fly-yoga trainer",
-    date: "2024-05-10",
-    priority: "high",
-    imgSrc: "assets/img/landing/yoga-studio/trainers/01.jpg",
-    link: "/posts/update1/"
-  },
-  {
-    title: "Michelle Yang",
-    description: "Fly-yoga and relax trainer",
-    date: "2024-05-12",
-    priority: "low",
-    imgSrc: "assets/img/landing/yoga-studio/trainers/02.jpg",
-    link: "/posts/update1/"
-  },
-  {
-    title: "Robert Fox",
-    description: "Stretching trainer",
-    date: "2024-05-14",
-    priority: "high",
-    imgSrc: "assets/img/landing/yoga-studio/trainers/03.jpg",
-    link: "/posts/update1/"
-  },
-  {
-    title: "Jane Cooper",
-    description: "Fly-yoga trainer",
-    date: "2024-05-16",
-    priority: "low",
-    imgSrc: "assets/img/landing/yoga-studio/trainers/04.jpg",
-    link: "/posts/update1/"
-  },
-];
 
-//Priority wise Sorting On Main Page
+const allUpdates = import.meta.glob('/src/content/updates/*.md');
 
-interface Props {
-  showHighPriorityOnly?: boolean;
-  isMainPage?: boolean;
-}
-
+const updates = await Promise.all(
+  Object.values(allUpdates).map(async (update) => {
+    const { frontmatter } = await update();
+    return { ...frontmatter };
+  })
+);
 
 const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;
+
 const filteredUpdates = updates
   .filter(update => !showHighPriorityOnly || update.priority === "high")
   .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -60,7 +28,7 @@ const updatesToDisplay = showHighPriorityOnly ? filteredUpdates.slice(0, 3) : fi
     .update-description {
       font-size: 14px; 
     }
-    .update-date{
+    .update-date {
       font-size: 10px; 
     }
   </style>
@@ -71,7 +39,7 @@ const updatesToDisplay = showHighPriorityOnly ? filteredUpdates.slice(0, 3) : fi
     <h2 class="h1 text-center pt-2 pt-sm-4 pt-lg-5 pb-2 mb-3 mb-lg-4 mt-md-3 mt-lg-0">Updates</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
       {updatesToDisplay.map(update => (
-        <div class="col text-center pt-2">
+        <div class="col text-center pt-2" data-date={update.date}>
           <a class="card-hover card-lifted d-inline-block text-decoration-none" href={update.link}>
             <img class="card-lifted d-block rounded-5 mb-3" src={update.imgSrc} width="340" alt={update.title} />
             <h3 class="update-title h5 mb-1">{update.title}</h3>
@@ -88,21 +56,5 @@ const updatesToDisplay = showHighPriorityOnly ? filteredUpdates.slice(0, 3) : fi
       </div>
     )}
   </section>
-  <!-- Sort By Date-->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-      const container = document.getElementById('cards-container');
-      const cards = Array.from(container.getElementsByClassName('col'));
-  
-      cards.sort((a, b) => {
-          return new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date'));
-      });
-  
-      cards.forEach(card => container.appendChild(card));
-  });
-  </script>
 </body>
 </html>
-
-<!-- To Do: pagination-->
-  
