@@ -6,8 +6,6 @@ import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
 import AboutVolunteerRole from "../components/Volunteering/AboutVolunteerRole.astro";
 import Form from "../components/Volunteering/Form.astro";
-import InfoVolunteering from "../components/Volunteering/InfoVolunteering.astro";
-import HowDoesItWork from "../components/Volunteering/HowDoesItWork.astro";
 interface Props {
 	title: string;
 }
@@ -32,7 +30,7 @@ AOS.init();
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Volunteering Roles</title>
+		<title>Intenrship Roles</title>
         <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/png" href="assets/app-icons/favicon-96x96.png" sizes="96x96">
     <link rel="apple-touch-icon" href="assets/app-icons/apple-icon-180x180.png">
@@ -49,11 +47,6 @@ AOS.init();
 
     <!-- Page loading styles -->
     <style>
-        html, body {
-    background: #ffffff; 
-    margin: 0;
-    padding: 0;
-  }
       .page-loading {
         position: fixed;
         top: 0;
@@ -171,9 +164,6 @@ AOS.init();
         <Hero/>
         <AboutVolunteerRole/>
         <Form/>
-        <InfoVolunteering/>
-        <HowDoesItWork/>
-        <Footer/>
       </main>
       
       <!-- Back to top button -->

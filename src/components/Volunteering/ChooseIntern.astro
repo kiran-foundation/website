@@ -1,0 +1,50 @@
+---
+import { remark } from 'remark';
+import html from 'remark-html';
+
+const allVolunteering = import.meta.glob('/src/content/volunteering/*.md');
+
+const volunteering = await Promise.all(
+  Object.values(allVolunteering).map(async (volunteer) => {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  })
+);
+
+const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;
+
+const filteredVolunteering = volunteering
+  .filter(volunteer => !showHighPriorityOnly || volunteer.priority === "high")
+  .sort((a, b) => a.title.localeCompare(b.title));
+
+const volunteeringToDisplay = showHighPriorityOnly ? filteredVolunteering.slice(0, 3) : filteredVolunteering;
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/Volunteering/ChooseVolunteering.css">
+</head>
+<body>
+  <section class="mainVolunteering-main-container">
+    <h2 class="mainVolunteering-main-heading">Choose a Suitable Internship</h2>
+    <div class="mainVolunteering-sub-container">
+      {volunteeringToDisplay.map((volunteer, index) => (
+        <div class={`mainVolunteering-card`} id={`c${index + 1}`} key={index}>
+          <div>
+            <h3 class="mainVolunteering-card-heading">{volunteer.title}</h3>
+            <p class="mainVolunteering-card-subheading">{volunteer.commitment}</p>
+            <div class="mainVolunteering-card-description">{volunteer.description}</div>
+          </div>
+          <div class="mainVolunteering-card-buttons">
+            <button class="mainVolunteering-btn mainVolunteering-btn-apply">Apply Now</button>
+            <button class="mainVolunteering-btn mainVolunteering-btn-see-more">See More</button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</body>
+</html>
