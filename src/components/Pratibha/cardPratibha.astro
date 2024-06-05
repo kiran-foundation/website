@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentor Component</title>
+  <style>
+    .container {
+      font-family: 'Poppins', sans-serif;
+      width: 1296px;
+      height: 423px;
+      border-radius: 18px;
+      background: #051D40;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      margin-bottom: 5%;
+      margin-top: 5%;
+    }
+    
+    .image-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .image-container img {
+      width: 526px;
+      height: 319px;
+      border-radius: 70px;
+      object-fit: cover;
+    }
+    
+    .content-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .content-container h2 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 48px;
+      color: #ffffff;
+      margin: 0 0 20px 0;
+      padding-bottom: 4%;
+    }
+    
+    .content-container button {
+      width: 193px;
+      height: 48px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: 1px solid #F1592A;
+      background: #F1592A;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      transition: background 0.3s;
+    }
+    
+    .content-container button:hover {
+      background: #d1481f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-container">
+      <img src="/assets/img/hero/hero-image.jpg" alt="Mentoring Image">
+    </div>
+    <div class="content-container">
+      <h2>Be a mentor and help shape someone's future.</h2>
+      <button>Get Started</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Poppins, sans-serif;
+}
+
+.container-c1 {
+    width: 1296px;
+    height: 523px;
+    margin-top: 5968px;
+    margin-left: 312px;
+    gap: 0;
+}
+
+.container-c2 {
+    width: 416px;
+    height: auto;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.faq-title {
+    width: 416px;
+    height: 120px;
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: left;
+    color: #121519;
+}
+
+.faq-content {
+    width: 416px;
+    height: 72px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #ffffff;
+    background: #576071;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.container-c3 {
+    width: 746px;
+    height: auto;
+    margin-left: 550px;
+    gap: 16px;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.accordion-item {
+    width: 746px;
+    border-radius: 18px;
+    padding: 24px;
+    background: #f0f0f0;
+    transition: height 0.3s ease;
+}
+
+.accordion-item.active .accordion-answer {
+    display: block;
+}
+
+.accordion-question {
+    width: 650px;
+    height: 28px;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    color: #051D40;
+    cursor: pointer;
+}
+
+.accordion-answer {
+    display: none;
+    width: 650px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #051D40;
+    margin-top: 16px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container-c1">
+        <div class="container-c2">
+            <h1 class="faq-title">Any questions? Check out the FAQ</h1>
+            <p class="faq-content">Certainly! The FAQ section provides answers to common questions. It covers a variety of topics and aims to address user queries efficiently.</p>
+        </div>
+        <div class="container-c3">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-question">Q. Is Kiran Pratibha Scholarship awarded only to economically challenged students?</div>
+                    <div class="accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-question">Q. Can more than one student from the same family apply for KPS?</div>
+                    <div class="accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-question">Q. How long do you provide scholarship to the students?</div>
+                    <div class="accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-question">Q. What are the major check points for scholarship?</div>
+                    <div class="accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-question">Q. What is the expectation of Kiran Foundation from the students selected in KP?</div>
+                    <div class="accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.accordion-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const accordionItem = item.parentNode;
+                accordionItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

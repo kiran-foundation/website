@@ -1,25 +1,71 @@
-<!DOCTYPE html>
+---
+import { remark } from 'remark';
+import html from 'remark-html';
+
+interface Props {
+  path: string;
+}
+
+const allVolunteering = import.meta.glob('/src/content/volunteering/Roles/*.md');
+
+const role = await (async () => {
+  const volunteer = allVolunteering[`/src/content/volunteering/Roles/${Astro.props.path}.md`];
+
+  if (volunteer) {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  } else {
+    return null;
+  }
+})();
+
+if (!role) {
+  throw new Error('Role not found');
+}
+
+const {
+  title,
+  about,
+  startDate,
+  duration,
+  timeCommitment,
+  teamSize,
+  responsibilities,
+  requirements
+} = role;
+---
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/Volunteering/AboutVolunteerRole.css">
-  <title>Volunteering</title>
+  <title>{title}</title>
 </head>
 <body>
   <div class="aboutVolunteering-frame1">
     <div class="aboutVolunteering-frame2">
-      <h1>Local Kiran Foundation Chapter Lead</h1>
-      <p>We are seeking dedicated and motivated Local Chapter Leads to start, oversee and coordinate activities for our chapters. As a Local Chapter Lead, you will be responsible for fostering a sense of community, building a team, organising events, and facilitating engagement among members. If you are a proactive and enthusiastic individual with excellent organisational and leadership skills, we invite you to join our team.</p>
+      <h1>{title}</h1>
+      <p>{about}</p>
     </div>
-    <p class="aboutVolunteering-info-text">Start Date  :                         Immediate<br>Duration :                              12 Months<br>Time Commitment :        10 hr/week<br>Team Size :                               3-5</p>
+    <p class="aboutVolunteering-info-text">
+      Start Date  : {startDate}<br>
+      Duration : {duration}<br>
+      Time Commitment : {timeCommitment}<br>
+      Team Size : {teamSize}
+    </p>
     <div class="aboutVolunteering-frame3">
       <h2>Responsibilities:</h2>
-      <p>Developing and executing a strategic plan for chapter growth, engagement, and impact.<br>Organizing regular meetings, events, and networking opportunities to foster community and collaboration among members.<br>Recruiting and onboarding new members, ensuring they understand the Foundation's goals and activities.<br>Aligning our chapter with the Foundation's goals and objectives by attending monthly meetings with the Foundation's leadership team.<br>Representing our chapter at local and regional events, conferences, and meetings.</p>
+      <p>{responsibilities.split('\n').map(line => (
+        <>{line}<br/></>
+      ))}</p>
     </div>
     <div class="aboutVolunteering-frame4">
       <h2>Requirements:</h2>
-      <p>Excellent communication and interpersonal skills.<br>Strong problem-solving abilities with attention to detail.<br>Capability to motivate and lead other volunteers.<br>Experience in event planning, coordination, and execution.</p>
+      <p>{requirements.split('\n').map(line => (
+        <>{line}<br/></>
+      ))}</p>
     </div>
     <div class="aboutVolunteering-button-container">
       <button class="aboutVolunteering-apply-button">Apply Now</button>

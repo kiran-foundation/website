@@ -1,13 +1,10 @@
 ---
 import "aos/dist/aos.css"
 import "jarallax/dist/jarallax.min.css"
-import Hero from "../components/Volunteering/Hero.astro";
+import UpdateFocus from "../components/Updates/UpdateFocus.astro";
 import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
-import AboutVolunteerRole from "../components/Volunteering/AboutVolunteerRole.astro";
-import Form from "../components/Volunteering/Form.astro";
-import InfoVolunteering from "../components/Volunteering/InfoVolunteering.astro";
-import HowDoesItWork from "../components/Volunteering/HowDoesItWork.astro";
+
 interface Props {
 	title: string;
 }
@@ -32,7 +29,7 @@ AOS.init();
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Volunteering Roles</title>
+		<title>Updates</title>
         <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/png" href="assets/app-icons/favicon-96x96.png" sizes="96x96">
     <link rel="apple-touch-icon" href="assets/app-icons/apple-icon-180x180.png">
@@ -168,12 +165,7 @@ AOS.init();
       <!-- Page wrapper -->
       <main class="page-wrapper">
         <Header/>
-        <Hero/>
-        <AboutVolunteerRole/>
-        <Form/>
-        <InfoVolunteering/>
-        <HowDoesItWork/>
-        <Footer/>
+        <UpdateFocus/>
       </main>
       
       <!-- Back to top button -->
