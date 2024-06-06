@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="container-c1">
+    <div class="container-c3">
+        <div class="line-upper"></div>
+        <div class="line-lower"></div>
+    </div>
+    <div class="heading">{title}</div>
+    <div class="container-c2">
+        <div class="line-upper"></div>
+        <div class="line-lower"></div>
+    </div>
+</div>
+
+<style>
+.container-c1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 630px;
+    height: auto;
+    gap: 24px;
+    margin: 40px auto;
+}
+
+.heading {
+    font-family: Poppins, sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 72px;
+    text-align: left;
+    color: #2B2E36;
+}
+
+.container-c2, .container-c3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.line-upper, .line-lower {
+    border: 1px solid #2B2E36;
+    width: 40px;
+}
+.line-lower {
+    width: 80px;
+}
+</style>

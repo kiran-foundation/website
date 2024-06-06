@@ -9,6 +9,8 @@ import Benefits from "../components/Pratibha/benefits.astro";
 import SelectionProcess from "../components/Pratibha/SelectionProcess.astro";
 import CardPratibha from "../components/Pratibha/cardPratibha.astro";
 import FaqPratibha from "../components/Pratibha/FaqPratibha.astro";
+import Heading from "../components/common/heading.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 ---
 <script src="/assets/js/theme.min.js" is:inline></script>
 
@@ -45,7 +47,67 @@ AOS.init();
     <!-- Vendor styles -->
 
     <!-- Page loading styles -->
-    <style>
+      <style>
+    .testimonial-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 36px;
+        background: #E5F1FF;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+        margin: 20px;
+    }
+
+    .testimonial-text {
+        font-family: Poppins, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+        color: #2B2E36;
+        margin: 30px 0;
+    }
+
+    .testimonial-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .testimonial-name {
+        font-family: Poppins, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 27px;
+        text-align: center;
+        color: #2B2E36;
+    }
+
+    .testimonial-location {
+        font-family: Inter, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+        color: #576071;
+    }
+
+    .testimonial-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 50px);
+        object-fit: cover;
+    }
+
+
+
         html, body {
     background: #ffffff; 
     margin: 0;
@@ -166,19 +228,18 @@ AOS.init();
       <main class="page-wrapper">
         <Header/>
         <Hero/>
-        <div class="col d-flex justify-content-center">
-          <img class="d-dark-mode-none" src="/assets/img/programs/program.png" width="544" alt="Image" style="margin-bottom: 3%;">
-        </div>
+        <Heading title="What we Do"/>
         <AboutPratibha/>
         <Benefits/>
         <AboutPratibha/>
         <Benefits/>
-        <div class="col d-flex justify-content-center">
-          <img class="d-dark-mode-none" src="/assets/img/programs/program.png" width="544" alt="Image" style="margin-bottom: 3%;">
-        </div>
+        <Heading title="Testimonials"/>
+        <TestimonialsCarousel/>
+        <Heading title="Selection Process"/>
         <SelectionProcess/>
         <CardPratibha/>
         <FaqPratibha/>
+        
       </main>
       
       <!-- Back to top button -->
@@ -188,7 +249,6 @@ AOS.init();
         </svg>
         <i class="ai-arrow-up"></i>
       </a>
-
 
 	</body>
 </html>
