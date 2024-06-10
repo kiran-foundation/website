@@ -1,19 +1,21 @@
 ---
 import TestimonialComponent from './TestimonialComponent.astro';
+import { remark } from 'remark';
+import html from 'remark-html';
 
-export interface Testimonial {
-    image: string;
-    name: string;
-    location: string;
-    text: string;
-}
+const { pageTag } = Astro.props;
 
-const testimonials: Testimonial[] = [
-    { image: '/assets/img/hero/hero-image.jpg', name: 'Naman Jain', location: 'Harda, Madhya Pradesh', text: 'Kiran Foundation not only provides financial support but also offers proper mentorship and guidance.Kiran Foundation not only provides financial support but also offers proper mentorship and guidance.' },
-    { image: '/assets/img/hero/hero-image.jpg', name: 'Riya Singh', location: 'Indore, Madhya Pradesh', text: 'The support from Kiran Foundation has been instrumental in my educational journey.Kiran Foundation not only provides financial support but also offers proper mentorship and guidance.' },
-    { image: '/assets/img/hero/hero-image.jpg', name: 'Ankit Sharma', location: 'Bhopal, Madhya Pradesh', text: 'Kiran Foundation has opened new opportunities for me.' },
-    { image: '/assets/img/hero/hero-image.jpg', name: 'Sonal Verma', location: 'Gwalior, Madhya Pradesh', text: 'The mentorship program is excellent.' }
-];
+const testimonialsFile = import.meta.glob('/src/content/testimonials.md');
+
+const testimonialsData = await Promise.all(
+  Object.values(testimonialsFile).map(async (testimonialFile) => {
+    const { frontmatter, default: content } = await testimonialFile();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  })
+);
+
+const testimonials = testimonialsData[0].testimonials.filter(testimonial => testimonial.tag === pageTag);
 ---
 
 <div class="carousel">
@@ -33,7 +35,6 @@ const testimonials: Testimonial[] = [
 
 <style>
     .carousel {
-        
         position: relative;
         width: 100%;
         max-width: 1200px;
@@ -87,7 +88,7 @@ const testimonials: Testimonial[] = [
         let currentIndex = 0;
 
         function updateCarousel() {
-            const offset = currentIndex * -100 / 2; // Update for 636px width
+            const offset = currentIndex * -100 / 2;
             inner.style.transform = `translateX(${offset}%)`;
 
             bullets.forEach(bullet => bullet.classList.remove('active'));
@@ -101,7 +102,6 @@ const testimonials: Testimonial[] = [
             });
         });
 
-        // Removed dynamic height adjustment code since height is now fixed
         updateCarousel();
     });
 </script>
