@@ -1,6 +1,6 @@
 ---
 title: "Kiran Pratibha 2024 Results Announced"
-date: 2024-02-20
+date: 2024-06-10
 featured_image:  /images/posts/Congratulations.png
 summary: We are delighted to announce the results of <b>Kiran Pratibha 2024.</b> Congratulations to all the participants for their outstanding performances. 
 more: true
