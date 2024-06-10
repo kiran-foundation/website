@@ -1,0 +1,75 @@
+---
+import { remark } from 'remark';
+import html from 'remark-html';
+
+interface Props {
+  path: string;
+}
+
+const allVolunteering = import.meta.glob('/src/content/volunteering/Roles/*.md');
+
+const role = await (async () => {
+  const volunteer = allVolunteering[`/src/content/volunteering/Roles/${Astro.props.path}.md`];
+
+  if (volunteer) {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  } else {
+    return null;
+  }
+})();
+
+if (!role) {
+  throw new Error('Role not found');
+}
+
+const {
+  title,
+  about,
+  startDate,
+  duration,
+  timeCommitment,
+  teamSize,
+  responsibilities,
+  requirements
+} = role;
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/Volunteering/AboutVolunteerRole.css">
+  <title>{title}</title>
+</head>
+<body>
+  <div class="aboutVolunteering-frame1">
+    <div class="aboutVolunteering-frame2">
+      <h1>{title}</h1>
+      <p>{about}</p>
+    </div>
+    <p class="aboutVolunteering-info-text">
+      Start Date  : {startDate}<br>
+      Duration : {duration}<br>
+      Time Commitment : {timeCommitment}<br>
+      Team Size : {teamSize}
+    </p>
+    <div class="aboutVolunteering-frame3">
+      <h2>Responsibilities:</h2>
+      <p>{responsibilities.split('\n').map(line => (
+        <>{line}<br/></>
+      ))}</p>
+    </div>
+    <div class="aboutVolunteering-frame4">
+      <h2>Requirements:</h2>
+      <p>{requirements.split('\n').map(line => (
+        <>{line}<br/></>
+      ))}</p>
+    </div>
+    <div class="aboutVolunteering-button-container">
+      <button class="aboutVolunteering-apply-button">Apply Now</button>
+    </div>
+  </div>
+</body>
+</html>
