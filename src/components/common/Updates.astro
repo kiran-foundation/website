@@ -10,7 +10,6 @@ const updates = await Promise.all(
 
 const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;
 
-
 const filteredUpdates = updates
   .filter(update => !showHighPriorityOnly || update.priority === "high")
   .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -40,11 +39,10 @@ const updatesToDisplay = showHighPriorityOnly ? filteredUpdates.slice(0, 3) : fi
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
       {updatesToDisplay.map(update => (
         <div class="col text-center pt-2" data-date={update.date}>
-        <div class="col text-center pt-2" data-date={update.date}>
           <a class="card-hover card-lifted d-inline-block text-decoration-none" href={update.link}>
-            <img class="card-lifted d-block rounded-5 mb-3" src={update.featured_image} width="340" alt={update.title} />
+            <img class="card-lifted d-block rounded-5 mb-3" src={update.imgSrc} width="340" alt={update.title} />
             <h3 class="update-title h5 mb-1">{update.title}</h3>
-            <p class="update-description mb-0 text-body-secondary">{update.summary}</p>
+            <p class="update-description mb-0 text-body-secondary">{update.description}</p>
             <p class="update-date mb-0 text-body-secondary"><small>Posted on: {new Date(update.date).toLocaleDateString()}</small></p>
           </a>
         </div>
