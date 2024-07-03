@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        .c1 {
+            width: 1296px;
+            margin: 50px auto;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            opacity: 1;
+        }
+
+        .c1-title1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 52px;
+            text-align: center;
+            color: #121519;
+            margin-bottom: 20px;
+        }
+
+        .c1-title2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27px;
+            text-align: center;
+            color: #576071;
+            margin-bottom: 40px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .grid-container img {
+            width: 100%;
+            border-radius: 24px;
+        }
+
+        .grid-container .large {
+            grid-column: span 2;
+            height: 428px;
+        }
+
+        .grid-container .small {
+            height: 240px;
+        }
+
+        .event-image-4 {
+            margin-top: -186px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 32px;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            color: white;
+            background-color: #F1592A;
+            border: 1px solid #F1592A;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">
+        <div class="c1-title1">See how the previous event unfolded</div>
+        <div class="c1-title2">Get inspired with a selection of the keynotes about the Conference 2021</div>
+
+        <div class="grid-container">
+            <img class="small" src="/assets/img/hero/hero.jpg" alt="Event Image 1">
+            <img class="small" src="/assets/img/hero/hero.jpg" alt="Event Image 2">
+            <img class="large" src="/assets/img/hero/hero.jpg" alt="Event Image 3">
+            <img class="large event-image-4" src="/assets/img/hero/hero.jpg" alt="Event Image 4">
+            <img class="small" src="/assets/img/hero/hero.jpg" alt="Event Image 5">
+            <img class="small" src="/assets/img/hero/hero.jpg" alt="Event Image 6">
+        </div>
+
+        <a href="#more" class="button">See More</a>
+    </div>
+</body>
+</html>
