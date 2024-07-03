@@ -10,7 +10,7 @@ const { title } = Astro.props;
         <div class="line-upper"></div>
         <div class="line-lower"></div>
     </div>
-    <div class="heading">{title}</div>
+    <div class="heading pt-3">{title}</div>
     <div class="container-c2">
         <div class="line-upper"></div>
         <div class="line-lower"></div>
@@ -25,16 +25,18 @@ const { title } = Astro.props;
     width: 630px;
     height: auto;
     gap: 24px;
-    margin: 40px auto;
+    margin: 50px auto;
 }
 
 .heading {
     font-family: Poppins, sans-serif;
-    font-size: 48px;
-    font-weight: 500;
+    font-size: 47px;
+    font-weight: 600;
     line-height: 72px;
-    text-align: left;
+    text-align:center;
     color: #2B2E36;
+    margin-right:130px;
+   
 }
 
 .container-c2, .container-c3 {
@@ -43,13 +45,35 @@ const { title } = Astro.props;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    margin-top:25px;
+   
+   
 }
 
 .line-upper, .line-lower {
     border: 1px solid #2B2E36;
-    width: 40px;
+    width: 30px;
+    margin-left:50px;
+    
+   
+    
 }
 .line-lower {
     width: 80px;
+    
 }
+.container-c3 .line-upper{
+    margin-left: 120px;
+}
+.container-c3 .line-lower{
+    margin-left:70px;
+}
+.container-c2 .line-lower{
+    margin-left: -170px;
+}
+.container-c2 .line-upper{
+    margin-left:-220px;
+}
+
+
 </style>

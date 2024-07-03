@@ -11,6 +11,18 @@ import Updates from "../components/common/Updates.astro";
 import Partners from "../components/Home/Partners.astro";
 import Benefits from "../components/Home/Benefits.astro";
 import Supporters from "../components/Home/Supporters.astro";
+import Testimonial from "../components/common/Testimonial.astro";
+import Heading from "../components/common/heading.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+
+interface Props{
+  title:string;
+}
+
+
+
+
+
 ---
 <script src="/assets/js/theme.min.js" is:inline></script>
 
@@ -150,11 +162,14 @@ AOS.init();
     <main class="page-wrapper">
       <Header/>
       <Hero/>
-      <Partners/>
       <Benefits/>
       <Statistics/>
       <Programs/>
       <Volunteer/>
+      <Heading title="Testimonials"/>
+      <TestimonialsCarousel/>
+     
+      
       <Updates showHighPriorityOnly={true} isMainPage={true}/>
       <Partners/>
       <Footer/>

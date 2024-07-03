@@ -1,0 +1,36 @@
+---
+ const allupdate = import.meta.glob("/src/content/updates/*.md");
+
+
+ const updates= await Promise.all(
+    Object.values(allupdate).map(async(update)=>{
+        const {frontmatter} = await update();
+        return{...frontmatter};
+
+    })
+ )
+
+
+---
+
+
+<section class="Update-container mt-5 mt-sm-5 mt-lg-5 mt-md-5">
+    <img class="img d-deark-none" src="/assets/img/benefits/updateFrame.png" alt="updateFrame">
+    <div class="">
+        <div>
+            <a>
+                <img>
+                <h3></h3>
+                <p class="p1"></p>
+                <p class="date"></p>
+    
+            </a>
+            
+        </div>
+    </div>
+
+
+
+</section>
+
+

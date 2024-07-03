@@ -2,7 +2,7 @@
 const allUpdates = import.meta.glob('/src/content/updates/*.md');
 
 const updates = await Promise.all(
-  Object.values(allUpdates).map(async (update) => {
+Object.values(allUpdates).map(async (update) => {
     const { frontmatter } = await update();
     return { ...frontmatter };
   })
@@ -15,6 +15,15 @@ const filteredUpdates = updates
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
 const updatesToDisplay = showHighPriorityOnly ? filteredUpdates.slice(0, 3) : filteredUpdates;
+
+
+
+
+
+
+
+
+
 ---
 
 <html>
@@ -34,9 +43,11 @@ const updatesToDisplay = showHighPriorityOnly ? filteredUpdates.slice(0, 3) : fi
 </head>
 <body>
   <!-- Update display section -->
-  <section class="container pb-2 pb-sm-3 pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
-    <h2 class="h1 text-center pt-2 pt-sm-4 pt-lg-5 pb-2 mb-3 mb-lg-4 mt-md-3 mt-lg-0">Updates</h2>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+  <section class="container pb-2 pb-sm-3 pt-5 mt-lg-3 mt-xl-4 mt-xxl-5"> 
+    <img class="d-disply-none pb-5 mt-5" src="/assets/img/benefits/updateframe.png" alt="UpdateFrame" width="390" style="margin-left:27rem;">
+  
+    <!-- <h2 class="h1 text-center pt-2 pt-sm-4 pt-lg-5 pb-2 mb-3 mb-lg-4 mt-md-3 mt-lg-0">Updates</h2> -->
+    <div class="row row-cols-3 row-cols-sm-3 row-cols-md-4 row-cols-lg-4 g-3" style="margin-left:140px;">
       {updatesToDisplay.map(update => (
         <div class="col text-center pt-2" data-date={update.date}>
           <a class="card-hover card-lifted d-inline-block text-decoration-none" href={update.link}>
@@ -50,7 +61,7 @@ const updatesToDisplay = showHighPriorityOnly ? filteredUpdates.slice(0, 3) : fi
     </div>
     <!-- See More button -->
     {isMainPage && (
-      <div class="text-center mt-4">
+      <div class="text-center mt-5">
         <a href="/update" class="btn btn-primary">See More</a>
       </div>
     )}
