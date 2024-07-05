@@ -1,6 +1,6 @@
 ---
-import "aos/dist/aos.css"
-import "jarallax/dist/jarallax.min.css"
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
 import Footer from "../components/common/Footer.astro";
 import Header from "../components/common/Header.astro";
 import Hero from "../components/Home/Hero.astro";
@@ -13,42 +13,63 @@ import Benefits from "../components/Home/Benefits.astro";
 import Supporters from "../components/Home/Supporters.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 ---
+
 <script src="/assets/js/theme.min.js" is:inline></script>
 
-<script> 
-import AOS from "aos"
-AOS.init();
+<script>
+  import AOS from "aos";
+  AOS.init();
 </script>
 <script src="jarallax/dist/jarallax.min.js"></script>
 <script src="simplebar/dist/simplebar.min.js"></script>
 <link rel="stylesheet" href="/assets/css/theme.min.css" />
 <link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
 
-
-<!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
     <title>Kiran Foundation</title>
-    <meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
-    <meta name="keywords" content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
-    <meta name="author" content="Createx Studio">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/png" href="assets/app-icons/favicon-96x96.png" sizes="96x96">
-    <link rel="apple-touch-icon" href="assets/app-icons/apple-icon-180x180.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+    <meta
+      name="description"
+      content="Around - Multipurpose Bootstrap HTML Template"
+    />
+    <meta
+      name="keywords"
+      content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative"
+    />
+    <meta name="author" content="Createx Studio" />
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/app-icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="assets/app-icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <!-- Theme switcher (color modes) -->
 
     <!-- Import Google font (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      id="google-font"
+    />
 
     <!-- Vendor styles -->
-
-
 
     <!-- Page loading styles -->
     <style>
@@ -60,8 +81,8 @@ AOS.init();
         left: 0;
         width: 100%;
         height: 100%;
-        -webkit-transition: all .4s .2s ease-in-out;
-        transition: all .4s .2s ease-in-out;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
         background-color: #fff;
         opacity: 0;
         visibility: hidden;
@@ -82,8 +103,8 @@ AOS.init();
         text-align: center;
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
-        -webkit-transition: opacity .2s ease-in-out;
-        transition: opacity .2s ease-in-out;
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
         opacity: 0;
       }
       .page-loading.active > .page-loading-inner {
@@ -98,22 +119,22 @@ AOS.init();
       }
       [data-bs-theme="dark"] .page-loading-inner > span {
         color: #fff;
-        opacity: .6;
+        opacity: 0.6;
       }
       .page-spinner {
         display: inline-block;
         width: 2.75rem;
         height: 2.75rem;
-        margin-bottom: .75rem;
+        margin-bottom: 0.75rem;
         vertical-align: text-bottom;
-        background-color: #d7dde2; 
+        background-color: #d7dde2;
         border-radius: 50%;
         opacity: 0;
-        -webkit-animation: spinner .75s linear infinite;
-        animation: spinner .75s linear infinite;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
       }
       [data-bs-theme="dark"] .page-spinner {
-        background-color: rgba(255,255,255,.25);
+        background-color: rgba(255, 255, 255, 0.25);
       }
       @-webkit-keyframes spinner {
         0% {
@@ -143,21 +164,18 @@ AOS.init();
     <script>
       (function () {
         window.onload = function () {
-          const preloader = document.querySelector('.page-loading')
-          preloader.classList.remove('active')
+          const preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
           setTimeout(function () {
-            preloader.remove()
-          }, 1500)
-        }
-      })()
+            preloader.remove();
+          }, 1500);
+        };
+      })();
     </script>
   </head>
 
-
   <!-- Body -->
   <body>
-
-
     <!-- Page loading spinner -->
     <div class="page-loading active">
       <div class="page-loading-inner">
@@ -166,31 +184,44 @@ AOS.init();
       </div>
     </div>
 
-
     <!-- Page wrapper -->
     <main class="page-wrapper">
-      <Header/>
-      <Hero/>
-      <Benefits/>
-      <Statistics/>
-      <Programs/>
-      <Volunteer/>
-      <TestimonialsCarousel/>
-      <Updates showHighPriorityOnly={true} isMainPage={true}/>
-      <Partners/>
-      <Footer/>
+      <Header />
+      <Hero />
+      <Benefits />
+      <Statistics />
+      <Programs />
+      <Volunteer />
+      <TestimonialsCarousel />
+      <Updates showHighPriorityOnly={true} isMainPage={true} />
+      <Partners />
+      <Footer />
     </main>
-    
+
     <!-- Back to top button -->
-    <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+    <a
+      class="btn-scroll-top"
+      href="#top"
+      data-scroll
+      aria-label="Scroll back to top"
+    >
+      <svg
+        viewBox="0 0 40 40"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="20"
+          cy="20"
+          r="19"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-miterlimit="10"></circle>
       </svg>
       <i class="ai-arrow-up"></i>
     </a>
 
-
     <!-- Vendor scripts: JS libraries and plugins -->
-
   </body>
 </html>

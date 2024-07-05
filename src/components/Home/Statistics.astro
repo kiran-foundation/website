@@ -1,31 +1,57 @@
+---
+import { remark } from "remark";
+import html from "remark-html";
+const allstats = import.meta.glob("/src/content/statistics/*.md");
+const statistics = await Promise.all(
+  Object.values(allstats).map(async (statisticsData) => {
+    const { frontmatter, default: content } = await statisticsData();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  })
+);
+---
+
 <!-- Statistics -->
-<section class="bg-secondary position-relative py-4 py-md-5" style="margin-bottom: 4rem ; background-color: #051D40 !important; opacity: 1;">
-    <div class="container position-relative z-2">
-      <div class="row row-cols-2 row-cols-md-4">
-        <div class="col">
-          <div class="py-3 my-lg-2 my-xl-3">
-            <div class="text-light display-4 mb-1">25+</div>
-            <p class="fs-xl mb-0 text-light">Students with fully funded Scholarship</p>
+<section
+  class="bg-secondary position-relative py-4 py-md-5"
+  style="margin-bottom: 4rem ; background-color: #051D40 !important; opacity: 1;"
+>
+  <div class="container position-relative z-2">
+    <div class="row row-cols-2 row-cols-md-4">
+      <div class="col">
+        <div class="py-3 my-lg-2 my-xl-3">
+          <div class="text-light display-4 mb-1">
+            {statistics[0].stat1.data}
           </div>
+          <p class="fs-xl mb-0 text-light">
+            {statistics[0].stat1.title}
+          </p>
         </div>
-        <div class="col">
-          <div class="py-3 ps-xl-4 my-lg-2 my-xl-3">
-            <div class="text-light display-4 mb-1">50+</div>
-            <p class="fs-xl mb-0 text-light">Volunteers</p>
+      </div>
+      <div class="col">
+        <div class="py-3 ps-xl-4 my-lg-2 my-xl-3">
+          <div class="text-light display-4 mb-1">
+            {statistics[0].stat2.data}
           </div>
+          <p class="fs-xl mb-0 text-light">{statistics[0].stat2.title}</p>
         </div>
-        <div class="col d-flex justify-content-md-center">
-          <div class="py-3 my-lg-2 my-xl-3">
-            <div class="text-light display-4 mb-1">1000+</div>
-            <p class="fs-xl mb-0 text-light">Woman Impacted</p>
+      </div>
+      <div class="col d-flex justify-content-md-center">
+        <div class="py-3 my-lg-2 my-xl-3">
+          <div class="text-light display-4 mb-1">
+            {statistics[0].stat3.data}
           </div>
+          <p class="fs-xl mb-0 text-light">{statistics[0].stat3.title}</p>
         </div>
-        <div class="col d-flex justify-content-md-end">
-          <div class="py-3 pe-xl-4 my-lg-2 my-xl-3">
-            <div class="text-light display-4 mb-1">4</div>
-            <p class="fs-xl mb-0 text-light">Programmes</p>
+      </div>
+      <div class="col d-flex justify-content-md-end">
+        <div class="py-3 pe-xl-4 my-lg-2 my-xl-3">
+          <div class="text-light display-4 mb-1">
+            {statistics[0].stat4.data}
           </div>
+          <p class="fs-xl mb-0 text-light">{statistics[0].stat4.title}</p>
         </div>
       </div>
     </div>
+  </div>
 </section>
