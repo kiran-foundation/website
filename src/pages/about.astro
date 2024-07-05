@@ -1,18 +1,21 @@
 ---
 import "aos/dist/aos.css"
 import "jarallax/dist/jarallax.min.css"
-import Hero from "../components/Volunteering/Hero.astro";
 import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
-import AboutVolunteerRole from "../components/Volunteering/AboutVolunteerRole.astro";
-import Form from "../components/Volunteering/Form.astro";
-import InfoVolunteering from "../components/Volunteering/InfoVolunteering.astro";
-import HowDoesItWork from "../components/Volunteering/HowDoesItWork.astro";
+import Hero from "../components/Home/Hero.astro";
+import Mission from "../components/About/mission.astro";
+import Team from "../components/About/team.astro";
+import Speaker from "../components/About/speaker.astro";
+import Volunteers from "../components/About/volunteers.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+import Gallery from "../components/About/gallery.astro";
 interface Props {
 	title: string;
 }
 
 ---
+
 <script src="/assets/js/theme.min.js" is:inline></script>
 
 <script> 
@@ -25,19 +28,19 @@ AOS.init();
 <link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Volunteering Roles</title>
-        <link rel="manifest" href="/manifest.json">
+<html lang="en">A
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Updates</title>
+    <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/png" href="assets/app-icons/favicon-96x96.png" sizes="96x96">
     <link rel="apple-touch-icon" href="assets/app-icons/apple-icon-180x180.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+
     <!-- Theme switcher (color modes) -->
 
     <!-- Import Google font (Inter) -->
@@ -49,11 +52,6 @@ AOS.init();
 
     <!-- Page loading styles -->
     <style>
-        html, body {
-    background: #ffffff; 
-    margin: 0;
-    padding: 0;
-  }
       .page-loading {
         position: fixed;
         top: 0;
@@ -153,66 +151,70 @@ AOS.init();
         }
       })()
     </script>
-	</head>
-	<body>
-		
-    <!-- Page loading spinner -->
-    <div class="page-loading active">
-        <div class="page-loading-inner">
-          <div class="page-spinner"></div>
-          <span>Loading...</span>
-        </div>
-      </div>
+</head>
+<body>
   
-  
-      <!-- Page wrapper -->
-      <main class="page-wrapper">
-        <Header/>
-        <Hero/>
-        <AboutVolunteerRole/>
-        <Form/>
-        <InfoVolunteering/>
-        <HowDoesItWork/>
-        <Footer/>
-      </main>
-      
-      <!-- Back to top button -->
-      <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-        <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
-        </svg>
-        <i class="ai-arrow-up"></i>
-      </a>
+<!-- Page loading spinner -->
+<div class="page-loading active">
+    <div class="page-loading-inner">
+      <div class="page-spinner"></div>
+      <span>Loading...</span>
+    </div>
+  </div>
 
 
-	</body>
+  <!-- Page wrapper -->
+  <main class="page-wrapper">
+    <Header/>
+    <Hero/>
+    <Mission/>
+    <Team/>
+    <Speaker/>
+    <Volunteers/>
+    <TestimonialsCarousel/>
+    <Gallery/>
+  </main>
+  
+  <!-- Back to top button -->
+  <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
+    <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+    </svg>
+    <i class="ai-arrow-up"></i>
+  </a>
+
+
+</body>
 </html>
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+    background: white; 
+    background-size: 224px;
+  }
+
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 </style>

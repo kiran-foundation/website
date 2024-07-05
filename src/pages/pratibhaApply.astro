@@ -1,15 +1,14 @@
 ---
 import "aos/dist/aos.css"
 import "jarallax/dist/jarallax.min.css"
-import Hero from "../components/Volunteering/Hero.astro";
 import Header from "../components/common/Header.astro";
+import Application from "../components/Pratibha/application.astro";
 import Footer from "../components/common/Footer.astro";
-import AboutVolunteerRole from "../components/Volunteering/AboutVolunteerRole.astro";
-import Form from "../components/Volunteering/Form.astro";
+import FaqPratibha from "../components/Pratibha/FaqPratibha.astro";
+import AppPratibha from "../components/Pratibha/appPratibha.astro";
 interface Props {
 	title: string;
 }
-
 ---
 <script src="/assets/js/theme.min.js" is:inline></script>
 
@@ -30,7 +29,7 @@ AOS.init();
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Intenrship Roles</title>
+		<title>Updates</title>
         <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/png" href="assets/app-icons/favicon-96x96.png" sizes="96x96">
     <link rel="apple-touch-icon" href="assets/app-icons/apple-icon-180x180.png">
@@ -132,6 +131,13 @@ AOS.init();
           transform: none;
         }
       }
+      .page-wrapper{
+        background-color: #fff;
+        display: block;
+      }
+      .space{
+        padding: 4%;
+      }
     </style>
 
     <!-- Page loading scripts -->
@@ -161,10 +167,14 @@ AOS.init();
       <!-- Page wrapper -->
       <main class="page-wrapper">
         <Header/>
-        <Hero/>
-        <AboutVolunteerRole/>
-        <Form/>
-      </main>
+        <Application/>
+        <div class="space">
+        </div>
+        <FaqPratibha/>
+        <AppPratibha/>
+        <div class="space">
+        </div>
+=      </main>
       
       <!-- Back to top button -->
       <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
@@ -191,7 +201,7 @@ AOS.init();
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background: #ffffff;
 		background-size: 224px;
 	}
 	code {

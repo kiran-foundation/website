@@ -1,7 +1,6 @@
 ---
 import { remark } from 'remark';
 import html from 'remark-html';
-
 const allVolunteering = import.meta.glob('/src/content/volunteering/*.md');
 
 const volunteering = await Promise.all(
@@ -26,10 +25,20 @@ const volunteeringToDisplay = showHighPriorityOnly ? filteredVolunteering.slice(
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/Volunteering/ChooseVolunteering.css">
+  <script>
+    document.querySelector('.mainVolunteering-sub-container').addEventListener('click', function(event) {
+  if (event.target.classList.contains('mainVolunteering-btn-apply')) {
+    const card = event.target.closest('.mainVolunteering-card');
+    const index = Array.from(this.children).indexOf(card);
+    window.location.href = `/volunteering/${index + 1}`;
+  }
+});
+
+  </script>
 </head>
 <body>
   <section class="mainVolunteering-main-container">
-    <h2 class="mainVolunteering-main-heading">Choose a Suitable Internship</h2>
+    <h2 class="mainVolunteering-main-heading">Choose a Suitable Volunteering</h2>
     <div class="mainVolunteering-sub-container">
       {volunteeringToDisplay.map((volunteer, index) => (
         <div class={`mainVolunteering-card`} id={`c${index + 1}`} key={index}>
@@ -39,7 +48,7 @@ const volunteeringToDisplay = showHighPriorityOnly ? filteredVolunteering.slice(
             <div class="mainVolunteering-card-description">{volunteer.description}</div>
           </div>
           <div class="mainVolunteering-card-buttons">
-            <button class="mainVolunteering-btn mainVolunteering-btn-apply">Apply Now</button>
+            <button class="mainVolunteering-btn mainVolunteering-btn-apply" onclick="window.location.href = `/volunteering/${index + 1}`">Apply Now</button>
             <button class="mainVolunteering-btn mainVolunteering-btn-see-more">See More</button>
           </div>
         </div>

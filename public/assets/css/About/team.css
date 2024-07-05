@@ -1,0 +1,41 @@
+.team-container {
+    width: 100%;
+    padding-left: 40px;
+    padding-top: 50px;
+    max-width: 1296px;
+}
+
+.team-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52px;
+
+    text-align: center;
+    color: #121519;
+    margin-bottom: 40px;
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.team-card {
+    width: calc(33.33% - 27px);
+    height: 416px;
+    border-radius: 36px 0 0 0;
+    background: #F7FCFE;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
