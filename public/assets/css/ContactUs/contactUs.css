@@ -1,0 +1,72 @@
+  .contactUs-c1 {
+            width: 80%; 
+            max-width: 1315px;
+            height: auto;
+            margin: 191px auto 0; 
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            font-family: Poppins, sans-serif;
+        }
+
+        .contactUs-heading {
+            width: 100%;
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 93.6px;
+            text-align: left; 
+            color: #F1592A;
+        }
+
+        .contactUs-subtitle {
+            width: 100%;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 36px;
+            text-align: left;
+            color: #49494C;
+        }
+
+        .contactUs-c2 {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .contactUs-card {
+            width: 298px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px; 
+            opacity: 1;
+            background-color: #ffffff;
+            border-radius: 20px; 
+            padding: 20px; 
+        }
+
+        .contactUs-card-title {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 44.8px;
+            text-align: left;
+            color: #2B2E36;
+        }
+
+        .contactUs-card-desc,
+        .contactUs-card-content .contactUs-card-subtitle,
+        .contactUs-card-content .contactUs-card-phone,
+        .contactUs-card-content .contactUs-card-email {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 36px;
+            text-align: left; 
+            color: #49494C;
+            margin: 0; 
+        }
+
+        .contactUs-card-content .contactUs-card-phone,
+        .contactUs-card-content .contactUs-card-email {
+            color: #F1592A;
+        }
