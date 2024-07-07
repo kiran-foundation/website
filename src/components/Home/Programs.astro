@@ -7,7 +7,7 @@ const programs = await Promise.all(
     const { frontmatter, default: content } = await programData();
     const processedContent = await remark().use(html).process(content);
     return { ...frontmatter, content: processedContent.toString() };
-  })
+  }),
 );
 ---
 
@@ -21,7 +21,7 @@ const programs = await Promise.all(
     style="margin-bottom: 3%;"
   />
 </div>
-<section class="overflow-hidden pb-5">
+<section class="overflow-hidden pb-3">
   <div class="container pb-sm-3 mb-md-2 mb-lg-3">
     <div class="row g-4">
       <div
@@ -45,16 +45,27 @@ const programs = await Promise.all(
         data-disable-parallax-down="md"
       >
         <div
-          class="d-flex flex-column h-100 bg-secondary rounded-3 py-5 px-4 px-lg-5"
+          class="d-flex flex-column h-100 rounded-3 py-5 px-4 px-lg-5"
+          style="background: #F7FCFE;"
         >
-          <h2 class="mb-xl-4">{programs[0].program1.title}</h2>
-          <p class="mb-4 mb-xl-5" style="line-height: 2.5;">
+          <h2
+            class="mb-xl-4"
+            style=" color:#051D40; font-family: Poppins;font-size: 36px;font-weight: 700;line-height: 54px;text-align: left;"
+          >
+            {programs[0].program1.title}
+          </h2>
+          <p
+            class="mb-4 mb-xl-5"
+            style="color:#49494C; font-family: Poppins;font-size: 18px;font-weight: 400;line-height: 36px;text-align: justify;"
+          >
             {programs[0].program1.description}
           </p>
           <div class="mt-">
             <a
-              class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
-              href="#">See more</a
+              class="btn btn-primary"
+              href="#"
+              style="height:48px; width:162px; border-radius:8px; font-size: 22px; font-weight:600; line-height: 22px;"
+              >See more</a
             >
           </div>
         </div>
@@ -88,18 +99,27 @@ const programs = await Promise.all(
         data-disable-parallax-down="md"
       >
         <div
-          class="d-flex flex-column h-100 bg-secondary rounded-3 py-5 px-4 px-lg-5"
+          class="d-flex flex-column h-100 rounded-3 py-5 px-4 px-lg-5"
+          style=" background:#F7FCFE"
         >
-          <h2 class="mb-xl-4">
-            {programs[0].program1.title}
+          <h2
+            class="mb-xl-4"
+            style=" color:#051D40; font-family: Poppins;font-size: 36px;font-weight: 700;line-height: 54px;text-align: left;"
+          >
+            {programs[0].program2.title}
           </h2>
-          <p class="mb-4 mb-xl-5" style="line-height: 2.5;">
+          <p
+            class="mb-4 mb-xl-5"
+            style=" color:#49494C; font-family: Poppins;font-size: 18px;font-weight: 400;line-height: 36px;text-align: justify;"
+          >
             {programs[0].program2.description}
           </p>
           <div class="mt-">
             <a
-              class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
-              href="#">See more</a
+              class="btn btn-primary"
+              href="#"
+              style="height:48px; width:162px; border-radius:8px; font-size: 22px; font-weight:600; line-height: 22px;"
+              >See more</a
             >
           </div>
         </div>
