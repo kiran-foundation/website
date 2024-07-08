@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .c1 {
+      width: 1285.01px;
+      height: 508px;
+      position: absolute;
+      padding-top: 10%;
+      left: 30px;
+      display: flex;
+      gap: 0;
+      border-radius: 18px;
+      opacity: 1;
+      overflow: hidden;
+    }
+
+    .c1 img {
+      width: 636px;
+      height: 472px;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+
+    .accordion-container {
+      width: 100%;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .accordion {
+      width: 587.01px;
+      padding: 24px 24px 24px 0px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .accordion-header {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 36.4px;
+      text-align: left;
+      color: #434A57;
+      cursor: pointer;
+    }
+
+    .accordion-content {
+      display: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 36.4px;
+      text-align: left;
+      color: #576071;
+    }
+
+    .accordion.active .accordion-header {
+      color: #F1592A;
+    }
+
+    .accordion.active .accordion-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="c1">
+    <img src="/assets/img/hero/hero.jpg" alt="Description of image">
+    <div class="accordion-container">
+      <div class="accordion">
+        <div class="accordion-header">Unlocking Digital Empowerment</div>
+        <div class="accordion-content">By mastering digital tools like Canva, website building, social media, and mobile skills, women can unlock endless possibilities for personal and professional growth.</div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-header">Unlocking Digital Empowerment</div>
+        <div class="accordion-content">By mastering digital tools like Canva, website building, social media, and mobile skills, women can unlock endless possibilities for personal and professional growth.</div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-header">Unlocking Digital Empowerment</div>
+        <div class="accordion-content">By mastering digital tools like Canva, website building, social media, and mobile skills, women can unlock endless possibilities for personal and professional growth.</div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-header">Unlocking Digital Empowerment</div>
+        <div class="accordion-content">By mastering digital tools like Canva, website building, social media, and mobile skills, women can unlock endless possibilities for personal and professional growth.</div>
+      </div>
+     
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const accordion = header.parentElement;
+        accordion.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
