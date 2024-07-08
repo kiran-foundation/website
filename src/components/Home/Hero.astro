@@ -10,7 +10,17 @@ const hero = await Promise.all(
   }),
 );
 ---
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero</title>
+  <link rel="stylesheet" href="/assets/css/Home/Hero.css">
+  
+</head>
+<body>
+  
 <section class="position-relative" style="margin-top: 4rem">
   <div
     class="position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4"
@@ -18,48 +28,23 @@ const hero = await Promise.all(
   >
   </div>
   <div class="container position-relative z-2 text-center pt-2 pt-sm-4 pt-lg-5">
-    <h1 class="display-0 text-white pt-4 mt-3">
+    <h1 class="hero-title display-0 text-white pt-5 ">
       {hero[0].title}
     </h1>
     <p
-      class="text-white fs-xl opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5"
+      class="hero-description text-white fs-xl opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5"
       style=" max-width: 640px;"
     >
       {hero[0].description}
     </p>
-    <a class="btn btn-primary -pill" href="#" >Join Us Now</a>
+    <a class="hero-join-button btn btn-primary -pill" href="#">Join Us Now</a>
   </div>
   <div class="d-none d-lg-block" style="height: 360px;"></div>
   <div class="d-none d-md-block d-lg-none" style="height: 260px;"></div>
   <div class="d-md-none" style="height: 160px;"></div>
 </section>
-<style>
-  h1 {
-    font-family: Poppins;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 82px;
-    text-align: center;
-    margin-top: 13%;
-  }
+</body>
+</html>
 
-  p {
-    font-family: Poppins;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 36px;
-    text-align: center;
-    
-  }
 
-  a {
-    font-family: Poppins;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 24px;
-    text-align: center;
-    width: 183px;
-    height: 48px;
-    border-radius: 8px;
-  }
-</style>
+

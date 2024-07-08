@@ -1,0 +1,47 @@
+.statistics-data1 {
+    font-family: Poppins;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 72.8px;
+    text-align: center;
+    color: #f9f9f9;
+    gap: 4px;
+  }
+  .statistics-title {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+  }
+  .statistics-container {
+    width: 196px;
+    height: 137px;
+  }
+  .statistics-data2 {
+    font-family: Poppins;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 72.8px;
+    text-align: center;
+    color: #f9f9f9;
+    gap: 4px;
+  }
+  .statistics-data3 {
+    font-family: Poppins;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 72.8px;
+    text-align: center;
+    color: #f9f9f9;
+    gap: 4px;
+  }
+  .statistics-data4 {
+    font-family: Poppins;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 72.8px;
+    text-align: center;
+    color: #f9f9f9;
+    gap: 4px;
+  }

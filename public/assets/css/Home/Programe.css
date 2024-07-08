@@ -1,0 +1,30 @@
+
+   .programe-title{
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+    text-align: left;
+    color: #051d40;
+  }
+
+  .programe-paragraph {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: justify;
+    color: #49494c;
+  }
+
+  .programe-button {
+    width: 162px;
+    height: 48px;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    border-radius: 8px;
+  }
+

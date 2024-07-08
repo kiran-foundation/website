@@ -1,0 +1,75 @@
+
+  .volunteer-heading2 {
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: left;
+    color: #2b2e36;
+  }
+  .volunteer-description {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    color: #49494c;
+  }
+  .volunteer-perks {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    color: #2b2e36;
+  }
+  .volunteer-heading3 {
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 36.4px;
+    text-align: left;
+    color: #2b2e36;
+  }
+  .volunteer-paragraph-description {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    color: #2b2e36;
+  }
+  .volunteer-apply-button {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    width: 106px;
+    height: 36px;
+    border-radius: 12px;
+  }
+  .section-heading2 {
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: left;
+    margin-left: -80px;
+    width: 448px;
+    height: 104px;
+  }
+
+
+  .volunteer-join-button {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    width: 216px;
+    height: 48px;
+    border-radius: 8px;
+    margin-left: -80px;
+  }
+

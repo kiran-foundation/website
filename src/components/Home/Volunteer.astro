@@ -7,10 +7,20 @@ const volunteer = await Promise.all(
     const { frontmatter, default: content } = await volunteerData();
     const processedContent = await remark().use(html).process(content);
     return { ...frontmatter, content: processedContent.toString() };
-  })
+  }),
 );
 ---
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer</title>
+  <link rel="stylesheet" href="/assets/css/Home/Volunteer.css">
+  
+</head>
+<body>
+  
 <!-- Pricing -->
 <section class="pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
   <div class="col d-flex justify-content-center">
@@ -27,10 +37,12 @@ const volunteer = await Promise.all(
       <!-- Sticky sidebar -->
       <div class="col-md-5 col-xl-4 mb-5 mb-md-0" style="margin-top: -125px;">
         <div class="position-sticky top-0" style="padding-top: 125px;">
-          <h2 class="h1 pb-2 pb-lg-3">{volunteer[0].title}</h2>
+          <h2 class="volunteer-heading2 h1 pb-2 pb-lg-3">
+            {volunteer[0].title}
+          </h2>
           <div class="row">
             <div class="col-md-10">
-              <p class="mb-4">
+              <p class="volunteer-description mb-4">
                 {volunteer[0].description}
               </p>
             </div>
@@ -38,7 +50,8 @@ const volunteer = await Promise.all(
           <ul class="list-unstyled mb-0">
             <li class="d-flex align-items-center mb-3">
               <svg
-                class="d-block flex-shrink-0 text-primary"
+                class="d-block flex-shrink-0"
+                style="color: #051D40;"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -53,12 +66,15 @@ const volunteer = await Promise.all(
                 ></path>
               </svg>
               <div class="ps-2 ms-1">
-                <div class="text-nav fw-medium">{volunteer[0].perks[0]}</div>
+                <div class="volunteer-perks text-nav fw-medium">
+                  {volunteer[0].perks[0]}
+                </div>
               </div>
             </li>
             <li class="d-flex align-items-center mb-3">
               <svg
-                class="d-block flex-shrink-0 text-primary"
+                class="d-block flex-shrink-0"
+                style="color: #051D40;"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -73,12 +89,15 @@ const volunteer = await Promise.all(
                 ></path>
               </svg>
               <div class="ps-2 ms-1">
-                <div class="text-nav fw-medium">{volunteer[0].perks[1]}</div>
+                <div class="volunteer-perks text-nav fw-medium">
+                  {volunteer[0].perks[1]}
+                </div>
               </div>
             </li>
             <li class="d-flex align-items-center">
               <svg
-                class="d-block flex-shrink-0 text-primary"
+                class="d-block flex-shrink-0"
+                style="color: #051D40;"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -90,7 +109,9 @@ const volunteer = await Promise.all(
                 ></path>
               </svg>
               <div class="ps-2 ms-1">
-                <div class="text-nav fw-medium">{volunteer[0].perks[2]}</div>
+                <div class="volunteer-perks text-nav fw-medium">
+                  {volunteer[0].perks[2]}
+                </div>
               </div>
             </li>
           </ul>
@@ -98,25 +119,27 @@ const volunteer = await Promise.all(
       </div>
 
       <!-- Pricing list -->
-      <div class="col-md-7 offset-xl-1">
+      <div class="col-md-7 offset-xl-1 mt-3" >
         <div class="ps-md-4 ps-xxl-5">
           <!-- Pricing card -->
           <div
-            class="card border-1 bg-secondary rounded-4 position-relative mb-3"
+            class="card border-1 rounded-4 position-relative mb-3"
             style="border-color: black;"
           >
             <div
               class="card-body d-sm-flex align-items-start text-center text-sm-start"
             >
-              <div class="w-100 pe-sm-4 mb-3 mb-sm-0" style="max-width: 27rem;">
-                <h3 class="mb-2">{volunteer[0].volunteerRole1.title}</h3>
-                <p class="fs-lg mb-0">
+              <div class="w-100 pe-sm-4 mb-3 mb-sm-0 p-40">
+                <h3 class="volunteer-heading3 mb-2">
+                  {volunteer[0].volunteerRole1.title}
+                </h3>
+                <p class="volunteer-paragraph-description fs-lg mb-0">
                   {volunteer[0].volunteerRole1.description}
                 </p>
               </div>
 
               <button
-                class="btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto"
+                class="volunteer-apply-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-3"
                 type="button">Apply</button
               >
             </div>
@@ -124,21 +147,23 @@ const volunteer = await Promise.all(
 
           <!-- Pricing card -->
           <div
-            class="card border-1 bg-secondary rounded-4 position-relative mb-3"
+            class="card border-1 rounded-4 position-relative mb-3 "
             style="border-color: black;"
           >
             <div
               class="card-body d-sm-flex align-items-start text-center text-sm-start"
             >
-              <div class="w-100 pe-sm-4 mb-3 mb-sm-0" style="max-width: 27rem;">
-                <h3 class="mb-2">{volunteer[0].volunteerRole2.title}</h3>
-                <p class="fs-lg mb-0">
+              <div class="w-100 pe-sm-4 mb-3 mb-sm-0 p-40" >
+                <h3 class="volunteer-heading3 mb-2">
+                  {volunteer[0].volunteerRole2.title}
+                </h3>
+                <p class="volunteer-paragraph-description fs-lg mb-0">
                   {volunteer[0].volunteerRole2.description}
                 </p>
               </div>
 
               <button
-                class="btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto"
+                class="volunteer-apply-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-3"
                 type="button">Apply</button
               >
             </div>
@@ -155,39 +180,39 @@ const volunteer = await Promise.all(
     class="bg-primary rounded-5 overflow-hidden mt-2 mt-sm-4 mt-lg-5"
     style="background-color: #051D40 !important; opacity: 1;"
   >
-    <img
-      class="position-absolute top-50 start-0 translate-middle-y d-none d-md-block"
-      src="assets/img/landing/yoga-studio/cta/bg.svg"
-      width="186"
-      alt="Background flower"
-    />
+   
     <div class="row position-relative z-2 align-items-center">
-      <div class="col-md-6 col-lg-5 offset-lg-1">
+      <div class="col-md-6 col-lg-5 offset-lg-1" >
         <div
-          class="text-center text-md-start py-5 px-4 px-sm-5 pe-md-0 ps-lg-4 ps-xl-5"
+          class="text-center text-md-start py-5 px-4 px-sm-5 pe-md-0 ps-lg-4 ps-xl-5" 
         >
           <div
             class="d-flex align-items-center justify-content-center justify-content-md-start mb-2"
+            style="margin-left: -70px; "
+           
           >
             <span
-              class="bg-white opacity-70 me-2 d-none d-md-block"
-              style="width: 40px; height: 1px; margin-top: -1px;"></span>
-            <span class="fs-xs fw-semibold text-white opacity-70 text-uppercase"
+              class=" bg-white opacity-70 d-none d-md-block"
+              style="width: 40px; height: 1px; margin-top: -3px;"></span>
+            <span class="fs-xs  mx-2 fw-semibold text-white opacity-70 text-uppercase"
+            
+
               >GET INVOLVE</span
             >
           </div>
-          <h2 class="h1 text-white pb-2 pb-sm-3">
+          <h2 class="section-heading2 h1 text-white pb-2 pb-sm-3">
             Let's Make a Difference Today
           </h2>
           <a
-            class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
+            class="volunteer-join-button mt-2 btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex"
             href="#">Join Us Today</a
           >
         </div>
       </div>
       <div class="col-md-6">
         <img
-          class="d-block mx-auto mx-md-0 mt-n4 mt-md-0"
+          class="d-block mx-auto mx-md-0 mt-n4 mt-md-0 p-4"
+          style="width:631px; height:341.54px; border-radius: 48px;"
           src="/assets/img/volunter/group.png"
           width="534"
           alt="Image"
@@ -196,3 +221,7 @@ const volunteer = await Promise.all(
     </div>
   </div>
 </section>
+
+
+</body>
+</html>
