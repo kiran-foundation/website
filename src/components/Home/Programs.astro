@@ -7,7 +7,7 @@ const programs = await Promise.all(
     const { frontmatter, default: content } = await programData();
     const processedContent = await remark().use(html).process(content);
     return { ...frontmatter, content: processedContent.toString() };
-  })
+  }),
 );
 ---
 
@@ -21,7 +21,7 @@ const programs = await Promise.all(
     style="margin-bottom: 3%;"
   />
 </div>
-<section class="overflow-hidden pb-5">
+<section class="overflow-hidden pb-3">
   <div class="container pb-sm-3 mb-md-2 mb-lg-3">
     <div class="row g-4">
       <div
@@ -45,7 +45,8 @@ const programs = await Promise.all(
         data-disable-parallax-down="md"
       >
         <div
-          class="d-flex flex-column h-100 bg-secondary rounded-3 py-5 px-4 px-lg-5"
+          class="d-flex flex-column h-100 rounded-3 py-5 px-4 px-lg-5"
+          style="background: #F7FCFE;"
         >
           <h2 class="mb-xl-4">{programs[0].program1.title}</h2>
           <p class="mb-4 mb-xl-5" style="line-height: 2.5;">
@@ -53,7 +54,7 @@ const programs = await Promise.all(
           </p>
           <div class="mt-">
             <a
-              class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
+              class="btn btn-primary order-lg-3 d-none d-sm-inline-flex"
               href="#">See more</a
             >
           </div>
@@ -88,17 +89,18 @@ const programs = await Promise.all(
         data-disable-parallax-down="md"
       >
         <div
-          class="d-flex flex-column h-100 bg-secondary rounded-3 py-5 px-4 px-lg-5"
+          class="d-flex flex-column h-100 rounded-3 py-5 px-4 px-lg-5"
+          style="background: #F7FCFE;"
         >
           <h2 class="mb-xl-4">
-            {programs[0].program1.title}
+            {programs[0].program2.title}
           </h2>
           <p class="mb-4 mb-xl-5" style="line-height: 2.5;">
             {programs[0].program2.description}
           </p>
           <div class="mt-">
             <a
-              class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
+              class="btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex"
               href="#">See more</a
             >
           </div>
@@ -107,3 +109,33 @@ const programs = await Promise.all(
     </div>
   </div>
 </section>
+<style>
+  h2 {
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+    text-align: left;
+    color: #051d40;
+  }
+
+  p {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: justify;
+    color: #49494c;
+  }
+
+  a {
+    width: 162px;
+    height: 48px;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    border-radius: 8px;
+  }
+</style>

@@ -7,21 +7,24 @@ const benefits = await Promise.all(
     const { frontmatter, default: content } = await benefitData();
     const processedContent = await remark().use(html).process(content);
     return { ...frontmatter, content: processedContent.toString() };
-  })
+  }),
 );
 ---
 
 <!-- Benefits -->
 <section class="container py-5 pb-5 mb-lg-3 mb-xl-4 mb-xxl-5">
-  <div class="row gy-3 pb-sm-3 pb-md-4 pb-lg-5">
-    <div class="col-sm-6 col-lg-4">
-      <div class="d-flex align-items-center mb-3">
-        <div class="flex-shrink-0 rounded-1 p-2">
+  <div class="row gy-3 pb-sm-3 pb-md-4 pb-lg-5 mt-3 gap-88" >
+    <div class="col-sm-6 col-lg-4 g-16">
+      <div
+        class="d-flex align-items-center mb-3"
+         style="width: 416px; height:42px;" 
+      >
+        <div class="flex-shrink-0 rounded-1 p-2" style="margin-left: -17px;">
           <div class="flex-shrink-0 rounded-1 p-2">
             <img src="/assets/img/benefits/icon.png" alt="Image" />
           </div>
         </div>
-        <h3 class="h5 ms-3 mb-0">
+        <h3 class="h5  mb-0">
           {benefits[0].benefit1.title}
         </h3>
       </div>
@@ -29,27 +32,33 @@ const benefits = await Promise.all(
         {benefits[0].benefit1.description}
       </p>
     </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="d-flex align-items-center mb-3">
-        <div class="flex-shrink-0 rounded-1 p-2">
+    <div class="col-sm-6 col-lg-4 gap-16">
+      <div
+        class="d-flex align-items-center mb-3"
+        style="width: 416px; height:42px;"
+      >
+        <div class="flex-shrink-0 rounded-1 p-2" style="margin-left: -17px;">
           <div class="flex-shrink-0 rounded-1 p-2">
             <img src="/assets/img/benefits/icon3.png" alt="Image" />
           </div>
         </div>
-        <h3 class="h5 ms-3 mb-0">{benefits[0].benefit2.title}</h3>
+        <h3 class="h5 mb-0">{benefits[0].benefit2.title}</h3>
       </div>
       <p class="fs-sm" style="word-wrap: break-word;">
         {benefits[0].benefit2.description}
       </p>
     </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="d-flex align-items-center mb-3">
-        <div class="flex-shrink-0 rounded-1 p-2">
+    <div class="col-sm-6 col-lg-4 gap-16px">
+      <div
+        class="d-flex align-items-center mb-3"
+        style="width: 416px; height:42px "
+      >
+        <div class="flex-shrink-0 rounded-1 p-2" style="margin-left: -17px;">
           <div class="flex-shrink-0 rounded-1 p-2">
             <img src="/assets/img/benefits/icon2.png" alt="Image" />
           </div>
         </div>
-        <h3 class="h5 ms-3 mb-0">{benefits[0].benefit3.title}</h3>
+        <h3 class="h5 mb-0">{benefits[0].benefit3.title}</h3>
       </div>
       <p class="fs-sm" style="word-wrap: break-word;">
         {benefits[0].benefit3.description}
@@ -57,11 +66,11 @@ const benefits = await Promise.all(
     </div>
   </div>
 
-  <section class="overflow-hidden">
+  <section class="overflow-hidden mt-4">
     <div class="container pb-sm-3 mb-md-2 mb-lg-3">
       <div class="row g-4">
         <div
-          class="col-md-7"
+          class="col-md-6"
           data-aos="fade-right"
           data-aos-duration="600"
           data-aos-offset="280"
@@ -74,7 +83,7 @@ const benefits = await Promise.all(
           />
         </div>
         <div
-          class="col-md-5"
+          class="col-md-6"
           data-aos="fade-left"
           data-aos-duration="600"
           data-aos-offset="280"
@@ -85,14 +94,14 @@ const benefits = await Promise.all(
           >
             <h2 class="mb-xl-4"></h2>
             <p
-              class="mb-4 mb-xl-5"
-              style="font-size: 24px; font-color:#252A34; word-wrap: break-word;"
+              class="paragraph mb-4 mb-xl-5"
+              style="font-size: 24px;font-color:#252A34; word-wrap: break-word;"
             >
               "If a hardworking and talented youth, can not fulfil her/his
               dreams due to lack of resources, it is failure of the whole
               society. We must keep the hopes and dreams alive!”
             </p>
-            <p class="mb-4 mb-xl-5">
+            <p class="mb-4 mb-xl-5" style="margin-top:-15px;">
               <b>Maa Kiran Jain</b>
               <br /> (17th Oct 1955- 15th June 2015)
             </p>
@@ -108,3 +117,51 @@ const benefits = await Promise.all(
     </div>
   </section>
 </section>
+<style>
+  h3 {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 33px;
+    text-align: left;
+    color: #121212;
+    margin-left: -5px;
+   }
+
+  p {
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: justify;
+    color: #2b2e36;
+   
+  }
+
+  a {
+    width: 162px;
+    height: 48px;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    border-radius: 8px;
+  }
+  .paragraph {
+    font-style: italic;
+    line-height: 38px;
+    margin-top: -35px;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+  b {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 1px;
+    text-align: left;
+    color: #252A34;
+  }
+</style>
