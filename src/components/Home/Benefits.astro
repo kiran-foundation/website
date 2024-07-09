@@ -16,8 +16,8 @@ const benefits = await Promise.all(
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hero</title>
-  <link rel="stylesheet" href="/assets/css/Home/Benefits.css">
+  <title>Benefits</title>
+  <link rel="stylesheet" href="/assets/css/Home/Global.css">
   
 </head>
 <body>
@@ -34,11 +34,11 @@ const benefits = await Promise.all(
             <img src="/assets/img/benefits/icon.png" alt="Image" />
           </div>
         </div>
-        <h3 class="benefits-title h5 mb-0">
+        <h3 class="benefits-title-h3 h5 mb-0">
           {benefits[0].benefit1.title}
         </h3>
       </div>
-      <p class="benefits-description fs-sm" style="word-wrap: break-word;">
+      <p class="benefits-content-container-p1 fs-sm" style="word-wrap: break-word;">
         {benefits[0].benefit1.description}
       </p>
     </div>
@@ -52,25 +52,26 @@ const benefits = await Promise.all(
             <img src="/assets/img/benefits/icon3.png" alt="Image" />
           </div>
         </div>
-        <h3 class="benefits-title h5 mb-0">{benefits[0].benefit2.title}</h3>
+        <h3 class="benefits-title-h3 h5 mb-0">{benefits[0].benefit2.title}</h3>
       </div>
-      <p class="benefits-description fs-sm" style="word-wrap: break-word;">
+      <p class="benefits-content-container-p2 fs-sm" style="word-wrap: break-word;">
         {benefits[0].benefit2.description}
       </p>
     </div>
     <div class="col-sm-6 col-lg-4 gap-16px">
       <div
         class="d-flex align-items-center mb-3"
-        style="width: 416px; height:42px "
+         style="width: 416px; height:42px "
+       
       >
         <div class="flex-shrink-0 rounded-1 p-2" style="margin-left: -17px;">
           <div class="flex-shrink-0 rounded-1 p-2">
             <img src="/assets/img/benefits/icon2.png" alt="Image" />
           </div>
         </div>
-        <h3 class="benefits-title h5 mb-0">{benefits[0].benefit3.title}</h3>
+        <h3 class="benefits-title-h3 h5 mb-0">{benefits[0].benefit3.title}</h3>
       </div>
-      <p class="benefits-description fs-sm" style="word-wrap: break-word;">
+      <p class="benefits-content-container-p3 fs-sm" style="word-wrap: break-word;">
         {benefits[0].benefit3.description}
       </p>
     </div>
@@ -104,7 +105,7 @@ const benefits = await Promise.all(
           >
             <h2 class="mb-xl-4"></h2>
             <p
-              class="benefits-paragraph mb-4 mb-xl-5"
+              class="benefits-section2-p1 mb-4 mb-xl-5"
               style="font-size: 24px;font-color:#252A34; word-wrap: break-word;"
             >
               "If a hardworking and talented youth, can not fulfil her/his
@@ -112,13 +113,13 @@ const benefits = await Promise.all(
               society. We must keep the hopes and dreams alive!”
             </p>
             <p
-              class="benefits-paragraph-dob mb-4 mb-xl-5"
+              class="benefits-section-p2-dob mb-4 mb-xl-5"
               style="margin-top:-15px;"
             >
-              <b class="benefits-boldtext">Maa Kiran Jain</b>
+              <b class="benefits-section2-boldtext">Maa Kiran Jain</b>
               <br /> (17th Oct 1955- 15th June 2015)
             </p>
-            <p class="benefits-lower-paragraph mb-4 mb-xl-5">
+            <p class="benefits-section2-p3 mb-4 mb-xl-5">
               Kiran Foundation is an step towards that vision
             </p>
             <div class="mt-">

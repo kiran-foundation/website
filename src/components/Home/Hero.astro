@@ -16,7 +16,7 @@ const hero = await Promise.all(
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hero</title>
-  <link rel="stylesheet" href="/assets/css/Home/Hero.css">
+  <link rel="stylesheet" href="/assets/css/Home/Global.css">
   
 </head>
 <body>
@@ -28,11 +28,11 @@ const hero = await Promise.all(
   >
   </div>
   <div class="container position-relative z-2 text-center pt-2 pt-sm-4 pt-lg-5">
-    <h1 class="hero-title display-0 text-white pt-5 ">
+    <h1 class="hero-title-h1 display-0 text-white pt-5 ">
       {hero[0].title}
     </h1>
     <p
-      class="hero-description text-white fs-xl opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5"
+      class="hero-description-p text-white fs-xl opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5"
       style=" max-width: 640px;"
     >
       {hero[0].description}

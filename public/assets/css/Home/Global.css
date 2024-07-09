@@ -1,0 +1,224 @@
+.hero-title-h1 {
+    font-family: Poppins, sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 82px;
+    text-align: center;
+    margin-top: 10%;
+
+}
+
+.hero-description-p {
+    font-family: Poppins, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+
+}
+
+.hero-join-button {
+    font-family: Poppins, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    width: 183px;
+    height: 48px;
+    border-radius: 8px;
+}
+
+.benefits-title-h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 33px;
+    text-align: left;
+    color: #121212;
+    margin-left: -5px;
+}
+
+.benefits-content-container-p1,
+.benefits-content-container-p2,
+.benefits-content-container-p3 {
+    font-family: Poppins, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: justify;
+    color: #2b2e36;
+}
+
+
+.benefits-readmore-button {
+    width: 162px;
+    height: 48px;
+    font-family: Poppins, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    border-radius: 8px;
+
+}
+
+.benefits-section2-p1 {
+    font-family: Poppins, sans-serif;
+    font-style: italic;
+    line-height: 38px;
+    margin-top: -35px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #252a34;
+    text-align: justify;
+}
+
+.benefits-section-p2-dob,
+.benefits-section2-p3 {
+    font-family: Poppins, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: justify;
+    color: #2b2e36;
+    letter-spacing: 1px;
+}
+
+.benefits-section2-boldtext {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 1px;
+    text-align: left;
+    color: #252a34;
+}
+
+.statistics-container-data {
+    font-family: Poppins, sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 72.8px;
+    text-align: center;
+    color: #f9f9f9;
+    gap: 4px;
+
+}
+
+
+.statistics-title-p {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+}
+
+.statistics-container {
+    width: 196px;
+    height: 137px;
+}
+
+.programe-title-h2{
+    font-family: Poppins, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+    text-align: left;
+    color: #051d40;
+}
+
+.programe-paragraph-p {
+    font-family: Poppins ,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: justify;
+    color: #2b2e36;
+}
+
+.programe-seemore-button{
+    width: 162px;
+    height: 48px;
+    font-family: Poppins,sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    border-radius: 8px;
+}
+
+.volunteer-heading-h2{
+    font-family: Poppins,sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: left;
+    color: #2b2e36;
+  }
+  .volunteer-description-p{
+    font-family: Poppins,sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    color: #49494c;
+  }
+  .volunteer-perks {
+    font-family: Poppins,sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    color: #2b2e36;
+  }
+  .volunteer-heading-h3 {
+    font-family: Poppins ,sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 36.4px;
+    text-align: left;
+    color: #2b2e36;
+  }
+  .volunteer-paragraph-description {
+    font-family: Poppins,sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    color: #2b2e36;
+  }
+  .volunteer-apply-button {
+    font-family: Poppins, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    width: 106px;
+    height: 36px;
+    border-radius: 12px;
+  }
+  .section-heading2 {
+    font-family: Poppins,sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: left;
+    margin-left: -80px;
+    width: 448px;
+    height: 104px;
+  }
+
+
+  .volunteer-join-button {
+    font-family: Poppins sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    width: 216px;
+    height: 48px;
+    border-radius: 8px;
+    margin-left: -80px;
+  }
+
