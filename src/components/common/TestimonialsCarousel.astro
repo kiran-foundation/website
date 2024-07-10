@@ -1,21 +1,10 @@
 ---
 import TestimonialComponent from './TestimonialComponent.astro';
-import { remark } from 'remark';
-import html from 'remark-html';
-
+import { getEntry } from "astro:content";
+const testimonialsData = (await getEntry("testimonials", "testimonials")).data;
+const common = (await getEntry("common", "common")).data;
 const { pageTag } = Astro.props;
-
-const testimonialsFile = import.meta.glob('/src/content/testimonials.md');
-
-const testimonialsData = await Promise.all(
-  Object.values(testimonialsFile).map(async (testimonialFile) => {
-    const { frontmatter, default: content } = await testimonialFile();
-    const processedContent = await remark().use(html).process(content);
-    return { ...frontmatter, content: processedContent.toString() };
-  })
-);
-
-const testimonials = testimonialsData[0].testimonials.filter(testimonial => testimonial.tag === pageTag);
+const testimonials = testimonialsData.testimonials.filter(testimonial => testimonial.tag === pageTag);
 ---
 
 <div class="carousel">
