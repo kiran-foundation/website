@@ -1,28 +1,8 @@
 ---
-import { remark } from "remark";
-import html from "remark-html";
-const allPartner = import.meta.glob("/src/content/partner/*.md");
-const partner = await Promise.all(
-  Object.values(allPartner).map(async (partnerData) => {
-    const { frontmatter, default: content } = await partnerData();
-    const processedContent = await remark().use(html).process(content);
-    return { ...frontmatter, content: processedContent.toString() };
-  })
-);
+import { getEntry } from "astro:content";
+const partners = (await getEntry("home", "partners")).data;
+const common = (await getEntry("common", "common")).data;
 ---
----
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Partners</title>
-  <link rel="stylesheet" href="/assets/css/Home/Partners.css">
-  
-</head>
-<body>
-      
-<!-- Partners -->
 <section class="container my-lg-3 my-xl-4 my-xxl-5">
   <div
     class="overflow-auto pb-sm-4 pb-md-5 pt-sm-2 pt-md-3 mt-n2 mt-sm-0 mt-md-1 mt-lg-3 mb-lg-2"
@@ -31,13 +11,13 @@ const partner = await Promise.all(
       <div class="col d-flex justify-content-center">
         <img
           class="d-dark-mode-none"
-          src={partner[0].partner1}
+          src={partners.partner1}
           width="196"
           alt="Deloitte"
         />
         <img
           class="d-none d-dark-mode-block"
-          src={partner[0].partner2}
+          src={partners.partner2}
           width="196"
           alt="Deloitte"
         />
@@ -45,13 +25,13 @@ const partner = await Promise.all(
       <div class="col d-flex justify-content-center">
         <img
           class="d-dark-mode-none"
-          src={partner[0].partner3}
+          src={partners.partner3}
           width="196"
           alt="Champion"
         />
         <img
           class="d-none d-dark-mode-block"
-          src={partner[0].partner4}
+          src={partners.partner4}
           width="196"
           alt="Champion"
         />
@@ -59,13 +39,13 @@ const partner = await Promise.all(
       <div class="col d-flex justify-content-center">
         <img
           class="d-dark-mode-none"
-          src={partner[0].partner5}
+          src={partners.partner5}
           width="196"
           alt="Financial Times"
         />
         <img
           class="d-none d-dark-mode-block"
-          src={partner[0].partner6}
+          src={partners.partner6}
           width="196"
           alt="Financial Times"
         />
@@ -73,13 +53,13 @@ const partner = await Promise.all(
       <div class="col d-flex justify-content-center">
         <img
           class="d-dark-mode-none"
-          src={partner[0].partner7}
+          src={partners.partner7}
           width="196"
           alt="Clutch"
         />
         <img
           class="d-none d-dark-mode-block"
-          src={partner[0].partner8}
+          src={partners.partner8}
           width="196"
           alt="Clutch"
         />
@@ -87,10 +67,5 @@ const partner = await Promise.all(
     </div>
   </div>
 </section>
-
-</body>
-</html>
-
-
 
 

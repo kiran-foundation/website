@@ -1,27 +1,9 @@
 ---
-import { remark } from "remark";
-import html from "remark-html";
-const allVolunteering = import.meta.glob("/src/content/volunteer/*.md");
-const volunteer = await Promise.all(
-  Object.values(allVolunteering).map(async (volunteerData) => {
-    const { frontmatter, default: content } = await volunteerData();
-    const processedContent = await remark().use(html).process(content);
-    return { ...frontmatter, content: processedContent.toString() };
-  }),
-);
+import { getEntry } from "astro:content";
+const volunteer = (await getEntry("home", "volunteer")).data;
+const common = (await getEntry("common", "common")).data;
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volunteer</title>
-  <link rel="stylesheet" href="/assets/css/Home/Global.css">
-  
-</head>
-<body>
-  
-<!-- Pricing -->
+
 <section class="pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
   <div class="col d-flex justify-content-center">
     <img
@@ -38,12 +20,12 @@ const volunteer = await Promise.all(
       <div class="col-md-5 col-xl-4 mb-5 mb-md-0" style="margin-top: -125px;">
         <div class="position-sticky top-0" style="padding-top: 125px;">
           <h2 class="volunteer-heading-h2 h1 pb-2 pb-lg-3">
-            {volunteer[0].title}
+            {volunteer.title}
           </h2>
           <div class="row">
             <div class="col-md-10">
               <p class="volunteer-description-p mb-4">
-                {volunteer[0].description}
+                {volunteer.description}
               </p>
             </div>
           </div>
@@ -67,7 +49,7 @@ const volunteer = await Promise.all(
               </svg>
               <div class="ps-2 ms-1">
                 <div class="volunteer-perks text-nav fw-medium">
-                  {volunteer[0].perks[0]}
+                  {volunteer.perks[0]}
                 </div>
               </div>
             </li>
@@ -90,7 +72,7 @@ const volunteer = await Promise.all(
               </svg>
               <div class="ps-2 ms-1">
                 <div class="volunteer-perks text-nav fw-medium">
-                  {volunteer[0].perks[1]}
+                  {volunteer.perks[1]}
                 </div>
               </div>
             </li>
@@ -110,7 +92,7 @@ const volunteer = await Promise.all(
               </svg>
               <div class="ps-2 ms-1">
                 <div class="volunteer-perks text-nav fw-medium">
-                  {volunteer[0].perks[2]}
+                  {volunteer.perks[2]}
                 </div>
               </div>
             </li>
@@ -131,16 +113,16 @@ const volunteer = await Promise.all(
             >
               <div class="w-100 pe-sm-4 mb-3 mb-sm-0 p-40">
                 <h3 class="volunteer-heading-h3 mb-2">
-                  {volunteer[0].volunteerRole1.title}
+                  {volunteer.volunteerRole1.title}
                 </h3>
                 <p class="volunteer-paragraph-description fs-lg mb-0">
-                  {volunteer[0].volunteerRole1.description}
+                  {volunteer.volunteerRole1.description}
                 </p>
               </div>
 
               <button
                 class="volunteer-apply-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-3"
-                type="button">Apply</button
+                type="button">{common.apply}</button
               >
             </div>
           </div>
@@ -155,16 +137,16 @@ const volunteer = await Promise.all(
             >
               <div class="w-100 pe-sm-4 mb-3 mb-sm-0 p-40" >
                 <h3 class="volunteer-heading3 mb-2">
-                  {volunteer[0].volunteerRole2.title}
+                  {volunteer.volunteerRole2.title}
                 </h3>
                 <p class="volunteer-paragraph-description fs-lg mb-0">
-                  {volunteer[0].volunteerRole2.description}
+                  {volunteer.volunteerRole2.description}
                 </p>
               </div>
 
               <button
                 class="volunteer-apply-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-3"
-                type="button">Apply</button
+                type="button">{common.apply}</button
               >
             </div>
           </div>
@@ -197,15 +179,15 @@ const volunteer = await Promise.all(
             <span class="fs-xs  mx-2 fw-semibold text-white opacity-70 text-uppercase"
             
 
-              >GET INVOLVE</span
+              >{volunteer.involve}</span
             >
           </div>
           <h2 class="section-heading2 h1 text-white pb-2 pb-sm-3">
-            Let's Make a Difference Today
+            {volunteer.difference}
           </h2>
           <a
             class="volunteer-join-button mt-2 btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex"
-            href="#">Join Us Today</a
+            href="#">{volunteer.join_today}</a
           >
         </div>
       </div>
@@ -221,7 +203,3 @@ const volunteer = await Promise.all(
     </div>
   </div>
 </section>
-
-
-</body>
-</html>

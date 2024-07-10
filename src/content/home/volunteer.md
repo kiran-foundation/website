@@ -1,6 +1,9 @@
 ---
 title: "Why Volunteers with us?"
 description: "Small act of volunteering can make a big impact in someone's life."
+join_today: Join Us Today
+difference: Let's Make a Difference Today
+involve: GET INVOLVED
 perks:
   ["Work in your own time", "Contribute remotely", "Drive a possitive change"]
 

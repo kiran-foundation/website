@@ -1,27 +1,10 @@
 ---
 import { remark } from "remark";
 import html from "remark-html";
-const allHero = import.meta.glob("/src/content/benefits/*.md");
-const benefits = await Promise.all(
-  Object.values(allHero).map(async (benefitData) => {
-    const { frontmatter, default: content } = await benefitData();
-    const processedContent = await remark().use(html).process(content);
-    return { ...frontmatter, content: processedContent.toString() };
-  }),
-);
+import { getEntry } from "astro:content";
+const values = (await getEntry("home", "values")).data;
+const common = (await getEntry("common", "common")).data;
 ---
----
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Benefits</title>
-  <link rel="stylesheet" href="/assets/css/Home/Global.css">
-  
-</head>
-<body>
-  <!-- Benefits -->
 <section class="container py-5 pb-5 mb-lg-3 mb-xl-4 mb-xxl-5">
   <div class="row gy-3 pb-sm-3 pb-md-4 pb-lg-5 mt-3 gap-88">
     <div class="col-sm-6 col-lg-4 g-16">
@@ -35,11 +18,11 @@ const benefits = await Promise.all(
           </div>
         </div>
         <h3 class="benefits-title-h3 h5 mb-0">
-          {benefits[0].benefit1.title}
+          {values.vision.title}
         </h3>
       </div>
       <p class="benefits-content-container-p1 fs-sm" style="word-wrap: break-word;">
-        {benefits[0].benefit1.description}
+        {values.vision.description}
       </p>
     </div>
     <div class="col-sm-6 col-lg-4 gap-16">
@@ -52,10 +35,10 @@ const benefits = await Promise.all(
             <img src="/assets/img/benefits/icon3.png" alt="Image" />
           </div>
         </div>
-        <h3 class="benefits-title-h3 h5 mb-0">{benefits[0].benefit2.title}</h3>
+        <h3 class="benefits-title-h3 h5 mb-0">{values.goal1.title}</h3>
       </div>
       <p class="benefits-content-container-p2 fs-sm" style="word-wrap: break-word;">
-        {benefits[0].benefit2.description}
+        {values.goal1.description}
       </p>
     </div>
     <div class="col-sm-6 col-lg-4 gap-16px">
@@ -69,10 +52,10 @@ const benefits = await Promise.all(
             <img src="/assets/img/benefits/icon2.png" alt="Image" />
           </div>
         </div>
-        <h3 class="benefits-title-h3 h5 mb-0">{benefits[0].benefit3.title}</h3>
+        <h3 class="benefits-title-h3 h5 mb-0">{values.goal2.title}</h3>
       </div>
       <p class="benefits-content-container-p3 fs-sm" style="word-wrap: break-word;">
-        {benefits[0].benefit3.description}
+        {values.goal2.description}
       </p>
     </div>
   </div>
@@ -108,23 +91,21 @@ const benefits = await Promise.all(
               class="benefits-section2-p1 mb-4 mb-xl-5"
               style="font-size: 24px;font-color:#252A34; word-wrap: break-word;"
             >
-              "If a hardworking and talented youth, can not fulfil her/his
-              dreams due to lack of resources, it is failure of the whole
-              society. We must keep the hopes and dreams alive!”
+             
             </p>
             <p
               class="benefits-section-p2-dob mb-4 mb-xl-5"
               style="margin-top:-15px;"
             >
-              <b class="benefits-section2-boldtext">Maa Kiran Jain</b>
-              <br /> (17th Oct 1955- 15th June 2015)
+              <b class="benefits-section2-boldtext">{values.maa.name}</b>
+              <br /> {values.maa.lifespan}
             </p>
             <p class="benefits-section2-p3 mb-4 mb-xl-5">
-              Kiran Foundation is an step towards that vision
+              {values.maa.step}
             </p>
             <div class="mt-">
               <a class="benefits-readmore-button btn btn-outline-primary" href="#"
-                >Read more</a
+                >{common.more}</a
               >
             </div>
           </div>
@@ -133,10 +114,6 @@ const benefits = await Promise.all(
     </div>
   </section>
 </section>
-
- 
-</body>
-</html>
 
 
 
