@@ -7,7 +7,7 @@ testimonials:
     text: THe Advance Canva cource which I completed was very well planned, it exceeded our expectations. 
       The course  provided in-depth insights into advanced design techniques and features. The concise modules and practical exercises made learning a breeze. I now feel equipped to create professional designs with confidence. Trainers Shreya and Keshu were very clear in explaining the topic and helped us with the all our doubts. Highly recommended!
       I thank each and every member of Kiran Foundation from the bottom of my heart. 🙏
-  - image: '/assets/images/hero/hero-image.jpg'
+  - image: '/assets/images/people/kanchan.jpg'
     name: 'Naman Jain'
     location: 'Harda, Madhya Pradesh'
     text: 'Kiran Foundation not only provides financial support but also offers proper mentorship and guidance.'
