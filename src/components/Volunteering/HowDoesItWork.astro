@@ -1,4 +1,42 @@
-<!DOCTYPE html>
+---
+import { remark } from 'remark';
+import html from 'remark-html';
+const staticTextsFile = import.meta.glob("/src/content/volunteer/StaticTexts.md");
+
+const volunteering = await Promise.all(
+  Object.values(allVolunteering).map(async (volunteer) => {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  })
+);
+
+const staticTexts = await (async () => {
+  const staticFilePath = Object.keys(staticTextsFile)[0];
+  const staticFile = staticTextsFile[staticFilePath];
+
+  if (staticFile) {
+    const { frontmatter } = await staticFile();
+    return frontmatter;
+  } else {
+    return null;
+  }
+})();
+
+if (!staticTexts) {
+  throw new Error('Static texts not found');
+}
+
+const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;
+
+const filteredVolunteering = volunteering
+  .filter(volunteer => !showHighPriorityOnly || volunteer.priority === "high")
+  .sort((a, b) => a.title.localeCompare(b.title));
+
+const volunteeringToDisplay = showHighPriorityOnly ? filteredVolunteering.slice(0, 3) : filteredVolunteering;
+
+const { chooseVolunteering, applyNow, seeMore, Requirements} = staticTexts;
+---
 <html lang="en">
 <head>
   <meta charset="UTF-8">

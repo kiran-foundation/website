@@ -1,101 +1,133 @@
-.mainVolunteering-main-container  {
-    width: 100%;
-    max-width: 1296px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    margin: 100px auto;
-    padding: 0 40px;
-  }
-  
-  .mainVolunteering-main-heading {
-    width: 100%;
-    max-width: 604px;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-  
-  .mainVolunteering-sub-container {
-    width: 100%;
-    max-width: 1296px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-  }
-  
+.mainVolunteering-main-container {
+  width: 100%;
+  max-width: 1296px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.mainVolunteering-main-heading {
+  width: 100%;
+  max-width: 604px;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  padding-top: 30px;
+}
+
+.mainVolunteering-sub-container {
+  width: 100%;
+  max-width: 1296px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Card styles */
+.mainVolunteering-card {
+  width: calc(50% - 24px);
+  min-width: 280px;
+  padding: 1.5rem;
+  border-radius: 24px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Border colors based on ID */
+#c1 {
+  border: 8px solid #F7DFE2;
+}
+
+#c2 {
+  border: 8px solid #E1DAF7;
+}
+
+#c3 {
+  border: 8px solid #DCE4F6;
+}
+
+#c4 {
+  border: 8px solid #DBF2F6;
+}
+
+.mainVolunteering-card-heading {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.mainVolunteering-card-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.mainVolunteering-card-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* Button styles */
+.mainVolunteering-card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.mainVolunteering-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.mainVolunteering-btn-apply {
+  background-color: #F1592A;
+  color: #fff;
+}
+
+.mainVolunteering-btn-see-more {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+@media (max-width: 768px) {
   .mainVolunteering-card {
-    width: calc(50% - 12px);
-    height: 562px;
-    padding: 2rem;
-    border-radius: 24px;
-    background-color: #fff;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+    min-height: 420px;
+    margin-bottom: 24px;
   }
-  #c1{
-    border: 8px solid #F7DFE2
+
+  .mainVolunteering-main-heading {
+    padding-top: 40px; 
+    font-size: 20px; 
   }
-  #c2{
-    border: 8px solid #E1DAF7
-  }
-  #c3{
-    border: 8px solid #DCE4F6
-  }
-  #c4{
-    border: 8px solid #DBF2F6
-  }
+
   .mainVolunteering-card-heading {
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 39.2px;
-    margin-bottom: 16px;
+    font-size: 20px;
   }
-  
-  .mainVolunteering-card-subheading {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 16px;
-  }
-  
+
+  .mainVolunteering-card-subheading,
   .mainVolunteering-card-description {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 32px;
-    margin-bottom: 16px;
+    font-size: 14px;
   }
-  
-  .mainVolunteering-card-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  
+
   .mainVolunteering-btn {
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
+    padding: 10px 20px; 
+    font-size: 14px;
   }
-  
-  .mainVolunteering-btn-apply {
-    background-color: #F1592A;
-    color: #fff;
-  }
-  
-  .mainVolunteering-btn-see-more {
-    background-color: #e0e0e0;
-    color: #000;
-  }
-  
-  @media (max-width: 768px) {
-    .mainVolunteering-card {
-      width: 100%;
-    }
-  }
+}
+
