@@ -2,12 +2,12 @@
 testimonials:
   - name: Kanchan Jha
     location: Nerul, Navi Mumbai
-    image: /images/people/kanchan.png
+    image: '/assets/images/people/kanchan.png'
     tags: [home, shakti]
-    text: THe Advance Canva cource which I completed was very well planned, it exceeded our expectations. 
+    text: The Advance Canva cource which I completed was very well planned, it exceeded our expectations. 
       The course  provided in-depth insights into advanced design techniques and features. The concise modules and practical exercises made learning a breeze. I now feel equipped to create professional designs with confidence. Trainers Shreya and Keshu were very clear in explaining the topic and helped us with the all our doubts. Highly recommended!
       I thank each and every member of Kiran Foundation from the bottom of my heart. 🙏
-  - image: '/assets/images/people/kanchan.jpg'
+  - image: '/assets/images/people/naman.png'
     name: 'Naman Jain'
     location: 'Harda, Madhya Pradesh'
     text: 'Kiran Foundation not only provides financial support but also offers proper mentorship and guidance.'
