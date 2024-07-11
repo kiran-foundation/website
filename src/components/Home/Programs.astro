@@ -3,6 +3,16 @@ import { getEntry } from "astro:content";
 const programs = (await getEntry("home", "programs")).data;
 const common = (await getEntry("common", "common")).data;
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programe</title>
+    <link rel="stylesheet" href="/assets/css/Home/Global.css">
+</head>
+<body>
+  
 <div class="col d-flex justify-content-center">
   <img
     class="d-dark-mode-none"
@@ -24,7 +34,7 @@ const common = (await getEntry("common", "common")).data;
       >
         <img
           class="object-fit-cover w-100 h-100 rounded-3"
-          src="/assets/images/programs/program1.png"
+          src="/assets/images/programs/kiranimage.jpg"
           alt="Image"
         />
       </div>
@@ -40,13 +50,13 @@ const common = (await getEntry("common", "common")).data;
           style="background: #F7FCFE;"
         >
           <h2 class="programe-title-h2 mb-xl-4">{programs.pratibha.title}</h2>
-          <p class=" programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2.5;">
+          <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
             {programs.pratibha.description}
           </p>
           <div class="mt-">
             <a
-              class=" programe-seemore-button btn btn-primary order-lg-3 d-none d-sm-inline-flex"
-              href="#">{common.more}</a
+              class="programe-seemore-button btn btn-primary order-lg-3 d-none d-sm-inline-flex"
+              href="/Pratibha">{common.more}</a
             >
           </div>
         </div>
@@ -86,13 +96,13 @@ const common = (await getEntry("common", "common")).data;
           <h2 class="programe-title-h2 mb-xl-4">
             {programs.shakti.title}
           </h2>
-          <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2.5;">
+          <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
             {programs.shakti.description}
           </p>
           <div class="mt-">
             <a
               class="programe-seemore-button btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex"
-              href="#">{common.more}</a
+              href="/shakti">{common.more}</a
             >
           </div>
         </div>
@@ -101,3 +111,8 @@ const common = (await getEntry("common", "common")).data;
   </div>
 </section>
 
+
+
+  
+</body>
+</html>

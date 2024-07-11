@@ -1,7 +1,6 @@
 ---
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
-import Footer from "../components/common/Footer.astro";
 import Header from "../components/common/Header.astro";
 import Hero from "../components/Home/Hero.astro";
 import Statistics from "../components/Home/Statistics.astro";
@@ -12,6 +11,8 @@ import Partners from "../components/Home/Partners.astro";
 import Values from "../components/Home/Values.astro";
 import Supporters from "../components/Home/Supporters.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+
+import Footer from "../components/common/Footer.astro";
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -192,10 +193,11 @@ import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astr
       <Statistics />
       <Programs />
       <Volunteer />
+      
       <TestimonialsCarousel pageTag="home">
       <Updates showHighPriorityOnly={true} isMainPage={true} />
       <Partners />
-      <Footer />
+      <Footer/>
     </main>
 
     <!-- Back to top button -->

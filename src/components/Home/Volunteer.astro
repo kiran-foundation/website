@@ -4,7 +4,7 @@ const volunteer = (await getEntry("home", "volunteer")).data;
 const common = (await getEntry("common", "common")).data;
 ---
 
-<section class="pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+<section class="mt-lg-3 mt-xl-4 mt-xxl-5">
   <div class="col d-flex justify-content-center">
     <img
       class="d-dark-mode-none"
@@ -14,7 +14,7 @@ const common = (await getEntry("common", "common")).data;
       style="margin-bottom: 3%;"
     />
   </div>
-  <div class="container pt-2 pt-sm-4 pt-lg-5 mt-md-2">
+  <div class="container pt-sm-3 pt-lg-4 mt-md-2">
     <div class="row">
       <!-- Sticky sidebar -->
       <div class="col-md-5 col-xl-4 mb-5 mb-md-0" style="margin-top: -125px;">
@@ -119,11 +119,10 @@ const common = (await getEntry("common", "common")).data;
                   {volunteer.volunteerRole1.description}
                 </p>
               </div>
-
-              <button
-                class="volunteer-apply-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-3"
-                type="button">{common.apply}</button
-              >
+              <a class="volunteer-apply-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-3" href="/">
+                {common.apply}
+               </a>
+              
             </div>
           </div>
 
@@ -143,11 +142,10 @@ const common = (await getEntry("common", "common")).data;
                   {volunteer.volunteerRole2.description}
                 </p>
               </div>
-
-              <button
-                class="volunteer-apply-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-3"
-                type="button">{common.apply}</button
-              >
+               <a class="volunteer-apply-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-3" href="/">
+                {common.apply}
+               </a>
+              
             </div>
           </div>
         </div>
@@ -157,10 +155,10 @@ const common = (await getEntry("common", "common")).data;
 </section>
 
 <!-- CTA -->
-<section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+<section class="container pt-2 mt-lg-3 mt-xl-4 mt-xxl-5">
   <div
     class="bg-primary rounded-5 overflow-hidden mt-2 mt-sm-4 mt-lg-5"
-    style="background-color: #051D40 !important; opacity: 1;"
+    style="background-color: #051D40 !important; opacity: 1; "
   >
    
     <div class="row position-relative z-2 align-items-center">
@@ -170,7 +168,7 @@ const common = (await getEntry("common", "common")).data;
         >
           <div
             class="d-flex align-items-center justify-content-center justify-content-md-start mb-2"
-            style="margin-left: -70px; "
+            style="margin-left: -65px; "
            
           >
             <span
@@ -182,22 +180,22 @@ const common = (await getEntry("common", "common")).data;
               >{volunteer.involve}</span
             >
           </div>
-          <h2 class="section-heading2 h1 text-white pb-2 pb-sm-3">
+          <h2 class="section-heading2 h1 text-white pb-2 pb-sm-3" >
             {volunteer.difference}
           </h2>
           <a
-            class="volunteer-join-button mt-2 btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex"
+            class="volunteer-join-button mt-3 btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex"
             href="#">{volunteer.join_today}</a
           >
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 p-2">
         <img
-          class="d-block mx-auto mx-md-0 mt-n4 mt-md-0 p-4"
-          style="width:631px; height:341.54px; border-radius: 48px;"
-          src="/assets/images/volunter/group.png"
-          width="534"
-          alt="Image"
+          class="d-block mx-auto mx-md-0 mt-n4 mt-md-0 p-3"
+           style="width:575px; height:320px; border-radius: 48px;"
+           src="/assets/images/volunter/group.png"
+           width="534"
+           alt="Image"
         />
       </div>
     </div>
