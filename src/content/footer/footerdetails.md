@@ -7,14 +7,17 @@ aboutTitle:
     report: 'Annual Report'
     statement: 'Fiancial Statement'
 contactTitle:
+      contact: 'Conatct Us' 
       info: 'info@kiran.foundation'    
       phone: '+91-9303997100'
       whatsApp: '+91-9880141412'
 listTitle:
+     heading: We're Always Happy To Help'    
      shaktiGroup: 'Join Kiran Shakti Group '    
      speakingClubGroup: 'Join English Speaking Club Group'  
      gyanGroup: 'Join Kiran Gyan Group'
      volunteerGroup: 'Join Volunteers Group'
+
 
 
 
