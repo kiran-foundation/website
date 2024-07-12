@@ -4,7 +4,7 @@ const volunteer = (await getEntry("home", "volunteer")).data;
 const common = (await getEntry("common", "common")).data;
 ---
 
-<section class="mt-lg-3 mt-xl-4 mt-xxl-5">
+<section class="mt-lg-3 mt-xl-4 mt-xxl-3">
   <div class="col d-flex justify-content-center">
     <img
       class="d-dark-mode-none"
@@ -14,10 +14,10 @@ const common = (await getEntry("common", "common")).data;
       style="margin-bottom: 3%;"
     />
   </div>
-  <div class="container pt-sm-3 pt-lg-4 mt-md-2">
+  <div class="container pt-sm-3 pt-lg-4 ">
     <div class="row">
       <!-- Sticky sidebar -->
-      <div class="col-md-5 col-xl-4 mb-5 mb-md-0" style="margin-top: -125px;">
+      <div class="col-md-5 col-xl-4 mb-5 mb-md-0" style="margin-top: -135px;">
         <div class="position-sticky top-0" style="padding-top: 125px;">
           <h2 class="volunteer-heading-h2 h1 pb-2 pb-lg-3">
             {volunteer.title}
@@ -168,7 +168,7 @@ const common = (await getEntry("common", "common")).data;
         >
           <div
             class="d-flex align-items-center justify-content-center justify-content-md-start mb-2"
-            style="margin-left: -65px; "
+            style="margin-left: -56px; "
            
           >
             <span
@@ -177,15 +177,14 @@ const common = (await getEntry("common", "common")).data;
             <span class="fs-xs  mx-2 fw-semibold text-white opacity-70 text-uppercase"
             
 
-              >{volunteer.involve}</span
-            >
+              >{volunteer.involve}</span>
           </div>
           <h2 class="section-heading2 h1 text-white pb-2 pb-sm-3" >
             {volunteer.difference}
           </h2>
           <a
             class="volunteer-join-button mt-3 btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex"
-            href="#">{volunteer.join_today}</a
+            href="/volunteering">{volunteer.join_today}</a
           >
         </div>
       </div>

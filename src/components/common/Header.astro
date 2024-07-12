@@ -1,3 +1,14 @@
+---
+   import { getEntry } from "astro:content";
+   const headerDetails = ( await getEntry("header", "details")).data
+
+   console.log(headerDetails)
+
+   
+---
+
+
+
 <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
 <header class="navbar navbar-expand-lg fixed-top" style="background-color: #ffffff;">
   <div class="container">
@@ -14,9 +25,9 @@
     <div class=" space-x-4 order-lg-3 ">
       <a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="/donation" target="_blank" rel="noopener">
         <i class=" fs-xl me-2 ms-n1"></i>
-        Donate
+       {headerDetails.button}
       </a>
-      <a class="btn btn-outline-primary space-x-4 btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="/volunteering">Be a Volunteer</a>
+      <a class="btn btn-outline-primary space-x-4 btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="/volunteering">{headerDetails.buttonVolunteer}</a>
       <!-- <button type="button" class="btn btn-outline-primary space-x-4 btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex">Be a Volunteer</button>   -->
     </div>
 
@@ -29,30 +40,30 @@
     <nav class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Our Programs</a>
+          <a class="nav-link dropdown-toggle" href="/" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">{headerDetails.programe}</a>
           <ul class="dropdown-menu">
             <li class="dropdown">
-              <a class="dropdown-item" href="/Pratibha"  aria-expanded="false">Kiran Pratibha</a>
+              <a class="dropdown-item" href="/Pratibha"  aria-expanded="false">{headerDetails.pratibha}</a>
             </li>
             <li class="dropdown">
-              <a class="dropdown-item" href="/shakti">Kiran Shakti</a>
+              <a class="dropdown-item" href="/shakti">{headerDetails.shakti}</a>
             </li>
             <li class="dropdown">
-              <a class="dropdown-item" href="/" >Kiran Samman</a>
+              <a class="dropdown-item" href="/" >{headerDetails.samman}</a>
             </li>
             <li class="dropdown">
-              <a class="dropdown-item" href="/" >Kiran Gyan</a>
+              <a class="dropdown-item" href="/" >{headerDetails.gyan}</a>
             </li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">About Us</a>
+          <a class="nav-link" href="/about">{headerDetails.about}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">Contact Us</a>
+          <a class="nav-link" href="/">{headerDetails.contact}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/src/components/About/gallery.astro">Gallery</a>
+          <a class="nav-link" href="/src/components/About/gallery.astro">{headerDetails.gallery}</a>
         </li>
       </ul>
     </nav>

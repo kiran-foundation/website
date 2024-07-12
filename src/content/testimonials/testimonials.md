@@ -10,13 +10,18 @@ testimonials:
   - image: '/assets/images/people/naman.png'
     name: 'Naman Jain'
     location: 'Harda, Madhya Pradesh'
-    text: 'Kiran Foundation not only provides financial support but also offers proper mentorship and guidance.'
-    tags: [ home, pratibha]  
-  - image: '/assets/images/hero/hero-image.jpg'
-    name: 'Riya Singh'
-    location: 'Indore, Madhya Pradesh'
-    text: 'The support from Kiran Foundation has been instrumental in my educational journey.'
+    text: 'Kiran Foundation not only proivde financial support but also provide proper mentorship and guidence. Guided by experienced members who are not just advisors but genuine mentors, Kiran Foundation offers a roadmap to success carved from their own journeys. The unique quality of fostering a sense of familial camaraderie is what sets it apart Kiran Foundation from other scholarship schemes.
+❤️👍'
+    tags: [ home, pratibha] 
+    
+  
+  - image: '/assets/images/people/shreya1.png'
+    name: 'Shreya Jain'
+    location: 'Sagar, Madhya Pradesh'
+    text: 'Ever since I joined Kiran Foundation I have only one thing to say, that KIRAN FOUNDATION is not just an organization; it is a close-knit family. It not only extends financial assistance but also provides invaluable emotional support.'
     tags: [home, pratibha]
+
+  
   - image: '/assets/images/hero/hero-image.jpg'
     name: 'Ankit Sharma'
     location: 'Bhopal, Madhya Pradesh'
