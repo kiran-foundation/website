@@ -1,4 +1,4 @@
-.hero-title-h1 {
+.hero-title-h1,.pratibha-hero-title-h1 {
     font-family: Poppins, sans-serif;
     font-size: 60px;
     font-weight: 700;
@@ -26,6 +26,7 @@
     width: 183px;
     height: 48px;
     border-radius: 8px;
+    color: white;
 }
 
 .benefits-title-h3 {
