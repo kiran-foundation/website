@@ -4,6 +4,9 @@
     margin-left: 80px;
     gap: 20px;
     font-family: Poppins, sans-serif;
+    width: 1170px;
+    margin: auto;
+    margin-bottom: 100px;
 }
 
 .faq-container-c2 {
@@ -65,6 +68,9 @@
     text-align: left;
     color: #051D40;
     cursor: pointer;
+    margin-top: -7px;
+   
+    
 }
 
 .faq-accordion-answer {
@@ -80,7 +86,6 @@
 .faq-image-content{
     width: 188.48px ;
     height:211.3px ;
-    /* border: 1px solid black; */
     position: relative;
     top:20px;
     left: 106px;
@@ -88,7 +93,7 @@
 }
 .pratibhaCard-image-container-vector{
     border-radius: 1px solid red;
-    position: ;
+    position:relative ;
     width:96.18px;
     height: 125px;
 }
