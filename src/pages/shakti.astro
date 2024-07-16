@@ -1,13 +1,17 @@
 ---
 import "aos/dist/aos.css"
 import "jarallax/dist/jarallax.min.css"
-import Hero from "../components/Volunteering/Hero.astro";
 import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
 import AboutPratibha from "../components/Pratibha/aboutPratibha.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 import CardPratibha from "../components/Pratibha/cardPratibha.astro";
 import Heading from "../components/common/heading.astro";
+import ShaktiHero from "../components/shakti/shaktiHero.astro";
+import ShaktiPrograme from "../components/shakti/shaktiPrograme.astro";
+import ShaktiDigitalSkill from "../components/shakti/shaktiDigitalSkill.astro";
+import ShaktiSpeakingClub from "../components/shakti/shaktiSpeakingClub.astro";
+import ShaktiFiancialSkill from "../components/shakti/shaktiFiancialSkill.astro";
 
 interface Props {
 	title: string;
@@ -163,12 +167,12 @@ AOS.init();
       <!-- Page wrapper -->
       <main class="page-wrapper">
         <Header/>
-        <Hero/>
-        <Heading title="4 Pillars of Shakti"/>
-        <AboutPratibha/>
-        <AboutPratibha/>
-        <AboutPratibha/>
-        <AboutPratibha/>
+        <ShaktiHero/>
+         <Heading title="4 Pillars of Shakti"/>
+         <ShaktiPrograme/>
+         <ShaktiDigitalSkill/>
+         <ShaktiSpeakingClub/>
+         <ShaktiFiancialSkill/>
         <CardPratibha/>
         <Heading title="Testimonials"/>
         <TestimonialsCarousel pageTag="shaktiPage" />
