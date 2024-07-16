@@ -77,3 +77,18 @@
     color: #051D40;
     margin-top: 16px;
 }
+.faq-image-content{
+    width: 188.48px ;
+    height:211.3px ;
+    /* border: 1px solid black; */
+    position: relative;
+    top:20px;
+    left: 106px;
+    rotate: z -4.03deg ;
+}
+.pratibhaCard-image-container-vector{
+    border-radius: 1px solid red;
+    position: ;
+    width:96.18px;
+    height: 125px;
+}

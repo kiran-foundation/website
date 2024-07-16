@@ -1,21 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pratibha</title>
-  <link rel="stylesheet" href="/assets/css/Pratibha/pratibhaCard.css">
+---
+import { getEntry } from "astro:content"
+const cardPratibha= (await getEntry("pratibha", "cardpratibha")).data
+---
 
-</head>
-<body>
-  <div class="container pratibhaCard-container">
-    <div class="pratibhaCard-image-container">
-      <img src="/assets/images/hero/hero-image.jpg" alt="Mentoring Image">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pratibha</title>
+    <link rel="stylesheet" href="/assets/css/Pratibha/pratibhaCard.css" />
+  </head>
+  <body>
+    <div class="container pratibhaCard-container">
+       <!-- <div class="pratibhaCard-image-container-vectorstar">
+        <img src="/assets/images/benefits/Vectorstar.png" alt="Vectorstar Image" />
+       </div> -->
+      <div class="pratibhaCard-image-container" style="margin-left: 50px;">
+        <img src={cardPratibha.image} alt="Mentoring Image" />
+      </div>
+      <div class="pratibhaCard-image-container-vector">
+        <img src="/assets/images/benefits/Vector6.png" alt="Vector Image" />
+       </div>
+      
+      <div class="pratibhaCard-content-container">
+        <h2>{cardPratibha.heading}</h2>
+
+        <a
+          class="cardPratibha-join-button btn btn-primary -pill mt-4"
+          href="/volunteering"
+        >
+         {cardPratibha.join}</a
+        >
+      </div>
     </div>
-    <div class="pratibhaCard-content-container">
-      <h2>Be a mentor and help shape someone's future.</h2>
-      <button>Get Started</button>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

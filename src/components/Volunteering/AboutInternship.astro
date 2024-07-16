@@ -2,14 +2,12 @@
 import { remark } from 'remark';
 import html from 'remark-html';
 
-interface Props {
-  path: string;
-}
-
-const allVolunteering = import.meta.glob('/src/content/volunteering/Roles/*.md');
+const roleFile = import.meta.glob('/src/content/volunteering/Roles/*.md');
+const staticTextsFile = import.meta.glob('/src/content/volunteer/StaticTexts.md');
 
 const role = await (async () => {
-  const volunteer = allVolunteering[`/src/content/volunteering/Roles/${Astro.props.path}.md`];
+  const volunteerPath = `/src/content/volunteering/Roles/${Astro.props.path}.md`;
+  const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
     const { frontmatter, default: content } = await volunteer();
@@ -24,6 +22,22 @@ if (!role) {
   throw new Error('Role not found');
 }
 
+const staticTexts = await (async () => {
+  const staticFilePath = Object.keys(staticTextsFile)[0];
+  const staticFile = staticTextsFile[staticFilePath];
+
+  if (staticFile) {
+    const { frontmatter } = await staticFile();
+    return frontmatter;
+  } else {
+    return null;
+  }
+})();
+
+if (!staticTexts) {
+  throw new Error('Static texts not found');
+}
+
 const {
   title,
   about,
@@ -34,6 +48,12 @@ const {
   responsibilities,
   requirements
 } = role;
+
+const {
+  applyNow,
+  responsibilitiesHeading,
+  requirementsHeading
+} = staticTexts;
 ---
 
 <html lang="en">
@@ -50,25 +70,25 @@ const {
       <p>{about}</p>
     </div>
     <p class="aboutVolunteering-info-text">
-      Start Date  : {startDate}<br>
-      Duration : {duration}<br>
-      Time Commitment : {timeCommitment}<br>
-      Team Size : {teamSize}
+      {startDate}<br>
+      {duration}<br>
+      {timeCommitment}<br>
+      {teamSize}
     </p>
     <div class="aboutVolunteering-frame3">
-      <h2>Responsibilities:</h2>
+      <h2>{responsibilitiesHeading}:</h2>
       <p>{responsibilities.split('\n').map(line => (
         <>{line}<br/></>
       ))}</p>
     </div>
     <div class="aboutVolunteering-frame4">
-      <h2>Requirements:</h2>
+      <h2>{requirementsHeading}:</h2>
       <p>{requirements.split('\n').map(line => (
         <>{line}<br/></>
       ))}</p>
     </div>
     <div class="aboutVolunteering-button-container">
-      <button class="aboutVolunteering-apply-button">Apply Now</button>
+      <button class="aboutVolunteering-apply-button">{applyNow}</button>
     </div>
   </div>
 </body>

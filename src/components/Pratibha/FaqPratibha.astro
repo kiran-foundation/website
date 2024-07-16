@@ -1,3 +1,9 @@
+---
+import { getEntry } from "astro:content";
+const faqPratibha = (await getEntry("pratibha", "faqpratibha")).data
+
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,30 +15,33 @@
 <body>
     <div class="faq-container-c1" style="width: 1200px; margin:auto;">
         <div class="faq-container-c2">
-            <h1 class="faq-title">Any questions? Check out the FAQ</h1>
-            <p class="faq-content">Certainly! The FAQ section provides answers to common questions. It covers a variety of topics and aims to address user queries efficiently.</p>
+            <h1 class="faq-title">{faqPratibha.title}</h1>
+            <p class="faq-content">{faqPratibha.paragraph}</p>
+            <div class="faq-image-content">
+                <img src={faqPratibha.image} alt="vectorImage">
+            </div>
         </div>
         <div class="faq-container-c3">
             <div class="faq-accordion">
                 <div class="faq-accordion-item">
-                    <div class="faq-accordion-question">Q. Is Kiran Pratibha Scholarship awarded only to economically challenged students?</div>
-                    <div class="faq-accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+                    <div class="faq-accordion-question">{faqPratibha.question1}</div>
+                    <div class="faq-accordion-answer">{faqPratibha.answer1}</div>
                 </div>
                 <div class="faq-accordion-item">
-                    <div class="faq-accordion-question">Q. Can more than one student from the same family apply for KPS?</div>
-                    <div class="faq-accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+                    <div class="faq-accordion-question">{faqPratibha.question2}</div>
+                    <div class="faq-accordion-answer">{faqPratibha.answer2}</div>
                 </div>
                 <div class="faq-accordion-item">
-                    <div class="faq-accordion-question">Q. How long do you provide scholarship to the students?</div>
-                    <div class="faq-accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+                    <div class="faq-accordion-question">{faqPratibha.question3}</div>
+                    <div class="faq-accordion-answer">{faqPratibha.answer3}</div>
                 </div>
                 <div class="faq-accordion-item">
-                    <div class="faq-accordion-question">Q. What are the major check points for scholarship?</div>
-                    <div class="faq-accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+                    <div class="faq-accordion-question">{faqPratibha.question4}</div>
+                    <div class="faq-accordion-answer">{faqPratibha.answer4}</div>
                 </div>
                 <div class="faq-accordion-item">
-                    <div class="faq-accordion-question">Q. What is the expectation of Kiran Foundation from the students selected in KP?</div>
-                    <div class="faq-accordion-answer">Yes, more than one student from the same family can also apply for the scholarship.</div>
+                    <div class="faq-accordion-question">{faqPratibha.question5}</div>
+                    <div class="faq-accordion-answer">{faqPratibha.answer5}</div>
                 </div>
             </div>
         </div>

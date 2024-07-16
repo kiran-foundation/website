@@ -1,3 +1,12 @@
+---
+import { getEntry } from "astro:content"
+const aboutPratibha =(await getEntry("pratibha", "aboutpratibha")).data
+
+---
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,10 +43,10 @@
             style="background: #F7FCFE;"
           >
             <h2 class="programe-title-h2 mb-xl-4">
-              Financial Support
+             {aboutPratibha.title}
             </h2>
             <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
-              Kiran Foundation is committed to empowering Pratibha students by addressing financial barriers to their education and career development. Through a tailored approach, the foundation covers career-building expenses based on each student's family financial circumstances, ensuring that no capable individual is hindered by economic constraints. The program extends beyond financial aid, offering comprehensive support with mentoring and additional resources. By nurturing the talents of Pratibha students, Kiran Foundation strives to unlock their full potential and facilitate their journey toward successful career goals. 
+              {aboutPratibha.description}
             </p>
           </div>
         </div>

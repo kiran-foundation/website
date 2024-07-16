@@ -1,3 +1,11 @@
+---
+import { getEntry } from "astro:content"
+const benefits = (await getEntry("pratibha", "benefits")).data
+
+
+
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,30 +19,30 @@
 <div class="aboutPratibha-container-c1" style="margin-top: 45px;">
     <div class="aboutPratibha-box">
       <div class="aboutPratibha-box-icon">
-        <img src="/assets/images/benefits/iconNew1.png" alt="Icon"> 
+        <img src={benefits.image.tutionfee} alt="Icon"> 
       </div>
-      <h3 class="aboutPratibha-box-heading">Tuition Fee</h3>
-      <p class="aboutPratibha-box-content">Education related fee e.g. School fee, Coaching fee, Exam fee.</p>
+      <h3 class="aboutPratibha-box-heading">{benefits.heading.tution}</h3>
+      <p class="aboutPratibha-box-content">{benefits.paragraph.tution}</p>
     </div>
     <div class="aboutPratibha-box">
       <div class="aboutPratibha-box-icon">
-        <img src="/assets/images/benefits/iconNew2.png" alt="Icon"> 
+        <img src={benefits.image.stationary} alt="Icon"> 
       </div>
-      <h3 class="aboutPratibha-box-heading">Stationery and Books </h3>
-      <p class="aboutPratibha-box-content">Stationery related fee e.g. books, notebooks,etc.</p>
+      <h3 class="aboutPratibha-box-heading">{benefits.heading.stationary} </h3>
+      <p class="aboutPratibha-box-content">{benefits.paragraph.stationary}</p>
     </div>
     <div class="aboutPratibha-box">
       <div class="aboutPratibha-box-icon">
-        <img src="/assets/images/benefits/iconNew3.png" alt="Icon"> 
+        <img src={benefits.image.equipment} alt="Icon"> 
       </div>
-      <h3 class="aboutPratibha-box-heading">Equipments </h3>
-      <p class="aboutPratibha-box-content">Equipments required for education e.g. Laptop and etc</p>
+      <h3 class="aboutPratibha-box-heading">{benefits.heading.equipments} </h3>
+      <p class="aboutPratibha-box-content">{benefits.paragraph.equipments}</p>
     </div>
     <div class="aboutPratibha-box">
       <div class="aboutPratibha-box-icon">
-        <img src="/assets/images/benefits/iconNew4.png" alt="Icon"> 
+        <img src={benefits.image.bording}  alt="Icon"> 
       </div>
-      <h3 class="aboutPratibha-box-heading">Boarding Expenses</h3>
-      <p class="aboutPratibha-box-content">Boarding Expenses e.g. hostel rent, PG rent</p>
+      <h3 class="aboutPratibha-box-heading">{benefits.heading.bording} </h3>
+      <p class="aboutPratibha-box-content">{benefits.paragraph.bording}</p>
     </div>
   </div>

@@ -1,39 +1,58 @@
-<!DOCTYPE html>
+---
+import { getEntry } from "astro:content";
+const selectionProcess =(await getEntry("pratibha", "selectionprocess")).data
+const common =(await getEntry( "common", "common")).data
+---
+
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selection Process</title>
-    <link rel="stylesheet" href="/assets/css/Pratibha/selectionProcess.css">
-</head>
-<body>
-    <div class="selectionProcess-highlight-container">
-        <div class="selectionProcess-section-title">Kiran Foundation Scholarship Programme for Students (Means Tested)</div>
-    </div>
-    <div class="selectionProcess-content-container">
-        <h4 class="selectionProcess-h4">Eligibility :</h4>
-        <p class="selectionProcess-p">Monthly income of the Family should be less than Rs. 20,000.<br>
-        Child should have passed 8th Standard or 14 Years of age.<br>
-        Child should have shown enormous potential in his/her field of interest.</p>
-    </div>
-    <div class="selectionProcess-documents-container">
-        <h4 class="selectionProcess-h4">Documents:</h4>
-        <p class="selectionProcess-p">Previous year's Marksheets<br>
-        Identity proof (Aadhaar Card/Voter ID/Driving License)<br>
-        Two recommendation letters from school principle / college principle and respectable person of your area.<br>
-        Income certificate.<br>
-        Details of family/personal crisis (if applicable)</p>
-    </div>
-    <div class="selectionProcess-apply-container">
-        <h4 class="selectionProcess-h4">How can you apply?</h4>
-        <p class="selectionProcess-p">Click on the Apply now button below<br>
-        Fill in the required details in the online application form.<br>
-        Upload relevant documents<br>
-        If all the details filled in the application are correctly showing on the preview screen, click on the ‘Submit’ button to complete the application process.</p>
-    </div>
-    
-    <div class="container mt-5">
-        <a class=" selectionProcess-apply-button btn btn-primary -pill " href="/volunteering">Apply Now</a>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Selection Process</title>
+        <link
+            rel="stylesheet"
+            href="/assets/css/Pratibha/selectionProcess.css"
+        />
+    </head>
+    <body>
+        <div class="selectionProcess-highlight-container">
+            <div class="selectionProcess-section-title">
+               {selectionProcess.heading}
+            </div>
+        </div>
+        <div class="selectionProcess-content-container">
+            <h4 class="selectionProcess-h4">{selectionProcess.eligiblity}</h4>
+            <ul class="selectionProcess-p">
+                <li>{selectionProcess.paragraph.list1}</li>
+                <li>{selectionProcess.paragraph.list2}</li>
+                <li>{selectionProcess.paragraph.list3}</li>
+            </ul>
+        </div>
+        <div class="selectionProcess-documents-container">
+            <h4 class="selectionProcess-h4">{selectionProcess.documents}</h4>
+            <ul class="selectionProcess-p">
+                <li>{selectionProcess.paragraphDocuments.list1}</li>
+                <li>{selectionProcess.paragraphDocuments.list2}</li>
+                <li>{selectionProcess.paragraphDocuments.list3}</li>
+                <li>{selectionProcess.paragraphDocuments.list4}</li>
+            </ul>
+        </div>
+        <div class="selectionProcess-apply-container">
+            <h4 class="selectionProcess-h4">{selectionProcess.apply}</h4>
+            <ul class="selectionProcess-p">
+                <li>{selectionProcess.applylist.list1}</li>
+                <li>{selectionProcess.applylist.list2}</li>
+                <li>{selectionProcess.applylist.list3}</li>
+                <li>{selectionProcess.applylist.list4}</li>
+            </ul>
+        </div>
+
+        <div class="container mt-5">
+            <a
+                class="selectionProcess-apply-button btn btn-primary -pill"
+                href="/pratibhaApply">{common.applyNow}</a
+            >
+        </div>
+    </body>
 </html>
