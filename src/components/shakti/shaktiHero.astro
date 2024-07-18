@@ -1,3 +1,10 @@
+---
+import { getEntry } from "astro:content";
+const heroData = (await getEntry("shakti", "shaktihero")).data
+
+---
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,13 +22,12 @@
     </div>
     <div class="container position-relative z-2 text-center pt-2 pt-sm-4 pt-lg-5">
       <h1 class="shakti-hero-title-h1 display-0 text-white pt-5 ">
-        A dedicated initiative aimed at fostering the development of women 
-    </h1>
+       {heroData.title}
       <p
         class="shakti-description-p text-white fs-xl opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5"
         style=" max-width: 640px;"
       >
-      "There is no force more powerful than a woman determined to rise."
+      {heroData.description}
     </p>
       
     </div>

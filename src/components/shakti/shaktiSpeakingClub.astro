@@ -1,3 +1,8 @@
+---
+import { getEntry } from "astro:content";
+const speakingClubData =(await getEntry("shakti","shaktispeaking")).data
+const common = (await getEntry ("common", "common")).data
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +23,7 @@
         >
           <img
             class="object-fit-cover w-100 h-100 rounded-3"
-            src="/assets/images/programs/speakingclubimg.png"
+            src={speakingClubData.image}
             alt="Image"
           />
         </div>
@@ -34,16 +39,16 @@
             style="background: #F7FCFE;"
           >
             <h2 class="programe-title-h2 mb-xl-4">
-                Speaking Club
+                {speakingClubData.heading}
             
             </h2>
             <p class="shaktiprograme-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
-                Our workshops and training programs are designed to empower women by enhancing their communication skills across various domains. In the realm of public speaking, we address the common challenges of fear and nervousness, guiding participants to overcome these obstacles and deliver impactful presentations with confidence and clarity. Through assertiveness training, and asserting their rights with poise. 
+               {speakingClubData.description}
             </p>
             <div class="mt-">
                 <a
                   class="shaktiprograme-knowmore-button btn btn-primary order-lg-3 d-none d-sm-inline-flex"
-                  href="/Pratibha">Know more</a
+                  href="/Pratibha">{common.knowMore}</a
                 >
               </div>
           </div>

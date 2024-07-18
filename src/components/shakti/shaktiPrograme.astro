@@ -1,3 +1,9 @@
+---
+import { getEntry } from "astro:content";
+const lawforwomenData = (await getEntry("shakti","shaktiprograme")).data
+const common = (await getEntry ("common", "common")).data
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +24,7 @@
         >
           <img
             class="object-fit-cover w-100 h-100 rounded-3"
-            src="/assets/images/programs/shaktiLaw.png"
+            src={lawforwomenData.image}
             alt="Image"
           />
         </div>
@@ -34,16 +40,15 @@
             style="background: #F7FCFE;"
           >
             <h2 class="programe-title-h2 mb-xl-4">
-                Law For Women
-            
+              {lawforwomenData.heading}
             </h2>
             <p class="shaktiprograme-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
-                Knowledge of laws and legal rights is crucial for women to protect themselves from discrimination, abuse, and injustice. We provide women with the information and resources they need to understand and assert their legal rights. Explore key legal frameworks and international conventions that protect women's rights. Learn about laws and support services available to survivors of domestic violence, sexual assault, and harassment. Understand your rights and options regarding marriage, divorce, custody, and inheritance.
+               {lawforwomenData.description}
             </p>
             <div class="mt-">
                 <a
                   class="shaktiprograme-knowmore-button btn btn-primary order-lg-3 d-none d-sm-inline-flex"
-                  href="/Pratibha">Know more</a
+                  href="/Pratibha">{common.knowMore}</a
                 >
               </div>
           </div>

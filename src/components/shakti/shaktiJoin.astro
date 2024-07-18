@@ -1,4 +1,7 @@
-
+---
+import { getEntry } from "astro:content";
+const shaktiJoinData =(await getEntry("shakti", "shakitjoin")).data
+---
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,7 +19,7 @@
                </div>
            </div>
        <div class="shaktiCard-image-container" style="margin-left: 50px;">
-        <img src=/assets/images/programs/women.png alt="Mentoring Image" />
+        <img src={shaktiJoinData.image} alt="Mentoring Image" />
       </div>
       <div class="shaktiCard-image-container-vector">
         <img src="/assets/images/benefits/Vector6.png" alt="Vector Image" />
@@ -27,13 +30,13 @@
       
       
       <div class="shaktiCard-content-container">
-        <h2>Start learning by Joining Sakti Group</h2>
-        <span class="shakti-join-text">Join us Now!</span>
+        <h2>{shaktiJoinData.title}</h2>
+        <span class="shakti-join-text">{shaktiJoinData.heading}</span>
 
       
             <a
             class="cardShakti-connect-button btn btn-primary -pill mt-4"
-            href="/">Connect on Whatsapp</a>
+            href="/">{shaktiJoinData.joinBtn}</a>
 
        
 

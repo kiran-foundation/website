@@ -1,3 +1,8 @@
+---
+import { getEntry } from "astro:content";
+const digitalSkillData =(await getEntry("shakti", "shaktidigitalskill")).data
+const common = (await getEntry ("common", "common")).data
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +26,7 @@
       >
         <img
           class="object-fit-cover w-100 h-100 rounded-3"
-          src="/assets/images/programs/imagedigitalskill.png"
+          src={digitalSkillData.image}
           alt="Image"
         />
       </div>
@@ -36,14 +41,14 @@
           class="d-flex flex-column h-100 rounded-3 py-5 px-4 px-lg-5"
           style="background: #F7FCFE;"
         >
-          <h2 class="programe-title-h2 mb-xl-4">Digital Skills</h2>
+          <h2 class="programe-title-h2 mb-xl-4">{digitalSkillData.heading}</h2>
           <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
-            In today's digital age, access to technology and digital skills are essential for full participation in society and the economy. We are committed to closing the digital gender gap by providing women with the digital skills they need to thrive. Learn how to use essential software and navigate the internet with confidence. Master email etiquette, online collaboration tools, and social media platforms for networking and advocacy.
+           {digitalSkillData.description}
           </p>
           <div class="mt-">
             <a
               class="shaktiprograme-knowmore-button btn btn-primary order-lg-3 d-none d-sm-inline-flex"
-              href="/Pratibha">Know more</a
+              href="/Pratibha">{common.knowMore}</a
             >
           </div>
           
