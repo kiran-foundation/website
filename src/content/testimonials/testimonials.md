@@ -22,14 +22,15 @@ testimonials:
     tags: [home, pratibha]
 
   
-  - image: '/assets/images/hero/hero-image.jpg'
-    name: 'Ankit Sharma'
-    location: 'Bhopal, Madhya Pradesh'
-    text: 'Kiran Foundation has opened new opportunities for me.'
+  - image: '/assets/images/people/naman.png'
+    name: 'Naman Jain'
+    location: 'Sagar, Madhya Pradesh'
+    text: 'Kiran Foundation not only proivde financial support but also provide proper mentorship and guidence. Guided by experienced members who are not just advisors but genuine mentors, Kiran Foundation offers a roadmap to success carved from their own journeys. The unique quality of fostering a sense of familial camaraderie is what sets it apart Kiran Foundation from other scholarship schemes.
+❤️👍'
     tags: [shakti]
-  - image: '/assets/images/hero/hero-image.jpg'
-    name: 'Sonal Verma'
-    location: 'Gwalior, Madhya Pradesh'
-    text: 'The mentorship program is excellent.'
+  - image: '/assets/images/people/shreya1.png'
+    name: 'Shreya Jain'
+    location: 'Sagar, Madhya Pradesh'
+    text: 'Ever since I joined Kiran Foundation I have only one thing to say, that KIRAN FOUNDATION is not just an organization; it is a close-knit family. It not only extends financial assistance but also provides invaluable emotional support.'
     tags: [shakti]
 ---
