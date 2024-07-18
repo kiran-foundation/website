@@ -15,6 +15,8 @@ import Footer from "../components/common/Footer.astro";
 
 
 import Testimonial from "../components/common/Testimonial.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+import Heading from "../components/common/heading.astro";
 
 ---
 
@@ -195,13 +197,9 @@ import Testimonial from "../components/common/Testimonial.astro";
       <Values />
       <Statistics />
       <Programs />
-      <Volunteer />
-      
-      <Testimonial/>
-
-      
-      
-      
+      <Volunteer/>
+      <Heading title="Testimonials"/>
+      <TestimonialsCarousel pageTag="home"/>
       <Updates showHighPriorityOnly={true} isMainPage={true} />
       <Partners />
       <Footer/>

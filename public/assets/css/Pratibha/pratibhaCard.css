@@ -1,88 +1,149 @@
 .pratibhaCard-container {
-    font-family: 'Poppins', sans-serif;
-    width: 1296px;
-    height: 423px;
-    border-radius: 18px;
-    background: #051D40;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-    margin-bottom: 5%;
-    margin-top: 5%;
-  }
+  font-family: 'Poppins', sans-serif;
+  width: 1296px;
+  height: 423px;
+  border-radius: 18px;
+  background: #051D40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 5%;
+  margin-top: 5%;
+ 
   
-  .pratibhaCard-image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  .pratibhaCard-image-container img {
-    width: 526px;
-    height: 319px;
-    border-radius: 70px;
-    object-fit: cover;
-  }
-  
-  .pratibhaCard-content-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .pratibhaCard-content-container h2 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 48px;
-    color: #ffffff;
-    margin: 0 0 20px 0;
-    padding-bottom: 4%;
-    width: 444px;
-    height: 96px;
-    margin-left: 30px;
-  }
-  
- .cardPratibha-join-button  {
-    width: 193px;
-    height: 48px;
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: 1px solid #F1592A;
-    background: #F1592A;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
-    transition: background 0.3s;
-    margin-left: 30px;
-   
-  }
-  
-  .cardPratibha-join-button:hover {
-    background: #d1481f;
-  }
+}
 
-  .pratibhaCard-image-container-vector{
+.pratibhaCard-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
+ 
+}
+
+.pratibhaCard-image-container img {
+  width: 526px;
+  height: 319px;
+  border-radius: 70px;
+  object-fit: cover;
+  margin-left: -20px;
+  margin-top: 5px;
+  
+}
+
+.pratibhaCard-content-container,.shaktiCard-content-container{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pratibhaCard-content-container h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  padding-bottom: 4%;
+  width: 444px;
+  height: 96px;
+  margin-left: 30px;
+}
+
+.cardPratibha-join-button {
+  width: 193px;
+  height: 48px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #F1592A;
+  background: #F1592A;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s;
+  margin-left: 30px;
+
+}
+
+.cardPratibha-join-button:hover {
+  background: #d1481f;
+}
+
+.pratibhaCard-image-container-vector {
+  position: relative;
+  top: -112px;
+  left: -50px;
+  width: 96.18px;
+  height: 125px;
+  rotate: z -7deg;
+}
+
+.shaktiCard-content-container h2{
+  width: 336px;
+  height: 72px;
+  font-family: Poppins, sans-serif;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: left;
+  color: #ffff;
+  margin-top: -40px;
+  margin-left: 80px;
+
+}
+
+.pratibhaCard-image-container-vectorstar{
     position:relative;
-    top:-112px;
-    left: -50px;
-    width:96.18px;
-    height: 125px;
-    rotate: z -7deg;
-  }
-  /* .pratibhaCard-image-container-vectorstar{
-    position:absolute;
-   
-   
-    width: 40.01px;
-    height: 40.01px;
-    border: 1px solid red;
-  } */
+    width: 49px;
+    height: 49px;
+    top:-170px;
+    left: 15px;
+}
+.shaktiCard-image-container-vector{
+  position: relative;
+  top: -120px;
+  left: -70px;
+  width: 96.18px;
+  height: 125px;
+  rotate: z -5deg;
+}
+.shaktiCard-image-container-ellipse{
+  width:48px;
+  height:48px;
+  position:relative;
+  top:150px;
+  left: 40px;
+}
+ .shaktiCard-image-container-ellipseSmall{
+  width:20px;
+  height:20px;
+  position: relative;
+  top:250px;
+  left: 70px;
+}
+.shaktiCard-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffff;
+  border-radius: 70px;
+  margin-left: -40px;
+}
+
+.shaktiCard-image-container img {
+  width: 526px;
+  height: 319px;
+  border-radius: 70px;
+  object-fit: cover;
+  margin-left: -20px;
+  margin-top: 5px;
+  
+}

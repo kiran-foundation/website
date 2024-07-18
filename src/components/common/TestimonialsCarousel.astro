@@ -10,27 +10,37 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
 );
 ---
 
-<div class="carousel" style="margin-bottom: 45px;">
-    <div class="carousel-inner">
-        {
-            testimonials.map((testimonial, index) => (
-                <div class="carousel-item mt-5" data-index={index}>
-                    <TestimonialComponent {...testimonial} />
-                </div>
-            ))
-        }
-    </div>
-    <div class="carousel-controls">
-        {
-            Array(Math.ceil(testimonials.length / 2))
-                .fill()
-                .map((_, index) => (
-                    <span class="carousel-bullet" data-index={index} />
-                ))
-        }
-    </div>
-</div>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TestimonialCarousel</title>
+    </head>
 
+    <body>
+        <div class="carousel" style="margin-bottom: 45px;">
+            <div class="carousel-inner">
+                {
+                    testimonials.map((testimonial, index) => (
+                        <div class="carousel-item mt-5" data-index={index}>
+                            <TestimonialComponent {...testimonial} />
+                        </div>
+                    ))
+                }
+            </div>
+            <div class="carousel-controls">
+                {
+                    Array(Math.ceil(testimonials.length / 2))
+                        .fill()
+                        .map((_, index) => (
+                            <span class="carousel-bullet" data-index={index} />
+                        ))
+                }
+            </div>
+        </div>
+    </body>
+</html>
 <style>
     .carousel {
         position: relative;
@@ -38,15 +48,11 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
         max-width: 1200px;
         margin: auto;
         overflow: hidden;
-        
-        
     }
 
     .carousel-inner {
         display: flex;
         transition: transform 0.5s ease-in-out;
-       
-        
     }
 
     .carousel-item {
@@ -60,15 +66,12 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
         align-items: center;
         justify-content: space-between;
         overflow: hidden;
-       
     }
 
     .carousel-controls {
         display: flex;
         justify-content: center;
         margin-top: 25px;
-        
-
     }
 
     .carousel-bullet {
