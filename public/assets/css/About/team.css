@@ -10,10 +10,11 @@
     font-size: 40px;
     font-weight: 600;
     line-height: 52px;
-
-    text-align: center;
+    text-align: left;
     color: #121519;
     margin-bottom: 40px;
+    margin-top:30px;
+
 }
 
 .team-cards {

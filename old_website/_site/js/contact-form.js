@@ -1,4 +1,4 @@
-document.getElementById("contact-form").addEventListener('submit', (e) => {
+document.getElementById("contact-form").addEventListener('submit', () => {
     setTimeout(function () {
         var contactForm = document.getElementById("contact-form-div")
         contactForm.setAttribute("style", "-webkit-animation: fadeOut 1s; animation: fadeOut 1s;  animation-fill-mode: forwards;");
