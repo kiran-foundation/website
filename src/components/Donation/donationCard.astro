@@ -1,3 +1,8 @@
+---
+import { getEntry } from "astro:content"
+const cardData =(await getEntry("donation","donationcard")).data
+---
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -12,14 +17,13 @@
                 <div class="donationCard-container-second">
                     <div class="donation-container-detail">
                         <div class="donation-heading">
-                            Empower the Future of India with Kiran foundation
+                            {cardData.title}
                         </div>
                         <div class="donation-paragraph">
-                            We can't help everyone, but everyone can help
-                            someone
+                            {cardData.paragraph}
                         </div>
                         <div class="donation-btn">
-                            <a class="donation-link" href="/">Donate Now</a>
+                            <a class="donation-link" href="/">{cardData.cardBtn}</a>
                         </div>
                     </div>
                     <div class="donation-container-image">
@@ -27,17 +31,17 @@
                             
                             <img
                                 class="Image-first"
-                                src="/assets/images/programs/bar chart1.png"
+                                src={cardData.imagebarChart}
                                 alt="barChart"
                             />
                             <img
                                 class="Image-second"
-                                src="/assets/images/programs/linechart.png"
+                                src={cardData.imagelineChart}
                                 alt="lineChart"
                             />
                             <img
                                 class="Image-third"
-                                src="/assets/images/programs/donutchart.png"
+                                src={cardData.imagedonutChart}
                                 alt="donutChart"
                             />
                         </div>

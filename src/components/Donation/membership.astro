@@ -1,3 +1,8 @@
+---
+import { getEntry } from "astro:content"
+const memberShipData =(await getEntry("donation","membership")).data
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,41 +13,41 @@
 </head>
 <body>
     <div class="donation-c1">
-        <div class="donation-c1-title">Membership & Sponsorship Options</div>
+        <div class="donation-c1-title">{memberShipData.title}</div>
         <div class="donation-card-container">
             <div class="donation-card">
-                <div class="donation-card-title1">Premier Supporter</div>
-                <div class="donation-card-title2">1Lakh</div>
-                <div class="donation-card-permonth">per month</div>
-                <div class="donation-card-text">Support our cause with a monthly donation of 1 Lakh.</div>
-                <div><a class="donation-card-button" href="/">Donate now</a></div>
+                <div class="donation-card-title1">{memberShipData.cardOneData.heading}</div>
+                <div class="donation-card-title2">{memberShipData.cardOneData.lakh}</div>
+                <div class="donation-card-permonth">{memberShipData.cardOneData.permonth}</div>
+                <div class="donation-card-text">{memberShipData.cardOneData.paragraph}</div>
+                <div><a class="donation-card-button" href="/">{memberShipData.membershipCardBtn}</a></div>
                 </div>
             <div class="donation-card">
-                <div class="donation-card-title1">Supporter</div>
-                <div class="donation-card-title2">1Lakh</div>
-                <div class="donation-card-permonth"> or a monthly donation of 10K.</div>
-                <div class="donation-card-text">Support our cause with a yearly donation of 1Lakh or a monthly donation of 10K.</div>
-                <div><a class="donation-card-button" href="/">Donate now</a></div>
+                <div class="donation-card-title1">{memberShipData.cardSecondData.heading}</div>
+                <div class="donation-card-title2">{memberShipData.cardSecondData.lakh}</div>
+                <div class="donation-card-permonth"> {memberShipData.cardOneData.permonth}</div>
+                <div class="donation-card-text">{memberShipData.cardSecondData.paragraph}</div>
+                <div><a class="donation-card-button" href="/">{memberShipData.membershipCardBtn}</a></div>
             </div>
             <div class="donation-card">
-                <div class="donation-card-title3">Donate a laptop to support Students</div>
-                <div class="donation-card-text">Donate a laptop to support ducational initiatives.</div>
-                <div class="donate-btn3"><a class="donation-card-button" href="/">Donate now</a></div>
+                <div class="donation-card-title3">{memberShipData.cardThirdData.heading}</div>
+                <div class="donation-card-text">{memberShipData.cardThirdData.paragraph}</div>
+                <div class="donate-btn3"><a class="donation-card-button" href="/">{memberShipData.membershipCardBtn}</a></div>
             </div>
             <div class="donation-card">
-                <div class="donation-card-title4">Sponsor a Student for One Year</div>
-                <div class="donation-card-text4">Sponsor a student for one year and provide them with educational resources.</div>
-                <div class="donate-btn4"><a class="donation-card-button" href="/">Donate now</a></div>
+                <div class="donation-card-title4">{memberShipData.cardFourthData.heading}</div>
+                <div class="donation-card-text4">{memberShipData.cardFourthData.paragraph}</div>
+                <div class="donate-btn4"><a class="donation-card-button" href="/">{memberShipData.membershipCardBtn}</a></div>
             </div>
             <div class="donation-card">
-                <div class="donation-card-title1">Sponsor a Pratibha  student for Full Duration</div>
-                <div class="donation-card-text">Sponsor a Pratibha for the full   duration of their education.</div>
-                <div class=""><a class="donation-card-button" href="/">Donate now</a></div>
+                <div class="donation-card-title1">{memberShipData.cardFifthData.heading}</div>
+                <div class="donation-card-text">{memberShipData.cardFifthData.paragraph}</div>
+                <div class=""><a class="donation-card-button" href="/">{memberShipData.membershipCardBtn}</a></div>
             </div>
             <div class="donation-card">
-                <div class="donation-card-title6">Any amount you want to donate</div>
-                <div class="donation-card-text6">Donate a laptop to support ducational initiatives.</div>
-                <div class="donate-btn6"><a class="donation-card-button" href="/">Donate now</a></div>
+                <div class="donation-card-title6">{memberShipData.cardSixthData.heading}</div>
+                <div class="donation-card-text6">{memberShipData.cardSixthData.paragraph}</div>
+                <div class="donate-btn6"><a class="donation-card-button" href="/">{memberShipData.membershipCardBtn}</a></div>
             </div>
         </div>
     </div>
