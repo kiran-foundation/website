@@ -4,7 +4,7 @@
     width: 1296px;
     height: 590px;
     left: 30px;
-    top: 3015px;
+    top: 2815px;
     gap: 0px;
     border-radius: 36px;
     background: var(--royal-blue, #051D40);
@@ -75,4 +75,5 @@
     top: 311px;
     left: 968px;
     gap: 0px;
+   
 }
