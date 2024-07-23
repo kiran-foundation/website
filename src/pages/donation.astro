@@ -8,6 +8,9 @@ import MissionDonation from "../components/Donation/missionDonation.astro";
 import Statistics from "../components/Home/Statistics.astro";
 import FaqPratibha from "../components/Pratibha/FaqPratibha.astro";
 import DonationHero from "../components/Donation/donationHero.astro";
+import DonationFaq from "../components/Donation/donationFaq.astro";
+import DonationStatistics from "../components/Donation/donationStatistics.astro";
+import DonationCard from "../components/Donation/donationCard.astro";
 
 
 interface Props {
@@ -167,10 +170,11 @@ AOS.init();
   <main class="page-wrapper">
     <Header/>
      <DonationHero/>
-    <Membership/>
+     <Membership/>
     <MissionDonation/>
-    <Statistics/>
-    <FaqPratibha/>
+     <DonationStatistics/>
+    <DonationFaq/>
+    <DonationCard/>
   </main>
   
   <!-- Back to top button -->
