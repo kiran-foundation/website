@@ -17,15 +17,15 @@ const faqPratibha = (await getEntry("pratibha", "faqpratibha")).data;
     </head>
     <body>
         <div class="faq-container-c1">
-            <div class="faq-container-c2">
+            <div class="faq-container-c2" style="width: 450px;">
                 <h1 class="faq-title">{faqPratibha.title}</h1>
                 <p class="faq-content">{faqPratibha.paragraph}</p>
                 <div class="faq-image-content">
                     <img src={faqPratibha.image} alt="vectorImage" />
                 </div>
             </div>
-            <div class="faq-container-c3" style="margin-left:50px;">
-                <div class="faq-accordion">
+            <div class="faq-container-c3" style="margin-left: 20px;">
+                <div class="faq-accordion" style="width: 400px;">
                     <div class="faq-accordion-item">
                         <div class="faq-accordion-question">
                             {faqPratibha.question1}

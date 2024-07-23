@@ -1,10 +1,13 @@
 .apply-container {
-    position: relative;
+    position:relative;
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
     font-family: Poppins, sans-serif;
+    width: 1296px;
+    
 }
+
 .apply-title {
     width: 756px;
     height: 108px;
@@ -16,36 +19,41 @@
     color: #F1592A;
     padding: 10px;
 }
+
 .apply-subtitle {
-    width: 1027px;
+    width: 1050px;
     height: 42px;
     margin: 20px auto;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
     color: #000000;
     padding: 10px;
+
 }
+
 .apply-highlight-container {
     background: #E5F1FF;
-    width: 1208px;
+    width: 1000px;
     height: 60px;
-    margin: 20px auto;
+    margin: 40px auto;
     border-radius: 8px 0px 0px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
 }
+
 .apply-highlight-text {
     width: 808px;
     height: 24px;
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 21px;
+    font-weight: 600;
     line-height: 24px;
     color: #2B2E36;
-}
+   }
+
 .apply-apply-button {
     width: 195px;
     height: 48px;
@@ -58,14 +66,33 @@
     border: none;
     cursor: pointer;
 }
-.apply-content-container, .apply-documents-container, .apply-apply-container {
+
+.apply-link {
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    color: #F7FCFF;
+    text-decoration: none;
+    width: 147px;
+    height: 24px;
+
+}
+
+.apply-content-container,
+.apply-documents-container,
+.apply-apply-container {
     width: 1037px;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
-.apply-content-container p, .apply-documents-container p, .apply-apply-container p {
+
+.apply-content-container p,
+.apply-documents-container p,
+.apply-apply-container p {
     color: #000000;
     padding: 20px;
     border-radius: 8px;
@@ -74,6 +101,7 @@
     line-height: 27px;
     text-align: justify;
 }
+
 .apply-h4 {
     font-size: 32px;
     font-weight: 700;
@@ -81,7 +109,10 @@
     color: #051D40;
     margin: 0;
 }
-.apply-content-container h4, .apply-documents-container h4, .apply-apply-container h4 {
+
+.apply-content-container h4,
+.apply-documents-container h4,
+.apply-apply-container h4 {
     color: #F1592A;
     padding: 10px;
     border-radius: 8px;
@@ -89,6 +120,7 @@
     font-weight: 500;
     line-height: 36px;
 }
+
 .apply-download-button {
     width: 308px;
     height: 48px;
@@ -104,6 +136,7 @@
     cursor: pointer;
     display: inline-block;
 }
+
 .apply-google-form {
     font-size: 18px;
     font-weight: 400;
@@ -111,4 +144,53 @@
     color: #F1592A;
     display: inline-block;
     margin-left: 20px;
+}
+
+.apply-documents-list {
+    color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: justify;
+    margin-top: -75px;
+
+}
+
+.apply-additional-data {
+    color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: justify;
+    margin-top: -20px;
+    margin-left: -10px;
+
+}
+
+.apply-image {
+    position:absolute;
+    top: 1010px;
+    left: 800px;
+}
+
+.image-hero {
+    height: 370px ;
+    width: 440px;
+    border-radius: 20px;
+}
+
+.app-download-link {
+    width: 260px;
+    height: 24px;
+    text-decoration: none;
+    color: #F7FCFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
 }
