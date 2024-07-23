@@ -2,11 +2,11 @@
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const roleFile = import.meta.glob('/src/content/volunteering/Roles/*.md');
-const staticTextsFile = import.meta.glob('/src/content/volunteer/StaticTexts.md');
+const roleFile = import.meta.glob('/src/content/work/volunteer/*.md');
+const staticTextsFile = import.meta.glob('/src/content/work/StaticTexts.md');
 
 const role = await (async () => {
-  const volunteerPath = `/src/content/volunteering/Roles/${Astro.props.path}.md`;
+  const volunteerPath = `/src/content/work/volunteer/${Astro.props.path}.md`;
   const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
