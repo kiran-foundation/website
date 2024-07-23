@@ -1,6 +1,5 @@
 ---
 import TestimonialComponent from "./TestimonialComponent.astro";
-
 import { getEntry } from "astro:content";
 const testimonialsData = (await getEntry("testimonials", "testimonials")).data;
 const common = (await getEntry("common", "common")).data;
@@ -41,6 +40,24 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
         </div>
     </body>
 </html>
+const testimonials = testimonialsData.testimonials.filter(testimonial => testimonial.tag === pageTag);
+---
+
+<div class="carousel">
+    <div class="carousel-inner">
+        {testimonials.map((testimonial, index) => (
+            <div class="carousel-item" data-index={index}>
+                <TestimonialComponent {...testimonial} />
+            </div>
+        ))}
+    </div>
+    <div class="carousel-controls">
+        {Array(Math.ceil(testimonials.length / 2)).fill().map((_, index) => (
+            <span class="carousel-bullet" data-index={index}></span>
+        ))}
+    </div>
+</div>
+
 <style>
     .carousel {
         position: relative;
