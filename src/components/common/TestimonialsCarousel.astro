@@ -1,10 +1,5 @@
 ---
-<<<<<<< HEAD
 import TestimonialComponent from "./TestimonialComponent.astro";
-=======
-import TestimonialComponent from './TestimonialComponent.astro';
-
->>>>>>> a347e87 (fix homepage)
 import { getEntry } from "astro:content";
 const testimonialsData = (await getEntry("testimonials", "testimonials")).data;
 const common = (await getEntry("common", "common")).data;
@@ -12,10 +7,7 @@ const { pageTag } = Astro.props;
 const testimonials = testimonialsData.testimonials.filter((testimonial) =>
     testimonial.tags.includes(pageTag),
 );
-const testimonials = testimonialsData.testimonials.filter(testimonial =>  testimonial.tags.includes(pageTag) );
 ---
-
-<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
     <head>
@@ -23,22 +15,6 @@ const testimonials = testimonialsData.testimonials.filter(testimonial =>  testim
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>TestimonialCarousel</title>
     </head>
-=======
-<div class="carousel mt-5">
-    <div class="carousel-inner">
-        {testimonials.map((testimonial, index) => (
-            <div class="carousel-item" data-index={index}>
-                <TestimonialComponent {...testimonial} />
-            </div>
-        ))}
-    </div>
-    <div class="carousel-controls">
-        {Array(Math.ceil(testimonials.length / 2)).fill().map((_, index) => (
-            <span class="carousel-bullet" data-index={index}></span>
-        ))}
-    </div>
-</div>
->>>>>>> a347e87 (fix homepage)
 
     <body>
         <div class="carousel" style="margin-bottom: 45px;">
