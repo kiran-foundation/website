@@ -77,3 +77,11 @@
     gap: 0px;
    
 }
+.group-icon{
+    position: absolute;
+    width:46.62px ;
+    height:46.62px ;
+    left: 690px;
+    top:45px;
+    rotate: 7deg;
+}

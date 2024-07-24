@@ -1,28 +1,37 @@
 ---
 import { remark } from 'remark';
 import html from 'remark-html';
-const allVolunteering = import.meta.glob('/src/content/volunteering/*.md');
-const staticTextsFile = import.meta.glob("/src/content/volunteer/StaticTexts.md");
 
-const volunteering = await Promise.all(
-  Object.values(allVolunteering).map(async (volunteer) => {
-    const { frontmatter, default: content } = await volunteer();
-    const processedContent = await remark().use(html).process(content);
-    return { ...frontmatter, content: processedContent.toString() };
-  })
-);
+const allVolunteering = import.meta.glob('/src/content/work/volunteer/*.md');
+const staticTextsFile = import.meta.glob("/src/content/work/StaticTexts.md");
 
-const staticTexts = await (async () => {
+const loadVolunteeringData = async () => {
+  return await Promise.all(
+    Object.values(allVolunteering).map(async (volunteer) => {
+      const { frontmatter, default: content } = await volunteer();
+      const processedContent = await remark().use(html).process(content);
+      return { ...frontmatter, content: processedContent.toString() };
+    })
+  );
+};
+
+const loadStaticTexts = async () => {
   const staticFilePath = Object.keys(staticTextsFile)[0];
-  const staticFile = staticTextsFile[staticFilePath];
-
-  if (staticFile) {
-    const { frontmatter } = await staticFile();
-    return frontmatter;
-  } else {
-    return null;
+  if (!staticFilePath) {
+    throw new Error('Static texts file path not found');
   }
-})();
+
+  const staticFile = staticTextsFile[staticFilePath];
+  if (!staticFile) {
+    throw new Error('Static texts file not found');
+  }
+
+  const { frontmatter } = await staticFile();
+  return frontmatter;
+};
+
+const volunteering = await loadVolunteeringData();
+const staticTexts = await loadStaticTexts();
 
 if (!staticTexts) {
   throw new Error('Static texts not found');
@@ -36,7 +45,7 @@ const filteredVolunteering = volunteering
 
 const volunteeringToDisplay = showHighPriorityOnly ? filteredVolunteering.slice(0, 3) : filteredVolunteering;
 
-const { chooseVolunteering, applyNow, seeMore, Requirements} = staticTexts;
+const { chooseVolunteering, applyNow, seeMore, Requirements } = staticTexts;
 ---
 
 <html lang="en">
@@ -45,12 +54,14 @@ const { chooseVolunteering, applyNow, seeMore, Requirements} = staticTexts;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/Volunteering/ChooseVolunteering.css">
   <script>
-    document.querySelector('.mainVolunteering-sub-container').addEventListener('click', function(event) {
-      if (event.target.classList.contains('mainVolunteering-btn-apply')) {
-        const card = event.target.closest('.mainVolunteering-card');
-        const index = Array.from(this.children).indexOf(card);
-        window.location.href = `/volunteering/${index + 1}`;
-      }
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.mainVolunteering-sub-container').addEventListener('click', function(event) {
+        if (event.target.classList.contains('mainVolunteering-btn-apply')) {
+          const card = event.target.closest('.mainVolunteering-card');
+          const index = Array.from(this.children).indexOf(card);
+          window.location.href = `/volunteering/${index + 1}`;
+        }
+      });
     });
   </script>
 </head>
@@ -62,11 +73,11 @@ const { chooseVolunteering, applyNow, seeMore, Requirements} = staticTexts;
         <div class={`mainVolunteering-card`} id={`c${index + 1}`} key={index}>
           <div>
             <h3 class="mainVolunteering-card-heading">{volunteer.title}</h3>
-            <p class="mainVolunteering-card-subheading">{volunteer.commitment}</p>
+            <p class="mainVolunteering-card-subheading">{volunteer.timeCommitment}</p>
             <h4 class="mainVolunteering-card-description-title">{Requirements}:</h4>
             <ul class="mainVolunteering-card-description">
-              {volunteer.description.split('.').filter(desc => desc.trim() !== '').map((point, i) => (
-                <li key={i}>{point.trim()}</li>
+              {(volunteer.requirements ? volunteer.requirements.split('\n').filter(desc => desc.trim() !== '') : []).map((point, i) => (
+                <li key={i}>{point.trim().replace(/^-\s*/, '')}</li>
               ))}
             </ul>
           </div>

@@ -25,7 +25,7 @@ const memberShipData =(await getEntry("donation","membership")).data
             <div class="donation-card">
                 <div class="donation-card-title1">{memberShipData.cardSecondData.heading}</div>
                 <div class="donation-card-title2">{memberShipData.cardSecondData.lakh}</div>
-                <div class="donation-card-permonth"> {memberShipData.cardOneData.permonth}</div>
+                <div class="donation-card-permonth"> {memberShipData.cardSecondData.permonth}</div>
                 <div class="donation-card-text">{memberShipData.cardSecondData.paragraph}</div>
                 <div><a class="donation-card-button" href="/">{memberShipData.membershipCardBtn}</a></div>
             </div>

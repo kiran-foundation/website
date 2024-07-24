@@ -13,10 +13,23 @@ const common = (await getEntry("common", "common")).data;
 </head>
 <body>
   
+import { getEntry } from "astro:content";
+const programs = (await getEntry("home", "programs")).data;
+const common = (await getEntry("common", "common")).data;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programe</title>
+    <link rel="stylesheet" href="/assets/css/Home/Global.css">
+</head>
+<body>
+  
 <div class="col d-flex justify-content-center">
   <img
     class="d-dark-mode-none"
-    src="/assets/images/programs/program.png"
     src="/assets/images/programs/program.png"
     width="544"
     alt="Image"
