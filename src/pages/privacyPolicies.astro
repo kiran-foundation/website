@@ -1,8 +1,9 @@
 ---
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
-import Header from "../components/common/Header.astro";
-import Footer from "../components/common/Footer.astro";
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -15,255 +16,149 @@ import Footer from "../components/common/Footer.astro";
 <link rel="stylesheet" href="/assets/css/theme.min.css" />
 <link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
 
-<html lang="en" data-bs-theme="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
-    />
-    <title>Privacy Policy - Kiran Foundation</title>
-    <meta
-      name="description"
-      content="Kiran Foundation - Privacy Policy"
-    />
-    <meta
-      name="keywords"
-      content="privacy policy, Kiran Foundation, data protection, user privacy"
-    />
-    <meta name="author" content="Kiran Foundation" />
-    <link rel="manifest" href="/manifest.json" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/app-icons/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="assets/app-icons/apple-icon-180x180.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-      id="google-font"
-    />
-    <style>
-      #space {
-        height: 100px;
-      }
-    </style>
-  </head>
+<Layout title="Privacy Policy - Kiran Foundation">
+  <main class="page-wrapper">
+    <Header />
+    
+    <section class="privacy-policy-section">
+      <div id="space"></div>
+      <div class="container main-box">
+        <h2 class="page_title">Privacy Policy - Kiran Social Foundation</h2>
+        <ul>
+            <li>
+                <p>This Privacy Policy explains how we collect, use, and protect information in relation to our mobile application.</p>
+            </li>
+            <li>
+                <p>By using our application, you understand and agree that we are providing a platform for you to receive information from the Kiran Social Foundation.</p>
+            </li>
+            <li>
+                <p>Our Policy applies to all visitors, users, and others who access the mobile application</p>
+            </li>
+        </ul>
+        <p class="head">1. INFORMATION WE COLLECT</p>
+        <p>We collect the following types of information:</p>
+        <p class="head">Information you provide us directly:</p>
+        <ul>
+            <li>
+                <p>Your e-mail address and application preferences when you register for the application. This information allows us to identify you uniquely.</p>
+            </li>
+            <li>
+                <p>Communications between you and the Kiran Social Foundation. For example, we may send you application-related emails (e.g., account verification, changes/updates to features of the application, technical and security notices). Note that you may not opt out of application-related e-mails.</p>
+            </li>
+        </ul>
+        <p class="head">Analytics information:</p>
+        <ul>
+            <li>
+                <p>We may use third-party analytics tools to help us measure traffic and usage trends for the application. These tools collect information sent by your device or our application, including the pages you visit, add-ons, and other information that assists us in improving the application. We collect and use this analytics information with analytics information from other Users so that it cannot reasonably be used to identify any particular individual User.</p>
+            </li>
+        </ul>
+        <p class="head">Cookies and similar technologies:</p>
+        <ul>
+            <li>
+                <p>When you visit the application, we may use cookies and similar technologies to collect information about how you use the application and provide features to you.</p>
+            </li>
+        </ul>
+        <p class="head">Log file information:</p>
+        <ul>
+            <li>
+                <p>Log file information is automatically reported by your device each time you make a request to access (i.e., visit) the application. It can also be provided when the content of the application is downloaded to your browser or device.</p>
+            </li>
+            <li>
+                <p>When you use our application, our servers automatically record certain log file information, including your request, Internet Protocol (&quot;IP&quot;) address, browser type, referring / exit pages and URLs, number of clicks and how you interact with links on the application, domain names, landing pages, pages viewed, and other such information. We may also collect similar information from emails sent to our Users which then help us track which emails are opened and which links are clicked by recipients. The information allows for more accurate reporting and improvement of the application.</p>
+            </li>
+        </ul>
+        <p class="head">Device identifiers:</p>
+        <ul>
+            <li>
+                <p>When you use a mobile device like a tablet or phone to access our application, we may access, collect, monitor, store on your device, and/or remotely store one or more &quot;device identifiers.&quot; Device identifiers are small data files or similar data structures stored on or associated with your mobile device, which uniquely identify your mobile device. A device identifier may be data stored in connection with the device hardware, data stored in connection with the device's operating system or other software.</p>
+            </li>
+            <li>
+                <p>A device identifier may deliver information to us or to a third-party partner about how you browse and use the application and may help us or others provide reports or personalized content and ads. Some features of the application may not function properly if use or availability of device identifiers is impaired or disabled.</p>
+            </li>
+        </ul>
+        <p class="head">2. HOW WE USE YOUR INFORMATION</p>
+        <p>In addition to some of the specific uses of information we describe in this Privacy Policy, we may use information that we receive to:</p>
+        <ul>
+            <li><p>Help you efficiently access your information</p></li>
+            <li><p>Remember information so you will not have to re-enter it during your visit or the next time you visit the application</p></li>
+            <li><p>Provide, improve, test, and monitor the effectiveness of our application</p></li>
+            <li><p>Develop and test new products and features</p></li>
+            <li><p>Monitor metrics such as total number of visitors, traffic, and demographic patterns</p></li>
+            <li><p>Diagnose or fix technology problems</p></li>
+            <li><p>Automatically update the application on your device</p></li>
+        </ul>
+        <p class="head">3. SHARING OF YOUR INFORMATION</p>
+        <p>We will not rent or sell your information to third parties.</p>
+        <p class="head">Parties with whom we may share your information:</p>
+        <ul>
+            <li>
+                <p>We may share User Content and your information (including but not limited to, information from cookies, log files, device identifiers, location data, and usage data) to help provide, understand, and improve the application.</p>
+            </li>
+            <li>
+                <p>We also may share your information as well as information from tools like cookies, log files, and device identifiers and location data, with third-party organizations that help us provide the application to you (&quot;Service Providers&quot;). Our Service Providers will be given access to your information as is reasonably necessary to provide the application under reasonable confidentiality terms.</p>
+            </li>
+        </ul>
+        <p class="head">Responding to legal requests and preventing harm:</p>
+        <ul>
+            <li>
+                <p>We may access, preserve and share your information in response to a legal request if we have a good faith belief that the law requires us to do so. We may also access, preserve and share information when we have a good faith belief it is necessary to: detect, prevent and address fraud and other illegal activity; to protect ourselves, you and others, including as part of investigations; and to prevent death or imminent bodily harm. Information we receive about you may be accessed, processed and retained for an extended period of time when it is the subject of a legal request or obligation, governmental investigation, or investigations concerning possible violations of our terms or policies, or otherwise to prevent harm.</p>
+            </li>
+        </ul>
+        <p class="head">4. HOW WE STORE YOUR INFORMATION</p>
+        <p class="head">Storage and Processing:</p>
+        <ul>
+            <li>
+                <p>Your information collected through the application may be stored and processed in India where the Kiran Social Foundation maintains facilities.</p>
+            </li>
+            <li>
+                <p>We use commercially reasonable safeguards to help keep the information collected through the application secure and take reasonable steps (such as requesting a unique password) to verify your identity before granting you access to your account. However, the Kiran Social Foundation cannot ensure the security of any information you transmit or guarantee that information on the application may not be accessed, disclosed, altered, or destroyed.</p>
+            </li>
+        </ul>
+        <p class="head">How long we keep your User Content:</p>
+        <ul>
+            <li>
+                <p>The Kiran Social Foundation or its Service Providers may retain information (including your profile information) for a reasonable time for backup, archival, and/or audit purposes.</p>
+            </li>
+        </ul>
+        <p class="head">5. HOW TO CONTACT US</p>
+        <p>If you have any questions about this Privacy Policy or the application, please contact us at <a href="mailto:info@kiran.foundation" class="links">info@kiran.foundation</a>.</p>
+    </div>
+    </section>
 
-  <body>
-    <!-- Page wrapper -->
-    <main class="page-wrapper">
-      <Header />
-      
-      <section class="privacy-policy-section">
-        <div id="space"></div>
-        <div class="container" style="color:gray;font-size: 14px;">
-          <div class="grid_12 omega">
-            <div id="example-one" class="text1">
-              <h2 class="page_title">
-                Privacy Policy - Kiran Social Foundation</h2>
-              <br />
-            </div>
-          </div>
-          <table width="100%" border="0" align="center" class="td">
-            <tr>
-              <td>
-                <ul>
-                  <li>
-                    <p>This Privacy Policy explains how we collect, use and protect information in relation to our mobile
-                      application.</p>
-                  </li>
-                  <li>
-                    <p>By using our application you understand and agree that we are providing a platform for you to receive
-                      information from the Kiran Social Foundation.</p>
-                  </li>
-                  <li>
-                    <p>Our Policy applies to all visitors, users, and others who access the mobile application. (<span
-                        class="head">&quot;Users&quot;</span>).</p>
-                  </li>
-                </ul>
-                <p class="head">1. INFORMATION WE COLLECT</p>
-                <p>We collect the following types of information.</p>
-                <p class="head">Information you provide us directly:</p>
-                <ul>
-                  <li>
-                    <p>Your e-mail address and application preferences when you register for the application. This
-                      information allows us to identify you uniquely.</p>
-                  </li>
-                  <li>
-                    <p>Communications between you and the Kiran Social Foundation. For example, we may send you
-                      application-related emails (e.g., account verification, changes/updates to features of the
-                      application, technical and security notices). Note that you may not opt out of application-related
-                      e-mails.</p>
-                  </li>
-                </ul>
-                <p class="head">Analytics information:</p>
-                <ul>
-                  <li>We may use third-party analytics tools to help us measure traffic and usage trends for the
-                    application. These tools collect information sent by your device or our application, including the pages
-                    you visit, add-ons, and other information that assists us in improving the application. We collect and
-                    use this analytics information with analytics information from other Users so that it cannot reasonably
-                    be used to identify any particular individual User.</li>
-                </ul>
-                <p class="head">Cookies and similar technologies:</p>
-                <ul>
-                  <li>When you visit the application, we may use cookies and similar technologies to collect information
-                    about how you use the application and provide features to you.</li>
-                </ul>
-                <p class="head">Log file information:</p>
-                <ul>
-                  <li>
-                    <p>Log file information is automatically reported by your device each time you make a request to access
-                      (i.e., visit) the application. It can also be provided when the content of the application is
-                      downloaded to your browser or device.</p>
-                  </li>
-                  <li>
-                    <p>When you use our application, our servers automatically record certain log file information,
-                      including your request, Internet Protocol (&quot;IP&quot;) address, browser type, referring / exit
-                      pages and URLs, number of clicks and how you interact with links on the application, domain names,
-                      landing pages, pages viewed, and other such information. We may also collect similar information from
-                      emails sent to our Users which then help us track which emails are opened and which links are clicked
-                      by recipients. The information allows for more accurate reporting and improvement of the application.
-                    </p>
-                  </li>
-                </ul>
-                <p class="head">Device identifiers:</p>
-                <ul>
-                  <li>
-                    <p>When you use a mobile device like a tablet or phone to access our application, we may access,
-                      collect, monitor, store on your device, and/or remotely store one or more &quot;device
-                      identifiers.&quot; Device identifiers are small data files or similar data structures stored on or
-                      associated with your mobile device, which uniquely identify your mobile device. A device identifier
-                      may be data stored in connection with the device hardware, data stored in connection with the device's
-                      operating system or other software.</p>
-                  </li>
-                  <li>
-                    <p>A device identifier may deliver information to us or to a third party partner about how you browse
-                      and use the application and may help us or others provide reports or personalized content and ads.
-                      Some features of the application may not function properly if use or availability of device
-                      identifiers is impaired or disabled.</p>
-                  </li>
-                </ul>
-                <p class="head">2. HOW WE USE YOUR INFORMATION</p>
-                <p>In addition to some of the specific uses of information we describe in this Privacy Policy, we may use
-                  information that we receive to:&nbsp;</p>
-                <ul>
-                  <li>
-                    <p>help you efficiently access your information </p>
-                  </li>
-                  <li>
-                    <p>remember information so you will not have to re-enter it during your visit or the next time you visit
-                      the application;</p>
-                  </li>
-                  <li>
-                    <p>provide, improve, test, and monitor the effectiveness of our application</p>
-                  </li>
-                  <li>
-                    <p>develop and test new products and features</p>
-                  </li>
-                  <li>
-                    <p>monitor metrics such as total number of visitors, traffic, and demographic patterns</p>
-                  </li>
-                  <li>
-                    <p>diagnose or fix technology problems</p>
-                  </li>
-                  <li>
-                    <p>automatically update the application on your device</p>
-                  </li>
-                </ul>
-                <p class="head">3. SHARING OF YOUR INFORMATION</p>
-                <p>We will not rent or sell your information to third parties.</p>
-                <p class="head">Parties with whom we may share your information:</p>
-                <ul>
-                  <li>
-                    <p>We may share User Content and your information (including but not limited to, information from
-                      cookies, log files, device identifiers, location data, and usage data) to help provide, understand,
-                      and improve the application. </p>
-                  </li>
-                  <li>
-                    <p>We also may share your information as well as information from tools like cookies, log files, and
-                      device identifiers and location data, with third-party organizations that help us provide the
-                      application to you (&quot;Service Providers&quot;). Our Service Providers will be given access to your
-                      information as is reasonably necessary to provide the application under reasonable confidentiality
-                      terms.</p>
-                  </li>
-                </ul>
-                <p class="head">Responding to legal requests and preventing harm:</p>
-                <ul>
-                  <li>We may access, preserve and share your information in response to a legal request if we have a good
-                    faith belief that the law requires us to do so. We may also access, preserve and share information when
-                    we have a good faith belief it is necessary to: detect, prevent and address fraud and other illegal
-                    activity; to protect ourselves, you and others, including as part of investigations; and to prevent
-                    death or imminent bodily harm. Information we receive about you may be accessed, processed and retained
-                    for an extended period of time when it is the subject of a legal request or obligation, governmental
-                    investigation, or investigations concerning possible violations of our terms or policies, or otherwise
-                    to prevent harm.</li>
-                </ul>
-                <p class="head">4. HOW WE STORE YOUR INFORMATION</p>
-                <p class="head">Storage and Processing:</p>
-                <ul>
-                  <li>
-                    <p>Your information collected through the application may be stored and processed in India where the
-                      Kiran Social Foundation maintains facilities.</p>
-                  </li>
-                  <li>
-                    <p>We use commercially reasonable safeguards to help keep the information collected through the
-                      application secure and take reasonable steps (such as requesting a unique password) to verify your
-                      identity before granting you access to your account. However, the Kiran Social Foundation cannot
-                      ensure the security of any information you transmit or guarantee that information on the application
-                      may not be accessed, disclosed, altered, or destroyed.</p>
-                  </li>
-                </ul>
-                <p class="head">How long we keep your User Content:</p>
-                <ul>
-                  <li>The Kiran Social Foundation or its Service Providers may retain information (including your profile
-                    information) for a reasonable time for backup, archival, and/or audit purposes.</li>
-                </ul>
-                <p class="head">5. HOW TO CONTACT US</p>
-                <p>If you have any questions about this Privacy Policy or the application, please contact us at <a
-                    href="mailto:info@kiran.foundation" class="links">info@kiran.foundation</a>.</p>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </section>
+    <Footer />
+  </main>
+</Layout>
+<style>
+  /* Custom styles for privacy policy page */
 
-      <Footer />
-    </main>
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
 
-    <!-- Back to top button -->
-    <a
-      class="btn-scroll-top"
-      href="#top"
-      data-scroll
-      aria-label="Scroll back to top"
-    >
-      <svg
-        viewBox="0 0 40 40"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="20"
-          cy="20"
-          r="19"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-miterlimit="10"></circle>
-      </svg>
-      <i class="ai-arrow-up"></i>
-    </a>
-  </body>
-</html>
+.privacy-policy-section {
+  padding: 2rem;
+  background: #fff;
+  width: 100vw;
+}
+#space {
+  height: 6rem;
+}
+.head {
+  color: black;
+  font-weight:500;
+  font-size: 1.2rem;
+}
+.main-box {
+  width: 80%;
+}
+@media (max-width:575px) {
+  .main-box {
+  width: 100%;
+}
+.privacy-policy-section {
+  font-size: 16px;
+  padding: 1rem;
+}
+}
+</style>
