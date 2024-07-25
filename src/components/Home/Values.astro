@@ -1,6 +1,4 @@
 ---
-import { remark } from "remark";
-import html from "remark-html";
 import { getEntry } from "astro:content";
 const values = (await getEntry("home", "values")).data;
 const common = (await getEntry("common", "common")).data;
@@ -89,7 +87,7 @@ const common = (await getEntry("common", "common")).data;
             <h2 class="mb-xl-4"></h2>
             <p
               class="benefits-section2-p1 mb-4 mb-xl-5"
-              style="font-size: 24px;font-color:#252A34; word-wrap: break-word;"
+              style="font-size: 24px; color:#252A34; word-wrap: break-word;"
             >
             {values.maa.quote}
             </p>
@@ -105,7 +103,7 @@ const common = (await getEntry("common", "common")).data;
             </p>
             <div class="mt-">
               <a class="benefits-readmore-button btn btn-outline-primary" href="#"
-                >{common.more}</a
+                >{common.readMore}</a
               >
             </div>
           </div>
