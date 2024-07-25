@@ -1,6 +1,5 @@
 ---
 import TestimonialComponent from "./TestimonialComponent.astro";
-
 import { getEntry } from "astro:content";
 const testimonialsData = (await getEntry("testimonials", "testimonials")).data;
 const common = (await getEntry("common", "common")).data;
@@ -9,7 +8,6 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
     testimonial.tags.includes(pageTag),
 );
 ---
-
 <!doctype html>
 <html lang="en">
     <head>

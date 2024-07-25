@@ -22,14 +22,14 @@ testimonials:
     tags: [home, pratibha]
 
   
-  - image: '/assets/images/hero/hero-image.jpg'
-    name: 'Ankit Sharma'
-    location: 'Bhopal, Madhya Pradesh'
-    text: 'Kiran Foundation has opened new opportunities for me.'
+  - image: 'old_website/images/pratibha_page/swayam.jpg'
+    name: 'Swayam Jain'
+    location: 'Chhindwara, Madhya Pradesh '
+    text: 'The Kiran Foundation is not just a organization, it is a family. Beyond the significant financial support, we also receive mentorship and emotional support. We have regular career guidance sessions and advice on study planning. Kiran Foundation helps every capable student achieve their full potential. '
     tags: [shakti]
-  - image: '/assets/images/hero/hero-image.jpg'
-    name: 'Sonal Verma'
-    location: 'Gwalior, Madhya Pradesh'
-    text: 'The mentorship program is excellent.'
+  - image: 'old_website/images/testimonial/priya.png'
+    name: 'Priya Jain'
+    location: 'Chhatarpur, Madhya Pradesh'
+    text: 'The guidance and support extended by Kiran Foundation have proven to be immensely valuable and remarkably practical. I attended Essential Financial Skills and Everyday Law for Women courses. Both courses were well planned. The courses have increase my self confidence and I empowered me to take everyday decisions with clarity. Thank you so much for everything. '
     tags: [shakti]
 ---
