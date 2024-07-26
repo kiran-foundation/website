@@ -4,12 +4,14 @@ import "jarallax/dist/jarallax.min.css"
 import Header from "../components/common/Header.astro";
 import DigitalskillHero from "../components/Digitalskill/digitalskillHero.astro";
 import Digitalempowerment from "../components/Digitalskill/digitalempowerment.astro";
-import Membership from "../components/Donation/membership.astro";
-import MissionDonation from "../components/Donation/missionDonation.astro";
 import Footer from "../components/common/Footer.astro";
-import DonationStatistics from "../components/Donation/donationStatistics.astro";
-import DonationFaq from "../components/Donation/donationFaq.astro";
-import DonationCard from "../components/Donation/donationCard.astro";
+import Digitalcourse from "../components/Digitalskill/digitalcourse.astro";
+import Digitaljoin from "../components/Digitalskill/digitaljoin.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+import Heading from "../components/common/heading.astro";
+import Digitalvideo from "../components/Digitalskill/digitalvideo.astro";
+import Digitalvideosecond from "../components/Digitalskill/digitalvideosecond.astro";
+import DigitalskillTrainers from "../components/Digitalskill/digitalskillTrainers.astro";
 
 
 interface Props {
@@ -170,12 +172,16 @@ AOS.init();
     <Header/>
     <DigitalskillHero/>
     <Digitalempowerment/>
-    <Membership/>
-    <MissionDonation/>
-    <DonationStatistics/>
-    <DonationFaq/>
-    <DonationCard/>
+    <Digitalcourse/>
+    <Heading title="Testimonials"/>
+    <TestimonialsCarousel pageTag="pratibha"/>
+    <Digitalvideo/>
+    <Digitalvideosecond/>
+    <DigitalskillTrainers/>
+   
     
+    
+    <Digitaljoin/>
     <Footer/>
   </main>
   
