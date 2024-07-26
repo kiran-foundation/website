@@ -3,8 +3,8 @@ heading: " Kiran foundation scholarship programme for students (means tested) "
 eligiblity: "  Eligibility  Criteria:"
 paragraph:
     list1: " Monthly income of the Family should be less than Rs. 20,000."
-    list2: " The child should have passed 8th Standard or 14 Years of age."
-    list3: " Child should have demonstrated enormous potential in their field of interest."
+    list2: " The child should have passed the 8th Standard or be atleast 14 Years of age."
+    list3: " The Child should have demonstrated enormous potential in their field of interest."
 documents: "Documents:"
 paragraphDocuments:
     list1: " Previous year's Marksheets"

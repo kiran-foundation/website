@@ -24,7 +24,7 @@ documentsListOne: " Verified copies of the mark sheets for the last 3 years."
 documentsListTwo: " Verified copies of certificates for other achievements.
             Proof of financial status."
 documentsListThird: " Proof of financial status."            
-documentsListFourth: " Two recommendation letters written by independent and reputableindividuals."
+documentsListFourth: " Two recommendation letters written by independent and reputable individuals."
 list: " Names, addresses, and phone numbers of the recommenders."
 
 
