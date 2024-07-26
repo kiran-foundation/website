@@ -56,7 +56,7 @@
         const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.1234567890=${encodeURIComponent(fullName)}&entry.0987654321=${encodeURIComponent(email)}&entry.1122334455=${encodeURIComponent(phone)}&entry.5566778899=${encodeURIComponent(resume)}&entry.6677889900=${encodeURIComponent(more)}`;
 
         try {
-          const response = await fetch(url, { method: 'POST' });
+          const _response = await fetch(url, { method: 'POST' });
         } catch (error) {
           console.error(error);
         }

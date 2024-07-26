@@ -1,11 +1,17 @@
 ---
+import type { MarkdownFile } from '../../types/Markdown';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const roleFile = import.meta.glob('/src/content/work/volunteer/*.md');
-const staticTextsFile = import.meta.glob('/src/content/work/StaticTexts.md');
+const roleFile = import.meta.glob<MarkdownFile>('/src/content/work/volunteer/*.md');
+const staticTextsFile = import.meta.glob<MarkdownFile>('/src/content/work/StaticTexts.md');
 
 const role = await (async () => {
+  const path = Astro.props.path;
+if (!path) {
+  console.warn('Path is undefined');
+  throw new Error('Path is undefined');
+}
   const volunteerPath = `/src/content/work/volunteer/${Astro.props.path}.md`;
   const volunteer = roleFile[volunteerPath];
 
@@ -19,7 +25,9 @@ const role = await (async () => {
 })();
 
 if (!role) {
+  console.warn('Role not found for path:', `/src/content/work/volunteer/${Astro.props.path}.md`);
   throw new Error('Role not found');
+  // console.warn("Role not found")
 }
 
 const staticTexts = await (async () => {
@@ -35,6 +43,7 @@ const staticTexts = await (async () => {
 })();
 
 if (!staticTexts) {
+  console.warn('Static texts not found');
   throw new Error('Static texts not found');
 }
 

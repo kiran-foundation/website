@@ -1,8 +1,15 @@
 ---
 import TestimonialComponent from "./TestimonialComponent.astro";
 import { getEntry } from "astro:content";
+
+// interface testimonial{
+//     image: string;
+//     name: string;
+//     location: string;
+//     text: string;
+// }
 const testimonialsData = (await getEntry("testimonials", "testimonials")).data;
-const common = (await getEntry("common", "common")).data;
+// const common = (await getEntry("common", "common")).data;
 const { pageTag } = Astro.props;
 const testimonials = testimonialsData.testimonials.filter((testimonial) =>
     testimonial.tags.includes(pageTag),
@@ -30,7 +37,7 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
             <div class="carousel-controls">
                 {
                     Array(Math.ceil(testimonials.length / 2))
-                        .fill()
+                        .fill(null)
                         .map((_, index) => (
                             <span class="carousel-bullet" data-index={index} />
                         ))
@@ -89,8 +96,8 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const bullets = document.querySelectorAll(".carousel-bullet");
-        const inner = document.querySelector(".carousel-inner");
-        const items = document.querySelectorAll(".carousel-item");
+        const inner = document.querySelector(".carousel-inner") as HTMLElement;
+        // const items = document.querySelectorAll(".carousel-item");
         let currentIndex = 0;
 
         function updateCarousel() {

@@ -84,8 +84,8 @@ const DonationFaqData =(await getEntry("donation", "donationfaq")).data
             document
                 .querySelectorAll(".faq-accordion-question")
                 .forEach((item) => {
-                    item.addEventListener("click", (event) => {
-                        const accordionItem = item.parentNode;
+                    item.addEventListener("click", (_event) => {
+                        const accordionItem = item.parentNode as HTMLElement;
                         accordionItem.classList.toggle("active");
                     });
                 });

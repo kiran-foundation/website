@@ -1,9 +1,10 @@
 ---
+import type { MarkdownFile } from "../../types/Markdown";
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const roleFile = import.meta.glob('/src/content/volunteering/Roles/*.md');
-const staticTextsFile = import.meta.glob('/src/content/volunteer/StaticTexts.md');
+const roleFile = import.meta.glob<MarkdownFile>('/src/content/volunteering/Roles/*.md');
+const staticTextsFile = import.meta.glob<MarkdownFile>('/src/content/volunteer/StaticTexts.md');
 
 const role = await (async () => {
   const volunteerPath = `/src/content/volunteering/Roles/${Astro.props.path}.md`;

@@ -1,0 +1,22 @@
+---
+// Importing any required components or setting up props
+const { title, featured_image, more, type } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{title}</title>
+</head>
+<body>
+  <header>
+    <h1>{title}</h1>
+    <img src={featured_image} alt={title} />
+  </header>
+  <main>
+    <p>Type: {type}</p>
+    {more ? <p>More details...</p> : <p>No more details.</p>}
+    <slot />
+  </main>
+</body>
+</html>
