@@ -19,12 +19,16 @@ const loadVolunteeringData = async () => {
 const loadStaticTexts = async () => {
   const staticFilePath = Object.keys(staticTextsFile)[0];
   if (!staticFilePath) {
-    throw new Error('Static texts file path not found');
+    console.warn('Static texts file path not found');
+    // FIXME: Later
+    // throw new Error('Static texts file path not found');
   }
 
   const staticFile = staticTextsFile[staticFilePath];
   if (!staticFile) {
-    throw new Error('Static texts file not found');
+    console.warn('Static texts file not found');
+    // FIXME: Later
+    // throw new Error('Static texts file not found');
   }
 
   const { frontmatter } = await staticFile();
@@ -35,7 +39,9 @@ const volunteering = await loadVolunteeringData();
 const staticTexts = await loadStaticTexts();
 
 if (!staticTexts) {
-  throw new Error('Static texts not found');
+  console.warn('Static texts not found');
+    // FIXME: Later
+  // throw new Error('Static texts not found');
 }
 
 const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;

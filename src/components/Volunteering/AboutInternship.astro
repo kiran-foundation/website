@@ -20,7 +20,9 @@ const role = await (async () => {
 })();
 
 if (!role) {
-  throw new Error('Role not found');
+  console.warn("Role not found")
+  // FIXME: Later
+  // throw new Error('Role not found');
 }
 
 const staticTexts = await (async () => {
@@ -36,9 +38,12 @@ const staticTexts = await (async () => {
 })();
 
 if (!staticTexts) {
-  throw new Error('Static texts not found');
+  console.warn("Static texts not found")
+  // FIXME: Later
+  // throw new Error('Static texts not found');
 }
 
+/* FIXME:
 const {
   title,
   about,
@@ -50,11 +55,35 @@ const {
   requirements
 } = role;
 
+*/
+
+const {
+    title = "Title not found",
+    about = "About information not available",
+    startDate = "Start date not provided",
+    duration = "Duration not specified",
+    timeCommitment = "Time commitment not mentioned",
+    teamSize = "Team size not defined",
+    responsibilities = "",
+    requirements = ""
+  } = role || {};
+
+
+/* FIXME:
 const {
   applyNow,
   responsibilitiesHeading,
   requirementsHeading
 } = staticTexts;
+
+*/
+
+
+const {
+  applyNow = "Apply Now",
+  responsibilitiesHeading = "Responsibilities",
+  requirementsHeading = "Requirements"
+} = staticTexts || {};
 ---
 
 <html lang="en">

@@ -9,7 +9,11 @@ export interface MarkdownFile {
     duration?: string;
     teamSize?: string;
     responsibilities?: string;
+    applyNow?: string;
+    responsibilitiesHeading?: string;
+    requirementsHeading?: string;
     [key: string]: any;
   };
   default: string;
 }
+

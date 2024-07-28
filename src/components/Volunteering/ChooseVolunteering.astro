@@ -3,8 +3,12 @@ import type { MarkdownFile } from "../../types/Markdown";
 import { remark } from "remark";
 import html from "remark-html";
 
-const allVolunteering = import.meta.glob<MarkdownFile>("/src/content/work/volunteer/*.md");
-const staticTextsFile = import.meta.glob<MarkdownFile>("/src/content/work/StaticTexts.md");
+const allVolunteering = import.meta.glob<MarkdownFile>(
+  "/src/content/work/volunteer/*.md",
+);
+const staticTextsFile = import.meta.glob<MarkdownFile>(
+  "/src/content/work/StaticTexts.md",
+);
 
 const loadVolunteeringData = async () => {
   return await Promise.all(
@@ -19,12 +23,16 @@ const loadVolunteeringData = async () => {
 const loadStaticTexts = async () => {
   const staticFilePath = Object.keys(staticTextsFile)[0];
   if (!staticFilePath) {
-    throw new Error("Static texts file path not found");
+    console.warn("Static texts file path not found");
+    // FIXME: Later
+    // throw new Error("Static texts file path not found");
   }
 
   const staticFile = staticTextsFile[staticFilePath];
   if (!staticFile) {
-    throw new Error("Static texts file not found");
+    console.warn("Static texts file not found");
+    // FIXME: Later
+    // throw new Error("Static texts file not found");
   }
 
   const { frontmatter } = await staticFile();
@@ -35,7 +43,9 @@ const volunteering = await loadVolunteeringData();
 const staticTexts = await loadStaticTexts();
 
 if (!staticTexts) {
-  throw new Error("Static texts not found");
+  console.warn("Static texts not found");
+  // FIXME: Later
+  // throw new Error("Static texts not found");
 }
 
 const { showHighPriorityOnly = false, _isMainPage = false } = Astro.props;
@@ -80,10 +90,7 @@ const { chooseVolunteering, applyNow, seeMore, Requirements } = staticTexts;
       <div class="mainVolunteering-sub-container">
         {
           volunteeringToDisplay.map((volunteer, index) => (
-            <div
-              class={`mainVolunteering-card`}
-              id={`c${index + 1}`}
-            >
+            <div class={`mainVolunteering-card`} id={`c${index + 1}`}>
               <div>
                 <h3 class="mainVolunteering-card-heading">{volunteer.title}</h3>
                 <p class="mainVolunteering-card-subheading">
