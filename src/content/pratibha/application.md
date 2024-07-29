@@ -36,7 +36,7 @@ infoListThird: " Names and Mobile Numbers of both Parents, along with their Educ
 selection: "Selection Process: "
 selectionListOne: "Assistance is available without regard to an applicant's caste, community, gender, or religion. The sole eligibility criteria for assistance are: verified qualifications, family income, and the student's desire to succeed. "
 selectionListTwo: " To assess the actual need and financial hardship faced by the student, the Kiran Foundation team collects documents and other supporting evidence from the student and their family members."
-selectionListThird: " Please note that selection of all applicants may not be possible. cd By applying, all applicants acknowledge and agree to accept the final decision of the Kiran Foundation."
+selectionListThird: " Please note that selection of all applicants may not be possible. By applying, all applicants acknowledge and agree to accept the final decision of the Kiran Foundation."
 
 downloadApp : "Download Pratibha App"
 googleform: " Apply by Google Form"

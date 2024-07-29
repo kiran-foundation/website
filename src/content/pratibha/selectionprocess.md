@@ -14,9 +14,9 @@ paragraphDocuments:
 apply: " How can you apply?"
 applylist:
     list1: " Click on the Apply now button below"
-    list2: " Fill in the required details in the online application form."
+    list2: " Fill out the necessary information in the online application form."
     list3: " Upload relevant documents"
-    list4: " If all the details filled in the application are correctly showing on the preview screen, click on the ‘Submit’ button to complete the application process."
+    list4: " If all details in the application are accurately displayed on the preview screen, click the 'Submit' button to finalize and complete the application process."
       
      
       
