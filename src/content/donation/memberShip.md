@@ -12,7 +12,7 @@ cardSecondData:
     paragraph: " Support our cause with a yearly donation of 1Lakh or a monthly donation of 10K."    
 cardThirdData: 
     heading: " Donate a laptop to support Students"
-    paragraph: "Donate a laptop to support ducational initiatives." 
+    paragraph: "Donate a laptop to support educational initiatives." 
 cardFourthData: 
     heading: " Sponsor a Student for One Year"
     paragraph: " Sponsor a student for one year and provide them with educational resources."
