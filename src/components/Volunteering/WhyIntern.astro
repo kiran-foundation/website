@@ -1,39 +1,53 @@
+---
+import type { MarkdownFile } from '../../types/Markdown';
+import { remark } from 'remark';
+import html from 'remark-html';
+
+const volunteerFile = import.meta.glob<MarkdownFile>('/src/content/volunteering/whyIntern.md');
+
+const volunteerContent = await (async () => {
+  const volunteerPath = '/src/content/volunteering/whyIntern.md';
+  const volunteer = volunteerFile[volunteerPath];
+
+  if (volunteer) {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  } else {
+    console.warn('Volunteer content not found for path:', volunteerPath);
+    return null;
+  }
+})();
+
+if (!volunteerContent) {
+  throw new Error('Volunteer content not found');
+}
+
+const { title, cards } = volunteerContent;
+---
+
 <!DOCTYPE html>
 <html lang="en">
-<head></head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volunteering</title>
+  <title>{title}</title>
   <link rel="stylesheet" href="/assets/css/Volunteering/WhyVolunteer.css">
 </head>
 <body>
   <section class="WhyVolunteer-frame">
-    <h2 class="WhyVolunteer-frame-heading">Why Volunteer at Kiran Foundation?</h2>
+    <h2 class="WhyVolunteer-frame-heading">{title}</h2>
     <div class="WhyVolunteer-cards">
-      <div class="WhyVolunteer-card">
-        <div class="WhyVolunteer-d-flex WhyVolunteer-align-items-center WhyVolunteer-mb-3">
-          <div class="WhyVolunteer-flex-shrink-0 WhyVolunteer-rounded-1 WhyVolunteer-p-2">
-            <img src="/assets/images/benefits/icon.png" alt="Image">
+      {cards.map(card => (
+        <div class="WhyVolunteer-card">
+          <div class="WhyVolunteer-d-flex WhyVolunteer-align-items-center WhyVolunteer-mb-3">
+            <div class="WhyVolunteer-flex-shrink-0 WhyVolunteer-rounded-1 WhyVolunteer-p-2">
+              <img src={card.image} alt="Image">
+            </div>
           </div>
+          <p class="WhyVolunteer-fs-sm" style="word-wrap: break-word;">{card.text}</p>
         </div>
-        <p class="WhyVolunteer-fs-sm" style="word-wrap: break-word;">Gain hands-on experience in a dynamic and impactful organization</p>
-      </div>
-      <div class="WhyVolunteer-card">
-        <div class="WhyVolunteer-d-flex WhyVolunteer-align-items-center WhyVolunteer-mb-3">
-          <div class="WhyVolunteer-flex-shrink-0 WhyVolunteer-rounded-1 WhyVolunteer-p-2">
-            <img src="/assets/images/benefits/icon.png" alt="Image">
-          </div>
-        </div>
-        <p class="WhyVolunteer-fs-sm" style="word-wrap: break-word;">Work alongside passionate individuals dedicated to social change</p>
-      </div>
-      <div class="WhyVolunteer-card">
-        <div class="WhyVolunteer-d-flex WhyVolunteer-align-items-center WhyVolunteer-mb-3">
-          <div class="WhyVolunteer-flex-shrink-0 WhyVolunteer-rounded-1 WhyVolunteer-p-2">
-            <img src="/assets/images/benefits/icon.png" alt="Image">
-          </div>
-        </div>
-        <p class="WhyVolunteer-fs-sm" style="word-wrap: break-word;">Contribute to meaningful projects that directly impact communities</p>
-      </div>
+      ))}
     </div>
   </section>
 </body>
