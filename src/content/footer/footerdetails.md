@@ -5,7 +5,7 @@ aboutTitle:
     story: 'Our Story'
     policy: 'Privacy Policy'
     report: 'Annual Report'
-    statement: 'Fiancial Statement'
+    statement: 'Financial Statement'
 contactTitle:
       contact: 'Conatct Us' 
       info: 'info@kiran.foundation'    

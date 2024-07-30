@@ -23,6 +23,6 @@ cardFifthData:
     paragraph: " Sponsor a Pratibha for the full   duration of their education."
 cardSixthData: 
     heading: " Any amount you want to donate"
-    paragraph: " Donate a laptop to support ducational initiatives."                    
+    paragraph: " Donate a laptop to support educational initiatives."                    
 membershipCardBtn: " Donate now "
 ---
