@@ -3,16 +3,7 @@ import { getEntry } from "astro:content";
 const programs = (await getEntry("home", "programs")).data;
 const common = (await getEntry("common", "common")).data;
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programe</title>
-    <link rel="stylesheet" href="/assets/css/Home/Global.css">
-</head>
-<body>
-  <section class="overflow-hidden pb-3">
+<section class="container overflow-hidden pb-3">
   <div class="container pb-sm-3 mb-md-2 mb-lg-3">
     <div class="row g-4">
       <div
@@ -56,7 +47,7 @@ const common = (await getEntry("common", "common")).data;
 </section>
 
 <!-- Services: Health insurance -->
-<section class="overflow-hidden pb-5">
+<section class="container overflow-hidden pb-5">
   <div class="container pb-sm-3 mb-md-2 mb-lg-3">
     <div class="row g-4">
       <div
