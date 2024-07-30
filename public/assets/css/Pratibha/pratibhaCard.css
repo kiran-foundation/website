@@ -9,10 +9,7 @@
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
-  margin-bottom: 5%;
-  margin-top: 5%;
- 
-  
+  margin-bottom: 6%;
 }
 
 .pratibhaCard-image-container {
@@ -21,7 +18,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 70px;
- 
+
 }
 
 .pratibhaCard-image-container img {
@@ -31,10 +28,11 @@
   object-fit: cover;
   margin-left: -20px;
   margin-top: 5px;
-  
+
 }
 
-.pratibhaCard-content-container,.shaktiCard-content-container{
+.pratibhaCard-content-container,
+.shaktiCard-content-container {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -53,6 +51,7 @@
   width: 444px;
   height: 96px;
   margin-left: 30px;
+
 }
 
 .cardPratibha-join-button {
@@ -85,7 +84,7 @@
   rotate: z -7deg;
 }
 
-.shaktiCard-content-container h2{
+.shaktiCard-content-container h2 {
   width: 336px;
   height: 72px;
   font-family: Poppins, sans-serif;
@@ -95,18 +94,19 @@
   text-align: left;
   color: #ffff;
   margin-top: -40px;
-  margin-left: 90px;
+  margin-left: 80px;
 
 }
 
-.pratibhaCard-image-container-vectorstar{
-    position:relative;
-    width: 49px;
-    height: 49px;
-    top:-170px;
-    left: 15px;
+.pratibhaCard-image-container-vectorstar {
+  position: relative;
+  width: 49px;
+  height: 49px;
+  top: -170px;
+  left: 15px;
 }
-.shaktiCard-image-container-vector{
+
+.shaktiCard-image-container-vector {
   position: relative;
   top: -120px;
   left: -70px;
@@ -114,20 +114,23 @@
   height: 125px;
   rotate: z -5deg;
 }
-.shaktiCard-image-container-ellipse{
-  width:48px;
-  height:48px;
-  position:relative;
-  top:150px;
+
+.shaktiCard-image-container-ellipse {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  top: 150px;
   left: 40px;
 }
- .shaktiCard-image-container-ellipseSmall{
-  width:20px;
-  height:20px;
+
+.shaktiCard-image-container-ellipseSmall {
+  width: 20px;
+  height: 20px;
   position: relative;
-  top:250px;
+  top: 250px;
   left: 25px;
 }
+
 .shaktiCard-image-container {
   flex: 1;
   display: flex;
@@ -145,5 +148,44 @@
   object-fit: cover;
   margin-left: -20px;
   margin-top: 5px;
-  
+
+}
+
+@media(max-width:430px) {
+  .pratibhaCard-container {
+    width: 430px;
+    height: 900px;
+    flex-direction: column;
+
+  }
+
+  .shaktiCard-content-container h2 {
+    margin-left: -20px;
+    text-align: center;
+  }
+
+  .shakti-join-text {
+    margin-left: 35px;
+
+  }
+
+  .cardShakti-connect-button {
+    margin-left: 24px;
+  }
+
+  .shaktiCard-image-container img {
+    width: 426px;
+
+  }
+
+  .shaktiCard-image-container-ellipseSmall {
+    top: 430px;
+    left: -195px;
+  }
+  .shaktiCard-image-container-vector {
+    top: -350px;
+    left: 160px;
+    
+  }
+
 }
