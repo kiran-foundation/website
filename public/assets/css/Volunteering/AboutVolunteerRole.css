@@ -1,4 +1,5 @@
 .aboutVolunteering-frame1 {
+  margin-top: 3%;
     display: flex;
     flex-direction: column;
     gap: 64px;
@@ -6,11 +7,10 @@
     font-family: 'Poppins', sans-serif;
     justify-content: center;
     align-items: flex-start;
-  }
+}
   .aboutVolunteering-frame2, .aboutVolunteering-frame3, .aboutVolunteering-frame4 {
     width: calc(100% - 190px); 
     margin: 0 auto; 
-    padding: 48px;
     background: #fff;
     border-radius: 8px;
   }
@@ -18,7 +18,6 @@
     width: 899px;
     font-size: 48px;
     font-weight: 600;
-    line-height: 72px;
     text-align: left;
   
   }
@@ -26,7 +25,6 @@
     width: 100%;
     font-size: 20px;
     font-weight: 500;
-    line-height: 36px;
     text-align: left;
   }
   .aboutVolunteering-info-text {
@@ -35,20 +33,17 @@
     margin: 0 auto;
     font-size: 20px;
     font-weight: 700;
-    line-height: 36px;
     text-align: left;
     white-space: pre-wrap;
   }
   .aboutVolunteering-frame3 h2, .aboutVolunteering-frame4 h2 {
     font-size: 24px;
     font-weight: 600;
-    line-height: 36px;
     text-align: left;
   }
   .aboutVolunteering-frame3 p, .aboutVolunteering-frame4 p {
     font-size: 20px;
     font-weight: 500;
-    line-height: 36px;
     text-align: left;
   }
   .aboutVolunteering-button-container {
@@ -66,7 +61,6 @@
     color: #fff;
     font-size: 20px;
     font-weight: 700;
-    line-height: 24px;
     text-align: center;
     border: none;
     cursor: pointer;
