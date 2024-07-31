@@ -12,21 +12,18 @@ import Values from "../components/Home/Values.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 import Heading from "../components/common/heading.astro";
 ---
+
 <Layout>
   <main class="page-wrapper">
-    <Hero/>
-    <Values/>
-    <Statistics/>
-    <Programs/>
-    <Heading title="Testimonials"/>
-    <TestimonialsCarousel pageTag="home"/>
-    <Heading title="Volunteer with Us"/>
-    <Volunteer/>
+    <Hero />
+    <Values />
+    <Statistics />
+    <Programs />
+    <Heading title="Testimonials" />
+    <TestimonialsCarousel pageTag="home" />
+    <Heading title="Volunteer with Us" />
+    <Volunteer />
     <Updates showHighPriorityOnly={true} isMainPage={true} />
     <Partners />
-    
-
-</main>
-
- 
+  </main>
 </Layout>

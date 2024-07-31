@@ -1,9 +1,8 @@
 ---
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
-import Layout from "../layouts/Layout.astro";
-import Updates from "../components/common/Updates.astro";
-
+import Layout from "../../layouts/Layout.astro";
+import UpdateHinidDiwas from "../../components/Updates/UpdateHinidDiwas.astro";
 interface Props {
   title: string;
 }
@@ -12,6 +11,6 @@ interface Props {
 <Layout>
   <!-- Page wrapper -->
   <main class="page-wrapper">
-    <Updates />
+    <UpdateHinidDiwas />
   </main>
 </Layout>

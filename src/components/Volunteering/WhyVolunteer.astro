@@ -1,42 +1,14 @@
----
-import type { MarkdownFile } from '../../types/Markdown';
-import { remark } from 'remark';
-import html from 'remark-html';
-
-const volunteerFile = import.meta.glob<MarkdownFile>('/src/content/volunteering/whyVolunteer.md');
-
-const volunteerContent = await (async () => {
-  const volunteerPath = '/src/content/volunteering/whyVolunteer.md';
-  const volunteer = volunteerFile[volunteerPath];
-
-  if (volunteer) {
-    const { frontmatter, default: content } = await volunteer();
-    const processedContent = await remark().use(html).process(content);
-    return { ...frontmatter, content: processedContent.toString() };
-  } else {
-    console.warn('Volunteer content not found for path:', volunteerPath);
-    return null;
-  }
-})();
-
-if (!volunteerContent) {
-  throw new Error('Volunteer content not found');
-}
-
-const { title, cards } = volunteerContent;
----
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head></head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title}</title>
+  <title>Volunteering</title>
   <link rel="stylesheet" href="/assets/css/Volunteering/WhyVolunteer.css">
 </head>
 <body>
   <section class="WhyVolunteer-frame">
-    <h2 class="WhyVolunteer-frame-heading">{title}</h2>
+    <h2 class="WhyVolunteer-frame-heading">Why Volunteer at Kiran Foundation?</h2>
     <div class="WhyVolunteer-cards">
       {cards.map(card => (
         <div class="WhyVolunteer-card">
@@ -50,5 +22,3 @@ const { title, cards } = volunteerContent;
       ))}
     </div>
   </section>
-</body>
-</html>

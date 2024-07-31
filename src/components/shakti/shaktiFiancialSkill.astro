@@ -1,19 +1,8 @@
 ---
 import { getEntry } from "astro:content";
-const fiancialData =(await getEntry("shakti", "shaktifiancialskill")).data
-const common =(await getEntry("common", "common")).data
+const fiancialData = (await getEntry("shakti", "shaktifiancialskill")).data;
+const common = (await getEntry("common", "common")).data;
 ---
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fianancial skill</title>
-    <link rel="stylesheet" href="/assets/css/Home/Global.css">
-</head>
-<body>
-  
 
 <section class="overflow-hidden" style="margin-top:60px;">
   <div class="container pb-sm-3 mb-md-2 mb-lg-3">
@@ -44,14 +33,14 @@ const common =(await getEntry("common", "common")).data
         >
           <h2 class="programe-title-h2 mb-xl-4">{fiancialData.heading}</h2>
           <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
-           {fiancialData.description}
-          <div class="mt-">
-            <a
-              class="shaktiprograme-knowmore-button btn btn-primary order-lg-3 d-none d-sm-inline-flex"
-              href="/Pratibha">{common.knowMore}</a
-            >
-          </div>
-          
+            {fiancialData.description}
+            <div class="mt-">
+              <a
+                class="shaktiprograme-knowmore-button btn btn-primary order-lg-3 d-none d-sm-inline-flex"
+                href="/Pratibha">{common.knowMore}</a
+              >
+            </div>
+          </p>
         </div>
       </div>
     </div>

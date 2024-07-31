@@ -20,12 +20,12 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TestimonialCarousel</title>
+        <title>testimonials</title>
+        <link rel="stylesheet" href="/assets/css/Home/Global.css" />
     </head>
-
     <body>
-        <div class="carousel" style="margin-bottom: 45px;">
-            <div class="container carousel-inner">
+        <div class="container carousel" style="margin-bottom: 45px;">
+            <div class="carousel-inner">
                 {
                     testimonials.map((testimonial, index) => (
                         <div class="carousel-item mt-5" data-index={index}>
@@ -45,7 +45,8 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
             </div>
         </div>
     </body>
-</html>
+
+
 <style>
     .carousel {
         position: relative;

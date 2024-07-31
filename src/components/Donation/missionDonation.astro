@@ -1,28 +1,17 @@
 ---
-import { getEntry } from "astro:content"
-const missionData = (await getEntry("donation","missiondonation")).data
+import { getEntry } from "astro:content";
+const missionData = (await getEntry("donation", "missiondonation")).data;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="/assets/css/Donation/missionDonation.css">
-</head>
-<body>
-    <div class="container missionDonation-heading">{missionData.title}</div>
-    <div class="container missionDonation-container">
-        <img class="missionDonation-img" src={missionData.image} alt="Image">
-        <div class="missionDonation-text-box">
-           {missionData.description}
-        </div>
+<div class="container missionDonation-heading">{missionData.title}</div>
+<div class="container missionDonation-container">
+    <img class="missionDonation-img" src={missionData.image} alt="Image" />
+    <div class="missionDonation-text-box">
+        {missionData.description}
     </div>
-    <div class="container missionDonation-container">
-        <div class="missionDonation-text-box-Second">
-           {missionData.descriptionSecond}
-        </div>
+</div>
+<div class="container missionDonation-container">
+    <div class="missionDonation-text-box-Second">
+        {missionData.descriptionSecond}
     </div>
-</body>
-</html>
+</div>

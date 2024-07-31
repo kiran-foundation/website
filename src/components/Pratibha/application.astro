@@ -1,78 +1,89 @@
 ---
-import { getEntry } from "astro:content"
-const pratibhaApplication = (await getEntry("pratibha","application")).data
+import { getEntry } from "astro:content";
+const pratibhaApplication = (await getEntry("pratibha", "application")).data;
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiran Pratibha 2024</title>
-    <link rel="stylesheet" href="/assets/css/Pratibha/pratibhaApply.css">
-</head>
-<body>
-    <div class="apply-container">
-        <div class="apply-image">
-            <img class="container image-hero" src="/assets/images/hero/hero.jpg">
-         </div>
-         
-        <div class="apply-title">{pratibhaApplication.title}</div>
-        <div class="apply-subtitle">{pratibhaApplication.subtitle}</div>
-        <div class="apply-highlight-container">
-            <div class="apply-highlight-text">{pratibhaApplication.text}</div>
-            <button class="apply-apply-button"><a class="apply-link" href="/">{pratibhaApplication.button}</a></button>
-        </div>
-        <div class="apply-content-container">
-            <p>{pratibhaApplication.paragraph}<br><br>
-                {pratibhaApplication.paragraph2}
-            </p> 
-            <h4 class="apply-h4">{pratibhaApplication.eligibilty}</h4>
-            <p style="margin-top: -30px; margin-left: -10px;">{pratibhaApplication.eligibiltyListOne}<br>
-                {pratibhaApplication.eligibiltyListTwo}<br>
-                {pratibhaApplication.eligibiltyListThird}<br>
-                {pratibhaApplication.eligibiltyListFourth}</p>
-        </div>
-        <div class="apply-content-container">
-            <h4 class="apply-h4">{pratibhaApplication.dates}</h4>
-            <p style="margin-top: -30px; margin-left: -10px;">{pratibhaApplication.datesListOne}<br>
-                {pratibhaApplication.datesListTwo}<br>
-                {pratibhaApplication.datesListThird}</p>
-        </div>
-        <div class="apply-documents-container">
-            <h4 class="apply-h4">{pratibhaApplication.documents}</h4>
-            <p style="margin-top: -30px; margin-left: -10px;">{pratibhaApplication.documentsListOne}<br>
-                {pratibhaApplication.documentsListTwo}<br>
-                {pratibhaApplication.documentsListThird}<br>
-                {pratibhaApplication.documentsListFourth}
-                <li class="apply-documents-list">{pratibhaApplication.list}</li>
-                <div class="apply-additional-data">These documents are essential to be submitted along with the application.</div>
-                <div class=" conatiner apply-image">
-                    <img class="image-hero" src="/assets/images/hero/hero.jpg">
-                 </div>
-          </p>
-         
-        </div>
-        <div class="apply-content-container">
-            <h4 class="apply-h4">{pratibhaApplication.information}</h4>
-            <p style="margin-top: -30px; margin-left: -10px;">{pratibhaApplication.infoListOne}<br>
-                {pratibhaApplication.infoListTwo}<br>
-                {pratibhaApplication.infoListThird}
-                <div class="apply-additional-data" style="margin-top: -35px;">Please ensure that this information is included with the application.</div>
-            </p>
-        </div>
-        <div class="apply-apply-container">
-            <h4 class="apply-h4">{pratibhaApplication.selection}</h4>
-            <p style="margin-top: -30px; margin-left: -10px;">{pratibhaApplication.selectionListOne}<br><br>
-
-
-                {pratibhaApplication.selectionListTwo}<br><br>
-                
-                {pratibhaApplication.selectionListThird}</p>
-        </div>
-        <div class="container apply-last-container" style="margin-left: -10px;">
-            <button class="container apply-download-button"><a class="app-download-link" href="/">{pratibhaApplication.downloadApp}</a></button>
-            <span class="apply-google-form"><a href="/">{pratibhaApplication.googleform}</a></span>
-        </div>
+<div class="apply-container">
+    <div class="apply-image">
+        <img class="container image-hero" src="/assets/images/hero/hero.jpg" />
     </div>
-</body>
-</html>
+
+    <div class="apply-title">{pratibhaApplication.title}</div>
+    <div class="apply-subtitle">{pratibhaApplication.subtitle}</div>
+    <div class="apply-highlight-container">
+        <div class="apply-highlight-text">{pratibhaApplication.text}</div>
+        <button class="apply-apply-button"
+            ><a class="apply-link" href="/">{pratibhaApplication.button}</a
+            ></button
+        >
+    </div>
+    <div class="apply-content-container">
+        <p>
+            {pratibhaApplication.paragraph}<br /><br />
+            {pratibhaApplication.paragraph2}
+        </p>
+        <h4 class="apply-h4">{pratibhaApplication.eligibilty}</h4>
+        <p style="margin-top: -30px; margin-left: -10px;">
+            {pratibhaApplication.eligibiltyListOne}<br />
+            {pratibhaApplication.eligibiltyListTwo}<br />
+            {pratibhaApplication.eligibiltyListThird}<br />
+            {pratibhaApplication.eligibiltyListFourth}
+        </p>
+    </div>
+    <div class="apply-content-container">
+        <h4 class="apply-h4">{pratibhaApplication.dates}</h4>
+        <p style="margin-top: -30px; margin-left: -10px;">
+            {pratibhaApplication.datesListOne}<br />
+            {pratibhaApplication.datesListTwo}<br />
+            {pratibhaApplication.datesListThird}
+        </p>
+    </div>
+    <div class="apply-documents-container">
+        <h4 class="apply-h4">{pratibhaApplication.documents}</h4>
+        <p style="margin-top: -30px; margin-left: -10px;">
+            {pratibhaApplication.documentsListOne}<br />
+            {pratibhaApplication.documentsListTwo}<br />
+            {pratibhaApplication.documentsListThird}<br />
+            {pratibhaApplication.documentsListFourth}
+            <li class="apply-documents-list">{pratibhaApplication.list}</li>
+            <div class="apply-additional-data">
+                These documents are essential to be submitted along with the
+                application.
+            </div>
+            <div class="conatiner apply-image">
+                <img class="image-hero" src="/assets/images/hero/hero.jpg" />
+            </div>
+        </p>
+    </div>
+    <div class="apply-content-container">
+        <h4 class="apply-h4">{pratibhaApplication.information}</h4>
+        <p style="margin-top: -30px; margin-left: -10px;">
+            {pratibhaApplication.infoListOne}<br />
+            {pratibhaApplication.infoListTwo}<br />
+            {pratibhaApplication.infoListThird}
+            <div class="apply-additional-data" style="margin-top: -35px;">
+                Please ensure that this information is included with the
+                application.
+            </div>
+        </p>
+    </div>
+    <div class="apply-apply-container">
+        <h4 class="apply-h4">{pratibhaApplication.selection}</h4>
+        <p style="margin-top: -30px; margin-left: -10px;">
+            {pratibhaApplication.selectionListOne}<br /><br />
+
+            {pratibhaApplication.selectionListTwo}<br /><br />
+
+            {pratibhaApplication.selectionListThird}
+        </p>
+    </div>
+    <div class="container apply-last-container" style="margin-left: -10px;">
+        <button class="container apply-download-button"
+            ><a class="app-download-link" href="/"
+                >{pratibhaApplication.downloadApp}</a
+            ></button
+        >
+        <span class="apply-google-form"
+            ><a href="/">{pratibhaApplication.googleform}</a></span
+        >
+    </div>
+</div>
