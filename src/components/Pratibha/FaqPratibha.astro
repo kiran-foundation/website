@@ -76,11 +76,15 @@ const faqPratibha = (await getEntry("pratibha", "faqpratibha")).data;
     </div>
 </div>
 
-<script>
-    document.querySelectorAll(".faq-accordion-question").forEach((item) => {
-        item.addEventListener("click", (event) => {
-            const accordionItem = item.parentNode;
-            accordionItem.classList.toggle("active");
-        });
-    });
-</script>
+        <script>
+            document
+                .querySelectorAll(".faq-accordion-question")
+                .forEach((item) => {
+                    item.addEventListener("click", (event) => {
+                        const accordionItem = item.parentNode as HTMLElement;
+                        accordionItem.classList.toggle("active");
+                    });
+                });
+        </script>
+    </body>
+</html>
