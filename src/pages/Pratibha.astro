@@ -1,0 +1,33 @@
+---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Layout from "../layouts/Layout.astro";
+import HeroPratibha from "../components/pratibha/HeroPratibha.astro";
+import Heading from "../components/common/heading.astro";
+import AboutPratibha from "../components/pratibha/AboutPratibha.astro";
+import Benefits from "../components/pratibha/Benefits.astro";
+import AboutPratibhaMentoring from "../components/pratibha/AboutPratibhaMentoring.astro";
+import BenefitsSecond from "../components/pratibha/BenefitsSecond.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+import SelectionProcess from "../components/pratibha/SelectionProcess.astro";
+import CardPratibha from "../components/pratibha/CardPratibha.astro";
+import FaqPratibha from "../components/pratibha/FaqPratibha.astro";
+---
+
+<Layout>
+  <!-- Page wrapper -->
+  <main class="page-wrapper">
+    <HeroPratibha />
+    <Heading title="What we do" />
+    <AboutPratibha />
+    <Benefits />
+    <AboutPratibhaMentoring />
+    <BenefitsSecond />
+    <Heading title="Testimonials" />
+    <TestimonialsCarousel pageTag="pratibha" />
+    <Heading title="Selection Process" />
+    <SelectionProcess />
+    <CardPratibha />
+    <FaqPratibha />
+  </main>
+</Layout>
