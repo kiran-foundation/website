@@ -1,17 +1,11 @@
 ---
 import { getEntry } from "astro:content";
+import Heading from "../common/heading.astro";
+
 const programs = (await getEntry("home", "programs")).data;
 const common = (await getEntry("common", "common")).data;
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programe</title>
-    <link rel="stylesheet" href="/assets/css/Home/Global.css">
-</head>
-<body>
+<Heading title={ programs.title }/>
   <section class="overflow-hidden pb-3">
   <div class="container pb-sm-3 mb-md-2 mb-lg-3">
     <div class="row g-4">
@@ -100,9 +94,3 @@ const common = (await getEntry("common", "common")).data;
     </div>
   </div>
 </section>
-
-
-
-  
-</body>
-</html>

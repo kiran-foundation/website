@@ -1,4 +1,5 @@
 ---
+title: Our Programs
 pratibha:
   title: "Kiran Pratibha"
   description: "Every year many bright youth, let go of their hopes and dreams. They are forced by circumstances to battle harsh realities of life at the cost of their future.. “Kiran Pratibha” aims to identify exceptional but underprivileged youth and support them in their endeavours of Education, Sports or Art according to their interest and abilities. The foundation provides active advice and individualized mentoring. in addition to full financial support."
