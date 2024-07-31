@@ -47,13 +47,7 @@ const volunteeringToDisplay = showHighPriorityOnly ? filteredVolunteering.slice(
 
 const { chooseVolunteering, applyNow, seeMore, Requirements } = staticTexts;
 ---
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/css/Volunteering/ChooseVolunteering.css">
-  <script>
+ <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.mainVolunteering-sub-container').addEventListener('click', function(event) {
         if (event.target.classList.contains('mainVolunteering-btn-apply')) {
@@ -64,8 +58,7 @@ const { chooseVolunteering, applyNow, seeMore, Requirements } = staticTexts;
       });
     });
   </script>
-</head>
-<body>
+
   <section class="mainVolunteering-main-container">
     <h2 class="mainVolunteering-main-heading">{chooseVolunteering}</h2>
     <div class="mainVolunteering-sub-container">
@@ -89,5 +82,3 @@ const { chooseVolunteering, applyNow, seeMore, Requirements } = staticTexts;
       ))}
     </div>
   </section>
-</body>
-</html>

@@ -1,34 +1,20 @@
 ---
-import { getEntry } from "astro:content"
-const cardPratibha= (await getEntry("pratibha", "cardpratibha")).data
+import { getEntry } from "astro:content";
+const cardPratibha = (await getEntry("pratibha", "cardpratibha")).data;
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pratibha</title>
-    <link rel="stylesheet" href="/assets/css/Pratibha/pratibhaCard.css" />
-  </head>
-  <body>
-    <div class="container pratibhaCard-container">
-       <div class="pratibhaCard-image-container" style="margin-left: 50px;">
-        <img src={cardPratibha.image} alt="Mentoring Image" />
-      </div>
-      <div class="pratibhaCard-image-container-vector">
-        <img src="/assets/images/benefits/Vector6.png" alt="Vector Image" />
-       </div>
-      
-      <div class="pratibhaCard-content-container">
-        <h2>{cardPratibha.heading}</h2>
+<div class="container pratibhaCard-container">
+  <div class="pratibhaCard-image-container" style="margin-left: 50px;">
+    <img src={cardPratibha.image} alt="Mentoring Image" />
+  </div>
+  <div class="pratibhaCard-image-container-vector">
+    <img src="/assets/images/benefits/Vector6.png" alt="Vector Image" />
+  </div>
 
-        <a
-          class="cardPratibha-join-button btn btn-primary -pill mt-4"
-          href="/"
-        >
-         {cardPratibha.join}</a
-        >
-      </div>
-    </div>
-  </body>
-</html>
+  <div class="pratibhaCard-content-container">
+    <h2>{cardPratibha.heading}</h2>
+
+    <a class="cardPratibha-join-button btn btn-primary -pill mt-4" href="/">
+      {cardPratibha.join}</a
+    >
+  </div>
+</div>

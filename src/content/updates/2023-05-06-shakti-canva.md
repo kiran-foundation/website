@@ -4,7 +4,7 @@ date: 2023-05-06
 featured_image: assets/images/posts/canva2023.png
 summary: Registration open for 8 weeks free course on Advance Canva for Women in Hindi. Course starts 13th May 2023; Hurry up register today!
 priority: "high"
-link: "/posts/updateCanva"
+link: "/posts/update-canva"
 ---
 
 किरण फाउंडेशन प्रस्तुत करते हैं महिलाओं के लिए नि:शुल्क कोर्स on Advance Canva । यह कोर्स केवल उन्ही महिलाओं के लिए है जो किरण फाउंडेशन द्वारा संचालित Essential Digital Skills कोर्स कम्प्लीट कर चुके हैं। कोर्स में निम्नलिखित topic शामिल होंगे :

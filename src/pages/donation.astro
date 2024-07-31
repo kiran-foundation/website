@@ -1,31 +1,27 @@
 ---
-import "aos/dist/aos.css"
-import "jarallax/dist/jarallax.min.css"
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
 import Layout from "../layouts/Layout.astro";
-import DonationHero from "../components/Donation/DonationHero.astro"
+import DonationHero from "../components/Donation/DonationHero.astro";
 import Membership from "../components/Donation/Membership.astro";
 import MissionDonation from "../components/Donation/MissionDonation.astro";
 import DonationStatistics from "../components/Donation/DonationStatistics.astro";
 import DonationFaq from "../components/Donation/DonationFaq.astro";
 import DonationCard from "../components/Donation/DonationCard.astro";
 
-
 interface Props {
-	title: string;
+  title: string;
 }
-
 ---
 
 <Layout>
-   <!-- Page wrapper -->
-   <main class="page-wrapper">
-   <DonationHero/>
-   <Membership/>
-   <MissionDonation/>
-   <DonationStatistics/>
-   <DonationFaq/>
-   <DonationCard/>
-    
-   
+  <!-- Page wrapper -->
+  <main class="page-wrapper">
+     <DonationHero/>
+    <Membership />
+    <MissionDonation />
+    <DonationStatistics />
+    <DonationFaq />
+    <DonationCard />
   </main>
 </Layout>

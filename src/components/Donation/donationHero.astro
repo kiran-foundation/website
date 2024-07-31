@@ -1,20 +1,22 @@
 ---
 import { getEntry } from "astro:content";
-const heroData = (await getEntry("donation","donationhero")).data
+const heroData = (await getEntry("donation", "donationhero")).data;
 ---
-    <section class="" style="margin-top: 4rem">
-            <div
-                class="position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4"
-                style="background-image: url(/assets/images/programs/donationhero.png);"
-            >
-            </div>
-            <div
-                class="container position-relative z-2 text-center pt-2 pt-sm-4 pt-lg-5"
-            >
-                <h1 class="hero-title-h1 display-0 text-white pt-5">
-                    {heroData.heading}
+
+<section class="" style="margin-top: 4rem">
+    <div
+        class="position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4"
+        style="background-image: url(/assets/images/programs/donationhero.png);"
+    >
+    </div>
+    <div
+        class="container position-relative z-2 text-center pt-2 pt-sm-4 pt-lg-5"
+    >
+        <h1 class="hero-title-h1 display-0 text-white pt-5">
+            {heroData.heading}
             <div class="d-none d-md-block d-lg-none" style="height: 260px;">
             </div>
             <div class="d-md-none" style="height: 160px;"></div>
-        </section>
-
+        </h1>
+    </div>
+</section>
