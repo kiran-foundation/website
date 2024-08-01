@@ -1,5 +1,7 @@
 ---
 import { getEntry } from "astro:content";
+import Heading from "../common/heading.astro";
+
 const volunteer = (await getEntry("home", "volunteer")).data;
 const common = (await getEntry("common", "common")).data;
 ---

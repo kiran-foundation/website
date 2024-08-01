@@ -1,9 +1,12 @@
 ---
 import { getEntry } from "astro:content";
+import Heading from "../common/heading.astro";
+
 const programs = (await getEntry("home", "programs")).data;
 const common = (await getEntry("common", "common")).data;
 ---
-<section class="container overflow-hidden pb-3">
+<Heading title={ programs.title }/>
+  <section class="overflow-hidden pb-3">
   <div class="container pb-sm-3 mb-md-2 mb-lg-3">
     <div class="row g-4">
       <div
@@ -91,9 +94,3 @@ const common = (await getEntry("common", "common")).data;
     </div>
   </div>
 </section>
-
-
-
-  
-</body>
-</html>
