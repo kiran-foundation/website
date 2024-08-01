@@ -25,7 +25,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
     <div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
       <h3 class="accordion-header">
         <button
-          class="accordion-button digitalSkill-container1-h3 h5"
+          class="accordion-button collapsed digital-programe-h3 h5"
           type="button"
           data-bs-toggle="collapse"
           data-binded-content="#finance-img"
@@ -35,11 +35,11 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
         >
       </h3>
       <div
-        class="accordion-collapse collapse show"
+        class="accordion-collapse collapse"
         id="finance"
         data-bs-parent="#industries"
       >
-        <div class="accordion-body digitalskill-container1-paragraph">
+        <div class="accordion-body digital-programe-paragraph ">
           {digitalskillPrograme.paragraphEmpowerment}
         </div>
       </div>
@@ -47,7 +47,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
     <div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
       <h3 class="accordion-header">
         <button
-          class="accordion-button collapsed digitalSkill-container1-h3  h5"
+          class="accordion-button collapsed digital-programe-h3 h5"
           type="button"
           data-bs-toggle="collapse"
           data-binded-content="#tech-img"
@@ -61,7 +61,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
         id="tech"
         data-bs-parent="#industries"
       >
-        <div class="accordion-body digitalskill-container1-paragraph">
+        <div class="accordion-body digital-programe-paragraph ">
          {digitalskillPrograme.paragraphLearn}
         </div>
       </div>
@@ -72,7 +72,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
     >
       <h3 class="accordion-header">
         <button
-          class="accordion-button collapsed digitalSkill-container1-h3 "
+          class="accordion-button collapsed digital-programe-h3"
           type="button"
           data-bs-toggle="collapse"
           data-binded-content="#medicine-img"
@@ -86,7 +86,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
         id="medicine"
         data-bs-parent="#industries"
       >
-        <div class="accordion-body digitalskill-container1-paragraph">
+        <div class="accordion-body digital-programe-paragraph ">
           {digitalskillPrograme.paragraphPromoting}
         </div>
       </div>
@@ -97,7 +97,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
     >
       <h3 class="accordion-header">
         <button
-          class="accordion-button collapsed digitalSkill-container1-h3 "
+          class="accordion-button collapsed digital-programe-h3"
           type="button"
           data-bs-toggle="collapse"
           data-binded-content="#ecommerce-img"
@@ -111,7 +111,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
         id="ecommerce"
         data-bs-parent="#industries"
       >
-        <div class="accordion-body digitalskill-container1-paragraph">
+        <div class="accordion-body digital-programe-paragraph ">
           {digitalskillPrograme.paragraphTechnology}
         </div>
       </div>
@@ -121,7 +121,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
 </section>
 
 <style>
-  .digitalSkill-container1-h3 {
+  .digital-programe-h3 {
     font-family: Poppins, sans-serif;
     font-size: 25px;
     font-weight: 400;
@@ -130,7 +130,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
     color: #576071;
   }
 
-  .digitalskill-container1-paragraph {
+  .digital-programe-paragraph {
     width: 420px;
     height: 180px;
     font-family: Poppins, sans-serif;
