@@ -1,10 +1,7 @@
 ---
 import { getEntry } from "astro:content";
-const digitalSkillHero = (await getEntry("digital-skill","digitalskillhero")).data
-console.log(digitalSkillHero)
+const digitalSkillHero = (await getEntry("digital-skill","digitalhero")).data
 ---
-
-
 <section class="position-relative" style="margin-top: 4rem; margin-bottom: 70px;">
     <div
       class="position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4"
