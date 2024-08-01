@@ -8,9 +8,9 @@ import DigitalCourse from "../components/digital-skill/DigitalCourse.astro";
 import Heading from "../components/common/heading.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 import DigitalVideo from "../components/digital-skill/DigitalVideo.astro";
-import DigitalVideoSecond from "../components/digital-skill/DigitalVideoSecond.astro";
-import DigitalTrainers from "../components/digital-skill/DigitalTrainers.astro";
+import OurTraniers from "../components/digital-skill/OurTraniers.astro";
 import DigitalJoin from "../components/digital-skill/DigitalJoin.astro";
+import DigitalVideoPrograme from "../components/digital-skill/DigitalVideoPrograme.astro";
 ---
 
 
@@ -22,8 +22,32 @@ import DigitalJoin from "../components/digital-skill/DigitalJoin.astro";
     <Heading title="Testimonials"/>
     <TestimonialsCarousel pageTag="pratibha"/>
     <DigitalVideo/>
-    <DigitalVideoSecond/>
-    <DigitalTrainers/>
+    <DigitalVideoPrograme/>
+    <OurTraniers/>
     <DigitalJoin/>
 </main>
+
+<!-- Back to top button -->
+<a
+class="btn-scroll-top"
+href="#top"
+data-scroll
+aria-label="Scroll back to top"
+>
+<svg
+  viewBox="0 0 40 40"
+  fill="currentColor"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="20"
+    cy="20"
+    r="19"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-miterlimit="10"></circle>
+  </svg>
+  <i class="ai-arrow-up"></i>
+</a>
 </Layout>
