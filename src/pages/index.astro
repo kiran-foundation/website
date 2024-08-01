@@ -11,6 +11,8 @@ import Partners from "../components/Home/Partners.astro";
 import Values from "../components/Home/Values.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 import Heading from "../components/common/heading.astro";
+import { getEntry } from "astro:content";
+const testimonials = (await getEntry("testimonials", "testimonials")).data;
 ---
 
 <Layout>
