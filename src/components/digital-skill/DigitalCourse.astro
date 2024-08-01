@@ -1,7 +1,6 @@
 ---
 import { getEntry } from "astro:content";
 const digitalCourse = (await getEntry ("digitalskill","digitalcourse")).data
-console.log(digitalCourse)
 ---
 <section class="container position-relative  py-2 py-sm-3 py-md-4 py-lg-5"
  style="margin-top: -2rem; margin-bottom: -80px;">
@@ -60,6 +59,7 @@ console.log(digitalCourse)
          
     </div>
   </section>
+  
   <style>
     @media(max-width:430px){
       .course-container{
