@@ -2,13 +2,13 @@
 import "aos/dist/aos.css"
 import "jarallax/dist/jarallax.min.css"
 import Layout from "../layouts/Layout.astro";
-import AboutHero from "../components/About/AboutHero.astro";
-import Mission from "../components/About/Mission.astro";
-import Team from "../components/About/Team.astro";
-import Speaker from "../components/About/Speaker.astro";
+import Hero from "../components/About/hero.astro";
+import Mission from "../components/About/mission.astro";
+import Team from "../components/About/team.astro";
+import Speaker from "../components/About/speaker.astro";
 import Volunteers from "../components/Home/Volunteer.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
-import Gallery from "../components/About/Gallery.astro";
+import Gallery from "../components/About/gallery.astro";
 
 interface Props {
 	title: string;
@@ -19,7 +19,7 @@ interface Props {
 </main> 
   <!-- Page wrapper -->
   <main class="page-wrapper">
-    <AboutHero/>
+     <Hero/>
     <Mission/>
     <Team/>
     <Speaker/>

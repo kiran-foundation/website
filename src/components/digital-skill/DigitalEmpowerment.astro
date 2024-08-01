@@ -1,60 +1,156 @@
 <style>
-  @media(max-width:430px){
-    .digital-empowerment{
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     }
+  .digitalempowerment-h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32.4px;
+    text-align: left;
+    color: #576071;
+  }
+
+  .digitalempowerment-paragraph {
+    width: 420px;
+    height: 180px;
+    font-family: Poppins, sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 31px;
+    text-align: justify;
+    color: #576071;
+    letter-spacing: 0.4px;
+  }
+
+  @media (max-width: 430px) {
+    .digital-empowerment {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 </style>
 
-<section class="container digital-empowerment position-relative py-5 mt-4 mt-sm-3 mt-md-4 d-flex justify-content-center align-item-center">
-    <div class="col-md-6 col-lg-6 col-xl-6 offset-xl-1">
-      <div class="ps-lg-4 ps-xl-0 ">
-        <div class="binded-content digital-empowerment">
-          <div class="binded-item active" id="finance-img">
-            <img class="rounded-5 digital-empowerment" src="assets/images/programs/imagedigitalskill.png" alt="Image">
-          </div>
-          </div>
+<section
+  class="container digital-empowerment position-relative py-5 mt-4 mt-sm-3 mt-md-4 d-flex justify-content-center align-item-center"
+>
+  <div class="col-md-6 col-lg-6 col-xl-6 offset-xl-1">
+    <div class="ps-lg-4 ps-xl-0">
+      <div class="binded-content digital-empowerment">
+        <div class="binded-item active" id="finance-img">
+          <img
+            class="rounded-5 digital-empowerment"
+            src="assets/images/programs/imagedigitalskill.png"
+            alt="Image"
+          />
+        </div>
       </div>
     </div>
   </div>
-  <!-- Accordion -->
-   <div class="col-md-2 col-lg-5 pb-2 pb-lg-0 mb-4 mb-md-0 mx-5">
-            <div class="accordion accordion-alt" id="industries">
-              <div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
-                <h3 class="accordion-header">
-                  <button class="accordion-button digitalempowerment-h3 h5" type="button" data-bs-toggle="collapse" data-binded-content="#finance-img" data-bs-target="#finance" aria-expanded="true" aria-controls="finance">Unlocking Digital Empowerment</button>
-                </h3>
-                <div class="accordion-collapse collapse show" id="finance" data-bs-parent="#industries">
-                  <div class="accordion-body digitalempowerment-paragraph ">By mastering digital tools like Canva, website building, social media, and mobile skills, women can unlock endless possibilities for personal and professional growth.</div>
-                </div>
-              </div>
-              <div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed digitalempowerment-h3 h5" type="button" data-bs-toggle="collapse" data-binded-content="#tech-img" data-bs-target="#tech" aria-expanded="false" aria-controls="tech">Why Learn Digital Skills?</button>
-                </h3>
-                <div class="accordion-collapse collapse" id="tech" data-bs-parent="#industries">
-                  <div class="accordion-body digitalempowerment-paragraph ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere finibus dui, eget scelerisque ipsum suscipit nec. Praesent nec quam in ipsum ultricies ultricies et sagittis dui.</div>
-                </div>
-              </div>
-              <div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1" style="margin-top: 1rem;">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed digitalempowerment-h3" type="button" data-bs-toggle="collapse" data-binded-content="#medicine-img" data-bs-target="#medicine" aria-expanded="false" aria-controls="medicine">Promoting Online Safety</button>
-                </h3>
-                <div class="accordion-collapse collapse" id="medicine" data-bs-parent="#industries">
-                  <div class="accordion-body digitalempowerment-paragraph ">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris tincidunt imperdiet hendrerit. Fusce tortor turpis, facilisis ac efficitur eget.</div>
-                </div>
-              </div>
-              <div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1" style="margin-top: 1rem;">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed digitalempowerment-h3 " type="button" data-bs-toggle="collapse" data-binded-content="#ecommerce-img" data-bs-target="#ecommerce" aria-expanded="false" aria-controls="ecommerce">Empowerment Through Technology</button>
-                </h3>
-                <div class="accordion-collapse collapse digitalempowerment-paragraph " id="ecommerce" data-bs-parent="#industries">
-                  <div class="accordion-body .digitalempowerment-paragraph ">Curabitur dictum sodales aliquam. Etiam tortor augue, ultrices in efficitur sit amet, luctus dapibus magna. Vivamus eu lacus elementum, ultrices massa vitae, elementum lorem.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+</section>
+<!-- Accordion -->
+<div class="col-md-2 col-lg-5 pb-2 pb-lg-0 mb-4 mb-md-0 mx-5">
+  <div class="accordion accordion-alt" id="industries">
+    <div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
+      <h3 class="accordion-header">
+        <button
+          class="accordion-button digitalempowerment-h3 h5"
+          type="button"
+          data-bs-toggle="collapse"
+          data-binded-content="#finance-img"
+          data-bs-target="#finance"
+          aria-expanded="true"
+          aria-controls="finance">Unlocking Digital Empowerment</button
+        >
+      </h3>
+      <div
+        class="accordion-collapse collapse show"
+        id="finance"
+        data-bs-parent="#industries"
+      >
+        <div class="accordion-body digitalempowerment-paragraph">
+          By mastering digital tools like Canva, website building, social media,
+          and mobile skills, women can unlock endless possibilities for personal
+          and professional growth.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
+      <h3 class="accordion-header">
+        <button
+          class="accordion-button collapsed digitalempowerment-h3 h5"
+          type="button"
+          data-bs-toggle="collapse"
+          data-binded-content="#tech-img"
+          data-bs-target="#tech"
+          aria-expanded="false"
+          aria-controls="tech">Why Learn Digital Skills?</button
+        >
+      </h3>
+      <div
+        class="accordion-collapse collapse"
+        id="tech"
+        data-bs-parent="#industries"
+      >
+        <div class="accordion-body digitalempowerment-paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+          posuere finibus dui, eget scelerisque ipsum suscipit nec. Praesent nec
+          quam in ipsum ultricies ultricies et sagittis dui.
+        </div>
+      </div>
+    </div>
+    <div
+      class="accordion-item mb-n3 mb-lg-n2 mb-xl-1"
+      style="margin-top: 1rem;"
+    >
+      <h3 class="accordion-header">
+        <button
+          class="accordion-button collapsed digitalempowerment-h3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-binded-content="#medicine-img"
+          data-bs-target="#medicine"
+          aria-expanded="false"
+          aria-controls="medicine">Promoting Online Safety</button
+        >
+      </h3>
+      <div
+        class="accordion-collapse collapse"
+        id="medicine"
+        data-bs-parent="#industries"
+      >
+        <div class="accordion-body digitalempowerment-paragraph">
+          Pellentesque habitant morbi tristique senectus et netus et malesuada
+          fames ac turpis egestas. Mauris tincidunt imperdiet hendrerit. Fusce
+          tortor turpis, facilisis ac efficitur eget.
+        </div>
+      </div>
+    </div>
+    <div
+      class="accordion-item mb-n3 mb-lg-n2 mb-xl-1"
+      style="margin-top: 1rem;"
+    >
+      <h3 class="accordion-header">
+        <button
+          class="accordion-button collapsed digitalempowerment-h3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-binded-content="#ecommerce-img"
+          data-bs-target="#ecommerce"
+          aria-expanded="false"
+          aria-controls="ecommerce">Empowerment Through Technology</button
+        >
+      </h3>
+      <div
+        class="accordion-collapse collapse digitalempowerment-paragraph"
+        id="ecommerce"
+        data-bs-parent="#industries"
+      >
+        <div class="accordion-body .digitalempowerment-paragraph">
+          Curabitur dictum sodales aliquam. Etiam tortor augue, ultrices in
+          efficitur sit amet, luctus dapibus magna. Vivamus eu lacus elementum,
+          ultrices massa vitae, elementum lorem.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
