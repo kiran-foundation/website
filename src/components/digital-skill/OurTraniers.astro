@@ -1,43 +1,48 @@
+---
+import { getEntry } from "astro:content";
+const ourTrainers =(await getEntry ("digitalskill","ourtrainers")).data
+---
+
 <section class="container position-relative" style="margin-top: -4rem;">
   <div class="container position-relative z-2 pb-3 pt-2 pt-sm-3 pt-md-4 pt-lg-5 mt-md-3 mt-xxl-2 mb-3 mb-lg-4">
     <div class="mx-1">
-      <h2 class="h1">Meet Our Trainers</h2>
+      <h2 class="h1">{ourTrainers.heading}</h2>
       </div>
   </div>
   <div class="container-start pe-0 d-flex justify-content-space-evenly align-item-center" style="gap:15px;">
         <!---Item -->
         <div class="swiper-slide w-auto">
           <div class="card-hover text-center" style="max-width: 306px;">
-            <img class="d-block rounded-5 mb-4" src="/old_website/images/volunteers/sushma.png" alt="Image">
-            <h3 class="h5 mb-1">Sushma Jain</h3>
-            <p class="text-body-secondary mb-2">Head of marketing</p>
+            <img class="d-block rounded-5 mb-4" src={ourTrainers.imageCard1.image} alt="Image">
+            <h3 class="h5 mb-1">{ourTrainers.imageCard1.name}</h3>
+            <p class="text-body-secondary mb-2">{ourTrainers.imageCard1.description}</p>
            </div>
         </div>
 
         <!-- Item -->
         <div class="swiper-slide w-auto">
           <div class="card-hover text-center" style="max-width: 306px;">
-            <img class="d-block rounded-5 mb-4" src="/old_website/images/volunteers/anjali.png" alt="Image">
-            <h3 class="h5 mb-1">Anjali Jain</h3>
-            <p class="text-body-secondary mb-2">President of Sales</p>
+            <img class="d-block rounded-5 mb-4" src={ourTrainers.imageCard2.image} alt="Image">
+            <h3 class="h5 mb-1">{ourTrainers.imageCard2.name}</h3>
+            <p class="text-body-secondary mb-2">{ourTrainers.imageCard2.description}</p>
             </div>
         </div>
 
         <!-- Item -->
         <div class="swiper-slide w-auto">
           <div class="card-hover text-center" style="max-width: 306px;">
-            <img class="d-block rounded-5 mb-4" src="/old_website/images/volunteers/kshitij.jpg" alt="Image">
-            <h3 class="h5 mb-1">kshitij Jain</h3>
-            <p class="text-body-secondary mb-2">Web Designer</p>
+            <img class="d-block rounded-5 mb-4" src={ourTrainers.imageCard3.image} alt="Image">
+            <h3 class="h5 mb-1">{ourTrainers.imageCard3.name} </h3>
+            <p class="text-body-secondary mb-2">{ourTrainers.imageCard3.description} </p>
           </div>
         </div>
 
         <!-- Item -->
         <div class="swiper-slide w-auto">
           <div class="card-hover text-center" style="max-width: 306px;">
-            <img class="d-block rounded-5 mb-4" src="/old_website/images/volunteers/abhas.png" alt="Image">
-            <h3 class="h5 mb-1">Abhas Jain</h3>
-            <p class="text-body-secondary mb-2">Marketing Coordinator</p>
+            <img class="d-block rounded-5 mb-4" src={ourTrainers.imageCard4.image}  alt="Image">
+            <h3 class="h5 mb-1">{ourTrainers.imageCard4.name} </h3>
+            <p class="text-body-secondary mb-2">{ourTrainers.imageCard4.description}</p>
             </div>
         </div>
       </div>
