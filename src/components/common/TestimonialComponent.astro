@@ -10,7 +10,7 @@ export interface Props {
 const { image, name, location, text } = Astro.props;
 ---
 
-<div class="testimonial-container mt-5">
+<div class="container testimonial-container mt-5">
     <img src={image} alt={name} class="testimonial-image" />
     <p class="testimonial-text">{text}</p>
     <div class="testimonial-info">
@@ -21,13 +21,13 @@ const { image, name, location, text } = Astro.props;
 
 <style>
     .testimonial-container {
-        max-width: 550px;
+        max-width: 540px;
         width: 100%;
         height: 380px;
         margin: auto;
         background: #e5f1ff;
         border-radius: 36px;
-        padding: 20px;
+        padding: 18px;
         box-sizing: border-box;
         position: relative;
         display: flex;
@@ -35,6 +35,8 @@ const { image, name, location, text } = Astro.props;
         align-items: center;
         justify-content: center;
         border-radius: 36px;
+        
+        
     }
 
     .testimonial-text {
