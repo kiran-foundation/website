@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-const selectionProcess = (await getEntry("pratibha", "selectionprocess")).data;
+const selectionProcess = (await getEntry("pratibha", "selection-process")).data;
 const common = (await getEntry("common", "common")).data;
 ---
 
@@ -42,5 +42,3 @@ const common = (await getEntry("common", "common")).data;
         href="/pratibhaApply">{common.applyNow}</a
     >
 </div>
-<style>
-
