@@ -9,54 +9,22 @@ import Partners from "../components/Home/Partners.astro";
 import Values from "../components/Home/Values.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 import Heading from "../components/common/heading.astro";
+import { getEntry } from "astro:content";
+const testimonials = (await getEntry("testimonials", "testimonials")).data;
+
 ---
 
-<Layout
-  title="Kiran Foundation"
-  description="Around - Multipurpose Bootstrap HTML Template"
-  keywords="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative"
-  author="Createx Studio"
-  ogTitle="Kiran Foundation"
-  ogDescription="Welcome to Kiran Foundation"
-  ogImage="/assets/app-icons/favicon-96x96.png"
-  ogUrl="https://kiranfoundation.com"
+<Layout title="Kiran Foundation"
 >
-  <!-- Page wrapper -->
   <main class="page-wrapper">
     <Hero />
     <Values />
     <Statistics />
-    <Heading title="Our Programs"/>
     <Programs />
-    <Heading title="Testimonials"/>
+    <Heading title={testimonials.title}/>
     <TestimonialsCarousel pageTag="home"/>
-    <Heading title="Volunteer with Us"/>
     <Volunteer/>
     <Updates showHighPriorityOnly={true} isMainPage={true} />
     <Partners />
   </main>
-
-  <!-- Back to top button -->
-  <a
-    class="btn-scroll-top"
-    href="#top"
-    data-scroll
-    aria-label="Scroll back to top"
-  >
-    <svg
-      viewBox="0 0 40 40"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle
-        cx="20"
-        cy="20"
-        r="19"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-miterlimit="10"></circle>
-      </svg>
-      <i class="ai-arrow-up"></i>
-    </a>
 </Layout>
