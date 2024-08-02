@@ -17,6 +17,4 @@ card3:
  price: " $25.00"
  title: " Essential Digital Skills For Women"     
 
-
-
 ---
