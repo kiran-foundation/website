@@ -2,29 +2,30 @@
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../layouts/Layout.astro";
-import DigitalHero from "../components/digital-skill/DigitalHero.astro";
-import DigitalPrograme from "../components/digital-skill/DigitalPrograme.astro";
-import DigitalCourse from "../components/digital-skill/DigitalCourse.astro";
+import Hero from "../components/digital-skill/Hero.astro";
+import Programe from "../components/digital-skill/Programe.astro";
+import Course from "../components/digital-skill/Course.astro";
+import Video from "../components/digital-skill/Video.astro";
+import VideoPrograme from "../components/digital-skill/VideoPrograme.astro";
 import Heading from "../components/common/heading.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
-import DigitalVideo from "../components/digital-skill/DigitalVideo.astro";
 import OurTraniers from "../components/digital-skill/OurTraniers.astro";
-import DigitalJoin from "../components/digital-skill/DigitalJoin.astro";
-import DigitalVideoPrograme from "../components/digital-skill/DigitalVideoPrograme.astro";
+import Join from "../components/digital-skill/Join.astro";
+
 ---
 
 
 <Layout>
   <main class="page-wrapper">
-    <DigitalHero/>
-     <DigitalPrograme/>
-    <DigitalCourse/>
+    <Hero/>
+     <Programe/>
+    <Course/>
     <Heading title="Testimonials"/>
     <TestimonialsCarousel pageTag="pratibha"/>
-    <DigitalVideo/>
-    <DigitalVideoPrograme/>
+    <Video/>
+    <VideoPrograme/>
     <OurTraniers/>
-    <DigitalJoin/>
+    <Join/>
 </main>
 
 <!-- Back to top button -->
