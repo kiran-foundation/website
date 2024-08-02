@@ -18,7 +18,4 @@ listTitle:
      gyanGroup: 'Join Kiran Gyan Group'
      volunteerGroup: 'Join Volunteers Group'
 
-
-
-
 ---
