@@ -15,7 +15,7 @@ card2:
  list2: "Stretching routines."
  list3: "Direct coaching and 24/7 access to community."
 
- 
+
 card3:
  title: "Class 3 - Essential Digital Skills 2022"
  list1: "Adipiscing vulputate ever in potenti velit."

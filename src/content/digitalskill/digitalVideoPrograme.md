@@ -10,7 +10,6 @@ card1:
  list2: "Nibh viverra volutpat viverra."
  list3: "Ac lacus ut viverra iaculis neque scelerisque."
 
- 
 card2:
  price: "$25.00"
  title: "Beginner to expert guide"
@@ -18,11 +17,12 @@ card2:
  list2: "Stretching routines."
  list3: "Direct coaching and 24/7 access to community."
 
- 
 card3:
  price: "$21.00"
  title: "Yoga for pregnancy"
  list1: "Adipiscing vulputate ever in potenti velit."
  list2: "Non metus orci convallis posuere."
  list3: "Dolor commodo dignissim pharetra tempor."
+
 ---
+  

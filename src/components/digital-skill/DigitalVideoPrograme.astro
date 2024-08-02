@@ -1,11 +1,11 @@
 ---
 import { getEntry } from "astro:content";
-const digitalVideoPrograme = (await getEntry ("digitalskill","digitalvideoprograme")).data
+const digitalVideoPrograme =(await getEntry("digitalskill","digitalvideoprograme")).data
 ---
 
 <section class="container position-relative py-2 py-sm-3 py-md-4 py-lg-5" style="margin-top: -8rem;">
     <div class="container  z-2 py-5 mt-xl-2 mb-lg-2 mb-xl-3 mb-xxl-5 mt-xxl-4">
-      <h2 class="h1 pt-xxl-1 pb-4 mb-2 mb-lg-3">{digitalVideoPrograme.title}</h2>
+      <h2 class="h1 pt-xxl-1 pb-4 mb-2 mb-lg-3">{digitalVideoPrograme.heading}</h2>
       <div class="item-set d-flex justify-content-center align-item-center Item-container" style="gap:20px;">
              <div class="swiper-slide h-auto d-flex">
             <div class="card h-100 border-0 rounded-4 pb-3">
@@ -13,8 +13,8 @@ const digitalVideoPrograme = (await getEntry ("digitalskill","digitalvideoprogra
                 <img class="rounded-4 rounded-bottom-0 course-container" src={digitalVideoPrograme.image} alt="Guide">
               </div>
               <div class="card-body pb-4 course-container">
-                <div class="text-primary fw-bold pb-2 mb-1">{digitalVideoPrograme.card1.price}</div>
-                <h3 class="h5">{digitalVideoPrograme.card1.title}</h3>
+                <div class="text-primary fw-bold pb-2 mb-1">{digitalVideoPrograme.card1.title}</div>
+                <h3 class="h5">{digitalVideoPrograme.card1.price}</h3>
                 <ul class="fs-sm ps-4 mb-0">
                   <li class="mb-2">{digitalVideoPrograme.card1.list1}</li>
                   <li class="mb-2">{digitalVideoPrograme.card1.list2}</li>
@@ -29,7 +29,7 @@ const digitalVideoPrograme = (await getEntry ("digitalskill","digitalvideoprogra
            <div class="swiper-slide h-auto">
             <div class="card h-100 border-0 rounded-4 pb-3">
               <div class="position-relative" data-bs-theme="light">
-                <img class="rounded-4 rounded-bottom-0 course-container" src={digitalVideoPrograme.image} alt="Guide">
+                <img class="rounded-4 rounded-bottom-0 course-container" src= {digitalVideoPrograme.image} alt="Guide">
               </div>
               <div class="card-body pb-4 course-container">
                 <div class="text-primary fw-bold pb-2 mb-1">{digitalVideoPrograme.card2.price}</div>
@@ -48,15 +48,15 @@ const digitalVideoPrograme = (await getEntry ("digitalskill","digitalvideoprogra
           <div class="swiper-slide h-auto">
             <div class="card h-100 border-0 rounded-4 pb-3 course-container">
               <div class="position-relative" data-bs-theme="light">
-                <img class="rounded-4 rounded-bottom-0 course-container" src={digitalVideoPrograme.image} alt="Guide">
+                <img class="rounded-4 rounded-bottom-0 course-container" src=  {digitalVideoPrograme.image} alt="Guide">
               </div>
               <div class="card-body pb-4">
-                <div class="text-primary fw-bold pb-2 mb-1">{digitalVideoPrograme.card3.price}</div>
-                <h3 class="h5">{digitalVideoPrograme.card3.title}</h3>
+                <div class="text-primary fw-bold pb-2 mb-1">{digitalVideoPrograme.card2.price}</div>
+                <h3 class="h5">{digitalVideoPrograme.card2.title}</h3>
                 <ul class="fs-sm ps-4 mb-0">
-                  <li class="mb-2">{digitalVideoPrograme.card3.list1}</li>
-                  <li class="mb-2">{digitalVideoPrograme.card3.list2}</li>
-                  <li class="mb-2">{digitalVideoPrograme.card3.list3}</li>
+                  <li class="mb-2">{digitalVideoPrograme.card2.list1}</li>
+                  <li class="mb-2">{digitalVideoPrograme.card2.list2}</li>
+                  <li class="mb-2">{digitalVideoPrograme.card2.list3}</li>
                 </ul>
               </div>
               <div class="card-footer border-0 pt-0">

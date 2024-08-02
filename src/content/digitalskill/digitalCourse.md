@@ -10,11 +10,11 @@ card1:
  list2: "Ac lacus ut viverra iaculis neque scelerisque."
 
 card2:
- price: " $14.99"
+ price: " $25.00"
  title: " Essential Digital Skills For Women"
 
 card3:
- price: " $21.00"
+ price: " $25.00"
  title: " Essential Digital Skills For Women"     
 
 

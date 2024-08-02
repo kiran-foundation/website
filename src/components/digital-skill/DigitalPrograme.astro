@@ -1,7 +1,8 @@
 ---
-import { getEntry } from "astro:content"
-const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).data
+import { getEntry } from "astro:content";
+const digitalSkilPrograme =(await getEntry("digitalskill","digitalprograme")).data
 ---
+
 <section
   class="container digital-container position-relative py-5 mt-4 mt-sm-3 mt-md-4 d-flex justify-content-center align-item-center"
 >
@@ -11,7 +12,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
         <div class="binded-item active" id="finance-img">
           <img
             class="rounded-5 digital-container "
-            src={digitalskillPrograme.image}
+            src={digitalSkilPrograme.image}
             alt="Image"
           />
         </div>
@@ -31,7 +32,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
           data-binded-content="#finance-img"
           data-bs-target="#finance"
           aria-expanded="true"
-          aria-controls="finance">{digitalskillPrograme.headingEmpowerment}</button
+          aria-controls="finance">{digitalSkilPrograme.headingEmpowerment}</button
         >
       </h3>
       <div
@@ -40,7 +41,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
         data-bs-parent="#industries"
       >
         <div class="accordion-body digital-programe-paragraph ">
-          {digitalskillPrograme.paragraphEmpowerment}
+          {digitalSkilPrograme.paragraphLearn}
         </div>
       </div>
     </div>
@@ -53,7 +54,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
           data-binded-content="#tech-img"
           data-bs-target="#tech"
           aria-expanded="false"
-          aria-controls="tech">{digitalskillPrograme.headingLearn}</button
+          aria-controls="tech">{digitalSkilPrograme.headingLearn}</button
         >
       </h3>
       <div
@@ -62,7 +63,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
         data-bs-parent="#industries"
       >
         <div class="accordion-body digital-programe-paragraph ">
-         {digitalskillPrograme.paragraphLearn}
+          {digitalSkilPrograme.paragraphLearn}
         </div>
       </div>
     </div>
@@ -78,7 +79,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
           data-binded-content="#medicine-img"
           data-bs-target="#medicine"
           aria-expanded="false"
-          aria-controls="medicine">{digitalskillPrograme.headingPromoting}</button
+          aria-controls="medicine">{digitalSkilPrograme.headingPromoting}</button
         >
       </h3>
       <div
@@ -87,7 +88,8 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
         data-bs-parent="#industries"
       >
         <div class="accordion-body digital-programe-paragraph ">
-          {digitalskillPrograme.paragraphPromoting}
+          {digitalSkilPrograme.paragraphPromoting}
+          
         </div>
       </div>
     </div>
@@ -103,7 +105,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
           data-binded-content="#ecommerce-img"
           data-bs-target="#ecommerce"
           aria-expanded="false"
-          aria-controls="ecommerce">{digitalskillPrograme.headingTechnology}</button
+          aria-controls="ecommerce">{digitalSkilPrograme.headingTechnology}</button
         >
       </h3>
       <div
@@ -112,7 +114,7 @@ const digitalskillPrograme =(await getEntry( "digitalskill","digitalprograme")).
         data-bs-parent="#industries"
       >
         <div class="accordion-body digital-programe-paragraph ">
-          {digitalskillPrograme.paragraphTechnology}
+          {digitalSkilPrograme.paragraphTechnology}
         </div>
       </div>
     </div>
