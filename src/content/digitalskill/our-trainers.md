@@ -9,7 +9,7 @@ imageCard2 :
  image: " /old_website/images/volunteers/anjali.png"
  name: "Anjali Jain"
  description : "President of Sales"
-
+ 
 imageCard3 : 
  image: " /old_website/images/volunteers/kshitij.jpg"
  name: "Kshitij Jain"
