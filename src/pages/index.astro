@@ -2,20 +2,20 @@
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Home/Hero.astro";
-import Statistics from "../components/Home/Statistics.astro";
-import Programs from "../components/Home/Programs.astro";
-import Volunteer from "../components/Home/Volunteer.astro";
+import Hero from "../components/home/Hero.astro";
+import Statistics from "../components/home/Statistics.astro";
+import Programs from "../components/home/Programs.astro";
+import Volunteer from "../components/home/Volunteer.astro";
 import Updates from "../components/common/Updates.astro";
-import Partners from "../components/Home/Partners.astro";
-import Values from "../components/Home/Values.astro";
+import Partners from "../components/home/Partners.astro";
+import Values from "../components/home/Values.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 import Heading from "../components/common/heading.astro";
 import { getEntry } from "astro:content";
 const testimonials = (await getEntry("testimonials", "testimonials")).data;
 ---
 
-<Layout title="Kiran Foundation"
+<Layout title="Kiran Foundation">
   <main class="page-wrapper">
     <Hero />
     <Values />
