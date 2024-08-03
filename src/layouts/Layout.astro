@@ -35,19 +35,18 @@ const common = (await getEntry("common", "common")).data;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content={description ?? common.description} />
+		<meta
+			name="description"
+			content={description ?? common.description}
+		/>
 		<meta name="keywords" content={keywords ?? common.keywords} />
-		<meta name="author" content={author ?? common.author} />
+		<meta name="author" content={author ?? common.author } />
 		<meta name="generator" content={generator ?? common.generator} />
 		<meta property="og:title" content={ogTitle ?? common.ogTitle} />
 		<meta
 			property="og:description"
 			content={ogDescription ?? common.ogDescription}
-			content={ogDescription ?? common.ogDescription}
 		/>
-		<meta property="og:image" content={ogImage ?? common.ogImage} />
-		<meta property="og:url" content={ogUrl ?? common.ogUrl} />
-		<link rel="icon" href="/favicon.ico" />
 		<meta property="og:image" content={ogImage ?? common.ogImage} />
 		<meta property="og:url" content={ogUrl ?? common.ogUrl} />
 		<link rel="icon" href="/favicon.ico" />
@@ -134,3 +133,4 @@ const common = (await getEntry("common", "common")).data;
 		</script>
 	</body>
 </html>
+

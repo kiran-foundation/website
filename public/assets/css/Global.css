@@ -22,7 +22,6 @@
   opacity: 1;
   visibility: visible;
 }
-
 .page-loading-inner {
   position: absolute;
   top: 50%;
@@ -35,6 +34,7 @@
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
 }
+
 
 .page-loading.active > .page-loading-inner {
   opacity: 1;
@@ -66,6 +66,7 @@
   animation: spinner 0.75s linear infinite;
 }
 
+
 [data-bs-theme="dark"] .page-spinner {
   background-color: rgba(255, 255, 255, 0.25);
 }
@@ -81,7 +82,6 @@
     transform: none;
   }
 }
-
 @keyframes spinner {
   0% {
     -webkit-transform: scale(0);
@@ -121,4 +121,5 @@ body {
   background: #fff;
   margin: 0;
   padding: 0;
+
 }
