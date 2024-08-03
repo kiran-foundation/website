@@ -69,6 +69,16 @@ const common = (await getEntry("common", "common")).data;
 			rel="stylesheet"
 			id="google-font"
 		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="assets/app-icons/favicon-96x96.png"
+			sizes="96x96"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="assets/app-icons/apple-icon-180x180.png"
+		/>
 		<title>{title ?? common.title}</title>
 
 		<!-- Page loading script -->
@@ -96,6 +106,28 @@ const common = (await getEntry("common", "common")).data;
 		<Header />
 		<slot />
 		<Footer />
+		<a
+    class="btn-scroll-top"
+    href="#top"
+    data-scroll
+    aria-label="Scroll back to top"
+  >
+    <svg
+      viewBox="0 0 40 40"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="20"
+        cy="20"
+        r="19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"></circle>
+      </svg>
+      <i class="ai-arrow-up"></i>
+    </a>
 
 		<script src="/assets/js/theme.min.js" is:inline></script>
 		<script src="jarallax/dist/jarallax.min.js"></script>
@@ -106,3 +138,4 @@ const common = (await getEntry("common", "common")).data;
 		</script>
 	</body>
 </html>
+
