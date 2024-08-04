@@ -98,30 +98,10 @@
   color: #252a34;
 }
 
-.statistics-container-data {
-  font-family: Poppins, sans-serif;
-  font-size: 56px;
-  font-weight: 600;
-  line-height: 72.8px;
-  text-align: center;
-  color: #f9f9f9;
-  gap: 4px;
-
-}
 
 
-.statistics-title-p {
-  font-family: Poppins, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 30px;
-  text-align: center;
-}
 
-.statistics-container {
-  width: 196px;
-  height: 137px;
-}
+
 
 .programe-title-h2 {
   font-family: Poppins, sans-serif;
