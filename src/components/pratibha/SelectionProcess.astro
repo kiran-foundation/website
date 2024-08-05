@@ -3,19 +3,7 @@ import { getEntry } from "astro:content";
 const selectionProcess =(await getEntry("pratibha", "selectionprocess")).data
 const common =(await getEntry( "common", "common")).data
 ---
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Selection Process</title>
-        <link
-            rel="stylesheet"
-            href="/assets/css/Pratibha/selectionProcess.css"
-        />
-    </head>
-    <body>
-        <div class="selectionProcess-highlight-container">
+<div class="selectionProcess-highlight-container">
             <div class="selectionProcess-section-title">
                {selectionProcess.heading}
             </div>
@@ -53,5 +41,3 @@ const common =(await getEntry( "common", "common")).data
                 href="/pratibhaApply">{common.applyNow}</a
             >
         </div>
-    </body>
-</html>
