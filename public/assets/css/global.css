@@ -166,7 +166,6 @@ body {
 }
 
 .benefits-title-h3 {
-  font-family: Poppins, sans-serif;
   font-size: 22px;
   font-weight: 600;
   line-height: 33px;
@@ -178,7 +177,6 @@ body {
 .benefits-content-container-p1,
 .benefits-content-container-p2,
 .benefits-content-container-p3 {
-  font-family: Poppins, sans-serif;
   font-size: 17px;
   font-weight: 400;
   line-height: 28px;
@@ -186,21 +184,7 @@ body {
   color: #2b2e36;
 }
 
-
-.benefits-readmore-button {
-  width: 162px;
-  height: 48px;
-  font-family: Poppins, sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 24px;
-  text-align: left;
-  border-radius: 8px;
-
-}
-
 .benefits-section2-p1 {
-  font-family: Poppins, sans-serif;
   font-style: italic;
   line-height: 38px;
   margin-top: -35px;
@@ -212,7 +196,6 @@ body {
 
 .benefits-section-p2-dob,
 .benefits-section2-p3 {
-  font-family: Poppins, sans-serif;
   font-size: 17px;
   font-weight: 400;
   line-height: 28px;
@@ -222,7 +205,6 @@ body {
 }
 
 .benefits-section2-boldtext {
-  font-family: Poppins;
   font-size: 20px;
   font-weight: 700;
   line-height: 38px;
