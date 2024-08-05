@@ -214,7 +214,6 @@ body {
 }
 
 .volunteer-heading-h2 {
-  font-family: Poppins, sans-serif;
   font-size: 40px;
   font-weight: 600;
   line-height: 52px;
@@ -226,17 +225,16 @@ body {
 }
 
 .volunteer-description-p {
-  font-family: Poppins, sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
   text-align: left;
   color: #49494c;
+  width: 332px;
 
 }
 
 .volunteer-perks {
-  font-family: Poppins, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
@@ -245,16 +243,15 @@ body {
 }
 
 .volunteer-heading-h3 {
-  font-family: Poppins, sans-serif;
   font-size: 28px;
   font-weight: 600;
   line-height: 36.4px;
   text-align: left;
   color: #2b2e36;
+
 }
 
 .volunteer-paragraph-description {
-  font-family: Poppins, sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
@@ -262,24 +259,14 @@ body {
   color: #2b2e36;
 }
 
-.volunteer-apply-button {
-  font-family: Poppins, sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 24px;
-  text-align: center;
-  width: 106px;
-  height: 36px;
-  border-radius: 12px;
-}
+
 
 .section-heading2 {
-  font-family: Poppins, sans-serif;
   font-size: 40px;
   font-weight: 600;
   line-height: 52px;
   text-align: left;
-  margin-left: -60px;
+  margin-left: -90px;
   height: 106px;
   width: 450px;
 
@@ -287,17 +274,7 @@ body {
 }
 
 
-.volunteer-join-button {
-  font-family: Poppins, sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 24px;
-  text-align: left;
-  width: 216px;
-  height: 48px;
-  border-radius: 8px;
-  margin-left: -60px;
-}
+
 
 .shaktiprograme-knowmore-button {
   font-family: Poppins, sans-serif;

@@ -3,7 +3,6 @@ import { getEntry } from "astro:content"
 const missionData = (await getEntry("donation","missiondonation")).data
 ---
 
-<body>
     <div class="container missionDonation-heading">{missionData.title}</div>
     <div class="container missionDonation-container">
         <img class="missionDonation-img" src={missionData.image} alt="Image">
