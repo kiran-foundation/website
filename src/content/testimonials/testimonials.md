@@ -1,4 +1,5 @@
 ---
+title: Testimonials
 testimonials:
   - name: Kanchan Jha
     location: Nerul, Navi Mumbai

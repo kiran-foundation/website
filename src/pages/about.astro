@@ -2,14 +2,13 @@
 import "aos/dist/aos.css"
 import "jarallax/dist/jarallax.min.css"
 import Header from "../components/common/Header.astro";
-import AboutHero from "../components/About/aboutHero.astro";
+import Hero from "../components/about/Hero.astro";
 import Footer from "../components/common/Footer.astro";
-import Mission from "../components/About/mission.astro";
-import Team from "../components/About/team.astro";
-import Speaker from "../components/About/speaker.astro";
-import Volunteers from "../components/About/volunteers.astro";
+import Mission from "../components/about/Mission.astro";
+import Team from "../components/about/Team.astro";
+import Volunteers from "../components/about/Volunteers.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
-import Gallery from "../components/About/gallery.astro";
+import Gallery from "../components/about/Gallery.astro";
 interface Props {
 	title: string;
 }
@@ -166,10 +165,9 @@ AOS.init();
   <!-- Page wrapper -->
   <main class="page-wrapper">
     <Header/>
-    <AboutHero/>
+    <Hero/>
     <Mission/>
     <Team/>
-    <Speaker/>
     <Volunteers/>
     <TestimonialsCarousel/>
     <Gallery/>
