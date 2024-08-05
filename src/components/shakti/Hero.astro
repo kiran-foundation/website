@@ -3,17 +3,7 @@ import { getEntry } from "astro:content";
 const heroData = (await getEntry("shakti", "shaktihero")).data
 
 ---
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shakti</title>
-    <link rel="stylesheet" href="/assets/css/Home/Global.css">
-</head>
-<body>
-  <section class="position-relative" style="margin-top: 4rem; margin-bottom: 100px;" >
+<section class="position-relative" style="margin-top: 4rem; margin-bottom: 100px;" >
     <div
       class="position-absolute object-fit-cover w-100  h-100 top-0 start-0 bg-size-cover bg-position-center mt-5"
       style="background-image: url(/assets/images/hero/kiranshakti-hero.png); width:1918px; height:863px;"
@@ -35,6 +25,3 @@ const heroData = (await getEntry("shakti", "shaktihero")).data
     <div class="d-md-none" style="height: 160px;"></div>
   </section>
   
-  
-</body>
-</html>
