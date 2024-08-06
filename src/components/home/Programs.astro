@@ -6,7 +6,7 @@ const programs = (await getEntry("home", "programs")).data;
 const common = (await getEntry("common", "common")).data;
 ---
 <Heading title={ programs.title }/>
-  <section class="overflow-hidden pb-3">
+  <section class="container overflow-hidden pb-3">
   <div class="container pb-sm-3 mb-md-2 mb-lg-3">
     <div class="row g-4">
       <div
@@ -17,7 +17,7 @@ const common = (await getEntry("common", "common")).data;
         data-disable-parallax-down="md"
       >
         <img
-          class="object-fit-cover w-100 h-100 rounded-3"
+          class="object-fit-cover w-100 h-100 rounded-3 "
           src="/assets/images/programs/kiranimage.jpg"
           alt="Image"
         />
@@ -30,7 +30,7 @@ const common = (await getEntry("common", "common")).data;
         data-disable-parallax-down="md"
       >
         <div
-          class="d-flex flex-column h-100 rounded-3 py-5 px-4 px-lg-5"
+          class="d-flex flex-column h-100 py-4 px-3 px-lg-4 rounded-3 "
           style="background: #F7FCFE;"
         >
           <h2 class="programe-title-h2 mb-xl-4">{programs.pratibha.title}</h2>
@@ -50,7 +50,7 @@ const common = (await getEntry("common", "common")).data;
 </section>
 
 <!-- Services: Health insurance -->
-<section class="overflow-hidden pb-5">
+<section class="container overflow-hidden pb-5">
   <div class="container pb-sm-3 mb-md-2 mb-lg-3">
     <div class="row g-4">
       <div
@@ -61,7 +61,7 @@ const common = (await getEntry("common", "common")).data;
         data-disable-parallax-down="md"
       >
         <img
-          class="object-fit-cover w-100 h-100 rounded-3"
+          class="object-fit-cover w-100 h-100  rounded-3"
           src="/assets/images/programs/program2.png"
           alt="Image"
         />
@@ -74,7 +74,7 @@ const common = (await getEntry("common", "common")).data;
         data-disable-parallax-down="md"
       >
         <div
-          class="d-flex flex-column h-100 rounded-3 py-5 px-4 px-lg-5"
+          class="d-flex flex-column  w-100 h-100 rounded-3 py-4 px-3 px-lg-4"
           style="background: #F7FCFE;"
         >
           <h2 class="programe-title-h2 mb-xl-4">
@@ -94,3 +94,14 @@ const common = (await getEntry("common", "common")).data;
     </div>
   </div>
 </section>
+<style>
+  .programe-seemore-button{
+  width: 162px;
+  height: 48px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  border-radius: 8px;
+}
+</style>
