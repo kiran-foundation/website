@@ -22,6 +22,7 @@
   opacity: 1;
   visibility: visible;
 }
+
 .page-loading-inner {
   position: absolute;
   top: 50%;
@@ -36,11 +37,11 @@
 }
 
 
-.page-loading.active > .page-loading-inner {
+.page-loading.active>.page-loading-inner {
   opacity: 1;
 }
 
-.page-loading-inner > span {
+.page-loading-inner>span {
   display: block;
   font-family: "Inter", sans-serif;
   font-size: 1rem;
@@ -48,7 +49,7 @@
   color: #6f788b;
 }
 
-[data-bs-theme="dark"] .page-loading-inner > span {
+[data-bs-theme="dark"] .page-loading-inner>span {
   color: #fff;
   opacity: 0.6;
 }
@@ -76,17 +77,20 @@
     -webkit-transform: scale(0);
     transform: scale(0);
   }
+
   50% {
     opacity: 1;
     -webkit-transform: none;
     transform: none;
   }
 }
+
 @keyframes spinner {
   0% {
     -webkit-transform: scale(0);
     transform: scale(0);
   }
+
   50% {
     opacity: 1;
     -webkit-transform: none;
@@ -98,12 +102,10 @@
   --accent: 136, 58, 234;
   --accent-light: 224, 204, 250;
   --accent-dark: 49, 10, 101;
-  --accent-gradient: linear-gradient(
-    45deg,
-    rgb(var(--accent)),
-    rgb(var(--accent-light)) 30%,
-    white 60%
-  );
+  --accent-gradient: linear-gradient(45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%);
 }
 
 html {
@@ -121,7 +123,123 @@ body {
   background: #fff;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 
+}
+
+
+.hero-title-h1,
+.pratibha-hero-title-h1,
+.shakti-hero-title-h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 82px;
+  text-align: center;
+  margin-top: 10%;
+
+}
+
+.hero-description-p,
+.shakti-description-p {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+
+}
+
+.programe-title-h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 54px;
+  text-align: left;
+  color: #051d40;
+}
+
+.programe-paragraph-p,
+.shaktiprograme-paragraph-p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: justify;
+  color: #49494C;
+}
+
+.benefits-title-h3 {
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: left;
+  color: #121212;
+  margin-left: -5px;
+}
+
+.benefits-content-container-p1,
+.benefits-content-container-p2,
+.benefits-content-container-p3 {
+  font-family: Poppins, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: justify;
+  color: #2b2e36;
+}
+
+
+.benefits-readmore-button {
+  width: 162px;
+  height: 48px;
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  border-radius: 8px;
+
+}
+
+.benefits-section2-p1 {
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  line-height: 38px;
+  margin-top: -35px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: #252a34;
+  text-align: justify;
+}
+
+.benefits-section-p2-dob,
+.benefits-section2-p3 {
+  font-family: Poppins, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: justify;
+  color: #2b2e36;
+  letter-spacing: 1px;
+}
+
+.benefits-section2-boldtext {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #252a34;
+}
+
+.volunteer-heading-h2 {
+  font-family: Poppins, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  text-align: left;
+  color: #2b2e36;
+  width: 448px;
+  height: 104px;
 }
 .update-title {
   font-size: 18px;
@@ -131,4 +249,154 @@ body {
 }
 .update-date {
   font-size: 14px;
+<<<<<<< HEAD
 }
+=======
+}
+.update-card {
+  
+=======
+.volunteer-description-p {
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: left;
+  color: #49494c;
+
+}
+
+.volunteer-perks {
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  text-align: left;
+  color: #2b2e36;
+}
+
+.volunteer-heading-h3 {
+  font-family: Poppins, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36.4px;
+  text-align: left;
+  color: #2b2e36;
+}
+
+.volunteer-paragraph-description {
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  color: #2b2e36;
+}
+
+.volunteer-apply-button {
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  width: 106px;
+  height: 36px;
+  border-radius: 12px;
+}
+
+.section-heading2 {
+  font-family: Poppins, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  text-align: left;
+  margin-left: -60px;
+  height: 106px;
+  width: 450px;
+
+
+}
+
+
+.volunteer-join-button {
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  width: 216px;
+  height: 48px;
+  border-radius: 8px;
+  margin-left: -60px;
+}
+
+.shaktiprograme-knowmore-button {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  width: 142px;
+  height: 48px;
+  border-radius: 8px;
+  padding: 12px 24px 12px 24px;
+}
+
+.shakti-heading2-h1 {
+  width: 350px;
+  height: 163px;
+  font-family: Poppins, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: left;
+  margin-left: -100px;
+
+}
+
+.shakti-join-text {
+  font-family: Poppins, sans-serif;
+  font-size: 33px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  color: #FFFFFF;
+  margin-left: 80px;
+  margin-top: 30px;
+  margin-bottom: 35px;
+
+}
+
+.shaktiCardVolunteer-button {
+  width: 296px;
+  height: 48px;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  margin-left: -100px;
+  border-radius: 8px;
+  padding: 12px, 24px, 12px, 24px;
+}
+
+.cardShakti-connect-button {
+  width: 230px;
+  height: 48px;
+  padding: 12px, 24px, 12px, 24px;
+  border-radius: 8px;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  color: #F7FCFF;
+  margin-left: 80px;
+}
+
+
+@media(max-width:430px) {
+  .section-heading2 {
+    text-align: center;
+  }
+>>>>>>> 8e59f6fa52599dcc71c5157ca19268ad6008118e

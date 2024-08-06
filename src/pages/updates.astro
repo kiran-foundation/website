@@ -1,7 +1,7 @@
 ---
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
-import Updates from "../components/common/UpdateComponent.astro";
+import UpdateComponent from "../components/common/UpdateComponent.astro";
 import Layout from "../layouts/Layout.astro";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 ---
   <Layout title="Updates" generator={Astro.generator}>
     <main class="page-wrapper">
-      <Updates />
+      <UpdateComponent />
     </main>
     
   </Layout>
