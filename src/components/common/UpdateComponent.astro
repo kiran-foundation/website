@@ -1,0 +1,70 @@
+---
+import type { MarkdownFile } from "../../types/Markdown";
+import Heading from "./heading.astro";
+import UpdateCard from "./UpdateCard.astro";
+
+const allUpdates = import.meta.glob<MarkdownFile>("/src/content/updates/*.md");
+
+const updates = await Promise.all(
+  Object.values(allUpdates).map(async (update) => {
+    const { frontmatter } = await update();
+    return { ...frontmatter };
+  }),
+);
+
+const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;
+
+const filteredUpdates = updates
+  .filter((update) => !showHighPriorityOnly || update.priority === "high")
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const updatesToDisplay = showHighPriorityOnly
+  ? filteredUpdates.slice(0, 3)
+  : filteredUpdates;
+
+// let updatesCountToDisplay = 6
+
+// const updateValue = () => {
+//   console.log(updatesCountToDisplay);
+//   if(updatesCountToDisplay < updatesToDisplay.length){
+//     updatesCountToDisplay++
+//   }
+// }
+---
+
+<!-- Update display section -->
+<section
+  class="container pb-2 pb-sm-3 pt-4 mt-lg-3 mt-xl-5"
+  style="background-color: white;"
+>
+  <div class="container">
+    <Heading title="Updates" />
+
+    <div
+      class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 text-center"
+    >
+      {updatesToDisplay.map((update,index) => 
+      // {if (index < updatesCountToDisplay) {
+        // return <UpdateCard update={update} />
+      // }}
+      <UpdateCard update={update} />
+      )}
+    </div>
+    <!-- See More button -->
+    {
+      isMainPage ? (
+        <div class="text-center mt-4">
+          <a href="/updates" class="btn btn-primary">
+            See More
+          </a>
+        </div>
+      ):(
+      <div class="text-center mt-4">
+        {/* <button class="btn btn-primary" onclick={updateValue}>
+        Show more
+      </button> */}
+      </div>
+      )
+    }
+  </div>
+</section>

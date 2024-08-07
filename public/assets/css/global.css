@@ -222,6 +222,7 @@ body {
   width: 448px;
   height: 104px;
 
+
 }
 
 .volunteer-description-p {
@@ -235,12 +236,13 @@ body {
 }
 
 .volunteer-perks {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 27px;
-  text-align: left;
-  color: #2b2e36;
+
 }
+.update-title {
+
+  font-size: 18px;
+}
+
 
 .volunteer-heading-h3 {
   font-size: 28px;
@@ -346,3 +348,11 @@ body {
     text-align: center;
   }
 }
+
+.update-description {
+  font-size: 14px;
+}
+.update-date {
+  font-size: 14px;
+}
+
