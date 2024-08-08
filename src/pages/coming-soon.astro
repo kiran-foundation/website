@@ -16,46 +16,7 @@ import Footer from '../components/common/Footer.astro';
 <link rel="stylesheet" href="/assets/css/theme.min.css" />
 <link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
 
-<Layout title="Coming Soon - Annual Report">
-  <main class="page-wrapper">
-    <Header />
-
-    <section class="coming-soon-section">
-      <div class="overlay"></div>
-      <div class="content" data-aos="fade-up">
-        <h2 class="page_title">Coming Soon</h2>
-        <p class="coming-soon-text">
-          Our report is currently in progress and will be available soon.
-          Stay tuned for updates!
-        </p>
-        <div class="countdown">
-          <div class="countdown-item">
-            <span class="countdown-number" id="days">00</span>
-            <span class="countdown-label">Days</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="hours">00</span>
-            <span class="countdown-label">Hours</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="minutes">00</span>
-            <span class="countdown-label">Minutes</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="seconds">00</span>
-            <span class="countdown-label">Seconds</span>
-          </div>
-        </div>
-        <a href="#" class="notify-btn" role="button">Notify Me</a>
-      </div>
-    </section>
-
-    <Footer />
-  </main>
-</Layout>
-
 <style>
-  /* Global Styles */
   body, html {
     margin: 0;
     padding: 0;
@@ -104,7 +65,7 @@ import Footer from '../components/common/Footer.astro';
     margin-bottom: 1rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color:skyblue;
+    color: skyblue;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
@@ -148,7 +109,7 @@ import Footer from '../components/common/Footer.astro';
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
 
-  .notify-btn {
+  .notify-button {
     display: inline-block;
     background-color: #ff5722;
     color: #fff;
@@ -160,66 +121,108 @@ import Footer from '../components/common/Footer.astro';
     transition: background-color 0.3s ease-in-out;
     text-decoration: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    outline: none;
   }
 
-  .notify-btn:hover {
+  .notify-button:hover {
     background-color: #e64a19;
   }
 
+  .thank-you-message {
+    display: none;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    color: #ffd700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
   @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .page_title {
-      font-size: 2.5rem;
-    }
-
-    .coming-soon-text {
-      font-size: 1.2rem;
-    }
-
-    .countdown-item {
-      width: 70px;
-      padding: 0.8rem;
-    }
-
-    .countdown-number {
-      font-size: 2rem;
-    }
-
-    .countdown-label {
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .page_title {
-      font-size: 2rem;
-    }
-
-    .coming-soon-text {
-      font-size: 1rem;
-    }
-
-    .countdown-item {
-      width: 60px;
-      padding: 0.6rem;
-    }
-
-    .countdown-number {
-      font-size: 1.5rem;
-    }
-
-    .countdown-label {
-      font-size: 0.8rem;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 </style>
+
+
+<Layout title="Coming Soon - Kiran Foundation">
+  <main class="page-wrapper">
+    <Header />
+    
+    <section class="coming-soon-section">
+      <div class="overlay"></div>
+      <div class="content" data-aos="fade-up">
+        <h2 class="page_title">Coming Soon</h2>
+        <p class="coming-soon-text">
+          Our report is currently in progress and will be available soon.
+          Stay tuned for updates!
+        </p>
+        <div class="countdown">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+        <button class="notify-button" id="notifyMeBtn" onclick="notifyUser()">Notify Me</button>
+        <div class="thank-you-message" id="thankYouMessage">
+          Thanks! We will notify you when it's available.
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Countdown Timer Logic
+    const countdownDate = new Date("August 10, 2024 8:40:20").getTime();
+
+    const countdownFunction = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days.toString().padStart(2, '0');
+      document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+      
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.querySelector(".coming-soon-text").innerText = "The wait is over! Our report is now available.";
+      }
+    }, 1000);
+
+    const notifyMeBtn = document.getElementById("notifyMeBtn");
+    const thankYouMessage = document.getElementById("thankYouMessage");
+
+    window.notifyUser = function() {
+      const userConfirmed = confirm("You'll be redirected to the notification form. Continue?");
+      if (userConfirmed) {
+        window.open("https://forms.gle/HBTVw9NwahLuJgoY9", "_blank");
+        thankYouMessage.style.display = "block";
+        setTimeout(() => {
+          thankYouMessage.style.display = "none"; 
+        }, 15000);
+      }
+    }
+  });
+</script>
