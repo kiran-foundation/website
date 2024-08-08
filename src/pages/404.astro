@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Site</title>
+    <script src="/js/404-handler.js" defer></script>
+    <style>
+        body {
+        font-family: 'Open Sans', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #f0f4ff, #d9e4ff);
+        animation: backgroundAnimation 10s infinite alternate;
+      }
+
+      @keyframes backgroundAnimation {
+        0% { background: linear-gradient(135deg, #f0f4ff, #d9e4ff); }
+        100% { background: linear-gradient(135deg, #ffe5e5, #ffcccc); }
+      }
+
+      h1 {
+        font-size: 7rem;
+        margin: 0;
+        color: #ff5252;
+        animation: bounce 1.5s ease infinite alternate;
+      }
+
+      @keyframes bounce {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-10px); }
+      }
+
+      p {
+        font-size: 1.6rem;
+        color: #555555;
+        margin: 10px 0 30px 0;
+      }
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        background-color: #0077ff;
+        padding: 15px 30px;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 119, 255, 0.4);
+      }
+
+      a:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="container">
+            <h1>404</h1>
+            <p>Sorry, the page you are looking for doesn't exist.</p>
+            <p>
+               <a href="/">Return to Homepage</a>
+            </p>
+          </div>
+    </div>
+  </body>
+</html>
