@@ -1,8 +1,8 @@
 ---
 readMore: Read more
-more: See more
+more: Read more
 join: Join Us Now
-apply: Apply
+apply: Apply Now
 applyNow: Apply now
 knowMore: Know more
 
