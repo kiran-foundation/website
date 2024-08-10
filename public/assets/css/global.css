@@ -147,6 +147,7 @@ body {
   text-align: center;
 
 }
+
 .home-button {
   font-size: 22px !important;
   font-weight: 600 !important;
@@ -173,18 +174,19 @@ body {
   color: #49494C;
 }
 
-.benefits-container-bg{
-   background-color:#F7FCFE; 
-   border-radius: 8px;
+.benefits-container-bg {
+  background-color: #F7FCFE;
+  border-radius: 8px;
+  height: 226px;
+  width:355px;
 }
 
-.benefits-title-h3{
+.benefits-title-h3 {
   font-size: 20px;
   font-weight: 600;
-  line-height:25px;
-  text-align: justify;
+  line-height: 33px;
   color: #121212;
-  
+
 }
 
 .benefits-content-container-p1,
@@ -227,13 +229,12 @@ body {
 }
 
 .volunteer-heading-h2 {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 600;
-  line-height: 52px;
+  line-height: 30px;
   text-align: left;
   color: #2b2e36;
-  width: 448px;
-  height: 104px;
+
 }
 
 .volunteer-description-p {
@@ -242,9 +243,9 @@ body {
   line-height: 30px;
   text-align: left;
   color: #49494c;
-  width: 332px;
-
+  width:460px;
 }
+
 .volunteer-heading-h3 {
   font-size: 28px;
   font-weight: 600;
@@ -259,6 +260,15 @@ body {
   line-height: 30px;
   text-align: left;
   color: #2b2e36;
+}
+
+.volunteer-perks {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: left;
+  color: #2B2E36;
+
 }
 
 .section-heading2 {

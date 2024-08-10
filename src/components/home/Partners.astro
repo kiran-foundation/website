@@ -1,71 +1,41 @@
----
-import { getEntry } from "astro:content";
-const partners = (await getEntry("home", "partners")).data;
-const _common = (await getEntry("common", "common")).data;
----
-<section class="container my-lg-3 my-xl-4 my-xxl-5" style="margin-top: 40px;">
-  <div
-    class="overflow-auto pb-sm-4 pb-md-5 pt-sm-2 pt-md-3 mt-n2 mt-sm-0 mt-md-1 mt-lg-3 mb-lg-2"
-  >
-    <div class="row row-cols-4 g-0 pb-2" style="min-width: 768px; ">
-      <div class="col d-flex justify-content-center">
-        <img
-          class="d-dark-mode-none"
-          src={partners.partner1}
-          width="196"
-          alt="Deloitte"
-        />
-        <img
-          class="d-none d-dark-mode-block"
-          src={partners.partner2}
-          width="196"
-          alt="Deloitte"
-        />
+<!-- Clients (Logos autoplay slider) -->
+<section class="pt-sm-1 pt-lg-3 pt-xl-4" style="margin-bottom: 7rem;">
+  <div class="swiper pb-3 pb-sm-4 mb-xl-2" data-swiper-options='{
+    "loop": true,
+    "grabCursor": false,
+    "centeredSlides": true,
+    "autoplay": {
+      "delay": 0,
+      "disableOnInteraction": false
+    },
+    "freeMode": true,
+    "speed": 10000,
+    "freeModeMomentum": false,
+    "breakpoints": {
+      "0": { "slidesPerView": 2 },
+      "600": { "slidesPerView": 3 },
+      "800": { "slidesPerView": 4 },
+      "1200": { "slidesPerView": 5 },
+      "1400": { "slidesPerView": 6 },
+      "1600": { "slidesPerView": 7 }
+    }
+  }'>
+    <div class="container swiper-wrapper d-flex justify-content-center" style="transition-timing-function: linear !important; gap:70px;">
+      <div class="swiper-slide" style="width: 196px;">
+        <img class="d-block d-dark-mode-none mx-auto" src="assets/images/logo/vedantu.png" width="196" alt="vedantu">
+       </div>
+      <div class="swiper-slide" style="width:196px;">
+        <img class="d-block mx-auto" src="assets/images/logo/saral.png" width="196" alt="saral">
       </div>
-      <div class="col d-flex justify-content-center">
-        <img
-          class="d-dark-mode-none"
-          src={partners.partner3}
-          width="196"
-          alt="Champion"
-        />
-        <img
-          class="d-none d-dark-mode-block"
-          src={partners.partner4}
-          width="196"
-          alt="Champion"
-        />
+      <div class="swiper-slide" style="width:196px;">
+        <img class="d-block mx-auto" src="assets/images/logo/DB office new.png" width="196" alt="DB office">
       </div>
-      <div class="col d-flex justify-content-center">
-        <img
-          class="d-dark-mode-none"
-          src={partners.partner5}
-          width="196"
-          alt="Financial Times"
-        />
-        <img
-          class="d-none d-dark-mode-block"
-          src={partners.partner6}
-          width="196"
-          alt="Financial Times"
-        />
+      <div class="swiper-slide" style="width:123px;">
+        <img class="d-block mx-auto" src="assets/images/logo/financial.png" width="196" alt="Fiancial">
       </div>
-      <div class="col d-flex justify-content-center">
-        <img
-          class="d-dark-mode-none"
-          src={partners.partner7}
-          width="196"
-          alt="Clutch"
-        />
-        <img
-          class="d-none d-dark-mode-block"
-          src={partners.partner8}
-          width="196"
-          alt="Clutch"
-        />
+      <div class="swiper-slide" style="width:144px;">
+        <img class="d-block mx-auto mb-1" src="assets/images/logo/clutch.png" width="196" alt="clutch">
       </div>
     </div>
-  </div>
-</section>
-
-
+    </div>
+  

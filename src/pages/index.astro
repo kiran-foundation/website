@@ -1,4 +1,6 @@
 ---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
 import Layout from '../layouts/Layout.astro';
 import Hero from "../components/home/Hero.astro";
 import Statistics from "../components/home/Statistics.astro";
@@ -25,6 +27,7 @@ const testimonials = (await getEntry("testimonials", "testimonials")).data;
     <Heading title={testimonials.title}/>
     <TestimonialsCarousel pageTag="home"/>
     <Updates showHighPriorityOnly={true} isMainPage={true} />
+    <Heading title="Our Supporters"/>
     <Partners />
   </main>
 </Layout>

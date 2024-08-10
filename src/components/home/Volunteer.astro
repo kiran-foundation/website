@@ -1,7 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import Heading from "../common/heading.astro";
-
+import VolunteerComponent from "../home/VolunteerComponent.astro";
 const volunteer = (await getEntry("home", "volunteer")).data;
 const common = (await getEntry("common", "common")).data;
 ---
@@ -12,25 +12,25 @@ const common = (await getEntry("common", "common")).data;
     <div class="row">
       <!-- Sticky sidebar -->
       <div class="col-md-5 col-xl-4 mb-5 mb-md-0" style="margin-top: -135px;">
-        <div class="position-sticky top-0" style="padding-top: 125px; ">
+        <div class="position-sticky top-0" style="padding-top: 140px; ">
           <h2
-            class="volunteer-heading-h2 h1 pb-2 pb-lg-3"
-            style="width: 332px;"
+            class="volunteer-heading-h2 pb-2 pb-lg-3 mt-4"
+            style="width:500px;"
           >
             {volunteer.title}
           </h2>
           <div class="row">
             <div class="col-md-10">
-              <p class="volunteer-description-p mb-4">
+              <p class="volunteer-description-p mb-3 mt-3">
                 {volunteer.description}
               </p>
             </div>
           </div>
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-0 mt-4">
             <li class="d-flex align-items-center mb-3">
               <svg
                 class="d-block flex-shrink-0"
-                style="color: #051D40;"
+                style="color:#F1592A"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -50,10 +50,10 @@ const common = (await getEntry("common", "common")).data;
                 </div>
               </div>
             </li>
-            <li class="d-flex align-items-center mb-3">
+            <li class="d-flex align-items-center mb-3 mt-4">
               <svg
                 class="d-block flex-shrink-0"
-                style="color: #051D40;"
+                style="color:#F1592A"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -73,10 +73,10 @@ const common = (await getEntry("common", "common")).data;
                 </div>
               </div>
             </li>
-            <li class="d-flex align-items-center">
+            <li class="d-flex align-items-center mt-4">
               <svg
                 class="d-block flex-shrink-0"
-                style="color: #051D40;"
+                style="color:#F1592A"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -100,41 +100,18 @@ const common = (await getEntry("common", "common")).data;
       <!-- Pricing list -->
       <div class="col-md-7 offset-xl-1 mt-3">
         <div class="ps-md-4 ps-xxl-5">
-          <!-- Pricing card -->
+           <VolunteerComponent volunteer={volunteer} common={common}/>
+         
+         <!-- Pricing card -->
           <div
             class="card border-1 rounded-4 position-relative mb-3"
-            style="border-color: black;"
+            style="border-color:#F1592A;"
           >
             <div
               class="card-body d-sm-flex align-items-start text-center text-sm-start"
             >
-              <div class="w-100 pe-sm-4 mb-3 mb-sm-0 p-40">
-                <h3 class="volunteer-heading-h3 mb-2">
-                  {volunteer.volunteerRole1.title}
-                </h3>
-                <p class="volunteer-paragraph-description fs-lg mb-0">
-                  {volunteer.volunteerRole1.description}
-                </p>
-              </div>
-              <a
-                class="home-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-3"
-                href="/volunteering/3"
-              >
-                {common.apply}
-              </a>
-            </div>
-          </div>
-
-          <!-- Pricing card -->
-          <div
-            class="card border-1 rounded-4 position-relative mb-3"
-            style="border-color: black;"
-          >
-            <div
-              class="card-body d-sm-flex align-items-start text-center text-sm-start"
-            >
-              <div class="w-100 pe-sm-4 mb-3 mb-sm-0 p-40">
-                <h3 class="volunteer-heading3 mb-2">
+              <div class="w-100 pe-sm-4 mb-2 mb-sm-0">
+                <h3 class="volunteer-heading3 mb-2" style="width: 352px;">
                   {volunteer.volunteerRole2.title}
                 </h3>
                 <p class="volunteer-paragraph-description fs-lg mb-0">
@@ -142,7 +119,7 @@ const common = (await getEntry("common", "common")).data;
                 </p>
               </div>
               <a
-                class="home-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-3"
+                class="home-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-4"
                 href="/volunteering/2"
               >
                 {common.apply}
@@ -159,7 +136,7 @@ const common = (await getEntry("common", "common")).data;
 <section class="container pt-2 mt-lg-3 mt-xl-4 mt-xxl-5">
   <div
     class="container bg-primary rounded-5 overflow-hidden mt-2 mt-sm-4 mt-lg-5"
-    style="background-color: #051D40 !important; opacity: 1; "
+    style="background-color:#051D40 !important; opacity: 1; "
   >
     <div class="row position-relative z-2 align-items-center">
       <div class="col-md-6 col-lg-5 offset-lg-1">
@@ -191,7 +168,7 @@ const common = (await getEntry("common", "common")).data;
       <div class="col-md-6 p-2">
         <img
           class="d-block mx-auto p-3"
-          style="width:535px; height:320px; border-radius: 48px;"
+          style="width:535px; max-height:320px; border-radius: 48px;"
           src="/assets/images/volunter/group.png"
           width="534"
           alt="Image"
