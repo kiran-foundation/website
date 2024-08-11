@@ -15,16 +15,7 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
     testimonial.tags.includes(pageTag),
 );
 ---
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TestimonialCarousel</title>
-    </head>
-
-    <body>
-        <div class="carousel" style="margin-bottom: 45px;">
+ <div class="carousel" style="margin-bottom: 45px;">
             <div class="carousel-inner">
                 {
                     testimonials.map((testimonial, index) => (
@@ -44,8 +35,6 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
                 }
             </div>
         </div>
-    </body>
-</html>
 <style>
     .carousel {
         position: relative;
