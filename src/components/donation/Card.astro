@@ -1,53 +1,41 @@
 ---
-import { getEntry } from "astro:content"
-const cardData =(await getEntry("donation","donationcard")).data
+import { getEntry } from "astro:content";
+const cardData = (await getEntry("donation", "donationcard")).data;
 ---
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Donation</title>
-        <link rel="stylesheet" href="/assets/css/Donation/donationCard.css" />
-    </head>
-    <body>
-        <section class="donationCard mt-2 mt-sm-3 mt-md-3 mt-lg-3">
-            <div class="container donationCard-container-first">
-                <div class="donationCard-container-second">
-                    <div class="donation-container-detail">
-                        <div class="donation-heading">
-                            {cardData.title}
-                        </div>
-                        <div class="donation-paragraph">
-                            {cardData.paragraph}
-                        </div>
-                        <div class="donation-btn">
-                            <a class="donation-link" href="/">{cardData.cardBtn}</a>
-                        </div>
-                    </div>
-                    <div class="donation-container-image">
-                        <div class="donation-container-allImages">
-                            
-                            <img
-                                class="Image-first"
-                                src={cardData.imagebarChart}
-                                alt="barChart"
-                            />
-                            <img
-                                class="Image-second"
-                                src={cardData.imagelineChart}
-                                alt="lineChart"
-                            />
-                            <img
-                                class="Image-third"
-                                src={cardData.imagedonutChart}
-                                alt="donutChart"
-                            />
-                        </div>
-                    </div>
+<section class="donationCard mt-2 mt-sm-3 mt-md-3 mt-lg-3">
+    <div class="container donationCard-container-first">
+        <div class="donationCard-container-second">
+            <div class="donation-container-detail">
+                <div class="donation-heading">
+                    {cardData.title}
+                </div>
+                <div class="donation-paragraph">
+                    {cardData.paragraph}
+                </div>
+                <div class="donation-btn">
+                    <a class="donation-link" href="/">{cardData.cardBtn}</a>
                 </div>
             </div>
-        </section>
-    </body>
-</html>
+            <div class="donation-container-image">
+                <div class="donation-container-allImages">
+                    <img
+                        class="Image-first"
+                        src={cardData.imagebarChart}
+                        alt="barChart"
+                    />
+                    <img
+                        class="Image-second"
+                        src={cardData.imagelineChart}
+                        alt="lineChart"
+                    />
+                    <img
+                        class="Image-third"
+                        src={cardData.imagedonutChart}
+                        alt="donutChart"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

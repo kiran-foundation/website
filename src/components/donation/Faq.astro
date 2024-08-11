@@ -1,94 +1,87 @@
 ---
 import { getEntry } from "astro:content";
-const DonationFaqData =(await getEntry("donation", "donationfaq")).data
+const DonationFaqData = (await getEntry("donation", "donationfaq")).data;
 ---
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>FAQ Section</title>
-        <link rel="stylesheet" href="/assets/css/Pratibha/faq.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-    </head>
-    <body>
-        <div class="faq-container-c1" style="margin-top: 100px;">
-            <div class="faq-container-c2">
-                <h1 class="faq-title">{DonationFaqData.title}</h1>
-                <p class="faq-content">{DonationFaqData.paragraph}</p>
-                <div class="faq-image-content">
-                    <img src={DonationFaqData.image}alt="vectorImage" />
+<div class="faq-container-c1" style="margin-top: 100px;">
+    <div class="faq-container-c2">
+        <h1 class="faq-title">{DonationFaqData.title}</h1>
+        <p class="faq-content">{DonationFaqData.paragraph}</p>
+        <div class="faq-image-content">
+            <img src={DonationFaqData.image} alt="vectorImage" />
+        </div>
+    </div>
+    <div class="faq-container-c3" style="margin-left:50px;">
+        <div class="faq-accordion">
+            <div class="faq-accordion-item">
+                <div class="faq-accordion-question">
+                    {DonationFaqData.question1}
+                    <img
+                        src="/assets/images/benefits/Chevron.png"
+                        style="margin-left: 629px; margin-top:-62px"
+                    />
+                </div>
+                <div class="faq-accordion-answer mt-5">
+                    {DonationFaqData.answer1}
                 </div>
             </div>
-            <div class="faq-container-c3" style="margin-left:50px;">
-                <div class="faq-accordion">
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-question">
-                            {DonationFaqData.question1}
-                            <img src="/assets/images/benefits/Chevron.png" 
-                            style="margin-left: 629px; margin-top:-62px"/>
-                        </div>
-                        <div class="faq-accordion-answer mt-5">
-                            {DonationFaqData.answer1}
-                        </div>
-                    </div>
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-question">
-                            {DonationFaqData.question2}
-                            <img src="/assets/images/benefits/Chevron1.png" 
-                            style="margin-left: 632px; margin-top:-56px"/>
-                        </div>
-                        <div class="faq-accordion-answer">
-                           {DonationFaqData.answer2}
-                        </div>
-                    </div>
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-question">
-                            {DonationFaqData.question3}
-                            <img src="/assets/images/benefits/Chevron.png" 
-                            style="margin-left: 633px; margin-top:-60px"/>
-                        </div>
-                        <div class="faq-accordion-answer">
-                            {DonationFaqData.answer2}
-                        </div>
-                    </div>
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-question">
-                            {DonationFaqData.question4}
-                            <img src="/assets/images/benefits/Chevron.png" 
-                            style="margin-left: 633px; margin-top:-65px"/>
-                        </div>
-                        <div class="faq-accordion-answer">
-                            {DonationFaqData.answer4}
-                        </div>
-                    </div>
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-question">
-                            {DonationFaqData.question5}
-                            <img src="/assets/images/benefits/Chevron.png" 
-                            style="margin-left: 633px; margin-top:-56px"/>
-                        </div>
-                        <div class="faq-accordion-answer mt-5">
-                            {DonationFaqData.answer}
-                        </div>
-                    </div>
+            <div class="faq-accordion-item">
+                <div class="faq-accordion-question">
+                    {DonationFaqData.question2}
+                    <img
+                        src="/assets/images/benefits/Chevron1.png"
+                        style="margin-left: 632px; margin-top:-56px"
+                    />
+                </div>
+                <div class="faq-accordion-answer">
+                    {DonationFaqData.answer2}
+                </div>
+            </div>
+            <div class="faq-accordion-item">
+                <div class="faq-accordion-question">
+                    {DonationFaqData.question3}
+                    <img
+                        src="/assets/images/benefits/Chevron.png"
+                        style="margin-left: 633px; margin-top:-60px"
+                    />
+                </div>
+                <div class="faq-accordion-answer">
+                    {DonationFaqData.answer2}
+                </div>
+            </div>
+            <div class="faq-accordion-item">
+                <div class="faq-accordion-question">
+                    {DonationFaqData.question4}
+                    <img
+                        src="/assets/images/benefits/Chevron.png"
+                        style="margin-left: 633px; margin-top:-65px"
+                    />
+                </div>
+                <div class="faq-accordion-answer">
+                    {DonationFaqData.answer4}
+                </div>
+            </div>
+            <div class="faq-accordion-item">
+                <div class="faq-accordion-question">
+                    {DonationFaqData.question5}
+                    <img
+                        src="/assets/images/benefits/Chevron.png"
+                        style="margin-left: 633px; margin-top:-56px"
+                    />
+                </div>
+                <div class="faq-accordion-answer mt-5">
+                    {DonationFaqData.answer}
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-        <script>
-            document
-                .querySelectorAll(".faq-accordion-question")
-                .forEach((item) => {
-                    item.addEventListener("click", (_event) => {
-                        const accordionItem = item.parentNode as HTMLElement;
-                        accordionItem.classList.toggle("active");
-                    });
-                });
-        </script>
-    </body>
-</html>
+<script>
+    document.querySelectorAll(".faq-accordion-question").forEach((item) => {
+        item.addEventListener("click", (_event) => {
+            const accordionItem = item.parentNode as HTMLElement;
+            accordionItem.classList.toggle("active");
+        });
+    });
+</script>
