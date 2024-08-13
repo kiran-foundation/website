@@ -639,3 +639,6 @@ html, body {
         max-width: none;
       }
     }
+    .image-container{
+      max-width: 170px;
+    }
