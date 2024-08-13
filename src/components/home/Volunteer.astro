@@ -2,8 +2,10 @@
 import { getEntry } from "astro:content";
 import Heading from "../common/heading.astro";
 import VolunteerComponent from "./VolunteerItem.astro";
+
 const volunteer = (await getEntry("home", "volunteer")).data;
 const common = (await getEntry("common", "common")).data;
+
 ---
 
 <Heading title="Volunteer with Us" />
@@ -100,15 +102,16 @@ const common = (await getEntry("common", "common")).data;
       <!-- Pricing list -->
       <div class="col-md-7 offset-xl-1 mt-3">
         <div class="ps-md-4 ps-xxl-5">
-           <VolunteerComponent volunteer={volunteer} common={common}/>
-        </div>
+          
+            <VolunteerComponent volunteer={volunteer} common={common}/>
+          </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="container pt-2 mt-lg-3 mt-xl-4 mt-xxl-5">
+<section class="container pt-2 mt-lg-3 mt-xl-4 mt-xxl-5" style="margin-bottom: 6rem;">
   <div
     class="container bg-primary rounded-5 overflow-hidden mt-2 mt-sm-4 mt-lg-5"
     style="background-color:#051D40 !important; opacity: 1; "
