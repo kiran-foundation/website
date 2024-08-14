@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const countdownDate = new Date("August 12, 2024 08:40:20").getTime();
+  const countdownDate = new Date("August 30, 2024 08:40:20").getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
