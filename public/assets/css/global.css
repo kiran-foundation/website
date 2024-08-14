@@ -368,14 +368,17 @@ body {
 
 .update-title {
   font-size: 18px;
+  text-align: justify;
 }
 
 .update-description {
   font-size: 14px;
+  text-align: justify;
 }
 
 .update-date {
   font-size: 14px;
+  text-align:justify;
 }
 .page-loading {
   position: fixed;
