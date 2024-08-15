@@ -6,10 +6,9 @@
     justify-content: center;
     height: 100vh;
     margin: 0;
-   background: black;
-
+    background: black;
+    padding: 20px;
 }
-
 
 .container-404 h1 {
     font-size: 7rem;
@@ -18,14 +17,47 @@
     animation: bounce 1.5s ease infinite alternate;
 }
 
+@media (max-width: 768px) {
+    .container-404 h1 {
+        font-size: 5rem;
+    }
+
+    .container-404 p {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .container-404 a {
+        padding: 12px 25px;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-404 h1 {
+        font-size: 3.5rem;
+    }
+
+    .container-404 p {
+        font-size: 1.2rem;
+    }
+
+    .container-404 a {
+        padding: 10px 20px;
+        font-size: 1.2rem;
+    }
+}
+
 @keyframes bounce {
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(-10px);
     }
 }
+
 .container-404 p {
     font-size: 1.6rem;
     color: #ffffff;
