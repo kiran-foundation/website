@@ -1,21 +1,17 @@
 ---
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
-import Header from "../components/common/Header.astro";
-import Footer from "../components/common/Footer.astro";
-
-import AboutPratibha from "../components/Pratibha/aboutPratibha.astro";
-import Benefits from "../components/Pratibha/benefits.astro";
-import SelectionProcess from "../components/Pratibha/SelectionProcess.astro";
-import CardPratibha from "../components/Pratibha/cardPratibha.astro";
-import FaqPratibha from "../components/Pratibha/FaqPratibha.astro";
-import Heading from "../components/common/heading.astro";
-//import Testimonial from "../components/common/Testimonial.astro";
-import HeroPratibha from "../components/Pratibha/heroPratibha.astro";
-import AboutPratibhaMentoring from "../components/Pratibha/aboutPratibhaMentoring.astro";
-import BenefitsSecond from "../components/Pratibha/benefitsSecond.astro";
-import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 import Layout from "../layouts/Layout.astro";
+import Heading from "../components/common/heading.astro";
+import Hero from "../components/pratibha/Hero.astro";
+import Intro from "../components/pratibha/Intro.astro";
+import BenefitOne from "../components/pratibha/BenefitOne.astro";
+import Mentoring from "../components/pratibha/Mentoring.astro";
+import BenefitTwo from "../components/pratibha/BenefitTwo.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+import SelectionProcess from "../components/pratibha/SelectionProcess.astro";
+import Card from "../components/pratibha/Card.astro";
+import FaqPratibha from "../components/pratibha/FaqPratibha.astro";
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -30,59 +26,45 @@ import Layout from "../layouts/Layout.astro";
 <link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
 
 <Layout title="Pratibha">
-  <Header />
+  <!-- Page wrapper -->
+  <main class="page-wrapper">
+    <Hero />
+    <Heading title="What we Do" />
+    <Intro />
+    <BenefitOne />
+    <Mentoring />
+    <BenefitTwo />
+    <Heading title="Testimonials" />
+    <TestimonialsCarousel pageTag="pratibha" />
+    <Heading title="Selection Process" />
+    <SelectionProcess />
+    <Card />
+    <FaqPratibha />
+  </main>
 
-  <body>
-    <!-- Page loading spinner -->
-    <div class="page-loading active">
-      <div class="page-loading-inner">
-        <div class="page-spinner"></div>
-        <span>Loading...</span>
-      </div>
-    </div>
-
-    <!-- Page wrapper -->
-    <main class="page-wrapper">
-      <Header />
-      <HeroPratibha />
-      <Heading title="What we Do" />
-      <AboutPratibha />
-      <Benefits />
-      <AboutPratibhaMentoring />
-      <BenefitsSecond />
-      <Heading title="Testimonials" />
-      <TestimonialsCarousel pageTag="pratibha" />
-      <Heading title="Selection Process" />
-      <SelectionProcess />
-      <CardPratibha />
-      <FaqPratibha />
-      <Footer />
-    </main>
-
-    <!-- Back to top button -->
-    <a
-      class="btn-scroll-top"
-      href="#top"
-      data-scroll
-      aria-label="Scroll back to top"
+  <!-- Back to top button -->
+  <a
+    class="btn-scroll-top"
+    href="#top"
+    data-scroll
+    aria-label="Scroll back to top"
+  >
+    <svg
+      viewBox="0 0 40 40"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        viewBox="0 0 40 40"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="20"
-          cy="20"
-          r="19"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-miterlimit="10"></circle>
-      </svg>
-      <i class="ai-arrow-up"></i>
-    </a>
-  </body>
+      <circle
+        cx="20"
+        cy="20"
+        r="19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"></circle>
+    </svg>
+    <i class="ai-arrow-up"></i>
+  </a>
 </Layout>
 
 <style>
@@ -143,108 +125,4 @@ import Layout from "../layouts/Layout.astro";
     left: calc(50% - 50px);
     object-fit: cover;
   }
-
-  html,
-  body {
-    background: #ffffff;
-    margin: 0;
-    padding: 0;
-  }
-  .page-loading {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transition: all 0.4s 0.2s ease-in-out;
-    transition: all 0.4s 0.2s ease-in-out;
-    background-color: #fff;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 9999;
-  }
-  [data-bs-theme="dark"] .page-loading {
-    background-color: #121519;
-  }
-  .page-loading.active {
-    opacity: 1;
-    visibility: visible;
-  }
-  .page-loading-inner {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    -webkit-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
-    opacity: 0;
-  }
-  .page-loading.active > .page-loading-inner {
-    opacity: 1;
-  }
-  .page-loading-inner > span {
-    display: block;
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    font-weight: normal;
-    color: #6f788b;
-  }
-  [data-bs-theme="dark"] .page-loading-inner > span {
-    color: #fff;
-    opacity: 0.6;
-  }
-  .page-spinner {
-    display: inline-block;
-    width: 2.75rem;
-    height: 2.75rem;
-    margin-bottom: 0.75rem;
-    vertical-align: text-bottom;
-    background-color: #d7dde2;
-    border-radius: 50%;
-    opacity: 0;
-    -webkit-animation: spinner 0.75s linear infinite;
-    animation: spinner 0.75s linear infinite;
-  }
-  [data-bs-theme="dark"] .page-spinner {
-    background-color: rgba(255, 255, 255, 0.25);
-  }
-  @-webkit-keyframes spinner {
-    0% {
-      -webkit-transform: scale(0);
-      transform: scale(0);
-    }
-    50% {
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-  }
-  @keyframes spinner {
-    0% {
-      -webkit-transform: scale(0);
-      transform: scale(0);
-    }
-    50% {
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-  }
 </style>
-
-<script>
-  (function () {
-    window.onload = function () {
-      const preloader = document.querySelector(".page-loading");
-      preloader.classList.remove("active");
-      setTimeout(function () {
-        preloader.remove();
-      }, 1500);
-    };
-  })();
-</script>

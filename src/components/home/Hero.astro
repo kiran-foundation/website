@@ -20,7 +20,7 @@ const common = (await getEntry("common", "common")).data;
     >
       {hero.description}
     </p>
-    <a class="hero-join-button btn btn-primary" href="/volunteering">
+    <a class="home-button btn btn-primary fw-bold" href="/volunteering">
       {common.join}</a
     >
   </div>
@@ -28,15 +28,3 @@ const common = (await getEntry("common", "common")).data;
   <div class="d-none d-md-block d-lg-none" style="height: 260px;"></div>
   <div class="d-md-none" style="height: 160px;"></div>
 </section>
-<style>
-  .hero-join-button {
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 24px;
-    text-align: center;
-    width: 183px;
-    height: 48px;
-    border-radius: 8px;
-    color: white;
-  }
-</style>

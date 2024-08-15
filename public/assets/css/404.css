@@ -16,7 +16,6 @@
     color: #ff5252;
     animation: bounce 1.5s ease infinite alternate;
 }
-
 @media (max-width: 768px) {
     .container-404 h1 {
         font-size: 5rem;
@@ -52,7 +51,7 @@
     0% {
         transform: translateY(0);
     }
-
+  
     100% {
         transform: translateY(-10px);
     }

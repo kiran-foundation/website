@@ -3,16 +3,7 @@ import { getEntry } from "astro:content";
 const lawforwomenData = (await getEntry("shakti","shaktiprograme")).data
 const common = (await getEntry ("common", "common")).data
 ---
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Law for woman</title>
-</head>
-<body>
-  <section class="overflow-hidden" style="margin-top: 50px;">
+<section class="overflow-hidden" style="margin-top: 50px;">
     <div class="container pb-sm-3 mb-md-2 mb-lg-3">
       <div class="row g-4">
         <div
@@ -56,6 +47,3 @@ const common = (await getEntry ("common", "common")).data
       </div>
     </div>
   </section>
-
-</body>
-</html>

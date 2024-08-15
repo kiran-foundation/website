@@ -2,16 +2,7 @@
 import { getEntry } from "astro:content"
 const pratibhaApplication = (await getEntry("pratibha","application")).data
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiran Pratibha 2024</title>
-    <link rel="stylesheet" href="/assets/css/Pratibha/pratibhaApply.css">
-</head>
-<body>
-    <div class="apply-container">
+<div class="apply-container">
         <div class="apply-image">
             <img class="container image-hero" src="/assets/images/hero/hero.jpg">
          </div>
@@ -74,5 +65,3 @@ const pratibhaApplication = (await getEntry("pratibha","application")).data
             <span class="apply-google-form"><a href="/">{pratibhaApplication.googleform}</a></span>
         </div>
     </div>
-</body>
-</html>
