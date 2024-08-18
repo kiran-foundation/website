@@ -645,3 +645,24 @@ html, body {
     .image-container{
       max-width: 170px;
     }
+    .footer-paragraph{
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: justify;
+      color: #2B2E36;
+      line-height: 20px;
+      width:307px;
+    }
+    .list-style{
+      font-size:16px;
+      font-weight: 500;
+      line-height: 26px;
+      text-align: center;
+      color: #49494C;
+    }
+    .copy-right{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      color: #49494C;
+    }
