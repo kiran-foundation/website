@@ -17,4 +17,5 @@ requirements: |
   - Strong problem-solving skills and attention to detail
   - Ability to motivate and lead other volunteers
   - Experience in event planning, coordination, and execution
+url : "Local-kiran-foundation-chapter-lead"
 ---

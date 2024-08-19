@@ -13,7 +13,8 @@ export interface MarkdownFile {
     responsibilitiesHeading?: string;
     requirementsHeading?: string;
     [key: string]: any;
-    cards:any;
+    cards?:any;
+    url?:any;
   };
   default: string;
 }

@@ -9,50 +9,62 @@ import AboutVolunteerRole from "../../components/volunteer/AboutVolunteerRole.as
 import Form from "../../components/volunteer/Form.astro";
 import InfoVolunteering from "../../components/volunteer/InfoVolunteering.astro";
 import HowDoesItWork from "../../components/volunteer/HowDoesItWork.astro";
+import type { MarkdownFile } from "../../types/Markdown";
 
 const { path } = Astro.params;
 
 export function getStaticPaths() {
-  return [
-    { params: { path: "1" } },
-    { params: { path: "2" } },
-    { params: { path: "3" } },
-  ];
+  const allVolunteering = import.meta.glob<MarkdownFile>(
+    "/src/content/work/volunteer/*.md",
+  );
+
+  let parameters = [];
+  Object.entries(allVolunteering).forEach(([key, value]) => {
+    parameters.push({
+      params: { path: key.split("/").pop()?.replace(".md", "") },
+    });
+  });
+
+  console.log(parameters);
+  
+
+  return parameters;
 }
 ---
+
 <Layout>
   <!-- Page wrapper -->
-<main class="page-wrapper">
-  <Header />
-  <Hero />
-  <AboutVolunteerRole path={path} />
-  <Form />
-  <InfoVolunteering />
-  <HowDoesItWork />
-  <Footer />
-</main>
+  <main class="page-wrapper">
+    <Header />
+    <Hero />
+    <AboutVolunteerRole path={path} />
+    <Form />
+    <InfoVolunteering />
+    <HowDoesItWork />
+    <Footer />
+  </main>
 
-<!-- Back to top button -->
-<a
-  class="btn-scroll-top"
-  href="#top"
-  data-scroll
-  aria-label="Scroll back to top"
->
-  <svg
-    viewBox="0 0 40 40"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
+  <!-- Back to top button -->
+  <a
+    class="btn-scroll-top"
+    href="#top"
+    data-scroll
+    aria-label="Scroll back to top"
   >
-    <circle
-      cx="20"
-      cy="20"
-      r="19"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="1.5"
-      stroke-miterlimit="10"></circle>
-  </svg>
-  <i class="ai-arrow-up"></i>
-</a>
-
+    <svg
+      viewBox="0 0 40 40"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="20"
+        cy="20"
+        r="19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"></circle>
+    </svg>
+    <i class="ai-arrow-up"></i>
+  </a>
+</Layout>

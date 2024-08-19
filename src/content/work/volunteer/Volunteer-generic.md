@@ -19,4 +19,6 @@ requirements: |
   - A passion for mentoring and a desire to contribute to the growth of young talent
   - Patience, adaptability, and the ability to guide students without imposing personal preferences
   - Familiarity with the challenges and opportunities faced by talented students
+
+url: "Volunteer-generic"
 ---

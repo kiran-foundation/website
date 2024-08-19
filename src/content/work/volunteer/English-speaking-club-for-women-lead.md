@@ -20,4 +20,5 @@ requirements: |
   - Ability to adapt instruction to meet the diverse students' needs
   - Patience, adaptability, and a growth mindset
   - Proficiency in using technology for teaching and learning purposes
+url: "English-speaking-club-for-women-lead"
 ---

@@ -24,15 +24,11 @@ const loadStaticTexts = async () => {
   const staticFilePath = Object.keys(staticTextsFile)[0];
   if (!staticFilePath) {
     console.warn("Static texts file path not found");
-    // FIXME: Later
-    // throw new Error("Static texts file path not found");
   }
 
   const staticFile = staticTextsFile[staticFilePath];
   if (!staticFile) {
     console.warn("Static texts file not found");
-    // FIXME: Later
-    // throw new Error("Static texts file not found");
   }
 
   const { frontmatter } = await staticFile();
@@ -44,8 +40,6 @@ const staticTexts = await loadStaticTexts();
 
 if (!staticTexts) {
   console.warn("Static texts not found");
-  // FIXME: Later
-  // throw new Error("Static texts not found");
 }
 
 const { showHighPriorityOnly = false, _isMainPage = false } = Astro.props;
@@ -61,70 +55,44 @@ const volunteeringToDisplay = showHighPriorityOnly
 const { chooseVolunteering, applyNow, seeMore, Requirements } = staticTexts;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="/assets/css/Volunteering/ChooseVolunteering.css"
-    />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document
-          .querySelector(".mainVolunteering-sub-container")
-          .addEventListener("click", function (event) {
-            const target = event.target as HTMLElement;
-            if (target.classList.contains("mainVolunteering-btn-apply")) {
-              const card = target.closest(".mainVolunteering-card");
-              const index = Array.from(this.children).indexOf(card);
-              window.location.href = `/volunteering/${index + 1}`;
-            }
-          });
-      });
-    </script>
-  </head>
-  <body>
-    <section class="mainVolunteering-main-container">
-      <h2 class="mainVolunteering-main-heading">{chooseVolunteering}</h2>
-      <div class="mainVolunteering-sub-container">
-        {
-          volunteeringToDisplay.map((volunteer, index) => (
-            <div class={`mainVolunteering-card`} id={`c${index + 1}`}>
-              <div>
-                <h3 class="mainVolunteering-card-heading">{volunteer.title}</h3>
-                <p class="mainVolunteering-card-subheading">
-                  {volunteer.timeCommitment}
-                </p>
-                <h4 class="mainVolunteering-card-description-title">
-                  {Requirements}:
-                </h4>
-                <ul class="mainVolunteering-card-description">
-                  {(volunteer.requirements
-                    ? volunteer.requirements
-                        .split("\n")
-                        .filter((desc) => desc.trim() !== "")
-                    : []
-                  ).map((point, _i) => (
-                    <li>{point.trim().replace(/^-\s*/, "")}</li>
-                  ))}
-                </ul>
-              </div>
-              <div class="mainVolunteering-card-buttons">
-                <button
-                  class="mainVolunteering-btn mainVolunteering-btn-apply"
-                  onclick={`window.location.href = '/volunteering/${index + 1}'`}
-                >
-                  {applyNow}
-                </button>
-                <button class="mainVolunteering-btn mainVolunteering-btn-see-more">
-                  {seeMore}
-                </button>
-              </div>
-            </div>
-          ))
-        }
+<section class="mainVolunteering-main-container">
+  <h2 class="mainVolunteering-main-heading">{chooseVolunteering}</h2>
+  <div class="mainVolunteering-sub-container">
+    {volunteeringToDisplay.map((volunteer, index) => (
+      <div class={`mainVolunteering-card`} id={`c${index + 1}`}>
+        <div>
+          <h3 class="mainVolunteering-card-heading">{volunteer.title}</h3>
+          
+          <p class="mainVolunteering-card-subheading">
+            {volunteer.timeCommitment}
+          </p>
+          <h4 class="mainVolunteering-card-description-title">
+            {Requirements}:
+          </h4>
+          <ul class="mainVolunteering-card-description">
+            {(volunteer.requirements
+              ? volunteer.requirements
+                  .split("\n")
+                  .filter((desc) => desc.trim() !== "")
+              : []
+            ).map((point, _i) => (
+              <li>{point.trim().replace(/^-\s*/, "")}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="mainVolunteering-card-buttons">
+          <a
+            class="mainVolunteering-btn mainVolunteering-btn-apply"
+            href={`/volunteering/${volunteer.url}`}
+          >
+            {applyNow}
+          </a>
+          <button class="mainVolunteering-btn mainVolunteering-btn-see-more"
+            onclick={`window.location.href = '/volunteering/${volunteer.url}'`}>
+            {seeMore}
+          </button>
+        </div>
       </div>
-    </section>
-  </body>
-</html>
+    ))}
+  </div>
+</section>

@@ -17,4 +17,6 @@ requirements: |
   - Strong problem-solving skills and attention to detail
   - Self-driven, go-getter attitude
   - Knowledge of Agile methodology is desirable but not required
+
+url: "React-native-application-lead"
 ---
