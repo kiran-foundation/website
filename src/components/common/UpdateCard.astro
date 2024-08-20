@@ -8,16 +8,16 @@ const { update } = Astro.props;
       href={update.link}
     >
       <img
-        class=" d-block rounded-5 mb-3"
+        class="d-block rounded-5 mb-3"
         src={update.featured_image}
         width="370"
         alt={update.title}
       />
-      <h3 class="update-title h5 mb-1">{update.title}</h3>
-      <p class="update-description mb-0 text-body-secondary">
+      <h3 class="update-title h5 mb-1 mx-1">{update.title}</h3>
+      <p class="update-description mb-0 text-body-secondary mx-1">
         {update.summary}
       </p>
-      <p class="update-date mb-0 text-body-secondary">
+      <p class="update-date mb-0 text-body-secondary mx-1">
         <small>
           Posted on: {new Date(update.date).toLocaleDateString()}
         </small>
