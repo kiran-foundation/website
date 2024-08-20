@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/css/Volunteering/Form.css">
-</head>
-<body>
+---
+const { path } = Astro.props;
+---
+<section id="form">
   <div class="volunteeringForm-frame">
     <h1>We'd love to hear from you</h1>
     <div class="volunteeringForm-container">
@@ -24,7 +20,12 @@
         </div>
         <div class="volunteeringForm-input-container">
           <label for="resume">Resume</label>
-          <input type="text" id="resume" name="resume" placeholder="Upload your resume">
+          <input type="file" id="resume" name="resume" placeholder="Upload your resume">
+        </div>
+
+        <div class="volunteeringForm-input-container">
+          <label for="role">Role</label>
+          <input type="text" id="role" name="role" placeholder="Volunteering Role" value={path}>
         </div>
 
         <div class="volunteeringForm-input-container">
@@ -37,6 +38,7 @@
       <div id="pop-up" style="display: none;">Form submitted successfully!</div>
     </div>
   </div>
+</section>
   
   <script>
     const form = document.getElementById('volunteering-form') as HTMLFormElement;
@@ -70,5 +72,3 @@
       }
     });
   </script>
-</body>
-</html>
