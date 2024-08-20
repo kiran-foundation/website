@@ -25,57 +25,55 @@ document.addEventListener("DOMContentLoaded", function () {
   const countdownInterval = setInterval(updateCountdown, 1000);
   updateCountdown();
 
-  window.notifyUser = function() {
-    const email = prompt("Please enter your email to be notified:");
+  window.openNotifyPopup = function () {
+    document.getElementById('sourcePage').value = window.location.href;
+    document.getElementById('notifyPopup').style.display = 'block';
+  };
 
-    if (email && validateEmail(email)) {
-      postToGoogle(email, window.location.href);
+  window.closeNotifyPopup = function () {
+    document.getElementById('notifyPopup').style.display = 'none';
+  };
+
+  window.submitNotifyForm = function (event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const sourcePage = document.getElementById('sourcePage').value;
+
+    if (email && sourcePage) {
+      postToGoogle(email, sourcePage);
+      closeNotifyPopup();
     } else {
-      displayMessage('Please enter a valid email address.', false);
+      displayMessage('Please fill in all fields.', false);
     }
   };
 
-  function validateEmail(email) {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(String(email).toLowerCase());
-  }
-
   function postToGoogle(email, sourcePage) {
-    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSc1AbPhiVXtwIGlP1aZst136YzaZCQaf51X5fzk4NzzYRcNBQ/formResponse";
-    const data = {
+    const scriptURL = "https://docs.google.com/forms/d/e/1FAIpQLSc1AbPhiVXtwIGlP1aZst136YzaZCQaf51X5fzk4NzzYRcNBQ/formResponse";
+    const data = new URLSearchParams({
       "entry.24309726": email,
       "entry.1659573731": sourcePage
-    };
+    });
 
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", formURL, true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          displayMessage('Your response has been recorded.', true);
-        } else {
-          displayMessage('There was an error. Please try again.', false);
-        }
-      }
-    };
-
-    const encodedData = Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-
-    xhr.send(encodedData);
+    fetch(scriptURL, {
+      method: "POST",
+      body: data,
+      mode: "no-cors"
+    })
+      .then(() => {
+        displayMessage('Your response has been recorded.', true);
+      })
+      .catch(() => {
+        displayMessage('There was an error. Please try again.', false);
+      });
   }
 
   function displayMessage(message, success) {
     const thankYouMessage = document.getElementById("thankYouMessage");
     thankYouMessage.innerText = message;
     thankYouMessage.style.display = "block";
-    thankYouMessage.style.color = success ? "yellow" : "yeellow";
+    thankYouMessage.style.color = success ? "Yellow" : "black";
     setTimeout(() => {
       thankYouMessage.style.display = "none";
     }, 15000);
   }
-
 });
