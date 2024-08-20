@@ -1,23 +1,21 @@
 ---
 import TestimonialComponent from "./TestimonialComponent.astro";
 import { getEntry } from "astro:content";
+
+// interface testimonial{
+//     image: string;
+//     name: string;
+//     location: string;
+//     text: string;
+// }
 const testimonialsData = (await getEntry("testimonials", "testimonials")).data;
-const common = (await getEntry("common", "common")).data;
+// const common = (await getEntry("common", "common")).data;
 const { pageTag } = Astro.props;
 const testimonials = testimonialsData.testimonials.filter((testimonial) =>
     testimonial.tags.includes(pageTag),
 );
 ---
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TestimonialCarousel</title>
-    </head>
-
-    <body>
-        <div class="carousel" style="margin-bottom: 45px;">
+ <div class="carousel" style="margin-bottom: 45px;">
             <div class="carousel-inner">
                 {
                     testimonials.map((testimonial, index) => (
@@ -30,20 +28,18 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
             <div class="carousel-controls">
                 {
                     Array(Math.ceil(testimonials.length / 2))
-                        .fill()
+                        .fill(null)
                         .map((_, index) => (
                             <span class="carousel-bullet" data-index={index} />
                         ))
                 }
             </div>
         </div>
-    </body>
-</html>
 <style>
     .carousel {
         position: relative;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1130px;
         margin: auto;
         overflow: hidden;
     }
@@ -89,8 +85,8 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const bullets = document.querySelectorAll(".carousel-bullet");
-        const inner = document.querySelector(".carousel-inner");
-        const items = document.querySelectorAll(".carousel-item");
+        const inner = document.querySelector(".carousel-inner") as HTMLElement;
+        // const items = document.querySelectorAll(".carousel-item");
         let currentIndex = 0;
 
         function updateCarousel() {

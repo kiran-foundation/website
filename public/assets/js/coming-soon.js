@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const countdownInterval = setInterval(updateCountdown, 1000);
   updateCountdown();
-
+  
   window.openNotifyPopup = function () {
     document.getElementById('sourcePage').value = window.location.href;
     document.getElementById('notifyPopup').style.display = 'block';

@@ -1,0 +1,59 @@
+---
+import { getEntry } from "astro:content";
+const statistics = (await getEntry("home", "statistics")).data;
+const common = (await getEntry("common", "common")).data;
+---
+
+<section
+  class="bg-secondary position-relative py-4 py-md-5"
+  style="margin-bottom: 4rem ; height:273px; background-color: #051D40 !important; opacity: 1;"
+>
+  <div class="container position-relative z-2 ">
+    <div class="row row-cols-2 row-cols-md-4">
+      <div class="col " style="margin-left: -25px;">
+        <div class="statistics-container py-1 my-lg-2 my-xl-3">
+          <div class="statistics-container-data text-light display-4 mb-1">
+            {statistics.stat1.data}
+          </div>
+          <p class="statistics-title-p fs-xl mb-0 text-light">
+            {statistics.stat1.title}
+          </p>
+        </div>
+      </div>
+      <div class="col" >
+        <div class="statistics-container py-1 ps-xl-4 my-lg-2 my-xl-3">
+          <div class="statistics-container-data text-light display-4 mb-1">
+            {statistics.stat2.data}
+          </div>
+          <p
+            class="statistics-title-p fs-xl mb-0 text-light"
+            style="width: 225px;"
+          >
+            {statistics.stat2.title}
+          </p>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-md-end">
+        <div class="py-1 my-lg-2 my-xl-3 ">
+          <div class="text-light display-4 mb-1 text-center">
+            {statistics.stat3.data}
+          </div>
+          <p class="statistics-title-p fs-xl mb-0 text-light">
+            {statistics.stat3.title}
+          </p>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-md-end">
+        <div class="py-1 pe-xl-4 my-lg-2 my-xl-3">
+          <div class="text-light display-4 mb-1 text-center">
+            {statistics.stat4.data}
+          </div>
+          <p class="statistics-title-p fs-xl mb-0 text-light">
+            {statistics.stat4.title}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

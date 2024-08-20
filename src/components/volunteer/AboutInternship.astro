@@ -1,0 +1,125 @@
+---
+import type { MarkdownFile } from "../../types/Markdown";
+import { remark } from 'remark';
+import html from 'remark-html';
+
+const roleFile = import.meta.glob<MarkdownFile>('/src/content/volunteering/Roles/*.md');
+const staticTextsFile = import.meta.glob<MarkdownFile>('/src/content/volunteer/StaticTexts.md');
+
+const role = await (async () => {
+  const volunteerPath = `/src/content/volunteering/Roles/${Astro.props.path}.md`;
+  const volunteer = roleFile[volunteerPath];
+
+  if (volunteer) {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  } else {
+    return null;
+  }
+})();
+
+if (!role) {
+  console.warn("Role not found")
+  // FIXME: Later
+  // throw new Error('Role not found');
+}
+
+const staticTexts = await (async () => {
+  const staticFilePath = Object.keys(staticTextsFile)[0];
+  const staticFile = staticTextsFile[staticFilePath];
+
+  if (staticFile) {
+    const { frontmatter } = await staticFile();
+    return frontmatter;
+  } else {
+    return null;
+  }
+})();
+
+if (!staticTexts) {
+  console.warn("Static texts not found")
+  // FIXME: Later
+  // throw new Error('Static texts not found');
+}
+
+/* FIXME:
+const {
+  title,
+  about,
+  startDate,
+  duration,
+  timeCommitment,
+  teamSize,
+  responsibilities,
+  requirements
+} = role;
+
+*/
+
+const {
+    title = "Title not found",
+    about = "About information not available",
+    startDate = "Start date not provided",
+    duration = "Duration not specified",
+    timeCommitment = "Time commitment not mentioned",
+    teamSize = "Team size not defined",
+    responsibilities = "",
+    requirements = ""
+  } = role || {};
+
+
+/* FIXME:
+const {
+  applyNow,
+  responsibilitiesHeading,
+  requirementsHeading
+} = staticTexts;
+
+*/
+
+
+const {
+  applyNow = "Apply Now",
+  responsibilitiesHeading = "Responsibilities",
+  requirementsHeading = "Requirements"
+} = staticTexts || {};
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/Volunteering/AboutVolunteerRole.css">
+  <title>{title}</title>
+</head>
+<body>
+  <div class="aboutVolunteering-frame1">
+    <div class="aboutVolunteering-frame2">
+      <h1>{title}</h1>
+      <p>{about}</p>
+    </div>
+    <p class="aboutVolunteering-info-text">
+      {startDate}<br>
+      {duration}<br>
+      {timeCommitment}<br>
+      {teamSize}
+    </p>
+    <div class="aboutVolunteering-frame3">
+      <h2>{responsibilitiesHeading}:</h2>
+      <p>{responsibilities.split('\n').map(line => (
+        <>{line}<br/></>
+      ))}</p>
+    </div>
+    <div class="aboutVolunteering-frame4">
+      <h2>{requirementsHeading}:</h2>
+      <p>{requirements.split('\n').map(line => (
+        <>{line}<br/></>
+      ))}</p>
+    </div>
+    <div class="aboutVolunteering-button-container">
+      <button class="aboutVolunteering-apply-button">{applyNow}</button>
+    </div>
+  </div>
+</body>
+</html>

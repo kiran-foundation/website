@@ -1,0 +1,44 @@
+---
+import { getEntry } from "astro:content";
+const selectionProcess = (await getEntry("pratibha", "selectionprocess")).data;
+const common = (await getEntry("common", "common")).data;
+---
+
+<div class="selectionProcess-highlight-container">
+    <div class="selectionProcess-section-title">
+        {selectionProcess.heading}
+    </div>
+</div>
+<div class="selectionProcess-content-container">
+    <h4 class="selectionProcess-h4">{selectionProcess.eligiblity}</h4>
+    <ul class="selectionProcess-p">
+        <li>{selectionProcess.paragraph.list1}</li>
+        <li>{selectionProcess.paragraph.list2}</li>
+        <li>{selectionProcess.paragraph.list3}</li>
+    </ul>
+</div>
+<div class="selectionProcess-documents-container">
+    <h4 class="selectionProcess-h4">{selectionProcess.documents}</h4>
+    <ul class="selectionProcess-p">
+        <li>{selectionProcess.paragraphDocuments.list1}</li>
+        <li>{selectionProcess.paragraphDocuments.list2}</li>
+        <li>{selectionProcess.paragraphDocuments.list3}</li>
+        <li>{selectionProcess.paragraphDocuments.list4}</li>
+    </ul>
+</div>
+<div class="selectionProcess-apply-container">
+    <h4 class="selectionProcess-h4">{selectionProcess.apply}</h4>
+    <ul class="selectionProcess-p">
+        <li>{selectionProcess.applylist.list1}</li>
+        <li>{selectionProcess.applylist.list2}</li>
+        <li>{selectionProcess.applylist.list3}</li>
+        <li>{selectionProcess.applylist.list4}</li>
+    </ul>
+</div>
+
+<div class="container mt-5">
+    <a
+        class="selectionProcess-apply-button btn btn-primary -pill"
+        href="/pratibhaApply">{common.applyNow}</a
+    >
+</div>

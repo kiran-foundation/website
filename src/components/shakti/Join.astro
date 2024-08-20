@@ -1,0 +1,31 @@
+---
+import { getEntry } from "astro:content";
+const shaktiJoinData = (await getEntry("shakti", "shakitjoin")).data;
+---
+
+<div class="container pratibhaCard-container">
+  <div class="pratibhaCard-image-container-vectorstar">
+    <img src="/assets/images/benefits/Vectorstar.png" alt="Vectorstar Image" />
+    <div class="shaktiCard-image-container-ellipseSmall">
+      <img src="/assets/images/benefits/EllipseSmall.png" alt="Ellipse Image" />
+    </div>
+  </div>
+  <div class="shaktiCard-image-container" style="margin-left: 5px;">
+    <img src={shaktiJoinData.image} alt="Mentoring Image" />
+  </div>
+  <div class="shaktiCard-image-container-vector">
+    <img src="/assets/images/benefits/Vector6.png" alt="Vector Image" />
+    <div class="shaktiCard-image-container-ellipse">
+      <img src="/assets/images/benefits/Ellipse.png" alt="Ellipse Image" />
+    </div>
+  </div>
+
+  <div class="shaktiCard-content-container">
+    <h2>{shaktiJoinData.title}</h2>
+    <span class="shakti-join-text">{shaktiJoinData.heading}</span>
+
+    <a class="cardShakti-connect-button btn btn-primary -pill mt-4" href="/"
+      >{shaktiJoinData.joinBtn}</a
+    >
+  </div>
+</div>

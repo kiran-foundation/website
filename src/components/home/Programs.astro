@@ -1,0 +1,96 @@
+---
+import { getEntry } from "astro:content";
+import Heading from "../common/heading.astro";
+
+const programs = (await getEntry("home", "programs")).data;
+const common = (await getEntry("common", "common")).data;
+---
+<Heading title={ programs.title }/>
+  <section class="container overflow-hidden pb-3">
+  <div class="container pb-sm-3 mb-md-2 mb-lg-3">
+    <div class="row g-4">
+      <div
+        class="col-md-7 order-md-2"
+        data-aos="fade-left"
+        data-aos-duration="600"
+        data-aos-offset="280"
+        data-disable-parallax-down="md"
+      >
+        <img
+          class="object-fit-cover w-100 h-100 rounded-3 "
+          src="/assets/images/programs/kiranimage.jpg"
+          alt="Image"
+        />
+      </div>
+      <div
+        class="col-md-5 order-md-1"
+        data-aos="fade-right"
+        data-aos-duration="600"
+        data-aos-offset="280"
+        data-disable-parallax-down="md"
+      >
+        <div
+          class="d-flex flex-column h-100 py-4 px-3 px-lg-4 rounded-3 "
+          style="background: #F7FCFE;"
+        >
+          <h2 class="programe-title-h2 mb-xl-4">{programs.pratibha.title}</h2>
+          <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
+            {programs.pratibha.description}
+          </p>
+          <div class="mt-">
+            <a
+              class="home-button btn btn-primary order-lg-3 d-none d-sm-inline-flex"
+              href="/pratibha">{common.more}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services: Health insurance -->
+<section class="container overflow-hidden pb-5">
+  <div class="container pb-sm-3 mb-md-2 mb-lg-3">
+    <div class="row g-4">
+      <div
+        class="col-md-7"
+        data-aos="fade-right"
+        data-aos-duration="600"
+        data-aos-offset="280"
+        data-disable-parallax-down="md"
+      >
+        <img
+          class="object-fit-cover w-100 h-100  rounded-3"
+          src="/assets/images/programs/program2.png"
+          alt="Image"
+        />
+      </div>
+      <div
+        class="col-md-5"
+        data-aos="fade-left"
+        data-aos-duration="600"
+        data-aos-offset="280"
+        data-disable-parallax-down="md"
+      >
+        <div
+          class="d-flex flex-column  w-100 h-100 rounded-3 py-4 px-3 px-lg-4"
+          style="background: #F7FCFE;"
+        >
+          <h2 class="programe-title-h2 mb-xl-4">
+            {programs.shakti.title}
+          </h2>
+          <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
+            {programs.shakti.description}
+          </p>
+          <div class="mt-">
+            <a
+              class="home-button btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex"
+              href="/shakti">{common.more}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+import type { MarkdownFile } from "../../types/Markdown";
+import { remark } from "remark";
+import html from "remark-html";
+
+const volunteerFile = import.meta.glob<MarkdownFile>(
+  "/src/content/volunteering/whyVolunteer.md",
+);
+
+const volunteerContent = await (async () => {
+  const volunteerPath = "/src/content/volunteering/whyVolunteer.md";
+  const volunteer = volunteerFile[volunteerPath];
+
+  if (volunteer) {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  } else {
+    console.warn("Volunteer content not found for path:", volunteerPath);
+    return null;
+  }
+})();
+
+if (!volunteerContent) {
+  throw new Error("Volunteer content not found");
+}
+
+const { title, cards } = volunteerContent;
+---
+
+<section class="WhyVolunteer-frame WhyVolunteer-card-box">
+  <h2 class="WhyVolunteer-frame-heading">{title}</h2>
+  <div class="WhyVolunteer-cards">
+    {
+      cards.map((card) => (
+        <div class="WhyVolunteer-card">
+          <div class="WhyVolunteer-d-flex WhyVolunteer-align-items-center WhyVolunteer-mb-3">
+            <div class="WhyVolunteer-flex-shrink-0 WhyVolunteer-rounded-1 WhyVolunteer-p-2">
+              <img src={card.image} alt="Image" />
+            </div>
+          </div>
+          <p class="WhyVolunteer-fs-sm" style="word-wrap: break-word;">
+            {card.text}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

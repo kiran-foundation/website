@@ -99,12 +99,13 @@ body, html {
   font-weight: 600;
   text-transform: uppercase;
   border-radius: 50px;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
   text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   outline: none;
-  border: none;
 }
-
 .thank-you-message {
   display: none;
   margin-top: 2rem;

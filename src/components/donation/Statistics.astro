@@ -1,0 +1,52 @@
+---
+import { getEntry } from "astro:content"
+const statisticsData =(await getEntry("donation", "statistics")).data
+---
+<section
+class="bg-secondary position-relative py-4 py-md-5"
+style="margin-bottom: 4rem ; background-color: #051D40 !important; opacity: 1;"
+>
+<div class="container position-relative z-2">
+  <div class="row row-cols-2 row-cols-md-4">
+    <div class="col">
+      <div class="statistics-container py-3 my-lg-2 my-xl-3">
+        <div class="statistics-container-data text-light display-4 mb-1">
+          {statisticsData.stat1.data}
+        </div>
+        <p class="statistics-title-p fs-xl mb-0 text-light">
+          {statisticsData.stat2.title}
+        </p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="statistics-container py-3 ps-xl-4 my-lg-2 my-xl-3">
+        <div class="statistics-container-data text-light display-4 mb-1 mx-2">
+          {statisticsData.stat2.data}
+        </div>
+        <p class="statistics-title-p fs-xl mb-0 text-light">
+          {statisticsData.stat2.title}
+        </p>
+      </div>
+    </div>
+    <div class="col d-flex justify-content-md-center">
+      <div class="statistics-container py-3 my-lg-2 my-xl-3">
+        <div class="statistics-container-data text-light display-4 mb-1">
+          {statisticsData.stat3.data}
+        </div>
+        <p class="statistics-title-p fs-xl mb-0 text-light">
+          {statisticsData.stat3.title}
+      </div>
+    </div>
+    <div class="col d-flex justify-content-md-end">
+      <div class="statistics-container py-3 pe-xl-4 my-lg-2 my-xl-3">
+        <div class="statistics-container-data text-light display-4 mb-1">
+          {statisticsData.stat4.data}
+        </div>
+        <p class="statistics-title-p fs-xl mb-0 text-light">
+          {statisticsData.stat4.title}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
