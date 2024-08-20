@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../common/Header.astro';
+import Footer from '../common/Footer.astro';
+---
+<script src="/assets/js/theme.min.js" is:inline></script>
+<script src="/assets/js/coming-soon.js" is:inline></script>
+<link rel="stylesheet" href="/assets/css/theme.min.css" />
+<link rel="stylesheet" href="/assets/css/coming-soon.css" />
+
+<Layout title="coming soon - Kiran Foundation">
+  <main class="page-wrapper">
+    <Header />
+    
+    <section class="coming-soon-section">
+      <div class="overlay"></div>
+      <div class="content" data-aos="fade-up">
+        <h2 class="page_title">Coming Soon</h2>
+        <p class="coming-soon-text">
+          Our report is currently in progress and will be available soon.
+          Stay tuned for updates!
+        </p>
+        <div class="countdown">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+          <button  class="notify-button" id="notifyMeBtn" onclick="notifyUser()">Notify Me</button>
+        <div class="thank-you-message" id="thankYouMessage">
+          Thanks! We will notify you when it's available.
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>
