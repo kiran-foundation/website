@@ -1,23 +1,22 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Header from "../common/Header.astro";
-import Footer from "../common/Footer.astro";
+import { getEntry } from "astro:content";
+const commonComingsoon = (await getEntry("common", "comingsoon")).data;
 ---
+
 <script src="/assets/js/theme.min.js" is:inline></script>
 <script src="/assets/js/coming-soon.js" is:inline></script>
 <link rel="stylesheet" href="/assets/css/theme.min.css" />
 <link rel="stylesheet" href="/assets/css/coming-soon.css" />
 
-<Layout title="Coming Soon - Kiran Foundation">
+<Layout title={commonComingsoon.title}>
   <main class="page-wrapper">
-    <Header />
     <section class="coming-soon-section">
       <div class="overlay"></div>
       <div class="content" data-aos="fade-up">
-        <h2 class="page_title">Coming Soon</h2>
+        <h2 class="page_title">{commonComingsoon.h2}</h2>
         <p class="coming-soon-text">
-          Our report is currently in progress and will be available soon. Stay
-          tuned for updates!
+          {commonComingsoon.p}
         </p>
         <div class="countdown">
           <div class="countdown-item">
@@ -40,29 +39,29 @@ import Footer from "../common/Footer.astro";
         <button
           class="notify-button"
           id="notifyMeBtn"
-          onclick="openNotifyPopup()">Notify Me</button
+          onclick="openNotifyPopup()"
+        >
+          {commonComingsoon.button}</button
         >
         <div class="thank-you-message" id="thankYouMessage">
-          Thanks! We will notify you when it's available.
+          {commonComingsoon.message}
         </div>
       </div>
     </section>
     <div id="notifyPopup" class="notify-popup">
       <div class="notify-popup-content">
         <span class="close-popup" onclick="closeNotifyPopup()">&times;</span>
-        <h3>Notify Me</h3>
+        <h3>{commonComingsoon.button}</h3>
         <form id="notifyForm" onsubmit="submitNotifyForm(event)">
-          <label for="email">Email:</label>
+          <label for="email">{commonComingsoon.email}</label>
           <input type="email" id="email" name="email" required />
 
-          <label for="sourcePage">Source Page:</label>
+          <label for="sourcePage">{commonComingsoon.page}:</label>
           <input type="text" id="sourcePage" name="sourcePage" readonly />
 
-          <button type="submit">Submit</button>
+          <button type="submit">{commonComingsoon.button}</button>
         </form>
       </div>
     </div>
-
-    <Footer />
   </main>
 </Layout>
