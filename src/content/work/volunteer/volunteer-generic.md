@@ -20,5 +20,5 @@ requirements: |
   - Patience, adaptability, and the ability to guide students without imposing personal preferences
   - Familiarity with the challenges and opportunities faced by talented students
 
-url: "Volunteer-generic"
+url: "volunteer-generic"
 ---
