@@ -7,7 +7,7 @@ aboutTitle:
     report: 'Annual Report'
     statement: 'Financial Statement'
 contactTitle:
-      contact: 'Conatct Us' 
+      contact: 'Contact Us' 
       info: 'info@kiran.foundation'    
       phone: '+91-9303997100'
       whatsApp: '+91-9880141412'
