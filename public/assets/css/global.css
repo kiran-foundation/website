@@ -755,6 +755,12 @@ html, body {
       line-height: 1.25rem;
       color: #49494C;
     }
+    
+    @media(max-width:768px){
+      .logo-container{
+        margin-left: -2%;
+      }
+    }
   
   .container-c1 {
     display: flex;
@@ -1189,11 +1195,6 @@ html, body {
       justify-content: center;
       align-items: center;
       color: #49494C;
-<<<<<<< HEAD
-}
- 
-   
-=======
       font-size: 16px;
       text-align: center;
     }
@@ -1258,9 +1259,3 @@ html, body {
     }
   
  
-    @media(max-width:768px){
-      .logo-container{
-        margin-left: -2%;
-      }
-    }
->>>>>>> 37cd4b8 (footer changes)
