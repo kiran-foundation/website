@@ -18,5 +18,5 @@ requirements: |
   - Self-driven, go-getter attitude
   - Knowledge of Agile methodology is desirable but not required
 
-url: "React-native-application-lead"
+url: "react-native-application-lead"
 ---
