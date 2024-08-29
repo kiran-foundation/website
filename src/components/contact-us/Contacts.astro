@@ -1,0 +1,71 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<script src="/assets/js/theme.min.js" is:inline></script>
+<script src="/assets/js/coming-soon.js" is:inline></script>
+<link rel="stylesheet" href="/assets/css/theme.min.css" />
+<link rel="stylesheet" href="/assets/css/contacts.css" />
+
+<Layout title="Contacts">
+  <main class="page-wrapper contacts">
+    <section class="contact-info-section">
+      <div class="contact">
+        <h1>Contacts</h1>
+        <p class="subtitle">
+          Get in touch with us by completing the below form or call us now
+        </p>
+
+        <div class="contact-info">
+          <div>
+            <strong>Address</strong>
+            <p>101 Sahil Veer <br> Apartments, Vandana <br> Nagar Indore 452018</p>
+          </div>
+          <div>
+            <strong>Phone</strong>
+            <p>
+              Give Us a Call<br /><a href="tel:+919303397100">+91-93033 97100</a
+              >
+            </p>
+            <p>
+              Connect on Whatsapp<br /><a href="https://wa.me/919880141412"
+                >+91-98801 41412</a
+              >
+            </p>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <p>
+              Send Us Email: <br /><a href="mailto:info@kiran.foundation"
+                >info@kiran.foundation</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h2>We'd love to hear from you</h2>
+          <form>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your name" required />
+           <div class="info">
+            <div >
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Email address" required />
+             </div> 
+             <div >
+              <label for="phone">Phone</label>
+              <input type="text" id="phone" placeholder="Phone number" required />
+             </div>
+           </div>
+
+            <label for="message">How can we help?</label>
+            <textarea  id="message" placeholder="How can we help?" rows="4" required></textarea>
+
+            <button type="submit">Send a request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
