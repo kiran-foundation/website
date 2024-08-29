@@ -124,7 +124,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  
+
 
 }
 
@@ -379,8 +379,9 @@ body {
 
 .update-date {
   font-size: 14px;
-  text-align:justify;
+  text-align: justify;
 }
+
 .page-loading {
   position: fixed;
   top: 0;
@@ -396,13 +397,16 @@ body {
   visibility: hidden;
   z-index: 9999;
 }
+
 [data-bs-theme="dark"] .page-loading {
   background-color: #121519;
 }
+
 .page-loading.active {
   opacity: 1;
   visibility: visible;
 }
+
 .page-loading-inner {
   position: absolute;
   top: 50%;
@@ -415,411 +419,447 @@ body {
   transition: opacity .2s ease-in-out;
   opacity: 0;
 }
-.page-loading.active > .page-loading-inner {
+
+.page-loading.active>.page-loading-inner {
   opacity: 1;
 }
-.page-loading-inner > span {
+
+.page-loading-inner>span {
   display: block;
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: normal;
   color: #6f788b;
 }
-[data-bs-theme="dark"] .page-loading-inner > span {
+
+[data-bs-theme="dark"] .page-loading-inner>span {
   color: #fff;
   opacity: .6;
 }
+
 .page-spinner {
   display: inline-block;
   width: 2.75rem;
   height: 2.75rem;
   margin-bottom: .75rem;
   vertical-align: text-bottom;
-  background-color: #d7dde2; 
+  background-color: #d7dde2;
   border-radius: 50%;
   opacity: 0;
   -webkit-animation: spinner .75s linear infinite;
   animation: spinner .75s linear infinite;
 }
+
 [data-bs-theme="dark"] .page-spinner {
-  background-color: rgba(255,255,255,.25);
+  background-color: rgba(255, 255, 255, .25);
 }
+
 @-webkit-keyframes spinner {
   0% {
     -webkit-transform: scale(0);
     transform: scale(0);
   }
+
   50% {
     opacity: 1;
     -webkit-transform: none;
     transform: none;
   }
 }
+
 @keyframes spinner {
   0% {
     -webkit-transform: scale(0);
     transform: scale(0);
   }
+
   50% {
     opacity: 1;
     -webkit-transform: none;
     transform: none;
   }
 }
-html, body {
-  background: #ffffff; 
+
+html,
+body {
+  background: #ffffff;
   margin: 0;
   padding: 0;
- 
-}
-    .page-loading {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      -webkit-transition: all .4s .2s ease-in-out;
-      transition: all .4s .2s ease-in-out;
-      background-color: #fff;
-      opacity: 0;
-      visibility: hidden;
-      z-index: 9999;
-    }
-    [data-bs-theme="dark"] .page-loading {
-      background-color: #121519;
-    }
-    .page-loading.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .page-loading-inner {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-      -webkit-transition: opacity .2s ease-in-out;
-      transition: opacity .2s ease-in-out;
-      opacity: 0;
-    }
-    .page-loading.active > .page-loading-inner {
-      opacity: 1;
-    }
-    .page-loading-inner > span {
-      display: block;
-      font-family: "Inter", sans-serif;
-      font-size: 1rem;
-      font-weight: normal;
-      color: #6f788b;
-    }
-    [data-bs-theme="dark"] .page-loading-inner > span {
-      color: #fff;
-      opacity: .6;
-    }
-    .page-spinner {
-      display: inline-block;
-      width: 2.75rem;
-      height: 2.75rem;
-      margin-bottom: .75rem;
-      vertical-align: text-bottom;
-      background-color: #d7dde2; 
-      border-radius: 50%;
-      opacity: 0;
-      -webkit-animation: spinner .75s linear infinite;
-      animation: spinner .75s linear infinite;
-    }
-    [data-bs-theme="dark"] .page-spinner {
-      background-color: rgba(255,255,255,.25);
-    }
-    @-webkit-keyframes spinner {
-      0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-      }
-      50% {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-      }
-    }
-    @keyframes spinner {
-      0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-      }
-      50% {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-      }
-    }
-    .WhyVolunteer-card-box{
-      margin: auto;
-    }
-    .WhyVolunteer-frame {
-      width: 100%;
-      height: 366px;
-      max-width: 1296px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      font-family:  'Poppins', sans-serif;
-  }
-  
-    .WhyVolunteer-frame-heading {
-      width: 100%;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-  
-    .WhyVolunteer-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-  
-    .WhyVolunteer-card {
-      flex: 1;
-      min-width: 300px;
-      max-width: 370px;
-      height: auto;
-      padding: 20px;
-      gap: 16px;
-      border-radius: 36px;
-      background: #E5F1FF;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .WhyVolunteer-card img {
-      width: 50px; 
-      height: auto;
-    }
-  
-    .WhyVolunteer-d-flex {
-      display: flex;
-    }
-  
-    .WhyVolunteer-align-items-center {
-      align-items: center;
-    }
-  
-    .WhyVolunteer-mb-3 {
-      margin-bottom: 1rem;
-    }
-  
-    .WhyVolunteer-flex-shrink-0 {
-      flex-shrink: 0;
-    }
-  
-    .WhyVolunteer-rounded-1 {
-      border-radius: 0.25rem;
-    }
-  
-    .WhyVolunteer-p-2 {
-      padding: 0.5rem;
-    }
-  
-    .WhyVolunteer-fs-sm {
-      font-size: 0.875rem;
-      text-align: center;
-    }
-  
-    @media (max-width: 768px) {
-      .WhyVolunteer-cards {
-        flex-direction: column;
-      }
-  
-      .WhyVolunteer-card {
-        width: 100%;
-        max-width: none;
-      }
-    }
-    .volunteeringForm-frame {
-      width: 1000px;
-      height: 868px;
-      margin: 200px;
-      margin-bottom: 200px;
-      border-radius: 36px;
-      background: #051D40;
-      padding: 96px;
-      font-family: 'Poppins', sans-serif;
-      box-sizing: border-box;
-      position: relative;
-    }
-  
-    .volunteeringForm-frame h1 {
-      font-size: 40px;
-      font-weight: 700;
-      line-height: 52px;
-      text-align: center;
-      margin: 0 auto 52px;
-      color: #fff;
-    }
-  
-    .volunteeringForm-container {
-      width: 800px;
-      margin: 0 auto;
-    }
-  
-    .volunteeringForm-input-container, .input-container-half {
-      margin-bottom: 16px;
-    }
-  
-    .volunteeringForm-input-container label, .input-container-half label {
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 24px;
-      text-align: left;
-      color: #fff;
-    }
-  
-    .volunteeringForm-input-container input, .volunteeringForm-input-container textarea, .volunteeringForm-input-container-half input {
-      width: 100%;
-      padding: 16px;
-      border-radius: 18px;
-      border: 1px solid #FFFFFF4D;
-      background: transparent;
-      color: #fff;
-    }
-  
-    .volunteeringForm-input-container textarea {
-      height: 128px;
-      
-    }
-  
-    .volunteeringForm-input-container-half {
-      width: calc(50% - 8px);
-      float: left;
-    }
-  
-    .volunteeringForm-input-container-half:nth-child(odd) {
-      padding-left: 1%;
-      margin-right: 16px;
-    }
-  
-    .volunteeringForm-container::after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-  
-    .volunteeringForm-submit-button {
-      width: 249px;
-      height: 56px;
-      padding: 12px 32px;
-      border-radius: 8px;
-      background-color: #F1592A;
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 32px;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-    }
-      
-    .image-container{
-      max-width: 170px;
-    }
-    .footer-paragraph{
-      width: 100%;
-      max-width: 306px;
-      font-size: 0.7rem;
-      font-weight: 500;
-      text-align: justify;
-      color: #2B2E36;
-      line-height: 1.25rem;
-     }
 
-    .footer-list-style{
-      font-size:1rem;
-      font-weight: 500;
-      line-height: 1.5rem;
-      text-align: center;
-      color: #49494C;
-      
-    }
-    .footer-copy-right{
-      font-size: 0.9rem;
-      font-weight:400;
-      line-height: 1.25rem;
-      color: #49494C;
-    }
-    
-    @media(max-width:768px){
-      .logo-container{
-        margin-left: -2%;
-      }
-    }
-  
-  .container-c1 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 630px;
-    height: auto;
-    gap: 24px;
-    margin: 40px auto;
+}
+
+.page-loading {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .4s .2s ease-in-out;
+  transition: all .4s .2s ease-in-out;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+}
+
+[data-bs-theme="dark"] .page-loading {
+  background-color: #121519;
+}
+
+.page-loading.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.page-loading-inner {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+  opacity: 0;
+}
+
+.page-loading.active>.page-loading-inner {
+  opacity: 1;
+}
+
+.page-loading-inner>span {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #6f788b;
+}
+
+[data-bs-theme="dark"] .page-loading-inner>span {
+  color: #fff;
+  opacity: .6;
+}
+
+.page-spinner {
+  display: inline-block;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: .75rem;
+  vertical-align: text-bottom;
+  background-color: #d7dde2;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-animation: spinner .75s linear infinite;
+  animation: spinner .75s linear infinite;
+}
+
+[data-bs-theme="dark"] .page-spinner {
+  background-color: rgba(255, 255, 255, .25);
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.WhyVolunteer-card-box {
+  margin: auto;
+}
+
+.WhyVolunteer-frame {
+  width: 100%;
+  height: 366px;
+  max-width: 1296px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.WhyVolunteer-frame-heading {
+  width: 100%;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.WhyVolunteer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.WhyVolunteer-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 370px;
+  height: auto;
+  padding: 20px;
+  gap: 16px;
+  border-radius: 36px;
+  background: #E5F1FF;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.WhyVolunteer-card img {
+  width: 50px;
+  height: auto;
+}
+
+.WhyVolunteer-d-flex {
+  display: flex;
+}
+
+.WhyVolunteer-align-items-center {
+  align-items: center;
+}
+
+.WhyVolunteer-mb-3 {
+  margin-bottom: 1rem;
+}
+
+.WhyVolunteer-flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.WhyVolunteer-rounded-1 {
+  border-radius: 0.25rem;
+}
+
+.WhyVolunteer-p-2 {
+  padding: 0.5rem;
+}
+
+.WhyVolunteer-fs-sm {
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .WhyVolunteer-cards {
+    flex-direction: column;
+  }
+
+  .WhyVolunteer-card {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.volunteeringForm-frame {
+  width: 1000px;
+  height: 868px;
+  margin: 200px;
+  margin-bottom: 200px;
+  border-radius: 36px;
+  background: #051D40;
+  padding: 96px;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.volunteeringForm-frame h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px;
+  text-align: center;
+  margin: 0 auto 52px;
+  color: #fff;
+}
+
+.volunteeringForm-container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.volunteeringForm-input-container,
+.input-container-half {
+  margin-bottom: 16px;
+}
+
+.volunteeringForm-input-container label,
+.input-container-half label {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  color: #fff;
+}
+
+.volunteeringForm-input-container input,
+.volunteeringForm-input-container textarea,
+.volunteeringForm-input-container-half input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid #FFFFFF4D;
+  background: transparent;
+  color: #fff;
+}
+
+.volunteeringForm-input-container textarea {
+  height: 128px;
+
+}
+
+.volunteeringForm-input-container-half {
+  width: calc(50% - 8px);
+  float: left;
+}
+
+.volunteeringForm-input-container-half:nth-child(odd) {
+  padding-left: 1%;
+  margin-right: 16px;
+}
+
+.volunteeringForm-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.volunteeringForm-submit-button {
+  width: 249px;
+  height: 56px;
+  padding: 12px 32px;
+  border-radius: 8px;
+  background-color: #F1592A;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.image-container {
+  max-width: 170px;
+}
+
+.footer-paragraph {
+  width: 100%;
+  max-width: 306px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: justify;
+  color: #2B2E36;
+  line-height: 1.25rem;
+}
+
+.footer-list-style {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #49494C;
+
+}
+
+.footer-copy-right {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: #49494C;
+}
+
+@media(max-width:768px) {
+  .logo-container {
+    margin-left: -2%;
+  }
+}
+
+.container-c1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 630px;
+  height: auto;
+  gap: 24px;
+  margin: 40px auto;
 }
 
 .heading {
-    font-family: Poppins, sans-serif;
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 72px;
-    text-align: left;
-    color: #2b2e36;
+  font-family: Poppins, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 72px;
+  text-align: left;
+  color: #2b2e36;
 }
 
 .container-c2,
 .container-c3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .container-c3 .line-upper {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .container-c2 .line-upper {
-    margin-left: -20px;
+  margin-left: -20px;
 }
 
 .line-upper,
 .line-lower {
-    border: 1px solid #2b2e36;
-    width: 60px;
+  border: 1px solid #2b2e36;
+  width: 60px;
 }
+
 .line-lower {
-    width: 80px;
+  width: 80px;
 }
 
 @media (max-width: 430px) {
-    .container-c1 {
-        width: 400px;
-        font-size: 18px;
-        text-align: center;
-    }
-    .line-upper,
-    .line-lower {
-        width: 25px;
-    }
+  .container-c1 {
+    width: 400px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .line-upper,
+  .line-lower {
+    width: 25px;
+  }
 }
+
 .testimonial-container {
-  max-width:535px;
+  max-width: 535px;
   width: 100%;
   height: 380px;
   margin: auto;
@@ -833,7 +873,7 @@ html, body {
   align-items: center;
   justify-content: center;
   border-radius: 36px;
- 
+
 }
 
 .testimonial-text {
@@ -849,9 +889,10 @@ html, body {
   margin-top: 50px;
   display: flex;
   align-items: center;
- 
+
 
 }
+
 .testimonial-info {
   display: flex;
   flex-direction: column;
@@ -885,6 +926,7 @@ html, body {
   left: calc(50% - 50px);
   object-fit: cover;
 }
+
 .carousel {
   position: relative;
   width: 100%;
@@ -929,333 +971,348 @@ html, body {
 .carousel-bullet.active {
   background: #333;
 }
+
 .aboutVolunteering-frame1 {
   margin-top: 3%;
-    display: flex;
-    flex-direction: column;
-    gap: 64px;
-    background-color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  justify-content: center;
+  align-items: flex-start;
 }
-  .aboutVolunteering-frame2, .aboutVolunteering-frame3, .aboutVolunteering-frame4 {
-    width: calc(100% - 190px); 
-    margin: 0 auto; 
-    background: #fff;
-    border-radius: 8px;
-  }
-  .aboutVolunteering-frame2 h1 {
-    width: 899px;
-    font-size: 48px;
-    font-weight: 600;
-    text-align: left;
-  
-  }
-  .aboutVolunteering-frame2 p {
-    width: 100%;
-    font-size: 20px;
-    font-weight: 500;
-    text-align: left;
-  }
-  .aboutVolunteering-info-text {
-      padding-left: 4%;
-    width: calc(100% - 190px); 
-    margin: 0 auto;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: left;
-    white-space: pre-wrap;
-  }
-  .aboutVolunteering-frame3 h2, .aboutVolunteering-frame4 h2 {
-    font-size: 24px;
-    font-weight: 600;
-    text-align: left;
-  }
-  .aboutVolunteering-frame3 p, .aboutVolunteering-frame4 p {
-    font-size: 20px;
-    font-weight: 500;
-    text-align: left;
-  }
-  .aboutVolunteering-button-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: calc((100% - 1390px) / 2 + 95px);
-  }
-  .aboutVolunteering-apply-button {
-    width: 189px;
-    height: 48px;
-    margin-left: 60px;
-    border-radius: 8px;
-    background: #F1592A;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-  }
-  .mainVolunteering-main-container {
-    width: 100%;
-    max-width: 1296px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    margin: 100px auto;
-    padding: 0 20px;
-  }
-  
-  .mainVolunteering-main-heading {
-    width: 100%;
-    max-width: 604px;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    padding-top: 30px;
-  }
-  
-  .mainVolunteering-sub-container {
-    width: 100%;
-    max-width: 1296px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-  }
-  
-  /* Card styles */
+
+.aboutVolunteering-frame2,
+.aboutVolunteering-frame3,
+.aboutVolunteering-frame4 {
+  width: calc(100% - 190px);
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.aboutVolunteering-frame2 h1 {
+  width: 899px;
+  font-size: 48px;
+  font-weight: 600;
+  text-align: left;
+
+}
+
+.aboutVolunteering-frame2 p {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.aboutVolunteering-info-text {
+  padding-left: 4%;
+  width: calc(100% - 190px);
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.aboutVolunteering-frame3 h2,
+.aboutVolunteering-frame4 h2 {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.aboutVolunteering-frame3 p,
+.aboutVolunteering-frame4 p {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.aboutVolunteering-button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: calc((100% - 1390px) / 2 + 95px);
+}
+
+.aboutVolunteering-apply-button {
+  width: 189px;
+  height: 48px;
+  margin-left: 60px;
+  border-radius: 8px;
+  background: #F1592A;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.mainVolunteering-main-container {
+  width: 100%;
+  max-width: 1296px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.mainVolunteering-main-heading {
+  width: 100%;
+  max-width: 604px;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  padding-top: 30px;
+}
+
+.mainVolunteering-sub-container {
+  width: 100%;
+  max-width: 1296px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Card styles */
+.mainVolunteering-card {
+  width: calc(50% - 24px);
+  min-width: 280px;
+  padding: 1.5rem;
+  border-radius: 24px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Border colors based on ID */
+#c1 {
+  border: 8px solid #F7DFE2;
+}
+
+#c2 {
+  border: 8px solid #E1DAF7;
+}
+
+#c3 {
+  border: 8px solid #DCE4F6;
+}
+
+#c4 {
+  border: 8px solid #DBF2F6;
+}
+
+.mainVolunteering-card-heading {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.mainVolunteering-card-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.mainVolunteering-card-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* Button styles */
+.mainVolunteering-card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.mainVolunteering-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.mainVolunteering-btn-apply {
+  background-color: #F1592A;
+  color: #fff;
+}
+
+.mainVolunteering-btn-see-more {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+@media (max-width: 768px) {
   .mainVolunteering-card {
-    width: calc(50% - 24px);
-    min-width: 280px;
-    padding: 1.5rem;
-    border-radius: 24px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+    min-height: 420px;
+    margin-bottom: 24px;
   }
-  
-  /* Border colors based on ID */
-  #c1 {
-    border: 8px solid #F7DFE2;
+
+  .mainVolunteering-main-heading {
+    padding-top: 40px;
+    font-size: 20px;
   }
-  
-  #c2 {
-    border: 8px solid #E1DAF7;
-  }
-  
-  #c3 {
-    border: 8px solid #DCE4F6;
-  }
-  
-  #c4 {
-    border: 8px solid #DBF2F6;
-  }
-  
+
   .mainVolunteering-card-heading {
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 12px;
+    font-size: 20px;
   }
-  
-  .mainVolunteering-card-subheading {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-  
+
+  .mainVolunteering-card-subheading,
   .mainVolunteering-card-description {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 12px;
+    font-size: 14px;
   }
-  
-  /* Button styles */
-  .mainVolunteering-card-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: auto;
-  }
-  
+
   .mainVolunteering-btn {
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
   }
-  
-  .mainVolunteering-btn-apply {
-    background-color: #F1592A;
-    color: #fff;
-  }
-  
-  .mainVolunteering-btn-see-more {
-    background-color: #e0e0e0;
-    color: #000;
-  }
-  
-  @media (max-width: 768px) {
-    .mainVolunteering-card {
-      width: 100%;
-      min-height: 420px;
-      margin-bottom: 24px;
-    }
-  
-    .mainVolunteering-main-heading {
-      padding-top: 40px; 
-      font-size: 20px; 
-    }
-  
-    .mainVolunteering-card-heading {
-      font-size: 20px;
-    }
-  
-    .mainVolunteering-card-subheading,
-    .mainVolunteering-card-description {
-      font-size: 14px;
-    }
-  
-    .mainVolunteering-btn {
-      padding: 10px 20px; 
-      font-size: 14px;
-    }
-  }
-  body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.HowDoesItWork-frame {
+  max-width: 1076px;
+  margin: 50px auto;
+  border-radius: 36px;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+}
+
+.HowDoesItWork-frame h1 {
+  max-width: 968px;
+  margin: 0 auto 20px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  color: #49494C;
+  padding-bottom: 10%;
+}
+
+.HowDoesItWork-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.HowDoesItWork-content {
+  width: 100%;
+  max-width: 416px;
+}
+
+.HowDoesItWork-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: left;
+  color: #49494C;
+  margin-bottom: 16px;
+}
+
+.HowDoesItWork-content p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 2;
+  text-align: left;
+  color: #49494C;
+}
+
+.HowDoesItWork-image {
+  width: 100%;
+  max-width: 472px;
+  height: auto;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #49494C;
+  font-size: 16px;
+  text-align: center;
+}
+
+.HowDoesItWork-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 1200px) {
   .HowDoesItWork-frame {
-      max-width: 1076px;
-      margin: 50px auto;
-      border-radius: 36px;
-      background: #ffffff;
-      box-sizing: border-box;
-      padding: 20px;
-      position: relative;
-    }
+    padding: 10px;
+  }
 
-    .HowDoesItWork-frame h1 {
-      max-width: 968px;
-      margin: 0 auto 20px;
-      font-size: 2.5rem;
-      font-weight: 600;
-      line-height: 1.3;
-      text-align: center;
-      color: #49494C;
-      padding-bottom: 10%;
-    }
+  .HowDoesItWork-frame h1 {
+    font-size: 2.2rem;
+  }
 
-    .HowDoesItWork-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 20px;
-      margin-bottom: 50px;
-    }
+  .HowDoesItWork-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .HowDoesItWork-content {
-      width: 100%;
-      max-width: 416px;
-    }
+  .HowDoesItWork-content {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
 
-    .HowDoesItWork-content h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      line-height: 1.3;
-      text-align: left;
-      color: #49494C;
-      margin-bottom: 16px;
-    }
+  .HowDoesItWork-image,
+  .HowDoesItWork-image-medium {
+    max-width: 100%;
+  }
+}
 
-    .HowDoesItWork-content p {
-      font-size: 1.125rem;
-      font-weight: 400;
-      line-height: 2;
-      text-align: left;
-      color: #49494C;
-    }
+@media (max-width: 768px) {
+  .HowDoesItWork-frame h1 {
+    font-size: 1.8rem;
+  }
 
-    .HowDoesItWork-image {
-      width: 100%;
-      max-width: 472px;
-      height: auto;
-      background-color: #e0e0e0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #49494C;
-      font-size: 16px;
-      text-align: center;
-    }
+  .HowDoesItWork-content h2 {
+    font-size: 1.5rem;
+  }
 
-    .HowDoesItWork-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+  .HowDoesItWork-content p {
+    font-size: 1rem;
+  }
+}
 
-    @media (max-width: 1200px) {
-      .HowDoesItWork-frame {
-        padding: 10px;
-      }
+@media (max-width: 480px) {
+  .HowDoesItWork-frame h1 {
+    font-size: 1.5rem;
+  }
 
-      .HowDoesItWork-frame h1 {
-        font-size: 2.2rem;
-      }
+  .HowDoesItWork-content h2 {
+    font-size: 1.25rem;
+  }
 
-      .HowDoesItWork-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .HowDoesItWork-content {
-        max-width: 100%;
-        margin-bottom: 20px;
-      }
-
-      .HowDoesItWork-image, .HowDoesItWork-image-medium {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .HowDoesItWork-frame h1 {
-        font-size: 1.8rem;
-      }
-
-      .HowDoesItWork-content h2 {
-        font-size: 1.5rem;
-      }
-
-      .HowDoesItWork-content p {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .HowDoesItWork-frame h1 {
-        font-size: 1.5rem;
-      }
-
-      .HowDoesItWork-content h2 {
-        font-size: 1.25rem;
-      }
-
-      .HowDoesItWork-content p {
-        font-size: 0.875rem;
-      }
-    }
-  
- 
+  .HowDoesItWork-content p {
+    font-size: 0.875rem;
+  }
+}
