@@ -6,6 +6,7 @@ const commonComingsoon = (await getEntry("common", "coming-soon")).data;
 
 <script src="/assets/js/theme.min.js" is:inline></script>
 <script src="/assets/js/coming-soon.js" is:inline></script>
+<script src="/assets/js/common.js" is:inline></script>
 <link rel="stylesheet" href="/assets/css/theme.min.css" />
 <link rel="stylesheet" href="/assets/css/coming-soon.css" />
 
@@ -52,12 +53,12 @@ const commonComingsoon = (await getEntry("common", "coming-soon")).data;
       <div class="notify-popup-content">
         <span class="close-popup" onclick="closeNotifyPopup()">&times;</span>
         <h3>{commonComingsoon.button}</h3>
-        <form id="notifyForm" onsubmit="submitNotifyForm(event)">
-          <label for="email">{commonComingsoon.email}</label>
-          <input type="email" id="email" name="email" required />
-
+        <form id="notifyForm">
+          <label for="notifyEmail">{commonComingsoon.email}</label>
+          <input type="email" id="notifyEmail" name="email" required />
+    
           <input type="hidden" id="sourcePage" name="sourcePage" readonly />
-
+    
           <button type="submit">{commonComingsoon.button}</button>
         </form>
       </div>

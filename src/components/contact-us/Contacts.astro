@@ -1,9 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getEntry } from "astro:content";
+const commonComingsoon = (await getEntry("common", "coming-soon")).data;
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
-<script src="/assets/js/coming-soon.js" is:inline></script>
+<script src="/assets/js/common.js" is:inline></script>
 <link rel="stylesheet" href="/assets/css/theme.min.css" />
 <link rel="stylesheet" href="/assets/css/contacts.css" />
 
@@ -11,24 +13,24 @@ import Layout from "../../layouts/Layout.astro";
   <main class="page-wrapper contacts">
     <section class="contact-info-section">
       <div class="contact">
-        <h1>Contacts</h1>
+        <h1>  {commonComingsoon.h1}</h1>
         <p class="subtitle">
-          Get in touch with us by completing the below form or call us now
+          {commonComingsoon.subtitle}
         </p>
 
         <div class="contact-info">
           <div>
             <strong>Address</strong>
-            <p>101 Sahil Veer <br> Apartments, Vandana <br> Nagar Indore 452018</p>
+            <p class="address"> {commonComingsoon.address}</p>
           </div>
           <div>
             <strong>Phone</strong>
-            <p>
-              Give Us a Call<br /><a href="tel:+919303397100">+91-93033 97100</a
+            <p class="call">
+              {commonComingsoon.call} <br /><a href="tel:+919303397100">+91-93033 97100</a
               >
             </p>
-            <p>
-              Connect on Whatsapp<br /><a href="https://wa.me/919880141412"
+            <p class="whatsapp">
+              {commonComingsoon.whatsapp} <br /><a href="https://wa.me/919880141412"
                 >+91-98801 41412</a
               >
             </p>
@@ -36,7 +38,7 @@ import Layout from "../../layouts/Layout.astro";
           <div>
             <strong>Email</strong>
             <p>
-              Send Us Email: <br /><a href="mailto:info@kiran.foundation"
+              {commonComingsoon.aemail} <br /><a href="mailto:info@kiran.foundation"
                 >info@kiran.foundation</a
               >
             </p>
@@ -44,25 +46,25 @@ import Layout from "../../layouts/Layout.astro";
         </div>
 
         <div class="contact-form">
-          <h2>We'd love to hear from you</h2>
-          <form>
-            <label for="name">Full Name</label>
+          <h2 class="form">{commonComingsoon.fname}</h2>
+          <form id="contactForm">
+            <label for="name">{commonComingsoon.name}</label>
             <input type="text" id="name" placeholder="Your name" required />
-           <div class="info">
-            <div >
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="Email address" required />
-             </div> 
-             <div >
-              <label for="phone">Phone</label>
-              <input type="text" id="phone" placeholder="Phone number" required />
-             </div>
-           </div>
-
-            <label for="message">How can we help?</label>
-            <textarea  id="message" placeholder="How can we help?" rows="4" required></textarea>
-
-            <button type="submit">Send a request</button>
+            <div class="info">
+              <div>
+                <label for="contactEmail">{commonComingsoon.email}</label>
+                <input type="email" id="contactEmail" placeholder="Email address" required />
+              </div>
+              <div>
+                <label for="phone">{commonComingsoon.phone}</label>
+                <input type="text" id="phone" placeholder="Phone number" required />
+              </div>
+            </div>
+        
+            <label for="message">{commonComingsoon.help}</label>
+            <textarea id="message" placeholder="How can we help?" rows="4" required></textarea>
+        
+            <button type="submit">{commonComingsoon.request}</button>
           </form>
         </div>
       </div>

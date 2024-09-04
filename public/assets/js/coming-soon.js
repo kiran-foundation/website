@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const countdownDate = new Date("August 30, 2024 08:40:20").getTime();
+  const countdownDate = new Date("sep 30, 2024 08:40:20").getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
@@ -33,47 +33,4 @@ document.addEventListener("DOMContentLoaded", function () {
   window.closeNotifyPopup = function () {
     document.getElementById('notifyPopup').style.display = 'none';
   };
-
-  window.submitNotifyForm = function (event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const sourcePage = document.getElementById('sourcePage').value;
-
-    if (email && sourcePage) {
-      postToGoogle(email, sourcePage);
-      closeNotifyPopup();
-    } else {
-      displayMessage('Please fill in all fields.', false);
-    }
-  };
-
-  function postToGoogle(email, sourcePage) {
-    const scriptURL = "https://docs.google.com/forms/d/e/1FAIpQLSc1AbPhiVXtwIGlP1aZst136YzaZCQaf51X5fzk4NzzYRcNBQ/formResponse";
-    const data = new URLSearchParams({
-      "entry.24309726": email,
-      "entry.1659573731": sourcePage
-    });
-
-    fetch(scriptURL, {
-      method: "POST",
-      body: data,
-      mode: "no-cors"
-    })
-      .then(() => {
-        displayMessage('Your response has been recorded.', true);
-      })
-      .catch(() => {
-        displayMessage('There was an error. Please try again.', false);
-      });
-  }
-
-  function displayMessage(message, success) {
-    const thankYouMessage = document.getElementById("thankYouMessage");
-    thankYouMessage.innerText = message;
-    thankYouMessage.style.display = "block";
-    thankYouMessage.style.color = success ? "Yellow" : "black";
-    setTimeout(() => {
-      thankYouMessage.style.display = "none";
-    }, 15000);
-  }
 });
