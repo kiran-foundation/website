@@ -1335,3 +1335,47 @@ body {
   color: #F9F9F9;
   max-width: 1050px;
   }
+  .mission-container{
+    width: 100%;
+    max-width:1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:25px;
+    flex-wrap: wrap;
+   
+   
+  }
+   .mission-img{
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 18px;
+    height: 559px;
+  }
+
+  .mission-text-box{
+    width: 100%;
+    max-width: 550px;
+    height: 559px;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: 2.2rem;
+    text-align: justify;
+    color: #2B2E36;
+   }
+  
+  .mission-text-boxSecond{
+    width: 100%;
+    max-width: 1130px;
+    height: 288px;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: justify;
+    color: #2B2E36;
+    padding: 8px 10px;
+    margin-top: 10px;
+  }
