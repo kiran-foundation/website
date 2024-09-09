@@ -1382,7 +1382,7 @@ body {
   .mission-containerSecond{
     width: 100%;
     max-width: 1000px;
-    margin-top: 8%;
+    margin-top: 60px;
   }
 
   .mission-title{
@@ -1396,7 +1396,7 @@ body {
   .mission-card-container{
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     gap:20px;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -1421,6 +1421,7 @@ body {
 }
 
 .mission-card-title {
+  font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 33px;
@@ -1439,4 +1440,107 @@ body {
   margin-top: -8px;
   padding: 10px;
   
+}
+.team-container {
+  width: 100%;
+  padding-left: 40px;
+  padding-top: 30px;
+  max-width: 1200px;
+  margin-top: 70px;
+}
+
+.team-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  text-align: left;
+  color: #121519;
+  margin-bottom: 40px;
+  margin-top:30;
+  padding-left: 40px;
+
+}
+
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1165px;
+  padding-left: 30px;
+  padding-right: 10px;
+ 
+}
+
+.team-card {
+  width: calc(33.33% - 27px);
+  height: 416px;
+  border-radius: 36px;
+  background: #F7FCFE;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.aboutExperience-card{
+  margin-top: 60px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+ 
+}
+.card-details{
+  width: 100%;
+  border-radius: 18px;
+  background-color:#051D40 ;
+  height: 150px;
+  max-width: 1130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px 0px 50px;
+  margin-left: 30px;
+}
+.card-details img{
+  width: 24px;
+  height: 24px;
+  margin-bottom: 12px;
+}
+.card-details span{
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  text-align: left;
+  color:#F9F9F9;
+  margin-left: 5px;
+}
+ 
+.card-details .card-btn{
+
+  width: 160px;
+  height: 56px;
+  padding: 12px 32px 12px 32px;
+  background-color: #F1592A;
+  border-radius: 8px;
+}
+.card-details .card-btn a{
+  color:#F9F9F9 ;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: left;
+
 }
