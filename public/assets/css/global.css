@@ -149,6 +149,7 @@ body {
 
 }
 
+
 .home-button {
   font-size: 22px !important;
   font-weight: 600 !important;
@@ -1316,3 +1317,21 @@ body {
     font-size: 0.875rem;
   }
 }
+
+/* About-page*/
+
+.heroAbout-heading{
+ font-size: 4rem;
+ font-weight: 600;
+ line-height: 6rem;
+ text-align: center;
+ }
+
+.heroAbout-paragraph{
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 3rem;
+  text-align: center;
+  color: #F9F9F9;
+  max-width: 1050px;
+  }
