@@ -2,14 +2,14 @@
 import "aos/dist/aos.css"
 import "jarallax/dist/jarallax.min.css"
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/common/Header.astro";
+
 import Hero from "../components/about/Hero.astro";
-import Footer from "../components/common/Footer.astro";
+
 import Mission from "../components/about/Mission.astro";
-import Team from "../components/about/Team.astro";
+
 import Volunteers from "../components/about/Volunteers.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
-// import Gallery from "../components/about/Gallery.astro";
+
 interface Props {
 	title: string;
 }
@@ -19,14 +19,14 @@ interface Props {
 <Layout>
    <!-- Page wrapper -->
    <main class="page-wrapper">
-    <Header/>
+   
     <Hero/>
     <Mission/>
-    <Team/>
+  
     <Volunteers/>
     <TestimonialsCarousel/>
-    <!-- <Gallery/> -->
-    <Footer/>
+   
+   
   </main>
   
   <!-- Back to top button -->
