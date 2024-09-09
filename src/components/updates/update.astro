@@ -1,0 +1,56 @@
+---
+import type { MarkdownFile } from "../../types/Markdown";
+import { remark } from "remark";
+import html from "remark-html";
+
+// Import all Markdown files from the updates directory
+const { path } = Astro.props;
+const updateFile = import.meta.glob<MarkdownFile>(
+  "/src/content/updates/*.md",
+);
+
+// Fetch the specific Markdown file based on the path passed in the props
+const update = await (async () => {
+  if (!path) {
+    console.warn("Path is undefined");
+    return null;
+  }
+  
+  // Construct the path to the Markdown file
+  const updatePath = `/src/content/updates/${Astro.props.path}.md`;
+  const updt = updateFile[updatePath];
+
+  if (updt) {
+    // Extract frontmatter and content
+    const { frontmatter } = await updt();
+    return { ...frontmatter };
+  } else {
+    return null;
+  }
+})();
+
+console.log(path);
+console.log(update);
+
+const {
+  title,
+  summary,
+  date,
+  priority,
+  featured_image,
+  link,
+  content,
+} = update || {};
+---
+
+<div>
+  <div>
+    <article>
+      <h1>{title}</h1>
+      <p><em>{date}</em> | Priority: {priority}</p>
+      {featured_image && <img src={featured_image} alt={title} />}
+      <p>{summary}</p>
+      <div set:html={content}></div>
+    </article>
+  </div>
+</div>

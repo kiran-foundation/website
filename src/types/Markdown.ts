@@ -13,8 +13,14 @@ export interface MarkdownFile {
     responsibilitiesHeading?: string;
     requirementsHeading?: string;
     [key: string]: any;
-    cards?:any;
-    url?:any;
+    cards?: any;
+    url?: any;
+    summary?: string
+    date?: string
+    featured_image?: string
+    link?: string
+    content?:string
+
   };
   default: string;
 }
