@@ -1,3 +1,8 @@
+---
+import { getEntry } from "astro:content"
+const aboutHero =(await getEntry("about","hero")).data
+---
+
 <section class="position-relative" style="margin-top: 4rem;">
     <div
         class="position-absolute  w-100 h-100 object-fit-cover bg-size-cover bg-position-center mt-4"
@@ -9,16 +14,13 @@
     <div class="position-relative text-center w-100 h-100  pt-2 pt-sm-4" style="top: 175px;">
        
         <h1 class="heroAbout-heading display-0 text-white pt-5">
-            About Us
+           {aboutHero.heading}
         </h1>
         <p class="heroAbout-paragraph text-white  opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5"
          >
-          "There is no force more powerful than a woman determined to rise
-            There is no force more powerful than a woman determined to rise."
+          {aboutHero.paragraph}
          </p>
-        
-    
-     </div>
+    </div>
 
      <div class="d-none d-lg-block" style="height: 360px;"></div>
     <div class="d-none d-md-block d-lg-none" style="height: 260px;"></div>
