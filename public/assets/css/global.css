@@ -1321,19 +1321,20 @@ body {
 /* About-page*/
 
 .heroAbout-heading {
-  font-size: 4rem;
+  font-size: 3.3rem;
   font-weight: 600;
   line-height: 6rem;
   text-align: center;
 }
 
 .heroAbout-paragraph {
-  font-size: 2rem;
+  
+  font-size: 1.8rem;
   font-weight: 600;
   line-height: 3rem;
   text-align: center;
   color: #F9F9F9;
-  max-width: 1050px;
+  max-width: 1000px;
 }
 
 .mission-container {
