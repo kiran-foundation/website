@@ -1345,8 +1345,6 @@ body {
   gap: 25px;
   flex-wrap: wrap;
   padding: 0 20px;
-
-
 }
 
 .mission-img {
@@ -1360,14 +1358,14 @@ body {
 .mission-text-box {
   width: 100%;
   max-width: 535px;
-  height: 559px;
+  height: 610px;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.3px;
-  line-height: 1.9rem;
+  line-height: 2.1rem;
   text-align: justify;
   color: #2B2E36;
-  padding: 0 15px;
+  padding-top: 25px; 
 }
 
 .mission-text-boxSecond {
@@ -1377,23 +1375,16 @@ body {
   font-size: 1rem;
   letter-spacing: 0.3px;
   font-weight: 400;
-  line-height: 1.9rem;
+  line-height: 2.1rem;
   text-align: justify;
   color: #2B2E36;
   padding: 8px 10px;
-  margin-top: 2.5rem;
-
-
-}
+ }
 
 .mission-containerSecond {
-  width: 100%;
-  max-width: 1100px;
+  max-width: 1250px;
   margin-top: 60px;
-  /* border: 2px solid yellow; */
   padding: 10px 80px;
-
-
 }
 
 .mission-title {
@@ -1409,30 +1400,23 @@ body {
   width: 100%;
   max-width: 1250px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 20px;
-  /* padding-left: 3px; */
-  /* border: 2px solid black; */
-
-
-
-
-
-
+  padding-left: 3px;
 }
 
 .mission-card {
   width: 100%;
-  /* border: 2px solid red; */
   max-width: 340px;
   height: 266px;
-  padding: 15px 20px;
+  padding: 10px 20px;
   background-color: #F7FCFE;
   border-radius: 30px;
   box-sizing: border-box;
+  margin-top: 23px;
 }
 
 .mission-icon {
@@ -1494,6 +1478,7 @@ body {
   width: 100%;
   max-width: 1255px;
   padding-left: 45px;
+
 }
 
 .team-card {
@@ -1522,9 +1507,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
-
 }
 
 .card-details {
@@ -1588,7 +1570,6 @@ body {
   box-sizing: border-box;
   margin-top: 50px;
   margin-bottom: 50px;
-  /* border: 2px solid red; */
   padding-left: 50px;
 
 }
@@ -1608,7 +1589,6 @@ body {
   flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
-  /* border: 2px solid yellow; */
   max-width: 1250px;
 
 }
@@ -1620,7 +1600,6 @@ body {
   align-items: center;
   padding: 20px;
   border-radius: 24px;
-  /* border: 2px solid blue; */
 }
 
 .volunteers-c1-card img {
@@ -1651,7 +1630,7 @@ body {
 
 .gallery-c1 {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 50px auto;
   background: white;
   display: flex;
@@ -1659,7 +1638,7 @@ body {
   align-items: center;
   gap: 24px;
   opacity: 1;
-  padding: 8px 10px;
+  padding-left: 35px;
 
 }
 
@@ -1697,8 +1676,6 @@ body {
   height: auto;
   border-radius: 24px;
   display: block;
-
-
 }
 
 .gallery-grid-container .large {
