@@ -1320,104 +1320,127 @@ body {
 
 /* About-page*/
 
-.heroAbout-heading{
- font-size: 4rem;
- font-weight: 600;
- line-height: 6rem;
- text-align: center;
- }
+.heroAbout-heading {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 6rem;
+  text-align: center;
+}
 
-.heroAbout-paragraph{
+.heroAbout-paragraph {
   font-size: 2rem;
   font-weight: 600;
   line-height: 3rem;
   text-align: center;
   color: #F9F9F9;
   max-width: 1050px;
-  }
-  .mission-container{
-    width: 100%;
-    max-width:1200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:25px;
-    flex-wrap: wrap;
-   
-   
-  }
-   .mission-img{
-    width: 100%;
-    max-width: 550px;
-    height: auto;
-    border-radius: 18px;
-    height: 559px;
-  }
+}
 
-  .mission-text-box{
-    width: 100%;
-    max-width: 550px;
-    height: 559px;
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    line-height: 2.2rem;
-    text-align: justify;
-    color: #2B2E36;
-   }
-  
-  .mission-text-boxSecond{
-    width: 100%;
-    max-width: 1130px;
-    height: 288px;
-    font-size: 1rem;
-    letter-spacing: 0.3px;
-    font-weight: 400;
-    line-height: 36px;
-    text-align: justify;
-    color: #2B2E36;
-    padding: 8px 10px;
-    margin-top: 10px;
-  }
-  .mission-containerSecond{
-    width: 100%;
-    max-width: 1000px;
-    margin-top: 60px;
-  }
+.mission-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 0 20px;
 
-  .mission-title{
+
+}
+
+.mission-img {
+  width: 100%;
+  max-width: 535px;
+  border-radius: 18px;
+  height: 559px;
+
+}
+
+.mission-text-box {
+  width: 100%;
+  max-width: 535px;
+  height: 559px;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 1.9rem;
+  text-align: justify;
+  color: #2B2E36;
+  padding: 0 15px;
+}
+
+.mission-text-boxSecond {
+  width: 100%;
+  max-width: 1100px;
+  height: 288px;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  line-height: 1.9rem;
+  text-align: justify;
+  color: #2B2E36;
+  padding: 8px 10px;
+  margin-top: 2.5rem;
+
+
+}
+
+.mission-containerSecond {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 60px;
+  /* border: 2px solid yellow; */
+  padding: 10px 80px;
+
+
+}
+
+.mission-title {
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 54.6px;
   text-align: left;
   color: #2B2E36;
-  padding: 10px 40px;
-  }
-  .mission-card-container{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap:20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    padding-left: 40px;
-   
-  }
-  .mission-card{
-    width: 100%;
-    max-width: 362px;
-    height: 266px;
-    padding: 30px;
-    background-color: #F7FCFE;
-    border-radius: 30px;
-  }
 
-  .mission-icon {
-    width: 40px;
-    height: 40px;
-    padding: 0 0.6px 0 0.61px;
-    margin-bottom: 13px;
-    margin-left: 13px;
+}
+
+.mission-card-container {
+  width: 100%;
+  max-width: 1250px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  /* padding-left: 3px; */
+  /* border: 2px solid black; */
+
+
+
+
+
+
+}
+
+.mission-card {
+  width: 100%;
+  /* border: 2px solid red; */
+  max-width: 340px;
+  height: 266px;
+  padding: 15px 20px;
+  background-color: #F7FCFE;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.mission-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0 0.6px 0 0.61px;
+  margin-bottom: 13px;
+  margin-left: 13px;
 }
 
 .mission-card-title {
@@ -1432,33 +1455,34 @@ body {
 }
 
 .mission-card-desc {
-  font-size:1rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 24px;
   text-align: justify;
   color: #2B2E36;
   margin-top: -8px;
   padding: 10px;
-  
+
 }
+
 .team-container {
   width: 100%;
+  max-width: 1100px;
   padding-left: 40px;
   padding-top: 30px;
-  max-width: 1200px;
   margin-top: 70px;
 }
 
 .team-title {
   font-family: 'Inter', sans-serif;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 600;
   line-height: 52px;
   text-align: left;
   color: #121519;
   margin-bottom: 40px;
-  margin-top:30;
-  padding-left: 40px;
+  margin-top: 30;
+  padding-left: 45px;
 
 }
 
@@ -1468,10 +1492,8 @@ body {
   gap: 40px;
   justify-content: space-between;
   width: 100%;
-  max-width: 1165px;
-  padding-left: 30px;
-  padding-right: 10px;
- 
+  max-width: 1255px;
+  padding-left: 45px;
 }
 
 .team-card {
@@ -1492,55 +1514,220 @@ body {
 }
 
 
-.aboutExperience-card{
+.aboutExperience-card {
+  width: 100%;
+  max-width: 1100px;
   margin-top: 60px;
   border-radius: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
- 
- 
+
+
+
 }
-.card-details{
+
+.card-details {
   width: 100%;
+  max-width: 1250px;
   border-radius: 18px;
-  background-color:#051D40 ;
+  background-color: #051D40;
   height: 150px;
-  max-width: 1130px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 50px 0px 50px;
-  margin-left: 30px;
+  margin-left: 38px;
 }
-.card-details img{
+
+.card-details img {
   width: 24px;
   height: 24px;
   margin-bottom: 12px;
 }
-.card-details span{
+
+.card-details span {
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 2.5rem;
   text-align: left;
-  color:#F9F9F9;
+  color: #F9F9F9;
   margin-left: 5px;
 }
- 
-.card-details .card-btn{
 
+.card-details .card-btn {
+  display: inline-block;
   width: 160px;
   height: 56px;
   padding: 12px 32px 12px 32px;
   background-color: #F1592A;
   border-radius: 8px;
+  cursor: pointer;
+
 }
-.card-details .card-btn a{
-  color:#F9F9F9 ;
+
+.card-details .card-btn a {
+  color: #F9F9F9;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 32px;
   text-align: left;
 
+}
+
+.volunteers-c1 {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  /* border: 2px solid red; */
+  padding-left: 50px;
+
+}
+
+.volunteers-c1-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  text-align: center;
+  color: #121519;
+  margin-bottom: 40px;
+}
+
+.volunteers-c1-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  /* border: 2px solid yellow; */
+  max-width: 1250px;
+
+}
+
+.volunteers-c1-card {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 24px;
+  /* border: 2px solid blue; */
+}
+
+.volunteers-c1-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.volunteers-c1-card-title1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: center;
+  color: #121519;
+  margin-bottom: 8px;
+}
+
+.volunteers-c1-card-title2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #858C97;
+}
+
+.gallery-c1 {
+  width: 100%;
+  max-width: 1100px;
+  margin: 50px auto;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  opacity: 1;
+  padding: 8px 10px;
+
+}
+
+.gallery-c1-title1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 3.25rem;
+  text-align: center;
+  color: #121519;
+
+
+}
+
+.gallery-c1-title2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+  text-align: center;
+  color: #576071;
+  margin-bottom: 40px;
+}
+
+.gallery-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+
+
+}
+
+.gallery-grid-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 24px;
+  display: block;
+
+
+}
+
+.gallery-grid-container .large {
+  grid-column: span 2;
+  height: 428px;
+
+}
+
+.gallery-grid-container .small {
+  height: 230px;
+
+}
+
+.gallery-event-image-4 {
+  margin-top: -186px;
+}
+
+.gallery-button {
+  display: inline-block;
+  padding: 12px 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  background-color: #F1592A;
+  border: 1px solid #F1592A;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  text-decoration: none;
 }
