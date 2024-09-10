@@ -1,23 +1,27 @@
+---
+import { getEntry} from "astro:content"
+const aboutTeam =(await getEntry ("about","team")).data
+---
 <div class="container team-container">
-    <div class="team-title">Team of professionals</div>
+    <div class="team-title">{aboutTeam.teamHeading}</div>
     <div class="team-cards">
         <div class="team-card">
-            <img src="/old_website/images/volunteers/abhas.png" alt="Team Member 1" />
+            <img src={aboutTeam.professionalsImg.memberOne} alt="Team Member 1" />
         </div>
         <div class="team-card">
-            <img src="/old_website/images/volunteers/sushma.png" alt="Team Member 2" />
+            <img src={aboutTeam.professionalsImg.memberTwo} alt="Team Member 2" />
         </div>
         <div class="team-card">
-            <img src="/old_website/images/volunteers/shreya.jpg" alt="Team Member 3" />
+            <img src={aboutTeam.professionalsImg.memberThree} alt="Team Member 3" />
         </div>
         <div class="team-card">
-            <img src="old_website/images/volunteers/kshitij.jpg" alt="Team Member 4" />
+            <img src={aboutTeam.professionalsImg.memberFour} alt="Team Member 4" />
         </div>
         <div class="team-card">
-            <img src="old_website/images/volunteers/keshu.jpg" alt="Team Member 5" />
+            <img src={aboutTeam.professionalsImg.memberFive} alt="Team Member 5" />
         </div>
         <div class="team-card">
-            <img src="old_website/images/volunteers/anjali.png" alt="Team Member 6" />
+            <img src={aboutTeam.professionalsImg.memberSix} alt="Team Member 6" />
         </div>
     </div>
 </div>
@@ -26,12 +30,12 @@
 <section class="container aboutExperience-card">
     <div class="card-details">
         <div class="card-img">
-            <img src="assets/icons/star.png" alt="star-image">
-        <span>Do you have an experience you want to share?</span>
+            <img src={aboutTeam.expImg} alt="star-image">
+            <span>{aboutTeam.expHeading}</span>
         </div>
          <div class="card-btn">
        
-          <a href="">Join Now</a>
+          <a href="/">{aboutTeam.expBtn}</a>
        </div>
    </div>
 
