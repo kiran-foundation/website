@@ -1,6 +1,6 @@
 ---
 vision:
-  title: "Our Vision : Merit Base Society "
+  title: "Our Vision : Merit Based Society "
   description: "We envision a society where everyone has equal opportunities to succeed, regardless of their background, and where merit, dedication, and hard work are valued above wealth, social status, and connections."
 
 goal1:
