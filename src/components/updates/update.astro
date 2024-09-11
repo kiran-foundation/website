@@ -2,6 +2,8 @@
 import type { MarkdownFile } from "../../types/Markdown";
 import { remark } from "remark";
 import html from "remark-html";
+import NextUpdates from "../updates/NextUpdate.astro";
+import TestimonialsCarousel from "../common/TestimonialsCarousel.astro";
 
 // Import all Markdown files from the updates directory
 const { path } = Astro.props;
@@ -29,9 +31,6 @@ const update = await (async () => {
   }
 })();
 
-console.log(path);
-console.log(update);
-
 const {
   title,
   summary,
@@ -47,10 +46,13 @@ const {
   <div>
     <article>
       <h1>{title}</h1>
-      <p><em>{date}</em> | Priority: {priority}</p>
+      <p><em>{date}</em></p>
       {featured_image && <img src={featured_image} alt={title} />}
       <p>{summary}</p>
       <div set:html={content}></div>
     </article>
   </div>
+  <NextUpdates title={title} />
+  <TestimonialsCarousel pageTag="home"/>
+
 </div>
