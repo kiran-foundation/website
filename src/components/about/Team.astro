@@ -2,7 +2,7 @@
 import { getEntry} from "astro:content"
 const aboutTeam =(await getEntry ("about","team")).data
 ---
-<div class="container team-container">
+<div class="container team-container" style="margin-top: 4rem;">
     <div class="team-title">{aboutTeam.teamHeading}</div>
     <div class="team-cards">
         <div class="team-card">
@@ -38,5 +38,4 @@ const aboutTeam =(await getEntry ("about","team")).data
           <a href="/">{aboutTeam.expBtn}</a>
        </div>
    </div>
-
 </section>

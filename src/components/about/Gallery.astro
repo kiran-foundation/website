@@ -3,7 +3,7 @@ import { getEntry } from "astro:content"
 const aboutImage =(await getEntry("about","gallery")).data
 ---
 
-<div class="gallery-c1">
+<div class="gallery-c1" style="margin-top: 8rem;">
     <div class="gallery-c1-title1">{aboutImage.title}</div>
     <div class="gallery-c1-title2">
         {aboutImage.paragraph}

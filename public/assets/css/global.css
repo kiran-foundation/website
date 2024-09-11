@@ -1327,8 +1327,7 @@ body {
   text-align: center;
 }
 
-.heroAbout-paragraph {
-  
+.heroAbout-paragraph{
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 3rem;
@@ -1339,26 +1338,25 @@ body {
 
 .mission-container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1297px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 25px;
   flex-wrap: wrap;
   padding: 0 20px;
-}
+ }
 
 .mission-img {
   width: 100%;
-  max-width: 535px;
+  max-width: 530px;
   border-radius: 18px;
   height: 559px;
-
-}
+ }
 
 .mission-text-box {
   width: 100%;
-  max-width: 535px;
+  max-width: 530px;
   height: 610px;
   font-size: 1rem;
   font-weight: 400;
@@ -1366,12 +1364,12 @@ body {
   line-height: 2.1rem;
   text-align: justify;
   color: #2B2E36;
-  padding-top: 25px; 
-}
+  padding: 25px 10px 0 10px;
+ }
 
 .mission-text-boxSecond {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1093px;
   height: 288px;
   font-size: 1rem;
   letter-spacing: 0.3px;
@@ -1379,14 +1377,13 @@ body {
   line-height: 2.1rem;
   text-align: justify;
   color: #2B2E36;
-  padding: 8px 10px;
+  padding: 8px 13px 8px 6px;
  }
 
 .mission-containerSecond {
-  max-width: 1250px;
+  width: 1250px;
   margin-top: 60px;
-  padding: 10px 80px;
-}
+ }
 
 .mission-title {
   font-size: 2.5rem;
@@ -1394,26 +1391,23 @@ body {
   line-height: 54.6px;
   text-align: left;
   color: #2B2E36;
-
 }
-
 .mission-card-container {
   width: 100%;
   max-width: 1250px;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 20px;
   padding-left: 3px;
-}
+ }
 
 .mission-card {
-  width: 100%;
-  max-width: 340px;
+  width: 340px;
   height: 266px;
-  padding: 10px 20px;
+  padding: 25px 15px;
   background-color: #F7FCFE;
   border-radius: 30px;
   box-sizing: border-box;
@@ -1423,7 +1417,6 @@ body {
 .mission-icon {
   width: 40px;
   height: 40px;
-  padding: 0 0.6px 0 0.61px;
   margin-bottom: 13px;
   margin-left: 13px;
 }
@@ -1452,12 +1445,10 @@ body {
 
 .team-container {
   width: 100%;
-  max-width: 1100px;
   padding-left: 40px;
-  padding-top: 30px;
-  margin-top: 70px;
-}
-
+  padding-top: 50px;
+  max-width: 1296px;
+ }
 .team-title {
   font-family: 'Inter', sans-serif;
   font-size: 2.5rem;
@@ -1468,7 +1459,6 @@ body {
   margin-bottom: 40px;
   margin-top: 30;
   padding-left: 45px;
-
 }
 
 .team-cards {
@@ -1476,11 +1466,8 @@ body {
   flex-wrap: wrap;
   gap: 40px;
   justify-content: space-between;
-  width: 100%;
-  max-width: 1255px;
-  padding-left: 45px;
-
-}
+  padding: 10px 40px;
+ }
 
 .team-card {
   width: calc(33.33% - 27px);
@@ -1499,20 +1486,19 @@ body {
   object-fit: cover;
 }
 
-
 .aboutExperience-card {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1296px;
   margin-top: 60px;
   border-radius: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  padding: 5px 40px;
+  }
 
 .card-details {
-  width: 100%;
-  max-width: 1250px;
+  width: 95%;
   border-radius: 18px;
   background-color: #051D40;
   height: 150px;
@@ -1520,7 +1506,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0px 50px 0px 50px;
-  margin-left: 38px;
 }
 
 .card-details img {
@@ -1561,7 +1546,7 @@ body {
 
 .volunteers-c1 {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1296px;
   margin: 0 auto;
   background: #FFFFFF;
   border-radius: 36px;
@@ -1570,14 +1555,14 @@ body {
   align-items: center;
   box-sizing: border-box;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 6rem;
   padding-left: 50px;
 
 }
 
 .volunteers-c1-title {
   font-family: 'Inter', sans-serif;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 600;
   line-height: 52px;
   text-align: center;
@@ -1640,7 +1625,7 @@ body {
   gap: 24px;
   opacity: 1;
   padding-left: 35px;
-
+  padding-bottom: 5rem;
 }
 
 .gallery-c1-title1 {
