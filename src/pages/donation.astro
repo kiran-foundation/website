@@ -4,10 +4,12 @@ import "jarallax/dist/jarallax.min.css";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/donation/Hero.astro";
 import Membership from "../components/donation/Membership.astro";
-import Mission from "../components/donation/Mission.astro";
 import Statistics from "../components/donation/Statistics.astro";
 import Faq from "../components/donation/Faq.astro";
 import Card from "../components/donation/Card.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+import DonationMatter from "../components/donation/DonationMatter.astro";
+import Heading from "../components/common/heading.astro";
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -26,10 +28,12 @@ import Card from "../components/donation/Card.astro";
   <main class="page-wrapper">
     <Hero/>
     <Membership/>
-    <Mission/>
     <Statistics/>
-    <Faq/>
+    <DonationMatter/>
+    <Heading title="Testimonials"/> 
+    <TestimonialsCarousel pageTag="home"/>
     <Card/>
+    <Faq/>
   </main>
 
   <!-- Back to top button -->

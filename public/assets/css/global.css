@@ -804,7 +804,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 630px;
+  width: fit-content;
   height: auto;
   gap: 24px;
   margin: 40px auto;
@@ -1693,4 +1693,309 @@ body {
   cursor: pointer;
   opacity: 1;
   text-decoration: none;
+}
+.donation-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(245, 245, 245);
+  margin: 40px;
+  width: 325px;
+  height: 350px;
+  border-radius: 20px;
+  padding: 15px;
+}
+.donation-card-title1{
+  font-weight: bold;
+  font-size: 25px;
+  color: black;
+
+}
+.donation-card-title2{
+  font-weight: 900;
+  font-size: 40px;
+  color: black;
+}
+.donation-card-permonth{
+  font-size: 15px;
+  color: rgb(73, 73, 76);
+  margin: 5px;
+}
+.donation-card-button{
+  background-color: rgb(241, 89, 42);
+  color: white;
+  padding: 10px 50px 10px 50px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.donation-card-button a{
+  color: white;
+  text-decoration: none;
+}
+.donation-card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.donation-card-title3{
+  font-weight: bold;
+  font-size: larger;
+  color: black;
+  width: fit-content;
+  margin: 35px;
+}
+.donation-card-title4{
+  font-weight: bold;
+  margin: 35px;
+  font-size: larger;
+  color: black;
+  width: fit-content;
+}
+.donation-card-title6{
+  font-weight: bold;
+  margin: 35px;
+  font-size: larger;
+  color: black;
+  width: fit-content;
+}
+.donation-card-text{
+  width: fit-content;
+  font-size: 15px;
+  height: 80px;
+  /* border: 2px solid black; */
+  color: #000;
+}
+.donationCard {
+  background-color: rgb(5, 29, 64);
+  padding: 50px 0;
+  /* border-radius: 12px; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.donationCard-container-second {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  width: 80%;
+  margin: 100px auto;
+}
+
+/* Text Styling */
+.donation-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.donation-paragraph {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #c7d5e0;
+}
+
+.donation-btn a {
+  background-color: #f04e23;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(240, 78, 35, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.donation-btn a:hover {
+  background-color: #d9431e;
+}
+
+/* Image Section */
+.donation-container-image {
+  max-width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.donation-container-allImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.Image-first {
+  width: 1000px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .donationCard-container-second {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .donation-container-image {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+.see-button{
+  border: 1px solid rgb(241, 89, 42);
+  color: rgb(241, 89, 42);
+  padding: 10px;
+  margin: 20px auto;
+  border-radius: 12px;
+  background-color: white;
+}
+.donation-c1{
+  display: flex;
+  flex-direction: column;
+}
+.faq-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 120px 120px;
+  width: 85%;
+  margin: auto;
+}
+
+.faq-header {
+  max-width: 40%;
+}
+
+.faq-header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #051D40;
+}
+
+.faq-header p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #6B7280;
+  margin-bottom: 24px;
+}
+
+.faq-vector-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-vector {
+  width: 175px;
+  height: auto;
+  margin: auto;
+}
+
+.faq-content {
+  max-width: 50%;
+}
+
+.faq-item {
+  border-bottom: 1px solid #E5E7EB;
+  margin-bottom: 12px;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 16px 0;
+  color: #051D40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.faq-question:hover {
+  color: #2563EB;
+}
+
+.icon-chevron-down {
+  width: 24px;
+  height: 24px;
+  background-image: url('/assets/images/benefits/Chevron.png');
+  background-size: contain;
+  transition: transform 0.2s ease;
+}
+
+.faq-item.active .icon-chevron-down {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  padding: 12px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #6B7280;
+}
+
+.donationCard img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.donation-content {
+  background-color: rgba(240, 248, 255, 0.7);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.donation-point {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.donation-point img.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.description-text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 2;
+}
+.matter-card{
+  width: 90%;
+  margin: auto;
+}
+.point-desc{
+  font-size: 0.8rem;
+}
+.form-container{
+  display: flex;
+  text-align: start;
+  margin: 40px 20px 40px 0px;
+
+}
+.hero-container{
+  display: flex;
+}
+.formm{
+  width: 70%;
+  padding: 20px;
+}
+.hero-title-h1 {
+  width: 70%;
 }

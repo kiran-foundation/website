@@ -1,3 +1,3 @@
 ---
-heading: "Empower Education: Make a Difference Today"
+heading: "Make a Lasting Impact: Support the Future with Your Donation"
 ---

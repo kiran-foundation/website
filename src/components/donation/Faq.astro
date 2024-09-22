@@ -3,85 +3,81 @@ import { getEntry } from "astro:content";
 const DonationFaqData = (await getEntry("donation", "faq")).data;
 ---
 
-<div class="faq-container-c1" style="margin-top: 100px;">
-    <div class="faq-container-c2">
-        <h1 class="faq-title">{DonationFaqData.title}</h1>
-        <p class="faq-content">{DonationFaqData.paragraph}</p>
-        <div class="faq-image-content">
-            <img src={DonationFaqData.image} alt="vectorImage" />
+<div class="faq-section">
+    <div class="faq-header">
+        <h1>{DonationFaqData.title}</h1>
+        <p>{DonationFaqData.paragraph}</p>
+        <div class="faq-vector-div">
+            <img src={DonationFaqData.image} alt="Vector" class="faq-vector"/>
         </div>
     </div>
-    <div class="faq-container-c3" style="margin-left:50px;">
-        <div class="faq-accordion">
-            <div class="faq-accordion-item">
-                <div class="faq-accordion-question">
-                    {DonationFaqData.question1}
-                    <img
-                        src="/assets/images/benefits/Chevron.png"
-                        style="margin-left: 629px; margin-top:-62px"
-                    />
-                </div>
-                <div class="faq-accordion-answer mt-5">
-                    {DonationFaqData.answer1}
-                </div>
+
+    <div class="faq-content">
+        <div class="faq-item">
+            <button class="faq-question">
+                {DonationFaqData.question1}
+                <span class="icon-chevron-down"></span>
+            </button>
+            <div class="faq-answer">
+                <p>{DonationFaqData.answer1}</p>
             </div>
-            <div class="faq-accordion-item">
-                <div class="faq-accordion-question">
-                    {DonationFaqData.question2}
-                    <img
-                        src="/assets/images/benefits/Chevron1.png"
-                        style="margin-left: 632px; margin-top:-56px"
-                    />
-                </div>
-                <div class="faq-accordion-answer">
-                    {DonationFaqData.answer2}
-                </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">
+                {DonationFaqData.question2}
+                <span class="icon-chevron-down"></span>
+            </button>
+            <div class="faq-answer">
+                <p>{DonationFaqData.answer2}</p>
             </div>
-            <div class="faq-accordion-item">
-                <div class="faq-accordion-question">
-                    {DonationFaqData.question3}
-                    <img
-                        src="/assets/images/benefits/Chevron.png"
-                        style="margin-left: 633px; margin-top:-60px"
-                    />
-                </div>
-                <div class="faq-accordion-answer">
-                    {DonationFaqData.answer2}
-                </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">
+                {DonationFaqData.question3}
+                <span class="icon-chevron-down"></span>
+            </button>
+            <div class="faq-answer">
+                <p>{DonationFaqData.answer3}</p>
             </div>
-            <div class="faq-accordion-item">
-                <div class="faq-accordion-question">
-                    {DonationFaqData.question4}
-                    <img
-                        src="/assets/images/benefits/Chevron.png"
-                        style="margin-left: 633px; margin-top:-65px"
-                    />
-                </div>
-                <div class="faq-accordion-answer">
-                    {DonationFaqData.answer4}
-                </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">
+                {DonationFaqData.question4}
+                <span class="icon-chevron-down"></span>
+            </button>
+            <div class="faq-answer">
+                <p>{DonationFaqData.answer4}</p>
             </div>
-            <div class="faq-accordion-item">
-                <div class="faq-accordion-question">
-                    {DonationFaqData.question5}
-                    <img
-                        src="/assets/images/benefits/Chevron.png"
-                        style="margin-left: 633px; margin-top:-56px"
-                    />
-                </div>
-                <div class="faq-accordion-answer mt-5">
-                    {DonationFaqData.answer}
-                </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                {DonationFaqData.question5}
+                <span class="icon-chevron-down"></span>
+            </button>
+            <div class="faq-answer">
+                <p>{DonationFaqData.answer5}</p>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    document.querySelectorAll(".faq-accordion-question").forEach((item) => {
-        item.addEventListener("click", (_event) => {
-            const accordionItem = item.parentNode as HTMLElement;
-            accordionItem.classList.toggle("active");
-        });
+    document.querySelectorAll(".faq-question").forEach((item) => {
+    item.addEventListener("click", () => {
+        const parent = item.parentNode as HTMLElement; // Cast as HTMLElement to get classList
+        parent.classList.toggle("active");
+
+        const answer = parent.querySelector(".faq-answer") as HTMLElement; // Cast as HTMLElement for style manipulation
+        if (answer.style.maxHeight) {
+            answer.style.maxHeight = null; // Collapses the FAQ
+        } else {
+            answer.style.maxHeight = answer.scrollHeight + "px"; // Expands the FAQ
+        }
     });
+});
+
 </script>
