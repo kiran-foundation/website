@@ -1316,3 +1316,694 @@ body {
     font-size: 0.875rem;
   }
 }
+.app-component-c1 {
+  display: block;
+  position: absolute;
+  width: 1296px;
+  height: 590px;
+  left: 30px;
+  top: 2815px;
+  gap: 0px;
+  border-radius: 36px;
+  background: var(--royal-blue, #051D40);
+  overflow: hidden;
+}
+.app-component-c1 .app-left-container {
+  position: absolute;
+  width: 425px;
+  height: 222px;
+  top: 121px;
+  left: 43px;
+  gap: 0px;
+  font-family: Poppins, sans-serif;
+  font-size: 57px;
+  font-weight: 600;
+  line-height: 74.1px;
+  text-align: left;
+  color: white;
+}
+.app-component-c1 .app-download-button {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 381px;
+  left: 43px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #F1592A;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.app-component-c1 img {
+  object-fit: cover;
+}
+.app-component-c1 .image1 {
+  position: absolute;
+  width: 197px;
+  height: 192px;
+  top: 134px;
+  left: 488px;
+  gap: 0px;
+  border-radius: 18px 0px 0px 0px;
+}
+.app-component-c1 .image2 {
+  position: absolute;
+  width: 200px;
+  height: 438px;
+  top: 76px;
+  left: 736px;
+  gap: 0px;
+}
+.app-component-c1 .image3 {
+  position: absolute;
+  width: 200px;
+  height: 438px;
+  top: -159px;
+  left: 968px;
+  gap: 0px;
+}
+.app-component-c1 .image4 {
+  position: absolute;
+  width: 200px;
+  height: 438px;
+  top: 311px;
+  left: 968px;
+  gap: 0px;
+ 
+}
+.group-icon{
+  position: absolute;
+  width:46.62px ;
+  height:46.62px ;
+  left: 690px;
+  top:45px;
+  rotate: 7deg;
+}
+.aboutPratibha-container-c1 {
+  width: 1288px;
+  height: 188px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutPratibha-box {
+  width: 298px;
+  height: 188px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #2B2E36;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.aboutPratibha-box-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.aboutPratibha-box-icon img {
+  width: 50px; 
+  height: 50px; 
+}
+
+.aboutPratibha-box-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0;
+}
+
+.aboutPratibha-box-content {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  margin: 0;
+  color: #49494C;
+  padding: 10px;
+  border-radius: 8px;
+}.faq-container-c1 {
+  display: flex;
+  height: 523px;
+  margin-left: 80px;
+  gap: 20px;
+  font-family: Poppins, sans-serif;
+  width: 1170px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.faq-container-c2 {
+  width: 416px;
+  height: auto;
+}
+
+.faq-title {
+  width: 416px;
+  height: 120px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+  text-align: left;
+  color: #121519;
+}
+
+.faq-content {
+  width: 416px;
+  height: 72px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #576071;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.faq-container-c3 {
+  flex-grow: 1;
+  height: auto;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-accordion-item {
+  width: 746px;
+  border-radius: 18px;
+  padding: 24px;
+  background: #ffffff;
+  transition: height 0.3s ease;
+}
+
+.faq-accordion-item.active .faq-accordion-answer {
+  display: block;
+}
+
+.faq-accordion-question {
+  width: 650px;
+  height: 28px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  color: #051D40;
+  cursor: pointer;
+  margin-top: -7px;
+ 
+  
+}
+
+.faq-accordion-answer {
+  display: none;
+  width: 650px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #051D40;
+  margin-top: 16px;
+}
+.faq-image-content{
+  width: 188.48px ;
+  height:211.3px ;
+  position: relative;
+  top:20px;
+  left: 106px;
+  rotate: z -4.03deg ;
+}
+.pratibhaCard-image-container-vector{
+  border-radius: 1px solid red;
+  position:relative ;
+  width:96.18px;
+  height: 125px;
+}
+.apply-container {
+  position:relative;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  font-family: Poppins, sans-serif;
+  width: 1296px;
+  
+}
+
+.apply-title {
+  width: 756px;
+  height: 108px;
+  margin: 134px auto 0;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 54px;
+  text-align: center;
+  color: #F1592A;
+  padding: 10px;
+}
+
+.apply-subtitle {
+  width: 1050px;
+  height: 42px;
+  margin: 20px auto;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  color: #000000;
+  padding: 10px;
+
+}
+
+.apply-highlight-container {
+  background: #E5F1FF;
+  width: 1000px;
+  height: 60px;
+  margin: 40px auto;
+  border-radius: 8px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.apply-highlight-text {
+  width: 808px;
+  height: 24px;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #2B2E36;
+ }
+
+.apply-apply-button {
+  width: 195px;
+  height: 48px;
+  border-radius: 8px;
+  background: #F1592A;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.apply-link {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  color: #F7FCFF;
+  text-decoration: none;
+  width: 147px;
+  height: 24px;
+
+}
+
+.apply-content-container,
+.apply-documents-container,
+.apply-apply-container {
+  width: 1037px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.apply-content-container p,
+.apply-documents-container p,
+.apply-apply-container p {
+  color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: justify;
+}
+
+.apply-h4 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #051D40;
+  margin: 0;
+}
+
+.apply-content-container h4,
+.apply-documents-container h4,
+.apply-apply-container h4 {
+  color: #F1592A;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.apply-download-button {
+  width: 308px;
+  height: 48px;
+  margin: 20px 90px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: #F1592A;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid #F1592A;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.apply-google-form {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #F1592A;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.apply-documents-list {
+  color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: justify;
+  margin-top: -75px;
+
+}
+
+.apply-additional-data {
+  color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  text-align: justify;
+  margin-top: -20px;
+  margin-left: -10px;
+
+}
+
+.apply-image {
+  position:absolute;
+  top: 1010px;
+  left: 800px;
+}
+
+.image-hero {
+  height: 370px ;
+  width: 440px;
+  border-radius: 20px;
+}
+
+.app-download-link {
+  width: 260px;
+  height: 24px;
+  text-decoration: none;
+  color: #F7FCFF;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}
+.pratibhaCard-container {
+  font-family: 'Poppins', sans-serif;
+  width: 1296px;
+  height: 423px;
+  border-radius: 18px;
+  background: #051D40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 5%;
+  margin-top: 5%;
+ 
+  
+}
+
+.pratibhaCard-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
+ 
+}
+
+.pratibhaCard-image-container img {
+  width: 526px;
+  height: 319px;
+  border-radius: 70px;
+  object-fit: cover;
+  margin-left: -20px;
+  margin-top: 5px;
+  
+}
+
+.pratibhaCard-content-container,.shaktiCard-content-container{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pratibhaCard-content-container h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  padding-bottom: 4%;
+  width: 444px;
+  height: 96px;
+  margin-left: 30px;
+}
+
+.cardPratibha-join-button {
+  width: 193px;
+  height: 48px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #F1592A;
+  background: #F1592A;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s;
+  margin-left: 30px;
+
+}
+
+.cardPratibha-join-button:hover {
+  background: #d1481f;
+}
+
+.pratibhaCard-image-container-vector {
+  position: relative;
+  top: -112px;
+  left: -50px;
+  width: 96.18px;
+  height: 125px;
+  rotate: z -7deg;
+}
+
+.shaktiCard-content-container h2{
+  width: 336px;
+  height: 72px;
+  font-family: Poppins, sans-serif;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: left;
+  color: #ffff;
+  margin-top: -40px;
+  margin-left: 90px;
+
+}
+
+.pratibhaCard-image-container-vectorstar{
+    position:relative;
+    width: 49px;
+    height: 49px;
+    top:-170px;
+    left: 15px;
+}
+.shaktiCard-image-container-vector{
+  position: relative;
+  top: -120px;
+  left: -70px;
+  width: 96.18px;
+  height: 125px;
+  rotate: z -5deg;
+}
+.shaktiCard-image-container-ellipse{
+  width:48px;
+  height:48px;
+  position:relative;
+  top:150px;
+  left: 40px;
+}
+ .shaktiCard-image-container-ellipseSmall{
+  width:20px;
+  height:20px;
+  position: relative;
+  top:250px;
+  left: 25px;
+}
+.shaktiCard-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffff;
+  border-radius: 70px;
+  margin-left: -40px;
+}
+
+.shaktiCard-image-container img {
+  width: 526px;
+  height: 319px;
+  border-radius: 70px;
+  object-fit: cover;
+  margin-left: -20px;
+  margin-top: 5px;
+  
+}
+.selectionProcess-section-title {
+  width: 1100px;
+  height: 54px;
+  margin: 20px auto;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 54px;
+  color: #2B2E36;
+  font-family: Poppins, sans-serif;
+  background-color: #F7FCFE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectionProcess-highlight-container {
+  background: #F7FCFE;
+  width: 1100px;
+  height: 74px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectionProcess-content-container,
+.selectionProcess-documents-container,
+.selectionProcess-apply-container {
+  width: 1037px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.selectionProcess-h4 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #051D40;
+  margin: 0;
+}
+
+.selectionProcess-p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  line-height: 30px;
+  color: #49494C;
+  text-align: justify;
+  margin: 0;
+}
+
+.selectionProcess-apply-button {
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  width: 183px;
+  height: 48px;
+  border-radius: 8px;
+  color: white;
+  margin-left: 60px;
+ 
+  
+}
+.speaker-c1 {
+  position: relative; 
+  width: 100%;
+  max-width: 1296px;
+  height: auto; 
+  padding: 2%;
+  background: #051D40;
+  border-radius: 36px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.speaker-c1-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 41.6px;
+  text-align: left;
+  color: white;
+  flex: 1;
+  margin-right: 20px;
+}
+
+.speaker-c1-button {
+  width: 223px;
+  height: 56px;
+  background: #F1592A;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 32px;
+  cursor: pointer;
+  text-align: center;
+}
