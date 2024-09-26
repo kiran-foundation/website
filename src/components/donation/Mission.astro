@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content"
-const missionData = (await getEntry("donation","missiondonation")).data
+const missionData = (await getEntry("donation","mission")).data
 ---
 
     <div class="container missionDonation-heading">{missionData.title}</div>
