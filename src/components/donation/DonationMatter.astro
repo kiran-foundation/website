@@ -4,71 +4,83 @@ import Heading from "../common/heading.astro";
 const cardData = (await getEntry("donation", "donationmatter")).data;
 ---
 
-<section class=" matter-card mt-5">
-  <Heading title={cardData.title}/>
-  <div class="container img-container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 col-md-12">
-        <img
-          class="img-fluid rounded"
-          src={cardData.img}
-          alt="Donation image"
-        />
-      </div>
+<section class="container py-5 pb-5 mb-lg-3 mb-xl-4 mb-xxl-5">
+  <div class="row pb-sm-2 w-100 pb-md-3 pb-lg-4 mt-3 d-flex justify-content-center" 
+    style="gap:10px; margin-left: 0.3rem">
 
-      <div class="col-lg-6 col-md-12">
-        <div class="donation-content">
-          <p class="description-text">{cardData.description}</p>
-        </div>
-      </div>
-    </div>
+    <Heading title={cardData.title}/>
 
-    <!-- Donation Card Points -->
-    <div class="row mt-4">
-      <!-- Point 1 -->
-      <div class="col-md-4">
-        <div class="donation-point d-flex align-items-start donation-content">
-          <img
-            class="icon"
-            src={cardData.point1.img}
-            alt={cardData.point1.heading}
-          />
-          <div class="ms-3 point-desc">
-            <h5>{cardData.point1.heading}</h5>
-            <p>{cardData.point1.desc}</p>
+    <section class="overflow-hidden" style="margin-top: 5rem;">
+      <div class="container pb-sm-3 mb-md-2 mb-lg-3">
+        <div class="row g-4">
+          <div
+            class="col-md-6"
+            data-aos="fade-right"
+            data-aos-duration="600"
+            data-aos-offset="280"
+            data-disable-parallax-down="md"
+          >
+            <img
+              class="object-fit-cover w-100 h-100 rounded-3"
+              src={cardData.img}
+              alt="Image"
+            />
+          </div>
+          <div
+            class="col-md-6"
+            data-aos="fade-left"
+            data-aos-duration="600"
+            data-aos-offset="280"
+            data-disable-parallax-down="md"
+          >
+            <div
+              class="d-flex flex-column h-100 bg-secondary rounded-3 py-5 px-4 px-lg-5"
+            >
+              {
+                cardData.description
+              }
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Point 2 -->
-      <div class="col-md-4">
-        <div class="donation-point d-flex align-items-start donation-content">
-          <img
-            class="icon"
-            src={cardData.point2.img}
-            alt={cardData.point2.heading}
-          />
-          <div class="ms-3 point-desc">
-            <h5>{cardData.point2.heading}</h5>
-            <p>{cardData.point2.desc}</p>
+    <section class="row pb-sm-2 w-100 pb-md-3 pb-lg-4 mt-3 d-flex justify-content-center" style="gap:10px; margin-left: 0.3rem">
+      <div class="benefits-container-bg col-sm-6 col-lg-4" style="width: 355px;">
+        <div class="d-flex align-items-center mb-2">
+          <div class="flex-shrink-0 rounded-1 p-2" style="margin-left: -15px;">
+            <img src={cardData.point1.img} alt={cardData.point1.heading} />
           </div>
+          <h3 class="benefits-title-h3 h5 mb-0">{cardData.point1.heading}</h3>
         </div>
+        <p class="benefits-content-container-p2 fs-sm" style="word-wrap: break-word;">
+          {cardData.point1.desc}
+        </p>
       </div>
+      <div class="benefits-container-bg col-sm-6 col-lg-4" style="width: 355px;">
+        <div class="d-flex align-items-center mb-2">
+          <div class="flex-shrink-0 rounded-1 p-2" style="margin-left:-15px;">
+            <img src={cardData.point2.img} alt={cardData.point2.heading} />
+          </div>
+          <h3 class="benefits-title-h3 h5 mb-0">{cardData.point2.heading}</h3>
+        </div>
+        <p class="benefits-content-container-p3 fs-sm" style="word-wrap: break-word;">
+          {cardData.point2.desc}
+        </p>
+      </div>
+      <div class="benefits-container-bg col-sm-6 col-lg-4" style="width: 355px;">
+        <div class="d-flex align-items-center mb-2">
+          <div class="flex-shrink-0 rounded-1 p-2" style="margin-left:-15px;">
+            <img src={cardData.point3.img} alt={cardData.point3.heading} />
+          </div>
+          <h3 class="benefits-title-h3 h5 mb-0">{cardData.point3.heading}</h3>
+        </div>
+        <p class="benefits-content-container-p3 fs-sm" style="word-wrap: break-word;">
+          {cardData.point3.desc}
+        </p>
+      </div>
+    </section>
 
-      <!-- Point 3 -->
-      <div class="col-md-4">
-        <div class="donation-point d-flex align-items-start donation-content">
-          <img
-            class="icon"
-            src={cardData.point3.img}
-            alt={cardData.point3.heading}
-          />
-          <div class="ms-3 point-desc">
-            <h5>{cardData.point3.heading}</h5>
-            <p>{cardData.point3.desc}</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
