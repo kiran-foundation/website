@@ -1878,18 +1878,18 @@ body {
 }
 .faq-section {
   display: flex;
-  justify-content: space-between;
-  padding: 120px 120px;
-  width: 85%;
+  flex-direction: column;
+  padding: 80px 20px; /* Reduce padding for smaller screens */
+  width: 100%;
   margin: auto;
 }
 
 .faq-header {
-  max-width: 40%;
+  max-width: 100%; /* Full width on smaller screens */
 }
 
 .faq-header h1 {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 16px;
   color: #051D40;
@@ -1929,7 +1929,7 @@ body {
   border: none;
   width: 100%;
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   padding: 16px 0;
   color: #051D40;
