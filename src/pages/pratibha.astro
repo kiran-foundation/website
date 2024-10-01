@@ -1,45 +1,46 @@
 ---
-import "aos/dist/aos.css";
-import "jarallax/dist/jarallax.min.css";
-import Layout from "../layouts/Layout.astro";
-import Heading from "../components/common/heading.astro";
-import Hero from "../components/pratibha/Hero.astro";
-import Intro from "../components/pratibha/Intro.astro";
-import BenefitOne from "../components/pratibha/BenefitOne.astro";
-import Mentoring from "../components/pratibha/Mentoring.astro";
-import BenefitTwo from "../components/pratibha/BenefitTwo.astro";
-import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
-import SelectionProcess from "../components/pratibha/SelectionProcess.astro";
-import Card from "../components/pratibha/Card.astro";
-import FaqPratibha from "../components/pratibha/FaqPratibha.astro";
+import 'aos/dist/aos.css'
+import 'jarallax/dist/jarallax.min.css'
+import Layout from '../layouts/Layout.astro'
+import Heading from '../components/common/heading.astro'
+import Hero from '../components/pratibha/Hero.astro'
+import Intro from '../components/pratibha/Intro.astro'
+import BenefitOne from '../components/pratibha/BenefitOne.astro'
+import Mentoring from '../components/pratibha/Mentoring.astro'
+import BenefitTwo from '../components/pratibha/BenefitTwo.astro'
+import TestimonialsCarousel from '../components/common/TestimonialsCarousel.astro'
+import SelectionProcess from '../components/pratibha/SelectionProcess.astro'
+import Card from '../components/pratibha/Card.astro'
+import FaqPratibha from '../components/pratibha/FaqPratibha.astro'
+import Speaker from '../components/unused/speaker.astro'
 ---
 
-<script src="/assets/js/theme.min.js" is:inline></script>
+<script src='/assets/js/theme.min.js' is:inline></script>
 
 <script>
-  import AOS from "aos";
-  AOS.init();
+  import AOS from 'aos'
+  AOS.init()
 </script>
-<script src="jarallax/dist/jarallax.min.js"></script>
-<script src="simplebar/dist/simplebar.min.js"></script>
-<link rel="stylesheet" href="/assets/css/theme.min.css" />
-<link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
-<link rel="stylesheet" href="/assets/css/Pratibha/selectionProcess.css" />
-<link rel="stylesheet" href="/assets/css/Pratibha/pratibhaCard.css" />
-<link rel="stylesheet" href="/assets/css/Pratibha/faq.css" />
+<script src='jarallax/dist/jarallax.min.js'></script>
+<script src='simplebar/dist/simplebar.min.js'></script>
+<link rel='stylesheet' href='/assets/css/theme.min.css' />
+<link rel='stylesheet' href='/assets/icons/around-icons.min.css' />
+<link rel='stylesheet' href='/assets/css/Pratibha/selectionProcess.css' />
+<link rel='stylesheet' href='/assets/css/Pratibha/pratibhaCard.css' />
+<link rel='stylesheet' href='/assets/css/Pratibha/faq.css' />
 
-<Layout title="Pratibha">
+<Layout title='Pratibha'>
   <!-- Page wrapper -->
-  <main class="page-wrapper">
+  <main class='page-wrapper'>
     <Hero />
-    <Heading title="What we Do" />
+    <Heading title='What we Do' />
     <Intro />
     <BenefitOne />
     <Mentoring />
     <BenefitTwo />
-    <Heading title="Testimonials" />
-    <TestimonialsCarousel pageTag="pratibha" />
-    <Heading title="Selection Process" />
+    <Heading title='Testimonials' />
+    <TestimonialsCarousel pageTag='pratibha' />
+    <Heading title='Selection Process' />
     <SelectionProcess />
     <Card />
     <FaqPratibha />
@@ -47,25 +48,25 @@ import FaqPratibha from "../components/pratibha/FaqPratibha.astro";
 
   <!-- Back to top button -->
   <a
-    class="btn-scroll-top"
-    href="#top"
+    class='btn-scroll-top'
+    href='#top'
     data-scroll
-    aria-label="Scroll back to top"
+    aria-label='Scroll back to top'
   >
     <svg
-      viewBox="0 0 40 40"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
+      viewBox='0 0 40 40'
+      fill='currentColor'
+      xmlns='http://www.w3.org/2000/svg'
     >
       <circle
-        cx="20"
-        cy="20"
-        r="19"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-miterlimit="10"></circle>
+        cx='20'
+        cy='20'
+        r='19'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='1.5'
+        stroke-miterlimit='10'></circle>
     </svg>
-    <i class="ai-arrow-up"></i>
+    <i class='ai-arrow-up'></i>
   </a>
 </Layout>
