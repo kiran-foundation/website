@@ -1,96 +1,90 @@
 ---
-import { getEntry } from "astro:content";
-import Heading from "../common/heading.astro";
-const memberShipData = (await getEntry("donation", "membership")).data;
+import { getEntry } from 'astro:content'
+import Heading from '../common/heading.astro'
+const memberShipData = (await getEntry('donation', 'membership')).data
 ---
 
-<div class="donation-c1">
-    <Heading title={memberShipData.title}></Heading>
-    <div class="donation-card-container">
-        <div class="donation-card">
-            <div class="donation-card-title1">
-                {memberShipData.cardOneData.heading}
-            </div>
-            <div class="donation-card-title2">
-                {memberShipData.cardOneData.lakh}
-            </div>
-            <div class="donation-card-permonth">
-                {memberShipData.cardOneData.permonth}
-            </div>
-            <div class="donation-card-text">
-                {memberShipData.cardOneData.paragraph}
-            </div>
-            <div class="donation-card-button">
-                <a class="" href="/"
-                    >{memberShipData.membershipCardBtn}</a>
-            </div>
-        </div>
-        <div class="donation-card">
-            <div class="donation-card-title1">
-                {memberShipData.cardSecondData.heading}
-            </div>
-            <div class="donation-card-title2">
-                {memberShipData.cardSecondData.lakh}
-            </div>
-            <div class="donation-card-permonth">
-                {memberShipData.cardSecondData.permonth}
-            </div>
-            <div class="donation-card-text">
-                {memberShipData.cardSecondData.paragraph}
-            </div>
-            <div class="donation-card-button">
-                <a class="" href="/"
-                    >{memberShipData.membershipCardBtn}</a>
-            </div>
-        </div>
-        <div class="donation-card">
-            <div class="donation-card-title3">
-                {memberShipData.cardThirdData.heading}
-            </div>
-            <div class="donation-card-text">
-                {memberShipData.cardThirdData.paragraph}
-            </div>
-            <div class="donation-card-button">
-                <a class="" href="/"
-                    >{memberShipData.membershipCardBtn}</a>
-            </div>
-        </div>
-        <div class="donation-card">
-            <div class="donation-card-title4">
-                {memberShipData.cardFourthData.heading}
-            </div>
-            <div class="donation-card-text">
-                {memberShipData.cardFourthData.paragraph}
-            </div>
-            <div class="donation-card-button">
-                <a class="" href="/"
-                    >{memberShipData.membershipCardBtn}</a>
-            </div>
-        </div>
-        <div class="donation-card">
-            <div class="donation-card-title3">
-                {memberShipData.cardFifthData.heading}
-            </div>
-            <div class="donation-card-text">
-                {memberShipData.cardFifthData.paragraph}
-            </div>
-            <div class="donation-card-button">
-                <a class="" href="/"
-                    >{memberShipData.membershipCardBtn}</a>
-            </div>
-        </div>
-        <div class="donation-card">
-            <div class="donation-card-title6">
-                {memberShipData.cardSixthData.heading}
-            </div>
-            <div class="donation-card-text">
-                {memberShipData.cardSixthData.paragraph}
-            </div>
-            <div class="donation-card-button">
-                <a class="" href="/"
-                    >{memberShipData.membershipCardBtn}</a>
-            </div>
-        </div>
+<div class='donation-c1'>
+  <Heading title={memberShipData.title} />
+  <div class='donation-card-container'>
+    <div class='donation-card'>
+      <div class='donation-card-title1'>
+        {memberShipData.cardOneData.heading}
+      </div>
+      <div class='donation-card-title2'>
+        {memberShipData.cardOneData.lakh}
+      </div>
+      <div class='donation-card-permonth'>
+        {memberShipData.cardOneData.permonth}
+      </div>
+      <div class='donation-card-text'>
+        {memberShipData.cardOneData.paragraph}
+      </div>
+      <div class='donation-card-button'>
+        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
+      </div>
     </div>
-    <button class="see-button">See more</button>
+    <div class='donation-card'>
+      <div class='donation-card-title1'>
+        {memberShipData.cardSecondData.heading}
+      </div>
+      <div class='donation-card-title2'>
+        {memberShipData.cardSecondData.lakh}
+      </div>
+      <div class='donation-card-permonth'>
+        {memberShipData.cardSecondData.permonth}
+      </div>
+      <div class='donation-card-text'>
+        {memberShipData.cardSecondData.paragraph}
+      </div>
+      <div class='donation-card-button'>
+        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
+      </div>
+    </div>
+    <div class='donation-card'>
+      <div class='donation-card-title3'>
+        {memberShipData.cardThirdData.heading}
+      </div>
+      <div class='donation-card-text'>
+        {memberShipData.cardThirdData.paragraph}
+      </div>
+      <div class='donation-card-button'>
+        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
+      </div>
+    </div>
+    <div class='donation-card'>
+      <div class='donation-card-title4'>
+        {memberShipData.cardFourthData.heading}
+      </div>
+      <div class='donation-card-text'>
+        {memberShipData.cardFourthData.paragraph}
+      </div>
+      <div class='donation-card-button'>
+        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
+      </div>
+    </div>
+    <div class='donation-card'>
+      <div class='donation-card-title3'>
+        {memberShipData.cardFifthData.heading}
+      </div>
+      <div class='donation-card-text'>
+        {memberShipData.cardFifthData.paragraph}
+      </div>
+      <div class='donation-card-button'>
+        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
+      </div>
+    </div>
+    <div class='donation-card'>
+      <div class='donation-card-title6'>
+        {memberShipData.cardSixthData.heading}
+      </div>
+      <div class='donation-card-text'>
+        {memberShipData.cardSixthData.paragraph}
+      </div>
+      <div class='donation-card-button'>
+        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
+      </div>
+    </div>
+    <button class='see-button'>See more</button>
+  </div>
 </div>
