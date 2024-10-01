@@ -1,62 +1,93 @@
 ---
-   import { getEntry } from "astro:content";
-   const headerDetails = ( await getEntry("header", "details")).data
+import { getEntry } from 'astro:content'
+const headerDetails = (await getEntry('header', 'details')).data
 ---
 
 <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
-<header class="navbar navbar-expand-lg fixed-top" style="background-color: #ffffff;">
-  <div class="container">
-
+<header
+  class='navbar navbar-expand-lg fixed-top'
+  style='background-color: #ffffff;'
+>
+  <div class='container'>
     <!-- Navbar brand (Logo) -->
-    <a class="navbar-brand pe-sm-3" href="/">
-      <span class="text-primary flex-shrink-0 me-2">
-        <svg width="35" height="32" viewBox="0 0 36 33">
-          <img  src="/Logo.png" width="107" height="66.61" alt="kiran foundation logo">
+    <a class='navbar-brand pe-sm-3' href='/'>
+      <span class='text-primary flex-shrink-0 me-2'>
+        <svg width='35' height='32' viewBox='0 0 36 33'>
+          <img
+            src='/Logo.png'
+            width='107'
+            height='66.61'
+            alt='kiran foundation logo'
+          />
         </svg>
       </span>
     </a>
 
-    <div class=" space-x-4 order-lg-3 ">
-      <a class="home-button btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold" href="/donation" rel="noopener">
-        <i class=" fs-xl me-2 ms-n1"></i>
-       {headerDetails.button}
+    <div class='space-x-4 order-lg-3'>
+      <a
+        class='home-button btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold'
+        href='/donation'
+        rel='noopener'
+      >
+        <i class='fs-xl me-2 ms-n1'></i>
+        {headerDetails.button}
       </a>
-      <a class="home-button btn btn-outline-primary space-x-4 btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold" href="/volunteering">{headerDetails.buttonVolunteer}</a>
+      <a
+        class='home-button btn btn-outline-primary space-x-4 btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold'
+        href='/volunteering'>{headerDetails.buttonVolunteer}</a
+      >
     </div>
 
     <!-- Mobile menu toggler (Hamburger) -->
-    <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button
+      class='navbar-toggler ms-sm-3'
+      type='button'
+      data-bs-toggle='collapse'
+      data-bs-target='#navbarNav'
+      aria-label='Toggle navigation'
+    >
+      <span class='navbar-toggler-icon'></span>
     </button>
 
     <!-- Navbar collapse (Main navigation) -->
-    <nav class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">{headerDetails.programe}</a>
-          <ul class="dropdown-menu">
-            <li class="dropdown">
-              <a class="dropdown-item" href="/pratibha"  aria-expanded="false">{headerDetails.pratibha}</a>
+    <nav class='collapse navbar-collapse' id='navbarNav'>
+      <ul
+        class='navbar-nav navbar-nav-scroll me-auto'
+        style='--ar-scroll-height: 520px;'
+      >
+        <li class='nav-item dropdown'>
+          <a
+            class='nav-link dropdown-toggle'
+            href='/'
+            data-bs-toggle='dropdown'
+            data-bs-auto-close='outside'
+            aria-expanded='false'>{headerDetails.programe}</a
+          >
+          <ul class='dropdown-menu'>
+            <li class='dropdown'>
+              <a class='dropdown-item' href='/pratibha' aria-expanded='false'
+                >{headerDetails.pratibha}</a
+              >
             </li>
-            <li class="dropdown">
-              <a class="dropdown-item" href="/shakti">{headerDetails.shakti}</a>
+            <li class='dropdown'>
+              <a class='dropdown-item' href='/shakti'>{headerDetails.shakti}</a>
             </li>
-            <li class="dropdown">
-              <a class="dropdown-item" href="/" >{headerDetails.samman}</a>
+            <li class='dropdown'>
+              <a class='dropdown-item' href='/'>{headerDetails.samman}</a>
             </li>
-            <li class="dropdown">
-              <a class="dropdown-item" href="/" >{headerDetails.gyan}</a>
+            <li class='dropdown'>
+              <a class='dropdown-item' href='/'>{headerDetails.gyan}</a>
             </li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">{headerDetails.about}</a>
+        <li class='nav-item'>
+          <a class='nav-link' href='/about'>{headerDetails.about}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">{headerDetails.contact}</a>
+        <li class='nav-item'>
+          <a class='nav-link' href='/contact'>{headerDetails.contact}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/src/components/About/gallery.astro">{headerDetails.gallery}</a>
+        <li class='nav-item'>
+          <a class='nav-link' href='/gallery'>{headerDetails.gallery}</a>
         </li>
       </ul>
     </nav>

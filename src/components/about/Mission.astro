@@ -1,64 +1,56 @@
 ---
-import { getEntry } from "astro:content";
-const aboutMission =(await getEntry("about","mission")).data
+import { getEntry } from 'astro:content'
+const aboutMission = (await getEntry('about', 'mission')).data
 ---
-<div class="container mission-container" style="margin-top: 6rem">
-    <img class="mission-img" src={aboutMission.maaImg} alt="Image" />
-    <div class="mission-text-box">
-        {aboutMission.descriptionOne.line1}<br><br> 
-        {aboutMission.descriptionOne.line2}<br><br>
-        {aboutMission.descriptionOne.line3}
-    </div>
+
+<div class='container mission-container' style='margin-top: 6rem'>
+  <img class='mission-img' src={aboutMission.maaImg} alt='Image' />
+  <div class='mission-text-box'>
+    {aboutMission.descriptionOne.line1}<br /><br />
+    {aboutMission.descriptionOne.line2}<br /><br />
+    {aboutMission.descriptionOne.line3}
+  </div>
 </div>
-<div class="container mission-container">
-    <div class="mission-text-boxSecond">
-       {aboutMission.descriptionSecond.line1}<br><br>
-       {aboutMission.descriptionSecond.line2}
-    </div>
+<div class='container mission-container'>
+  <div class='mission-text-boxSecond'>
+    {aboutMission.descriptionSecond.line1}<br /><br />
+    {aboutMission.descriptionSecond.line2}
+  </div>
 </div>
 
 <!---Our Mission section -->
 
-<section class="container OurMission" style="margin-top: 5rem;">
-    <div class="container mission-containerSecond">
-        <div class="mission-title">{aboutMission.title}</div>
-        <div class="mission-card-container">
-            <div class="mission-card">
-                <div class="mission-icon">
-                    <img
-                        src={aboutMission.cardOne.imgIcon}
-                        alt="IconImage"
-                    />
-                </div>
-                <div class="mission-card-title">{aboutMission.cardOne.heading}</div>
-                <div class="mission-card-desc">
-                    {aboutMission.cardOne.description}
-                </div>
-            </div>
-            <div class="mission-card">
-                <div class="mission-icon">
-                    <img
-                        src={aboutMission.cardSecond.imgIcon}
-                        alt="IconImage"
-                    />
-                </div>
-                <div class="mission-card-title">{aboutMission.cardSecond.heading}</div>
-                <div class="mission-card-desc">
-                    {aboutMission.cardSecond.description}
-                </div>
-            </div>
-            <div class="mission-card">
-                <div class="mission-icon">
-                    <img
-                        src={aboutMission.cardThird.imgIcon}
-                        alt="IconImage"
-                    />
-                </div>
-                <div class="mission-card-title">{aboutMission.cardThird.heading}</div>
-                <div class="mission-card-desc">
-                    {aboutMission.cardSecond.description}
-                </div>
-            </div>
+<section class='container OurMission' style='margin-top: 5rem;'>
+  <div class='container mission-containerSecond'>
+    <div class='mission-title'>{aboutMission.title}</div>
+    <div class='mission-card-container'>
+      <div class='mission-card'>
+        <div class='mission-icon'>
+          <img src={aboutMission.cardOne.imgIcon} alt='IconImage' />
         </div>
+        <div class='mission-card-title'>{aboutMission.cardOne.heading}</div>
+        <div class='mission-card-desc'>
+          {aboutMission.cardOne.description}
+        </div>
+      </div>
+      <div class='mission-card'>
+        <div class='mission-icon'>
+          <img src={aboutMission.cardSecond.imgIcon} alt='IconImage' />
+        </div>
+        <div class='mission-card-title'>{aboutMission.cardSecond.heading}</div>
+        <div class='mission-card-desc'>
+          {aboutMission.cardSecond.description}
+        </div>
+      </div>
+      <div class='mission-card'>
+        <div class='mission-icon'>
+          <img src={aboutMission.cardThird.imgIcon} alt='IconImage' />
+        </div>
+        <div class='mission-card-title'>{aboutMission.cardThird.heading}</div>
+        <div class='mission-card-desc'>
+          {aboutMission.cardSecond.description}
+        </div>
+      </div>
     </div>
+  </div>
 </section>

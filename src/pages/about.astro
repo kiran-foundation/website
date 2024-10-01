@@ -1,48 +1,58 @@
 ---
-import "aos/dist/aos.css"
-import "jarallax/dist/jarallax.min.css"
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/about/Hero.astro";
-import Mission from "../components/about/Mission.astro";
-import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
-import Team from "../components/about/Team.astro";
-import Volunteers from "../components/about/Volunteers.astro";
-import Heading from "../components/common/heading.astro";
-import Gallery from "../components/about/Gallery.astro";
-import { getEntry } from "astro:content";
-const testimonials = (await getEntry("testimonials", "testimonials")).data;
-
+import 'aos/dist/aos.css'
+import 'jarallax/dist/jarallax.min.css'
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/about/Hero.astro'
+import Mission from '../components/about/Mission.astro'
+import TestimonialsCarousel from '../components/common/TestimonialsCarousel.astro'
+import Team from '../components/about/Team.astro'
+import Volunteers from '../components/about/Volunteers.astro'
+import Heading from '../components/common/heading.astro'
+import Gallery from '../components/about/Gallery.astro'
+import { getEntry } from 'astro:content'
+import Speaker from '../components/unused/speaker.astro'
+const testimonials = (await getEntry('testimonials', 'testimonials')).data
 
 interface Props {
-	title: string;
+  title: string
 }
-
 ---
 
+<link rel='stylesheet' href='/assets/css/global.css' />
+
 <Layout>
-   <!-- Page wrapper -->
-   <main class="page-wrapper">
-   
-    <Hero/>
-    <Mission/>
-    <Team/>
-    <Volunteers/>
-    <Heading title={testimonials.title}/>
-    <TestimonialsCarousel pageTag="pratibha"/>
-    <Gallery/>
-   
+  <!-- Page wrapper -->
+  <main class='page-wrapper'>
+    <Hero />
+    <Mission />
+    <Team />
+    <Volunteers />
+    <Heading title={testimonials.title} />
+    <TestimonialsCarousel pageTag='pratibha' />
+    <Gallery />
   </main>
-  
+
   <!-- Back to top button -->
-  <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-    <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+  <a
+    class='btn-scroll-top'
+    href='#top'
+    data-scroll
+    aria-label='Scroll back to top'
+  >
+    <svg
+      viewBox='0 0 40 40'
+      fill='currentColor'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <circle
+        cx='20'
+        cy='20'
+        r='19'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='1.5'
+        stroke-miterlimit='10'></circle>
     </svg>
-    <i class="ai-arrow-up"></i>
+    <i class='ai-arrow-up'></i>
   </a>
-
-
 </Layout>
-    
-
- 
