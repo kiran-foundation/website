@@ -1,40 +1,52 @@
 ---
-import "aos/dist/aos.css";
-import "jarallax/dist/jarallax.min.css";
-import Hero from "../../components/volunteer/Hero.astro";
-import Header from "../../components/common/Header.astro";
-import Footer from "../../components/common/Footer.astro";
-import AboutVolunteerRole from "../../components/volunteer/AboutVolunteerRole.astro";
-import Form from "../../components/volunteer/Form.astro";
-import InfoVolunteering from "../../components/volunteer/InfoVolunteering.astro";
-import HowDoesItWork from "../../components/volunteer/HowDoesItWork.astro";
-import Layout from "../../layouts/Layout.astro";
+import 'aos/dist/aos.css'
+import 'jarallax/dist/jarallax.min.css'
+import Hero from '../../components/volunteer/Hero.astro'
+import AboutVolunteerRole from '../../components/volunteer/AboutVolunteerRole.astro'
+import Form from '../../components/volunteer/Form.astro'
+import InfoVolunteering from '../../components/volunteer/InfoVolunteering.astro'
+import HowDoesItWork from '../../components/volunteer/HowDoesItWork.astro'
+import Layout from '../../layouts/Layout.astro'
 
-const { path } = Astro.params;
+const { path } = Astro.params
 
 export function getStaticPaths() {
   return [
     { params: { path: '1' } },
     { params: { path: '2' } },
-    { params: { path: '3' } },
-  ];
+    { params: { path: '3' } }
+  ]
 }
 ---
 
-<Layout title="Intenrship Roles">
-    <main class="page-wrapper">
-        <Header />
-        <Hero />
-        <AboutVolunteerRole path={path} />
-        <Form />
-        <InfoVolunteering />
-        <HowDoesItWork />
-        <Footer />
-    </main>
-    <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-        <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
-        </svg>
-        <i class="ai-arrow-up"></i>
-    </a>
+<Layout title='Intenrship Roles'>
+  <main class='page-wrapper'>
+    <Hero />
+    <AboutVolunteerRole path={path} />
+    <Form />
+    <InfoVolunteering />
+    <HowDoesItWork />
+  </main>
+  <a
+    class='btn-scroll-top'
+    href='#top'
+    data-scroll
+    aria-label='Scroll back to top'
+  >
+    <svg
+      viewBox='0 0 40 40'
+      fill='currentColor'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <circle
+        cx='20'
+        cy='20'
+        r='19'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='1.5'
+        stroke-miterlimit='10'></circle>
+    </svg>
+    <i class='ai-arrow-up'></i>
+  </a>
 </Layout>
