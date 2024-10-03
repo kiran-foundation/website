@@ -4,9 +4,6 @@ import Layout from '../../layouts/Layout.astro'
 const aboutImage = (await getEntry('about', 'gallery')).data
 ---
 
-<link rel='stylesheet' href='/assets/css/theme.min.css' />
-<link rel='stylesheet' href='/assets/css/global.css' />
-
 <Layout title='Gallery'>
   <div class='gallery-c1' style='margin-top: 8rem;'>
     <div class='gallery-c1-title1'>{aboutImage.title}</div>
