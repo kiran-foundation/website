@@ -31,65 +31,79 @@ const headerDetails = (await getEntry('header', 'details')).data
       >
         <i class='fs-xl me-2 ms-n1'></i>
         {headerDetails.button}
-      </a>
-      <a
-        class='home-button btn btn-outline-primary space-x-4 btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold'
-        href='/volunteering'>{headerDetails.buttonVolunteer}</a
-      >
-    </div>
-
-    <!-- Mobile menu toggler (Hamburger) -->
-    <button
-      class='navbar-toggler ms-sm-3'
-      type='button'
-      data-bs-toggle='collapse'
-      data-bs-target='#navbarNav'
-      aria-label='Toggle navigation'
-    >
-      <span class='navbar-toggler-icon'></span>
-    </button>
-
-    <!-- Navbar collapse (Main navigation) -->
-    <nav class='collapse navbar-collapse' id='navbarNav'>
-      <ul
-        class='navbar-nav navbar-nav-scroll me-auto'
-        style='--ar-scroll-height: 520px;'
-      >
-        <li class='nav-item dropdown'>
+        <div class='space-x-4 order-lg-3'>
           <a
-            class='nav-link dropdown-toggle'
-            href='/'
-            data-bs-toggle='dropdown'
-            data-bs-auto-close='outside'
-            aria-expanded='false'>{headerDetails.programe}</a
+            class='home-button btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold'
+            href='/donation'
+            rel='noopener'
           >
-          <ul class='dropdown-menu'>
-            <li class='dropdown'>
-              <a class='dropdown-item' href='/pratibha' aria-expanded='false'
-                >{headerDetails.pratibha}</a
+            <i class='fs-xl me-2 ms-n1'></i>
+            {headerDetails.button}
+          </a>
+          <a
+            class='home-button btn btn-outline-primary space-x-4 btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold'
+            href='/volunteering'>{headerDetails.buttonVolunteer}</a
+          >
+        </div>
+
+        <!-- Mobile menu toggler (Hamburger) -->
+        <button
+          class='navbar-toggler ms-sm-3'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#navbarNav'
+          aria-label='Toggle navigation'
+        >
+          <span class='navbar-toggler-icon'></span>
+        </button>
+
+        <!-- Navbar collapse (Main navigation) -->
+        <nav class='collapse navbar-collapse' id='navbarNav'>
+          <ul
+            class='navbar-nav navbar-nav-scroll me-auto'
+            style='--ar-scroll-height: 520px;'
+          >
+            <li class='nav-item dropdown'>
+              <a
+                class='nav-link dropdown-toggle'
+                href='/'
+                data-bs-toggle='dropdown'
+                data-bs-auto-close='outside'
+                aria-expanded='false'>{headerDetails.programe}</a
               >
+              <ul class='dropdown-menu'>
+                <li class='dropdown'>
+                  <a
+                    class='dropdown-item'
+                    href='/pratibha'
+                    aria-expanded='false'>{headerDetails.pratibha}</a
+                  >
+                </li>
+                <li class='dropdown'>
+                  <a class='dropdown-item' href='/shakti'
+                    >{headerDetails.shakti}</a
+                  >
+                </li>
+                <li class='dropdown'>
+                  <a class='dropdown-item' href='/'>{headerDetails.samman}</a>
+                </li>
+                <li class='dropdown'>
+                  <a class='dropdown-item' href='/'>{headerDetails.gyan}</a>
+                </li>
+              </ul>
             </li>
-            <li class='dropdown'>
-              <a class='dropdown-item' href='/shakti'>{headerDetails.shakti}</a>
+            <li class='nav-item'>
+              <a class='nav-link' href='/about'>{headerDetails.about}</a>
             </li>
-            <li class='dropdown'>
-              <a class='dropdown-item' href='/'>{headerDetails.samman}</a>
+            <li class='nav-item'>
+              <a class='nav-link' href='/contact'>{headerDetails.contact}</a>
             </li>
-            <li class='dropdown'>
-              <a class='dropdown-item' href='/'>{headerDetails.gyan}</a>
+            <li class='nav-item'>
+              <a class='nav-link' href='/gallery'>{headerDetails.gallery}</a>
             </li>
           </ul>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='/about'>{headerDetails.about}</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='/contact'>{headerDetails.contact}</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='/gallery'>{headerDetails.gallery}</a>
-        </li>
-      </ul>
-    </nav>
+        </nav>
+      </a>
+    </div>
   </div>
 </header>

@@ -2,6 +2,9 @@
 import { getEntry } from 'astro:content'
 import Heading from '../common/heading.astro'
 const memberShipData = (await getEntry('donation', 'membership')).data
+import { getEntry } from 'astro:content'
+import Heading from '../common/heading.astro'
+const memberShipData = (await getEntry('donation', 'membership')).data
 ---
 
 <div class='donation-c1'>
@@ -85,6 +88,6 @@ const memberShipData = (await getEntry('donation', 'membership')).data
         <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
       </div>
     </div>
-    <button class='see-button'>See more</button>
   </div>
+  <button class='see-button'>See more</button>
 </div>
