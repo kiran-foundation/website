@@ -1,83 +1,91 @@
 ---
-import { getEntry } from "astro:content";
-const DonationFaqData = (await getEntry("donation", "faq")).data;
+import { getEntry } from 'astro:content'
+const DonationFaqData = (await getEntry('donation', 'faq')).data
 ---
 
-<div class="faq-section">
-    <div class="faq-header">
-        <h1>{DonationFaqData.title}</h1>
-        <p>{DonationFaqData.paragraph}</p>
-        <div class="faq-vector-div">
-            <img src={DonationFaqData.image} alt="Vector" class="faq-vector"/>
-        </div>
-    </div>
-
-    <div class="faq-content">
-        <div class="faq-item">
-            <button class="faq-question">
-                {DonationFaqData.question1}
-                <span class="icon-chevron-down"></span>
-            </button>
-            <div class="faq-answer">
-                <p>{DonationFaqData.answer1}</p>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <button class="faq-question">
-                {DonationFaqData.question2}
-                <span class="icon-chevron-down"></span>
-            </button>
-            <div class="faq-answer">
-                <p>{DonationFaqData.answer2}</p>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <button class="faq-question">
-                {DonationFaqData.question3}
-                <span class="icon-chevron-down"></span>
-            </button>
-            <div class="faq-answer">
-                <p>{DonationFaqData.answer3}</p>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <button class="faq-question">
-                {DonationFaqData.question4}
-                <span class="icon-chevron-down"></span>
-            </button>
-            <div class="faq-answer">
-                <p>{DonationFaqData.answer4}</p>
+<div
+    class='d-flex justify-content-center align-items-center d-md-flex-column'
+    style='width:100%; padding: 50px 0;'
+>
+    <div class='d-flex justify-content-around' style='margin: 15px;'>
+        <div class='faq-header'>
+            <h1>{DonationFaqData.title}</h1>
+            <p>{DonationFaqData.paragraph}</p>
+            <div class='faq-vector-div'>
+                <img
+                    src={DonationFaqData.image}
+                    alt='Vector'
+                    class='faq-vector'
+                />
             </div>
         </div>
 
-        <div class="faq-item">
-            <button class="faq-question">
-                {DonationFaqData.question5}
-                <span class="icon-chevron-down"></span>
-            </button>
-            <div class="faq-answer">
-                <p>{DonationFaqData.answer5}</p>
+        <div class='faq-content'>
+            <div class='faq-item'>
+                <button class='faq-question'>
+                    {DonationFaqData.question1}
+                    <span class='icon-chevron-down'></span>
+                </button>
+                <div class='faq-answer'>
+                    <p>{DonationFaqData.answer1}</p>
+                </div>
+            </div>
+
+            <div class='faq-item'>
+                <button class='faq-question'>
+                    {DonationFaqData.question2}
+                    <span class='icon-chevron-down'></span>
+                </button>
+                <div class='faq-answer'>
+                    <p>{DonationFaqData.answer2}</p>
+                </div>
+            </div>
+
+            <div class='faq-item'>
+                <button class='faq-question'>
+                    {DonationFaqData.question3}
+                    <span class='icon-chevron-down'></span>
+                </button>
+                <div class='faq-answer'>
+                    <p>{DonationFaqData.answer3}</p>
+                </div>
+            </div>
+
+            <div class='faq-item'>
+                <button class='faq-question'>
+                    {DonationFaqData.question4}
+                    <span class='icon-chevron-down'></span>
+                </button>
+                <div class='faq-answer'>
+                    <p>{DonationFaqData.answer4}</p>
+                </div>
+            </div>
+
+            <div class='faq-item'>
+                <button class='faq-question'>
+                    {DonationFaqData.question5}
+                    <span class='icon-chevron-down'></span>
+                </button>
+                <div class='faq-answer'>
+                    <p>{DonationFaqData.answer5}</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    document.querySelectorAll(".faq-question").forEach((item) => {
-    item.addEventListener("click", () => {
-        const parent = item.parentNode as HTMLElement; // Cast as HTMLElement to get classList
-        parent.classList.toggle("active");
+    document.querySelectorAll('.faq-question').forEach((item) => {
+        item.addEventListener('click', () => {
+            const parent = item.parentNode as HTMLElement // Cast as HTMLElement to get classList
+            parent.classList.toggle('active')
 
-        const answer = parent.querySelector(".faq-answer") as HTMLElement; // Cast as HTMLElement for style manipulation
-        if (answer.style.maxHeight) {
-            answer.style.maxHeight = null; // Collapses the FAQ
-        } else {
-            answer.style.maxHeight = answer.scrollHeight + "px"; // Expands the FAQ
-        }
-    });
-});
-
+            const answer = parent.querySelector('.faq-answer') as HTMLElement // Cast as HTMLElement for style manipulation
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null // Collapses the FAQ
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + 'px' // Expands the FAQ
+            }
+        })
+    })
 </script>
