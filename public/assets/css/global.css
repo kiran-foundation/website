@@ -1307,682 +1307,6 @@ body {
     font-size: 0.875rem;
   }
 }
-.app-component-c1 {
-  display: block;
-  position: absolute;
-  width: 1296px;
-  height: 590px;
-  left: 30px;
-  top: 2815px;
-  gap: 0px;
-  border-radius: 36px;
-  background: var(--royal-blue, #051d40);
-  overflow: hidden;
-}
-.app-component-c1 .app-left-container {
-  position: absolute;
-  width: 425px;
-  height: 222px;
-  top: 121px;
-  left: 43px;
-  gap: 0px;
-  font-family: Poppins, sans-serif;
-  font-size: 57px;
-  font-weight: 600;
-  line-height: 74.1px;
-  text-align: left;
-  color: white;
-}
-.app-component-c1 .app-download-button {
-  position: absolute;
-  width: auto;
-  height: auto;
-  top: 381px;
-  left: 43px;
-  padding: 16px;
-  border-radius: 8px;
-  background: #f1592a;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-}
-.app-component-c1 img {
-  object-fit: cover;
-}
-.app-component-c1 .image1 {
-  position: absolute;
-  width: 197px;
-  height: 192px;
-  top: 134px;
-  left: 488px;
-  gap: 0px;
-  border-radius: 18px 0px 0px 0px;
-}
-.app-component-c1 .image2 {
-  position: absolute;
-  width: 200px;
-  height: 438px;
-  top: 76px;
-  left: 736px;
-  gap: 0px;
-}
-.app-component-c1 .image3 {
-  position: absolute;
-  width: 200px;
-  height: 438px;
-  top: -159px;
-  left: 968px;
-  gap: 0px;
-}
-.app-component-c1 .image4 {
-  position: absolute;
-  width: 200px;
-  height: 438px;
-  top: 311px;
-  left: 968px;
-  gap: 0px;
-}
-.group-icon {
-  position: absolute;
-  width: 46.62px;
-  height: 46.62px;
-  left: 690px;
-  top: 45px;
-  rotate: 7deg;
-}
-.aboutPratibha-container-c1 {
-  width: 1288px;
-  height: 188px;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.aboutPratibha-box {
-  width: 298px;
-  height: 188px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: #2b2e36;
-  border-radius: 8px;
-  box-sizing: border-box;
-  padding: 10px;
-  text-align: center;
-}
-
-.aboutPratibha-box-icon {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.aboutPratibha-box-icon img {
-  width: 50px;
-  height: 50px;
-}
-
-.aboutPratibha-box-heading {
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 30px;
-  margin: 0;
-}
-
-.aboutPratibha-box-content {
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  margin: 0;
-  color: #49494c;
-  padding: 10px;
-  border-radius: 8px;
-}
-.faq-container-c1 {
-  display: flex;
-  height: 523px;
-  margin-left: 80px;
-  gap: 20px;
-  font-family: Poppins, sans-serif;
-  width: 1170px;
-  margin: auto;
-  margin-bottom: 100px;
-}
-
-.faq-container-c2 {
-  width: 416px;
-  height: auto;
-}
-
-.faq-title {
-  width: 416px;
-  height: 120px;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 60px;
-  text-align: left;
-  color: #121519;
-}
-
-.faq-content {
-  width: 416px;
-  height: 72px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: left;
-  color: #576071;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-.faq-container-c3 {
-  flex-grow: 1;
-  height: auto;
-}
-
-.faq-accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.faq-accordion-item {
-  width: 746px;
-  border-radius: 18px;
-  padding: 24px;
-  background: #ffffff;
-  transition: height 0.3s ease;
-}
-
-.faq-accordion-item.active .faq-accordion-answer {
-  display: block;
-}
-
-.faq-accordion-question {
-  width: 650px;
-  height: 28px;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  text-align: left;
-  color: #051d40;
-  cursor: pointer;
-  margin-top: -7px;
-}
-
-.faq-accordion-answer {
-  display: none;
-  width: 650px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: left;
-  color: #051d40;
-  margin-top: 16px;
-}
-.faq-image-content {
-  width: 188.48px;
-  height: 211.3px;
-  position: relative;
-  top: 20px;
-  left: 106px;
-  rotate: z -4.03deg;
-}
-.pratibhaCard-image-container-vector {
-  border-radius: 1px solid red;
-  position: relative;
-  width: 96.18px;
-  height: 125px;
-}
-.apply-container {
-  position: relative;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
-  font-family: Poppins, sans-serif;
-  width: 1296px;
-}
-
-.apply-title {
-  width: 756px;
-  height: 108px;
-  margin: 134px auto 0;
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 54px;
-  text-align: center;
-  color: #f1592a;
-  padding: 10px;
-}
-
-.apply-subtitle {
-  width: 1050px;
-  height: 42px;
-  margin: 20px auto;
-  font-size: 26px;
-  font-weight: 500;
-  line-height: 42px;
-  text-align: center;
-  color: #000000;
-  padding: 10px;
-}
-
-.apply-highlight-container {
-  background: #e5f1ff;
-  width: 1000px;
-  height: 60px;
-  margin: 40px auto;
-  border-radius: 8px 0px 0px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-}
-
-.apply-highlight-text {
-  width: 808px;
-  height: 24px;
-  font-size: 21px;
-  font-weight: 600;
-  line-height: 24px;
-  color: #2b2e36;
-}
-
-.apply-apply-button {
-  width: 195px;
-  height: 48px;
-  border-radius: 8px;
-  background: #f1592a;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-}
-
-.apply-link {
-  font-family: Poppins, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  text-align: center;
-  color: #f7fcff;
-  text-decoration: none;
-  width: 147px;
-  height: 24px;
-}
-
-.apply-content-container,
-.apply-documents-container,
-.apply-apply-container {
-  width: 1037px;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.apply-content-container p,
-.apply-documents-container p,
-.apply-apply-container p {
-  color: #000000;
-  padding: 20px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  text-align: justify;
-}
-
-.apply-h4 {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 48px;
-  color: #051d40;
-  margin: 0;
-}
-
-.apply-content-container h4,
-.apply-documents-container h4,
-.apply-apply-container h4 {
-  color: #f1592a;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 36px;
-}
-
-.apply-download-button {
-  width: 308px;
-  height: 48px;
-  margin: 20px 90px;
-  padding: 12px 24px;
-  border-radius: 8px;
-  background: #f1592a;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;
-  border: 1px solid #f1592a;
-  cursor: pointer;
-  display: inline-block;
-}
-
-.apply-google-form {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  color: #f1592a;
-  display: inline-block;
-  margin-left: 20px;
-}
-
-.apply-documents-list {
-  color: #000000;
-  padding: 20px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  text-align: justify;
-  margin-top: -75px;
-}
-
-.apply-additional-data {
-  color: #000000;
-  padding: 20px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 27px;
-  text-align: justify;
-  margin-top: -20px;
-  margin-left: -10px;
-}
-
-.apply-image {
-  position: absolute;
-  top: 1010px;
-  left: 800px;
-}
-
-.image-hero {
-  height: 370px;
-  width: 440px;
-  border-radius: 20px;
-}
-
-.app-download-link {
-  width: 260px;
-  height: 24px;
-  text-decoration: none;
-  color: #f7fcff;
-  font-family: Poppins;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  text-align: center;
-}
-.pratibhaCard-container {
-  font-family: 'Poppins', sans-serif;
-  width: 1296px;
-  height: 423px;
-  border-radius: 18px;
-  background: #051d40;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-  margin-bottom: 5%;
-  margin-top: 5%;
-}
-
-.pratibhaCard-image-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 70px;
-}
-
-.pratibhaCard-image-container img {
-  width: 526px;
-  height: 319px;
-  border-radius: 70px;
-  object-fit: cover;
-  margin-left: -20px;
-  margin-top: 5px;
-}
-
-.pratibhaCard-content-container,
-.shaktiCard-content-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.pratibhaCard-content-container h2 {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 48px;
-  color: #ffffff;
-  margin: 0 0 20px 0;
-  padding-bottom: 4%;
-  width: 444px;
-  height: 96px;
-  margin-left: 30px;
-}
-
-.cardPratibha-join-button {
-  width: 193px;
-  height: 48px;
-  padding: 12px 24px;
-  border-radius: 8px;
-  border: 1px solid #f1592a;
-  background: #f1592a;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-  transition: background 0.3s;
-  margin-left: 30px;
-}
-
-.cardPratibha-join-button:hover {
-  background: #d1481f;
-}
-
-.pratibhaCard-image-container-vector {
-  position: relative;
-  top: -112px;
-  left: -50px;
-  width: 96.18px;
-  height: 125px;
-  rotate: z -7deg;
-}
-
-.shaktiCard-content-container h2 {
-  width: 336px;
-  height: 72px;
-  font-family: Poppins, sans-serif;
-  font-size: 33px;
-  font-weight: 700;
-  line-height: 36px;
-  text-align: left;
-  color: #ffff;
-  margin-top: -40px;
-  margin-left: 90px;
-}
-
-.pratibhaCard-image-container-vectorstar {
-  position: relative;
-  width: 49px;
-  height: 49px;
-  top: -170px;
-  left: 15px;
-}
-.shaktiCard-image-container-vector {
-  position: relative;
-  top: -120px;
-  left: -70px;
-  width: 96.18px;
-  height: 125px;
-  rotate: z -5deg;
-}
-.shaktiCard-image-container-ellipse {
-  width: 48px;
-  height: 48px;
-  position: relative;
-  top: 150px;
-  left: 40px;
-}
-.shaktiCard-image-container-ellipseSmall {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  top: 250px;
-  left: 25px;
-}
-.shaktiCard-image-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #ffff;
-  border-radius: 70px;
-  margin-left: -40px;
-}
-
-.shaktiCard-image-container img {
-  width: 526px;
-  height: 319px;
-  border-radius: 70px;
-  object-fit: cover;
-  margin-left: -20px;
-  margin-top: 5px;
-}
-.selectionProcess-section-title {
-  width: 1100px;
-  height: 54px;
-  margin: 20px auto;
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 54px;
-  color: #2b2e36;
-  font-family: Poppins, sans-serif;
-  background-color: #f7fcfe;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.selectionProcess-highlight-container {
-  background: #f7fcfe;
-  width: 1100px;
-  height: 74px;
-  margin: 20px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.selectionProcess-content-container,
-.selectionProcess-documents-container,
-.selectionProcess-apply-container {
-  width: 1037px;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.selectionProcess-h4 {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 48px;
-  color: #051d40;
-  margin: 0;
-}
-
-.selectionProcess-p {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  line-height: 30px;
-  color: #49494c;
-  text-align: justify;
-  margin: 0;
-}
-
-.selectionProcess-apply-button {
-  font-family: Poppins, sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 24px;
-  text-align: center;
-  width: 183px;
-  height: 48px;
-  border-radius: 8px;
-  color: white;
-  margin-left: 60px;
-}
-.speaker-c1 {
-  position: relative;
-  width: 100%;
-  max-width: 1296px;
-  height: auto;
-  padding: 2%;
-  background: #051d40;
-  border-radius: 36px;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 40px;
-}
-
-.speaker-c1-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 41.6px;
-  text-align: left;
-  color: white;
-  flex: 1;
-  margin-right: 20px;
-}
-
-.speaker-c1-button {
-  width: 223px;
-  height: 56px;
-  background: #f1592a;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 12px 32px;
-  cursor: pointer;
-  text-align: center;
-}
 
 /* About-page*/
 
@@ -2530,7 +1854,7 @@ body {
 .donation-c1 {
   display: flex;
   flex-direction: column;
-}
+} */
 .faq-section {
   display: flex;
   flex-direction: column;
@@ -2752,9 +2076,12 @@ body {
 
   .d-flex {
     flex-direction: column;
+    flex-direction: column;
     gap: 10px;
   }
 }
+@media (max-width: 767px) {
+  .form-img {
 @media (max-width: 767px) {
   .form-img {
     display: none;
@@ -2787,6 +2114,44 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
+
+/* Coming Soon */
+
+.coming-soon-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    to right,
+    rgba(0, 123, 255, 0.8),
+    rgba(255, 193, 7, 0.8)
+  );
+}
+
+.overlay-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.counter-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: skyblue;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  position: relative;
   text-align: center;
   color: #576071;
   margin-bottom: 40px;
@@ -2902,41 +2267,44 @@ body {
   align-items: flex-start;
 }
 
-.mission-card-title {
+.gallery-c1-title1 {
   font-family: 'Inter', sans-serif;
-  font-size: 24px;
+  font-size: 40px;
   font-weight: 600;
-  line-height: 1.4;
-  text-align: left;
-  color: #2b2e36;
-  margin-top: 16px;
-  padding: 10px;
-  border-radius: 12px;
+  line-height: 52px;
+  text-align: center;
+  color: #121519;
+  margin-bottom: 20px;
 }
 
-.mission-card-desc {
+.gallery-c1-title2 {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 24px;
-  text-align: justify;
-  color: #2b2e36;
-  margin-top: -8px;
-  padding: 10px;
-  border-radius: 12px;
+  line-height: 27px;
+  text-align: center;
+  color: #576071;
+  margin-bottom: 40px;
 }
 
-.mission-icon {
-  width: 40px;
-  height: 40px;
-  padding: 0 0.6px 0 0.61px;
-  margin-bottom: 16px;
-  margin-left: 13px;
-}
-.mission-icon img {
-  margin-top: 20px;
+.gallery-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
 }
 
+.gallery-grid-container img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.gallery-grid-container .large {
+  grid-column: span 2;
+  height: 428px;
+}
+
+.gallery-grid-container .small {
+  height: 240px;
 .mission-img {
   width: 661px;
   border-radius: 18px;
@@ -2946,7 +2314,27 @@ body {
   margin-top: 15px;
 }
 
-/* Speaker css */
+.gallery-event-image-4 {
+  margin-top: -186px;
+}
+
+.gallery-button {
+  display: inline-block;
+  padding: 12px 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  background-color: #f1592a;
+  border: 1px solid #f1592a;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* Speaker  */
 .speaker-c1 {
   position: relative;
   width: 100%;
@@ -2983,6 +2371,22 @@ body {
   font-weight: 600;
   padding: 12px 32px;
   cursor: pointer;
+  text-align: center;
+}
+
+/* Team */
+.team-container {
+  width: 100%;
+  padding-left: 40px;
+  padding-top: 50px;
+  max-width: 1296px;
+}
+
+.team-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
   text-align: center;
 }
 
@@ -3029,41 +2433,46 @@ body {
   object-fit: cover;
 }
 
-/* Volunteer css */
-
-.volunteers-c1 {
-  width: 100%;
-  background: #ffffff;
-  border-radius: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 20px;
-  box-sizing: border-box;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  border: 2px solid red;
+/* Pratibha - Apply */
+.apply-container {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  font-family: Poppins, sans-serif;
+  width: 1296px;
 }
 
-.volunteers-c1-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 40px;
+.apply-title {
+  width: 756px;
+  height: 108px;
+  margin: 134px auto 0;
+  font-size: 36px;
   font-weight: 600;
   line-height: 52px;
   text-align: center;
-  color: #121519;
-  margin-bottom: 40px;
+  color: #f1592a;
+  padding: 10px;
 }
 
-.volunteers-c1-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
+.apply-subtitle {
+  width: 1050px;
+  height: 42px;
+  margin: 20px auto;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  color: #000000;
+  padding: 10px;
 }
 
-.volunteers-c1-card {
-  width: 306px;
+.apply-highlight-container {
+  background: #e5f1ff;
+  width: 1000px;
+  height: 60px;
+  margin: 40px auto;
+  border-radius: 8px 0px 0px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3071,16 +2480,22 @@ body {
   border-radius: 24px;
 }
 
-.volunteers-c1-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 100px;
-  margin-bottom: 16px;
+.apply-highlight-text {
+  width: 808px;
+  height: 24px;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #2b2e36;
 }
 
-.volunteers-c1-card-title1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
+.apply-apply-button {
+  width: 195px;
+  height: 48px;
+  border-radius: 8px;
+  background: #f1592a;
+  color: #ffffff;
+  font-size: 16px;
   font-weight: 600;
   line-height: 28px;
   text-align: center;
@@ -3094,16 +2509,27 @@ body {
   font-weight: 400;
   line-height: 24px;
   text-align: center;
-  color: #858c97;
+  color: #f7fcff;
+  text-decoration: none;
+  width: 147px;
+  height: 24px;
 }
 
-/* Updates */
+.apply-content-container,
+.apply-documents-container,
+.apply-apply-container {
+  width: 1037px;
+  margin: 20px auto;
+  display: flex;
+  text-wrap: wrap;
+  flex-direction: column;
+  gap: 24px;
+}
 
-.updateFocus-container {
-  width: 1296px;
-  height: 1712px;
-  margin: 20px;
-  background: #ffffff;
+.apply-content-container p,
+.apply-documents-container p,
+.apply-apply-container p {
+  color: #000000;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 8px;
@@ -3122,39 +2548,49 @@ body {
   text-align: left;
   font-size: 35px;
   font-weight: 700;
-  line-height: 50px;
-  color: #49494c;
+  line-height: 48px;
+  color: #051d40;
+  margin: 0;
 }
 
-.updateFocus-subheader {
-  width: 100%;
-  height: 60px;
-  margin-bottom: 20px;
-  border: 1px solid #000;
+.apply-content-container h4,
+.apply-documents-container h4,
+.apply-apply-container h4 {
+  color: #f1592a;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
 }
 
-.updateFocus-line {
-  width: 100%;
-  height: 0;
-  border: 1px solid #e3e9ef;
-  margin-bottom: 20px;
+.apply-download-button {
+  width: 308px;
+  height: 48px;
+  margin: 20px 90px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: #f1592a;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid #f1592a;
+  cursor: pointer;
+  display: inline-block;
 }
 
-.updateFocus-content {
-  width: 856px;
-  height: auto;
-  margin: 0 auto;
-}
-
-.updateFocus-paragraph {
-  width: 100%;
-  height: auto;
-  color: #576071;
+.apply-google-form {
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
-  text-align: justify;
-  margin-bottom: 20px;
+  color: #f1592a;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.apply-documents-list {
+  color: #000000;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 8px;
@@ -3167,11 +2603,7 @@ body {
   font-weight: 400;
   line-height: 27px;
   text-align: justify;
-  margin-bottom: 20px;
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 8px;
-  margin-top: -40px;
+  margin-top: -75px;
 }
 
 .updateFocus-image-container {
@@ -3208,42 +2640,28 @@ body {
   margin-top: 40px;
   color: #121519;
   text-align: justify;
+  margin-top: -20px;
+  margin-left: -10px;
 }
 
-.updateFocus-text-container p {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  margin-top: -35px;
-  text-align: justify;
+.apply-image {
+  position: absolute;
+  top: 980px;
+  left: 800px;
 }
 
-.updateFocus-box {
-  padding: 40px 20px;
-  gap: 32px;
-  border-radius: 36px;
-  background: #f6f9fc;
-  box-sizing: border-box;
-  width: 856px;
-  height: 270px;
-  margin-top: -10px;
+.image-hero {
+  height: 370px;
+  width: 440px;
+  border-radius: 20px;
 }
 
-.updateFocus-box p {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 30px;
-  text-align: left;
-  color: #121519;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 0 0 20px 0;
-  text-align: justify;
-  gap: 28px;
-}
-
-.updateFocus-box .updateFocus-signature {
-  font-family: 'Inter', sans-serif;
+.app-download-link {
+  width: 260px;
+  height: 24px;
+  text-decoration: none;
+  color: #f7fcff;
+  font-family: Poppins;
   font-size: 16px;
   font-weight: 600;
   line-height: 22.4px;
@@ -3252,6 +2670,246 @@ body {
   padding: 0 0 0 76px;
   margin-left: -55px;
 }
+
+.app-component-c1 {
+  position: relative;
+  width: 1296px;
+  height: 590px;
+  gap: 0px;
+  border-radius: 36px;
+  background: var(--royal-blue, #051d40);
+  overflow: hidden;
+}
+.app-component-c1 .app-left-container {
+  position: absolute;
+  width: 425px;
+  height: 222px;
+  top: 121px;
+  left: 43px;
+  gap: 0px;
+  font-family: Poppins, sans-serif;
+  font-size: 57px;
+  font-weight: 600;
+  line-height: 74.1px;
+  text-align: left;
+  color: white;
+}
+.app-component-c1 .app-download-button {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 381px;
+  left: 43px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f1592a;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.app-component-c1 img {
+  object-fit: cover;
+}
+.app-component-c1 .image1 {
+  position: absolute;
+  width: 197px;
+  height: 192px;
+  top: 134px;
+  left: 488px;
+  gap: 0px;
+  border-radius: 18px 0px 0px 0px;
+}
+.app-component-c1 .image2 {
+  position: absolute;
+  width: 200px;
+  height: 438px;
+  top: 76px;
+  left: 736px;
+  gap: 0px;
+}
+.app-component-c1 .image3 {
+  position: absolute;
+  width: 200px;
+  height: 438px;
+  top: -159px;
+  left: 968px;
+  gap: 0px;
+}
+.app-component-c1 .image4 {
+  position: absolute;
+  width: 200px;
+  height: 438px;
+  top: 311px;
+  left: 968px;
+  gap: 0px;
+}
+.group-icon {
+  position: absolute;
+  width: 46.62px;
+  height: 46.62px;
+  left: 690px;
+  top: 45px;
+  rotate: 7deg;
+}
+
+.aboutPratibha-container-c1 {
+  width: 1288px;
+  height: 188px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutPratibha-box {
+  width: 298px;
+  height: 188px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #2b2e36;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.aboutPratibha-box-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.aboutPratibha-box-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.aboutPratibha-box-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0;
+}
+
+.aboutPratibha-box-content {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  margin: 0;
+  color: #49494c;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.faq-container-c1 {
+  display: flex;
+  height: 523px;
+  margin-left: 80px;
+  gap: 20px;
+  font-family: Poppins, sans-serif;
+  width: 1170px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.faq-container-c2 {
+  width: 416px;
+  height: auto;
+}
+
+.faq-title {
+  width: 416px;
+  height: 120px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+  text-align: left;
+  color: #121519;
+}
+
+.faq-content {
+  width: 416px;
+  height: 72px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #576071;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.faq-container-c3 {
+  flex-grow: 1;
+  height: auto;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-accordion-item {
+  width: 746px;
+  border-radius: 18px;
+  padding: 24px;
+  background: #ffffff;
+  transition: height 0.3s ease;
+}
+
+.faq-accordion-item.active .faq-accordion-answer {
+  display: block;
+}
+
+.faq-accordion-question {
+  width: 650px;
+  height: 28px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  color: #051d40;
+  cursor: pointer;
+  margin-top: -7px;
+}
+
+.faq-accordion-answer {
+  display: none;
+  width: 650px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #051d40;
+  margin-top: 16px;
+}
+.faq-image-content {
+  width: 188.48px;
+  height: 211.3px;
+  position: relative;
+  top: 20px;
+  left: 106px;
+  rotate: z -4.03deg;
+}
+.pratibhaCard-image-container-vector {
+  border-radius: 1px solid red;
+  position: relative;
+  width: 96.18px;
+  height: 125px;
+}
+
 
 /* Volunteering */
 /* AboutVolunteerRole */
@@ -3263,81 +2921,18 @@ body {
   gap: 64px;
   background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
-  justify-content: center;
-  align-items: flex-start;
-}
-.aboutVolunteering-frame2,
-.aboutVolunteering-frame3,
-.aboutVolunteering-frame4 {
-  width: calc(100% - 190px);
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 8px;
-}
-.aboutVolunteering-frame2 h1 {
-  width: 899px;
-  font-size: 48px;
-  font-weight: 600;
-  text-align: left;
-}
-.aboutVolunteering-frame2 p {
-  width: 100%;
-  font-size: 20px;
-  font-weight: 500;
-  text-align: left;
-}
-.aboutVolunteering-info-text {
-  padding-left: 4%;
-  width: calc(100% - 190px);
-  margin: 0 auto;
-  font-size: 20px;
-  font-weight: 700;
-  text-align: left;
-  white-space: pre-wrap;
-}
-.aboutVolunteering-frame3 h2,
-.aboutVolunteering-frame4 h2 {
-  font-size: 24px;
-  font-weight: 600;
-  text-align: left;
-}
-.aboutVolunteering-frame3 p,
-.aboutVolunteering-frame4 p {
-  font-size: 20px;
-  font-weight: 500;
-  text-align: left;
-}
-.aboutVolunteering-button-container {
+  width: 1296px;
+  height: 423px;
+  border-radius: 18px;
+  background: #051d40;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: calc((100% - 1390px) / 2 + 95px);
-}
-.aboutVolunteering-apply-button {
-  width: 189px;
-  height: 48px;
-  margin-left: 60px;
-  border-radius: 8px;
-  background: #f1592a;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-}
-
-/* ChooseVBolunteer */
-
-.mainVolunteering-main-container {
-  width: 100%;
-  max-width: 1296px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;
-  margin: 100px auto;
-  padding: 0 20px;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 .mainVolunteering-main-heading {
@@ -3356,16 +2951,22 @@ body {
   flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
+  align-items: center;
+  border-radius: 70px;
 }
 
-/* Card styles */
-.mainVolunteering-card {
-  width: calc(50% - 24px);
-  min-width: 280px;
-  padding: 1.5rem;
-  border-radius: 24px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.pratibhaCard-image-container img {
+  width: 526px;
+  height: 319px;
+  border-radius: 70px;
+  object-fit: cover;
+  margin-left: -20px;
+  margin-top: 5px;
+}
+
+.pratibhaCard-content-container,
+.shaktiCard-content-container {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -3419,66 +3020,30 @@ body {
 .mainVolunteering-btn {
   padding: 12px 24px;
   border-radius: 8px;
-  border: none;
-  cursor: pointer;
+  border: 1px solid #f1592a;
+  background: #f1592a;
+  color: #ffffff;
   font-size: 16px;
-  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s;
+  margin-left: 30px;
 }
 
-.mainVolunteering-btn-apply {
-  background-color: #f1592a;
-  color: #fff;
+.cardPratibha-join-button:hover {
+  background: #d1481f;
 }
 
-.mainVolunteering-btn-see-more {
-  background-color: #e0e0e0;
-  color: #000;
-}
-
-@media (max-width: 768px) {
-  .mainVolunteering-card {
-    width: 100%;
-    min-height: 420px;
-    margin-bottom: 24px;
-  }
-
-  .mainVolunteering-main-heading {
-    padding-top: 40px;
-    font-size: 20px;
-  }
-
-  .mainVolunteering-card-heading {
-    font-size: 20px;
-  }
-
-  .mainVolunteering-card-subheading,
-  .mainVolunteering-card-description {
-    font-size: 14px;
-  }
-
-  .mainVolunteering-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-}
-
-/* Form */
-
-.volunteeringForm-frame {
-  width: 1000px;
-  height: 868px;
-  margin: 200px;
-  margin-bottom: 200px;
-  border-radius: 36px;
-  background: #051d40;
-  padding: 96px;
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
+.pratibhaCard-image-container-vector {
   position: relative;
 }
 
-.volunteeringForm-frame h1 {
-  font-size: 40px;
+.shaktiCard-content-container h2 {
+  width: 336px;
+  height: 72px;
+  font-family: Poppins, sans-serif;
+  font-size: 33px;
   font-weight: 700;
   line-height: 52px;
   text-align: center;
@@ -3502,27 +3067,25 @@ body {
   font-weight: 600;
   line-height: 24px;
   text-align: left;
-  color: #fff;
+  color: #ffff;
+  margin-top: -40px;
+  margin-left: 90px;
 }
 
-.volunteeringForm-input-container input,
-.volunteeringForm-input-container textarea,
-.volunteeringForm-input-container-half input {
-  width: 100%;
-  padding: 16px;
-  border-radius: 18px;
-  border: 1px solid #ffffff4d;
-  background: transparent;
-  color: #fff;
+.pratibhaCard-image-container-vectorstar {
+  position: relative;
+  width: 49px;
+  height: 49px;
+  top: -170px;
+  left: 15px;
 }
-
-.volunteeringForm-input-container textarea {
-  height: 128px;
-}
-
-.volunteeringForm-input-container-half {
-  width: calc(50% - 8px);
-  float: left;
+.shaktiCard-image-container-vector {
+  position: relative;
+  top: -120px;
+  left: -70px;
+  width: 96.18px;
+  height: 125px;
+  rotate: z -5deg;
 }
 
 .volunteeringForm-input-container-half:nth-child(odd) {
@@ -3535,44 +3098,38 @@ body {
   display: block;
   clear: both;
 }
-
-.volunteeringForm-submit-button {
-  width: 249px;
-  height: 56px;
-  padding: 12px 32px;
-  border-radius: 8px;
-  background-color: #f1592a;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 32px;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-}
-
-/* Hoes DOes it work */
-
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
-}
-.HowDoesItWork-frame {
-  max-width: 1076px;
-  margin: 50px auto;
-  border-radius: 36px;
-  background: #ffffff;
-  box-sizing: border-box;
-  padding: 20px;
+.shaktiCard-image-container-ellipseSmall {
+  width: 20px;
+  height: 20px;
   position: relative;
+  top: 250px;
+  left: 25px;
+}
+.shaktiCard-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffff;
+  border-radius: 70px;
+  margin-left: -40px;
 }
 
-.HowDoesItWork-frame h1 {
-  max-width: 968px;
-  margin: 0 auto 20px;
-  font-size: 2.5rem;
+.shaktiCard-image-container img {
+  width: 526px;
+  height: 319px;
+  border-radius: 70px;
+  object-fit: cover;
+  margin-left: -20px;
+  margin-top: 5px;
+}
+
+/* Selection */
+.selectionProcess-section-title {
+  width: 1100px;
+  height: 54px;
+  margin: 20px auto;
+  font-size: 30px;
   font-weight: 600;
   line-height: 1.3;
   text-align: center;
@@ -3589,184 +3146,256 @@ body {
   margin-bottom: 50px;
 }
 
-.HowDoesItWork-content {
-  width: 100%;
-  max-width: 416px;
-}
-
-.HowDoesItWork-content h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.3;
-  text-align: left;
-  color: #49494c;
-  margin-bottom: 16px;
-}
-
-.HowDoesItWork-content p {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 2;
-  text-align: left;
-  color: #49494c;
-}
-
-.HowDoesItWork-image {
-  width: 100%;
-  max-width: 472px;
-  height: auto;
-  background-color: #e0e0e0;
+.selectionProcess-highlight-container {
+  background: #f7fcfe;
+  width: 1100px;
+  height: 74px;
+  margin: 20px auto;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.selectionProcess-content-container,
+.selectionProcess-documents-container,
+.selectionProcess-apply-container {
+  width: 1037px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.selectionProcess-h4 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #051d40;
+  margin: 0;
+}
+
+.selectionProcess-p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  line-height: 30px;
   color: #49494c;
-  font-size: 16px;
+  text-align: justify;
+  margin: 0;
+}
+
+.selectionProcess-apply-button {
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  width: 183px;
+  height: 48px;
+  border-radius: 8px;
+  color: white;
+  margin-left: 60px;
+}
+
+/* Contact us */
+.contact {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.contact-info-section {
+  padding: 40px 0;
+}
+
+.contact h1 {
+  color: rgba(241, 89, 42, 1);
+  text-align: left;
+  font-family: Poppins;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 93.6px;
+  text-align: left;
+}
+
+.subtitle {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  width: 1100px;
+  height: 180px;
+  top: 369px;
+  left: 302px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.contact-info div {
+  width: 30%;
+  text-align: left;
+}
+
+.contact-info strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.contact-info a {
+  color: rgba(241, 89, 42, 1);
+  text-decoration: none;
+}
+
+.contact-form {
+  background-color: #001a33;
+  padding: 48px;
+  border-radius: 16px;
+  color: #fff;
+  text-align: left;
+  max-width: 800px;
+  margin: 100px auto;
+}
+
+.contact-form h2 {
+  margin-bottom: 24px;
+  color: #fff;
+  font-size: 28px;
   text-align: center;
 }
 
-.HowDoesItWork-image img {
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  background-color: #001a33;
+  color: #ffffff;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 80px;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info input {
+  width: 340px;
+}
+.contact-form button {
+  background: rgba(241, 89, 42, 1);
+  color: #fff;
+  width: Fixed (249px) px;
+  height: Hug (56px) px;
+  top: 608px;
+  left: 248px;
+  padding: 12px 32px 12px 32px;
+  gap: 8px;
   border-radius: 8px;
+  opacity: 0px;
+  border: none;
 }
 
-@media (max-width: 1200px) {
-  .HowDoesItWork-frame {
-    padding: 10px;
-  }
-
-  .HowDoesItWork-frame h1 {
-    font-size: 2.2rem;
-  }
-
-  .HowDoesItWork-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .HowDoesItWork-content {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .HowDoesItWork-image,
-  .HowDoesItWork-image-medium {
-    max-width: 100%;
-  }
+/* 404 Error */
+.container-404 {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background: black;
+  padding: 20px;
 }
 
+.container-404 h1 {
+  font-size: 7rem;
+  margin: 0;
+  color: #ff5252;
+  animation: bounce 1.5s ease infinite alternate;
+}
 @media (max-width: 768px) {
-  .HowDoesItWork-frame h1 {
-    font-size: 1.8rem;
+  .container-404 h1 {
+    font-size: 5rem;
   }
 
-  .HowDoesItWork-content h2 {
-    font-size: 1.5rem;
+  .container-404 p {
+    font-size: 1.4rem;
+    text-align: center;
   }
 
-  .HowDoesItWork-content p {
-    font-size: 1rem;
+  .container-404 a {
+    padding: 12px 25px;
+    font-size: 1.4rem;
   }
 }
 
 @media (max-width: 480px) {
-  .HowDoesItWork-frame h1 {
-    font-size: 1.5rem;
+  .container-404 h1 {
+    font-size: 3.5rem;
   }
 
-  .HowDoesItWork-content h2 {
-    font-size: 1.25rem;
+  .container-404 p {
+    font-size: 1.2rem;
   }
 
-  .HowDoesItWork-content p {
-    font-size: 0.875rem;
+  .container-404 a {
+    padding: 10px 20px;
+    font-size: 1.2rem;
   }
 }
 
-/* Why Volunteer */
-
-.WhyVolunteer-frame {
-  width: 100%;
-  height: 366px;
-  max-width: 1296px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-.WhyVolunteer-frame-heading {
-  width: 100%;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.WhyVolunteer-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.WhyVolunteer-card {
-  flex: 1;
-  min-width: 300px;
-  max-width: 370px;
-  height: auto;
-  padding: 20px;
-  gap: 16px;
-  border-radius: 36px;
-  background: #e5f1ff;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.WhyVolunteer-card img {
-  width: 50px;
-  height: auto;
-}
-
-.WhyVolunteer-d-flex {
-  display: flex;
-}
-
-.WhyVolunteer-align-items-center {
-  align-items: center;
-}
-
-.WhyVolunteer-mb-3 {
-  margin-bottom: 1rem;
-}
-
-.WhyVolunteer-flex-shrink-0 {
-  flex-shrink: 0;
-}
-
-.WhyVolunteer-rounded-1 {
-  border-radius: 0.25rem;
-}
-
-.WhyVolunteer-p-2 {
-  padding: 0.5rem;
-}
-
-.WhyVolunteer-fs-sm {
-  font-size: 0.875rem;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .WhyVolunteer-cards {
-    flex-direction: column;
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
   }
 
-  .WhyVolunteer-card {
-    width: 100%;
-    max-width: none;
+  100% {
+    transform: translateY(-10px);
   }
+}
+
+.container-404 p {
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin: 10px 0 30px 0;
+}
+
+.container-404 a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #0077ff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 119, 255, 0.4);
+}
+
+.container-404 a:hover {
+  transform: scale(1.05);
 }
