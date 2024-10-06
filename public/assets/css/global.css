@@ -1674,6 +1674,7 @@ body {
   text-decoration: none;
 }
 
+
 .donation-card {
   display: flex;
   justify-content: center;
@@ -2063,7 +2064,6 @@ body {
 
   .d-flex {
     flex-direction: column;
-    flex-direction: column;
     gap: 10px;
   }
 }
@@ -2290,14 +2290,6 @@ body {
 
 .gallery-grid-container .small {
   height: 240px;
-}
-.mission-img {
-  width: 661px;
-  border-radius: 18px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  height: 599px;
-  margin-top: 15px;
 }
 
 .gallery-event-image-4 {
