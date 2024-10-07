@@ -11,6 +11,7 @@ import Heading from '../components/common/heading.astro'
 import Gallery from '../components/about/Gallery.astro'
 import { getEntry } from 'astro:content'
 import Speaker from '../components/unused/speaker.astro'
+import Introduction from '../components/about/Introduction.astro'
 const testimonials = (await getEntry('testimonials', 'testimonials')).data
 
 interface Props {
@@ -22,12 +23,13 @@ interface Props {
   <!-- Page wrapper -->
   <main class='page-wrapper'>
     <Hero />
+    <Introduction />
     <Mission />
     <Team />
     <Volunteers />
     <Heading title={testimonials.title} />
     <TestimonialsCarousel pageTag='pratibha' />
-    <Gallery />
+    <!-- <Gallery /> -->
   </main>
 
   <!-- Back to top button -->

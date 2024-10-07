@@ -1382,17 +1382,6 @@ body {
   text-align: left;
   color: #2b2e36;
 }
-.mission-card-container {
-  width: 100%;
-  max-width: 1250px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  padding-left: 3px;
-}
 
 .mission-card {
   width: 340px;
@@ -1402,24 +1391,6 @@ body {
   border-radius: 30px;
   box-sizing: border-box;
   margin-top: 23px;
-}
-
-.mission-icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 13px;
-  margin-left: 13px;
-}
-
-.mission-card-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 33px;
-  text-align: left;
-  color: #2b2e36;
-  margin-top: 10px;
-  padding: 10px;
 }
 
 .mission-card-desc {
@@ -2234,13 +2205,6 @@ body {
   height: 55px;
 }
 
-.mission-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  border-radius: 36px;
-  height: 266px;
-}
 
 .mission-card {
   background: #f7fcfe;
