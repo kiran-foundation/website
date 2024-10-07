@@ -1,35 +1,34 @@
 ---
-import { getEntry } from 'astro:content'
-const benefits = (await getEntry('pratibha', 'benefits')).data
+import { getEntry } from "astro:content"
+const benefits = (await getEntry("pratibha", "benefits")).data
 ---
-
-<div class='aboutPratibha-container-c1 container' style='margin-top: 45px;'>
-  <div class='aboutPratibha-box'>
-    <div class='aboutPratibha-box-icon'>
-      <img src={benefits.image.tutionfee} alt='Icon' />
+<div class="aboutPratibha-container-c1" style="margin-top: 45px;">
+    <div class="aboutPratibha-box">
+      <div class="aboutPratibha-box-icon">
+        <img src={benefits.image.tutionfee} alt="Icon"> 
+      </div>
+      <h3 class="aboutPratibha-box-heading">{benefits.heading.tution}</h3>
+      <p class="aboutPratibha-box-content">{benefits.paragraph.tution}</p>
     </div>
-    <h3 class='aboutPratibha-box-heading'>{benefits.heading.tution}</h3>
-    <p class='aboutPratibha-box-content'>{benefits.paragraph.tution}</p>
-  </div>
-  <div class='aboutPratibha-box'>
-    <div class='aboutPratibha-box-icon'>
-      <img src={benefits.image.stationary} alt='Icon' />
+    <div class="aboutPratibha-box">
+      <div class="aboutPratibha-box-icon">
+        <img src={benefits.image.stationary} alt="Icon"> 
+      </div>
+      <h3 class="aboutPratibha-box-heading">{benefits.heading.stationary} </h3>
+      <p class="aboutPratibha-box-content">{benefits.paragraph.stationary}</p>
     </div>
-    <h3 class='aboutPratibha-box-heading'>{benefits.heading.stationary}</h3>
-    <p class='aboutPratibha-box-content'>{benefits.paragraph.stationary}</p>
-  </div>
-  <div class='aboutPratibha-box'>
-    <div class='aboutPratibha-box-icon'>
-      <img src={benefits.image.equipment} alt='Icon' />
+    <div class="aboutPratibha-box">
+      <div class="aboutPratibha-box-icon">
+        <img src={benefits.image.equipment} alt="Icon"> 
+      </div>
+      <h3 class="aboutPratibha-box-heading">{benefits.heading.equipments} </h3>
+      <p class="aboutPratibha-box-content">{benefits.paragraph.equipments}</p>
     </div>
-    <h3 class='aboutPratibha-box-heading'>{benefits.heading.equipments}</h3>
-    <p class='aboutPratibha-box-content'>{benefits.paragraph.equipments}</p>
-  </div>
-  <div class='aboutPratibha-box'>
-    <div class='aboutPratibha-box-icon'>
-      <img src={benefits.image.bording} alt='Icon' />
+    <div class="aboutPratibha-box">
+      <div class="aboutPratibha-box-icon">
+        <img src={benefits.image.bording}  alt="Icon"> 
+      </div>
+      <h3 class="aboutPratibha-box-heading">{benefits.heading.bording} </h3>
+      <p class="aboutPratibha-box-content">{benefits.paragraph.bording}</p>
     </div>
-    <h3 class='aboutPratibha-box-heading'>{benefits.heading.bording}</h3>
-    <p class='aboutPratibha-box-content'>{benefits.paragraph.bording}</p>
   </div>
-</div>

@@ -1674,7 +1674,6 @@ body {
   text-decoration: none;
 }
 
-
 .donation-card {
   display: flex;
   justify-content: center;
@@ -1855,6 +1854,13 @@ body {
 .donation-c1 {
   display: flex;
   flex-direction: column;
+} */
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 20px; /* Reduce padding for smaller screens */
+  width: 100%;
+  margin: auto;
 }
 
 .faq-header {
@@ -1943,6 +1949,12 @@ body {
 }
 
 @media (min-width: 768px) {
+  .faq-section {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 120px 80px;
+    width: 85%;
+  }
 
   .faq-header {
     max-width: 40%;
@@ -2064,9 +2076,12 @@ body {
 
   .d-flex {
     flex-direction: column;
+    flex-direction: column;
     gap: 10px;
   }
 }
+@media (max-width: 767px) {
+  .form-img {
 @media (max-width: 767px) {
   .form-img {
     display: none;
@@ -2099,7 +2114,7 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
-}
+
 /* Coming Soon */
 
 .coming-soon-section {
@@ -2290,6 +2305,13 @@ body {
 
 .gallery-grid-container .small {
   height: 240px;
+.mission-img {
+  width: 661px;
+  border-radius: 18px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  height: 599px;
+  margin-top: 15px;
 }
 
 .gallery-event-image-4 {
@@ -2409,65 +2431,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* Pratibha */
-
-.aboutPratibha-container-c1 {
-  width: 1288px;
-  height: 188px;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.aboutPratibha-box {
-  width: 298px;
-  height: 188px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: #2b2e36;
-  border-radius: 8px;
-  box-sizing: border-box;
-  padding: 10px;
-  text-align: center;
-}
-
-.aboutPratibha-box-icon {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.aboutPratibha-box-icon img {
-  width: 50px;
-  height: 50px;
-}
-
-.aboutPratibha-box-heading {
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 30px;
-  margin: 0;
-}
-
-.aboutPratibha-box-content {
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  margin: 0;
-  color: #49494c;
-  padding: 10px;
-  border-radius: 8px;
 }
 
 /* Pratibha - Apply */
