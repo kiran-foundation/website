@@ -1403,12 +1403,6 @@ body {
   padding: 10px;
 }
 
-.team-container {
-  width: 100%;
-  padding-left: 40px;
-  padding-top: 50px;
-  max-width: 1296px;
-}
 .team-title {
   font-family: 'Inter', sans-serif;
   font-size: 2.5rem;
@@ -1444,185 +1438,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.aboutExperience-card {
-  width: 100%;
-  max-width: 1296px;
-  margin-top: 60px;
-  border-radius: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 40px;
-}
-
-.card-details {
-  width: 95%;
-  border-radius: 18px;
-  background-color: #051d40;
-  height: 150px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 50px 0px 50px;
-}
-
-.card-details img {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 12px;
-}
-
-.card-details span {
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 2.5rem;
-  text-align: left;
-  color: #f9f9f9;
-  margin-left: 5px;
-}
-
-.card-details .card-btn {
-  display: inline-block;
-  width: 160px;
-  height: 56px;
-  padding: 12px 32px 12px 32px;
-  background-color: #f1592a;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.card-details .card-btn a {
-  color: #f9f9f9;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 32px;
-  text-align: left;
-}
-
-.volunteers-c1 {
-  width: 100%;
-  max-width: 1296px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  margin-top: 50px;
-  margin-bottom: 6rem;
-  padding-left: 50px;
-}
-
-.volunteers-c1-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  line-height: 52px;
-  text-align: center;
-  color: #121519;
-  margin-bottom: 40px;
-}
-
-.volunteers-c1-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
-  max-width: 1250px;
-}
-
-.volunteers-c1-card {
-  width: 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border-radius: 24px;
-}
-
-.volunteers-c1-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 100px;
-  margin-bottom: 16px;
-}
-
-.volunteers-c1-card-title1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 28px;
-  text-align: center;
-  color: #121519;
-  margin-bottom: 8px;
-}
-
-.volunteers-c1-card-title2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: center;
-  color: #858c97;
-}
-
-.gallery-c1 {
-  width: 100%;
-  max-width: 1150px;
-  margin: 50px auto;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  opacity: 1;
-  padding-left: 35px;
-  padding-bottom: 5rem;
-}
-
-.gallery-c1-title1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  line-height: 3.25rem;
-  text-align: center;
-  color: #121519;
-}
-
-.gallery-c1-title2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.7rem;
-  text-align: center;
-  color: #576071;
-  margin-bottom: 40px;
-}
-
-.gallery-grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.gallery-grid-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 24px;
-  display: block;
-}
-
-.gallery-grid-container .large {
-  grid-column: span 2;
-  height: 428px;
-}
-
-.gallery-grid-container .small {
-  height: 230px;
 }
 
 .gallery-event-image-4 {
@@ -2044,33 +1859,6 @@ body {
   }
 }
 
-.gallery-c1 {
-  width: 1296px;
-  margin: 50px auto;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  opacity: 1;
-}
-
-.gallery-c1-title1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 52px;
-  text-align: center;
-  color: #121519;
-  margin-bottom: 20px;
-}
-
-.gallery-c1-title2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-}
 /* Coming Soon */
 
 .coming-soon-section {
@@ -2111,26 +1899,6 @@ body {
   text-align: center;
   color: #576071;
   margin-bottom: 40px;
-}
-
-.gallery-grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.gallery-grid-container img {
-  width: 100%;
-  border-radius: 24px;
-}
-
-.gallery-grid-container .large {
-  grid-column: span 2;
-  height: 428px;
-}
-
-.gallery-grid-container .small {
-  height: 240px;
 }
 
 .gallery-event-image-4 {
@@ -2216,46 +1984,6 @@ body {
   align-items: flex-start;
 }
 
-.gallery-c1-title1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 52px;
-  text-align: center;
-  color: #121519;
-  margin-bottom: 20px;
-}
-
-.gallery-c1-title2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  text-align: center;
-  color: #576071;
-  margin-bottom: 40px;
-}
-
-.gallery-grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.gallery-grid-container img {
-  width: 100%;
-  border-radius: 16px;
-}
-
-.gallery-grid-container .large {
-  grid-column: span 2;
-  height: 428px;
-}
-
-.gallery-grid-container .small {
-  height: 240px;
-}
-
 .gallery-event-image-4 {
   margin-top: -186px;
 }
@@ -2316,64 +2044,6 @@ body {
   text-align: center;
 }
 
-/* Team */
-.team-container {
-  width: 100%;
-  padding-left: 40px;
-  padding-top: 50px;
-  max-width: 1296px;
-}
-
-.team-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 52px;
-  text-align: center;
-}
-
-/* Team Css */
-.team-container {
-  width: 100%;
-  padding-left: 40px;
-  padding-top: 50px;
-  max-width: 1296px;
-}
-
-.team-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 52px;
-  text-align: left;
-  color: #121519;
-  margin-bottom: 40px;
-  margin-top: 30px;
-}
-
-.team-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: space-between;
-}
-
-.team-card {
-  width: calc(33.33% - 27px);
-  height: 416px;
-  border-radius: 36px 0 0 0;
-  background: #f7fcfe;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 /* Pratibha */
 
