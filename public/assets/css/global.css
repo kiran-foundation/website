@@ -1460,7 +1460,6 @@ body {
   text-decoration: none;
 }
 
-
 .donation-card {
   display: flex;
   justify-content: center;
@@ -1641,6 +1640,13 @@ body {
 .donation-c1 {
   display: flex;
   flex-direction: column;
+} */
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 20px; /* Reduce padding for smaller screens */
+  width: 100%;
+  margin: auto;
 }
 
 .faq-header {
@@ -1729,6 +1735,12 @@ body {
 }
 
 @media (min-width: 768px) {
+  .faq-section {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 120px 80px;
+    width: 85%;
+  }
 
   .faq-header {
     max-width: 40%;
@@ -1850,9 +1862,11 @@ body {
 
   .d-flex {
     flex-direction: column;
+    flex-direction: column;
     gap: 10px;
   }
 }
+
 @media (max-width: 767px) {
   .form-img {
     display: none;
@@ -1983,6 +1997,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
 }
+
 
 .gallery-event-image-4 {
   margin-top: -186px;
