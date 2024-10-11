@@ -2766,7 +2766,7 @@ body {
   left: 15px;
 }
 .shaktiCard-image-container-vector {
-  position: relative;
+  position:absolute;
   top: -120px;
   left: -70px;
   width: 96.18px;
@@ -2784,30 +2784,27 @@ body {
   display: block;
   clear: both;
 }
-.shaktiCard-image-container-ellipseSmall {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  top: 250px;
-  left: 25px;
-}
+
 .shaktiCard-image-container {
-  flex: 1;
+  width: 1100px; 
+  max-width:100%; 
   display: flex;
+  height: 300px;
   justify-content: center;
   align-items: center;
-  border: 2px solid #ffff;
-  border-radius: 70px;
-  margin-left: -40px;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  margin-left: 40px;
+  box-sizing: border-box;
 }
 
 .shaktiCard-image-container img {
-  width: 526px;
-  height: 319px;
-  border-radius: 70px;
-  object-fit: cover;
-  margin-left: -20px;
-  margin-top: 5px;
+  width: 100%; 
+  height: 100%; 
+  border-radius: 20px;
+  object-fit: contain; 
+  display: block;
+  max-width: auto;
 }
 
 /* Selection */
@@ -2964,13 +2961,7 @@ body {
 }
 
 
-.shaktiCard-image-container img {
-  width: 100%;
-  height: auto;  
-  max-height: 400px;      
-  object-fit: cover;  
-  display: block; 
-}
+
 
 
 
