@@ -1,35 +1,36 @@
 ---
 import { getEntry } from 'astro:content'
-const shaktiJoinData = (await getEntry('shakti', 'join')).data
+const shaktijoinData = (await getEntry('shakti', 'join')).data
 ---
 
-<head>
-  <link rel="stylesheet" href="../../../../public/assets/css/global.css">
-</head>
-
-<div class='container pratibhaCard-container'>
-  <div class='pratibhaCard-image-container-vectorstar'>
-    <img src='/assets/images/benefits/Vectorstar.png' alt='Vectorstar Image' />
-    <div class='shaktiCard-image-container-ellipseSmall'>
-      <img src='/assets/images/benefits/EllipseSmall.png' alt='Ellipse Image' />
+<section class='overflow-hidden' style='margin-top:60px;'>
+  <div
+    class='container bg-primary rounded-5 overflow-hidden mt-2 mt-sm-4 mt-lg-5'
+    style='background-color: #051D40 !important; opacity: 1; margin-bottom: 40px; '
+  >
+    <div class='row position-relative z-2 align-items-center'>
+      <div class='col-md-6 col-lg-5 offset-lg-1'>
+        <div
+          class='text-center text-md-start py-5 px-4 px-sm-5 pe-md-0 ps-lg-4 ps-xl-5'
+        >
+          <h2 class='shakti-heading2-h1 text-white pb-2 pb-sm-3'>
+            {shaktijoinData.title}
+          </h2>
+          <a
+            class='shaktiCardVolunteer-button mt-4 btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex'
+            href='/'>{shaktijoinData.joinBtn}</a
+          >
+        </div>
+      </div>
+      <div class='col-md-6 p-2'>
+        <img
+          class='d-block mx-auto mx-md-0 mt-n4 mt-md-0 p-3'
+          style='width:575px; height:320px; border-radius: 48px;'
+         src={shaktijoinData.image} alt='Mentoring Image' 
+          width='534'
+          alt='Image'
+        />
+      </div>
     </div>
   </div>
-  <div class='shaktiCard-image-container' style='margin-left: 5px;'>
-    <img src={shaktiJoinData.image} alt='Mentoring Image' />
-  </div>
-  <div class='shaktiCard-image-container-vector'>
-    <img src='/assets/images/benefits/Vector6.png' alt='Vector Image' />
-    <div class='shaktiCard-image-container-ellipse'>
-      <img src='/assets/images/benefits/Ellipse.png' alt='Ellipse Image' />
-    </div>
-  </div>
-
-  <div class='shaktiCard-content-container'>
-    <h2>{shaktiJoinData.title}</h2>
-    <span class='shakti-join-text'>{shaktiJoinData.heading}</span>
-
-    <a class='cardShakti-connect-button btn btn-primary -pill mt-4' href='/'
-      >{shaktiJoinData.joinBtn}</a
-    >
-  </div>
-</div>
+</section>
