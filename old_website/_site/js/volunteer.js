@@ -1,20 +1,45 @@
+// Google Form entry IDs
+const Google_Entry_IDs = {
+    name: "entry.732137333",
+    email: "entry.1986461492",
+    phone: "entry.1784783803",
+    message: "entry.587179085"
+};
+
+// Google Form link
+const Google_Form_Link = "https://docs.google.com/forms/d/e/1FAIpQLSccawIjPtn5c1B09JE5BtXDwTHpjP0xwB6VgDg5ErG61-XqNA/viewform?usp=sf_link";
+
+// Handle form submission
 document.getElementById("volunteer-form").addEventListener('submit', (e) => {
-    setTimeout(function () {
-        var contactForm = document.getElementById("volunteer-form-div")
-        contactForm.setAttribute("style", "-webkit-animation: fadeOut 1s; animation: fadeOut 1s;  animation-fill-mode: forwards;");
-        document.getElementById("volunteer-form").setAttribute("style", "display:none;");
-        contactForm.innerHTML = `<h1>Thank you for your Time!</h1> `
-        contactForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");
+    e.preventDefault(); // Prevent the default form submission
 
-    }, 500);
+    // Gather form data
+    const formData = new FormData(e.target);
+    const entryData = {
+        [Google_Entry_IDs.name]: formData.get('name'),
+        [Google_Entry_IDs.email]: formData.get('email'),
+        [Google_Entry_IDs.phone]: formData.get('phone'),
+        [Google_Entry_IDs.message]: formData.get('message')
+    };
 
+    // Create a URL-encoded string for the form data
+    const queryString = new URLSearchParams(entryData).toString();
 
-})
-var Google_Entry_ID_Name="entry.732137333";
-var Google_Entry_ID_Email="entry.1986461492";   
-var Google_Entry_ID_Phone="entry.1784783803";    
-var Google_Entry_ID_Msg="entry.587179085";           
-//var Google_Form_Link="https://forms.gle/6FrVGCLosfq7XfWn7" 
-var Google_Form_Link="https://docs.google.com/forms/d/e/1FAIpQLSccawIjPtn5c1B09JE5BtXDwTHpjP0xwB6VgDg5ErG61-XqNA/viewform?usp=sf_link"
-// Replacing Variables At Top Of This Document
-
+    // Submit data to the Google Form
+    fetch(`${Google_Form_Link}?${queryString}`, {
+        method: 'POST',
+        mode: 'no-cors',
+    })
+    .then(() => {
+        setTimeout(() => {
+            const contactFormDiv = document.getElementById("volunteer-form-div");
+            contactFormDiv.setAttribute("style", "animation: fadeOut 1s forwards;");
+            document.getElementById("volunteer-form").style.display = "none";
+            contactFormDiv.innerHTML = `<h1>Thank you for your Time!</h1>`;
+            contactFormDiv.setAttribute("style", "animation: fadeIn 1s forwards;");
+        }, 500);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
