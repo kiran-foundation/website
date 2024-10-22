@@ -2968,10 +2968,20 @@ body {
 }
 
 .donation-form-box{
-  border: 1px solid black;
+  /* padding: ; */
 }
 
 #total-amount{  
   font-size: x-large;
   font-weight: 900;
+}
+
+.blue-box{
+  background-color: rgb(5, 29, 64);
+  color: #fff;
+  padding: 10px 20px 10px 20px;
+}
+
+.white-text{
+  color: #fff;
 }
