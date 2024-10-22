@@ -2962,3 +2962,26 @@ body {
 .container-404 a:hover {
   transform: scale(1.05);
 }
+
+.donation-form{
+  margin-top: 100px;
+}
+
+.donation-form-box{
+  /* padding: ; */
+}
+
+#total-amount{  
+  font-size: x-large;
+  font-weight: 900;
+}
+
+.blue-box{
+  background-color: rgb(5, 29, 64);
+  color: #fff;
+  padding: 10px 20px 10px 20px;
+}
+
+.white-text{
+  color: #fff;
+}
