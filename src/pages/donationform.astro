@@ -1,0 +1,205 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Fetch donation amount from URL parameters
+export async function get({ request }) {
+    const url = new URL(request.url);
+    const amount = url.searchParams.get("donationAmount") || "0";
+    return { props: { amount } };
+}
+---
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<Layout>
+    <section class="container donation-form">
+        <!-- Total Amount Section -->
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-6 donation-form-box container">
+            <div class="p-4">
+              <h4 class="">Total Amount</h4>
+              <p class="text-dark" id="total-amount">₹1,00,000</p>
+              <div class="d-flex justify-content-between">
+                <p class="text-muted">Premier Support</p>
+                <p class="text-dark fw-bold" id="donationAmountDisplays">₹1,00,000</p>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between">
+                <h5 class="text-primary">Total</h5>
+                <h5 class="fw-bold" id="donationAmountDisplay">₹1,00,000</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Contact Information Form -->
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form id="donation-form" class="p-5 border-2">
+              <!-- Contact Information -->
+              <h4 class="mb-4 ">Enter Contact Information</h4>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control shadow-sm"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control shadow-sm"
+                    id="email"
+                    name="email"
+                    placeholder="Email address"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input
+                  type="tel"
+                  class="form-control shadow-sm"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone number"
+                  required
+                />
+              </div>
+      
+              <!-- Billing Information -->
+              <h4 class="mt-5 mb-4">Enter Billing Information</h4>
+              <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input
+                  type="text"
+                  class="form-control shadow-sm"
+                  id="country"
+                  name="country"
+                  value="India"
+                  readonly
+                />
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input
+                  type="text"
+                  class="form-control shadow-sm"
+                  id="address"
+                  name="address"
+                  placeholder="Address"
+                  required
+                />
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="city" class="form-label">City</label>
+                  <input
+                    type="text"
+                    class="form-control shadow-sm"
+                    id="city"
+                    name="city"
+                    placeholder="City"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="state" class="form-label">State</label>
+                  <input
+                    type="text"
+                    class="form-control shadow-sm"
+                    id="state"
+                    name="state"
+                    placeholder="State"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="zipcode" class="form-label">ZIP Code / Postal Code</label>
+                  <input
+                    type="text"
+                    class="form-control shadow-sm"
+                    id="zipcode"
+                    name="zipcode"
+                    placeholder="ZIP code"
+                    required
+                  />
+                </div>
+              </div>
+      
+              <!-- Donate Button -->
+              <div class="text-center">
+                <button
+                  type="submit"
+                  id="donate-now-button"
+                  class="btn btn-primary btn-lg w-100 shadow-sm"
+                >
+                  Donate Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      
+
+    <script>
+        // Declare Razorpay as an external global variable
+        declare var Razorpay: any;
+
+        window.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const donationAmount = Number(urlParams.get("donationAmount")) || 500; // Default to 500 if not provided
+
+            // Update the displayed donation amount
+            document.getElementById("donationAmountDisplay").innerText = `₹${donationAmount}`;
+            document.getElementById("donationAmountDisplays").innerText = `₹${donationAmount}`;
+
+            // Razorpay payment initiation
+            document.getElementById("donate-now-button").addEventListener("click", function () {
+                const form = document.getElementById("donation-form") as HTMLFormElement;
+
+                // Validate the form before proceeding
+                if (form.checkValidity()) {
+                    const options = {
+                        key: "rzp_test_dTuD0Ny1Xcfcnu", // Razorpay Key ID from your Dashboard
+                        amount: donationAmount * 100, // Amount in paise
+                        currency: "INR",
+                        name: "Kiran Foundation",
+                        description: "Donation for Premier Support",
+                        image: "https://kfastro.netlify.app/favicon.ico", // Your logo or favicon
+                        handler: function (response: any) {
+                            alert("Payment Successful!");
+                            console.log("Payment ID:", response.razorpay_payment_id);
+                            form.reset();
+                        },
+                        prefill: {
+                            name: (document.getElementById("name") as HTMLInputElement).value,
+                            email: (document.getElementById("email") as HTMLInputElement).value,
+                            contact: (document.getElementById("phone") as HTMLInputElement).value,
+                        },
+                        theme: {
+                            color: "#3399cc",
+                        },
+                    };
+
+                    // Initialize and open the Razorpay checkout
+                    const rzp = new Razorpay(options);
+                    rzp.open();
+                } else {
+                    // If the form is not valid, trigger the HTML5 validation messages
+                    form.reportValidity();
+                }
+            });
+        });
+    </script>
+</Layout>

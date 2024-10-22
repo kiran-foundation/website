@@ -2962,3 +2962,16 @@ body {
 .container-404 a:hover {
   transform: scale(1.05);
 }
+
+.donation-form{
+  margin-top: 100px;
+}
+
+.donation-form-box{
+  border: 1px solid black;
+}
+
+#total-amount{  
+  font-size: x-large;
+  font-weight: 900;
+}
