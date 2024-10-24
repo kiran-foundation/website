@@ -1,0 +1,47 @@
+---
+import { getEntry } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+const aboutImage = (await getEntry('about', 'gallery')).data
+---
+
+<Layout title='Gallery'>
+  <div class='gallery-c1' style='margin-top: 8rem;'>
+    <div class='gallery-c1-title1'>{aboutImage.title}</div>
+    <div class='gallery-c1-title2'>
+      {aboutImage.paragraph}
+    </div>
+
+    <div class='gallery-grid-container'>
+      <img
+        class='small'
+        src={aboutImage.galleryImg.imgOne}
+        alt='imageGallery1'
+      />
+      <img
+        class='small'
+        src={aboutImage.galleryImg.imgTwo}
+        alt='VolunterGroupImage'
+      />
+      <img
+        class='large'
+        src={aboutImage.galleryImg.imgThree}
+        alt='shreyaGoldMedal image'
+      />
+      <img
+        class='large gallery-event-image-4'
+        src={aboutImage.galleryImg.imgFour}
+        alt='Event Image 4'
+      />
+      <img
+        class='small'
+        src={aboutImage.galleryImg.imgFive}
+        alt='hero Image 5'
+      />
+      <img
+        class='small'
+        src={aboutImage.galleryImg.imgSix}
+        alt='Event Image 6'
+      />
+    </div>
+  </div>
+</Layout>

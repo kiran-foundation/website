@@ -1,0 +1,36 @@
+---
+// src/pages/updates/[slug].astro
+
+import Update from "../../components/updates/Update.astro";
+import Layout from "../../layouts/Layout.astro";
+
+// Define the function to get static paths
+export function getStaticPaths() {
+  // Import all markdown files from the updates directory
+  const allUpdates = import.meta.glob("/src/content/updates/*.md");
+
+  // Initialize an array to store the paths
+  let parameters = [];
+
+  // Iterate over the imported files to generate paths
+  Object.entries(allUpdates).forEach(([key]) => {
+    // Extract the slug from the file path
+    const slug = key.split("/").pop()?.replace(".md", "");
+
+    if (slug) {
+      // Add the path to the parameters array
+      parameters.push({
+        params: { slug }
+      });
+    }
+  });
+
+  return parameters;
+}
+
+const { slug } = Astro.params;
+---
+
+<Layout>
+  <Update path={slug} />
+</Layout>

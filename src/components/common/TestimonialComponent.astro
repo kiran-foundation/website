@@ -1,20 +1,19 @@
 ---
-
 export interface Props {
-    image: string;
-    name: string;
-    location: string;
-    text: string;
+  image: string
+  name: string
+  location: string
+  text: string
 }
 
-const { image, name, location, text } = Astro.props;
+const { image, name, location, text } = Astro.props
 ---
 
-<div class="testimonial-container mt-5">
-    <img src={image} alt={name} class="testimonial-image" />
-    <p class="testimonial-text">{text}</p>
-    <div class="testimonial-info">
-        <div class="testimonial-name">{name}</div>
-        <div class="testimonial-location">{location}</div>
-    </div>
+<div class='testimonial-container mt-5' style='color: #2b2e36;'>
+  <img src={image} alt={name} class='testimonial-image' />
+  <p class='fs-sm p-2' style='overflow-y: scroll;'>{text}</p>
+  <p class='testimonial-info'>
+    <div class='testimonial-name'>{name}</div>
+    <div class='testimonial-location'>{location}</div>
+  </p>
 </div>

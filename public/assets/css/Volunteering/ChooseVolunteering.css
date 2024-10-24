@@ -42,19 +42,19 @@
 
 /* Border colors based on ID */
 #c1 {
-  border: 8px solid #F7DFE2;
+  border: 8px solid #f7dfe2;
 }
 
 #c2 {
-  border: 8px solid #E1DAF7;
+  border: 8px solid #e1daf7;
 }
 
 #c3 {
-  border: 8px solid #DCE4F6;
+  border: 8px solid #dce4f6;
 }
 
 #c4 {
-  border: 8px solid #DBF2F6;
+  border: 8px solid #dbf2f6;
 }
 
 .mainVolunteering-card-heading {
@@ -95,7 +95,7 @@
 }
 
 .mainVolunteering-btn-apply {
-  background-color: #F1592A;
+  background-color: #f1592a;
   color: #fff;
 }
 
@@ -112,8 +112,8 @@
   }
 
   .mainVolunteering-main-heading {
-    padding-top: 40px; 
-    font-size: 20px; 
+    padding-top: 40px;
+    font-size: 20px;
   }
 
   .mainVolunteering-card-heading {
@@ -126,8 +126,7 @@
   }
 
   .mainVolunteering-btn {
-    padding: 10px 20px; 
+    padding: 10px 20px;
     font-size: 14px;
   }
 }
-

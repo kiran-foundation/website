@@ -4,11 +4,11 @@ import { remark } from "remark";
 import html from "remark-html";
 
 const volunteerFile = import.meta.glob<MarkdownFile>(
-  "/src/content/volunteering/whyVolunteer.md",
+  "/src/content/volunteering/why-volunteer.md",
 );
 
 const volunteerContent = await (async () => {
-  const volunteerPath = "/src/content/volunteering/whyVolunteer.md";
+  const volunteerPath = "/src/content/volunteering/why-volunteer.md";
   const volunteer = volunteerFile[volunteerPath];
 
   if (volunteer) {

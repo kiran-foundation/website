@@ -1,91 +1,196 @@
-<div class="volunteers-c1">
-    <div class="volunteers-c1-title">Meet our Volunteers</div>
-    <div class="volunteers-c1-card-container">
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Marvin McKinney</div>
-            <div class="volunteers-c1-card-title2">Founder & CEO, Uber</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Jane Doe</div>
-            <div class="volunteers-c1-card-title2">Chief Marketing Officer</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">John Smith</div>
-            <div class="volunteers-c1-card-title2">Head of Development</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Emily Johnson</div>
-            <div class="volunteers-c1-card-title2">Community Manager</div>
-        </div>
+---
+import { getEntry } from 'astro:content'
+const aboutVolunteer = (await getEntry('about', 'volunteer')).data
+---
+
+<div class='volunteers-c1' style='margin-top: 6rem;'>
+  <div class='volunteers-c1-title'>{aboutVolunteer.title}</div>
+  <div class='volunteers-c1-card-container'>
+    <div class='volunteers-c1-card'>
+      <img src={aboutVolunteer.cardContainerOne.imgOne} alt='Volunteer Image' />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerOne.nameOne}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerOne.designationOne}
+      </div>
     </div>
-    <div class="volunteers-c1-card-container">
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Marvin McKinney</div>
-            <div class="volunteers-c1-card-title2">Founder & CEO, Uber</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Jane Doe</div>
-            <div class="volunteers-c1-card-title2">Chief Marketing Officer</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">John Smith</div>
-            <div class="volunteers-c1-card-title2">Head of Development</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Emily Johnson</div>
-            <div class="volunteers-c1-card-title2">Community Manager</div>
-        </div>
+    <div class='volunteers-c1-card'>
+      <img src={aboutVolunteer.cardContainerOne.imgTwo} alt='Volunteer Image' />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerOne.nameTwo}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerOne.designationTwo}
+      </div>
     </div>
-    <div class="volunteers-c1-card-container">
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Marvin McKinney</div>
-            <div class="volunteers-c1-card-title2">Founder & CEO, Uber</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Jane Doe</div>
-            <div class="volunteers-c1-card-title2">Chief Marketing Officer</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">John Smith</div>
-            <div class="volunteers-c1-card-title2">Head of Development</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Emily Johnson</div>
-            <div class="volunteers-c1-card-title2">Community Manager</div>
-        </div>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerOne.imgThree}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerOne.nameThree}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerOne.designationThree}
+      </div>
     </div>
-    <div class="volunteers-c1-card-container">
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Marvin McKinney</div>
-            <div class="volunteers-c1-card-title2">Founder & CEO, Uber</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Jane Doe</div>
-            <div class="volunteers-c1-card-title2">Chief Marketing Officer</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">John Smith</div>
-            <div class="volunteers-c1-card-title2">Head of Development</div>
-        </div>
-        <div class="volunteers-c1-card">
-            <img src="/assets/images/hero/hero.jpg" alt="Volunteer Image" />
-            <div class="volunteers-c1-card-title1">Emily Johnson</div>
-            <div class="volunteers-c1-card-title2">Community Manager</div>
-        </div>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerOne.imgFour}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerOne.nameFour}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerOne.designationFour}
+      </div>
     </div>
+  </div>
+  <div class='volunteers-c1-card-container'>
+    <div class='volunteers-c1-card'>
+      <img src={aboutVolunteer.cardContainerTwo.imgOne} alt='Volunteer Image' />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerOne.nameOne}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerOne.designationOne}
+      </div>
+    </div>
+    <div class='volunteers-c1-card'>
+      <img src={aboutVolunteer.cardContainerTwo.imgTwo} alt='Volunteer Image' />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerOne.nameTwo}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerOne.designationTwo}
+      </div>
+    </div>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerTwo.imgThree}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerOne.nameThree}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerOne.designationThree}
+      </div>
+    </div>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerTwo.imgFour}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerOne.nameFour}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerOne.designationFour}
+      </div>
+    </div>
+  </div>
+  <div class='volunteers-c1-card-container'>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerThree.imgOne}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerThree.nameOne}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerThree.designationOne}
+      </div>
+    </div>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerThree.imgTwo}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerThree.nameTwo}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerThree.designationTwo}
+      </div>
+    </div>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerThree.imgThree}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerThree.nameThree}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerThree.designationThree}
+      </div>
+    </div>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerThree.imgFour}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerThree.nameFour}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerThree.designationFour}
+      </div>
+    </div>
+  </div>
+  <div class='volunteers-c1-card-container'>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerFour.imgOne}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerFour.nameOne}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerFour.designationOne}
+      </div>
+    </div>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerFour.imgTwo}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerFour.nameTwo}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerFour.designationTwo}
+      </div>
+    </div>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerFour.imgThree}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerFour.nameThree}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerFour.designationThree}
+      </div>
+    </div>
+    <div class='volunteers-c1-card'>
+      <img
+        src={aboutVolunteer.cardContainerFour.imgFour}
+        alt='Volunteer Image'
+      />
+      <div class='volunteers-c1-card-title1'>
+        {aboutVolunteer.cardContainerFour.nameFour}
+      </div>
+      <div class='volunteers-c1-card-title2'>
+        {aboutVolunteer.cardContainerFour.designationFour}
+      </div>
+    </div>
+  </div>
 </div>

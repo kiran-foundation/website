@@ -14,8 +14,4 @@ paragraph:
   harmony: "  e.g. physical exercise ,nutrition guide and Etc."
   coaching: "  e.g. Building long term habits & a good disciplined."
   involvement: " e.g gaining valuable experience and skills"
-    
-
-
-
 ---

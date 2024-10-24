@@ -1,27 +1,29 @@
 ---
-import { getEntry } from "astro:content";
-const heroData = (await getEntry("shakti", "shaktihero")).data
-
+import { getEntry } from 'astro:content'
+const heroData = (await getEntry('shakti', 'hero')).data
 ---
-<section class="position-relative" style="margin-top: 4rem; margin-bottom: 100px;" >
-    <div
-      class="position-absolute object-fit-cover w-100  h-100 top-0 start-0 bg-size-cover bg-position-center mt-5"
-      style="background-image: url(/assets/images/hero/kiranshakti-hero.png); width:1918px; height:863px;"
-    >
-    </div>
-    <div class="container position-relative z-2 text-center pt-2 pt-sm-4 pt-lg-5">
-      <h1 class="shakti-hero-title-h1 display-0 text-white pt-5 ">
-       {heroData.title}
+
+<section
+  class='position-relative'
+  style='margin-top: 4rem; margin-bottom: 100px;'
+>
+  <div
+    class='position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-5'
+    style='background-image: url(/assets/images/hero/kiranshakti-hero.png); width:1918px; height:863px;'
+  >
+  </div>
+  <div class='container position-relative z-2 text-center pt-2 pt-sm-4 pt-lg-5'>
+    <h1 class='shakti-hero-title-h1 display-0 text-white pt-5'>
+      {heroData.title}
       <p
-        class="shakti-description-p text-white fs-xl opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5"
-        style=" max-width: 640px;"
+        class='shakti-description-p text-white fs-xl opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5'
+        style=' max-width: 640px;'
       >
-      {heroData.description}
-    </p>
-      
-    </div>
-    <div class="d-none d-lg-block" style="height: 360px;"></div>
-    <div class="d-none d-md-block d-lg-none" style="height: 260px;"></div>
-    <div class="d-md-none" style="height: 160px;"></div>
-  </section>
-  
+        {heroData.description}
+      </p>
+    </h1>
+    <div class='d-none d-lg-block' style='height: 360px;'></div>
+    <div class='d-none d-md-block d-lg-none' style='height: 260px;'></div>
+    <div class='d-md-none' style='height: 160px;'></div>
+  </div>
+</section>
