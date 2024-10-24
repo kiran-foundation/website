@@ -787,7 +787,16 @@ body {
   .logo-container {
     margin-left: -2%;
   }
+  .heading {
+    font-family: Poppins, sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 72px;
+    text-align: left;
+    color: #2b2e36;
+  }
 }
+
 
 .container-c1 {
   display: flex;
@@ -799,14 +808,7 @@ body {
   margin: 40px auto;
 }
 
-.heading {
-  font-family: Poppins, sans-serif;
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 72px;
-  text-align: left;
-  color: #2b2e36;
-}
+
 
 .container-c2,
 .container-c3 {
@@ -840,6 +842,8 @@ body {
     width: 360px;
     font-size: 18px;
     text-align: center;
+    color: #2b2e36;
+    font-weight: 500;
   }
 
   .line-upper,
@@ -1280,7 +1284,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .HowDoesItWork-frame h1 {
     font-size: 1.8rem;
   }
@@ -1292,6 +1296,15 @@ body {
   .HowDoesItWork-content p {
     font-size: 1rem;
   }
+  .faq-title {
+    width: 416px;
+    height: 120px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: left;
+  }
+  
 }
 
 @media (max-width: 480px) {
@@ -1459,6 +1472,7 @@ body {
   opacity: 1;
   text-decoration: none;
 }
+
 
 .donation-card {
   display: flex;
@@ -1640,13 +1654,6 @@ body {
 .donation-c1 {
   display: flex;
   flex-direction: column;
-} */
-.faq-section {
-  display: flex;
-  flex-direction: column;
-  padding: 80px 20px; /* Reduce padding for smaller screens */
-  width: 100%;
-  margin: auto;
 }
 
 .faq-header {
@@ -1735,12 +1742,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .faq-section {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 120px 80px;
-    width: 85%;
-  }
 
   .faq-header {
     max-width: 40%;
@@ -1862,7 +1863,6 @@ body {
 
   .d-flex {
     flex-direction: column;
-    flex-direction: column;
     gap: 10px;
   }
 }
@@ -1873,6 +1873,33 @@ body {
   }
 }
 
+.gallery-c1 {
+  width: 1296px;
+  margin: 50px auto;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  opacity: 1;
+}
+
+.gallery-c1-title1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  text-align: center;
+  color: #121519;
+  margin-bottom: 20px;
+}
+
+.gallery-c1-title2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
 /* Coming Soon */
 
 .coming-soon-section {
@@ -1998,6 +2025,45 @@ body {
   align-items: flex-start;
 }
 
+.gallery-c1-title1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  text-align: center;
+  color: #121519;
+  margin-bottom: 20px;
+}
+
+.gallery-c1-title2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: center;
+  color: #576071;
+  margin-bottom: 40px;
+}
+
+.gallery-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.gallery-grid-container img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.gallery-grid-container .large {
+  grid-column: span 2;
+  height: 428px;
+}
+
+.gallery-grid-container .small {
+  height: 240px;
+}
 
 .gallery-event-image-4 {
   margin-top: -186px;
@@ -2059,6 +2125,65 @@ body {
   text-align: center;
 }
 
+
+/* Pratibha */
+
+.aboutPratibha-container-c1 {
+  width: 1288px;
+  height: 188px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutPratibha-box {
+  width: 298px;
+  height: 188px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #2b2e36;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.aboutPratibha-box-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.aboutPratibha-box-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.aboutPratibha-box-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0;
+}
+
+.aboutPratibha-box-content {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  margin: 0;
+  color: #49494c;
+  padding: 10px;
+  border-radius: 8px;
+}
 
 /* Pratibha */
 
@@ -2366,6 +2491,7 @@ body {
   background: var(--royal-blue, #051d40);
   overflow: hidden;
 }
+
 .app-component-c1 .app-left-container {
   position: absolute;
   width: 425px;
@@ -2380,6 +2506,7 @@ body {
   text-align: left;
   color: white;
 }
+
 .app-component-c1 .app-download-button {
   position: absolute;
   width: auto;
@@ -2396,9 +2523,11 @@ body {
   border: none;
   cursor: pointer;
 }
+
 .app-component-c1 img {
   object-fit: cover;
 }
+
 .app-component-c1 .image1 {
   position: absolute;
   width: 197px;
@@ -2408,6 +2537,7 @@ body {
   gap: 0px;
   border-radius: 18px 0px 0px 0px;
 }
+
 .app-component-c1 .image2 {
   position: absolute;
   width: 200px;
@@ -2416,6 +2546,7 @@ body {
   left: 736px;
   gap: 0px;
 }
+
 .app-component-c1 .image3 {
   position: absolute;
   width: 200px;
@@ -2424,6 +2555,7 @@ body {
   left: 968px;
   gap: 0px;
 }
+
 .app-component-c1 .image4 {
   position: absolute;
   width: 200px;
@@ -2514,28 +2646,6 @@ body {
   height: auto;
 }
 
-.faq-title {
-  width: 416px;
-  height: 120px;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 60px;
-  text-align: left;
-  color: #121519;
-}
-
-.faq-content {
-  width: 416px;
-  height: 72px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: left;
-  color: #576071;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
 .faq-container-c3 {
   flex-grow: 1;
   height: auto;
@@ -2560,11 +2670,11 @@ body {
 }
 
 .faq-accordion-question {
-  width: 650px;
+  width: auto;
   height: 28px;
   font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
+  font-weight: 600;
+  line-height: 30px;
   text-align: left;
   color: #051d40;
   cursor: pointer;
@@ -2572,9 +2682,9 @@ body {
 }
 
 .faq-accordion-answer {
-  display: none;
   width: 650px;
-  font-size: 16px;
+  height: auto;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
