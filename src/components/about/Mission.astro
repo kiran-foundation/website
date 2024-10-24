@@ -3,27 +3,11 @@ import { getEntry } from 'astro:content'
 const aboutMission = (await getEntry('about', 'mission')).data
 ---
 
-<div class='container mission-container' style='margin-top: 6rem'>
-  <img class='mission-img' src={aboutMission.maaImg} alt='Image' />
-  <div class='mission-text-box'>
-    {aboutMission.descriptionOne.line1}<br /><br />
-    {aboutMission.descriptionOne.line2}<br /><br />
-    {aboutMission.descriptionOne.line3}
-  </div>
-</div>
-<div class='container mission-container'>
-  <div class='mission-text-boxSecond'>
-    {aboutMission.descriptionSecond.line1}<br /><br />
-    {aboutMission.descriptionSecond.line2}
-  </div>
-</div>
-
 <!---Our Mission section -->
-
-<section class='container OurMission' style='margin-top: 5rem;'>
-  <div class='container mission-containerSecond'>
-    <div class='mission-title'>{aboutMission.title}</div>
-    <div class='mission-card-container'>
+<section class='container' style='margin-top: 5rem;'>
+  <div class='container'>
+    <div class='h1'>{aboutMission.title}</div>
+    <div class='d-flex justify-content-around align-items-center flex-wrap'>
       <div class='mission-card'>
         <div class='mission-icon'>
           <img src={aboutMission.cardOne.imgIcon} alt='IconImage' />
@@ -54,3 +38,37 @@ const aboutMission = (await getEntry('about', 'mission')).data
     </div>
   </div>
 </section>
+
+<style>
+  .mission-title {
+    font-weight: 600;
+    color: #2b2e36;
+  }
+
+  .mission-card {
+    width: 340px;
+    height: 266px;
+    padding: 25px 15px;
+    background-color: #f7fcfe;
+    border-radius: 30px;
+    box-sizing: border-box;
+  }
+
+  .mission-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 33px;
+    text-align: left;
+    color: #2b2e36;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .mission-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 13px;
+    margin-left: 13px;
+  }
+</style>

@@ -3,7 +3,7 @@ import { getEntry } from 'astro:content'
 const aboutVolunteer = (await getEntry('about', 'volunteer')).data
 ---
 
-<div class='volunteers-c1' style='margin-top: 6rem;'>
+<div class='container' style='margin-top: 2rem;'>
   <div class='volunteers-c1-title'>{aboutVolunteer.title}</div>
   <div class='volunteers-c1-card-container'>
     <div class='volunteers-c1-card'>
@@ -48,8 +48,6 @@ const aboutVolunteer = (await getEntry('about', 'volunteer')).data
         {aboutVolunteer.cardContainerOne.designationFour}
       </div>
     </div>
-  </div>
-  <div class='volunteers-c1-card-container'>
     <div class='volunteers-c1-card'>
       <img src={aboutVolunteer.cardContainerTwo.imgOne} alt='Volunteer Image' />
       <div class='volunteers-c1-card-title1'>
@@ -92,8 +90,6 @@ const aboutVolunteer = (await getEntry('about', 'volunteer')).data
         {aboutVolunteer.cardContainerOne.designationFour}
       </div>
     </div>
-  </div>
-  <div class='volunteers-c1-card-container'>
     <div class='volunteers-c1-card'>
       <img
         src={aboutVolunteer.cardContainerThree.imgOne}
@@ -142,8 +138,6 @@ const aboutVolunteer = (await getEntry('about', 'volunteer')).data
         {aboutVolunteer.cardContainerThree.designationFour}
       </div>
     </div>
-  </div>
-  <div class='volunteers-c1-card-container'>
     <div class='volunteers-c1-card'>
       <img
         src={aboutVolunteer.cardContainerFour.imgOne}
@@ -194,3 +188,58 @@ const aboutVolunteer = (await getEntry('about', 'volunteer')).data
     </div>
   </div>
 </div>
+
+<style>
+  .volunteers-c1-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: center;
+    color: #121519;
+    margin-bottom: 40px;
+  }
+
+  .volunteers-c1-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    max-width: 1250px;
+  }
+
+  .volunteers-c1-card {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .volunteers-c1-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .volunteers-c1-card-title1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: center;
+    color: #121519;
+    margin-bottom: 8px;
+  }
+
+  .volunteers-c1-card-title2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: #858c97;
+  }
+</style>
