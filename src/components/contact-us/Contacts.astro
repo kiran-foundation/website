@@ -73,7 +73,7 @@ const commonComingsoon = (await getEntry('common', 'coming-soon')).data
             <textarea
               id='message'
               placeholder='How can we help?'
-              rows='4'
+             style="overflow: hidden;"
               required></textarea>
 
             <button type='submit'>{commonComingsoon.request}</button>
@@ -83,3 +83,21 @@ const commonComingsoon = (await getEntry('common', 'coming-soon')).data
     </section>
   </main>
 </Layout>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const messageTextarea = document.getElementById('message');
+
+    function adjustTextareaHeight() {
+      messageTextarea.style.height = 'auto';
+      messageTextarea.style.height = `${messageTextarea.scrollHeight}px`;
+    }
+
+    messageTextarea.addEventListener('input', adjustTextareaHeight);
+
+    // Re-adjust on window resize to ensure responsiveness
+    window.addEventListener('resize', adjustTextareaHeight);
+  });
+</script>
