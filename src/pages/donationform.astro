@@ -1,12 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-// Fetch donation amount from URL parameters
-export async function get({ request }) {
-  const url = new URL(request.url);
-  const amount = url.searchParams.get("donationAmount") || "0";
-  return { props: { amount } };
-}
 ---
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -18,18 +11,16 @@ export async function get({ request }) {
         <div class="p-4">
           <div class="blue-box">
             <h4 class="white-text">Total Amount</h4>
-            <p id="total-amount">₹1,00,000</p>
+            <p id="total-amount" class="amount">₹0</p>
           </div>
           <div class="d-flex justify-content-between">
             <p class="text-muted">Premier Support</p>
-            <p class="text-dark fw-bold" id="donationAmountDisplays">
-              ₹1,00,000
-            </p>
+            <p class="text-dark fw-bold amount" id="donationAmountDisplays">₹0</p>
           </div>
           <hr />
           <div class="d-flex justify-content-between">
             <h5 class="text-primary">Total</h5>
-            <h5 class="fw-bold" id="donationAmountDisplay">₹1,00,000</h5>
+            <h5 class="fw-bold amount" id="donationAmountDisplay">₹0</h5>
           </div>
         </div>
       </div>
@@ -154,64 +145,147 @@ export async function get({ request }) {
   </section>
 
   <script>
-    // Declare Razorpay as an external global variable
     declare var Razorpay: any;
 
-    window.addEventListener("DOMContentLoaded", function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const donationAmount = Number(urlParams.get("donationAmount")) || 500; // Default to 500 if not provided
+    const urlParams = new URLSearchParams(window.location.search);
 
-      // Update the displayed donation amount
-      document.getElementById("donationAmountDisplay").innerText =
-        `₹${donationAmount}`;
-      document.getElementById("donationAmountDisplays").innerText =
-        `₹${donationAmount}`;
-      document.getElementById("total-amount").innerText = `₹${donationAmount}`;
+    const donationAmount = Number(urlParams.get("donationAmount")) || 500;
 
-      // Razorpay payment initiation
-      document
-        .getElementById("donate-now-button")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          const form = document.getElementById(
-            "donation-form",
-          ) as HTMLFormElement;
+    const amountElements = document.getElementsByClassName("amount");
 
-          // Validate the form before proceeding
-          if (form.checkValidity()) {
-            const options = {
-              key: "rzp_test_dTuD0Ny1Xcfcnu", // Razorpay Key ID from your Dashboard
-              amount: donationAmount * 100, // Amount in paise
-              currency: "INR",
-              name: "Kiran Foundation",
-              description: "Donation for Premier Support",
-              image: "https://kfastro.netlify.app/favicon.ico", // Your logo or favicon
-              handler: function (response: any) {
-                alert("Payment Successful!");
-                console.log("Payment ID:", response.razorpay_payment_id);
-                form.reset();
-              },
-              prefill: {
-                name: (document.getElementById("name") as HTMLInputElement)
-                  .value,
-                email: (document.getElementById("email") as HTMLInputElement)
-                  .value,
-                contact: (document.getElementById("phone") as HTMLInputElement)
-                  .value,
-              },
-              theme: {
-                color: "#3399cc",
-              },
-            };
+for (let i = 0; i < amountElements.length; i++) {
+    const amountElement = amountElements[i] as HTMLTextAreaElement;
+    amountElement.innerText = "₹" + donationAmount;
+}
 
-            // Initialize and open the Razorpay checkout
-            const rzp = new Razorpay(options);
-            rzp.open();
-          } else {
-            // If the form is not valid, trigger the HTML5 validation messages
-            form.reportValidity();
+
+    async function initiatePayment() {
+      const paymentType = urlParams.get("donationFrequency") || "onetime";
+      const plan_id = urlParams.get("plan_id");
+      const form = document.getElementById("donation-form") as HTMLFormElement;
+
+      // Form Validation
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Collect data from the form
+      const formData = {
+        name: (document.getElementById("name") as HTMLInputElement).value,
+        email: (document.getElementById("email") as HTMLInputElement).value,
+        phone: (document.getElementById("phone") as HTMLInputElement).value,
+        currency: "INR",
+        amount: donationAmount * 100,
+        plan_id: plan_id,
+      };
+
+      console.log("error here");
+
+      try {
+        // Call the backend to create an order
+        if (paymentType == "onetime") {
+          const response = await fetch("http://localhost:3000/create-order", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          });
+
+          const data = await response.json();
+
+          console.log("no no here");
+
+          if (!response.ok) {
+            throw new Error(data.message || "Payment initiation failed");
           }
-        });
-    });
+
+          // Initialize Razorpay with the order ID from the backend
+          const options = {
+            key: "rzp_test_HmglXnBOLh8qwp", // Razorpay Key ID
+            amount: formData.amount, // Amount in paise
+            currency: "INR",
+            name: "Kiran Foundation",
+            description: "Donation for Premier Support",
+            image: "https://kfastro.netlify.app/favicon.ico",
+            order_id: data.orderId, // Order ID generated by backend
+            handler: function (response) {
+              alert("Payment Successful!");
+              console.log("Payment ID:", response.razorpay_payment_id);
+              form.reset();
+            },
+            prefill: {
+              name: formData.name,
+              email: formData.email,
+              contact: formData.phone,
+            },
+            theme: {
+              color: "#3399cc",
+            },
+          };
+
+          const rzp = new Razorpay(options);
+          rzp.open();
+        } else {
+          const response = await fetch(
+            "http://localhost:3000/create-subscription",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            },
+          );
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            throw new Error(data.message || "Payment initiation failed");
+          }
+
+          // Initialize Razorpay with the order ID from the backend
+          const options = {
+            key: "rzp_test_HmglXnBOLh8qwp", // Razorpay Key ID
+            subscription_id: data.subscription_id, // Subscription ID generated by backend
+            name: "Kiran Foundation",
+            description: "Subscription for Premier Support",
+            image: "https://kfastro.netlify.app/favicon.ico",
+            handler: function (response) {
+              alert("Subscription Successful!");
+              console.log("Payment ID:", response.razorpay_payment_id);
+              console.log(
+                "Subscription ID:",
+                response.razorpay_subscription_id,
+              );
+              form.reset();
+            },
+            prefill: {
+              name: formData.name,
+              email: formData.email,
+              contact: formData.phone,
+            },
+            theme: {
+              color: "#3399cc",
+            },
+          };
+
+          const rzp = new Razorpay(options);
+          rzp.open();
+        }
+      } catch (error) {
+        console.error("Error initiating payment:", error);
+        alert("Payment initiation failed. Please try again.");
+      }
+    }
+
+    // Attach event listener to the Donate Now button
+    document
+      .getElementById("donate-now-button")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        initiatePayment();
+      });
   </script>
 </Layout>
