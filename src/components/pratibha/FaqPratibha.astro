@@ -2,79 +2,165 @@
 import { getEntry } from "astro:content";
 const faqPratibha = (await getEntry("pratibha", "faq")).data;
 ---
-<div class="faq-container-c1">
-    <div class="faq-container-c2">
-        <h1 class="faq-title">{faqPratibha.title}</h1>
-        <p class="faq-content">{faqPratibha.paragraph}</p>
-        <div class="faq-image-content">
-            <img src={faqPratibha.image} alt="vectorImage" />
+<section class="bg-secondary py-5">
+    <div
+        class="container py-md-2 py-lg-3 py-xl-5 my-2 my-sm-3 my-md-4 my-xxl-5"
+    >
+        <div class="row">
+            <div class="col-md-4 text-center text-md-start">
+                <h2 class="h1">{faqPratibha.title}</h2>
+                <p class="pb-3 pb-sm-4">
+                    {faqPratibha.paragraph}
+                </p>
+                <div class="d-none d-md-flex justify-content-center">
+                    <img src={faqPratibha.image} alt="vectorImage" />
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-7 offset-lg-1">
+                <div class="accordion" id="faq">
+                    <div class="accordion-item bg-light">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button
+                                class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#questionOne"
+                                aria-expanded="true"
+                                aria-controls="questionOne"
+                                >Is there a free trial?</button
+                            >
+                        </h3>
+                        <div
+                            class="accordion-collapse collapse show"
+                            id="questionOne"
+                            aria-labelledby="headingOne"
+                            data-bs-parent="#faq"
+                        >
+                            <div class="accordion-body fs-sm">
+                                {faqPratibha.question1}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-light">
+                        <h3 class="accordion-header" id="headingTwo">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#questionTwo"
+                                aria-expanded="false"
+                                aria-controls="questionTwo"
+                                >  {faqPratibha.question1}</button
+                            >
+                        </h3>
+                        <div
+                            class="accordion-collapse collapse"
+                            id="questionTwo"
+                            aria-labelledby="headingTwo"
+                            data-bs-parent="#faq"
+                        >
+                            <div class="accordion-body fs-sm">
+                                {faqPratibha.answer1}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-light">
+                        <h3 class="accordion-header" id="headingThree">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#questionThree"
+                                aria-expanded="false"
+                                aria-controls="questionThree"
+                                >{faqPratibha.question2}</button
+                            >
+                        </h3>
+                        <div
+                            class="accordion-collapse collapse"
+                            id="questionThree"
+                            aria-labelledby="headingThree"
+                            data-bs-parent="#faq"
+                        >
+                            <div class="accordion-body fs-sm">
+                                {faqPratibha.answer2}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-light">
+                        <h3 class="accordion-header" id="headingFour">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#questionFour"
+                                aria-expanded="false"
+                                aria-controls="questionFour"
+                                > {faqPratibha.question3}</button
+                            >
+                        </h3>
+                        <div
+                            class="accordion-collapse collapse"
+                            id="questionFour"
+                            aria-labelledby="headingFour"
+                            data-bs-parent="#faq"
+                        >
+                            <div class="accordion-body fs-sm">
+                                {faqPratibha.answer3}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-light">
+                        <h3 class="accordion-header" id="headingFive">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#questionFive"
+                                aria-expanded="false"
+                                aria-controls="questionFive"
+                                > {faqPratibha.question4}</button
+                            >
+                        </h3>
+                        <div
+                            class="accordion-collapse collapse"
+                            id="questionFive"
+                            aria-labelledby="headingFive"
+                            data-bs-parent="#faq"
+                        >
+                            <div class="accordion-body fs-sm">
+                                {faqPratibha.answer4}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-light">
+                        <h3 class="accordion-header" id="headingSix">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#questionSix"
+                                aria-expanded="false"
+                                aria-controls="questionSix"
+                                > {faqPratibha.question5}</button
+                            >
+                        </h3>
+                        <div
+                            class="accordion-collapse collapse"
+                            id="questionSix"
+                            aria-labelledby="headingSix"
+                            data-bs-parent="#faq"
+                        >
+                            <div class="accordion-body fs-sm">
+                                {faqPratibha.answer5}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="faq-container-c3" style="margin-left:50px;">
-        <div class="faq-accordion">
-            <div class="faq-accordion-item">
-                <div class="faq-accordion-question">
-                    {faqPratibha.question1}
-                    <img
-                        src="/assets/images/benefits/Chevron.png"
-                        style="margin-left: 645px; margin-top:-105px"
-                    />
-                </div>
-                <div class="faq-accordion-answer mt-5">
-                    {faqPratibha.answer1}
-                </div>
-            </div>
-            <div class="faq-accordion-item">
-                <div class="faq-accordion-question">
-                    {faqPratibha.question2}
-                    <img
-                        src="/assets/images/benefits/Chevron1.png"
-                        style="margin-left: 647px; margin-top:-60px"
-                    />
-                </div>
-                <div class="faq-accordion-answer">
-                    {faqPratibha.answer2}
-                </div>
-            </div>
-            <div class="faq-accordion-item">
-                <div class="faq-accordion-question">
-                    {faqPratibha.question3}
-                    <img
-                        src="/assets/images/benefits/Chevron.png"
-                        style="margin-left: 647px; margin-top:-60px"
-                    />
-                </div>
-                <div class="faq-accordion-answer">
-                    {faqPratibha.answer3}
-                </div>
-            </div>
-            <div class="faq-accordion-item">
-                <div class="faq-accordion-question">
-                    {faqPratibha.question4}
-                    <img
-                        src="/assets/images/benefits/Chevron.png"
-                        style="margin-left: 647px; margin-top:-65px"
-                    />
-                </div>
-                <div class="faq-accordion-answer">
-                    {faqPratibha.answer4}
-                </div>
-            </div>
-            <div class="faq-accordion-item">
-                <div class="faq-accordion-question">
-                    {faqPratibha.question5}
-                    <img
-                        src="/assets/images/benefits/Chevron.png"
-                        style="margin-left: 647px; margin-top:-110px"
-                    />
-                </div>
-                <div class="faq-accordion-answer mt-5">
-                    {faqPratibha.answer5}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</section>
 
 <script>
     document.querySelectorAll(".faq-accordion-question").forEach((item) => {

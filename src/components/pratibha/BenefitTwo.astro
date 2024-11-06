@@ -2,33 +2,99 @@
 import { getEntry } from "astro:content"
 const benefitsSecond = (await getEntry("pratibha", "benefits-second")).data
 ---
-<div class="aboutPratibha-container-c1" style="margin-top: 45px; margin-bottom:70px;">
-    <div class="aboutPratibha-box">
-      <div class="aboutPratibha-box-icon">
-        <img src={benefitsSecond.image.guidance} alt="Icon"> 
+<div class="row benefit justify-content-center pt-3 pt-sm-4 pt-md-5 mt-sm-1" style="margin: 0; padding:0">
+  <!-- Left column -->
+  <div class="col-sm-6 col-lg-4 order-lg-1 overflow-hidden mt-lg-4 pt-xl-3">
+    <!-- Left app sceen -->
+    <div class="d-none d-xxl-block" style="height: 310px;"></div>
+    <div class="d-none d-lg-block d-xl-none" style="height: 200px;"></div>
+
+    <!-- Left features list -->
+    <div
+      class="text-center text-sm-start mb-5 mx-auto mx-sm-0 pb-lg-2 pb-xl-4"
+      style="max-width: 340px;"
+      data-aos="fade-right"
+      data-aos-offset="300"
+      data-aos-easing="ease-out-back"
+      data-disable-parallax-down="lg"
+    >
+      <div
+        class="d-table bg-dark bg-opacity-10 rounded-1 p-2 mx-auto mx-sm-0 mb-3 mb-lg-4"
+      >
+      <img src={benefitsSecond.image.guidance} alt="Icon" />
       </div>
-      <h3 class="aboutPratibha-box-heading">{benefitsSecond.heading.guidance}</h3>
-      <p class="aboutPratibha-box-content">{benefitsSecond.paragraph.guidance}</p>
+      <h2 class="h4 text-white mb-2 mb-lg-3">{benefitsSecond.heading.guidance}</h2>
+      <p class="text-white opacity-80 mb-0">
+        {benefitsSecond.paragraph.guidance}
+      </p>
     </div>
-    <div class="aboutPratibha-box">
-      <div class="aboutPratibha-box-icon">
-        <img src={benefitsSecond.image.harmony} alt="Icon"> 
+    <div
+      class="text-center text-sm-start mb-5 mx-auto mx-sm-0 pb-lg-2 pb-xl-4"
+      style="max-width: 340px;"
+      data-aos="fade-right"
+      data-aos-delay="200"
+      data-aos-offset="250"
+      data-aos-easing="ease-out-back"
+      data-disable-parallax-down="lg"
+    >
+      <div
+        class="d-table bg-dark bg-opacity-10 rounded-1 p-2 mx-auto mx-sm-0 mb-3 mb-lg-4"
+      >
+      <img src={benefitsSecond.image.harmony} alt="Icon" />
       </div>
-      <h3 class="aboutPratibha-box-heading">{benefitsSecond.heading.harmony}</h3>
-      <p class="aboutPratibha-box-content">{benefitsSecond.paragraph.harmony}</p>
-    </div>
-    <div class="aboutPratibha-box">
-      <div class="aboutPratibha-box-icon">
-        <img src={benefitsSecond.image.coaching} alt="Icon"> 
-      </div>
-      <h3 class="aboutPratibha-box-heading">{benefitsSecond.heading.coaching}</h3>
-      <p class="aboutPratibha-box-content">{benefitsSecond.paragraph.coaching}</p>
-    </div>
-    <div class="aboutPratibha-box">
-      <div class="aboutPratibha-box-icon">
-        <img src={benefitsSecond.image.involvement} alt="Icon"> 
-      </div>
-      <h3 class="aboutPratibha-box-heading">{benefitsSecond.heading.involvement}</h3>
-      <p class="aboutPratibha-box-content">{benefitsSecond.paragraph.involvement} </p>
+      <h2 class="h4 text-white mb-2 mb-lg-3">{benefitsSecond.heading.harmony}</h2>
+      <p class="text-white opacity-80 mb-0">
+        {benefitsSecond.paragraph.harmony}
+      </p>
     </div>
   </div>
+
+  <!-- Right column -->
+  <div class="col-sm-6 col-lg-4 order-lg-3 overflow-hidden mt-lg-4 pt-xl-3">
+    <!-- Right app screen -->
+    <div class="d-none d-xxl-block" style="height: 520px;"></div>
+    <div class="d-none d-xl-block d-xxl-none" style="height: 490px;"></div>
+    <div class="d-none d-lg-block d-xl-none" style="height: 400px;"></div>
+
+    <!-- Right features list -->
+    <div
+      class="text-center text-sm-start mb-5 mx-auto me-sm-0 pb-lg-2 pb-xl-4"
+      style="max-width: 340px;"
+      data-aos="fade-left"
+      data-aos-offset="250"
+      data-aos-delay="400"
+      data-aos-easing="ease-out-back"
+      data-disable-parallax-down="lg"
+    >
+      <div
+        class="d-table bg-dark bg-opacity-10 rounded-1 p-2 mx-auto mx-sm-0 mb-3 mb-lg-4"
+      >
+      <img src={benefitsSecond.image.coaching} alt="Image" />
+      </div>
+      <h2 class="h4 text-white mb-2 mb-lg-3">{benefitsSecond.heading.coaching}</h2>
+      <p class="text-white opacity-80 mb-0">
+        {benefitsSecond.paragraph.coaching}
+      </p>
+    </div>
+    <div
+      class="text-center text-sm-start mb-5 mx-auto me-sm-0 pb-lg-2 pb-xl-4"
+      style="max-width: 340px;"
+      data-aos="fade-left"
+      data-aos-offset="200"
+      data-aos-delay="600"
+      data-aos-easing="ease-out-back"
+      data-disable-parallax-down="lg"
+    >
+      <div
+        class="d-table bg-dark bg-opacity-10 rounded-1 p-2 mx-auto mx-sm-0 mb-3 mb-lg-4"
+      >
+      <img src={benefitsSecond.image.involvement} alt="Image" />
+      </div>
+      <h2 class="h4 text-white mb-2 mb-lg-3"> {benefitsSecond.heading.involvement}</h2>
+      <p class="text-white opacity-80 mb-0">
+        {benefitsSecond.paragraph.involvement}
+      </p>
+    </div>
+  </div>
+</div>
+</div>
