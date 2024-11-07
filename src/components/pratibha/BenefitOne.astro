@@ -2,95 +2,43 @@
 import { getEntry } from "astro:content";
 const benefits = (await getEntry("pratibha", "benefits")).data;
 ---
-<div class="row benefit justify-content-center pt-3 pt-sm-4 pt-md-5 mt-sm-1" style="margin: 0; padding:0">
-  <!-- Left column -->
-  <div class="col-sm-6 col-lg-4 order-lg-1 overflow-hidden mt-lg-4 pt-xl-3">
-    <!-- Left features list -->
-    <div
-      class="text-center text-sm-start mb-5 mx-auto mx-sm-0 pb-lg-2 pb-xl-4"
-      style="max-width: 340px;"
-      data-aos="fade-right"
-      data-aos-offset="300"
-      data-aos-easing="ease-out-back"
-      data-disable-parallax-down="lg"
-    >
-      <div
-        class="d-table bg-dark bg-opacity-10 rounded-1 p-2 mx-auto mx-sm-0 mb-3 mb-lg-4"
-      >
-      <img src={benefits.image.tutionfee} alt="Icon" />
+
+<div class="container">
+  <div class="row justify-content-center text-center">
+    <!-- Benefit 1: Tuition Fee -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-right"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
+        <img src={benefits.image.tutionfee} alt="Tuition Fee Icon" style="width: 60%;" />
       </div>
-      <h2 class="h4 text-white mb-2 mb-lg-3">{benefits.heading.tution}</h2>
-      <p class="text-white opacity-80 mb-0">
-        {benefits.paragraph.tution}
-      </p>
+      <h2 class="h5 text-black mb-2">{benefits.heading.tution}</h2>
+      <p class="text-black opacity-80">{benefits.paragraph.tution}</p>
     </div>
-    <div
-      class="text-center text-sm-start mb-5 mx-auto mx-sm-0 pb-lg-2 pb-xl-4"
-      style="max-width: 340px;"
-      data-aos="fade-right"
-      data-aos-delay="200"
-      data-aos-offset="250"
-      data-aos-easing="ease-out-back"
-      data-disable-parallax-down="lg"
-    >
-      <div
-        class="d-table bg-dark bg-opacity-10 rounded-1 p-2 mx-auto mx-sm-0 mb-3 mb-lg-4"
-      >
-      <img src={benefits.image.stationary} alt="Icon" />
+
+    <!-- Benefit 2: Stationary -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-down"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
+        <img src={benefits.image.stationary} alt="Stationary Icon" style="width: 60%;" />
       </div>
-      <h2 class="h4 text-white mb-2 mb-lg-3">{benefits.heading.stationary}</h2>
-      <p class="text-white opacity-80 mb-0">
-        {benefits.paragraph.stationary}
-      </p>
+      <h2 class="h5 text-black mb-2">{benefits.heading.stationary}</h2>
+      <p class="text-black opacity-80">{benefits.paragraph.stationary}</p>
+    </div>
+
+    <!-- Benefit 3: Equipment -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-up"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
+        <img src={benefits.image.equipment} alt="Equipment Icon" style="width: 60%;" />
+      </div>
+      <h2 class="h5 text-black mb-2">{benefits.heading.equipments}</h2>
+      <p class="text-black opacity-80">{benefits.paragraph.equipments}</p>
+    </div>
+
+    <!-- Benefit 4: Boarding -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-left"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width:100px; height: 100px;">
+        <img src={benefits.image.bording} alt="Boarding Icon" style="width: 60%;" />
+      </div>
+      <h2 class="h5 text-black mb-2">{benefits.heading.bording}</h2>
+      <p class="text-black opacity-80">{benefits.paragraph.bording}</p>
     </div>
   </div>
-
-  <!-- Right column -->
-  <div class="col-sm-6 col-lg-4 order-lg-3 overflow-hidden mt-lg-4 pt-xl-3">
-    <!-- Right app screen -->
-    <div class="d-none d-xxl-block" style="height: 520px;"></div>
-    <div class="d-none d-xl-block d-xxl-none" style="height: 490px;"></div>
-    <div class="d-none d-lg-block d-xl-none" style="height: 400px;"></div>
-
-    <!-- Right features list -->
-    <div
-      class="text-center text-sm-start mb-5 mx-auto me-sm-0 pb-lg-2 pb-xl-4"
-      style="max-width: 340px;"
-      data-aos="fade-left"
-      data-aos-offset="250"
-      data-aos-delay="400"
-      data-aos-easing="ease-out-back"
-      data-disable-parallax-down="lg"
-    >
-      <div
-        class="d-table bg-dark bg-opacity-10 rounded-1 p-2 mx-auto mx-sm-0 mb-3 mb-lg-4"
-      >
-      <img src={benefits.image.equipment} alt="Image" />
-      </div>
-      <h2 class="h4 text-white mb-2 mb-lg-3">{benefits.heading.equipments}</h2>
-      <p class="text-white opacity-80 mb-0">
-        {benefits.paragraph.equipments}
-      </p>
-    </div>
-    <div
-      class="text-center text-sm-start mb-5 mx-auto me-sm-0 pb-lg-2 pb-xl-4"
-      style="max-width: 340px;"
-      data-aos="fade-left"
-      data-aos-offset="200"
-      data-aos-delay="600"
-      data-aos-easing="ease-out-back"
-      data-disable-parallax-down="lg"
-    >
-      <div
-        class="d-table bg-dark bg-opacity-10 rounded-1 p-2 mx-auto mx-sm-0 mb-3 mb-lg-4"
-      >
-      <img src={benefits.image.bording} alt="Image" />
-      </div>
-      <h2 class="h4 text-white mb-2 mb-lg-3"> {benefits.heading.bording}</h2>
-      <p class="text-white opacity-80 mb-0">
-        {benefits.paragraph.bording}
-      </p>
-    </div>
-  </div>
-</div>
 </div>
