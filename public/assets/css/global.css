@@ -3231,7 +3231,7 @@ body {
   margin-left: 60px;
 }
 
-/* Contact us */
+/* Contact us */  
 .contact {
   max-width: 100%;
   margin: 20px auto;
@@ -3248,36 +3248,34 @@ body {
   font-family: Poppins;
   font-size: 72px;
   font-weight: 700;
-  line-height: 93.6px;
+  line-height: 80px;
   text-align: left;
-
-  padding-top: 30px;
-  margin-left: 25px;
+  padding-top: 20px;
+  margin-left: 20px;
 }
 
 .subtitle {
   text-align: left;
-  margin-bottom: 30px;
   margin-left: 25px;
 }
 
 .contact-info {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  flex-wrap: wrap; 
   justify-content: space-evenly;
   width: 100%;
-  max-width: 1200px; /* Optional: limit the max width */
-  margin: 10px; /* Center the container */
-  height: auto; /* Change height to auto for flexibility */
-  gap: 10px; /* Add some space between items */
-  opacity: 1; /* Change to 1 for visibility */
-  padding: 10px; /* Add some padding */
+  max-width: 1200px; 
+  margin: 10px; 
+  height: auto; 
+  gap: 10px; 
+  opacity: 1; 
+  padding: 10px; 
 }
 
 .contact-info div {
-  flex: 1 1 30%; /* Allow items to grow/shrink and set a base width */
+  flex: 1 1 30%; 
   text-align: left;
-  min-width: 250px; /* Minimum width for smaller devices */
+  min-width: 250px; 
 }
 
 .contact-info strong {
@@ -3325,8 +3323,9 @@ body {
   text-align: left;
   width:95%;
   max-width: 100%;
-  margin-left:25px;
+  margin: 20px auto;
   max-height: auto; /* Set a max height to control size */
+  box-sizing:border-box
   
 }
 
@@ -3400,7 +3399,7 @@ body {
 
 
 .contact-form button {
-  background: rgba(241, 89, 42, 1);
+  background: #001a33;
   color: #fff;
   width: Fixed (249px) px;
   height: Hug (56px) px;
@@ -3412,6 +3411,24 @@ body {
   opacity: 0px;
   border: none;
 }
+
+/* new contact form */
+.bg-primary{
+  background-color: #001a33;
+}
+
+.bg-primary {
+  --ar-bg-opacity: 1;
+  background-color: #001a33;
+}
+.custom-bg {
+  background-color: #001a33;
+}
+
+.display-2{
+  color: rgba(241, 89, 42, 1);
+}
+
 
 /* 404 Error */
 .container-404 {
