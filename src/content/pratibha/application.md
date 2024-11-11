@@ -38,8 +38,8 @@ selectionListOne: "Assistance is available without regard to an applicant's cast
 selectionListTwo: " To assess the actual need and financial hardship faced by the student, the Kiran Foundation team collects documents and other supporting evidence from the student and their family members."
 selectionListThird: " Please note that selection of all applicants may not be possible. By applying, all applicants acknowledge and agree to accept the final decision of the Kiran Foundation."
 
-downloadApp : "Download Pratibha App"
-googleform: " Apply by Google Form"
+downloadApp : "Download Now"
+googleform: " Apply now"
 
 
 

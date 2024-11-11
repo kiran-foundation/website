@@ -4,9 +4,9 @@ const pratibhaApplication = (await getEntry('pratibha', 'application')).data
 ---
 
 <div class='apply-container'>
-  <div class='apply-image'>
+  <!-- <div class='apply-image'>
     <img class='container image-hero' src='/assets/images/hero/hero.jpg' />
-  </div>
+  </div> -->
 
   <div class='apply-title'>{pratibhaApplication.title}</div>
   <div class='apply-subtitle'>{pratibhaApplication.subtitle}</div>
@@ -75,9 +75,9 @@ const pratibhaApplication = (await getEntry('pratibha', 'application')).data
       {pratibhaApplication.selectionListThird}
     </p>
   </div>
-  <div class='container apply-last-container' style='margin-left: -10px;'>
-    <button class='container apply-download-button'
-      ><a class='app-download-link' href='/'
+  <div class='container  style='margin-left: -10px;'>
+    <button class=' apply-download-button'
+      ><a  href='/'
         >{pratibhaApplication.downloadApp}</a
       ></button
     >
