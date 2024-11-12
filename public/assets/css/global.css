@@ -2045,13 +2045,13 @@ body {
 
 .apply-subtitle {
   max-width: 1050px;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   font-size: 26px;
   font-weight: 500;
-  line-height: 42px;
+  line-height: 30px;
   text-align: center;
   color: #000000;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .apply-highlight-container {
@@ -2062,7 +2062,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .apply-highlight-text {
@@ -2108,6 +2108,7 @@ body {
   padding: 20px;
   border-radius: 8px;
   background-color: #f9f9f9;
+  text-align: justify;
 }
 
 h4 {
@@ -2271,11 +2272,11 @@ h4 {
 .apply-documents-container h4,
 .apply-apply-container h4 {
   color: #f1592a;
-  padding: 10px;
   border-radius: 8px;
   font-size: 24px;
   font-weight: 500;
   line-height: 36px;
+  margin: 0;
 }
 
 .apply-download-button {
