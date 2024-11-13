@@ -2094,7 +2094,7 @@ body {
 .apply-content-container,
 .apply-documents-container,
 .apply-apply-container {
-  max-width: 1037px;
+  max-width: 1237px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -2104,10 +2104,9 @@ body {
 .apply-content-container p,
 .apply-documents-container p,
 .apply-apply-container p {
-  color: #000000;
+  color: rgba(43, 46, 54, 1);
   padding: 20px;
   border-radius: 8px;
-  background-color: #f9f9f9;
   text-align: justify;
 }
 
@@ -2317,10 +2316,15 @@ h4 {
 }
 
 .apply-documents-list {
-  color: #000000;
-  padding: 20px;
+  color: rgba(43, 46, 54, 1);
+  padding: 0 20px;
   box-sizing: border-box;
   border-radius: 8px;
+}
+.apply-additional-data{
+  margin-left: 10px;
+  color: rgba(43, 46, 54, 1);
+  font-weight: 500;
 }
 
 .updateFocus-paragraph-2 {
@@ -2403,7 +2407,8 @@ h4 {
   --royal-blue: #051d40;
   --primary-color: #f1592a;
 }
- /* Pratibha App */
+
+/* Pratibha App */
 .app-component-c1 {
   position: relative;
   width: 100%;
@@ -2419,6 +2424,7 @@ h4 {
   align-items: center;
   gap: 20px;
 }
+
 .app-component-c1 .app-left-container {
   font-family: Poppins, sans-serif;
   font-size: 24px;
@@ -2429,6 +2435,7 @@ h4 {
   margin-bottom: 20px;
   padding: 0 20px;
 }
+
 .app-component-c1 .app-download-button {
   padding: 12px 20px;
   border-radius: 8px;
@@ -2441,6 +2448,7 @@ h4 {
   cursor: pointer;
   margin-top: 20px;
 }
+
 .app-component-c1 img {
   object-fit: cover;
   border-radius: 18px;
@@ -2456,6 +2464,7 @@ h4 {
   max-width: 280px;
   height: auto;
 }
+
 
 @media (min-width: 768px) {
   .app-component-c1 {
@@ -2538,6 +2547,9 @@ h4 {
     width: 100%;
     max-width: 260px;
     margin-bottom: 15px;
+  }
+  .app-component-c1 .image1{
+    display: none;
   }
 }
 
