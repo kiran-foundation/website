@@ -2027,14 +2027,14 @@ body {
 
 .apply-container {
   max-width: 1296px;
-  margin: 0 auto;
-  padding: 20px;
+  /* margin: 0 auto;
+  padding: 20px; */
   background-color: #ffffff;
 }
 
 .apply-title {
   max-width: 756px;
-  margin: 70px auto 0;
+  margin: 95px auto 0;
   font-size: 36px;
   font-weight: 600;
   line-height: 52px;
