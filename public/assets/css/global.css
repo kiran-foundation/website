@@ -780,8 +780,17 @@ body {
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.25rem;
-  color: #49494c;
+  color: #49494c; 
+  margin-top: 20px;
 }
+
+.footer-2{
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+
 
 @media (max-width: 768px) {
   .logo-container {
@@ -3264,7 +3273,7 @@ body {
 
 .sub-heading{
   text-align: left;
- margin-bottom: 10px;
+   margin: 10px 25px;
  
 }
 .contact-info {
@@ -3329,9 +3338,9 @@ body {
   border-radius: 16px;
   color: #fff;
   text-align: left;
-  width:95%;
+  width:90%;
   max-width: 100%;
-  margin: 0px 35px;
+  margin: auto;
   max-height: auto; /* Set a max height to control size */
   box-sizing:border-box;
   
@@ -3368,7 +3377,7 @@ body {
 }
 @media (max-width: 768px) {
   .contact-form input,
-  .contact-form textarea {
+  .contact-form textarea,.contact-form{
     padding: 10px;
     font-size: 13px;
     text-align: center;
@@ -3381,7 +3390,7 @@ body {
   }
 }
 
-.contact-form textarea {
+.contact-form textarea{
   resize: none;
   height: 80px;
   overflow: hidden;
@@ -3427,10 +3436,12 @@ body {
   font-size:5px;
   padding-top:45px;
   padding-bottom: 0%;
+  margin:0px 30px;
 }
 
 .row {
   margin-bottom: 0; /* Adjust if needed */
+  text-align: center;
 }
 .extra-col {
   height: 0px; /* Adjust to reduce spacing */
@@ -3447,7 +3458,7 @@ body {
 
 .card-body,.fs-lg{
 
-  display: flex;
+  
   flex-direction: column; 
   align-items: center;    
    justify-content: center; 
@@ -3457,26 +3468,26 @@ body {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .card-body,.fs-lg {
+  .card-body,.fs-lg,.contact-form{
     flex-direction: column; 
   }
 
-  .card-body,.fs-lg{
+  .card-body,.fs-lg,.contact-form{
     flex: 1 1 100%; 
   }
 }
 
 @media (max-width: 480px) {
-  .card-body,.fs-lg{
+  .card-body,.fs-lg,.contact-form{
     font-size: 16px; 
   }
 
   
 }
 
-.row  {
+.row{
   justify-content: center;
-  text-align: center;
+  text-align:left;
   vertical-align: bottom;
   margin: 0;
   padding: 0;

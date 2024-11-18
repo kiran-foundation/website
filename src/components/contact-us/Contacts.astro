@@ -9,7 +9,7 @@ const commonComingsoon = (await getEntry('common', 'coming-soon')).data
 
   <!-- Contact details -->
   <section class="bg-secondary ">
-  <div class="container pt-5 pb-xl-4 ">
+  <div class="container pt-5">
 
     <!-- Page title -->
     <h1 class="display-2" style="font-size: 50px;">Contact Us</h1>
@@ -68,7 +68,7 @@ const commonComingsoon = (await getEntry('common', 'coming-soon')).data
                 <p class="fs-lg fw-medium pb-3 mb-3">{commonComingsoon.address}</p>
               </div>
             </div>
-          </div>
+          </div>                                                             
   
           <!-- Phone -->
           <div class="col">
@@ -90,20 +90,25 @@ const commonComingsoon = (await getEntry('common', 'coming-soon')).data
           </div>
   
           <!-- Email -->
-          <div class="col">
-            <div class="card border-0 h-100">
-              <div class="card-body">
-                <h4 class="card-title mb-4">Email</h4>
-                <ul class="list-unstyled mb-0">
-                  <li class="pb-1 mb-2">
-                    <span class="d-block fs-sm text-body-secondary mb-1">{commonComingsoon.aemail}</span>
-                    <a class="nav-link fs-lg p-0" href="mailto:info@kiran.foundation" style="color: rgba(241, 89, 42, 1);">info@kiran.foundation</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <!-- Email -->
+      <div class="col">
+        <div class="card border-0 h-100">
+         <div class="card-body">
+         <h4 class="card-title mb-4" style="padding-top: -30px ">Email</h4>
+         <ul class="list-unstyled mb-0">
+           <li class="pb-1 mb-2">
+            <span class="d-block fs-sm text-body-secondary mb-1">{commonComingsoon.aemail}</span>
+            <a class="nav-link fs-lg p-0" href="mailto:info@kiran.foundation" style="color: rgba(241, 89, 42, 1);">info@kiran.foundation</a>
+           </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+
         </div>
       </div>
   
   </section>
+
+
+   
