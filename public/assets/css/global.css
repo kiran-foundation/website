@@ -3273,16 +3273,16 @@ body {
 
 .sub-heading{
   text-align: left;
-   margin: 10px 25px;
+   margin: 10px 30px;
  
 }
 .contact-info {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  flex-wrap: wrap; 
   justify-content: space-evenly;
   width: 100%;
-  max-width: 1200px; /* Optional: limit the max width */
-  margin: 10px; /* Center the container */
+  max-width: 1200px; 
+  margin: 10px; 
   height: auto; 
   gap: 10px; 
   opacity: 1; 
@@ -3292,7 +3292,7 @@ body {
 .contact-info div {
   flex: 1 1 30%; /* Allow items to grow/shrink and set a base width */
   text-align: left;
-  min-width: 250px; /* Minimum width for smaller devices */
+  min-width: 250px; 
 }
 
 .contact-info strong {
@@ -3308,17 +3308,17 @@ body {
 
 .contact-info a {
   color: rgba(241, 89, 42, 1);
-  text-decoration: none;
+  text-decoration: none;/
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
   .contact-info {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    flex-direction: column; 
   }
 
   .contact-info div {
-    flex: 1 1 100%; /* Make each item take full width */
+    flex: 1 1 100%; 
   }
 }
 
@@ -3328,7 +3328,7 @@ body {
   }
 
   .contact-info p {
-    font-size: 14px; /* Adjust paragraph font size */
+    font-size: 14px; 
   }
 }
 
@@ -3341,9 +3341,23 @@ body {
   width:90%;
   max-width: 100%;
   margin: auto;
-  max-height: auto; /* Set a max height to control size */
+  max-height: auto; 
   box-sizing:border-box;
   
+}
+
+@media (min-width: 1400px) {
+  .contact-form {
+    width: 90%;
+    max-width: 1250px; 
+  }
+}
+
+@media (max-width: 330px) {
+  .contact-form {
+    width: 90%; 
+    max-width: 300px;
+  }
 }
 
 .contact-form h2 {
@@ -3377,15 +3391,15 @@ body {
 }
 @media (max-width: 768px) {
   .contact-form input,
-  .contact-form textarea,.contact-form{
+  .contact-form textarea{
     padding: 10px;
     font-size: 13px;
-    text-align: center;
+    
 
   }
 
   .contact-form .info div {
-    width: 100%; /* Stack elements vertically */
+    width: 100%; 
     margin-bottom: 12px;
   }
 }
@@ -3411,7 +3425,7 @@ body {
 
 @media (max-width: 768px) {
   .info {
-    flex-direction: column; /* Stack fields vertically */
+    flex-direction: column; 
   }
 }
 
@@ -3468,7 +3482,7 @@ body {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .card-body,.fs-lg,.contact-form{
+  .card-body,.fs-lg{
     flex-direction: column; 
   }
 
@@ -3485,6 +3499,8 @@ body {
   
 }
 
+
+
 .row{
   justify-content: center;
   text-align:left;
@@ -3493,6 +3509,13 @@ body {
   padding: 0;
 }
 
+
+@media (max-width: 300px) {
+  .contact-form {
+    width: 90%; 
+    max-width: 300px;
+  }
+}
 
 /* 404 Error */
 .container-404 {
