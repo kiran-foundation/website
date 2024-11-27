@@ -1,28 +1,65 @@
 ---
 import { getEntry } from 'astro:content'
 const aboutMission = (await getEntry('about', 'mission')).data
+const values = (await getEntry("home", "values")).data;
+const common = (await getEntry("common", "common")).data;
+
+
 ---
 
-<div class='container my-5'>
-    <p class='paragraph container'>
+<section class="overflow-hidden" style="margin-top: 50px;">
+    <div class="container pb-sm-3 mb-md-2 mb-lg-3">
+      <div class="row">
+        <div
+          class="col-md-6"
+          data-aos="fade-right"
+          data-aos-duration="600"
+          data-aos-offset="280"
+          data-disable-parallax-down="md"
+        >
         <img
-            class='img-fluid rounded ma-image'
-            src={aboutMission.maaImg}
-            alt='Image'
-        />
-        {aboutMission.description.paragraph_1}
-        <br />
-        <br />
-        {aboutMission.description.paragraph_2}
-        <br />
-        <br />
-        {aboutMission.description.paragraph_3}
-        <br />
-        <br />
-        {aboutMission.description.paragraph_4}
-    </p>
-</div>
+        class='img-fluid rounded ma-image'
+        src={aboutMission.maaImg}
+        alt='Image'
+         />
+        </div>
+        <div
+          class="col-md-6"
+          data-aos="fade-left"
+          data-aos-duration="600"
+          data-aos-offset="280"
+          data-disable-parallax-down="md"
+         >
+          <div
+            class="d-flex flex-column h-100 rounded-3  px-4 "
+            style="background: #F7FCFE;"
+          >
+          <p class="programe-paragraph-p mb-xl-5" style="line-height: 2;">
+            {aboutMission.description.paragraph_1}
+          </p>
+            <p class="programe-paragraph-p " style="line-height: 2;">
+              {aboutMission.description.paragraph_2}
+            </p>
+          </div>
+        </div>
+        <div
+            class=" below-paragraphs d-flex flex-column h-100 rounded-3   px-lg-5"
+            style="background: #F7FCFE;"
+          >
+          <p class="programe-paragraph-p mb-4 " style="line-height: 2;">
+            {aboutMission.description.paragraph_3}
+          </p>
+            <p class="programe-paragraph-p mb-4 " style="line-height: 2;">
+                {aboutMission.description.paragraph_4}
+            </p>
+          </div>
 
+          
+      </div>
+      
+    </div>
+  </section>
+  
 <style>
     .paragraph {
         font-size: 18px;
