@@ -1495,51 +1495,6 @@ body {
   padding: 5px 40px;
 }
 
-.card-details {
-  width: 95%;
-  border-radius: 18px;
-  background-color: #051d40;
-  height: 150px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 50px 0px 50px;
-}
-
-.card-details img {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 12px;
-}
-
-.card-details span {
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 2.5rem;
-  text-align: left;
-  color: #f9f9f9;
-  margin-left: 5px;
-}
-
-.card-details .card-btn {
-  display: inline-block;
-  width: 160px;
-  height: 56px;
-  padding: 12px 32px 12px 32px;
-  background-color: #f1592a;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.card-details .card-btn a {
-  color: #f9f9f9;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 32px;
-  text-align: left;
-}
-
 .volunteers-c1 {
   width: 100%;
   max-width: 1296px;
@@ -3616,199 +3571,21 @@ body {
   padding: 8px; 
 }
 
-
-
-
-/* About Us */
-
-/* Team Gallery */
-
-.card-details {
-  border-radius: 18px;
-  background-color: #051d40;
-  display: flex;
-  width: 93%;
-  height: 180px;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  margin: 50px 0;
-}
-
-@media (max-width: 768px) {
-  .card-details {
-      padding: 5px 20px;
-      flex-direction: column;
-      height: max-content;
-  }
-}
-
-@media (max-width: 768px) {
-  .card-details {
-      padding: 5px 20px;
-      flex-direction: column;
-      height: max-content;
-  }
-}
-.card-details > img {
-  width: 24px;
-  height: 24px;
-}
-
-.card-details span {
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  text-align: left;
-  color: #f9f9f9;
-  margin-left: 5px;
-} 
-
-.card-btn{
-  background-color: #f1592a;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100px;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  text-align: left;
-
-}
-
-@media (min-width: 1400px) {
-  .card-details {
-    width: 90%;
-    max-width: 1270px; 
-  }
-}
-
-
-@media (max-width: 768px) {
-  .card-details {
-    padding: 10px 15px;
-    flex-direction: column;
-    height: auto;
-    width: 90%; 
-    max-width: 630px; 
-    margin: 50px auto; 
-  }
-}
-
-
-.below-paragraphs {
-  width: 100%; /* Ensures it takes the full width of its parent */
-  max-width: 1200px; /* Optional: limits the width for larger screens */
-  margin: 0 auto; /* Centers the container */
-  background: #F7FCFE;
-  display: flex;
-  flex-direction: column;
-  height: auto; /* Ensures it grows with content */
-  border-radius: 0.75rem;
-  padding: 2rem 1rem; /* Default padding */
-}
-
-@media (min-width: 768px) {
-  .below-paragraphs {
-    padding: 2rem 2rem; /* Adjust padding for medium screens */
-  }
-}
-
-@media (min-width: 1200px) {
-  .below-paragraphs {
-    padding: 2rem 3rem; /* Adjust padding for large screens */
-  }
-}
-
-
-@media (max-width: 768px) {
-  .ma-image[data-astro-cid-odyjghjm] {
-      height: 400px;
-      width: 400px;
-      margin: 20px auto; /* Centers horizontally */
-      display: flex; /* Flex display for centering */
-      justify-content: center; /* Centers content horizontally */
-      align-items: center; /* Centers content vertically */
-  }
-}
-
+/* fix-about-us   */
 
 @media (max-width: 768px) {
   .ma-image {
     height: auto;
     max-height: 400px;
-    max-width: 100%; /* Prevents the image from overflowing */
+    max-width: 100%;
     display: block;
-    margin: 0 auto; /* Horizontally centers the image */
+    margin: 0 auto; 
   }
 
   .col-md-6 {
-    display: flex; /* Enables flexbox */
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    text-align: center; /* Ensures text is centered (if needed) */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
   }
 }
-
-
-@media (max-width: 1200px) {
-  .row.g-4 {
-    display: flex; /* Enable flexbox for the row */
-    flex-direction: column; /* Stack the child components vertically */
-  }
-
-  .col-md-6 {
-    width: auto; /* Make each column take full width */
-  }
-
-  .ma-image {
-    max-width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px; /* Add spacing below the image */
-  }
-
-  
-}
-
-
-@media (max-width: 1200px) {
-  .row {
-    display: flex; /* Enables flexbox */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Centers items horizontally */
-    justify-content: center; /* Centers items vertically */
-  }
-
-  .ma-image {
-    display: block; /* Ensures it's treated as a block element */
-    margin: 0 auto; /* Horizontally centers the image */
-    max-width: 600px; /* Keep the image responsive */
-    height: auto; /* Maintain aspect ratio */
-    width:100%;
-    max-width: 600px; 
-  }
-
-  .col-md-6 {
-    text-align: center; /* Centers content inside the column */
-    margin: 20px 0; /* Adds spacing between components */
-    width: 100%; /* Ensures it takes the full width in smaller screens */
-    max-width: 1200px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .below-paragraphs {
-    padding: 2rem 3rem; /* Adjust padding for large screens */
-  }
-}
-
-
-@media (min-width: 768px) {
-  .col-md-6 {
-      flex: 1 1 auto;
-      width: 100%;
-  }
-}
-
