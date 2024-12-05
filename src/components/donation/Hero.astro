@@ -3,7 +3,10 @@ import { getEntry } from "astro:content";
 const heroData = (await getEntry("donation", "hero")).data;
 ---
 
-<section class="position-relative" style="margin-top: 4rem;margin-bottom: 5rem;">
+<section
+    class="position-relative"
+    style="margin-top: 4rem; margin-bottom: 5rem;"
+>
     <div
         class="position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4"
         style="background-image: url(/assets/images/programs/donationhero1.png);"
@@ -25,70 +28,41 @@ const heroData = (await getEntry("donation", "hero")).data;
                 class="donation-form-wrapper p-4 bg-white shadow rounded form-container"
             >
                 <div class="form-img">
-                    <img src="/assets/images/programs/formimage.png" alt="" class="formm-imgg"  />
+                    <img
+                        src="/assets/images/programs/formimage.png"
+                        alt=""
+                        class="formm-imgg"
+                    />
                 </div>
                 <div class="formm">
                     <h3 class="form-title mb-4">Make a Donation</h3>
-                    <form action="/donationform">
+                    <form action="/donationform" method="get" id="donationForm">
+
                         <!-- Donation Amount -->
-                        <div class="mb-3">
+
+                        <div class="mb-4">
                             <label class="form-label"
                                 >Choose a donation amount</label
                             >
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="donationAmount"
-                                    id="amount500"
-                                    value="500"
-                                    checked
-                                />
-                                <label class="form-check-label" for="amount500"
-                                    >₹500</label
-                                >
+                            <div id="donationAmountOptions">
+                                <!-- Dynamic donation amounts will appear here -->
                             </div>
-                            <div class="form-check">
+                            <div
+                                id="customAmountInput"
+                                class="mt-3"
+                                style="display: none;"
+                            >
                                 <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="donationAmount"
-                                    id="amount1000"
-                                    value="1000"
+                                    type="number"
+                                    class="form-control"
+                                    name="customAmount"
+                                    placeholder="Enter your custom donation amount"
+                                    min="1"
                                 />
-                                <label class="form-check-label" for="amount1000"
-                                    >₹1000</label
-                                >
-                            </div>
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="donationAmount"
-                                    id="amount5000"
-                                    value="5000"
-                                />
-                                <label class="form-check-label" for="amount5000"
-                                    >₹5000</label
-                                >
-                            </div>
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="donationAmount"
-                                    id="customAmount"
-                                    value="custom"
-                                />
-                                <label
-                                    class="form-check-label"
-                                    for="customAmount">Custom donation</label
-                                >
                             </div>
                         </div>
-
                         <!-- Donation Frequency -->
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label class="form-label"
                                 >Choose a donation frequency</label
                             >
@@ -118,6 +92,8 @@ const heroData = (await getEntry("donation", "hero")).data;
                                 >
                             </div>
                         </div>
+
+
                         <p class="form-text mt-3">
                             Every gift, whether monthly or one-time, makes a
                             profound impact. We appreciate your commitment to
@@ -133,9 +109,125 @@ const heroData = (await getEntry("donation", "hero")).data;
                                 >Donate Now</button
                             >
                         </div>
+
+                        <!-- Hidden inputs for dynamic values -->
+                        <input type="hidden" name="plan_id" id="planIdInput" />
+                        <input type="hidden" name="amount" id="amountInput" />
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const onetimeAmounts = [
+            { value: "500", label: "₹500" },
+            { value: "1000", label: "₹1000" },
+            { value: "5000", label: "₹5000" },
+            { value: "custom", label: "Custom donation" },
+        ];
+        const monthlyAmounts = [
+            { value: "plan_PFJfnMnXPs6TMS", label: "₹5000 per month" },
+            { value: "plan_PFJfPtteneZ7Tn", label: "₹1001 per month" },
+            { value: "plan_PFJa00kkaP1Tdb", label: "₹500 per month" },
+        ];
+
+        const donationFrequencyInputs =
+            document.querySelectorAll<HTMLInputElement>(
+                'input[name="donationFrequency"]',
+            );
+        const donationAmountOptions = document.getElementById(
+            "donationAmountOptions",
+        )!;
+        const customAmountInput = document.getElementById("customAmountInput")!;
+
+        function updateDonationAmounts(frequency: string) {
+            const amounts =
+                frequency === "monthly" ? monthlyAmounts : onetimeAmounts;
+            donationAmountOptions.innerHTML = amounts
+                .map(
+                    ({ value, label }) => `
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="donationAmount"
+                            id="amount-${value}"
+                            value="${value}"
+                            ${
+                                value === "500" || value === "plan_nMn"
+                                    ? "checked"
+                                    : ""
+                            }
+                        />
+                        <label class="form-check-label" for="amount-${value}">${label}</label>
+                    </div>
+                `,
+                )
+                .join("");
+
+            const customInput = document.querySelector<HTMLInputElement>(
+                'input[value="custom"]',
+            );
+            if (customInput) {
+                customInput.addEventListener("change", () => {
+                    customAmountInput.style.display = customInput.checked
+                        ? "block"
+                        : "none";
+                });
+            }
+            customAmountInput.style.display = "none"; // Hide custom input by default
+        }
+
+        donationFrequencyInputs.forEach((input) => {
+            input.addEventListener("change", (event) => {
+                updateDonationAmounts((event.target as HTMLInputElement).value);
+            });
+        });
+
+        // Initialize form with monthly amounts by default
+        updateDonationAmounts("monthly");
+
+        const form = document.getElementById("donationForm")!;
+        form.addEventListener("submit", (event) => {
+            const selectedFrequency = document.querySelector<HTMLInputElement>(
+                'input[name="donationFrequency"]:checked',
+            )!.value;
+            const selectedAmount = document.querySelector<HTMLInputElement>(
+                'input[name="donationAmount"]:checked',
+            )!.value;
+
+            const planIdInput = document.getElementById(
+                "planIdInput",
+            ) as HTMLInputElement;
+            const amountInput = document.getElementById(
+                "amountInput",
+            ) as HTMLInputElement;
+
+            if (selectedFrequency === "monthly") {
+                // Set plan_id for monthly
+                planIdInput.value = selectedAmount;
+
+                // Extract numeric amount from monthly label or set default
+                const selectedLabel = monthlyAmounts.find(
+                    (item) => item.value === selectedAmount,
+                )?.label;
+                const numericAmount = selectedLabel
+                    ? selectedLabel.match(/\d+/)?.[0]
+                    : "0";
+                amountInput.value = numericAmount || "0";
+            } else {
+                // Handle one-time amounts
+                amountInput.value =
+                    selectedAmount === "custom"
+                        ? (document.querySelector<HTMLInputElement>(
+                              'input[name="customAmount"]',
+                          )!.value as string)
+                        : selectedAmount;
+                planIdInput.value = "";
+            }
+        });
+    });
+</script>

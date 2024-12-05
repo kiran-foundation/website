@@ -1,3 +1,12 @@
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #a7a7a7 #f1f1f1;
+}
+  .custom-scroll {
+    scrollbar-width: none;
+    scrollbar-color: #f1f1f1 #ffffff;
+  }
+
 .page-loading {
   position: fixed;
   top: 0;

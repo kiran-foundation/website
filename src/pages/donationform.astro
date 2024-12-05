@@ -6,211 +6,218 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <section class="container donation-form">
-    <div class="row mb-5 justify-content-center">
-      <div class="donation-form-box container">
-        <div class="p-4">
-          <div class="blue-box">
-            <h4 class="white-text">Total Amount</h4>
-            <p id="total-amount" class="amount">₹0</p>
+    <form
+      id="donation-form"
+      class="needs-validation container position-relative z-2 pt-5 pb-lg-5 pb-md-4 pb-2"
+      novalidate
+    >
+      <div class="row">
+        <div
+          class="col-lg-8 custom-scroll"
+          style="overflow: auto; height: 77vh;"
+        >
+          <h1 class="h2 pb-4">Donor Information</h1>
+          <div class="row g-4 pb-4 pb-md-5 mb-3 mb-md-1">
+            <div class="col-sm-6">
+              <label class="form-label fs-base" for="name">Full Name</label>
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Your full name"
+                required
+                id="name"
+              />
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fs-base" for="email">Email</label>
+              <input
+                class="form-control form-control-lg"
+                type="email"
+                placeholder="Email address"
+                required
+                id="email"
+              />
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fs-base" for="phone">Phone</label>
+              <input
+                class="form-control form-control-lg"
+                type="tel"
+                placeholder="Phone number"
+                required
+                id="phone"
+              />
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fs-base" for="country">Country</label>
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Country"
+                required
+                id="country"
+                value="India"
+                readonly
+              />
+            </div>
+            <div class="col-12">
+              <label class="form-label fs-base" for="address">Address</label>
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Address"
+                required
+                id="address"
+              />
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fs-base" for="city">City</label>
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="City"
+                required
+                id="city"
+              />
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fs-base" for="zipcode">Pin Code</label>
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Pin code"
+                required
+                id="zipcode"
+              />
+            </div>
+
+            <div class="col-12">
+              <label class="form-label fs-base" for="notes"
+                >Order Notes (Optional)</label
+              >
+              <textarea
+                class="form-control form-control-lg"
+                style="height: 150px;"
+                placeholder="Additional notes"
+                id="notes"></textarea>
+            </div>
           </div>
-          <div class="d-flex justify-content-between">
-            <p class="text-muted">Premier Support</p>
-            <p class="text-dark fw-bold amount" id="donationAmountDisplays">₹0</p>
-          </div>
-          <hr />
-          <div class="d-flex justify-content-between">
-            <h5 class="text-primary">Total</h5>
-            <h5 class="fw-bold amount" id="donationAmountDisplay">₹0</h5>
+        </div>
+
+        <div
+          class="col pt-5"
+          style="min-width: 19rem; justify-content: center; align-items: center;"
+        >
+          <div
+            class="card py-lg-4"
+            id="donate-now-button"
+            style="background-color:#feeeea;"
+          >
+            <div
+              class="card-body w-100 mx-auto text-center"
+              style="max-width: 23rem; background-color:#feeeea; color:black"
+            >
+              <h3 class="">Total Help</h3>
+              <div class="display-2" id="amountToDisplay">$72</div>
+              <div class="opacity-70 mb-4" id="toBeDisplay">per month</div>
+              <p class="opacity-70 mb-4 pb-4">
+                Morbi et massa fames ac scelerisque sit commodo dignissim
+                aucibus
+              </p>
+              <button class="btn text-light bg-primary w-100" type="button"
+                >Continue to Donate</button
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <form id="donation-form" class="p-5 border-2">
-          <h4 class="mb-4">Enter Contact Information</h4>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="name" class="form-label">Full Name</label>
-              <input
-                type="text"
-                class="form-control shadow-sm"
-                id="name"
-                name="name"
-                placeholder="Your name"
-                required
-              />
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                class="form-control shadow-sm"
-                id="email"
-                name="email"
-                placeholder="Email address"
-                required
-              />
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label">Phone</label>
-            <input
-              type="tel"
-              class="form-control shadow-sm"
-              id="phone"
-              name="phone"
-              placeholder="Phone number"
-              required
-            />
-          </div>
-
-          <h4 class="mt-5 mb-4">Enter Billing Information</h4>
-          <div class="mb-3">
-            <label for="country" class="form-label">Country</label>
-            <input
-              type="text"
-              class="form-control shadow-sm"
-              id="country"
-              name="country"
-              value="India"
-              readonly
-            />
-          </div>
-          <div class="mb-3">
-            <label for="address" class="form-label">Address</label>
-            <input
-              type="text"
-              class="form-control shadow-sm"
-              id="address"
-              name="address"
-              placeholder="Address"
-              required
-            />
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="city" class="form-label">City</label>
-              <input
-                type="text"
-                class="form-control shadow-sm"
-                id="city"
-                name="city"
-                placeholder="City"
-                required
-              />
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="state" class="form-label">State</label>
-              <input
-                type="text"
-                class="form-control shadow-sm"
-                id="state"
-                name="state"
-                placeholder="State"
-                required
-              />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-4">
-              <label for="zipcode" class="form-label"
-                >ZIP Code / Postal Code</label
-              >
-              <input
-                type="text"
-                class="form-control shadow-sm"
-                id="zipcode"
-                name="zipcode"
-                placeholder="ZIP code"
-                required
-              />
-            </div>
-          </div>
-
-          <!-- Donate Button -->
-          <div class="text-center">
-            <button
-              type="submit"
-              id="donate-now-button"
-              class="btn btn-primary btn-lg w-100 shadow-sm"
-            >
-              Donate Now
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+    </form>
   </section>
 
   <script>
     declare var Razorpay: any;
 
     const urlParams = new URLSearchParams(window.location.search);
+    const donationAmount =
+      Number(urlParams.get("donationAmount")) ||
+      Number(urlParams.get("customAmount")) ||
+      Number(urlParams.get("amount")) ||
+      0;
+    const paymentType = String(urlParams.get("donationFrequency")) || "onetime";
+    const plan_id = String(urlParams.get("plan_id"));
 
-    const donationAmount = Number(urlParams.get("donationAmount")) || 500;
-
-    const amountElements = document.getElementsByClassName("amount");
-
-for (let i = 0; i < amountElements.length; i++) {
-    const amountElement = amountElements[i] as HTMLTextAreaElement;
-    amountElement.innerText = "₹" + donationAmount;
-}
-
+    (document.getElementById("amountToDisplay") as HTMLDivElement).innerHTML =
+      "₹" + donationAmount;
+    if (paymentType === "onetime") {
+      (document.getElementById("toBeDisplay") as HTMLDivElement).innerHTML = "";
+    }
 
     async function initiatePayment() {
-      const paymentType = urlParams.get("donationFrequency") || "onetime";
-      const plan_id = urlParams.get("plan_id");
       const form = document.getElementById("donation-form") as HTMLFormElement;
 
-      // Form Validation
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+      if (paymentType === "onetime") {
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
 
-      // Collect data from the form
-      const formData = {
-        name: (document.getElementById("name") as HTMLInputElement).value,
-        email: (document.getElementById("email") as HTMLInputElement).value,
-        phone: (document.getElementById("phone") as HTMLInputElement).value,
-        currency: "INR",
-        amount: donationAmount * 100,
-        plan_id: plan_id,
-      };
+        const formData = {
+          name: (document.getElementById("name") as HTMLInputElement).value,
+          email: (document.getElementById("email") as HTMLInputElement).value,
+          phone: (document.getElementById("phone") as HTMLInputElement).value,
+          country: (document.getElementById("country") as HTMLInputElement)
+            .value,
+          city: (document.getElementById("city") as HTMLInputElement).value,
+          zipcode: (document.getElementById("zipcode") as HTMLInputElement)
+            .value,
+          address: (document.getElementById("address") as HTMLInputElement)
+            .value,
+          notes: {
+            additional_notes: (
+              document.getElementById("notes") as HTMLTextAreaElement
+            ).value,
+            city: (document.getElementById("city") as HTMLInputElement).value,
+            zipcode: (document.getElementById("zipcode") as HTMLInputElement)
+              .value,
+            address: (document.getElementById("address") as HTMLInputElement)
+              .value,
+          },
+          amount: donationAmount * 100,
+          currency: "INR",
+        };
 
-      console.log("error here");
 
-      try {
-        // Call the backend to create an order
-        if (paymentType == "onetime") {
-          const response = await fetch("http://localhost:3000/create-order", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
+          console.log(formData);
+          
+        try {
+          // const response = await fetch("http://localhost:3000/create-order", {
+          // const response = await fetch("http://localhost:3000/create-order", {
+          const response = await fetch(
+            "https://donation-backend-five.vercel.app/create-order",
+            {
+              method: "post",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
             },
-            body: JSON.stringify(formData),
-          });
+          );
 
           const data = await response.json();
-
-          console.log("no no here");
 
           if (!response.ok) {
             throw new Error(data.message || "Payment initiation failed");
           }
 
-          // Initialize Razorpay with the order ID from the backend
           const options = {
-            key: "rzp_test_HmglXnBOLh8qwp", // Razorpay Key ID
-            amount: formData.amount, // Amount in paise
+            key: "rzp_test_HmglXnBOLh8qwp", // Replace with Razorpay Key ID
+            amount: formData.amount,
             currency: "INR",
-            name: "Kiran Foundation",
-            description: "Donation for Premier Support",
+            name: "Kiran Foundations",
+            description: "Donation",
             image: "https://kfastro.netlify.app/favicon.ico",
-            order_id: data.orderId, // Order ID generated by backend
-            handler: function (response) {
+            order_id: data.orderId,
+            handler: function (response: any) {
               alert("Payment Successful!");
               console.log("Payment ID:", response.razorpay_payment_id);
               form.reset();
@@ -220,6 +227,7 @@ for (let i = 0; i < amountElements.length; i++) {
               email: formData.email,
               contact: formData.phone,
             },
+            notes: formData.notes, // Pass notes to Razorpay
             theme: {
               color: "#3399cc",
             },
@@ -227,9 +235,46 @@ for (let i = 0; i < amountElements.length; i++) {
 
           const rzp = new Razorpay(options);
           rzp.open();
-        } else {
+        } catch (error) {
+          console.error("Error initiating payment:", error);
+          alert("Payment initiation failed. Please try again.");
+        }
+      } else {
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const formData = {
+          name: (document.getElementById("name") as HTMLInputElement).value,
+          email: (document.getElementById("email") as HTMLInputElement).value,
+          phone: (document.getElementById("phone") as HTMLInputElement).value,
+          country: (document.getElementById("country") as HTMLInputElement)
+            .value,
+          city: (document.getElementById("city") as HTMLInputElement).value,
+          zipcode: (document.getElementById("zipcode") as HTMLInputElement)
+            .value,
+          address: (document.getElementById("address") as HTMLInputElement)
+            .value,
+          notes: {
+            additional_notes: (
+              document.getElementById("notes") as HTMLTextAreaElement
+            ).value,
+            city: (document.getElementById("city") as HTMLInputElement).value,
+            zipcode: (document.getElementById("zipcode") as HTMLInputElement)
+              .value,
+            address: (document.getElementById("address") as HTMLInputElement)
+              .value,
+          },
+          amount: donationAmount * 100,
+          currency: "INR",
+          plan_id: plan_id,
+        };
+
+        try {
+          // const response = await fetch("http://localhost:3000/create-subscription",{
           const response = await fetch(
-            "http://localhost:3000/create-subscription",
+            "https://donation-backend-five.vercel.app/create-subscription",
             {
               method: "POST",
               headers: {
@@ -245,7 +290,6 @@ for (let i = 0; i < amountElements.length; i++) {
             throw new Error(data.message || "Payment initiation failed");
           }
 
-          // Initialize Razorpay with the order ID from the backend
           const options = {
             key: "rzp_test_HmglXnBOLh8qwp", // Razorpay Key ID
             subscription_id: data.subscription_id, // Subscription ID generated by backend
@@ -273,14 +317,13 @@ for (let i = 0; i < amountElements.length; i++) {
 
           const rzp = new Razorpay(options);
           rzp.open();
+        } catch (error) {
+          console.error("Error initiating payment:", error);
+          alert("Payment initiation failed. Please try again.");
         }
-      } catch (error) {
-        console.error("Error initiating payment:", error);
-        alert("Payment initiation failed. Please try again.");
       }
     }
 
-    // Attach event listener to the Donate Now button
     document
       .getElementById("donate-now-button")
       .addEventListener("click", function (e) {
