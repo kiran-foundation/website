@@ -3944,3 +3944,155 @@ body {
     text-align: center; 
   }
 }
+
+
+/* Fix Updates.astro page */
+/* Moving the updateFocus.css to global.css */
+
+.updateFocus-container {
+  width: 1296px;
+  height: 1712px;
+  margin: 20px;
+  background: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin: auto;
+}
+
+.updateFocus-header h1 {
+  font-family: Poppin, sans-serif;
+  text-align: left;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 50px;
+  color: #49494c;
+}
+
+.updateFocus-subheader {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 20px;
+  border: 1px solid #000;
+}
+
+.updateFocus-line {
+  width: 100%;
+  height: 0;
+  border: 1px solid #e3e9ef;
+  margin-bottom: 20px;
+}
+
+.updateFocus-content {
+  width: 856px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.updateFocus-paragraph {
+  width: 100%;
+  height: auto;
+  color: #576071;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: justify;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.updateFocus-paragraph-2 {
+  width: 100%;
+  height: auto;
+  color: #576071;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: justify;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-top: -40px;
+}
+
+.updateFocus-image-container {
+  width: 100%;
+  height: 408px;
+  margin-bottom: 20px;
+  border-radius: 36px;
+  overflow: hidden;
+}
+
+.updateFocus-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 36px;
+}
+
+.updateFocus-text-container {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  gap: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.updateFocus-text-container h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0;
+  width: 850px;
+  height: 30px;
+  margin-top: 40px;
+  color: #121519;
+  text-align: justify;
+}
+
+.updateFocus-text-container p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  margin-top: -35px;
+  text-align: justify;
+}
+
+.updateFocus-box {
+  padding: 40px 20px;
+  gap: 32px;
+  border-radius: 36px;
+  background: #f6f9fc;
+  box-sizing: border-box;
+  width: 856px;
+  height: 270px;
+  margin-top: -10px;
+}
+
+.updateFocus-box p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  color: #121519;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 0 20px 0;
+  text-align: justify;
+  gap: 28px;
+}
+
+.updateFocus-box .updateFocus-signature {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22.4px;
+  text-align: left;
+  color: #121519;
+  padding: 0 0 0 76px;
+  margin-left: -55px;
+}
+
