@@ -3944,3 +3944,300 @@ body {
     text-align: center; 
   }
 }
+
+
+/* Fix Voluneers.astro page */
+/* Moving the ChooseVolunteering.css to global.css */
+
+.mainVolunteering-main-container {
+  width: 100%;
+  max-width: 1296px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.mainVolunteering-main-heading {
+  width: 100%;
+  max-width: 604px;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  padding-top: 30px;
+}
+
+.mainVolunteering-sub-container {
+  width: 100%;
+  max-width: 1296px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Card styles */
+.mainVolunteering-card {
+  width: calc(50% - 24px);
+  min-width: 280px;
+  padding: 1.5rem;
+  border-radius: 24px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Border colors based on ID */
+#c1 {
+  border: 8px solid #f7dfe2;
+}
+
+#c2 {
+  border: 8px solid #e1daf7;
+}
+
+#c3 {
+  border: 8px solid #dce4f6;
+}
+
+#c4 {
+  border: 8px solid #dbf2f6;
+}
+
+.mainVolunteering-card-heading {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.mainVolunteering-card-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.mainVolunteering-card-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* Button styles */
+.mainVolunteering-card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.mainVolunteering-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.mainVolunteering-btn-apply {
+  background-color: #f1592a;
+  color: #fff;
+}
+
+.mainVolunteering-btn-see-more {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .mainVolunteering-card {
+    width: 100%;
+    min-height: 420px;
+    margin-bottom: 24px;
+  }
+
+  .mainVolunteering-main-heading {
+    padding-top: 40px;
+    font-size: 20px;
+  }
+
+  .mainVolunteering-card-heading {
+    font-size: 20px;
+  }
+
+  .mainVolunteering-card-subheading,
+  .mainVolunteering-card-description {
+    font-size: 14px;
+  }
+
+  .mainVolunteering-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* AboutVolunteerRole.css */
+
+.aboutVolunteering-frame1 {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  justify-content: center;
+  align-items: flex-start;
+}
+.aboutVolunteering-frame2,
+.aboutVolunteering-frame3,
+.aboutVolunteering-frame4 {
+  width: calc(100% - 190px);
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+}
+.aboutVolunteering-frame2 h1 {
+  width: 899px;
+  font-size: 48px;
+  font-weight: 600;
+  text-align: left;
+}
+.aboutVolunteering-frame2 p {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+.aboutVolunteering-info-text {
+  padding-left: 4%;
+  width: calc(100% - 190px);
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+  white-space: pre-wrap;
+}
+.aboutVolunteering-frame3 h2,
+.aboutVolunteering-frame4 h2 {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+}
+.aboutVolunteering-frame3 p,
+.aboutVolunteering-frame4 p {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+.aboutVolunteering-button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: calc((100% - 1390px) / 2 + 95px);
+}
+.aboutVolunteering-apply-button {
+  width: 189px;
+  height: 48px;
+  margin-left: 60px;
+  border-radius: 8px;
+  background: #f1592a;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* WhyVolunteer.css */
+
+.WhyVolunteer-frame {
+  width: 100%;
+  height: 366px;
+  max-width: 1296px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.WhyVolunteer-frame-heading {
+  width: 100%;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.WhyVolunteer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.WhyVolunteer-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 370px;
+  height: auto;
+  padding: 20px;
+  gap: 16px;
+  border-radius: 36px;
+  background: #e5f1ff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.WhyVolunteer-card img {
+  width: 50px;
+  height: auto;
+}
+
+.WhyVolunteer-d-flex {
+  display: flex;
+}
+
+.WhyVolunteer-align-items-center {
+  align-items: center;
+}
+
+.WhyVolunteer-mb-3 {
+  margin-bottom: 1rem;
+}
+
+.WhyVolunteer-flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.WhyVolunteer-rounded-1 {
+  border-radius: 0.25rem;
+}
+
+.WhyVolunteer-p-2 {
+  padding: 0.5rem;
+}
+
+.WhyVolunteer-fs-sm {
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .WhyVolunteer-cards {
+    flex-direction: column;
+  }
+
+  .WhyVolunteer-card {
+    width: 100%;
+    max-width: none;
+  }
+}
