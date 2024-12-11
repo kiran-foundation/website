@@ -2084,6 +2084,9 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #f1592a;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .apply-link {
@@ -2107,7 +2110,7 @@ body {
   color: rgba(43, 46, 54, 1);
   padding: 20px;
   border-radius: 8px;
-  text-align: justify;
+  text-align:left;
 }
 
 h4 {
@@ -2279,7 +2282,7 @@ h4 {
 }
 
 .apply-download-button {
-  width: auto;
+  width: 180px;
   height: 48px;
   margin: 20px 90px;
   padding: 12px 24px;

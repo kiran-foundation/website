@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content'
 const pratibhaApplication = (await getEntry('pratibha', 'application')).data
+const appPratibha = (await getEntry('pratibha', 'app')).data
 ---
 
 <div class='apply-container container'>
@@ -17,7 +18,7 @@ const pratibhaApplication = (await getEntry('pratibha', 'application')).data
     >
   </div>
   <div class='apply-content-container'>
-    <p>
+    <p style='margin-top: -30px; margin-left: -10px;' >
       {pratibhaApplication.paragraph}<br /><br />
       {pratibhaApplication.paragraph2}
     </p>
@@ -75,7 +76,7 @@ const pratibhaApplication = (await getEntry('pratibha', 'application')).data
   <div class='container apply-last-container' style='margin-left: -10px;'>
     <button class='apply-download-button'
       ><a class='app-download-link' href='/'
-        >{pratibhaApplication.downloadApp}</a
+        >{appPratibha.downloadAppbtn}</a
       ></button
     >
     <span class='apply-google-form'
