@@ -1,4 +1,5 @@
 ---
+import Layout from '../../layouts/Layout.astro'
 import { getEntry } from 'astro:content'
 const commonComingsoon = (await getEntry('common', 'coming-soon')).data
 ---
@@ -6,148 +7,108 @@ const commonComingsoon = (await getEntry('common', 'coming-soon')).data
 <script src='/assets/js/theme.min.js' is:inline></script>
 <script src='/assets/js/common.js' is:inline></script>
 
-<section class='container' style='padding-top: 100px;'>
-  <div class='py-5 container d-flex flex-column align-items-center'>
-    <div class=''>
-      <h1 class='display-1' style='color: #F1592A; font-weight: 700;'>
-        {commonComingsoon.h1}
-      </h1>
-      <p class='lead w-full'>
-        {commonComingsoon.subtitle}
-      </p>
+  <!-- Contact details -->
+  <section class="bg-secondary ">
+  <div class="container pt-5">
 
-      <div class='d-flex flex-wrap'>
-        <div class='contact-item'>
-          <strong>Address</strong>
-          <p class='address'>{commonComingsoon.address}</p>
-        </div>
-        <div class='contact-item'>
-          <strong>Phone</strong>
-          <p class='call'>
-            {commonComingsoon.call}
-            <br /><a href='tel:+919303397100'>+91-93033 97100</a>
-          </p>
-          <p class='whatsapp'>
-            {commonComingsoon.whatsapp}
-            <br /><a href='https://wa.me/919880141412'>+91-98801 41412</a>
-          </p>
-        </div>
-        <div class='contact-item'>
-          <strong>Email</strong>
-          <p>
-            {commonComingsoon.aemail}
-            <br /><a href='mailto:info@kiran.foundation'
-              >info@kiran.foundation</a
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class='contact-form'>
-      <h2 class='h2 text-white text-center'>{commonComingsoon.fname}</h2>
-      <form id='contactForm'>
-        <label for='name'>{commonComingsoon.name}</label>
-        <input type='text' id='name' placeholder='Your name' required />
-        <div class='info'>
-          <div>
-            <label for='contactEmail'>{commonComingsoon.email}</label>
-            <input
-              type='email'
-              id='contactEmail'
-              placeholder='Email address'
-              required
-            />
-          </div>
-          <div>
-            <label for='phone'>{commonComingsoon.phone}</label>
-            <input type='text' id='phone' placeholder='Phone number' required />
-          </div>
-        </div>
-
-        <label for='message'>{commonComingsoon.help}</label>
-        <textarea id='message' placeholder='How can we help?' rows='4' required
-        ></textarea>
-
-        <button type='submit'>{commonComingsoon.request}</button>
-      </form>
-    </div>
+    <!-- Page title -->
+    <h1 class="display-2" style="font-size: 50px;">Contact Us</h1>
+      <p class="sub-heading"  style="font-size: 18px;">Get in touch with us by completing the below form or call us now</p>
   </div>
 </section>
+<!-- Contact form -->
+<div class='contact-form'>
+  <h2 class='form'>{commonComingsoon.fname}</h2>
+  <form id='contactForm'>
+    <label for='name'>{commonComingsoon.name}</label>
+    <input type='text' id='name' placeholder='Your name' required />
+    <div class='info'>
+      <div>
+        <label for='contactEmail'>{commonComingsoon.email}</label>
+        <input
+          type='email'
+          id='contactEmail'
+          placeholder='Email address'
+          required
+        />
+      </div>
+      <div>
+        <label for='phone'>{commonComingsoon.phone}</label>
+        <input
+          type='text'
+          id='phone'
+          placeholder='Phone number'
+          required
+        />
+      </div>
+    </div>
+    <label for='message'>{commonComingsoon.help}</label>
+    <textarea
+      id='message'
+      placeholder='How can we help?'
+      rows='4'
+      style="overflow: hidden;"
+      required></textarea>
 
-<style>
-  .contact-item {
-    width: 300px;
-    text-wrap: wrap;
-  }
+    <button type='submit'>{commonComingsoon.request}</button>
+  </form>
+</div>
 
-  .contact-item > strong {
-    wfont-size: 22px;
-    font-weight: 600;
-    line-height: 44px;
-    color: #000;
-  }
+    <section class="bg-secondary ">
+      <div class="container pt-5 pb-xl-4 ">
 
-  .contact-form {
-    background-color: #001a33;
-    padding: 48px;
-    border-radius: 16px;
-    color: #fff;
-    max-width: 800px;
-    margin-top: 40px;
-  }
+        <!-- Details cards -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4 ">
+  
+          <!-- Address -->
+          <div class="col">
+            <div class="card border-0 h-100">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Address</h4>
+                <p class="fs-lg fw-medium pb-3 mb-3">{commonComingsoon.address}</p>
+              </div>
+            </div>
+          </div>                                                             
+  
+          <!-- Phone -->
+          <div class="col">
+            <div class="card border-0 h-100">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Phone</h4>
+                <ul class="list-unstyled mb-0">
+                  <li class="pb-1 mb-2">
+                    <span class="d-block fs-sm text-body-secondary mb-1">Give us a Call</span>
+                    <a class="nav-link fs-lg p-0" href="tel:+919303397100" style="color: rgba(241, 89, 42, 1);">+91-&nbsp;93033 97100</a>
+                  </li>
+                  <li>
+                    <span class="d-block fs-sm text-body-secondary mb-1">WhatsApp</span>
+                    <a class="nav-link fs-lg p-0" href="https://wa.me/919880141412" style="color: rgba(241, 89, 42, 1);">+91-&nbsp;98801 41412</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Email -->
+         
+      <div class="col">
+        <div class="card border-0 h-100">
+         <div class="card-body">
+         <h4 class="card-title mb-4" style="padding-top: -30px ">Email</h4>
+         <ul class="list-unstyled mb-0">
+           <li class="pb-1 mb-2">
+            <span class="d-block fs-sm text-body-secondary mb-1">{commonComingsoon.aemail}</span>
+            <a class="nav-link fs-lg p-0" href="mailto:info@kiran.foundation" style="color: rgba(241, 89, 42, 1);">info@kiran.foundation</a>
+           </li>
+          </ul>
+        </div>
+      </div>
+     </div>
 
-  .contact-form label {
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #fff;
-  }
+        </div>
+      </div>
+  
+  </section>
 
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 16px;
-    border-radius: 4px;
-    font-size: 14px;
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
 
-  .info {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  @media (max-width: 425px) {
-    .contact-form {
-      scale: 0.8;
-    }
-
-    .info {
-      gap: 0;
-    }
-  }
-
-  .info div {
-    flex: 1;
-    width: 100%;
-    min-width: 250px;
-  }
-  .contact-form button {
-    background: rgba(241, 89, 42, 1);
-    color: #fff;
-    width: Fixed (249px) px;
-    height: Hug (56px) px;
-    top: 608px;
-    left: 248px;
-    padding: 12px 32px 12px 32px;
-    gap: 8px;
-    border-radius: 8px;
-    opacity: 0px;
-    border: none;
-  }
-</style>
+   
