@@ -678,6 +678,7 @@ body {
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   position: relative;
+  margin-top:500px;
 }
 
 .volunteeringForm-frame h1 {
@@ -977,7 +978,7 @@ body {
   margin-top: 3%;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 30px;
   background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
   justify-content: center;
@@ -1008,7 +1009,7 @@ body {
 }
 
 .aboutVolunteering-info-text {
-  padding-left: 4%;
+
   width: calc(100% - 190px);
   margin: 0 auto;
   font-size: 20px;
@@ -2918,10 +2919,10 @@ body {
 /* AboutVolunteerRole */
 
 .aboutVolunteering-frame1 {
-  margin-top: 3%;
+  margin-top: 30%;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  /*gap: 64px;*/
   background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
   width: 1296px;
@@ -3072,7 +3073,7 @@ body {
   text-align: left;
   color: #ffff;
   margin-top: -40px;
-  margin-left: 90px;
+  
 }
 
 .pratibhaCard-image-container-vectorstar {
@@ -4085,10 +4086,10 @@ body {
 /* AboutVolunteerRole.css */
 
 .aboutVolunteering-frame1 {
-  margin-top: 3%;
+  margin-top:400px;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  /* gap: 64px; */
   background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
   justify-content: center;
@@ -4115,7 +4116,7 @@ body {
   text-align: left;
 }
 .aboutVolunteering-info-text {
-  padding-left: 4%;
+
   width: calc(100% - 190px);
   margin: 0 auto;
   font-size: 20px;
