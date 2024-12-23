@@ -23,14 +23,14 @@ descriptionSecond:
 title: "OUR MISSION AND VISION"
 cardOne:
   imgIcon: "/assets/images/benefits/missionIcon1.png"
-  heading: "Individual approach"
-  description: "Find aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur neque congue aliqua dolor do "
+  heading: "Vision"
+  description: "We dream of a society where merit, dedication and hard work take the driver's seat."
 cardSecond:
   imgIcon: "/assets/images/benefits/missionIcon2.png"
-  heading: "Integrated analytics"
-  description: "Find aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur neque congue aliqua dolor do  "  
+  heading: "Mission"
+  description: "To empower socially, physically and financially disadvantaged sections of society and provide wings to their dreams."  
 cardThird:
   imgIcon: "/assets/images/benefits/missionIcon3.png"
-  heading: "Step by step work"
-  description: "More erat leo proin odio est sed sit felis facilisi integer sed congue neque turpis dictumst sit sed volutpat aliquet tortor non"
+  heading: "Values"
+  description: "Knowledge, Transparency, Discipline and Compassion are the foundation of our mission."
 ---
