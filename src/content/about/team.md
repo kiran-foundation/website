@@ -1,12 +1,12 @@
 ---
 teamHeading: "Team of professionals"
 professionalsImg:
-     memberOne: "/old_website/images/volunteers/abhas.png"
-     memberTwo: "/old_website/images/volunteers/sushma.png"
-     memberThree: "/old_website/images/volunteers/shreya.jpg"
-     memberFour: "old_website/images/volunteers/kshitij.jpg"
-     memberFive: "old_website/images/volunteers/keshu.jpg"
-     memberSix: "old_website/images/volunteers/anjali.png"
+     memberOne: "/assets/images/volunteers/abhas.png"
+     memberTwo: "/assets/images/volunteers/sushma.png"
+     memberThree: "/assets/images/volunteers/shreya.jpg"
+     memberFour: "/assets/images/volunteers/kshitij.jpg"
+     memberFive: "/assets/images/volunteers/keshu.jpg"
+     memberSix: "/assets/images/volunteers/anjali.png"
 
 # experience card
 
