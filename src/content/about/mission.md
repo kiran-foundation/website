@@ -22,15 +22,15 @@ descriptionSecond:
 
 title: "OUR MISSION AND VISION"
 cardOne:
-  imgIcon: "/assets/images/benefits/missionIcon1.png"
+  imgIcon: "/assets/svg/vision.svg" 
   heading: "Vision"
   description: "We dream of a society where merit, dedication and hard work take the driver's seat."
 cardSecond:
-  imgIcon: "/assets/images/benefits/missionIcon2.png"
+  imgIcon: "/assets/svg/mission.svg"
   heading: "Mission"
   description: "To empower socially, physically and financially disadvantaged sections of society and provide wings to their dreams."  
 cardThird:
-  imgIcon: "/assets/images/benefits/missionIcon3.png"
+  imgIcon: "/assets/svg/values.svg"
   heading: "Values"
   description: "Knowledge, Transparency, Discipline and Compassion are the foundation of our mission."
 ---
