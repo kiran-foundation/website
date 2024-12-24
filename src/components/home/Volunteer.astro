@@ -13,7 +13,7 @@ const common = (await getEntry('common', 'common')).data
     <div class='row'>
       <!-- Sticky sidebar -->
       <div class='col-md-5 col-xl-4 mb-5 mb-md-0 text-start' style='margin-top: -135px;'>
-        <div class='position-sticky top-0' style='padding-top: 140px; '>
+        <div class='position-sticky top-0' style='padding-top: 125px; padding-bottom: 25px;'>
           <h2 class='h3 pb-2 pb-lg-3 mt-4' style=''>
             {volunteer.title}  <!-- Why Volunteer with us? -->
           </h2>
@@ -96,7 +96,7 @@ const common = (await getEntry('common', 'common')).data
       </div>
 
       <!-- Pricing list -->
-      <div class='col-md-7 offset-xl-1 mt-3'>
+      <div class='col-md-6 offset-xl-1 mt-3'>
         <div class='ps-md-4 ps-xxl-5'>
           <VolunteerComponent volunteer={volunteer} common={common} />
         </div>

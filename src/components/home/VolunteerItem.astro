@@ -4,26 +4,26 @@ const { volunteer, common } = Astro.props
 
 <!-- TODO refactor later to read from the volunteering content -->
 <div
-  class='card border-1 rounded-4 position-relative mb-3'
+  class='card border-1 rounded-4 position-relative mb-2'
   style='border-color:#F1592A;'
 >
   <div
-    class='card-body d-sm-flex d-md-flex flex-md-column align-items-start text-center text-sm-start'
+    class='card-body d-sm-flex d-md-flex flex-md-column align-items-start text-center text-sm-start pb-3 pt-3'
   >
     <div class=''>
       <h3 class='h5' style='width:full'>
         {volunteer.volunteerRole1.title}
       </h3>
-      <p class='volunteer-paragraph-description fs-5 mb-0'>
+      <p class='volunteer-paragraph-description fs-5 mt-3 mb-3'>
         {volunteer.volunteerRole1.description}
       </p>
+      <a
+        class='home-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto'
+        href='/volunteering/3'
+      >
+        {common.apply}
+      </a>
     </div>
-    <a
-      class='home-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-4'
-      href='/volunteering/3'
-    >
-      {common.apply}
-    </a>
   </div>
 </div>
 
@@ -32,21 +32,24 @@ const { volunteer, common } = Astro.props
   style='border-color:#F1592A;'
 >
   <div
-    class='card-body d-sm-flex d-md-flex flex-md-column align-items-start text-center text-sm-start'
+    class='card-body d-sm-flex d-md-flex flex-md-column align-items-start text-center text-sm-start pb-3 pt-3'
   >
     <div class=''>
       <h3 class='h5' style='width:full'>
         {volunteer.volunteerRole2.title}
       </h3>
-      <p class='volunteer-paragraph-description fs-5 mb-0'>
+      <p class='volunteer-paragraph-description fs-5 mt-3 mb-3'>
         {volunteer.volunteerRole2.description}
       </p>
+      <a
+        class='home-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto'
+        href='/volunteering/2'
+      >
+        {common.apply}
+      </a>
     </div>
-    <a
-      class='home-button btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto mt-4'
-      href='/volunteering/2'
-    >
-      {common.apply}
-    </a>
   </div>
 </div>
+<style>
+
+</style>
