@@ -12,15 +12,15 @@ const common = (await getEntry('common', 'common')).data
   <div class='container pt-sm-3 pt-lg-4'>
     <div class='row'>
       <!-- Sticky sidebar -->
-      <div class='col-md-5 col-xl-4 mb-5 mb-md-0' style='margin-top: -135px;'>
+      <div class='col-md-5 col-xl-4 mb-5 mb-md-0 text-start' style='margin-top: -135px;'>
         <div class='position-sticky top-0' style='padding-top: 140px; '>
           <h2 class='h3 pb-2 pb-lg-3 mt-4' style=''>
-            {volunteer.title}
+            {volunteer.title}  <!-- Why Volunteer with us? -->
           </h2>
-          <div class='row'>
+          <div >
             <div class='col-md-10'>
               <p class='fs-5 mb-3 mt-3'>
-                {volunteer.description}
+                {volunteer.description} <!-- A small act of volunteering can make a big impact in someone's life. -->
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@ const common = (await getEntry('common', 'common')).data
               </svg>
               <div class='ps-2 ms-1'>
                 <div class='volunteer-perks text-nav fw-medium'>
-                  {volunteer.perks[0]}
+                  {volunteer.perks[0]} <!-- Work in your own time -->
                 </div>
               </div>
             </li>
@@ -67,7 +67,7 @@ const common = (await getEntry('common', 'common')).data
               </svg>
               <div class='ps-2 ms-1'>
                 <div class='volunteer-perks text-nav fw-medium'>
-                  {volunteer.perks[1]}
+                  {volunteer.perks[1]} <!-- Contribute remotely -->
                 </div>
               </div>
             </li>
@@ -87,7 +87,7 @@ const common = (await getEntry('common', 'common')).data
               </svg>
               <div class='ps-2 ms-1'>
                 <div class='volunteer-perks text-nav fw-medium'>
-                  {volunteer.perks[2]}
+                  {volunteer.perks[2]} <!-- Drive  positive change -->
                 </div>
               </div>
             </li>
