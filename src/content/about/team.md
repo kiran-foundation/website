@@ -10,7 +10,7 @@ professionalsImg:
 
 # experience card
 
-expImg: "assets/icons/star.png"
+expImg: "/assets/icons/star.png"
 expHeading: "Do you have an experience you want to share?"
 expBtn: "Join Now"
 
