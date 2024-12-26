@@ -1052,7 +1052,7 @@ body {
 .aboutVolunteering-apply-button {
   width: 189px;
   height: 48px;
-  margin-left: 60px;
+  
   border-radius: 8px;
   background: #f1592a;
   color: #fff;
@@ -4106,6 +4106,13 @@ body {
   font-family: 'Poppins', sans-serif;
   justify-content: center;
   align-items: flex-start;
+  max-width: 1076px;
+    margin: 50px auto;
+    border-radius: 36px;
+    background: #ffffff;
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
 }
 .aboutVolunteering-frame2,
 .aboutVolunteering-frame3,
@@ -4157,7 +4164,7 @@ body {
 .aboutVolunteering-apply-button {
   
   height: 48px;
-  margin-left: 60px;
+  
   border-radius: 8px;
   background: #f1592a;
   color: #fff;
@@ -4166,6 +4173,7 @@ body {
   text-align: center;
   border: none;
   cursor: pointer;
+  margin-left: -10%;
 }
 
 /* WhyVolunteer.css */
@@ -4255,3 +4263,10 @@ body {
   }
 }
 
+#file-upload-button{
+ 
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+ 
+}

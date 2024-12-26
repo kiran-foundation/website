@@ -1,6 +1,26 @@
 ---
 const { path } = Astro.props;
 ---
+
+<style>
+  input[type="file"] {
+    background-color: #051d40; /* Blue background */
+    color: white; /* White text */
+    padding: 10px;
+   
+   
+    cursor: pointer;
+  }
+
+  input[type="file"]::-webkit-file-upload-button {
+    background-color: #051d40; /* Blue background for Webkit browsers */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
 <section id="form" >
   <div class="volunteeringForm-frame">
     <h1>We'd love to hear from you</h1>
@@ -22,7 +42,7 @@ const { path } = Astro.props;
       </div>
         <div class="volunteeringForm-input-container">
           <label for="resume">Resume</label>
-          <input type="file" id="resume" name="resume" placeholder="Upload your resume">
+          <input type="file" id="resume" name="resume" placeholder="Upload your resume" style="color: #5e5e5c">
         </div>
 
         <div class="volunteeringForm-input-container">
