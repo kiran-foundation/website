@@ -1,121 +1,145 @@
 ---
-import { getEntry } from 'astro:content'
-const aboutTeam = (await getEntry('about', 'team')).data
+import { getEntry } from "astro:content";
+const aboutTeam = (await getEntry("about", "team")).data;
 ---
 
 <!-- Team -->
 <section class="mt-2 mt-xl-4 mt-xxl-5">
-    <div class="container pt pt-sm-4 pt-lg-5 mt-xl-2 mt-xxl-3">
-      
-      <h2 class="display-6 pb-3 mb-lg-4"style="text-align: center;" >Team of professionals</h2>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 rounded-5 overflow-hidden">
-            <img
-            src={aboutTeam.professionalsImg.memberOne}
-            alt='Team Member 1'
-        />            <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
-              <div class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"></div>
-              <div class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center" data-bs-theme="dark">
-                     
-              </div>
+  <div class="container pt pt-sm-4 pt-lg-5 mt-xl-2 mt-xxl-3">
+    <h2 class="display-6 pb-3 mb-lg-4" style="text-align: center;">
+      Team of professionals
+    </h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+      <!-- Item -->
+      <div class="col">
+        <div class="card card-hover border-0 rounded-5 overflow-hidden">
+          <img src={aboutTeam.professionalsImg.memberOne} alt="Team Member 1" />
+          <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
+            <div
+              class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"
+            >
+            </div>
+            <div
+              class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center"
+              data-bs-theme="dark"
+            >
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 rounded-5 overflow-hidden">
-            <img
-            src={aboutTeam.professionalsImg.memberTwo}
-            alt='Team Member 2'
-        />            <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
-              <div class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"></div>
-              <div class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center" data-bs-theme="dark">
-                
-              </div>
+      <!-- Item -->
+      <div class="col">
+        <div class="card card-hover border-0 rounded-5 overflow-hidden">
+          <img src={aboutTeam.professionalsImg.memberTwo} alt="Team Member 2" />
+          <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
+            <div
+              class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"
+            >
+            </div>
+            <div
+              class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center"
+              data-bs-theme="dark"
+            >
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 rounded-5 overflow-hidden">
-            <img
-                src={aboutTeam.professionalsImg.memberThree}
-                alt='Team Member 3'
-            />            <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
-              <div class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"></div>
-              <div class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center" data-bs-theme="dark">
-                
-              </div>
+      <!-- Item -->
+      <div class="col">
+        <div class="card card-hover border-0 rounded-5 overflow-hidden">
+          <img
+            src={aboutTeam.professionalsImg.memberThree}
+            alt="Team Member 3"
+          />
+          <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
+            <div
+              class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"
+            >
+            </div>
+            <div
+              class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center"
+              data-bs-theme="dark"
+            >
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 rounded-5 overflow-hidden">
-            <img
+      <!-- Item -->
+      <div class="col">
+        <div class="card card-hover border-0 rounded-5 overflow-hidden">
+          <img
             src={aboutTeam.professionalsImg.memberFour}
-            alt='Team Member 4'
-        />            <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
-              <div class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"></div>
-              <div class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center" data-bs-theme="dark">
-             
-              </div>
+            alt="Team Member 4"
+          />
+          <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
+            <div
+              class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"
+            >
+            </div>
+            <div
+              class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center"
+              data-bs-theme="dark"
+            >
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 rounded-5 overflow-hidden">
-            <img
+      <!-- Item -->
+      <div class="col">
+        <div class="card card-hover border-0 rounded-5 overflow-hidden">
+          <img
             src={aboutTeam.professionalsImg.memberFive}
-            alt='Team Member 5'
-        />            <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
-              <div class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"></div>
-              <div class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center" data-bs-theme="dark">
-                
-              </div>
+            alt="Team Member 5"
+          />
+          <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
+            <div
+              class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"
+            >
+            </div>
+            <div
+              class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center"
+              data-bs-theme="dark"
+            >
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 rounded-5 overflow-hidden">
-            <img
-            src={aboutTeam.professionalsImg.memberSix}
-            alt='Team Member 6'
-        />            <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
-              <div class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"></div>
-              <div class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center" data-bs-theme="dark">
-               
+      <!-- Item -->
+      <div class="col">
+        <div class="card card-hover border-0 rounded-5 overflow-hidden">
+          <img src={aboutTeam.professionalsImg.memberSix} alt="Team Member 6" />
+          <div class="position-absolute top-0 start-0 w-100 h-100 opacity-0">
+            <div
+              class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"
+            >
+            </div>
+            <div
+              class="card-body d-flex flex-column justify-content-end h-100 position-relative z-2 text-center"
+              data-bs-theme="dark"
+            >
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  
-  <div class='w-full d-flex justify-content-center'>
-    <div class='card-details'>
-        <div class='d-flex gap-2 align-items-center p-3'>
-            <img src={aboutTeam.expImg} alt='star-image' />
-            <span class='h2' style='color: white;'
-                >{aboutTeam.expHeading}</span
-            >
-        </div>
-        <div class='card-btn btn'>
-            <a href='/' style='color: white; text-decoration: none;'
-                >{aboutTeam.expBtn}</a
-            >
-        </div>
+  <div class="w-full d-flex justify-content-center align-items-center mt-5">
+    <div class="card-details">
+      <div class="d-flex justify-content-center align-items-center">
+        <img src={aboutTeam.expImg} alt="star-image" />
+        <!-- <span class="h2" style="color: white; text-decoration: none;">{aboutTeam.expHeading}</span> -->
+      </div>
+      <div class="card-btn btn">
+        <a href="/" style="color: white; text-decoration: none;"
+          >{aboutTeam.expBtn}</a
+        >
+      </div>
     </div>
-</div>
-
+  </div>
+</section>
