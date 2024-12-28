@@ -19,6 +19,14 @@ sections:
       imgFour: "/assets/images/programs/image.png"
       imgFive: "/assets/images/programs/program1.png"
       imgSix: "/assets/images/programs/program2.png"
-
   
+  - title: "Random Images Frame"
+    paragraph: "This is the third frame with random images."
+    galleryImg:
+      imgOne: "/assets/images/pratibha_page/aditi.jpg"
+      imgTwo: "/assets/images/pratibha_page/darshan.png"
+      imgThree: "/assets/images/pratibha_page/mauli.png"
+      imgFour: "/assets/images/pratibha_page/nainsi.png"
+      imgFive: "/assets/images/pratibha_page/neer.png"
+      imgSix: "/assets/images/pratibha_page/sjain.png"
 ---

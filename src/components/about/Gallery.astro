@@ -1,9 +1,13 @@
 ---
 import { getEntry } from "astro:content";
-import GalleryImage from "./GalleryImage.astro"
-const {sections} = (await getEntry("about", "gallery")).data;
+import GalleryImage from "./GalleryImage.astro";
+const { sections } = (await getEntry("about", "gallery")).data;
 ---
 
-{
-  sections.map((section) => (<GalleryImage section={section} />))
-}
+{sections.map((section) => <GalleryImage section={section} />)}
+
+<!-- ===================== -->
+
+
+
+<!-- ==================== -->

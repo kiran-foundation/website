@@ -1,86 +1,182 @@
 ---
-const {section} = Astro.props;
+const { section } = Astro.props;
 ---
 
+<!-- ============================ -->
+<script is:inline>
+  window.onImageClick = function (element) {
+    const imageSpace = document.getElementById("imageSpace");
+    imageSpace.src = element.src;
 
-<div class="d-flex flex-column justify-content-center container pb-3 mb-3">
-    <div class="h1 text-center"> {section.title} </div>
-    <div class="lead text-center"> {section.paragraph} </div>
+    // Use Bootstrap's Modal API to show the modal
+    const imagePreviewModal = new bootstrap.Modal(
+      document.getElementById("imagePreviewModal"),
+    );
+    imagePreviewModal.show();
+    setTimeout(() => {
+      // Remove the backdrop class (or replace with modal)
+      const backdrop = document.querySelector(".modal-backdrop");
+      if (backdrop) {
+        backdrop.classList.remove("modal-backdrop"); // Remove default backdrop class
+        backdrop.classList.add("modal"); // Add modal class if needed
+      }
+    }, 100);
+  };
+</script>
 
-    <div class="gallery-grid-container">
-      <a href={section.galleryImg.imgOne}>
-        <img
-          class="grid-item"
-          src={section.galleryImg.imgOne}
-          alt="imageGallery1"
-        /></a
-      >
-      <img
-        class="grid-item"
-        src={section.galleryImg.imgTwo}
-        alt="VolunterGroupImage"
-      />
-      <img
-        class="grid-item item3"
-        src={section.galleryImg.imgThree}
-        alt="shreyaGoldMedal image"
-      />
-      <img
-        class="grid-item item4"
-        src={section.galleryImg.imgFour}
-        alt="Event Image 4"
-      />
-      <img
-        class="grid-item"
-        src={section.galleryImg.imgFive}
-        alt="hero Image 5"
-      />
-      <img
-        class="grid-item"
-        src={section.galleryImg.imgSix}
-        alt="Event Image 6"
-      />
+<!-- ============================ --><!-- ============================ --><!-- Modal -->
+<div
+  class="modal fade"
+  id="imagePreviewModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body d-flex justify-content-center align-item-center">
+        <img id="imageSpace" src="" class="img-fluid" alt="Preview Image" />
+      </div>
+      <div class="d-flex justify-content-center align-item-center modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+          >Close</button
+        >
+      </div>
     </div>
   </div>
+</div>
+
+<!-- =========================== -->
+
+<div class="d-flex flex-column justify-content-center container pb-3 mb-3">
+  <div class="h1 text-center">{section.title}</div>
+  <div class="lead text-center">{section.paragraph}</div>
+
+  <div class="gallery-grid-container">
+    <img
+      class="grid-item"
+      src={section.galleryImg.imgOne}
+      alt="imageGallery1"
+      onclick="onImageClick(this)"
+    />
+
+    <img
+      class="grid-item"
+      src={section.galleryImg.imgTwo}
+      alt="VolunterGroupImage"
+      onclick="onImageClick(this)"
+    />
+    <img
+      class="grid-item item3"
+      src={section.galleryImg.imgThree}
+      alt="shreyaGoldMedal image"
+      onclick="onImageClick(this)"
+    />
+    <img
+      class="grid-item item4"
+      src={section.galleryImg.imgFour}
+      alt="Event Image 4"
+      onclick="onImageClick(this)"
+    />
+    <img
+      class="grid-item"
+      src={section.galleryImg.imgFive}
+      alt="hero Image 5"
+      onclick="onImageClick(this)"
+    />
+    <img
+      class="grid-item"
+      src={section.galleryImg.imgSix}
+      alt="Event Image 6"
+      onclick="onImageClick(this)"
+    />
+  </div>
+</div>
 
 <style>
+  .gallery-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .grid-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .item3 {
+    grid-area: 1 / 3 / span 2 / span 2;
+  }
+  .item4 {
+    grid-area: 2 / 1 / span 2 / span 2;
+  }
+
+  @media max-width(425px) {
     .gallery-grid-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 10px;
-      margin-bottom: 10px;
     }
-  
     .grid-item {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 20px;
+      border-radius: 10px;
     }
-  
     .item3 {
-      grid-area: 1 / 3 / span 2 / span 2;
+      grid-area: 2 / 1 / span 1 / span 1;
     }
     .item4 {
-      grid-area: 2 / 1 / span 2 / span 2;
+      grid-area: 2 / 2 / span 1 / span 1;
     }
-  
-    @media max-width(425px) {
-      .gallery-grid-container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-      }
-      .grid-item {
-        border-radius: 10px;
-      }
-      .item3 {
-        grid-area: 2 / 1 / span 1 / span 1;
-      }
-      .item4 {
-        grid-area: 2 / 2 / span 1 / span 1;
-      }
-    }
-  </style>
-  
+  }
+
+  /* ======================= */
+
+  /* Style for the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+    padding-top: 60px;
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+
+  #caption {
+    margin: 10px;
+    color: #ccc;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .close {
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #f1f1f1;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
