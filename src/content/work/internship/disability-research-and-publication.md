@@ -21,4 +21,5 @@ requirements: |
   - Familiarity with academic and publication formatting guidelines is a plus
   - Ability to work collaboratively in a team environment
   - Demonstrated commitment to promoting diversity, equity, and inclusion
+url: "disability-research-and-publication"
 ---

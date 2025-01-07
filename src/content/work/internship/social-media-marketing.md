@@ -21,4 +21,5 @@ requirements: |
   - Detail-oriented with good organizational skills
   - Enthusiasm for learning and keeping up with social media trends
   - Basic understanding of social media analytics is a plus, but not required
+url: "social-media-marketing"
 ---

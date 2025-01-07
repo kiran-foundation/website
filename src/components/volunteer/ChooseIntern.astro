@@ -101,12 +101,13 @@ const { chooseVolunteering, applyNow, seeMore, Requirements } = staticTexts;
             </ul>
           </div>
           <div class="mainVolunteering-card-buttons">
-            <button
-              class="mainVolunteering-btn mainVolunteering-btn-apply"
-              onclick={`window.location.href = '/volunteering/${index + 1}'`}
-            >
-              {applyNow}
-            </button>
+            <a
+  class="mainVolunteering-btn mainVolunteering-btn-apply"
+  href={`/internship/${volunteer.url}/#form`}
+>
+  {applyNow}
+</a>
+
             <button class="mainVolunteering-btn mainVolunteering-btn-see-more">
               {seeMore}
             </button>

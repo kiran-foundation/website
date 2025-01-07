@@ -7,22 +7,35 @@ import Form from '../../components/volunteer/Form.astro'
 import InfoVolunteering from '../../components/volunteer/InfoVolunteering.astro'
 import HowDoesItWork from '../../components/volunteer/HowDoesItWork.astro'
 import Layout from '../../layouts/Layout.astro'
+import AboutInternship from '../../components/volunteer/AboutInternship.astro';
+import type { MarkdownFile } from '../../types/Markdown'
 
-const { path } = Astro.params
+const { path } = Astro.params;
 
 export function getStaticPaths() {
-  return [
-    { params: { path: '1' } },
-    { params: { path: '2' } },
-    { params: { path: '3' } }
-  ]
+  const allVolunteering = import.meta.glob<MarkdownFile>(
+    "/src/content/work/internship/*.md",
+  );
+
+  let parameters = [];
+  Object.entries(allVolunteering).forEach(([key,]) => {
+    parameters.push({
+      params: { path: key.split("/").pop()?.replace(".md", "") },
+    });
+  });
+
+  console.log(parameters);
+  
+
+  return parameters;
 }
 ---
+
 
 <Layout title='Intenrship Roles'>
   <main class='page-wrapper'>
     <Hero />
-    <AboutVolunteerRole path={path} />
+    <AboutInternship path={path} />
     <Form />
     <InfoVolunteering />
     <HowDoesItWork />

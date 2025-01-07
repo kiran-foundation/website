@@ -18,4 +18,6 @@ requirements: |
   - Strong analytical and problem-solving skills
   - Self-driven, goal-oriented attitude, and willingness to learn
   - Experience with Jekyll and Ruby is a plus, but not required
-  ---
+
+url: "website-developer"
+---
