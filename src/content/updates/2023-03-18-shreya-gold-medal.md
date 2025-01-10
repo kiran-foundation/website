@@ -5,7 +5,7 @@ featured_image: /assets/images/posts/shreya.jpg
 priority: "high"
 more: false
 summary: Ms. Shreya Jain one of the Kiran Pratibha scholar, received her gold medal from Honourable Chief Minister of Uttar Pradesh, Shri Yogi Aadityanath. 
-link : "/update/2023-03-18-Shreya/"
+link : "/update/2023-03-18-shreya-gold-medal/"
 content : |
         <div class="updateFocus-container" style="text-align: center;">
         <div class="updateFocus-header">
