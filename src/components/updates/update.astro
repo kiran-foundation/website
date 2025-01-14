@@ -50,9 +50,11 @@ const {
       {featured_image && <img src={featured_image} alt={title} />}
       <p>{summary}</p>
       <div set:html={content}></div>
+      <a href={link}></a>
+      <p>{priority}</p>
     </article>
   </div>
   <NextUpdates title={title} />
-  <TestimonialsCarousel pageTag="home"/>
+  <!-- <TestimonialsCarousel pageTag="home"/> -->
 
 </div>

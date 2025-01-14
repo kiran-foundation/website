@@ -6,7 +6,7 @@ image: /images/posts/SankalpDiwas.jpeg
 description: "किरण फाउंडेशन की स्थापना के सफलतापूर्वक 7 वर्ष पूर्ण होने एवं 8वें वर्ष में प्रवेश के अवसर पर आप को स्नेहपूर्वक आमंत्रित करते हैं। किरण फाउंडेशन परिवार के सदस्य इस अवसर पर सांस्कृतिक, प्रेरणादायक एवं ज्ञानवर्धक कार्यक्रम प्रस्तुत करेंगे। (7:30 PM Thursday, 15th June 2015)"
 more: true
 summary: मां श्रीमति किरण जैन जी की पुण्यतिथि 15 जून को प्रतिवर्ष <b>संकल्प दिवस</b> के रूप में मनाया जाता है।
-link: "/update/2023-06-05-Sankalp"
+link: "/update/2023-06-05-sankalp-diwas"
 content: |
   <p style="text-align: center;"><b> Date: 15th June 2023 </b> <br/><b> Time: 7:30 PM IST </b><br/>This is an online meeting. The joining link will open 20 minutes before the program starts. <br/></p>
   <br/>
