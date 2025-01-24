@@ -1070,7 +1070,7 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: 'Poppins', sans-serif;
-  margin: 100px auto;
+  margin: 50px auto;
   padding: 0 20px;
 }
 
@@ -3969,7 +3969,7 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: 'Poppins', sans-serif;
-  margin: 100px auto;
+  margin: 50px auto;
   padding: 0 20px;
 }
 
@@ -4061,6 +4061,7 @@ body {
 .mainVolunteering-btn-apply {
   background-color: #f1592a;
   color: #fff;
+  text-decoration: none;
 }
 
 .mainVolunteering-btn-see-more {
@@ -4180,7 +4181,7 @@ body {
 
 .WhyVolunteer-frame {
   width: 100%;
- margin-top:50px;
+ margin-top:100px;
   max-width: 1296px;
   display: flex;
   flex-direction: column;

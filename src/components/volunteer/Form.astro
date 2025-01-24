@@ -2,6 +2,9 @@
 const { path } = Astro.props;
 ---
 
+<script src='/assets/js/theme.min.js' is:inline></script>
+<script src='/assets/js/common.js' is:inline></script>
+
 <style>
   input[type="file"] {
     background-color: #051d40; /* Blue background */
@@ -55,42 +58,51 @@ const { path } = Astro.props;
           <textarea id="more" name="more" placeholder="Tell us more about yourself" rows="3"></textarea>
         </div>
         
-        <button type="submit" class="volunteeringForm-submit-button">Send a Request</button>
+        <button type="submit" class="volunteeringForm-submit-button">Submit</button>
       </form>
       <div id="pop-up" style="display: none;">Form submitted successfully!</div>
     </div>
   </div>
 </section>
   
-  <script>
-    const form = document.getElementById('volunteering-form') as HTMLFormElement;
-    const popUp = document.getElementById('pop-up') as HTMLElement;
-    const form_id = '___________'; 
+ <script>
+  const form = document.getElementById('volunteering-form') as HTMLFormElement;
+  const popUp = document.getElementById('pop-up') as HTMLElement;
+  const form_id = '1FAIpQLScRCHRWAEMoAfuKx_vVjRZpfoKJp7TvHNsDRJBj4Hf34DDF1Q';// Replace with your Google Form ID
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const fullName = (document.getElementById('full-name') as HTMLInputElement).value;
-      const email = (document.getElementById('email') as HTMLInputElement).value;
-      const phone = (document.getElementById('phone') as HTMLInputElement).value;
-      const resume = (document.getElementById('resume') as HTMLInputElement).value;
-      const more = (document.getElementById('more') as HTMLTextAreaElement).value;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-      if (fullName && email && phone && resume && more) {
-        const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.1234567890=${encodeURIComponent(fullName)}&entry.0987654321=${encodeURIComponent(email)}&entry.1122334455=${encodeURIComponent(phone)}&entry.5566778899=${encodeURIComponent(resume)}&entry.6677889900=${encodeURIComponent(more)}`;
+    const fullName = (document.getElementById('full-name') as HTMLInputElement).value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const phone = (document.getElementById('phone') as HTMLInputElement).value;
+    const resume = (document.getElementById('resume') as HTMLInputElement).value;
+    const more = (document.getElementById('more') as HTMLTextAreaElement).value;
 
-        try {
-          const _response = await fetch(url, { method: 'POST' });
-        } catch (error) {
-          console.error(error);
-        }
+    // Check if all fields are filled
+    if (fullName && email && phone && resume && more) {
+      const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.2005620554=${encodeURIComponent(fullName)}&entry.1045781291=${encodeURIComponent(email)}&entry.1166974658=${encodeURIComponent(phone)}&entry.1929439720=${encodeURIComponent(role)}&entry.138103954=${encodeURIComponent(more)}`;
 
-        popUp.style.display = 'block';
-        setTimeout(() => {
-          popUp.style.display = 'none';
-        }, 3000);
-        
-        form.reset();
+
+      try {
+        const _response = await fetch(url, { method: 'POST' }); // Send form data to Google Form
+      } catch (error) {
+        console.error(error);
       }
-    });
-  </script>
+
+      // Show the "Form submitted successfully!" message
+      popUp.style.display = 'block';
+
+      // Hide the message after 3 seconds
+      setTimeout(() => {
+        popUp.style.display = 'none';
+      }, 3000);
+
+      // Reset the form fields
+      form.reset();
+    } else {
+      alert('Please fill in all required fields!');
+    }
+  });
+</script>
+

@@ -19,6 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Contact form not found");
   }
 
+  const volunteeringForm = document.getElementById('volunteering-form');
+  if (volunteeringForm) {
+    volunteeringForm.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      submitvolunteeringForm();
+    });
+  } else {
+    console.error("volunteering-form not found");
+  }
+
+
   function submitNotifyForm() {
     const email = document.getElementById('notifyEmail').value;
     const sourcePage = document.getElementById('sourcePage').value;
@@ -40,6 +51,21 @@ document.addEventListener("DOMContentLoaded", function () {
       postToGoogleForm2(name, email, phone, message);
     } else {
       displayMessage('Please fill in all fields for contact form.', false);
+    }
+  }
+
+  function submitvolunteeringForm() {
+    const fullname = document.getElementById('name').value;
+    const email = document.getElementById('contactEmail').value;
+    const phone = document.getElementById('phone').value;
+    const resume = document.getElementById('resume').value;
+    const role = document.getElementById('role').value;
+    const moreinformation = document.getElementById('more').value;
+
+    if (fullname && email && phone && resume && role && moreinformation) {
+      postToGoogleForm3(fullname, email, phone, resume,role,moreinformation);
+    } else {
+      displayMessage('Please fill in all fields for volunteerform.', false);
     }
   }
 
@@ -88,6 +114,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  function postToGoogleForm3(name, email, phone, resume, role, moreinformation) {
+    const scriptURL3 = "https://docs.google.com/forms/d/e/1FAIpQLScRCHRWAEMoAfuKx_vVjRZpfoKJp7TvHNsDRJBj4Hf34DDF1Q/formResponse";
+    const formData3 = new URLSearchParams({
+      "entry.2005620554": name,
+      "entry.1045781291": email,
+      "entry.1166974658": phone,
+      "entry.839337160": resume, // Captures file name only
+      "entry.1929439720": role,
+      "entry.138103954": moreinformation
+    });
+  
+    fetch(scriptURL3, {
+      method: "POST",
+      body: formData3,
+      mode: "no-cors"
+    })
+      .then(() => {
+        displayMessage('Your volunteer request has been recorded.', true);
+        volunteeringForm.reset();
+      })
+      .catch(() => {
+        displayMessage('There was an error submitting the volunteer request. Please try again.', false);
+      });
+  }
+  
   function displayMessage(message, success) {
     console.log("Display Message:", message, "Success:", success);
 
@@ -99,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const messageElement = document.createElement('div');
     messageElement.className = 'notification-message';
-    messageElement.innerText = message;
+    messageElement.innerText ='message';
     messageElement.style.display = 'block';
     messageElement.style.color = success ? 'green' : 'red';
     messageElement.style.marginTop = '10px';
