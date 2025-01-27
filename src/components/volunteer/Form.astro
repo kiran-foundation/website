@@ -68,7 +68,7 @@ const { path } = Astro.props;
  <script>
   const form = document.getElementById('volunteering-form') as HTMLFormElement;
   const popUp = document.getElementById('pop-up') as HTMLElement;
-  const form_id = '1FAIpQLScRCHRWAEMoAfuKx_vVjRZpfoKJp7TvHNsDRJBj4Hf34DDF1Q';// Replace with your Google Form ID
+  const form_id ='1GBxqZhw1JGOfkFAkehcN2cWJ6kfJPs5y7eCCWBH2l7c';
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -77,11 +77,12 @@ const { path } = Astro.props;
     const email = (document.getElementById('email') as HTMLInputElement).value;
     const phone = (document.getElementById('phone') as HTMLInputElement).value;
     const resume = (document.getElementById('resume') as HTMLInputElement).value;
+    const role = (document.getElementById('role') as HTMLInputElement).value;
     const more = (document.getElementById('more') as HTMLTextAreaElement).value;
 
     // Check if all fields are filled
-    if (fullName && email && phone && resume && more) {
-      const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.2005620554=${encodeURIComponent(fullName)}&entry.1045781291=${encodeURIComponent(email)}&entry.1166974658=${encodeURIComponent(phone)}&entry.1929439720=${encodeURIComponent(role)}&entry.138103954=${encodeURIComponent(more)}`;
+    if (fullName && email && phone && resume && role && more) {
+      const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.2005620554=${encodeURIComponent(fullName)}&entry.1045781291=${encodeURIComponent(email)}&entry.1166974658=${encodeURIComponent(phone)}&entry.839337160=${encodeURIComponent(resume)}&entry.1929439720=${encodeURIComponent(role)}&entry.138103954=${encodeURIComponent(more)}`;
 
 
       try {
