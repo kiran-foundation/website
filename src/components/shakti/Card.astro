@@ -1,34 +1,33 @@
 ---
-import { getEntry } from 'astro:content'
-const shaktiCardData = (await getEntry('shakti', 'shakti-card')).data
+import { getEntry } from "astro:content";
+const shaktiCardData = (await getEntry("shakti", "shakti-card")).data;
 ---
 
-<section class='overflow-hidden' style='margin-top:60px;'>
+<section class="overflow-hidden" style="margin-top:60px;">
   <div
-    class='container bg-primary rounded-5 overflow-hidden mt-2 mt-sm-4 mt-lg-5'
-    style='background-color: #051D40 !important; opacity: 1; margin-bottom: 40px; '
+    class="container bg-primary rounded-5 overflow-hidden mt-2 mt-sm-4 mt-lg-5"
+    style="background-color: #051D40 !important; opacity: 1; "
   >
-    <div class='row position-relative z-2 align-items-center'>
-      <div class='col-md-6 col-lg-5 offset-lg-1'>
-        <div
-          class='text-center text-md-start py-5 px-4 px-sm-5 pe-md-0 ps-lg-4 ps-xl-5'
-        >
-          <h2 class='shakti-heading2-h1 text-white pb-2 pb-sm-3'>
+    <div class="row position-relative z-2 align-items-around">
+      <div
+        class="col-md-6 col-lg-5 offset-lg-1 d-flex flex-col align-items-center"
+      >
+        <div class="text-center text-md-start">
+          <h2 class="h1 text-white pb-2 pb-sm-3">
             {shaktiCardData.title}
           </h2>
-          <a
-            class='shaktiCardVolunteer-button mt-4 btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex'
-            href='/'>{shaktiCardData.cardBtn}</a
+          <a class="btn btn-primary btn-sm order-lg-3 d-sm-inline-flex" href="/"
+            >{shaktiCardData.cardBtn}</a
           >
         </div>
       </div>
-      <div class='col-md-6 p-2'>
+      <div class="col-md-6 d-flex justify-content-end">
         <img
-          class='d-block mx-auto mx-md-0 mt-n4 mt-md-0 p-3'
-          style='width:575px; height:320px; border-radius: 48px;'
+          class="rounded-5 my-3"
+          style="width:max-content; max-height:320px;"
           src={shaktiCardData.image}
-          width='534'
-          alt='Image'
+          width="534"
+          alt="Image"
         />
       </div>
     </div>
