@@ -18,3 +18,5 @@ requirements: |
   - Strong problem-solving skills and attention to detail
   - Self-driven, go-getter attitude and Willingness to learn
   - Experience with React Native is a plus, but not required
+url: "react-native-developer"
+---

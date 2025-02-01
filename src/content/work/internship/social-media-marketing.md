@@ -1,10 +1,10 @@
 ---
 title: "Social Media Marketing - Intern (Remote)"
 about: "As a Social Media Marketing Intern, you'll have the opportunity to gain hands-on experience in developing and implementing social media strategies that drive engagement, boost awareness, and foster community growth. You'll work alongside our team to explore social media platforms, content creation, analytics, and online marketing techniques. Through this internship, you'll develop valuable skills and expertise in the fast-paced and dynamic field of social media marketing."
-startDate: "Immediate"
-duration: "3 - 6 Months"
-timeCommitment: "10 hr/week"
-teamSize: "3-5"
+startDate: "Start Date: Immediate"
+duration: "Duration: 3 - 6 Months"
+timeCommitment: "Time Commitment: 10 hr/week"
+teamSize: "Team Size: 3-5"
 responsibilities: |
   - Create engaging and visually appealing social media content
   - Collaborate with the design team to develop brand-aligned assets
@@ -21,4 +21,5 @@ requirements: |
   - Detail-oriented with good organizational skills
   - Enthusiasm for learning and keeping up with social media trends
   - Basic understanding of social media analytics is a plus, but not required
+url: "social-media-marketing"
 ---

@@ -4,14 +4,14 @@ import { remark } from "remark";
 import html from "remark-html";
 
 const roleFile = import.meta.glob<MarkdownFile>(
-  "/src/content/volunteering/Roles/*.md",
+  "/src/content/work/internship/*.md",
 );
 const staticTextsFile = import.meta.glob<MarkdownFile>(
-  "/src/content/volunteer/StaticTexts.md",
+ "/src/content/work/StaticTexts.md",
 );
 
 const role = await (async () => {
-  const volunteerPath = `/src/content/volunteering/Roles/${Astro.props.path}.md`;
+  const volunteerPath = `/src/content/work/internship/${Astro.props.path}.md`;
   const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
@@ -24,9 +24,13 @@ const role = await (async () => {
 })();
 
 if (!role) {
-  console.warn("Role not found");
+  console.warn(
+    "Role not found for path:",
+    `/src/content/work/internship/${Astro.props.path}.md`,
+  );
   // FIXME: Later
   // throw new Error('Role not found');
+  // console.warn("Role not found")
 }
 
 const staticTexts = await (async () => {
@@ -125,7 +129,5 @@ const {
       }
     </p>
   </div>
-  <div class="aboutVolunteering-button-container">
-    <button class="aboutVolunteering-apply-button">{applyNow}</button>
-  </div>
+ 
 </div>

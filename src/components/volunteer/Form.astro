@@ -1,26 +1,51 @@
 ---
 const { path } = Astro.props;
 ---
-<section id="form">
+
+<script src='/assets/js/theme.min.js' is:inline></script>
+<script src='/assets/js/common.js' is:inline></script>
+
+<style>
+  input[type="file"] {
+    background-color: #051d40; /* Blue background */
+    color: white; /* White text */
+    padding: 10px;
+   
+   
+    cursor: pointer;
+  }
+
+  input[type="file"]::-webkit-file-upload-button {
+    background-color: #051d40; /* Blue background for Webkit browsers */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+<section id="form" >
   <div class="volunteeringForm-frame">
     <h1>We'd love to hear from you</h1>
-    <div class="volunteeringForm-container">
+    
       <form id="volunteering-form">
         <div class="volunteeringForm-input-container">
           <label for="full-name">Full Name</label>
           <input type="text" id="full-name" name="full-name" placeholder="Enter your full name">
         </div>
+        <div class='info'>
         <div class="volunteeringForm-input-container-half">
-          <label for="email">Email</label>
+          <label for="email" style="color: #fff; font-size: 16px;">Email</label>
           <input type="email" id="email" name="email" placeholder="Enter your email">
         </div>
         <div class="volunteeringForm-input-container-half">
-          <label for="phone">Phone</label>
+          <label for="phone" style="color: #fff; font-size: 16px;">Phone</label>
           <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
         </div>
+      </div>
         <div class="volunteeringForm-input-container">
           <label for="resume">Resume</label>
-          <input type="file" id="resume" name="resume" placeholder="Upload your resume">
+          <input type="file" id="resume" name="resume" placeholder="Upload your resume" style="color: #5e5e5c">
         </div>
 
         <div class="volunteeringForm-input-container">
@@ -33,42 +58,52 @@ const { path } = Astro.props;
           <textarea id="more" name="more" placeholder="Tell us more about yourself" rows="3"></textarea>
         </div>
         
-        <button type="submit" class="volunteeringForm-submit-button">Send a Request</button>
+        <button type="submit" class="volunteeringForm-submit-button">Submit</button>
       </form>
       <div id="pop-up" style="display: none;">Form submitted successfully!</div>
     </div>
   </div>
 </section>
   
-  <script>
-    const form = document.getElementById('volunteering-form') as HTMLFormElement;
-    const popUp = document.getElementById('pop-up') as HTMLElement;
-    const form_id = '___________'; 
+ <script>
+  const form = document.getElementById('volunteering-form') as HTMLFormElement;
+  const popUp = document.getElementById('pop-up') as HTMLElement;
+  const form_id ='1GBxqZhw1JGOfkFAkehcN2cWJ6kfJPs5y7eCCWBH2l7c';
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const fullName = (document.getElementById('full-name') as HTMLInputElement).value;
-      const email = (document.getElementById('email') as HTMLInputElement).value;
-      const phone = (document.getElementById('phone') as HTMLInputElement).value;
-      const resume = (document.getElementById('resume') as HTMLInputElement).value;
-      const more = (document.getElementById('more') as HTMLTextAreaElement).value;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-      if (fullName && email && phone && resume && more) {
-        const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.1234567890=${encodeURIComponent(fullName)}&entry.0987654321=${encodeURIComponent(email)}&entry.1122334455=${encodeURIComponent(phone)}&entry.5566778899=${encodeURIComponent(resume)}&entry.6677889900=${encodeURIComponent(more)}`;
+    const fullName = (document.getElementById('full-name') as HTMLInputElement).value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const phone = (document.getElementById('phone') as HTMLInputElement).value;
+    const resume = (document.getElementById('resume') as HTMLInputElement).value;
+    const role = (document.getElementById('role') as HTMLInputElement).value;
+    const more = (document.getElementById('more') as HTMLTextAreaElement).value;
 
-        try {
-          const _response = await fetch(url, { method: 'POST' });
-        } catch (error) {
-          console.error(error);
-        }
+    // Check if all fields are filled
+    if (fullName && email && phone && resume && role && more) {
+      const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.2005620554=${encodeURIComponent(fullName)}&entry.1045781291=${encodeURIComponent(email)}&entry.1166974658=${encodeURIComponent(phone)}&entry.839337160=${encodeURIComponent(resume)}&entry.1929439720=${encodeURIComponent(role)}&entry.138103954=${encodeURIComponent(more)}`;
 
-        popUp.style.display = 'block';
-        setTimeout(() => {
-          popUp.style.display = 'none';
-        }, 3000);
-        
-        form.reset();
+
+      try {
+        const _response = await fetch(url, { method: 'POST' }); // Send form data to Google Form
+      } catch (error) {
+        console.error(error);
       }
-    });
-  </script>
+
+      // Show the "Form submitted successfully!" message
+      popUp.style.display = 'block';
+
+      // Hide the message after 3 seconds
+      setTimeout(() => {
+        popUp.style.display = 'none';
+      }, 3000);
+
+      // Reset the form fields
+      form.reset();
+    } else {
+      alert('Please fill in all required fields!');
+    }
+  });
+</script>
+

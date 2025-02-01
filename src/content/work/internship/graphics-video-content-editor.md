@@ -18,4 +18,5 @@ requirements: |
   - Excellent attention to detail and commitment to delivering polished, error-free content
   - Strong communication skills and ability to collaborate effectively in a team environment
   - Experience with video editing and animation software is a plus
+url: "graphics-video-content-editor"
 ---

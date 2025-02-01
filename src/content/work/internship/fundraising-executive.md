@@ -20,4 +20,5 @@ requirements: |
   - Basic proficiency in Microsoft Word and Google Docs.
   - Strong analytical and problem-solving skills.
   - Self-driven and goal-oriented attitude, with a willingness to learn and grow.
-  ---
+url: "fundraising-executive"
+---
