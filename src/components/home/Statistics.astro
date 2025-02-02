@@ -3,9 +3,14 @@ import { getEntry } from 'astro:content'
 const statistics = (await getEntry('home', 'statistics')).data
 const common = (await getEntry('common', 'common')).data
 ---
-
+<style>
+  .stats{
+    margin-bottom:4.4rem;
+    margin-top: 2.5rem;
+  }
+</style>
 <section
-  class='bg-secondary position-relative py-4 py-md-5 '
+  class='stats bg-secondary position-relative py-4 py-md-5 '
   style=' background-color: #051D40 !important; '
 >
   <div class='container position-relative'>

@@ -33,14 +33,19 @@ const updatesToDisplay = showHighPriorityOnly
 ---
 
 <!-- Update display section -->
+<style>
+  .container{
+    margin-bottom: 3.2rem;
+  }
+</style>
 <section
-  class='container pb-2 pb-sm-3 pt- mt-lg-3 mt-xl-5  mb-5 pb-5'
+  class='container pb-4 pb-sm-3 pt- mt-lg-3 mt-xl-5  pb-5 mb-lg-5 mb-1'
   style='background-color: white;'
 >
-  <div class='container'>
+  <div class='container '>
     <Heading title='Updates' />
 
-    <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4'>
+    <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4  mt-1 '>
       {
         updatesToDisplay.map((update, index) => (
           // {if (index < updatesCountToDisplay) {
