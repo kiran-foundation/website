@@ -1,7 +1,7 @@
 ---
 button : 'Donate'
 buttonVolunteer : 'Be a Volunteer'
-programe : 'Our Programe'
+programe : 'Our Programmes'
 pratibha: 'Kiran Pratibha'
 shakti: 'Kiran Shakti'
 samman : 'Kiran Samman'
