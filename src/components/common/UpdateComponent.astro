@@ -1,26 +1,33 @@
 ---
-import type { MarkdownFile } from '../../types/Markdown'
-import Heading from './heading.astro'
-import UpdateCard from './UpdateCard.astro'
+import type { MarkdownFile } from "../../types/Markdown";
+import Heading from "./heading.astro";
+import UpdateCard from "./UpdateCard.astro";
 
-const allUpdates = import.meta.glob<MarkdownFile>('/src/content/updates/*.md')
+// const allUpdates = import.meta.glob<MarkdownFile>('/src/content/updates/*.md')
 
+import { getCollection } from "astro:content";
+
+export async function getAllUpdates() {
+  const allUpdates = await getCollection("updates");
+  return allUpdates;
+}
+const allUpdates = getAllUpdates();
 const updates = await Promise.all(
   Object.values(allUpdates).map(async (update) => {
-    const { frontmatter } = await update()
-    return { ...frontmatter }
-  })
-)
+    const { frontmatter } = await update();
+    return { ...frontmatter };
+  }),
+);
 
-const { showHighPriorityOnly = false, isMainPage = false } = Astro.props
+const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;
 
 const filteredUpdates = updates
-  .filter((update) => !showHighPriorityOnly || update.priority === 'high')
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .filter((update) => !showHighPriorityOnly || update.priority === "high")
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const updatesToDisplay = showHighPriorityOnly
   ? filteredUpdates.slice(0, 3)
-  : filteredUpdates
+  : filteredUpdates;
 
 // let updatesCountToDisplay = 6
 
@@ -34,18 +41,20 @@ const updatesToDisplay = showHighPriorityOnly
 
 <!-- Update display section -->
 <style>
-  .container{
+  .container {
     margin-bottom: 2rem;
   }
 </style>
 <section
-  class='container pb-4 pb-sm-3 pt- mt-lg-3 mt-xl-5  pb-5 mb-lg-5 mb-1 '
-  style='background-color: white;'
+  class="container pb-4 pb-sm-3 pt- mt-lg-3 mt-xl-5 pb-5 mb-lg-5 mb-1"
+  style="background-color: white;"
 >
-  <div class='container '>
-    <Heading title='Updates' />
+  <div class="container">
+    <Heading title="Updates" />
 
-    <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4  mt-1 '>
+    <div
+      class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 mt-1"
+    >
       {
         updatesToDisplay.map((update, index) => (
           // {if (index < updatesCountToDisplay) {
@@ -58,13 +67,13 @@ const updatesToDisplay = showHighPriorityOnly
     <!-- See More button -->
     {
       isMainPage ? (
-        <div class='text-center mb-1  mt-5 '>
-          <a href='/updates' class='home-button btn btn-outline-primary'>
+        <div class="text-center mb-1  mt-5 ">
+          <a href="/updates" class="home-button btn btn-outline-primary">
             See More
           </a>
         </div>
       ) : (
-        <div class='text-center mt-4'>
+        <div class="text-center mt-4">
           {/* <button class="btn btn-primary" onclick={updateValue}>
         Show more
       </button> */}
