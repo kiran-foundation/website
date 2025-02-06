@@ -1,82 +1,199 @@
 ---
 import { getEntry } from "astro:content";
-const footerDetails =(await getEntry("footer" , "details")).data
+const footerDetails = (await getEntry("footer", "details")).data;
 ---
-
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="bg-secondary py-5 d-flex justify-content-center align-item-center">
-    <div class="container pt-sm-2 pt-md-3 pt-lg-3">
-      <div class="row mb-md-5 mb-4 pb-lg-1" style="margin-left: 1rem;">
-        <div class="logo-container col-lg-4">
-          <a class='footer navbar-brand pe-sm-3 ' href='/'>
-            <span class='text-primary flex-shrink-0 me-2'>
-             
-                <img
-                  src='/Logo.png'
-                  width='107'
-                  
-                  height='66.61'
-                  alt='kiran foundation logo'
-                />
-              </svg>
-            </span>
-          </a>
-      
-          <p class="footer-paragraph fs-sm pb-2 pb-md-3 mb-3 p-2">{footerDetails.description}</p>
-          <div class="mt-n3 ms-n2">
-              <a class="btn btn-secondary btn-icon btn-sm btn-x rounded-circle mt-3 ms-3" href="https://www.instagram.com/kiran_trust/" aria-label="Instagram">
-                  <i class="ai-instagram"></i>
-              </a>
-              <a class="btn btn-secondary btn-icon btn-sm btn-x rounded-circle mt-3 ms-3" href="https://www.facebook.com/foundation.kiran" aria-label="Facebook">
-                  <i class="ai-facebook"></i>
-              </a>
-              <a class="btn btn-secondary btn-icon btn-sm btn-x rounded-circle mt-3 ms-3" href="https://www.linkedin.com/company/kirantrust/" aria-label="LinkedIn">
-                  <i class="ai-linkedin"></i>
-              </a>
+  <div
+    class="bg-secondary py-5 d-flex justify-content-center align-items-center"
+  >
+    <div class="container w-100 px-4">
+      <div class="row text-center">
+        <!-- Logo & Description text-md-start -->
+        <div class="col-sm-6 col-md-3">
+          <div class="logo-container">
+            <a class="footer navbar-brand p-2" href="/">
+              <img
+                src="/Logo.png"
+                width="107"
+                height="66.61"
+                alt="kiran foundation logo"
+              />
+            </a>
+          </div>
+          <p class="footer-paragraph fs-sm p-2">
+            {footerDetails.description}
+          </p>
+          <div class="d-flex flex-row gap-2">
+            <!-- justify-content-md-start -->
+
+            <a
+              class="btn btn-secondary btn-icon btn-sm rounded-circle"
+              href="https://www.instagram.com/kiran_trust/"
+              aria-label="Instagram"
+            >
+              <i class="ai-instagram"></i>
+            </a>
+            <a
+              class="btn btn-secondary btn-icon btn-sm rounded-circle"
+              href="https://www.facebook.com/foundation.kiran"
+              aria-label="Facebook"
+            >
+              <i class="ai-facebook"></i>
+            </a>
+            <a
+              class="btn btn-secondary btn-icon btn-sm rounded-circle"
+              href="https://www.linkedin.com/company/kirantrust/"
+              aria-label="LinkedIn"
+            >
+              <i class="ai-linkedin"></i>
+            </a>
           </div>
         </div>
-        <div class="col-xl-8 offset-xl-1 col-lg-8" style="margin-left:-3px;">
-          <div class="row mt-4" style="gap:22px;">
-            <div class="col">
-              <h4 class="h6 fw-bold pb-lg-1">{footerDetails.aboutTitle.about}</h4>
-              <ul class="footer-list-style nav flex-column" style="margin-top:-7px;">
-                <li class="nav-item mb-2">
-                  <a class="nav-link p-0" href="#">{footerDetails.aboutTitle.story}</a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a class="nav-link p-0" href="/privacy-policy">{footerDetails.aboutTitle.policy}</a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a class="nav-link p-0" href="annual-report">{footerDetails.aboutTitle.report}</a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a class="nav-link p-0" href="fiancial-statement">{footerDetails.aboutTitle.statement}</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col ps-sm-4">
-              <h4 class="h6 fw-bold pb-lg-1 mb-1 ">{footerDetails.contactTitle.contact}</h4>
-              <ul class="footer-list-style nav flex-column mb-0"> 
-                  <li><a class="nav-link py-1 px-0" style="width:205px" href="mailto:info@kiran.foundation"><i class="fa fa-envelope" style="font-size:24px"></i>&nbsp; {footerDetails.contactTitle.info} </a></li>
-                  <li><a class="nav-link py-1 px-0" href="tel:919303997100"><i class="fa fa-phone" style="font-size:24px"></i>&nbsp; {footerDetails.contactTitle.phone} </a></li>
-                  <li><a class="nav-link py-1 px-0" href="https://wa.me/919880141412"><i class="fa fa-whatsapp" style="font-size:24px"></i>&nbsp; {footerDetails.contactTitle.whatsApp}</a></li>
-              </ul>
-            </div>           
-            <div class="col" style="margin-top:-7px;">
-              <h4 class="h6 fw-bold pb-lg-1 mb-1"> {footerDetails.listTitle.heading}</h4>
-              <ul class="nav flex-column footer-list-style">                 
-                  <li><a class="nav-link py-1 px-0"  href="/shakti"><i class="fa fa-whatsapp" style="font-size:24px"></i>&nbsp; {footerDetails.listTitle.shaktiGroup} </a></li>
-                  <li><a class="nav-link py-1 px-0" style="width:290px;"  href="/src/components/About/speaker.astro"><i class="fa fa-whatsapp" style="font-size:24px;"></i>&nbsp; {footerDetails.listTitle.speakingClubGroup}</a></li>
-                  <li><a class="nav-link py-1 px-0" href="#"><i class="fa fa-whatsapp" style="font-size:24px"></i>&nbsp; {footerDetails.listTitle.gyanGroup}</a></li>
-                  <li><a class="nav-link py-1 px-0" href="https://chat.whatsapp.com/"><i class="fa fa-whatsapp" style="font-size:24px"></i>&nbsp; {footerDetails.listTitle.volunteerGroup} </a></li>
-              </ul>
-            </div>           
+
+        <!-- About Section -->
+        <div
+          class="col-sm-6 col-md-3 mt-4 pt-4 mt-md-0 d-flex align-item-center justify-content-center"
+        >
+          <div>
+            <ul class="footer-list-style nav flex-column">
+              <li>
+                <a
+                  href="/about"
+                  class="h6 nav-link d-flex align-items-center p-2 text-align-center"
+                  style="color:black;"
+                >
+                  {footerDetails.aboutTitle.about}
+                </a>
+              </li>
+              <li>
+                <a
+                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  href="/compliance">{footerDetails.aboutTitle.compliance}</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  href="/newsletter">{footerDetails.aboutTitle.newsletter}</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  href="/privacy-policy">{footerDetails.aboutTitle.policy}</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div
+          class="col-sm-6 col-md-3 mt-4 pt-4 mt-md-0 d-flex align-item-center justify-content-center"
+        >
+          <div>
+            <ul class="footer-list-style nav flex-column">
+              <li>
+                <a
+                  class="h6
+                nav-link
+                d-flex
+                align-items-center
+                p-2
+                text-align-center"
+                  href="/contact"
+                  style="color:black;"
+                >
+                  {footerDetails.contactTitle.contact}
+                </a>
+              </li>
+              <li>
+                <a
+                  class="nav-link d-flex align-items-center p-2 text-align-center"
+                  href="mailto:info@kiran.foundation"
+                >
+                  {footerDetails.contactTitle.info}</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  href="tel:919303997100"
+                >
+                  {footerDetails.contactTitle.phone}</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  href="https://wa.me/919880141412"
+                >
+                  {footerDetails.contactTitle.whatsApp}</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Volunteering Section -->
+        <div
+          class="col-sm-6 col-md-3 mt-4 pt-4 mt-md-0 d-flex align-item-center justify-content-center"
+        >
+          <div>
+            <ul class="nav flex-column footer-list-style">
+              <li>
+                <h4
+                  class="h6
+                nav-link
+                d-flex
+                align-items-center
+                p-2
+                text-align-centerh6
+                nav-link
+                d-flex
+                align-items-center
+                p-2
+                text-align-center"
+                  style="color:black;"
+                >
+                  {footerDetails.listTitle.heading}
+                </h4>
+              </li>
+              <li>
+                <a
+                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  href="/volunteering"
+                >
+                  {footerDetails.listTitle.volunteerWithUs}</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  href="/"
+                >
+                  {footerDetails.listTitle.internshipOpportunities}</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  href="/become-mentor"
+                >
+                  {footerDetails.listTitle.becomeMentor}</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="footer-copy-right p-2 ms-4 text-body-secondary">&copy; Kiran Foundation <a href="#" target="_blank" rel="noopener" class="text-dark text-decoration-none opacity-90"></a></div>
+
+      <!-- Copyright -->
+      <div class="footer-copy-right p-2 text-center text-body-secondary mt-3">
+        &copy; Kiran Foundation
+      </div>
     </div>
   </div>
 </footer>
