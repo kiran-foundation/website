@@ -3,34 +3,21 @@
 
 import update from "../../components/updates/update.astro";
 import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
-// Define the function to get static paths
-export function getStaticPaths() {
-  // Import all markdown files from the updates directory
-  const allUpdates = import.meta.glob('/src/content/updates/*.md')
+export async function getStaticPaths() {
+  // Fetch all markdown files from the 'updates' collection
+  const allUpdates = await getCollection("updates");
 
-  // Initialize an array to store the paths
-  let parameters = []
-
-  // Iterate over the imported files to generate paths
-  Object.entries(allUpdates).forEach(([key]) => {
-    // Extract the slug from the file path
-    const slug = key.split('/').pop()?.replace('.md', '')
-
-    if (slug) {
-      // Add the path to the parameters array
-      parameters.push({
-        params: { slug }
-      })
-    }
-  })
-
-  return parameters
+  // Generate static paths using slugs
+  return allUpdates.map((update) => ({
+    params: { slug: update.slug },
+  }));
 }
 
-const { slug } = Astro.params
+const { slug } = Astro.params;
 ---
 
 <Layout>
-  <update path={slug} />
+  <update path={slug}></update>
 </Layout>
