@@ -9,24 +9,19 @@ import HowDoesItWork from "../../components/volunteer/HowDoesItWork.astro";
 import Layout from "../../layouts/Layout.astro";
 import AboutInternship from "../../components/volunteer/AboutInternship.astro";
 import type { MarkdownFile } from "../../types/Markdown";
-import { getCollection } from "astro:content";
+
 const { path } = Astro.params;
 
-export async function getStaticPaths() {
-  // const allVolunteering = import.meta.glob<MarkdownFile>(
-  //   "/src/content/work/internship/*.md",
-  // );
+import { getCollection } from "astro:content";
 
+export async function getStaticPaths() {
+  // Fetch all markdown files from the "work" collection
   const allVolunteering = await getCollection("work");
 
-  let parameters = [];
-  Object.entries(allVolunteering).forEach(([key,]) => {
-    parameters.push({
-      params: { path: key.split("/").pop()?.replace(".md", "") },
-    });
-  });
-
-  // console.log(parameters);
+  // Generate static paths using slugs
+  const parameters = allVolunteering.map((entry) => ({
+    params: { path: entry.slug }, // Using Astro's built-in slug property
+  }));
 
   return parameters;
 }

@@ -8,16 +8,18 @@ import UpdateCard from "./UpdateCard.astro";
 import { getCollection } from "astro:content";
 
 export async function getAllUpdates() {
-  const allUpdates = await getCollection("updates");
-  return allUpdates;
+  return await getCollection("updates");
 }
-const allUpdates = getAllUpdates();
-const updates = await Promise.all(
-  Object.values(allUpdates).map(async (update) => {
-    const { frontmatter } = await update();
-    return { ...frontmatter };
-  }),
-);
+
+// Fetch updates properly
+const allUpdates = await getAllUpdates();
+
+// Extract frontmatter directly (no need for async mapping)
+const updates = allUpdates.map((update) => ({
+  ...update.data, // `data` contains frontmatter fields
+}));
+
+// console.log(updates);
 
 const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;
 
