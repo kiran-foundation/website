@@ -1,4 +1,6 @@
 _site/
 .sass-cache/
+.astro/
 .jekyll-metadata
 my.todo
+node_modules
