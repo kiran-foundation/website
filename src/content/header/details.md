@@ -51,7 +51,7 @@ sections:
       linkSix: "/shakit/english-speaking-club"
       linkSeven: "/shakti/join"
     
-- whoWeAreTitle: "Who we are?"
+  - whoWeAreTitle: "Who we are?"
     menuOption:
       menuOptionOne: "About us"
       menuOptionTwo: "Our team"
@@ -60,15 +60,15 @@ sections:
       linkOne: "/about-us"
       linkTwo: "/team"
       linkThree: "/vision"
-
-- resourcesTitle: "Resources"
+    
+  - resourcesTitle: "Resources"
     menuOption:
       menuOptionOne: "Updates"
       menuOptionTwo: "Gallery"
     menuLink:
       linkOne: "/updates"
       linkTwo: "/gallery"
-
+  
   - contactUsTitle: "Contact us"
     menuOption:
       menuOptionOne: "Updates"
