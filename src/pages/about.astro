@@ -6,11 +6,9 @@ import Hero from '../components/about/Hero.astro'
 import Mission from '../components/about/Mission.astro'
 import TestimonialsCarousel from '../components/common/TestimonialsCarousel.astro'
 import Team from '../components/about/Team.astro'
-import Volunteers from '../components/about/Volunteers.astro'
 import Heading from '../components/common/heading.astro'
 import Gallery from '../components/about/Gallery.astro'
 import { getEntry } from 'astro:content'
-import Speaker from '../components/unused/speaker.astro'
 import Introduction from '../components/about/Introduction.astro'
 const testimonials = (await getEntry('testimonials', 'testimonials')).data
 
@@ -20,7 +18,7 @@ interface Props {
 
 
 
-import PersonList from '../components/personList/personList.astro'
+import PersonList from '../components/person-list/PersonList.astro'
 ---
 
 <Layout>
