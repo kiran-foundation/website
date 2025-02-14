@@ -1,0 +1,94 @@
+---
+const myprops = Astro.props;
+const data = myprops.info;
+const modalId = myprops.id;
+---
+
+<div
+  class="modal fade"
+  id={modalId}
+  tabindex="-1"
+  aria-labelledby={`${modalId}Label`}
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-primary fw-bold" id={`${modalId}Label`}>
+          {data.title}
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body text-secondary">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <img
+              class="img-fluid rounded-circle border border-3 border-primary"
+              src={data.featured_image}
+              alt="loading"
+            />
+            <div class="mt-3">
+              {data.media?.linkedin && (
+                <a
+                  href={data.media.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="d-inline-block mx-2"
+                >
+                  <img
+                    class="img-fluid"
+                    src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                    alt="LinkedIn"
+                    width="30"
+                    height="30"
+                  />
+                </a>
+              )}
+              {data.media?.instagram && (
+                <a
+                  href={data.media.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="d-inline-block mx-2"
+                >
+                  <img
+                    class="img-fluid"
+                    src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png"
+                    alt="Instagram"
+                    width="30"
+                    height="30"
+                  />
+                </a>
+              )}
+              <!-- {data.media?.email && (
+                <a
+                  href={`mailto:${data.media.email}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="d-inline-block mx-2"
+                >
+                  <img
+                    class="img-fluid"
+                    src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+                    alt="Email"
+                    width="30"
+                    height="30"
+                  />
+                </a>
+              )} -->
+            </div>
+          </div>
+          <div class="col-md-8">
+            {data.quote && <p class="fst-italic text-warning fs-5 mb-3">{data.quote}</p>}
+            <p class="text-black">{data.about}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

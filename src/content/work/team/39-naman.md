@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Naman Kumar Jain 
-featured_image: /images/pratibha_page/Naman.png
+featured_image: /assets/images/pratibha_page/Naman.png
 more: true 
 type: Student
 media:  

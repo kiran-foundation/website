@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Mouli jain
-featured_image: /images/pratibha_page/mauli.png
+featured_image: /assets/images/pratibha_page/mauli.png
 more: true 
 type: Student
 media:  

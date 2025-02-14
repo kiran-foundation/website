@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Sanyam jain
-featured_image: /images/pratibha_page/sanyam.png
+featured_image: /assets/images/pratibha_page/sanyam.png
 more: true 
 type: Student
 media:  

@@ -17,6 +17,10 @@ const testimonials = (await getEntry('testimonials', 'testimonials')).data
 interface Props {
   title: string
 }
+
+
+
+import PersonList from '../components/personList/personList.astro'
 ---
 
 <Layout>
@@ -26,7 +30,8 @@ interface Props {
     <Introduction />
     <Mission />
     <Team />
-    <Volunteers />
+    <PersonList foldername="work" path="team/" filter="Student" title="Student"/> 
+    <!-- <Volunteers />                                removed this component for new changes above  -->
     <Heading title={testimonials.title} />
     <TestimonialsCarousel pageTag='pratibha' />
     <Gallery />

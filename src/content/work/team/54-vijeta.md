@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: CA Vijeta Rathore
-featured_image: /images/efs/vijeta.png
+featured_image: /assets/images/efs/vijeta.png
 more: false
 type: EfsTeacher
 media:  

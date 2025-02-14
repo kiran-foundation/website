@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Rutika Kolhapure 
-featured_image: /images/pratibha_page/rutika.png
+featured_image: /assets/images/pratibha_page/rutika.png
 more: true 
 type: Student
 media:  
