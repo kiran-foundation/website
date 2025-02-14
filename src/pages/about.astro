@@ -10,15 +10,14 @@ import Heading from '../components/common/heading.astro'
 import Gallery from '../components/about/Gallery.astro'
 import { getEntry } from 'astro:content'
 import Introduction from '../components/about/Introduction.astro'
+import PersonList from '../components/person-list/PersonList.astro'
+
 const testimonials = (await getEntry('testimonials', 'testimonials')).data
 
 interface Props {
   title: string
 }
 
-
-
-import PersonList from '../components/person-list/PersonList.astro'
 ---
 
 <Layout>
