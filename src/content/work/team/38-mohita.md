@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Mohita Jain
-featured_image: /images/pratibha_page/mohita.jpg
+featured_image: /assets/images/pratibha_page/mohita.jpg
 more: true 
 type: Student
 media:  

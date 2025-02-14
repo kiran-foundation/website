@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Dharshan Krishna 
-featured_image: /images/pratibha_page/darshan.png
+featured_image: /assets/images/pratibha_page/darshan.png
 more: true 
 type: Student
 media:  

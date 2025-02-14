@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: CA Anant Pankaj Jain
-featured_image: /images/efs/pankaj.png
+featured_image: /assets/images/efs/pankaj.png
 more: false
 type: EfsTeacher
 media:  

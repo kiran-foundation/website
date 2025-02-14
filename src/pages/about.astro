@@ -6,17 +6,18 @@ import Hero from '../components/about/Hero.astro'
 import Mission from '../components/about/Mission.astro'
 import TestimonialsCarousel from '../components/common/TestimonialsCarousel.astro'
 import Team from '../components/about/Team.astro'
-import Volunteers from '../components/about/Volunteers.astro'
 import Heading from '../components/common/heading.astro'
 import Gallery from '../components/about/Gallery.astro'
 import { getEntry } from 'astro:content'
-import Speaker from '../components/unused/speaker.astro'
 import Introduction from '../components/about/Introduction.astro'
+import PersonList from '../components/person-list/PersonList.astro'
+
 const testimonials = (await getEntry('testimonials', 'testimonials')).data
 
 interface Props {
   title: string
 }
+
 ---
 
 <Layout>
@@ -26,7 +27,8 @@ interface Props {
     <Introduction />
     <Mission />
     <Team />
-    <Volunteers />
+    <PersonList foldername="work" path="team/" filter="Student" title="Student"/> 
+    <!-- <Volunteers />                                removed this component for new changes above  -->
     <Heading title={testimonials.title} />
     <TestimonialsCarousel pageTag='pratibha' />
     <Gallery />

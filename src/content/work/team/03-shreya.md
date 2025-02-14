@@ -1,12 +1,13 @@
 ---
+active: "Y"
 layout: member
 title: Shreya Jain
-featured_image: /images/volunteers/shreya.jpg
+featured_image: /assets/images/volunteers/shreya.jpg
 more: true
 type: edsTeacher
 role: Teacher, part of digital cell
 media:  
-  email: mailto:sjain902746@gmail.com
+  email: sjain902746@gmail.com
   linkedin: https://www.linkedin.com/in/shreya-jain-3405271b2/ 
   instagram: https://www.instagram.com/shreya_jn_/     
 quote:   “It is never too late to be who you might have been.”
