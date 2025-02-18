@@ -5,7 +5,7 @@ import Modal from "./modal.astro";
 const { foldername, path,filter, title } = Astro.props;
 const workEntries = await getCollection(foldername);
 const teamEntries = workEntries
-  .filter((entry: any) => entry.id.startsWith(`${path}`))
+  .filter((entry: any) => entry.id.startsWith(path))
   .filter((entry: any) => 
     !filter || 
     (Array.isArray(entry.data.type) 
