@@ -11,7 +11,6 @@ import Gallery from '../components/about/Gallery.astro'
 import { getEntry } from 'astro:content'
 import Volunteers from '../components/about/Volunteers.astro'
 import Introduction from '../components/about/Introduction.astro'
-// import PersonList from '../components/person-list/PersonList.astro'
 
 const testimonials = (await getEntry('testimonials', 'testimonials')).data
 
@@ -28,7 +27,6 @@ interface Props {
     <Introduction />
     <Mission />
     <Team />
-    <!-- <PersonList foldername="work" path="team/" filter="Student" title="Student"/>  -->
     <Volunteers /> 
     <Heading title={testimonials.title} />
     <TestimonialsCarousel pageTag='pratibha' />
