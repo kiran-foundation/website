@@ -28,6 +28,7 @@ const {
 
 import { getEntry } from "astro:content";
 const common = (await getEntry("common", "common")).data;
+import '../styles/global.css';
 ---
 
 <!doctype html>
