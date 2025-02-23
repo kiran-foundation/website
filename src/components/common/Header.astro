@@ -1,99 +1,289 @@
 ---
-import { getEntry } from 'astro:content';
-const headerDetails = (await getEntry('header', 'details')).data;
+import { getEntry } from "astro:content";
+const headerDetails = (await getEntry("header", "details"))?.data;
 ---
 
-<!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
-<header class='navbar navbar-expand-lg fixed-top' style='background-color: #ffffff;'>
-  <div class='container'>
+<!-- Navbar -->
+<header
+  class="navbar navbar-expand-lg fixed-top"
+  style="background-color: #ffffff;"
+>
+  <div class="container">
     <!-- Navbar brand (Logo) -->
-    <a class='navbar-brand pe-sm-3' href='/'>
-      <span class='text-primary flex-shrink-0 me-2'>
-        <svg width='35' height='32' viewBox='0 0 36 33'>
-          <img src='/Logo.png' width='107' height='66.61' alt='kiran foundation logo' />
-        </svg>
+    <a class="navbar-brand pe-sm-3" href="/">
+      <span class="text-primary flex-shrink-0 me-2">
+        <img
+          src="/Logo.png"
+          width="107"
+          height="66.61"
+          alt="Kiran Foundation Logo"
+        />
       </span>
     </a>
 
-    <div class='space-x-4 order-lg-3'>
+    <div class="space-x-4 order-lg-3">
       <a
-        class='home-button btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold'
-        href='/donation'
-        rel='noopener'
+        class="home-button btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold"
+        href="/donation"
+        rel="noopener"
       >
-        <i class='fs-xl me-2 ms-n1'></i>
-        {headerDetails.sections[0].button}
+        {headerDetails.button}
       </a>
       <a
-        class='home-button btn btn-outline-primary space-x-4 btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold'
-        href='/volunteering'
+        class="home-button btn btn-outline-primary space-x-4 btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold"
+        href="/volunteering"
       >
-        {headerDetails.sections[1].buttonVolunteer}
+        {headerDetails.buttonVolunteer}
       </a>
     </div>
 
     <!-- Mobile menu toggler (Hamburger) -->
     <button
-      class='navbar-toggler ms-sm-3'
-      type='button'
-      data-bs-toggle='collapse'
-      data-bs-target='#navbarNav'
-      aria-label='Toggle navigation'
+      class="navbar-toggler ms-sm-3"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-label="Toggle navigation"
     >
       <span>
-        <svg width='30' height='30' viewBox='0 0 30 30'>
-          <rect width='30' height='4' fill='#000'></rect>
-          <rect y='12' width='30' height='4' fill='#000'></rect>
-          <rect y='24' width='30' height='4' fill='#000'></rect>
+        <svg width="30" height="30" viewBox="0 0 30 30">
+          <rect width="30" height="4" fill="#000"></rect>
+          <rect y="12" width="30" height="4" fill="#000"></rect>
+          <rect y="24" width="30" height="4" fill="#000"></rect>
         </svg>
       </span>
     </button>
 
-    <!-- Navbar collapse (Main navigation) -->
-    <nav class='collapse navbar-collapse' id='navbarNav'>
-      <ul class='navbar-nav navbar-nav-scroll me-auto' style='--ar-scroll-height: 520px;'>
-        <li class='nav-item dropdown'>
-          <a class='nav-link dropdown-toggle' href='/' data-bs-toggle='dropdown' aria-expanded='false'>
-            {headerDetails.sections[2].programe}
+    <!-- Navbar Collapse (Main Navigation) -->
+    <nav class="collapse navbar-collapse" id="navbarNav">
+      <ul
+        class="navbar-nav navbar-nav-scroll me-auto"
+        style="--ar-scroll-height: 520px;"
+      >
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="/pratibha"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+            aria-expanded="false"
+          >
+            {headerDetails.pratibhaTitle}
           </a>
-          <ul class='dropdown-menu'>
-            <!-- Pratibha Menu -->
-            <li class='dropdown'>
-              <a class='dropdown-item' href='/pratibha'>{headerDetails.sections[3].pratibhaTitle}</a>
-              <ul class='dropdown-menu'>
-                {headerDetails.sections[3].menuOption.map((option, index) => (
-                  <li key={index}>
-                    <a class='dropdown-item' href={headerDetails.sections[3].menuLink[`link${index + 1}`]}>
-                      {option}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </li>
-            <!-- Shakti Menu -->
-            <li class='dropdown'>
-              <a class='dropdown-item' href='/shakti'>{headerDetails.sections[4].shaktiTitle}</a>
-              <ul class='dropdown-menu'>
-                {headerDetails.sections[4].menuOption.map((option, index) => (
-                  <li key={index}>
-                    <a class='dropdown-item' href={headerDetails.sections[4].menuLink[`link${index + 1}`]}>
-                      {option}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          <ul class="dropdown-menu">
+            <li class="dropdown">
+              <a
+                class="dropdown-item"
+                href={headerDetails.pratibhaLinks.linkOne}
+                aria-expanded="false"
+              >
+                {headerDetails.pratibhaMenu.menuOptionOne}
+              </a>
+
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.pratibhaLinks.linkTwo}
+                  aria-expanded="false"
+                >
+                  {headerDetails.pratibhaMenu.menuOptionTwo}
+                </a>
+              </li>
+
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.pratibhaLinks.linkThree}
+                  aria-expanded="false"
+                >
+                  {headerDetails.pratibhaMenu.menuOptionThree}
+                </a>
+              </li>
+
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.pratibhaLinks.linkFour}
+                  aria-expanded="false"
+                >
+                  {headerDetails.pratibhaMenu.menuOptionFour}
+                </a>
+              </li>
+
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.pratibhaLinks.linkFive}
+                  aria-expanded="false"
+                >
+                  {headerDetails.pratibhaMenu.menuOptionFive}
+                </a>
+              </li>
             </li>
           </ul>
         </li>
 
-        <li class='nav-item'>
-          <a class='nav-link' href='/about'>{headerDetails.sections[5].about}</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='/contact'>{headerDetails.sections[5].contact}</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='/gallery'>{headerDetails.sections[5].gallery}</a>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="/shakti"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+            aria-expanded="false"
+          >
+            {headerDetails.shaktiTitle}
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown">
+              <a
+                class="dropdown-item"
+                href={headerDetails.shaktiLinks.linkOne}
+                aria-expanded="false"
+              >
+                {headerDetails.shaktiMenu.menuOptionOne}
+              </a>
+
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.shaktiLinks.linkTwo}
+                  aria-expanded="false"
+                >
+                  {headerDetails.shaktiMenu.menuOptionTwo}
+                </a>
+              </li>
+
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.shaktiLinks.linkThree}
+                  aria-expanded="false"
+                >
+                  {headerDetails.shaktiMenu.menuOptionThree}
+                </a>
+              </li>
+
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.shaktiLinks.linkFour}
+                  aria-expanded="false"
+                >
+                  {headerDetails.shaktiMenu.menuOptionFour}
+                </a>
+              </li>
+
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.shaktiLinks.linkFive}
+                  aria-expanded="false"
+                >
+                  {headerDetails.shaktiMenu.menuOptionFive}
+                </a>
+              </li>
+
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.shaktiLinks.linkSix}
+                  aria-expanded="false"
+                >
+                  {headerDetails.shaktiMenu.menuOptionSix}
+                </a>
+              </li>
+
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.shaktiLinks.linkSeven}
+                  aria-expanded="false"
+                >
+                  {headerDetails.shaktiMenu.menuOptionSeven}
+                </a>
+              </li>
+            </li>
+          </ul>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+              aria-expanded="false"
+            >
+              {headerDetails.whoWeAreTitle}
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.whoWeAreLinks.linkOne}
+                  aria-expanded="false"
+                >
+                  {headerDetails.whoWeAreMenu.menuOptionOne}
+                </a>
+
+                <li class="dropdown">
+                  <a
+                    class="dropdown-item"
+                    href={headerDetails.whoWeAreLinks.linkTwo}
+                    aria-expanded="false"
+                  >
+                    {headerDetails.whoWeAreMenu.menuOptionTwo}
+                  </a>
+                </li>
+
+                <li class="dropdown">
+                  <a
+                    class="dropdown-item"
+                    href={headerDetails.whoWeAreLinks.linkThree}
+                    aria-expanded="false"
+                  >
+                    {headerDetails.whoWeAreMenu.menuOptionThree}
+                  </a>
+                </li>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+              aria-expanded="false"
+            >
+              {headerDetails.resourcesTitle}
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown">
+                <a
+                  class="dropdown-item"
+                  href={headerDetails.resourcesLinks.linkOne}
+                  aria-expanded="false"
+                >
+                  {headerDetails.resourcesMenu.menuOptionOne}
+                </a>
+
+                <li class="dropdown">
+                  <a
+                    class="dropdown-item"
+                    href={headerDetails.resourcesLinks.linkTwo}
+                    aria-expanded="false"
+                  >
+                    {headerDetails.resourcesMenu.menuOptionTwo}
+                  </a>
+                </li>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href={headerDetails.contactUsLinks.linkOne}>
+              {headerDetails.contactUsTitle}
+            </a>
+          </li>
         </li>
       </ul>
     </nav>
