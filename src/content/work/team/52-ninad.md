@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: CA Ninad Jalatre
-featured_image: /images/efs/ninad.png
+featured_image: /assets/images/efs/ninad.png
 more: false
 type: EfsTeacher
 media:  

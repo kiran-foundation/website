@@ -3,7 +3,7 @@ import { getEntry } from 'astro:content'
 const aboutVolunteer = (await getEntry('about', 'volunteer')).data
 ---
 
-<div class='container' style='margin-top: 2rem;'>
+<div class='container border border-primary' style='margin-top: 2rem;'>
   <div class='volunteers-c1-title'>{aboutVolunteer.title}</div>
   <div class='volunteers-c1-card-container'>
     <div class='volunteers-c1-card'>

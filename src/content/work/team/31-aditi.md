@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Aditi Jain
-featured_image: /images/pratibha_page/aditi.jpg
+featured_image: /assets/images/pratibha_page/aditi.jpg
 more: true 
 type: Student
 media:  

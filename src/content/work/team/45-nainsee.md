@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Nainsee Sahu
-featured_image: /images/pratibha_page/nainsi.png
+featured_image: /assets/images/pratibha_page/nainsi.png
 more: true 
 type: Student
 media:  

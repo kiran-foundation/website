@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Keshu Jain
-featured_image: /images/volunteers/keshu.jpg
+featured_image: /assets/images/volunteers/keshu.jpg
 more: true
 type: edsTeacher
 role: Teacher, part of digital cell

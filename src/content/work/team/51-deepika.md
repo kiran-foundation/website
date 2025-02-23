@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Deepika Murthy
-featured_image: /images/teachers/Deepika.png
+featured_image: /assets/images/teachers/Deepika.png
 more: false
 type: lawTeacher
 media:  

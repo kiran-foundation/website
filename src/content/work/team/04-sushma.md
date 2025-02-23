@@ -1,9 +1,12 @@
 ---
+active: "Y"
 layout: member
 title: Sushma Badkul
-featured_image: /images/volunteers/sushma.png
+featured_image: /assets/images/volunteers/sushma.png
 more: False
-type: Volunteer
+type: 
+   - Volunteer 
+#  -<any other fiter> 
 
 ---
     

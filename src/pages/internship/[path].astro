@@ -15,22 +15,21 @@ const { path } = Astro.params;
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  // Fetch all markdown files from the "work" collection
   const allVolunteering = await getCollection("work");
 
-  // Generate static paths using slugs
-  const parameters = allVolunteering.map((entry) => ({
-    params: { path: entry.slug }, // Using Astro's built-in slug property
-  }));
-
-  return parameters;
+  return allVolunteering
+    .filter(entry => entry.slug.startsWith("internship/")) 
+    .map((entry) => ({
+      params: { path: entry.slug.replace(/^internship\//, "") }, 
+    }));
 }
+
 ---
 
 <Layout title="Intenrship Roles">
   <main class="page-wrapper">
     <Hero />
-    <AboutInternship path={path} />
+    <AboutInternship path={path ?? ""} />
     <Form />
     <InfoVolunteering />
     <HowDoesItWork />

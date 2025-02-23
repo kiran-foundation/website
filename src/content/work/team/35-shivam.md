@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Shivam Jain
-featured_image: /images/pratibha_page/shivam.png
+featured_image: /assets/images/pratibha_page/shivam.png
 more: true 
 type: Student
 media:  

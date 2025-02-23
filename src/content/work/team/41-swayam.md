@@ -1,7 +1,8 @@
 ---
+active: "Y"
 layout: member
 title: Swayam Jain
-featured_image: /images/pratibha_page/swayam.jpg
+featured_image: /assets/images/pratibha_page/swayam.jpg
 more: true 
 type: Student
 media:  
