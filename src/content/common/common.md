@@ -1,6 +1,6 @@
 ---
 readMore: Read more
-more: Read more
+more: Learn more
 join: Join Us Now
 apply: Apply Now
 applyNow: Apply now

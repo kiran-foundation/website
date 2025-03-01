@@ -1,104 +1,52 @@
 ---
 import { getEntry } from "astro:content";
 const values = (await getEntry("home", "values")).data;
-const common = (await getEntry("common", "common")).data;
+import Button from "../common/button.astro";
 ---
-<section class="container py-5 pb-4 mb-lg-3 mb-xl-4 mb-xxl-5 mt-lg-5 mt-3 ">
-  <div class="row pb-sm-2 w-100 pb-md-3 pb-lg-4 mt-3 d-flex justify-content-center  pt-3" 
-    style="gap:12px; margin-left: 0.3rem">
-    <div class="benefits-container-bg col-sm-6 col-lg-4 h-auto  " style="width:375px;">
-      <div class="d-flex align-items-center mb-3 mt-2" style="margin-left: -10px">
-        <div class="flex-shrink-0 rounded-1">
-          <div class="flex-shrink-0 rounded-1 p-2">
-            <img src="/assets/images/benefits/icon.png" alt="Image" />
-          </div>
-        </div>
-        <h3 class="benefits-title-h3 h5 mb-0">
-          {values.vision.title}
-        </h3>
-      </div>
-      <p class="benefits-content-container-p1 fs-sm" style="word-wrap: break-word;">
-        {values.vision.description}
-      </p>
-    </div>
-    <div class="benefits-container-bg col-sm-6 col-lg-4 h-auto  " style="width: 355px;">
-      <div class="d-flex align-items-center mb-2">
-        <div class="flex-shrink-0 rounded-1 p-2" style="margin-left: -15px;">
-          <div class="flex-shrink-0 rounded-1 p-2">
-            <img src="/assets/images/benefits/icon3.png" alt="Image" />
-          </div>
-        </div>
-        <h3 class="benefits-title-h3 h5 mb-0">{values.goal1.title}</h3>
-      </div>
-      <p class="benefits-content-container-p2 fs-sm" style="word-wrap: break-word;">
-        {values.goal1.description}
-      </p>
-    </div>
-    <div class="benefits-container-bg col-sm-6 col-lg-4   h-auto " style="width: 355px;">
-      <div class="d-flex align-items-center mb-2">
-        <div class="flex-shrink-0 rounded-1 p-2" style="margin-left:-15px;">
-          <div class="flex-shrink-0 rounded-1 p-2">
-            <img src="/assets/images/benefits/icon2.png" alt="Image" />
-          </div>
-        </div>
-        <h3 class="benefits-title-h3 h5 mb-0">{values.goal2.title}</h3>
-      </div>
-      <p class="benefits-content-container-p3 fs-sm" style="word-wrap: break-word; ">
-        {values.goal2.description}
-      </p>
-    </div>
-  </div>
 
-  <section class="overflow-hidden" style="margin-top: 5rem;">
-    <div class="container pb-sm-3 mb-md-2 mb-lg-3">
-      <div class="row g-4">
-        <div
-          class="col-md-6"
-          data-aos="fade-right"
-          data-aos-duration="600"
-          data-aos-offset="280"
-          data-disable-parallax-down="md"
-        >
+<h3 class="text-4xl lg:text-5xl text-center mt-10 mb-10 font-merriweather">
+  {values.vision.title}
+</h3>
+<section class="overflow-hidden mt-10 xl:mt-20">
+  <div class="xl:container mx-auto pb-6 mb-0 md:mb-8">
+    <div class="flex flex-col md:flex-row gap-4 items-center p-6" >
+      <!-- Image Section -->
+      <div data-aos="fade-right" data-aos-duration="600" data-aos-offset="15 0" class="w-full md:w-1/2"> 
+        <div class="h-auto w-auto md:min-w-[23.5rem] md:h-[23.5rem] lg:min-w-[25rem] lg:h-[25rem] xl:!min-w-[32rem] xl:!h-[34rem] ">
           <img
-            class="object-fit-cover w-100 h-100 rounded-3"
-            src="/assets/images/benefits/ma.jpg"
+            class="w-full h-full rounded-3xl filter"
+            src="/assets/images/Homepage/maa-kiran.png"
             alt="Image"
           />
         </div>
-        <div
-          class="col-md-6"
-          data-aos="fade-left"
-          data-aos-duration="600"
-          data-aos-offset="280"
-          data-disable-parallax-down="md"
-        >
-          <div
-            class="d-flex flex-column h-100 bg-secondary rounded-3 py-5 px-4 px-lg-5"
-          >
-            <h2 class="mb-xl-4"></h2>
-            <p
-              class="benefits-section2-p1 mb-4 mb-xl-5"
-              style="font-size: 24px; color:#252A34; word-wrap: break-word;"
-            >
-            {values.maa.quote}
-            </p>
-            <p
-              class="benefits-section-p2-dob mb-4 mb-xl-5"
-              style="margin-top:-15px;"
-            >
-              <b class="benefits-section2-boldtext">{values.maa.name}</b>
-              <br /> {values.maa.lifespan}
-            </p>
-            <p class="benefits-section2-p3 mb-4 mb-xl-5">
-              {values.maa.step}
-            </p>
-            <div class="mt-">
-              <a class="home-button btn btn-outline-primary" href="/about"
-                >{common.readMore}</a
-              >
-            </div>
-          </div>
+        <div class="flex items-center justify-center mt-4">
+          <p class="flex items-center gap-2 sm:block font-bold text-xl text-gray-800">
+            {values.maa.name}
+            <span class="text-gray-500 font-thin text-sm sm:text-base md:text-sm">{values.maa.lifespan}</span>
+          </p>
         </div>
       </div>
+
+      <!-- Text Content Section -->
+        <div data-aos="fade-left" data-aos-duration="600" data-aos-offset="280" class="flex flex-col h-full xl:w-4/6 px-2 xl:px-5 py-2 justify-between -translate-y-24 ">
+          <h2 class="text-3xl font-bold text-gray-800">{values.maa.title}</h2>
+          <p class="text-2xl md:text-xl lg:text-3xl 2xl:text-[2.4rem] leading-relaxed 2xl:leading-[3rem] font-poppins text-gray-700 mb-[1.7rem] xl:mb-16  italic">
+            "{values.maa.quote}"
+          </p>
+          <p class="text-gray-600 mb-[1.7rem] xl:mb-12 text-base lg:text-xl">
+            {values.maa.step}
+          </p>
+          <div>
+            <Button link="/about" title="Read more" btn="btn2"/>
+          </div>
+        </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+  }
+</style>

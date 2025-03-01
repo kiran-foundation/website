@@ -1,5 +1,5 @@
 ---
-title: "Giving wings to the hope and dreams through Empowerment"
-titlehero: "Welcome to Volunteering with Kiran foundation -  Help Build a Brighter Future for India"
+title: "Impacting Dreams and Building the Future"
+titlehero: "Unlocking Career Opportunities for Students and Building Confidence in Women"
 description: "Empowering Change, Enriching Lives - Together, We Make a Difference."
 ---

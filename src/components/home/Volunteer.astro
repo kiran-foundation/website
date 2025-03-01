@@ -1,122 +1,98 @@
 ---
 import { getEntry } from "astro:content";
-import Heading from "../common/heading.astro";
-import VolunteerComponent from "./VolunteerItem.astro";
+import Button from "../common/button.astro";
 
 const volunteer = (await getEntry("home", "volunteer")).data;
-const common = (await getEntry("common", "common")).data;
 ---
 
-<Heading title="Volunteer with Us" />
-<section class="container  ">
-  <div class="container pt-sm-3 pt-lg-4">
-    <div class="row d-flex justify-content-center">
-      <!-- Sticky sidebar -->
-      <div
-        class="col-md-5 col-xl-4 mb-5 mb-md-0 text-start"
-        style="margin-top: -135px;"
-      >
-        <div
-          class="position-sticky"
-          style="padding-top: 125px; padding-bottom: 25px;"
-        >
-          <h2 class="h3 pb-2 pb-lg-3 mt-4" style="">
-            {volunteer.title}
-            <!-- Why Volunteer with us? -->
-          </h2>
-          <div>
-            <div class="col-md-10">
-              <p class="fs-5 mb-3 mt-3">
-                {volunteer.description}
-                <!-- A small act of volunteering can make a big impact in someone's life. -->
-              </p>
-            </div>
-          </div>
-          <ul class="list-unstyled mb-0 mt-4">
-            <li class="d-flex align-items-center mb-3">
-              <img src="/assets/svg/time.svg" alt="Time_Icon" />
-              <div class="ps-2 ms-1">
-                <div class="volunteer-perks text-nav fw-medium">
-                  {volunteer.perks[0]}
-                  <!-- Work in your own time -->
-                </div>
-              </div>
-            </li>
-            <li class="d-flex align-items-center mb-3 mt-4 ">
-              <img src="/assets/svg/check.svg" alt="Check_Icon" />
-              <div class="ps-2 ms-1">
-                <div class="volunteer-perks text-nav fw-medium">
-                  {volunteer.perks[1]}
-                  <!-- Contribute remotely -->
-                </div>
-              </div>
-            </li>
-            <li class="d-flex align-items-center mt-4">
-              <img src="/assets/svg/star.svg" alt="Star_Icon" />
-              <div class="ps-2 ms-1">
-                <div class="volunteer-perks text-nav fw-medium">
-                  {volunteer.perks[2]}
-                  <!-- Drive  positive change -->
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+<!-- <Heading title={volunteer.sectionTitle} />  -->
+<div
+  class="flex items-center justify-center flex-col text-center px-4 py-12 space-y-4 mb-5"
+>
+  <h2
+    class="text-3xl md:text-4xl xl:text-[2.6rem] mb-3 font-merriweather text-wrap"
+  >
+    {volunteer.join}
+  </h2>
+  <p class="max-w-[51rem] xl:max-w-4xl mx-auto text-lg ms:text-2xl font-poppins">
+    {volunteer.join_description}
+  </p>
+</div>
 
-      <!-- Pricing list -->
-      <div class="col-md-6 offset-xl-1 mt-3 " >
-        <div class="ps-md-4 ps-xxl-5">
-          <VolunteerComponent volunteer={volunteer} common={common} />
-        </div>
-      </div>
+<section class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center space-y-4 mt-12 mb-16">
+    <h2 class="text-xl md:text-2xl xl:text-[2rem] font-bold font-merriweather">
+      {volunteer.heading}
+    </h2>
+  </div>
+
+  <div class="mt-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Volunteer Position Items */}
+      {
+        [1, 2, 3].map((index) => (
+          <div class="border border-[#9c9c9c] rounded-xl p-10 flex flex-col justify-between items-center group">
+            <h3 class="font-poppins text-2xl font-semibold mb-3 text-gray-800">
+              {volunteer[`volunteerRole${index}`].title}
+            </h3>
+            <p class="font-poppins text-gray-600 mb-2">
+              {volunteer[`volunteerRole${index}`].description}
+            </p>
+            <p class="font-poppins text-gray-600 mb-4">Minimum Commitment</p>
+            <Button
+              link={volunteer[`volunteerRole${index}`].link}
+              title="Learn More"
+              btn="btn3"
+            />
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section
-  class="container pt-2 mt-lg-3 mt-xl-4 mt-xxl-5"
-  style="margin-bottom: 6rem;"
->
-  <div
-    class="container rounded-5 overflow-hidden pt-1 p-md-4 mt-2 mt-sm-4 mt-lg-5"
-    style="background-color:#051D40 !important; opacity: 1; "
-  >
-    <div class="row position-relative z-2 align-items-around">
-      <div
-        class="col-md-6 col-lg-5 offset-lg-1 d-flex flex-col align-items-center"
-      >
-        <div class="text-center text-md-start">
-          <div class="d-flex align-items-center mb-2" style=" ">
-            <span
-              class="bg-white opacity-70 d-none d-md-block"
-              style="width: 40px; height: 1px; margin-top: -3px;"></span>
-            <span
-              class="fs-xs mx-2 fw-semibold text-white opacity-70 text-uppercase"
-              >{volunteer.involve}</span
-            >
-          </div>
-
-          <h2 class="h1 text-white pb-2 pb-sm-3">
-            {volunteer.difference}
-          </h2>
-
-          <a
-            class="btn btn-primary btn-sm order-lg-3 d-sm-inline-flex"
-            href="/volunteering">{volunteer.join_today}</a
-          >
-        </div>
-      </div>
-      <div class="col-md-6 d-flex justify-content-end">
-        <img
-          class="rounded-5 my-3"
-          style="width:max-content; max-height:320px;"
-          src="/assets/images/volunter/group.png"
-          width="534"
-          alt="Image"
-        />
-      </div>
+<section class="lg:container mx-auto px-4 py-12 mt-5 overflow-hidden">
+  <div class="flex flex-col md:flex-row items-center justify-end">
+    <div
+      class="w-full md:w-1/2 flex md:hidden justify-center items-center mb-10"
+      data-aos="fade-right"
+      data-aos-duration="600"
+      data-aos-offset="280"
+      data-disable-parallax-down="sm"
+    >
+      <img
+        class="rounded-lg w-full h-full xl:w-[82%] xl:h-[80%]"
+        src="/assets/images/Homepage/why.png"
+        alt="Pratibha program illustration"
+        loading="lazy"
+      />
+    </div>
+    <div class="w-full md:w-1/2 xl:w-2/5 space-y-4 font-poppins px-2 md:px-0">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl mb-10 font-bold font-poppins">
+        {volunteer.title}
+      </h2>
+      <p class="text-md sm:text-lg mb-4 leading-relaxed">
+        {volunteer.join_why1}
+      </p>
+      <p class="text-md sm:text-lg mb-4 leading-relaxed">
+        {volunteer.join_why2}
+      </p>
+      <Button link="/volunteering" title="Become a Volunteer" btn="btn1" />
+      <Button link="/volunteering" title="See All Positions" btn="btn3" />
+    </div>
+    <div
+      class="w-full md:w-1/2 hidden md:flex justify-center items-center"
+      data-aos="fade-right"
+      data-aos-duration="600"
+      data-aos-offset="280"
+      data-disable-parallax-down="sm"
+    >
+      <img
+        class="rounded-lg w-full h-full xl:w-[82%] xl:h-[80%]"
+        src="/assets/images/Homepage/why.png"
+        alt="Pratibha program illustration"
+        loading="lazy"
+      />
     </div>
   </div>
 </section>

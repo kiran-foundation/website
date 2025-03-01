@@ -6,26 +6,29 @@ const footerDetails = (await getEntry("footer", "details")).data;
 <!-- Footer -->
 <footer class="footer">
   <div
-    class="bg-secondary py-5 d-flex justify-content-center align-items-center"
+    class=" py-5 d-flex justify-content-center align-items-center  bg-[#141414]"
   >
     <div class="container w-100 px-4">
       <div class="row text-center">
         <!-- Logo & Description text-md-start -->
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-3 text-white  ">
           <div class="logo-container">
-            <a class="footer navbar-brand p-2" href="/">
+            <a class="footer navbar-brand px-1" href="/">
               <img
                 src="/Logo.png"
                 width="107"
                 height="66.61"
-                alt="kiran foundation logo"
+                alt="kiran foundation logo" 
               />
             </a>
           </div>
-          <p class="footer-paragraph fs-sm p-2">
+          <p class=" text-xs text-left font-poppins px-2 py-1 text-white ">
             {footerDetails.description}
           </p>
-          <div class="d-flex flex-row gap-2">
+          <p class="text-xs text-left font-poppins font-thin px-2 py-1 italic text-white ">
+            " {footerDetails.by} "
+          </p>
+          <div class="d-flex flex-row gap-2  mt-3 ml-2">
             <!-- justify-content-md-start -->
 
             <a
@@ -57,11 +60,11 @@ const footerDetails = (await getEntry("footer", "details")).data;
           class="col-sm-6 col-md-3 mt-4 pt-4 mt-md-0 d-flex align-item-center justify-content-center"
         >
           <div>
-            <ul class="footer-list-style nav flex-column">
-              <li>
+            <ul class=" nav flex flex-col items-start ">
+              <li class="mb-4">
                 <a
                   href="/about"
-                  class="h6 nav-link d-flex align-items-center p-2 text-align-center"
+                  class="text-white font-poppins font-semibold text-lg hover:border-b-[1px] "
                   style="color:black;"
                 >
                   {footerDetails.aboutTitle.about}
@@ -69,19 +72,19 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  class="text-white font-poppins font-thin hover:border-b-[1px] "
                   href="/compliance">{footerDetails.aboutTitle.compliance}</a
                 >
               </li>
               <li>
                 <a
-                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  class="text-white font-poppins font-thin hover:border-b-[1px] "
                   href="/newsletter">{footerDetails.aboutTitle.newsletter}</a
                 >
               </li>
               <li>
                 <a
-                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  class="text-white font-poppins font-thin hover:border-b-[1px] "
                   href="/privacy-policy">{footerDetails.aboutTitle.policy}</a
                 >
               </li>
@@ -94,15 +97,10 @@ const footerDetails = (await getEntry("footer", "details")).data;
           class="col-sm-6 col-md-3 mt-4 pt-4 mt-md-0 d-flex align-item-center justify-content-center"
         >
           <div>
-            <ul class="footer-list-style nav flex-column">
-              <li>
+            <ul class="flex flex-col items-start">
+              <li class="mb-4"> 
                 <a
-                  class="h6
-                nav-link
-                d-flex
-                align-items-center
-                p-2
-                text-align-center"
+                  class="text-white font-poppins font-semibold text-lg hover:border-b-[1px] "
                   href="/contact"
                   style="color:black;"
                 >
@@ -111,7 +109,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="nav-link d-flex align-items-center p-2 text-align-center"
+                  class="text-white font-poppins font-thin hover:border-b-[1px] "
                   href="mailto:info@kiran.foundation"
                 >
                   {footerDetails.contactTitle.info}</a
@@ -119,7 +117,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  class="text-white font-poppins font-thin hover:border-b-[1px] "
                   href="tel:919303997100"
                 >
                   {footerDetails.contactTitle.phone}</a
@@ -127,7 +125,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  class="text-white font-poppins font-thin hover:border-b-[1px] "
                   href="https://wa.me/919880141412"
                 >
                   {footerDetails.contactTitle.whatsApp}</a
@@ -142,28 +140,16 @@ const footerDetails = (await getEntry("footer", "details")).data;
           class="col-sm-6 col-md-3 mt-4 pt-4 mt-md-0 d-flex align-item-center justify-content-center"
         >
           <div>
-            <ul class="nav flex-column footer-list-style">
-              <li>
+            <ul class="flex flex-col items-start">
+              <li class="mb-4">
                 <h4
-                  class="h6
-                nav-link
-                d-flex
-                align-items-center
-                p-2
-                text-align-centerh6
-                nav-link
-                d-flex
-                align-items-center
-                p-2
-                text-align-center"
-                  style="color:black;"
-                >
+                  class="text-white font-poppins font-semibold text-lg hover:border-b-[1px] m-0 p-0  hover:!text-orange-600 h-7">
                   {footerDetails.listTitle.heading}
                 </h4>
               </li>
               <li>
                 <a
-                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  class="text-white font-poppins font-thin hover:border-b-[1px] "
                   href="/volunteering"
                 >
                   {footerDetails.listTitle.volunteerWithUs}</a
@@ -171,7 +157,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  class="text-white font-poppins font-thin hover:border-b-[1px] "
                   href="/"
                 >
                   {footerDetails.listTitle.internshipOpportunities}</a
@@ -179,7 +165,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="nav-link d-flex align-items-center p-1 text-align-center"
+                  class="text-white font-poppins font-thin hover:border-b-[1px] "
                   href="/become-mentor"
                 >
                   {footerDetails.listTitle.becomeMentor}</a
@@ -192,7 +178,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
 
       <!-- Copyright -->
       <div class="footer-copy-right p-2 text-center text-body-secondary mt-3">
-        &copy; Kiran Foundation
+        &copy; Kiran Foundation 
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 ---
-description: 'Maa Kiran Jain (17th oct 1955 - 15th june 2015) used to say that "If a hardworking and talented youth cannot fulfill their dreams due to a lack of resources, it is a failure of our entire society. We must keep their hopes and dreams alive!".'
+description:  “ If a hardworking and talented youth, can not fulfill their dreams due to lack of resources, it is failure of the whole society ’’
+by: Maa Kiran Jain (17th Oct 1955 - 15th Jun 2015)
 aboutTitle:
     about: 'About Us'
     compliance: 'Compliance'

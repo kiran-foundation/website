@@ -1,30 +1,83 @@
 ---
-import { getEntry } from 'astro:content'
-const hero = (await getEntry('home', 'hero')).data
-const common = (await getEntry('common', 'common')).data
+import { getEntry } from "astro:content";
+const hero = (await getEntry("home", "hero")).data;
+import Button from "../common/button.astro";
 ---
 
-<section class='bg-red-400 border-2 border-blue-500 mt-36'>
-  <!-- <div
-    class='position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4'
-    style='background-image: url(/assets/images/hero/hero.jpg);'
-  > -->
-  </div>
-  <div class='container position-relative z-2 text-center pt-2 pt-sm-4 pt-lg-5'>
-    <h1 class='h1 display-4 text-white pt-5'>
-      {hero.title}
-    </h1>
-    <p
-      class='hero-description-p text-white fs-xl opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5'
-      style=' max-width: 640px;'
+<section class="mt-[5.5rem] hidden sm:block relative">
+  <div class="relative h-[500px] sm:h-[550px] md:h-[600px] lg:h-[780px]">
+    <!-- Image with responsive gradient overlay -->
+    <!-- <div
+      class="absolute inset-0 bg-gradient-to-r from-black/50 md:from-black/30 to-transparent"
     >
-      {hero.description}
-    </p>
-    <a class='home-button btn btn-primary fw-bold' href='/volunteering'>
-      {common.join}</a
-    >
+    </div> -->
+    <img
+      src="/assets/images/Homepage/home-1.png"
+      alt="loading"
+      class="w-full h-full object-cover object-center"
+    />
+
+    <!-- Text Content -->
+    <div class="absolute inset-0 flex items-center p-4 sm:p-6 md:p-8">
+      <div
+        class="max-w-xl xl:max-w-2xl left-4 sm:left-6 md:left-12 lg:left-0 xl:left-32 relative lg:-translate-y-16"
+      >
+        <h1
+          class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-10 md:leading-tight leading-relaxed text-white"
+          style="font-family: 'Merriweather', serif;"
+        >
+          {hero.title}
+        </h1>
+
+        <p
+          class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 md:mb-12 max-w-[500px] md:max-w-[600px] text-gray-400"
+          style="font-family: 'Merriweather', serif;"
+        >
+          {hero.titlehero}
+        </p>
+        <Button link="/volunteering" title="Become a Volunteer" btn="btn1" />
+      </div>
+    </div>
   </div>
-  <div class='d-none d-lg-block' style='height: 360px;'></div>
-  <div class='d-none d-md-block d-lg-none' style='height: 260px;'></div>
-  <div class='d-md-none' style='height: 160px;'></div>
 </section>
+
+
+<section class="mt-[5.5rem] sm:hidden block relative">
+  <div class="relative h-[760px]">
+    <!-- Image with responsive gradient overlay -->
+    <img
+      src="/assets/images/Homepage/home-2.png"
+      alt="loading"
+      class="w-full h-full object-cover object-center"
+    />
+
+    <!-- Text Content Container -->
+    <div class="absolute inset-0 flex flex-col p-4 justify-between">
+      <!-- Title at Top -->
+      <h1
+        class="text-4xl leading-[3.3rem] font-bold pt-2 text-white"
+        style="font-family: 'Merriweather', serif;"
+      >
+        {hero.title}
+      </h1>
+
+      <!-- Bottom-aligned Content -->
+      <div class="pb-2">
+        <p
+          class="text-xl mb-10 text-gray-300"
+          style="font-family: 'Merriweather', serif;"
+        >
+          {hero.titlehero}
+        </p>
+        <Button 
+          link="/volunteering" 
+          title="Become a Volunteer" 
+          btn="btn1" width="w-full"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
+</style>

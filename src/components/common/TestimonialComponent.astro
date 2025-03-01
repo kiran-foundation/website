@@ -9,11 +9,11 @@ export interface Props {
 const { image, name, location, text } = Astro.props
 ---
 
-<div class='testimonial-container mt-5' style='color: #2b2e36;'>
+<div class='testimonial-container mt-5 bg-[#F1F1F1] px-4'>
   <img src={image} alt={name} class='testimonial-image' />
-  <p class='fs-sm p-2' style='overflow-y: scroll;'>{text}</p>
-  <p class='testimonial-info'>
-    <div class='testimonial-name'>{name}</div>
-    <div class='testimonial-location'>{location}</div>
+  <p class='fs-sm p-2 lg:px-4 overflow-auto text-[#272727] font-poppins leading-6' >{text}</p>
+  <p class='testimonial-info font-poppins '>
+    <div class='testimonial-name font-poppins'>{name}</div>
+    <div class='testimonial-location font-poppins'>{location}</div>
   </p>
 </div>

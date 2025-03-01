@@ -1,9 +1,6 @@
 ---
-import type { MarkdownFile } from "../../types/Markdown";
-import Heading from "./heading.astro";
 import UpdateCard from "./UpdateCard.astro";
-
-// const allUpdates = import.meta.glob<MarkdownFile>('/src/content/updates/*.md')
+import Button from "./button.astro";
 
 import { getCollection } from "astro:content";
 
@@ -30,57 +27,27 @@ const filteredUpdates = updates
 const updatesToDisplay = showHighPriorityOnly
   ? filteredUpdates.slice(0, 3)
   : filteredUpdates;
-
-// let updatesCountToDisplay = 6
-
-// const updateValue = () => {
-//   console.log(updatesCountToDisplay);
-//   if(updatesCountToDisplay < updatesToDisplay.length){
-//     updatesCountToDisplay++
-//   }
-// }
 ---
 
 <!-- Update display section -->
-<style>
-  .container {
-    margin-bottom: 2rem;
-  }
-</style>
-<section
-  class="container pb-4 pb-sm-3 pt- mt-lg-3 mt-xl-5 pb-5 mb-lg-5 mb-1"
-  style="background-color: white;"
->
-  <div class="container">
-    <Heading title="Updates" />
 
-    <div
-      class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 mt-1"
-    >
-      {
-        updatesToDisplay.map((update, index) => (
-          // {if (index < updatesCountToDisplay) {
-          // return <UpdateCard update={update} />
-          // }}
-          <UpdateCard update={update} />
-        ))
-      }
+<section class="bg-white mt-28 px-4 sm:px-6 lg:px-8 mb-24">
+  <div>
+    <h2 class="text-3xl md:text-4xl xl:text-[2.6rem] mt-14 font-merriweather text-center">
+      News and Updates
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14 max-w-7xl mx-auto">
+      {updatesToDisplay.map((update) => (
+        <UpdateCard update={update} />
+      ))}
     </div>
+
     <!-- See More button -->
-    {
-      isMainPage ? (
-        <div class="text-center mb-1  mt-5 ">
-          <a href="/updates" class="home-button btn btn-outline-primary">
-            See More
-          </a>
-        </div>
-      ) : (
-        <div class="text-center mt-4">
-          {/* <button class="btn btn-primary" onclick={updateValue}>
-        Show more
-      </button> */}
-        </div>
-      )
-    }
+    {isMainPage && (
+      <div class="text-center mb-1 mt-8">
+        <Button link="updates" title="See More" btn="btn3" />
+      </div>
+    )}
   </div>
 </section>
