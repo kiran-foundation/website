@@ -1,19 +1,37 @@
 ---
 export interface Props {
-  image: string
-  name: string
-  location: string
-  text: string
+  image: string;
+  name: string;
+  location: string;
+  text: string;
 }
 
-const { image, name, location, text } = Astro.props
+const { image, name, location, text } = Astro.props;
 ---
 
-<div class='testimonial-container mt-5 bg-[#F1F1F1] px-4'>
-  <img src={image} alt={name} class='testimonial-image' />
-  <p class='fs-sm p-2 lg:px-4 overflow-auto text-[#272727] font-poppins leading-6' >{text}</p>
-  <p class='testimonial-info font-poppins '>
-    <div class='testimonial-name font-poppins'>{name}</div>
-    <div class='testimonial-location font-poppins'>{location}</div>
+<style>
+  .box::-webkit-scrollbar {
+    width: 4px; 
+  }
+
+  .box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+  }
+
+  /* .box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  } */
+</style>
+<div class="testimonial-container mt-5 bg-[#F1F1F1] px-4">
+  <img src={image} alt={name} class="testimonial-image" />
+  <p
+    class="box text-base md:text-[18px] p-2 lg:px-4 overflow-auto text-[#1E1E1E] font-poppins md:leading-9"
+  >
+    {text}
+  </p>
+  <p class="testimonial-info font-poppins">
+    <div class="testimonial-name font-poppins">{name}</div>
+    <div class="testimonial-location font-poppins">{location}</div>
   </p>
 </div>

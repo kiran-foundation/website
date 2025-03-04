@@ -11,7 +11,7 @@ pratibha:
   description3: "The foundation provides active guidance, individualized mentoring, and full financial support to help them thrive."
 
 shakti:
-  title: "Kiran Shakti"
+  title: "Kiran Shakti Courses"
   description1: "The “Kiran Shakti” program includes courses and workshops for women in their native language. Participants are being trained in law and legal rights, digital and financial skills."
   description2: "By building confidence in women, they can make decisions with knowledge, be a catalyst for change  and help build a foundation for a strong and resilient society."
 ---

@@ -7,14 +7,14 @@ const volunteer = (await getEntry("home", "volunteer")).data;
 
 <!-- <Heading title={volunteer.sectionTitle} />  -->
 <div
-  class="flex items-center justify-center flex-col text-center px-4 py-12 space-y-4 mb-5"
+  class="relative flex items-center justify-center flex-col text-center px-4 py-12 space-y-4 my-5 mt-5"
 >
   <h2
-    class="text-3xl md:text-4xl xl:text-[2.6rem] mb-3 font-merriweather text-wrap"
+    class="text-3xl md:text-4xl xl:text-[3rem] mb-3 font-merriweather text-wrap text-[#1E1E1E]"
   >
     {volunteer.join}
   </h2>
-  <p class="max-w-[51rem] xl:max-w-4xl mx-auto text-lg ms:text-2xl font-poppins">
+  <p class="max-w-[51rem] xl:max-w-[1074px] mx-auto text-lg xl:text-[2rem] xl:leading-[60px] font-poppins text-[#49494C] ">
     {volunteer.join_description}
   </p>
 </div>
@@ -50,7 +50,7 @@ const volunteer = (await getEntry("home", "volunteer")).data;
     </div>
   </div>
 </section>
-
+<!-- ------------------ why volunteer ------------------------------ -->
 <section class="lg:container mx-auto px-4 py-12 mt-5 overflow-hidden">
   <div class="flex flex-col md:flex-row items-center justify-end">
     <div
@@ -68,17 +68,19 @@ const volunteer = (await getEntry("home", "volunteer")).data;
       />
     </div>
     <div class="w-full md:w-1/2 xl:w-2/5 space-y-4 font-poppins px-2 md:px-0">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl mb-10 font-bold font-poppins">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl mb-10 font-bold font-poppins text-[#1E1E1E]">
         {volunteer.title}
       </h2>
-      <p class="text-md sm:text-lg mb-4 leading-relaxed">
+      <p class="text-md sm:text-lg mb-4 leading-relaxed text-[#49494C]">
         {volunteer.join_why1}
       </p>
-      <p class="text-md sm:text-lg mb-4 leading-relaxed">
+      <p class="text-md sm:text-lg mb-4 leading-relaxed text-[#49494C]">
         {volunteer.join_why2}
       </p>
-      <Button link="/volunteering" title="Become a Volunteer" btn="btn1" />
-      <Button link="/volunteering" title="See All Positions" btn="btn3" />
+      <div class="flex gap-4 md:gap-4 xl:gap-6 flex-wrap">
+        <Button link="/volunteering" title="Become a Volunteer" btn="btn1" />
+        <Button link="/volunteering" title="See All Positions" btn="btn3" />
+      </div>
     </div>
     <div
       class="w-full md:w-1/2 hidden md:flex justify-center items-center"

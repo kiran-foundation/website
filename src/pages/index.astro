@@ -9,11 +9,8 @@ import Volunteer from "../components/home/Volunteer.astro";
 import Updates from "../components/common/UpdateComponent.astro";
 import Values from "../components/home/Values.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
-import Heading from "../components/common/heading.astro";
 import OurSupporters from "../components/home/our_supporters.astro";
-import { getEntry } from "astro:content";
-const testimonials = (await getEntry("testimonials", "testimonials")).data;
-
+import Trusted from "../components/home/trusted.astro";
 ---
 
 <Layout title="Kiran Foundation"
@@ -23,6 +20,7 @@ const testimonials = (await getEntry("testimonials", "testimonials")).data;
     <!-- <Statistics /> -->
     <Programs />
     <Values />
+    <Trusted/>
     <Volunteer/>
     <TestimonialsCarousel pageTag="home"/>
     <OurSupporters/>
