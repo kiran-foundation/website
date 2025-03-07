@@ -5,132 +5,116 @@ const common = (await getEntry("common", "common")).data;
 import Button from "../common/button.astro";
 ---
 
-<!-- Heading Section -->
+<!-- Main Container py-8 md:py-6   -->
 <div
-  class="flex items-center justify-center flex-col text-center px-4 py-8 md:py-12 space-y-4 mt-8 md:mt-20 "
+  class="max-w-[1296px] mx-auto border-2 border-red-500 mt-8 md:mt-[7.5rem] flex items-center justify-center flex-col p-1"
 >
-  <h2
-    class="text-3xl md:text-[2.5rem] xl:text-[3rem] font-bold mb-8 font-merriweather px-4 leading-10 text-[#1E1E1E]"
+  <!-- Heading Section -->
+  <div
+    class="flex items-center justify-center flex-col text-center max-w-[1034px] space-y-4 border-2 border-black"
   >
-    {programs.heading.head1}
-  </h2>
-  <p
-    class="max-w-[51rem] xl:max-w-[1034px] mx-auto text-lg md:text-[1.1rem] xl:text-[32px] font-poppins px-2  text-[#49494C] leading-[60px]"
-  >
-    {programs.heading.head2}
-    {programs.heading.head3}
-  </p>
-</div>
+    <h2
+      class="text-3xl md:text-[2.5rem] xl:text-[3rem] font-normal mb-8 font-merriweather leading-10 text-[#1E1E1E] w-full !py-5 border-2 border-black"
+    >
+      {programs.heading.head1}
+    </h2>
+    <p
+      class="max-w-[51rem] xl:max-w-[1034px] text-lg md:text-[1.1rem] xl:text-[32px] font-poppins text-[#49494C] leading-[60px] border-2 border-black m-0"
+    >
+      {programs.heading.head2}
+      {programs.heading.head3}
+    </p>
+  </div>
 
-<!-- Programs Container -->
-<div class="xl:container mx-auto my-12">
-  <!-- Pratibha Program -->
-  <section class="px-4 md:px-8 py-8 lg:py-12  xl:-translate-x-10 overflow-hidden">
-    <div class="flex flex-col md:flex-row items-center gap-4  justify-center">
+  <!-- Programs Container -->
+  <div
+    class="mt-[7.5rem] border-3 border-gray-500 w-full p-1 flex flex-col gap-[11.5rem]"
+  >
+    <!-- Pratibha Program -->
+    <section
+      class="flex flex-col md:flex-row items-center gap-16 justify-center border-2 border-black overflow-hidden p-1"
+    >
       <!-- Image Column -->
       <div
-        class="w-full md:w-[45%] lg:w-1/2 flex justify-center"
+        class="border-3 border-red-500 max-w-[750px]"
         data-aos="fade-right"
         data-aos-duration="500"
         data-aos-offset="100"
         data-disable-parallax-down="sm"
       >
         <img
-          class="rounded-lg w-full max-w-[500px] md:max-w-[500px] lg:max-w-[600px] h-auto object-cover"
           src="/assets/images/Homepage/home2.png"
           alt="Pratibha program illustration"
           loading="lazy"
+          class="w-[740px] h-[740px]"
         />
       </div>
-
-      <!-- Text Content -->
-      <div
-        class="w-full md:w-[55%] lg:w-[45%] space-y-4 font-poppins px-2  md:pl-6 lg:pl-8 xl:pl-12"
-      >
+      <div class="border-3 border-red-500 max-w-[492px] h-full">
         <h2
-          class="text-[1.8rem] lg:text-3xl mb-[1.3rem] lg:mb-10 font-semibold font-poppins text-[#1E1E1E]"
+          class="text-[1.8rem] lg:text-[32px] mb-[1.3rem] lg:mb-8 font-bold text-[#1E1E1E] leading-[100%] p-2 border-3 border-red-400"
         >
           {programs.pratibha.title}
         </h2>
         <p
-          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-6 font-poppins leading-relaxed text-[#49494C]"
+          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-8 py-2 leading-[36px] font-poppins text-[#49494C] border-3 border-red-400"
         >
           {programs.pratibha.description1}
         </p>
         <p
-          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-6 font-poppins leading-relaxed text-[#49494C]"
+          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-8 py-2 leading-[36px] font-poppins text-[#49494C] border-3 border-red-400"
         >
           {programs.pratibha.description2}
         </p>
         <p
-          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-6 font-poppins leading-relaxed text-[#49494C]"
+          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-8 py-2 leading-[36px] font-poppins text-[#49494C] border-3 border-red-400"
         >
           {programs.pratibha.description3}
         </p>
-        <div class="mt-4">
+        <div class="mt-12">
           <Button link="/shakti" title={common.more} btn="btn2" />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Shakti Program -->
-  <section class="px-4 md:px-8 py-8 lg:py-12  xl:translate-x-10 overflow-hidden">
-    <div class="flex flex-col md:flex-row gap-4 items-center justify-center">
-      <!-- ----- only for mobile ---- -->
-      <div
-        class="w-full md:w-[45%] lg:w-1/2 flex md:hidden justify-center md:order-2 "
-        data-aos="fade-left"
-        data-aos-duration="600"
-        data-aos-offset="200"
-        data-disable-parallax-down="md"
-      >
-        <img
-          class="rounded-lg w-full max-w-[500px] md:max-w-[500px] lg:max-w-[600px] h-auto object-cover"
-          src="/assets/images/Homepage/home3.png"
-          alt="Shakti program illustration"
-          loading="lazy"
-        />
-      </div>
-      <!-- Text Content -->
-      <div
-        class="w-full md:w-[55%] lg:w-[45%] space-y-4 font-poppins px-2 md:pr-6 lg:pr-8 xl:pr-12 md:order-1"
-      >
+    <!-- Shakti Program -->
+    <section
+      class="overflow-hidden border-3 border-blue-500 flex max-w-[1296px] max-h-[844px] gap-16 items-center justify-center"
+    >
+      <div class="border-3 border-pink-800 max-w-[492px] max-h-[512px]">
         <h2
-          class="text-[1.8rem] lg:text-3xl mb-[1.3rem] lg:mb-10 font-semibold font-poppins text-[#1E1E1E]"
+          class="text-[1.8rem] lg:text-3xl mb-[1.3rem] lg:mb-8 font-semibold text-[#1E1E1E] border-4 border-pink-500"
         >
           {programs.shakti.title}
         </h2>
         <p
-          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-6 leading-relaxed font-poppins text-[#49494C]"
+          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-8 leading-relaxed text-[#49494C] border-4 border-pink-500"
         >
           {programs.shakti.description1}
         </p>
         <p
-          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-6 leading-relaxed font-poppins text-[#49494C]"
+          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-8 leading-relaxed text-[#49494C] border-4 border-pink-500"
         >
           {programs.shakti.description2}
         </p>
-        <div class="mt-4">
+        <div class="mt-12">
           <Button link="/shakti" title={common.more} btn="btn2" />
         </div>
       </div>
 
-      <!-- Image Column -->
       <div
-        class="w-full md:w-[45%] lg:w-1/2 md:flex hidden  justify-center md:order-2 overflow-hidden"
+        class="border-3 border-orange-700 max-w-[750px] max-h-[640px]"
         data-aos="fade-left"
         data-aos-duration="500"
-        data-aos-offset="200"
+        data-aos-offset="100"
         data-disable-parallax-down="md"
       >
         <img
-          class="rounded-lg w-full max-w-[500px] md:max-w-[500px] lg:max-w-[600px] h-auto object-cover"
+          class="rounded-lg max-w-[500px] w-[740px] lg:max-w-[740px] max-h-[634px] h-auto object-cover"
           src="/assets/images/Homepage/home3.png"
           alt="Shakti program illustration"
           loading="lazy"
         />
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>

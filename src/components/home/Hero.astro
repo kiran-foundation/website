@@ -4,145 +4,155 @@ const hero = (await getEntry("home", "hero")).data;
 import Button from "../common/button.astro";
 ---
 
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
-</style>
-
-<!-- ---------------1st section ----------------------- -->
-<div class="mt-[5.5rem] relative overflow-hidden">
-  <section class="slider hidden sm:block relative transition-all duration-1000">
-    <div class="relative h-[500px] sm:h-[550px] md:h-[600px] lg:h-[780px]">
-      <img
-        src="/assets/images/Homepage/home-1.png"
-        alt="loading"
-        class="w-full h-full object-cover object-center"
-      />
-
-      <!-- Text Content -->
-      <div class="absolute inset-0 flex items-center p-4 sm:p-6 md:p-8">
-        <div
-          class="max-w-xl xl:max-w-3xl left-4 sm:left-6 md:left-12 lg:left-0 xl:left-32 relative lg:-translate-y-16"
-        >
-          <h1
-            class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-[64px] xl:leading-[96px] font-bold mb-4 sm:mb-10 md:leading-tight leading-relaxed text-[#FFFFFF]"
-            style="font-family: 'Merriweather', serif;"
-          >
-            {hero.title}
-          </h1>
-
-          <p
-            class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 md:mb-12 max-w-[500px] md:max-w-[600px] text-[#CFCFCF]"
-            style="font-family: 'Merriweather', serif;"
-          >
-            {hero.titlehero}
-          </p>
-          <Button link="/volunteering" title="Become a Volunteer" btn="btn1" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ------------------------2nd section-------------------- -->
-  <section
-    class="slider hidden sm:block absolute top-0 right-0 left-0 translate-x-full transition-all duration-1000"
+<!-- -----hero swiper animation ---- -->
+<section
+  class="position-relative hidden md:block h-[864px] py-5  mt-[5.5rem]"
+  data-bs-theme="light"
+>
+  <!-- Background image slider -->
+  <div
+    class="swiper swiper-scale-effect position-absolute top-0 start-0 w-100 h-100"
   >
-    <div class="relative h-[500px] sm:h-[550px] md:h-[600px] lg:h-[780px]">
-      <img
-        src="/assets/images/Homepage/home-1.2.png"
-        alt="loading"
-        class="w-full h-full object-cover object-center"
-      />
-
-      <!-- Text Content -->
-      <div class="absolute inset-0 flex items-center p-4 sm:p-6 md:p-8">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
         <div
-          class="max-w-xl xl:max-w-3xl left-4 sm:left-6 md:left-12 lg:left-0 xl:left-32 relative lg:-translate-y-16"
+          class="swiper-slide-cover aspect-[4/4]"
+          style="background-image: url('/assets/images/Homepage/home-1.2.png ');"
         >
-          <h1
-            class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-[64px] xl:leading-[96px] font-bold mb-4 sm:mb-10 md:leading-tight leading-relaxed text-[#FFFFFF]"
-            style="font-family: 'Merriweather', serif;"
-          >
-            {hero.title}
-          </h1>
-
-          <p
-            class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 md:mb-12 max-w-[500px] md:max-w-[600px] text-[#CFCFCF]"
-            style="font-family: 'Merriweather', serif;"
-          >
-            {hero.titlehero}
-          </p>
-          <Button link="/volunteering" title="Become a Volunteer" btn="btn1" />
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div
+          class="swiper-slide-cover aspect-[4/4]"
+          style="background-image: url('/assets/images/Homepage/home-1.png');"
+        >
         </div>
       </div>
     </div>
-  </section>
-  <!-- -------------------mobile view ----------------- -->
-  <section class="sm:hidden block relative">
-    <div class="relative h-[760px]">
-      <!-- Image with responsive gradient overlay -->
-      <img
-        src="/assets/images/Homepage/home-2.png"
-        alt="loading"
-        class="w-full h-full object-cover object-center"
-      />
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
 
-      <!-- Text Content Container -->
-      <div class="absolute inset-0 flex flex-col p-4 justify-between">
-        <!-- Title at Top -->
+  <!-- ---------content box----------- -->
+  <div
+    class="relative z-[2] container mx-auto px-4  lg:py-0"
+  >
+    <div class="flex flex-wrap -mx-4 my-8 md:my-12 ">
+      <div
+        class="w-full px-4 py-8 md:py-12 mb-6 md:mb-8 lg:mb-10 "
+      >
         <h1
-          class="text-4xl leading-[3.3rem] font-bold pt-2 text-white"
-          style="font-family: 'Merriweather', serif;"
+          class="text-white font-merriweather text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] leading-tight md:leading-snug lg:leading-[150%] mb-8 max-w-full lg:max-w-[772px]"
         >
           {hero.title}
         </h1>
-
-        <!-- Bottom-aligned Content -->
-        <div class="pb-2">
-          <p
-            class="text-xl mb-10 text-gray-300"
-            style="font-family: 'Merriweather', serif;"
-          >
-            {hero.titlehero}
-          </p>
+        <p
+          class="block text-[#CFCFCF] font-merriweather text-xl md:text-2xl xl:text-[2rem] leading-normal md:leading-relaxed mb-6 md:mb-12 max-w-full md:max-w-[650px] xl:max-w-[690px]"
+        >
+          {hero.titlehero}
+        </p>
+        <div class="relative inline-flex items-center group">
           <Button
-            link="/volunteering"
-            title="Become a Volunteer"
-            btn="btn1"
-            width="w-full"
-          />
+          link="/volunteering"
+          title="Become a Volunteer"
+          btn="btn1"
+          widthClass="w-[235px]"
+          heightClass="h-[60px]"
+        />
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
+<script type="module">
+  import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+  
+   new Swiper(".swiper", {
+    effect: "fade",
+    speed: 800,
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}" style="
+          width: 13.5px;
+          height: 13px;
+          background: transparent;
+          border: 1px solid black;
+          margin: 0 8px;
+          opacity: 1;
+          transition: all 0.3s ease;
+          display: inline-block;
+          border-radius: 50%;
+          cursor: pointer;
+        "></span>`;
+      },
+    },
+    on: {
+      init: function () {
+        this.pagination.bullets.forEach(bullet => {
+          if (bullet.classList.contains('swiper-pagination-bullet-active')) {
+            bullet.style.background = 'rgb(47 83 3)';
+            bullet.style.borderColor = '#333';
+          }
+        });
+      },
+      slideChange: function () {
+        this.pagination.bullets.forEach(bullet => {
+          bullet.style.background = 'transparent';
+          bullet.style.borderColor = '#333';
+          
+          if (bullet.classList.contains('swiper-pagination-bullet-active')) {
+            bullet.style.background = 'rgb(47 83 3)';
+            bullet.style.borderColor = '#333';
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const sliders = document.querySelectorAll(".slider") as any;
-
-    if (sliders.length < 2) return; // Ensure there are at least two sliders
-
-    let one = sliders[0];
-    let two = sliders[1];
-
-    one.style.zIndex = "2";
-    two.style.zIndex = "1";
-
-    setInterval(() => {
-      // Move the first slide out of view
-      one.style.transform = "translateX(-100%)";
-      one.style.zIndex = "1";
-
-      two.style.transform = "translateX(0%)";
-      two.style.zIndex = "2";
-
-      setTimeout(() => {
-        one.style.transform = "translateX(100%)";
-
-        // Swap references
-        let temp = one;
-        one = two;
-        two = temp;
-      }, 2000);
-    }, 7000);
+          }
+        });
+      }
+    }
   });
 </script>
+
+<!-- ----------mobile --- -->
+<section class="md:hidden block relative mt-[5.5rem]">
+  <div class="relative h-[760px]">
+    <!-- Image with responsive gradient overlay -->
+    <img
+      src="/assets/images/Homepage/home-2.png"
+      alt="loading"
+      class="w-full h-full object-cover object-center"
+    />
+
+    <!-- Text Content Container -->
+    <div class="absolute inset-0 flex flex-col p-4 justify-between">
+      <!-- Title at Top -->
+      <h1
+        class="text-4xl leading-[3.3rem] font-bold pt-2 text-white"
+        style="font-family: 'Merriweather', serif;"
+      >
+        {hero.title}
+      </h1>
+
+      <!-- Bottom-aligned Content -->
+      <div class="pb-2">
+        <p
+          class="text-xl mb-10 text-gray-300"
+          style="font-family: 'Merriweather', serif;"
+        >
+          {hero.titlehero}
+        </p>
+        <Button
+          link="/volunteering"
+          title="Become a Volunteer"
+          btn="btn1"
+          width="w-full"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+

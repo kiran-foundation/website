@@ -15,11 +15,11 @@ const testimonials = testimonialsData.testimonials.filter((testimonial) =>
     testimonial.tags.includes(pageTag),
 );
 ---
- <div class="carousel mb-2 md:mb-16 " >
-            <div class="carousel-inner">
+ <div class="carousel mb-2 md:mb-16 border-3 border-black max-w-[1296px] " >
+            <div class="carousel-inner ">
                 {
                     testimonials.map((testimonial, index) => (
-                        <div class="carousel-item mt-3 " data-index={index}>
+                        <div class="carousel-item  max-w-[636px] max-h-[476px]" data-index={index}>
                             <TestimonialComponent {...testimonial} />
                         </div>
                     ))

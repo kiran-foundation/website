@@ -1,11 +1,11 @@
 ---
-const { link, title, btn ,width = "w-auto" } = Astro.props;
+const { link, title, btn ,widthClass = "w-auto" ,heightClass = "h-auto" } = Astro.props;
 ---
 
 {btn === "btn1" && (
   <button
     onclick={`window.location.href='${link}'`}
-    class={`font-poppins font-medium ${width}  px-3 sm:px-5 md:px-6 py-2 sm:py-3 md:py-5 h-12  text-base lg:text-base rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E] `}
+    class={`font-poppins font-medium ${widthClass}  px-3 sm:px-5 md:px-6 py-2 sm:py-3 md:py-5 ${heightClass} ml-1 text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E] `}
   >
     {title}
   </button>

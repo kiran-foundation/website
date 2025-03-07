@@ -4,49 +4,80 @@ const values = (await getEntry("home", "values")).data;
 import Button from "../common/button.astro";
 ---
 
-<h3 class="text-4xl lg:text-5xl text-center mt-14 mb-16 font-merriweather">
-  {values.vision.title}
-</h3>
-<section class="overflow-hidden mt-10 xl:mt-20">
-  <div class="xl:container mx-auto pb-6 mb-0 md:mb-8">
-    <div class="flex flex-col md:flex-row gap-4 items-center p-6" >
-      <!-- Image Section -->
-      <div data-aos="fade-right" data-aos-duration="600" data-aos-offset="15 0" class="w-full md:w-1/2 flex items-center justify-center flex-col"> 
-        <div class="h-auto w-auto md:min-w-[23.5rem] md:h-[23.5rem] lg:min-w-[25rem] lg:h-[25rem] xl:!w-[35rem] xl:!h-[32rem] ">
-          <img
-            class="w-full h-full rounded-3xl filter"
-            src="/assets/images/Homepage/maa-kiran.png"
-            alt="Image"
-          />
-        </div>
-        <div class="flex items-center justify-center mt-4">
-          <p class="flex items-center gap-2 sm:block font-bold text-xl text-gray-800">
-            {values.maa.name}
-            <span class="text-gray-500 font-thin text-sm sm:text-base md:text-sm">{values.maa.lifespan}</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- Text Content Section -->
-        <div data-aos="fade-left" data-aos-duration="600" data-aos-offset="280" class="flex flex-col h-full xl:w-4/6 px-2 xl:px-5 py-2 justify-between -translate-y-24 ">
-          <h2 class="text-3xl font-bold text-[#1E1E1E] font-merriweather">{values.maa.title}</h2>
-          <p class="text-2xl md:text-xl lg:text-3xl 2xl:text-[2.4rem] leading-relaxed 2xl:leading-[3rem] font-poppins mb-[1.7rem] xl:mb-16  italic text-[#49494C]">
-            "{values.maa.quote}"
-          </p>
-          <p class=" mb-[1.7rem] xl:mb-12 text-base lg:text-xl text-[#49494C]">
-            {values.maa.step}
-          </p>
-          <div>
-            <Button link="/about" title="Read more" btn="btn2"/>
-          </div>
-        </div>
-    </div>
+<!-- Main Container with same styling as programs section -->
+<div
+  class="max-w-[1296px] mx-auto border-2 border-red-500 mt-8 md:mt-[11.5rem] flex items-center flex-col p-1"
+>
+  <!-- Values Heading Section -->
+  <div
+    class="flex items-center justify-center flex-col text-center space-y-4 border-3 border-green-600 w-full"
+  >
+    <h3
+      class="text-4xl lg:text-5xl font-normal font-merriweather text-[#1E1E1E] tracking-[-2.25%] leading-[150%]"
+    >
+      {values.vision.title}
+    </h3>
   </div>
-</section>
 
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-  .font-poppins {
-    font-family: "Poppins", sans-serif;
-  }
-</style>
+  <!-- Values Content Container -->
+  <section
+    class="overflow-hidden mt-10 xl:mt-[7.5rem] w-full flex gap-16 border-2 border-teal-500"
+  >
+    <div class="border-2 border-red-500 max-w-[540px] max-h-[594px]"
+    data-aos="fade-right" 
+    data-aos-duration="600" 
+    data-aos-offset="150">
+      <div class="border-2 border-black">
+        <img
+          class="w-full h-full rounded-3xl filter"
+          src="/assets/images/Homepage/maa-kiran.png"
+          alt="Maa Kiran portrait"
+          loading="lazy"
+        />
+      </div>
+      <div class="flex items-center justify-center mt-4">
+        <p
+          class="flex items-center gap-2 sm:block font-bold text-xl text-gray-800"
+        >
+          {values.maa.name}
+          <span class="text-gray-500 font-thin text-sm sm:text-base md:text-sm">
+            {values.maa.lifespan}
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="border-2 border-red-500 max-w-[692px] max-h-[652px]"
+      data-aos="fade-left"
+      data-aos-duration="600"
+      data-aos-offset="280"
+    >
+      <h2 class="text-3xl font-bold text-[#1E1E1E] font-merriweather">
+        {values.maa.title}
+      </h2>
+      <q class="text-6xl block mb-[1.7rem] xl:mb-12">
+        <p
+          class="inline text-2xl md:text-xl lg:text-3xl 2xl:text-[2.3rem] leading-relaxed 2xl:leading-[3rem] font-poppins italic text-[#49494C] font-light"
+        >
+          {values.maa.quote}
+        </p>
+      </q>
+      <p
+        class="mb-[1.7rem] xl:mb-12 text-base lg:text-lg text-[#49494C] font-poppins font-normal !leading-[36px]"
+      >
+        {values.maa.step}
+      </p>
+      <div>
+        <Button link="/about" title="Read more" btn="btn2" />
+      </div>
+    </div>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </section>
+</div>
