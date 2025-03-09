@@ -7,36 +7,36 @@ import Button from "../common/button.astro";
 
 <!-- Main Container py-8 md:py-6   -->
 <div
-  class="max-w-[1296px] mx-auto border-2 border-red-500 mt-8 md:mt-[7.5rem] flex items-center justify-center flex-col p-1"
+  class="max-w-[1296px] mx-auto   mt-[80px] lg:mt-[7.5rem] flex items-center justify-center flex-col  !overflow-hidden"
 >
   <!-- Heading Section -->
   <div
-    class="flex items-center justify-center flex-col text-center max-w-[1034px] space-y-4 border-2 border-black"
+    class="flex items-center justify-center flex-col text-center max-w-[1034px] space-y-4 mx-[1.5rem] lg:mx-0  "
   >
     <h2
-      class="text-3xl md:text-[2.5rem] xl:text-[3rem] font-normal mb-8 font-merriweather leading-10 text-[#1E1E1E] w-full !py-5 border-2 border-black"
+      class="text-[1.875rem] lg:text-[3rem] font-normal mb-8 font-merriweather leading-[150%] lg:leading-10 text-[#1E1E1E] w-full lg:!py-2  "
     >
       {programs.heading.head1}
     </h2>
     <p
-      class="max-w-[51rem] xl:max-w-[1034px] text-lg md:text-[1.1rem] xl:text-[32px] font-poppins text-[#49494C] leading-[60px] border-2 border-black m-0"
+      class="text-left lg:text-center xl:max-w-[1034px] text-[20px] lg:text-[32px] font-poppins text-[#49494C] leading-[38px] lg:leading-[60px]   m-0"
     >
       {programs.heading.head2}
       {programs.heading.head3}
     </p>
   </div>
 
-  <!-- Programs Container -->
+  <!-- ------------------------------------------------Programs Container--------------------------------------------------- -->
   <div
-    class="mt-[7.5rem] border-3 border-gray-500 w-full p-1 flex flex-col gap-[11.5rem]"
+    class="mt-[86px] lg:mt-[7.5rem] mx-2 w-full  flex flex-col gap-[86px] lg:gap-[11.5rem] "
   >
-    <!-- Pratibha Program -->
+    <!-- --------------------------------------------Pratibha Program------------------------------------------------------ -->
     <section
-      class="flex flex-col md:flex-row items-center gap-16 justify-center border-2 border-black overflow-hidden p-1"
+      class="flex flex-col lg:flex-row items-center gap-16 lg:gap-8 xl:gap-16 justify-center lg:mx-6 xl:mx-0 overflow-hidden  "
     >
-      <!-- Image Column -->
+      <!-- --------------------------------------------Image Column------------------------------------------------------ -->
       <div
-        class="border-3 border-red-500 max-w-[750px]"
+        class="   xl:max-w-[750px]"
         data-aos="fade-right"
         data-aos-duration="500"
         data-aos-offset="100"
@@ -46,70 +46,97 @@ import Button from "../common/button.astro";
           src="/assets/images/Homepage/home2.png"
           alt="Pratibha program illustration"
           loading="lazy"
-          class="w-[740px] h-[740px]"
+          class="h-[342px] w-[342px]
+              md:w-[682px] md:h-[682px]
+              lg:w-[500px] lg:h-[520px]
+              xl:w-[740px] xl:h-[740px]"
         />
       </div>
-      <div class="border-3 border-red-500 max-w-[492px] h-full">
+      <div
+        class="  mx-[24px] lg:mx-0 lg:max-w-[410px] xl:max-w-[492px] h-full"
+      >
         <h2
-          class="text-[1.8rem] lg:text-[32px] mb-[1.3rem] lg:mb-8 font-bold text-[#1E1E1E] leading-[100%] p-2 border-3 border-red-400"
+          class="text-[24px] xl:text-[32px] mb-[24px] xl:mb-8 font-semibold text-[#1E1E1E] leading-[100%] lg:p-2  "
         >
           {programs.pratibha.title}
         </h2>
         <p
-          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-8 py-2 leading-[36px] font-poppins text-[#49494C] border-3 border-red-400"
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]  "
         >
           {programs.pratibha.description1}
         </p>
         <p
-          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-8 py-2 leading-[36px] font-poppins text-[#49494C] border-3 border-red-400"
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]  "
         >
           {programs.pratibha.description2}
         </p>
         <p
-          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-8 py-2 leading-[36px] font-poppins text-[#49494C] border-3 border-red-400"
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]  "
         >
           {programs.pratibha.description3}
         </p>
-        <div class="mt-12">
+        <div class="mt-12 lg:mt-8 xl:mt-12">
           <Button link="/shakti" title={common.more} btn="btn2" />
         </div>
       </div>
     </section>
 
-    <!-- Shakti Program -->
+    <!-- ------------------------------------------------------------------ Shakti Program ----------------------------------------------- -->
     <section
-      class="overflow-hidden border-3 border-blue-500 flex max-w-[1296px] max-h-[844px] gap-16 items-center justify-center"
+      class="overflow-hidden  flex flex-col lg:max-w-[1296px] lg:max-h-[844px] lg:mx-6 xl:mx-0 gap-16 lg:gap-8 xl:gap-16 items-center justify-center lg:flex-row "
     >
-      <div class="border-3 border-pink-800 max-w-[492px] max-h-[512px]">
-        <h2
-          class="text-[1.8rem] lg:text-3xl mb-[1.3rem] lg:mb-8 font-semibold text-[#1E1E1E] border-4 border-pink-500"
-        >
-          {programs.shakti.title}
-        </h2>
-        <p
-          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-8 leading-relaxed text-[#49494C] border-4 border-pink-500"
-        >
-          {programs.shakti.description1}
-        </p>
-        <p
-          class="text-[1rem] lg:text-lg mb-[1rem] lg:mb-8 leading-relaxed text-[#49494C] border-4 border-pink-500"
-        >
-          {programs.shakti.description2}
-        </p>
-        <div class="mt-12">
-          <Button link="/shakti" title={common.more} btn="btn2" />
-        </div>
-      </div>
-
+      <!-- --------for mobile ---------- -->
       <div
-        class="border-3 border-orange-700 max-w-[750px] max-h-[640px]"
+        class="mx-[24px] lg:mx-0 max-h-[640px] lg:max-w-[410px] xl:max-w-[750px] lg:hidden block"
         data-aos="fade-left"
         data-aos-duration="500"
         data-aos-offset="100"
         data-disable-parallax-down="md"
       >
         <img
-          class="rounded-lg max-w-[500px] w-[740px] lg:max-w-[740px] max-h-[634px] h-auto object-cover"
+          class="rounded-lg w-[342px] md:w-full xl:w-[740px] lg:max-w-[740px] lg:max-h-[634px] h-auto object-cover
+          "
+          src="/assets/images/Homepage/home3.png"
+          alt="Shakti program illustration"
+          loading="lazy"
+        />
+      </div>
+
+      <div
+        class="mx-[24px] lg:mx-0 xl:max-w-[492px] xl:max-h-[512px]"
+      >
+        <h2
+          class="text-[24px] xl:text-[32px] mb-[24px] xl:mb-8 font-semibold text-[#1E1E1E] leading-[100%] lg:p-2  "
+        >
+          {programs.shakti.title}
+        </h2>
+        <p
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]  "
+        >
+          {programs.shakti.description1}
+        </p>
+        <p
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]  "
+        >
+          {programs.shakti.description2}
+        </p>
+        <div class="mt-12 lg:mt-8 xl:mt-12">
+          <Button link="/shakti" title={common.more} btn="btn2" />
+        </div>
+      </div>
+
+      <div
+        class=" max-w-[750px]  max-h-[640px] hidden lg:block"
+        data-aos="fade-left"
+        data-aos-duration="500"
+        data-aos-offset="100"
+        data-disable-parallax-down="md"
+      >
+        <img
+          class="rounded-lg max-w-[500px] w-[740px]  h-auto object-cover
+          lg:w-[740px]
+          xl:max-w-[740px] xl:max-h-[634px] 
+          "
           src="/assets/images/Homepage/home3.png"
           alt="Shakti program illustration"
           loading="lazy"

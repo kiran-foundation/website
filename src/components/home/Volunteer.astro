@@ -6,100 +6,167 @@ const volunteer = (await getEntry("home", "volunteer")).data;
 
 <!-- Main Container -->
 <div
-  class="max-w-[1296px] mx-auto border-2 border-red-500 mt-8 md:mt-[11.5rem] mb-[7.5rem] flex items-center justify-center flex-col p-1"
+  class="max-w-[1296px] mx-auto  mt-[86px] lg:mt-[11.5rem] mb-16 lg:mb-[7.5rem] flex items-center justify-center flex-col p-1 !overflow-hidden"
 >
   <!-- Heading Section -->
   <div
-    class="relative flex items-center justify-center flex-col text-center space-y-4 mb-[7.5rem] border-2 border-black max-w-[1074px]"
+    class="relative flex items-center justify-center flex-col text-center space-y-4 mb-[64px] xl:mb-[7.5rem] mx-6 xl:mx-0 max-w-[1074px]"
   >
     <h2
-      class="text-4xl lg:text-5xl font-normal font-merriweather text-[#1E1E1E] tracking-[-2.25%] leading-[150%] w-full py-2 border-2 border-purple-500 mb-8"
+      class="text-3xl lg:text-5xl font-normal font-merriweather text-[#1E1E1E] tracking-[-2.25%] leading-[150%] w-full py-2  mb-8"
     >
       {volunteer.join}
     </h2>
     <p
-      class="text-lg xl:text-[2rem] xl:leading-[60px] font-poppins text-[#49494C] font-normal border-2 border-purple-500"
+      class="text-xl xl:text-[2rem] xl:leading-[60px] font-poppins text-[#49494C] font-normal "
     >
       {volunteer.join_description}
     </p>
   </div>
 
   <!-- Volunteer Positions Section -->
-  <section class="w-full border-2 border-blue-500 mb-[7.5rem]">
-    <div class="text-center space-y-4 mb-24">
+  <section class="w-full  mb-[86px] lg:mb-[7.5rem]">
+    <div class="text-center space-y-4 mb-16 lg:mb-24">
       <h2
-        class="text-xl md:text-2xl xl:text-[2rem] font-semibold font-poppins border-2 border-green-500"
+        class="text-2xl md:text-2xl xl:text-[2rem] font-semibold font-poppins "
       >
         {volunteer.heading}
       </h2>
     </div>
 
-    <div class="mt-6 max-w-7xl mx-auto border-2 border-yellow-500">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="mt-6 max-w-7xl">
+      <swiper-container
+        class="mySwiper w-full"
+        slides-per-view="2"
+        centered-slides="true"
+        space-between="20"
+        pagination="true"
+        pagination-type="fraction"
+        navigation="true"
+        breakpoints={`{
+          "350": {
+            "slidesPerView": 0.5,
+            "spaceBetween": 20
+          },
+          "768": {
+            "slidesPerView": 1,
+            "spaceBetween": 30
+          },
+          "1024": {
+            "slidesPerView": 2.15,
+            "spaceBetween": 50
+          },
+          "1300": {
+            "slidesPerView": 2.8,
+            "spaceBetween": 50
+          }
+        }`}
+      >
         {
           [1, 2, 3].map((index) => (
-            <div class="border border-[#9c9c9c] rounded-xl p-9 flex flex-col justify-between items-center group w-[416px] h-[268px]">
-              <h3 class="font-poppins text-2xl font-semibold mb-3 text-gray-800">
-                {volunteer[`volunteerRole${index}`].title}
-              </h3>
-              <p class="font-poppins text-[20px] text-gray-600 mb-1">
-                {volunteer[`volunteerRole${index}`].description}
-              </p>
-              <p class="font-poppins text-[20px] text-gray-600 mb-12">
-                Minimum Commitment
-              </p>
-              <Button
-                link={volunteer[`volunteerRole${index}`].link}
-                title="Learn More"
-                btn="btn3"
-              />
-            </div>
+            <swiper-slide class="sm:min-w-[426px] sm:min-h-[268px] flex justify-center items-center">
+              <div class="border-2 border-[#9c9c9c] rounded-xl  p-6 sm:p-9 flex flex-col justify-between items-center group w-full max-w-[350px] sm:max-w-[416px]  sm:h-[268px]  ">
+                <h3 class="font-poppins text-xl sm:text-2xl font-semibold mb-3 text-gray-800">
+                  {volunteer[`volunteerRole${index}`].title}
+                </h3>
+                <p class="font-poppins text-base sm:text-[20px] text-gray-600 mb-1">
+                  {volunteer[`volunteerRole${index}`].description}
+                </p>
+                <p class="font-poppins text-base sm:text-[20px] text-gray-600 mb-6 sm:mb-12">
+                  Minimum Commitment
+                </p>
+                <Button
+                  link={volunteer[`volunteerRole${index}`].link}
+                  title="Learn More"
+                  btn="btn3"
+                  class="text-sm sm:text-base"
+                />
+              </div>
+            </swiper-slide>
           ))
         }
-      </div>
+      </swiper-container>
     </div>
   </section>
 
   <!-- Why Volunteer Section -->
-  <section class="w-full border-2 border-green-700 overflow-hidden">
+  <section
+    class="w-full flex flex-col lg:flex-row items-center justify-center lg:gap-8 xl:gap-16 overflow-hidden"
+  >
     <div
-      class="flex flex-col md:flex-row items-center justify-center gap-16 border-2 border-orange-500"
+      class="flex lg:hidden flex-col lg:flex-row items-center justify-center gap-8 md:gap-16 mb-16  mx-6"
     >
-      <div class="border-3 border-pink-500 max-w-[680px] max-h-[472px]">
-        <h2
-          class="text-2xl md:text-3xl lg:text-4xl mb-8 font-bold font-poppins text-[#1E1E1E]"
-        >
-          {volunteer.title}
-        </h2>
-        <p
-          class="text-md sm:text-lg mb-8 font-poppins font-normal !leading-[36px] text-[#49494C]"
-        >
-          {volunteer.join_why1}
-        </p>
-        <p
-          class="text-md sm:text-lg mb-12 font-poppins font-normal !leading-[36px] text-[#49494C]"
-        >
-          {volunteer.join_why2}
-        </p>
-        <div class="flex gap-4 md:gap-4 xl:gap-6 flex-wrap">
-          <Button link="/volunteering" title="Become a Volunteer" btn="btn1" />
-          <Button link="/volunteering" title="See All Positions" btn="btn3" />
-        </div>
-      </div>
+      <!-- Image Container -->
       <div
-        class="border-3 border-pink-500 max-w-[555px] max-h-[552px]"
+        class=" w-full"
         data-aos="fade-left"
         data-aos-duration="600"
         data-aos-offset="280"
         data-disable-parallax-down="sm"
       >
         <img
-          class="rounded-lg w-[552px] h-[549px]"
+          class="rounded-lg w-full h-auto object-cover"
           src="/assets/images/Homepage/why.png"
           alt="Volunteer illustration"
           loading="lazy"
         />
       </div>
     </div>
+
+    <!-- Text Content -->
+    <div
+      class="mx-[24px] xl:mx-0 lg:max-w-[430px] lg:max-h-[980px] xl:max-w-[680px] xl:max-h-[750px] py-1 "
+    >
+      <h2
+        class="text-[24px] xl:text-[32px] mb-[24px] xl:mb-8 font-semibold text-[#1E1E1E] leading-[100%] lg:p-2"
+      >
+        {volunteer.title}
+      </h2>
+      <p
+        class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]"
+      >
+        {volunteer.join_why1}
+      </p>
+      <p
+        class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]"
+      >
+        {volunteer.join_why2}
+      </p>
+      <div class="flex lg:flex-col xl:flex-row gap-4 md:gap-4 xl:gap-6">
+        <Button
+          link="/volunteering"
+          title="Become a Volunteer"
+          btn="btn1"
+          widthClass="w-full md:w-[235px] lg:w-full xl:w-[235px]"
+          heightClass="h-[60px]"
+        />
+        <Button
+          link="/volunteering"
+          title="See All Positions"
+          btn="btn3"
+          widthClass="lg:!w-[235px]"
+        />
+      </div>
+    </div>
+
+    <!-- Image Container -->
+      <div
+        class="w-full max-w-full md:max-w-[555px] lg:w-full hidden lg:flex mx-6 xl:mx-0"
+        data-aos="fade-left"
+        data-aos-duration="600"
+        data-aos-offset="0"
+        data-disable-parallax-down="sm"
+      >
+        <img
+          class="rounded-lg w-full h-auto object-cover lg:w-[549px] lg:h-[549px]"
+          src="/assets/images/Homepage/why.png"
+          alt="Volunteer illustration"
+          loading="lazy"
+        />
+    </div>
   </section>
 </div>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+></script>
