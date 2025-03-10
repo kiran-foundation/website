@@ -18,7 +18,7 @@ const volunteer = (await getEntry("home", "volunteer")).data;
       {volunteer.join}
     </h2>
     <p
-      class="text-xl xl:text-[2rem] xl:leading-[60px] text-left font-poppins text-[#49494C] font-normal "
+      class="text-xl xl:text-[2rem] xl:leading-[60px] font-poppins text-[#49494C] font-normal "
     >
       {volunteer.join_description}
     </p>
@@ -37,7 +37,7 @@ const volunteer = (await getEntry("home", "volunteer")).data;
     <div class="mt-6 max-w-7xl">
       <swiper-container
         class="mySwiper w-full"
-        style="--swiper-pagination-bottom: -0px; "
+        style="--swiper-pagination-bottom: -0px"
         slides-per-view="2"
         centered-slides="true"
         space-between="20"
@@ -66,8 +66,8 @@ const volunteer = (await getEntry("home", "volunteer")).data;
         {
           [1, 2, 3].map((index) => (
             <swiper-slide class="sm:min-w-[426px] sm:min-h-[268px] flex justify-center items-center">
-              <div class="border-2 border-[#9c9c9c] rounded-xl  p-6 sm:p-9 flex flex-col justify-between items-center group w-full max-w-[330px] sm:max-w-[416px]  sm:h-[268px]  ">
-                <h3 class="font-poppins text-xl sm:text-2xl font-semibold mb-3 text-gray-800">
+              <div class="border-2 border-[#9c9c9c] rounded-xl  p-6 sm:p-9 flex flex-col justify-between items-center group w-full max-w-[290px] xs:max-w-[330px] sm:!max-w-[416px]  lg:!max-w-[416px] sm:h-[268px]  :">
+                <h3 class="font-poppins text-xl sm:text-2xl font-semibold mb-3 text-gray-800 text-center">
                   {volunteer[`volunteerRole${index}`].title}
                 </h3>
                 <p class="font-poppins text-base sm:text-[20px] text-gray-600 mb-1">

@@ -1,9 +1,9 @@
 ---
 title: Our Programmes
 heading:
-  head1: "Helping Youth and Women Thrive"
-  head2: " We dream of a society  where everyone has equal opportunity to succeed. "
-  head3: "A place where merit, dedication and hard-work strive over wealth, social status and connections. "
+  head1: "Helping Youth and Women Thrive "
+  head2: " We dream of a society  where everyone has equal opportunity to succeed . "
+  head3: "A place where merit , dedication and hard-work strive over wealth , social status and connections. "
 pratibha:
   title: "Kiran Pratibha Scholarship"
   description1: "Every year, many bright youth are forced to abandon their hopes and dreams, battling harsh realities of life at the cost of their future."

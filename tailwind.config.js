@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': {'min': '400px'}, // Custom breakpoint for less than 400px
+      },
       fontFamily: {
         merriweather: ['Merriweather', 'serif'],
         poppins: ['Poppins', 'sans-serif'],
