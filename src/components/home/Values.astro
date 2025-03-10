@@ -6,11 +6,11 @@ import Button from "../common/button.astro";
 
 <!-- Main Container with same styling as programs section -->
 <div
-  class="max-w-[1296px] mx-auto  mt-[86px] md:mt-[11.5rem] flex items-center flex-col  !overflow-hidden"
+  class="max-w-[1296px] mx-auto mt-[86px] lg:mt-[11.5rem] flex items-center flex-col !overflow-hidden"
 >
   <!-- Values Heading Section -->
   <div
-    class="flex items-center justify-center flex-col text-center space-y-4  w-full lg:mx-6 xl:mx-0 "
+    class="flex items-center justify-center flex-col text-center space-y-4 w-full lg:mx-6 xl:mx-0"
   >
     <h3
       class="text-4xl lg:text-5xl font-normal font-merriweather text-[#1E1E1E] tracking-[-2.25%] leading-[150%]"
@@ -19,15 +19,35 @@ import Button from "../common/button.astro";
     </h3>
   </div>
 
+  <div
+    class="flex lg:hidden lg:max-w-[480px] xl:max-w-[692px] xl:max-h-[652px] mx-[24px]  mt-10 xl:mt-[7.5rem]"
+    data-aos="fade-left"
+    data-aos-duration="600"
+    data-aos-offset="280"
+  >
+    <h2 class="text-3xl font-bold text-[#1E1E1E] font-merriweather">
+      {values.maa.title}
+    </h2>
+    <q class="text-2xl xl:text-6xl block mb-[1.5rem] xl:mb-12">
+      <p
+        class="inline text-xl md:text-xl lg:text-3xl 2xl:text-[2.3rem] leading-[38px] xl:leading-[3rem] font-poppins italic text-[#49494C] font-light"
+      >
+        {values.maa.quote}
+      </p>
+    </q>
+  </div>
+
   <!-- Values Content Container -->
   <section
-    class="overflow-hidden mt-10 xl:mt-[7.5rem] w-full flex flex-col lg:flex-row items-center justify-center gap-16  "
+    class="overflow-hidden mt-10 xl:mt-[7.5rem] w-full flex flex-col lg:flex-row items-center justify-center gap-16"
   >
-    <div class=" xl:max-w-[540px] xl:max-h-[594px] mx-[24px] xl:mx-0"
-    data-aos="fade-right" 
-    data-aos-duration="600" 
-    data-aos-offset="150">
-      <div >
+    <div
+      class="xl:max-w-[540px] xl:max-h-[594px] mx-[24px] xl:mx-0"
+      data-aos="fade-right"
+      data-aos-duration="600"
+      data-aos-offset="150"
+    >
+      <div>
         <img
           class="w-full md:w-[720px] lg:w-full h-full rounded-3xl filter"
           src="/assets/images/Homepage/maa-kiran.png"
@@ -37,7 +57,7 @@ import Button from "../common/button.astro";
       </div>
       <div class="flex items-center justify-center mt-4">
         <p
-          class="flex items-center gap-2 sm:block font-bold text-xl text-gray-800"
+          class="flex items-center flex-col sm:flex-row gap-2 sm:block font-bold text-xl text-gray-800"
         >
           {values.maa.name}
           <span class="text-gray-500 font-thin text-sm sm:text-base md:text-sm">
@@ -48,7 +68,7 @@ import Button from "../common/button.astro";
     </div>
 
     <div
-      class=" lg:max-w-[480px] xl:max-w-[692px]  xl:max-h-[652px] mx-[24px] xl:mx-0  "
+      class="lg:max-w-[480px] xl:max-w-[692px] xl:max-h-[652px] mx-[24px] xl:mx-0"
       data-aos="fade-left"
       data-aos-duration="600"
       data-aos-offset="280"
@@ -56,7 +76,7 @@ import Button from "../common/button.astro";
       <h2 class="text-3xl font-bold text-[#1E1E1E] font-merriweather">
         {values.maa.title}
       </h2>
-      <q class="text-2xl xl:text-6xl block mb-[1.5rem] xl:mb-12">
+      <q class="hidden lg:block  text-2xl xl:text-6xl  mb-[1.5rem] xl:mb-12">
         <p
           class="inline text-xl md:text-xl lg:text-3xl 2xl:text-[2.3rem] leading-[38px] xl:leading-[3rem] font-poppins italic text-[#49494C] font-light"
         >

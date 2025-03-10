@@ -18,7 +18,7 @@ const volunteer = (await getEntry("home", "volunteer")).data;
       {volunteer.join}
     </h2>
     <p
-      class="text-xl xl:text-[2rem] xl:leading-[60px] font-poppins text-[#49494C] font-normal "
+      class="text-xl xl:text-[2rem] xl:leading-[60px] text-left font-poppins text-[#49494C] font-normal "
     >
       {volunteer.join_description}
     </p>
@@ -37,6 +37,7 @@ const volunteer = (await getEntry("home", "volunteer")).data;
     <div class="mt-6 max-w-7xl">
       <swiper-container
         class="mySwiper w-full"
+        style="--swiper-pagination-bottom: -0px; "
         slides-per-view="2"
         centered-slides="true"
         space-between="20"
@@ -65,7 +66,7 @@ const volunteer = (await getEntry("home", "volunteer")).data;
         {
           [1, 2, 3].map((index) => (
             <swiper-slide class="sm:min-w-[426px] sm:min-h-[268px] flex justify-center items-center">
-              <div class="border-2 border-[#9c9c9c] rounded-xl  p-6 sm:p-9 flex flex-col justify-between items-center group w-full max-w-[350px] sm:max-w-[416px]  sm:h-[268px]  ">
+              <div class="border-2 border-[#9c9c9c] rounded-xl  p-6 sm:p-9 flex flex-col justify-between items-center group w-full max-w-[330px] sm:max-w-[416px]  sm:h-[268px]  ">
                 <h3 class="font-poppins text-xl sm:text-2xl font-semibold mb-3 text-gray-800">
                   {volunteer[`volunteerRole${index}`].title}
                 </h3>
@@ -77,7 +78,7 @@ const volunteer = (await getEntry("home", "volunteer")).data;
                 </p>
                 <Button
                   link={volunteer[`volunteerRole${index}`].link}
-                  title="Learn More"
+                  title="Explore Opportunity"
                   btn="btn3"
                   class="text-sm sm:text-base"
                 />
@@ -132,7 +133,7 @@ const volunteer = (await getEntry("home", "volunteer")).data;
       >
         {volunteer.join_why2}
       </p>
-      <div class="flex lg:flex-col xl:flex-row gap-4 md:gap-4 xl:gap-6">
+      <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 md:gap-4 xl:gap-6">
         <Button
           link="/volunteering"
           title="Become a Volunteer"

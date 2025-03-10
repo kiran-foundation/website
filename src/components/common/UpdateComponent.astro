@@ -49,13 +49,13 @@ const updatesToDisplay = showHighPriorityOnly
 
       <!-- ----------------------exclusive for mobile ----------------------- -->
       <div
-        class="block sm:hidden mb-12  max-w-7xl mx-auto "
+        class="block sm:hidden mb-12  max-w-7xl mx-auto px-6 py-2 overflow-hidden "
       >
         <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
           {
             updatesToDisplay.map((update) => (
               <swiper-slide class="bg-red-300 rounded-xl">
-                <div class="flex-1 bg-white rounded-xl shadow-sm p-4 md:p-6  hover:shadow-md transition-all hover:scale-105 border-[1px]">
+                <div class="flex-1 bg-white rounded-xl shadow-sm p-4 md:p-6  hover:shadow-md  border-[1px]">
                   <a href={update.link} class="block">
                     <div class="aspect-auto overflow-hidden rounded-xl">
                       <img
