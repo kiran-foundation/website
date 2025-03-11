@@ -3,7 +3,7 @@ title: "Volunteer - Generic (Remote)"
 about: "We are seeking enthusiastic and dedicated volunteers to join our family to contribute towards our mission of providing equal opportunities and creating a merit-driven society. As a volunteer, you will play a vital role in supporting our programs, initiatives, and events that benefit disadvantaged students, women, and create a positive change in our society."
 startDate: "Start Date: Immediate"
 duration: "Duration: 12 Months"
-timeCommitment: "Time Commitment: 5 hr/week"
+timeCommitment: "Average : 5 hr/week"
 teamSize: "Team Size: 3-5"
 responsibilities: |
   - Build strong and positive relationships with assigned mentees to establish trust and open communication

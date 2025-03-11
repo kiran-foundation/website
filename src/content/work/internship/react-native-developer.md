@@ -3,7 +3,7 @@ title: "React Native Developer - Intern (Remote)"
 about: "As a React Native Intern, you will have the opportunity to gain practical experience in developing mobile applications using React Native, a popular framework for building cross-platform apps. You will contribute to the development of mobile applications that will be crucial to Kiran Foundation's Growth. This internship is designed to provide hands-on learning and exposure to real-world projects, fostering your growth as a mobile app developer."
 startDate: "Start Date: Immediate"
 duration: "Duration: 3 - 6 Months"
-timeCommitment: "Time Commitment: 10 hr/week"
+timeCommitment: "Average : 10 hr/week"
 teamSize: "Team Size: 3-5"
 responsibilities: |
   - Work on our soon-to-be-launched Mobile App

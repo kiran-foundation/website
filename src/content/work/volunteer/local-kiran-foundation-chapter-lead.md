@@ -3,7 +3,7 @@ title: "Local Kiran Foundation Chapter Lead"
 about: "We are seeking dedicated and motivated Local Chapter Leads to start, oversee and coordinate activities for our chapters. As a Local Chapter Lead, you will be responsible for fostering a sense of community, building a team, organizing events, and facilitating engagement among members. If you are a proactive and enthusiastic individual with excellent organizational and leadership skills, we invite you to join our team."
 startDate: "Start Date: Immediate"
 duration: "Duration: 12 Months"
-timeCommitment: "Time Commitment: 10 hr/week"
+timeCommitment: "Average : 10 hr/week"
 teamSize: "Team Size: 3-5"
 responsibilities: |
   - Serve as the primary point of contact and leader for your City/Region
