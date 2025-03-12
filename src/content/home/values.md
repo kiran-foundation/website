@@ -17,5 +17,5 @@ maa:
     "If a hardworking and talented youth cannot fulfill their dreams due to a lack of resources, it is a failure of our entire society. We must keep their hopes and dreams alive!"
   name:  Maa Kiran Jain
   lifespan: (17th Oct 1955- 15th June 2015)
-  step: Her words echoed a profound truth that resonates deeply within us the failure of a society to nurture the dreams of its hardworking and talented youth is a failure of the society as a whole. Kiran Foundation is an step towards that vision.
+  step: Her words echoed a profound truth that resonates deeply within us the failure of a society to nurture the dreams of its hardworking and talented youth is a failure of the society as a whole. Kiran Foundation is step towards that vision.
 ---

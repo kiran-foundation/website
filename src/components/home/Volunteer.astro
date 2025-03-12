@@ -6,7 +6,7 @@ import VolunteerSwiper from "../common/VolunteerSwiper.astro";
 
 import { getCollection } from "astro:content";
 const jobs = await getCollection("work", ({ id }) => {
-  return id.startsWith("internship/") || id.startsWith("volunteer/");
+  return id.startsWith("internship/") || id.startsWith("volunteering/");
 });
 ---
 
@@ -34,7 +34,7 @@ const jobs = await getCollection("work", ({ id }) => {
   <section class="w-full ">
     <div class="text-center space-y-4 mb-16 lg:mb-24">
       <h2
-        class="text-2xl md:text-2xl xl:text-[2rem] font-semibold font-poppins"
+        class="text-2xl md:text-2xl xl:text-[2rem] font-semibold font-poppins text-[#1E1E1E]"
       >
         {volunteer.heading}
       </h2>
@@ -73,7 +73,7 @@ const jobs = await getCollection("work", ({ id }) => {
         class="mx-[24px] xl:mx-0 lg:max-w-[430px] lg:max-h-[980px] xl:max-w-[680px] xl:max-h-[750px] py-1"
       >
         <h2
-          class="text-[24px] xl:text-[32px] mb-[24px] xl:mb-8 font-semibold text-[#1E1E1E] leading-[100%] lg:p-2"
+          class="text-[24px] xl:text-[32px] mb-[24px] xl:mb-8 font-semibold text-[#1E1E1E] leading-[100%]"
         >
           {volunteer.title}
         </h2>
@@ -88,20 +88,20 @@ const jobs = await getCollection("work", ({ id }) => {
           {volunteer.join_why2}
         </p>
         <div
-          class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 md:gap-4 xl:gap-6"
+          class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 md:gap-4 xl:gap-6 items-center"
         >
           <Button
             link="/volunteering"
             title="Become a Volunteer"
             btn="btn1"
-            widthClass="w-full md:w-[235px] lg:w-full xl:w-[235px]"
+            widthClass="w-[342px] md:w-[235px] lg:w-full xl:w-[235px]"
             heightClass="h-[60px]"
           />
           <Button
             link="/volunteering"
             title="See All Positions"
             btn="btn3"
-            widthClass="lg:!w-[235px]"
+            widthClass="w-[342px] md:w-[235px] lg:w-full xl:w-[235px]"
           />
         </div>
       </div>

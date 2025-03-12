@@ -1,5 +1,5 @@
 ---
-title: "Recognized and Trusted by"
+title: "Recognized and Trusted"
 logos:
   - name: "FMSF"
     image: "/assets/images/Homepage/trusted/fmsf.png"
