@@ -3,104 +3,148 @@ import { getEntry } from 'astro:content'
 const headerDetails = (await getEntry('header', 'details')).data
 ---
 
-<!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
-<header
-  class='navbar navbar-expand-lg fixed-top'
-  style='background-color: #ffffff;'
->
-  <div class='container'>
-    <!-- Navbar brand (Logo) -->
-    <a class='navbar-brand pe-sm-3' href='/'>
-      <span class='text-primary flex-shrink-0 me-2'>
-        <svg width='35' height='32' viewBox='0 0 36 33'>
-          <img
-            src='/Logo.png'
-            width='107'
-            height='66.61'
-            alt='kiran foundation logo'
-          />
-        </svg>
-      </span>
+<header class="fixed top-0 left-0 right-0 bg-white z-50">
+  <div class="container mx-auto px-4 flex items-center justify-between h-20">
+    <!-- Logo -->
+    <a href="/" class="flex items-center shrink-0">
+      <img
+        src="/logo2.png"
+        class="w-[100px] h-[55.61px]"
+        alt="kiran foundation logo"
+      />
     </a>
 
-    <div class='space-x-4 order-lg-3'>
-      <a
-        class='home-button btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold'
-        href='/donation'
-        rel='noopener'
-      >
-        <i class='fs-xl me-2 ms-n1'></i>
-        {headerDetails.button}
-      </a>
-      <a
-        class='home-button btn btn-outline-primary space-x-4 btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex fw-bold'
-        href='/volunteering'>{headerDetails.buttonVolunteer}</a
-      >
-    </div>
-
-    <!-- Mobile menu toggler (Hamburger) -->
-    <button
-      class='navbar-toggler ms-sm-3'
-      type='button'
-      data-bs-toggle='collapse'
-      data-bs-target='#navbarNav'
-      aria-label='Toggle navigation'
-    >  <span>
-      <svg width='30' height='30' viewBox='0 0 30 30'>
-        <rect width='30' height='4' fill='#000'></rect>
-        <rect y='12' width='30' height='4' fill='#000'></rect>
-        <rect y='24' width='30' height='4' fill='#000'></rect>
-      </svg>
-    </span>
-    
-    
-    </button>
-
-    <!-- Navbar collapse (Main navigation) -->
-    <nav class='collapse navbar-collapse' id='navbarNav'>
-      <ul
-        class='navbar-nav navbar-nav-scroll me-auto'
-        style='--ar-scroll-height: 520px;'
-      >
-        <li class='nav-item dropdown'>
-          <a
-            class='nav-link dropdown-toggle'
-            href='/'
-            data-bs-toggle='dropdown'
-            data-bs-auto-close='outside'
-            aria-expanded='false'>{headerDetails.programe}</a
-          >
-          <ul class='dropdown-menu'>
-            <li class='dropdown'>
-              <a class='dropdown-item' href='/pratibha' aria-expanded='false'
-                >{headerDetails.pratibha}</a
-              >
-            </li>
-            <li class='dropdown'>
-              <a class='dropdown-item' href='/shakti'>{headerDetails.shakti}</a>
-            </li>
-
-            <!-- Remove the below comment to add the Samman & Gyan link  -->
-             
-            <!-- <li class='dropdown'>
-              <a class='dropdown-item' href='/'>{headerDetails.samman}</a>
-            </li>
-            <li class='dropdown'>
-              <a class='dropdown-item' href='/'>{headerDetails.gyan}</a>
-            </li> -->
-
-          </ul>
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex flex-1 justify-center mx-8 h-12">
+      <ul class="flex items-center gap-8">
+        <li class="group relative">
+          <button class="flex items-center gap-1 text-gray-700 hover:text-orange-500">
+            {headerDetails.programe}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-lg min-w-[200px] py-3">
+            <a href="/pratibha" class="block px-4 py-2 hover:bg-gray-100">{headerDetails.pratibha}</a>
+            <a href="/shakti" class="block px-4 py-2 hover:bg-gray-100">{headerDetails.shakti}</a>
+          </div>
         </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='/about'>{headerDetails.about}</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='/contact'>{headerDetails.contact}</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='/gallery'>{headerDetails.gallery}</a>
-        </li>
+        <li><a href="/about" class="text-gray-700 hover:text-orange-500">{headerDetails.about}</a></li>
+        <li><a href="/contact" class="text-gray-700 hover:text-orange-500">{headerDetails.contact}</a></li>
+        <li><a href="/gallery" class="text-gray-700 hover:text-orange-500">{headerDetails.gallery}</a></li>
       </ul>
     </nav>
+
+    <!-- Desktop Buttons -->
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="/donation" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm">
+        {headerDetails.button}
+      </a>
+      <a href="/volunteering" class="border-2 border-orange-500 text-orange-500 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors font-semibold text-sm">
+        {headerDetails.buttonVolunteer}
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="lg:hidden p-2" id="mobileMenuButton" aria-label="Toggle navigation">
+      <div class="space-y-2 w-8">
+        <span class="block w-full h-1 bg-gray-800"></span>
+        <span class="block w-full h-1 bg-gray-800"></span>
+        <span class="block w-full h-1 bg-gray-800"></span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="lg:hidden fixed inset-0 z-50 bg-white transform transition-transform duration-300 translate-x-full">
+    <div class="container mx-auto px-4 py-8 h-full overflow-y-auto">
+      <div class="flex justify-end mb-8">
+        <button id="closeMobileMenu" class="p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav class="space-y-6">
+        <div class="space-y-4">
+          <div class="border-b pb-4">
+            <button class="flex justify-between items-center w-full" id="mobileProgramToggle">
+              <span class="text-gray-700">{headerDetails.programe}</span>
+              <svg id="mobileProgramChevron" class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="mobileProgramDropdown" class="hidden pl-4 mt-2 space-y-3">
+              <a href="/pratibha" class="block text-gray-700 hover:text-orange-500">{headerDetails.pratibha}</a>
+              <a href="/shakti" class="block text-gray-700 hover:text-orange-500">{headerDetails.shakti}</a>
+            </div>
+          </div>
+          
+          <a href="/about" class="block text-gray-700 hover:text-orange-500">{headerDetails.about}</a>
+          <a href="/contact" class="block text-gray-700 hover:text-orange-500">{headerDetails.contact}</a>
+          <a href="/gallery" class="block text-gray-700 hover:text-orange-500">{headerDetails.gallery}</a>
+        </div>
+
+        <div class="pt-8 space-y-4">
+          <a href="/donation" class="block w-full bg-orange-500 text-white px-4 py-3 rounded-lg text-center font-semibold">
+            {headerDetails.button}
+          </a>
+          <a href="/volunteering" class="block w-full border-2 border-orange-500 text-orange-500 px-4 py-3 rounded-lg text-center font-semibold">
+            {headerDetails.buttonVolunteer}
+          </a>
+        </div>
+      </nav>
+    </div>
   </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    const programToggle = document.getElementById('mobileProgramToggle');
+    const programDropdown = document.getElementById('mobileProgramDropdown');
+    const programChevron = document.getElementById('mobileProgramChevron');
+  
+
+    const toggleMobileMenu = () => {
+      mobileMenu.classList.toggle('translate-x-full');
+      document.body.classList.toggle('overflow-hidden');
+    };
+  
+
+    const toggleProgramDropdown = () => {
+      programDropdown.classList.toggle('hidden');
+      programChevron.classList.toggle('rotate-180');
+    };
+  
+
+    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+    closeMobileMenu.addEventListener('click', toggleMobileMenu);
+    programToggle.addEventListener('click', toggleProgramDropdown);
+  
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        mobileMenu.classList.add('translate-x-full');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+  
+
+    document.addEventListener('click', (e) => {
+      const targetNode = e.target as Node; 
+      
+      if (
+        !mobileMenu.contains(targetNode) && 
+        !mobileMenuButton.contains(targetNode)
+      ) {
+        mobileMenu.classList.add('translate-x-full');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+  });
+  </script>

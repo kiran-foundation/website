@@ -1,0 +1,42 @@
+---
+const {
+  link,
+  title,
+  btn,
+  widthClass = "w-auto",
+  heightClass = "h-auto",
+} = Astro.props;
+---
+
+{
+  btn === "btn1" && (
+    <button
+      onclick={`window.location.href='${link}'`}
+      class={`font-poppins font-medium ${widthClass}  px-3 sm:px-5 md:px-6 py-2 sm:py-3 md:py-5 ${heightClass}  text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E] `}
+    >
+      {title}
+    </button>
+  )
+}
+
+{
+  btn === "btn2" && (
+    <button
+      onclick={`window.location.href='${link}'`}
+      class={`font-poppins font-semibold  h-[60px] text-lg lg:text-lg lg:h-[60px] ${widthClass} lg:w-[150px]  !rounded-[8px] sm:rounded-md bg-[#00AA5E] transition-all text-black hover:bg-[#00FF8D] active:ring-2 active:ring-[#00AA5E] active:bg-[#00FF8D]`}
+    >
+      {title}
+    </button>
+  )
+}
+
+{
+  btn === "btn3" && (
+    <button
+      onclick={`window.location.href='${link}'`}
+      class={`font-poppins ${widthClass} min-w-[198px] min-h-[3.75rem] ring-[0.5px] ring-[#1E1E1E] text-base font-bold rounded-md sm:rounded-md transition-all text-[#1E1E1E] hover:bg-[#EFEDED] active:ring-2 active:ring-[#D33C0D] active:bg-white`}
+    >
+      {title}
+    </button>
+  )
+}

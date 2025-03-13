@@ -3,7 +3,7 @@ title: "Fundraising Executive - Intern (Remote)"
 about: "As a Fundraising Executive Intern, you will have the opportunity to gain hands-on experience in the field of NGO fundraising while contributing to the financial sustainability of our organization. You will work closely with our fundraising team to learn about Corporate Social Responsibility (CSR), campaign development, and grant writing. This internship will provide valuable insights into the world of fundraising and help you develop your communication skills, persuasion skills, ability to research and analyze data, and writing skills."
 startDate: "Start Date: Immediate"
 duration: "Duration: 3 - 6 Months"
-timeCommitment: "Time Commitment: 10 hr/week"
+timeCommitment: "Average : 10 hr/week"
 teamSize: "Team Size: 3-5"
 responsibilities: |
   - Research various channels for grant opportunities, including Corporate Social Responsibility (CSR) initiatives and government grants.

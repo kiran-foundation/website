@@ -2,25 +2,34 @@
 const { update } = Astro.props;
 ---
 
-<div class="col text-center pt-2 update-card" data-date={update.date}>
-    <a
-      class="card-hover d-inline-block text-decoration-none"
-      href={update.link}
-    >
-      <img
-        class="d-block rounded-5 mb-3"
-        src={update.featured_image}
-        width="370"
-        alt={update.title}
+<div class="flex-1 bg-white rounded-xl shadow-sm p-4 md:p-6  hover:shadow-md transition-all hover:scale-105">
+  <a href={update.link} class="block">
+    <div class="aspect-auto overflow-hidden rounded-xl">
+      <img 
+        class="w-full h-full object-cover" 
+        src={update.featured_image} 
+        alt={update.title || "Update image"}
+        loading="lazy"
       />
-      <h3 class="update-title h5 mb-1 mx-1">{update.title}</h3>
-      <p class="update-description mb-0 text-body-secondary mx-1">
-        {update.summary}
-      </p>
-      <p class="update-date mb-0 text-body-secondary mx-1">
-        <small>
-          Posted on: {new Date(update.date).toLocaleDateString()}
-        </small>
-      </p>
+    </div>
+  </a>
+  <div class="pt-4">
+    <a href={update.link} class="hover:text-primary-600 ">
+      <h3 class="text-xl md:text-2xl font-bold text-[#1E1E1E] mb-2 line-clamp-2 font-poppins">
+        {update.title}
+      </h3>
     </a>
+    <p class="text-[#49494C] mb-3 text-sm md:text-base line-clamp-3 font-poppins">
+      {update.summary}
+    </p>
+    <div class="text-sm text-gray-500 ">
+      <small>
+        Posted on: {new Date(update.date).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}
+      </small>
+    </div>
+  </div>
 </div>

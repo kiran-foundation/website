@@ -1,7 +1,6 @@
 ---
 import { getEntry } from 'astro:content'
 const statistics = (await getEntry('home', 'statistics')).data
-const common = (await getEntry('common', 'common')).data
 ---
 <style>
   .stats{

@@ -1,25 +1,16 @@
 ---
-import type { MarkdownFile } from "../../types/Markdown";
-import Heading from "./heading.astro";
 import UpdateCard from "./UpdateCard.astro";
-
-// const allUpdates = import.meta.glob<MarkdownFile>('/src/content/updates/*.md')
-
+import Button from "./button.astro";
 import { getCollection } from "astro:content";
 
 export async function getAllUpdates() {
   return await getCollection("updates");
 }
 
-// Fetch updates properly
 const allUpdates = await getAllUpdates();
-
-// Extract frontmatter directly (no need for async mapping)
 const updates = allUpdates.map((update) => ({
-  ...update.data, // `data` contains frontmatter fields
+  ...update.data,
 }));
-
-// console.log(updates);
 
 const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;
 
@@ -30,57 +21,86 @@ const filteredUpdates = updates
 const updatesToDisplay = showHighPriorityOnly
   ? filteredUpdates.slice(0, 3)
   : filteredUpdates;
-
-// let updatesCountToDisplay = 6
-
-// const updateValue = () => {
-//   console.log(updatesCountToDisplay);
-//   if(updatesCountToDisplay < updatesToDisplay.length){
-//     updatesCountToDisplay++
-//   }
-// }
 ---
 
-<!-- Update display section -->
-<style>
-  .container {
-    margin-bottom: 2rem;
-  }
-</style>
-<section
-  class="container pb-4 pb-sm-3 pt- mt-lg-3 mt-xl-5 pb-5 mb-lg-5 mb-1"
-  style="background-color: white;"
+<!-- Main Container -->
+<div
+  class="max-w-[1296px] mx-auto  mt-[86px] lg:mt-[11.5rem] mb-[7.5rem] flex items-center justify-center flex-col p-1"
 >
-  <div class="container">
-    <Heading title="Updates" />
+  <!-- News & Updates Section -->
+  <section class="w-full bg-white ">
+    <div class="w-full">
+      <h2
+        class="text-3xl md:text-4xl xl:text-[2.6rem] font-merriweather text-center py-3 mb-[64px] lg:mb-[96px] "
+      >
+        News and Updates
+      </h2>
 
-    <div
-      class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 mt-1"
-    >
+      <!-- Updates Grid -->
+      <div
+        class="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-7xl mx-auto "
+      >
+        {
+          updatesToDisplay.map((update) => (
+            <UpdateCard update={update}  />
+          ))
+        }
+      </div>
+
+      <!-- ----------------------exclusive for mobile ----------------------- -->
+      <div
+        class="block sm:hidden mb-12  max-w-7xl mx-auto px-6 py-2 overflow-hidden "
+      >
+        <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
+          {
+            updatesToDisplay.map((update) => (
+              <swiper-slide class="bg-red-300 rounded-xl">
+                <div class="flex-1 bg-white rounded-xl shadow-sm p-4 md:p-6  hover:shadow-md  border-[1px]">
+                  <a href={update.link} class="block">
+                    <div class="aspect-auto overflow-hidden rounded-xl">
+                      <img
+                        class="w-full h-full object-cover"
+                        src={update.featured_image}
+                        alt={update.title || "Update image"}
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                  <div class="pt-4">
+                    <a href={update.link} class="hover:text-primary-600 ">
+                      <h3 class="text-xl md:text-2xl font-bold text-[#1E1E1E] mb-2 line-clamp-2 font-poppins">
+                        {update.title}
+                      </h3>
+                    </a>
+                    <p class="text-[#49494C] mb-3 text-sm md:text-base line-clamp-3 font-poppins">
+                      {update.summary}
+                    </p>
+                    <div class="text-sm text-gray-500 ">
+                      <small>
+                        Posted on:{" "}
+                        {new Date(update.date).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </swiper-slide>
+            ))
+          }
+        </swiper-container>
+      </div>
+
+      <!-- See More Button -->
       {
-        updatesToDisplay.map((update, index) => (
-          // {if (index < updatesCountToDisplay) {
-          // return <UpdateCard update={update} />
-          // }}
-          <UpdateCard update={update} />
-        ))
+        isMainPage && (
+          <div class="text-center mb-1 mt-16 mx-[24px] md:mx-0">
+            <Button link="updates" title="Read More" btn="btn3" widthClass="w-full md:w-[198px]"/>
+          </div>
+        )
       }
     </div>
-    <!-- See More button -->
-    {
-      isMainPage ? (
-        <div class="text-center mb-1  mt-5 ">
-          <a href="/updates" class="home-button btn btn-outline-primary">
-            See More
-          </a>
-        </div>
-      ) : (
-        <div class="text-center mt-4">
-          {/* <button class="btn btn-primary" onclick={updateValue}>
-        Show more
-      </button> */}
-        </div>
-      )
-    }
-  </div>
-</section>
+  </section>
+</div>

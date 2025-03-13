@@ -3,7 +3,7 @@ title: "Website Developer - Intern (Remote)"
 about: "As a Website Developer Intern, you will gain hands-on experience in web development by working on our live website. Under the guidance of experienced developers, you will learn about web technologies, coding practices, and best practices for creating effective online platforms. This internship is designed to provide you with valuable skills and insights into the world of web development."
 startDate: "Start Date: Immediate"
 duration: "Duration: 3 - 6 Months"
-timeCommitment: "Time Commitment: 10 hr/week"
+timeCommitment: "Average : 10 hr/week"
 teamSize: "Team Size: 3-5"
 responsibilities: |
   - Work on our Mobile app

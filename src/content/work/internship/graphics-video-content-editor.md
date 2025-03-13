@@ -3,7 +3,7 @@ title: "Graphics / Video Content Editor - Intern (Remote)"
 about: "As a Graphics/Video Content Editor, you will play a pivotal role in creating visually compelling and engaging content that aligns with the Kiran Foundation's goals and brand identity. Your responsibilities will include designing, editing, and curating a wide range of graphics content such as images, illustrations, infographics, and videos. With your creative expertise, attention to detail, and technical skills, you will significantly contribute to the overall quality and impact of the Kiran Foundation's visual communication efforts."
 startDate: "Start Date: Immediate"
 duration: "Duration: 3 - 6 Months"
-timeCommitment: "Time Commitment: 10 hr/week"
+timeCommitment: "Average : 10 hr/week"
 teamSize: "Team Size: 3-5"
 responsibilities: |
   - Oversee video content on the Foundation's YouTube Channel

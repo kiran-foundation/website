@@ -1,96 +1,155 @@
 ---
 import { getEntry } from "astro:content";
-import Heading from "../common/heading.astro";
-
 const programs = (await getEntry("home", "programs")).data;
 const common = (await getEntry("common", "common")).data;
+import Button from "../common/button.astro";
 ---
-<Heading title={ programs.title } />
-  <section class="container overflow-hidden pb-3 mt-2 pt-3 ">
-  <div class="container pb-sm-3 mb-md-2 mb-lg-3">
-    <div class="row g-4">
-      <div
-        class="col-md-7 order-md-2"
-        data-aos="fade-left"
-        data-aos-duration="600"
-        data-aos-offset="280"
-        data-disable-parallax-down="md"
-      >
-        <img
-          class="object-fit-cover w-100 h-100 rounded-3 "
-          src="/assets/images/programs/kiranimage.jpg"
-          alt="Image"
-        />
-      </div>
-      <div
-        class="col-md-5 order-md-1"
-        data-aos="fade-right"
-        data-aos-duration="600"
-        data-aos-offset="280"
-        data-disable-parallax-down="md"
-      >
-        <div
-          class="d-flex flex-column h-100 py-4 px-3 px-lg-4 rounded-3 "
-          style="background: #F7FCFE;"
-        >
-          <h2 class="programe-title-h2 mb-xl-4">{programs.pratibha.title}</h2>
-          <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
-            {programs.pratibha.description}
-          </p>
-          <div class="mt-">
-            <a
-              class="home-button btn btn-primary order-lg-3 d-none d-sm-inline-flex"
-              href="/pratibha">{common.more}</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Services: Health insurance -->
-<section class="container overflow-hidden  pt-5">
-  <div class="container pb-sm-3 mb-md-2 mb-lg-3">
-    <div class="row g-4">
+<!-- Main Container py-8 md:py-6   -->
+<div
+  class="max-w-[1296px] mx-auto   mt-[80px] lg:mt-[7.5rem] flex items-center justify-center flex-col  !overflow-hidden"
+>
+  <!-- Heading Section -->
+  <div
+    class="flex items-center justify-center flex-col text-center max-w-[1034px] space-y-4 mx-[1.5rem] lg:mx-0  "
+  >
+    <h2
+      class="text-[1.875rem] lg:text-[3rem] font-normal mb-8 font-merriweather leading-[150%] lg:leading-10 text-[#1E1E1E] w-full lg:!py-2  "
+    >
+      {programs.heading.head1}
+    </h2>
+    <p
+      class="xl:max-w-[1034px] text-[20px] lg:text-[32px] font-poppins text-[#49494C] leading-[38px] lg:leading-[60px] break-words   m-0"
+    >
+      {programs.heading.head2}
+      {programs.heading.head3}
+    </p>
+  </div>
+
+  <!-- ------------------------------------------------Programs Container--------------------------------------------------- -->
+  <div
+    class="mt-[86px] lg:mt-[7.5rem] mx-2 w-full  flex flex-col gap-[86px] lg:gap-[11.5rem] "
+  >
+    <!-- --------------------------------------------Pratibha Program------------------------------------------------------ -->
+    <section
+      class="flex flex-col lg:flex-row items-center gap-16 lg:gap-8 xl:gap-16 justify-center lg:mx-6 xl:mx-0 overflow-hidden  "
+    >
+      <!-- --------------------------------------------Image Column------------------------------------------------------ -->
       <div
-        class="col-md-7"
+        class="   xl:max-w-[750px]"
         data-aos="fade-right"
         data-aos-duration="600"
-        data-aos-offset="280"
+        data-aos-offset="300"
         data-disable-parallax-down="md"
       >
         <img
-          class="object-fit-cover w-100 h-100  rounded-3"
-          src="/assets/images/programs/program2.png"
-          alt="Image"
+          src="/assets/images/Homepage/home2.png"
+          alt="Pratibha program illustration"
+          loading="lazy"
+          class="h-[342px] w-[342px]
+              md:w-[682px] md:h-[682px]
+              lg:w-[500px] lg:h-[520px]
+              xl:w-[740px] xl:h-[740px]"
         />
       </div>
       <div
-        class="col-md-5"
+        class="  mx-[24px] lg:mx-0 lg:max-w-[410px] xl:max-w-[492px] h-full  p-1"
         data-aos="fade-left"
         data-aos-duration="600"
-        data-aos-offset="280"
+        data-aos-offset="250"
         data-disable-parallax-down="md"
       >
-        <div
-          class="d-flex flex-column  w-100 h-100 rounded-3 py-4 px-3 px-lg-4"
-          style="background: #F7FCFE;"
+        <h2
+          class="text-[24px] xl:text-[32px] mb-[24px] xl:mb-8 font-semibold text-[#1E1E1E] leading-[100%]  "
         >
-          <h2 class="programe-title-h2 mb-xl-4">
-            {programs.shakti.title}
-          </h2>
-          <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
-            {programs.shakti.description}
-          </p>
-          <div class="mt-">
-            <a
-              class="home-button btn btn-primary btn-sm order-lg-3 d-none d-sm-inline-flex"
-              href="/shakti">{common.more}</a
-            >
-          </div>
+          {programs.pratibha.title}
+        </h2>
+        <p
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]  "
+        >
+          {programs.pratibha.description1}
+        </p>
+        <p
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]  "
+        >
+          {programs.pratibha.description2}
+        </p>
+        <p
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]  "
+        >
+          {programs.pratibha.description3}
+        </p>
+        <div class="mt-12 lg:mt-8 xl:mt-12">
+          <Button link="/shakti" title={common.more} btn="btn2" widthClass="w-full md:w-[150px]" />
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------ Shakti Program ----------------------------------------------- -->
+    <section
+      class="overflow-hidden  flex flex-col lg:max-w-[1296px] lg:max-h-[844px] lg:mx-6 xl:mx-0 gap-16 lg:gap-8 xl:gap-16 items-center justify-center lg:flex-row "
+    >
+      <!-- --------for mobile ---------- -->
+      <div
+        class="mx-[24px] lg:mx-0 max-h-[640px] lg:max-w-[410px] xl:max-w-[750px] lg:hidden block "
+        data-aos="fade-left"
+        data-aos-duration="500"
+        data-aos-offset="100"
+        data-disable-parallax-down="md"
+      >
+        <img
+          class="rounded-lg w-[342px] md:w-full xl:w-[740px] lg:max-w-[740px] lg:max-h-[634px] h-auto object-cover
+          "
+          src="/assets/images/Homepage/home3.png"
+          alt="Shakti program illustration"
+          loading="lazy"
+        />
+      </div>
+
+      <div
+        class="mx-[24px] lg:mx-0 xl:max-w-[492px] xl:max-h-[512px]  p-1"
+        data-aos="fade-right"
+        data-aos-duration="600"
+        data-aos-offset="250"
+        data-disable-parallax-down="md"
+      >
+        <h2
+          class="text-[24px] xl:text-[32px] mb-[24px] xl:mb-8 font-semibold text-[#1E1E1E] leading-[100%] "
+        >
+          {programs.shakti.title}
+        </h2>
+        <p
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]  "
+        >
+          {programs.shakti.description1}
+        </p>
+        <p
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]  "
+        >
+          {programs.shakti.description2}
+        </p>
+        <div class="mt-12 lg:mt-8 xl:mt-12 flex items-center justify-center md:justify-start">
+          <Button link="/shakti" title={common.more} btn="btn2" widthClass="w-full md:w-[150px]"/>
+        </div>
+      </div>
+
+      <div
+        class=" max-w-[750px]  max-h-[640px] hidden lg:block"
+        data-aos="fade-left"
+        data-aos-duration="600"
+        data-aos-offset="120px"
+        data-disable-parallax-down="lg"
+      >
+        <img
+          class="rounded-lg max-w-[500px] w-[740px]  h-auto object-cover
+          lg:w-[740px]
+          xl:max-w-[740px] xl:max-h-[634px] 
+          "
+          src="/assets/images/Homepage/home3.png"
+          alt="Shakti program illustration"
+          loading="lazy"
+        />
+      </div>
+    </section>
   </div>
-</section>
+</div>

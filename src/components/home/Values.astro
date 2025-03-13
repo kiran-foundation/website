@@ -1,104 +1,103 @@
 ---
 import { getEntry } from "astro:content";
 const values = (await getEntry("home", "values")).data;
-const common = (await getEntry("common", "common")).data;
+import Button from "../common/button.astro";
 ---
-<section class="container py-5 pb-4 mb-lg-3 mb-xl-4 mb-xxl-5 mt-lg-5 mt-3 ">
-  <div class="row pb-sm-2 w-100 pb-md-3 pb-lg-4 mt-3 d-flex justify-content-center  pt-3" 
-    style="gap:12px; margin-left: 0.3rem">
-    <div class="benefits-container-bg col-sm-6 col-lg-4 h-auto  " style="width:375px;">
-      <div class="d-flex align-items-center mb-3 mt-2" style="margin-left: -10px">
-        <div class="flex-shrink-0 rounded-1">
-          <div class="flex-shrink-0 rounded-1 p-2">
-            <img src="/assets/images/benefits/icon.png" alt="Image" />
-          </div>
-        </div>
-        <h3 class="benefits-title-h3 h5 mb-0">
-          {values.vision.title}
-        </h3>
-      </div>
-      <p class="benefits-content-container-p1 fs-sm" style="word-wrap: break-word;">
-        {values.vision.description}
+
+<!-- Main Container with same styling as programs section -->
+<div
+  class="max-w-[1296px] mx-auto mt-[86px] lg:mt-[11.5rem] flex items-center flex-col !overflow-hidden"
+>
+  <!-- Values Heading Section -->
+  <div
+    class="flex items-center justify-center flex-col text-center space-y-4 w-full lg:mx-6 xl:mx-0"
+  >
+    <h3
+      class="text-4xl lg:text-5xl font-normal font-merriweather text-[#1E1E1E] tracking-[-2.25%] leading-[150%]"
+    >
+      {values.vision.title}
+    </h3>
+  </div>
+<!-- ------------mobile only---------------- -->
+  <div
+    class="flex lg:hidden lg:max-w-[480px] xl:max-w-[692px] xl:max-h-[652px] mx-[24px]  mt-10 xl:mt-[7.5rem]"
+    data-aos="fade-left"
+    data-aos-duration="600"
+    data-aos-offset="280"
+  >
+    <h2 class="text-3xl font-bold text-[#1E1E1E] font-merriweather">
+      {values.maa.title}
+    </h2>
+    <q class="text-2xl xl:text-6xl block mb-[1.5rem] xl:mb-12 text-center">
+      <p
+        class="inline text-xl md:text-xl lg:text-3xl 2xl:text-[2.3rem] leading-[38px] xl:leading-[3rem] font-poppins italic text-[#49494C] font-light"
+      >
+        {values.maa.quote}
       </p>
-    </div>
-    <div class="benefits-container-bg col-sm-6 col-lg-4 h-auto  " style="width: 355px;">
-      <div class="d-flex align-items-center mb-2">
-        <div class="flex-shrink-0 rounded-1 p-2" style="margin-left: -15px;">
-          <div class="flex-shrink-0 rounded-1 p-2">
-            <img src="/assets/images/benefits/icon3.png" alt="Image" />
-          </div>
-        </div>
-        <h3 class="benefits-title-h3 h5 mb-0">{values.goal1.title}</h3>
-      </div>
-      <p class="benefits-content-container-p2 fs-sm" style="word-wrap: break-word;">
-        {values.goal1.description}
-      </p>
-    </div>
-    <div class="benefits-container-bg col-sm-6 col-lg-4   h-auto " style="width: 355px;">
-      <div class="d-flex align-items-center mb-2">
-        <div class="flex-shrink-0 rounded-1 p-2" style="margin-left:-15px;">
-          <div class="flex-shrink-0 rounded-1 p-2">
-            <img src="/assets/images/benefits/icon2.png" alt="Image" />
-          </div>
-        </div>
-        <h3 class="benefits-title-h3 h5 mb-0">{values.goal2.title}</h3>
-      </div>
-      <p class="benefits-content-container-p3 fs-sm" style="word-wrap: break-word; ">
-        {values.goal2.description}
-      </p>
-    </div>
+    </q>
   </div>
 
-  <section class="overflow-hidden" style="margin-top: 5rem;">
-    <div class="container pb-sm-3 mb-md-2 mb-lg-3">
-      <div class="row g-4">
-        <div
-          class="col-md-6"
-          data-aos="fade-right"
-          data-aos-duration="600"
-          data-aos-offset="280"
-          data-disable-parallax-down="md"
+  <!-- Values Content Container -->
+  <section
+    class="overflow-hidden mt-10 xl:mt-[7.5rem] w-full flex flex-col lg:flex-row items-center justify-center gap-16"
+  >
+    <div
+      class="xl:max-w-[540px] xl:max-h-[594px] mx-[24px] xl:mx-0"
+      data-aos="fade-right"
+      data-aos-duration="600"
+      data-aos-offset="100px"
+    >
+      <div>
+        <img
+          class="w-full md:w-[720px] lg:w-full h-full rounded-3xl filter"
+          src="/assets/images/Homepage/maa-kiran.png"
+          alt="Maa Kiran portrait"
+          loading="lazy"
+        />
+      </div>
+      <div class="flex items-center justify-center mt-4">
+        <p
+          class="flex items-center flex-col sm:flex-row gap-2 sm:block font-bold text-xl text-gray-800"
         >
-          <img
-            class="object-fit-cover w-100 h-100 rounded-3"
-            src="/assets/images/benefits/ma.jpg"
-            alt="Image"
-          />
-        </div>
-        <div
-          class="col-md-6"
-          data-aos="fade-left"
-          data-aos-duration="600"
-          data-aos-offset="280"
-          data-disable-parallax-down="md"
-        >
-          <div
-            class="d-flex flex-column h-100 bg-secondary rounded-3 py-5 px-4 px-lg-5"
-          >
-            <h2 class="mb-xl-4"></h2>
-            <p
-              class="benefits-section2-p1 mb-4 mb-xl-5"
-              style="font-size: 24px; color:#252A34; word-wrap: break-word;"
-            >
-            {values.maa.quote}
-            </p>
-            <p
-              class="benefits-section-p2-dob mb-4 mb-xl-5"
-              style="margin-top:-15px;"
-            >
-              <b class="benefits-section2-boldtext">{values.maa.name}</b>
-              <br /> {values.maa.lifespan}
-            </p>
-            <p class="benefits-section2-p3 mb-4 mb-xl-5">
-              {values.maa.step}
-            </p>
-            <div class="mt-">
-              <a class="home-button btn btn-outline-primary" href="/about"
-                >{common.readMore}</a
-              >
-            </div>
-          </div>
-        </div>
+          {values.maa.name}
+          <span class="text-gray-500 font-thin text-sm sm:text-base md:text-sm">
+            {values.maa.lifespan}
+          </span>
+        </p>
       </div>
     </div>
+
+    <div
+      class="lg:max-w-[480px] xl:max-w-[692px] xl:max-h-[652px] mx-[24px] xl:mx-0 p-1"
+      data-aos="fade-left"
+      data-aos-duration="600"
+      data-aos-offset="350"
+    >
+      <h2 class="text-3xl font-bold text-[#1E1E1E] font-merriweather">
+        {values.maa.title}
+      </h2>
+      <q class="hidden lg:block  text-2xl xl:text-6xl  mb-[1.5rem] xl:mb-12">
+        <p
+          class="inline text-xl md:text-xl lg:text-3xl 2xl:text-[2.3rem] leading-[38px] xl:leading-[3rem] font-poppins italic text-[#49494C] font-light"
+        >
+          {values.maa.quote}
+        </p>
+      </q>
+      <p
+        class="mb-[1.7rem] xl:mb-12 text-base lg:text-lg text-[#49494C] font-poppins font-normal !leading-[36px]"
+      >
+        {values.maa.step}
+      </p>
+      <div>
+        <Button link="/about" title="Read more" btn="btn2" widthClass="w-full md:w-[150px]" />
+      </div>
+    </div>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
   </section>
+</div>

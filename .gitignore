@@ -22,3 +22,5 @@ pnpm-debug.log*
 .sass-cache
 _site
 node_modules
+src/components/home/unused.astro
+src/components/home/kiran-foundation-workspace.code-workspace

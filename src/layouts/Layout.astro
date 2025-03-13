@@ -28,6 +28,7 @@ const {
 
 import { getEntry } from "astro:content";
 const common = (await getEntry("common", "common")).data;
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -62,6 +63,14 @@ const common = (await getEntry("common", "common")).data;
       id="google-font"
     />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="icon"
       type="image/png"
       href="assets/app-icons/favicon-96x96.png"
@@ -82,7 +91,7 @@ const common = (await getEntry("common", "common")).data;
           preloader.classList.remove("active");
           setTimeout(function () {
             preloader.remove();
-            load.classList.remove("load-Div")
+            load.classList.remove("load-Div");
             load.remove();
           }, 150);
 
@@ -132,6 +141,9 @@ const common = (await getEntry("common", "common")).data;
     <script src="/assets/js/theme.min.js" is:inline></script>
     <script src="jarallax/dist/jarallax.min.js"></script>
     <script src="simplebar/dist/simplebar.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer></script>
     <script>
       import AOS from "aos";
       AOS.init();

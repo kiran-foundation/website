@@ -15,7 +15,7 @@ const { path } = Astro.params;
 
 export function getStaticPaths() {
   const allVolunteering = import.meta.glob<MarkdownFile>(
-    "/src/content/work/volunteer/*.md",
+    "/src/content/work/volunteering/*.md",
   );
 
   let parameters = [];
