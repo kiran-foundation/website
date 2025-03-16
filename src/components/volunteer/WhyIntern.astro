@@ -1,49 +1,76 @@
 ---
-import type { MarkdownFile } from "../../types/Markdown";
-import { remark } from "remark";
-import html from "remark-html";
+import { getEntry } from "astro:content";
 
-const volunteerFile = import.meta.glob<MarkdownFile>(
-  "/src/content/volunteering/why-intern.md",
-);
-
-const volunteerContent = await (async () => {
-  const volunteerPath = "/src/content/volunteering/why-intern.md";
-  const volunteer = volunteerFile[volunteerPath];
-
-  if (volunteer) {
-    const { frontmatter, default: content } = await volunteer();
-    const processedContent = await remark().use(html).process(content);
-    return { ...frontmatter, content: processedContent.toString() };
-  } else {
-    console.warn("Volunteer content not found for path:", volunteerPath);
-    return null;
-  }
-})();
-
-if (!volunteerContent) {
-  throw new Error("Volunteer content not found");
-}
-
-const { title, cards } = volunteerContent;
+const { data } = await getEntry("volunteering", "why-intern");
 ---
 
-<section class="WhyVolunteer-frame WhyVolunteer-card-box">
-  <h2 class="WhyVolunteer-frame-heading">{title}</h2>
-  <div class="WhyVolunteer-cards">
-    {
-      cards.map((card) => (
-        <div class="WhyVolunteer-card">
-          <div class="WhyVolunteer-d-flex WhyVolunteer-align-items-center WhyVolunteer-mb-3">
-            <div class="WhyVolunteer-flex-shrink-0 WhyVolunteer-rounded-1 WhyVolunteer-p-2">
-              <img src={card.image} alt="Image" />
-            </div>
-          </div>
-          <p class="WhyVolunteer-fs-sm" style="word-wrap: break-word;">
-            {card.text}
-          </p>
+<section class="max-w-[1296px] mx-auto px-4 md:px-8 py-16">
+  <!-- Main Wrapper -->
+  <div class="grid md:grid-cols-2 gap-8 items-center">
+    <!-- Left Content -->
+    <div class="space-y-6 order-1 md:order-2">
+      <!-- Heading -->
+      <h2
+        class="font-merriweather font-normal text-[32px] md:text-[48px] leading-tight tracking-[-2.2%]"
+      >
+        {data.title}
+        
+      </h2>
+
+      <!-- Subheading -->
+      <p
+        class="font-poppins font-normal text-[18px] leading-[36px] text-[#49494C]"
+      >
+        {data.description}
+      </p>
+
+      <!-- Why Intern Section -->
+      <div class="space-y-4">
+        <h3
+          class="font-poppins font-semibold text-[24px] md:text-[32px] text-[#1E1E1E]"
+        >
+          Why Intern?
+        </h3>
+
+        <div class="space-y-6">
+          {
+            data.whyIntern.map((item) => (
+              <div class="flex items-start gap-4">
+                <h2 class="font-poppins font-semibold text-[40px] leading-[46.8px] text-[#1E1E1E]">
+                  <i class="fa-regular fa-square-check" />
+                </h2>
+                <div class="space-y-1">
+                  <p class="font-poppins font-semibold text-[24px] leading-[46.8px] text-[#1E1E1E]">
+                    {item.title}
+                  </p>
+                  <p class="font-poppins text-[#1E1E1E] font-normal text-[18px] leading-[36px] tracking-[0%]">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
         </div>
-      ))
-    }
+
+        <!-- CTA Button -->
+        <button
+          class="mt-6 px-6 py-3 rounded-md bg-orange-600 text-white font-poppins font-semibold"
+        >
+          {data.buttonText}
+        </button>
+      </div>
+
+      
+    </div>
+    <!-- Right Image Placeholder -->
+    <div
+    class="order-2 md:order-1 w-full h-64 md:h-full rounded-lg overflow-hidden"
+  >
+    <img
+      src={data.image}
+      alt="Internship Image"
+      class="w-full h-full object-cover"
+    />
+  </div>
   </div>
 </section>
