@@ -1,98 +1,113 @@
 ---
-import type { MarkdownFile } from "../../types/Markdown";
-import { remark } from "remark";
-import html from "remark-html";
+import { getEntry } from "astro:content";
+import Button from "../common/button.astro";
+const volunteer = (await getEntry("home", "volunteer")).data;
+import VolunteerSwiper from "../common/VolunteerSwiper.astro";
 
-const allVolunteering = import.meta.glob<MarkdownFile>(
-  "/src/content/work/volunteer/*.md",
-);
-const staticTextsFile = import.meta.glob<MarkdownFile>(
-  "/src/content/work/static-text.md",
-);
-
-const loadVolunteeringData = async () => {
-  return await Promise.all(
-    Object.values(allVolunteering).map(async (volunteer) => {
-      const { frontmatter, default: content } = await volunteer();
-      const processedContent = await remark().use(html).process(content);
-      return { ...frontmatter, content: processedContent.toString() };
-    }),
-  );
-};
-
-const loadStaticTexts = async () => {
-  const staticFilePath = Object.keys(staticTextsFile)[0];
-  if (!staticFilePath) {
-    console.warn("Static texts file path not found");
-  }
-
-  const staticFile = staticTextsFile[staticFilePath];
-  if (!staticFile) {
-    console.warn("Static texts file not found");
-  }
-
-  const { frontmatter } = await staticFile();
-  return frontmatter;
-};
-
-const volunteering = await loadVolunteeringData();
-const staticTexts = await loadStaticTexts();
-
-if (!staticTexts) {
-  console.warn("Static texts not found");
-}
-
-const { showHighPriorityOnly = false, _isMainPage = false } = Astro.props;
-
-const filteredVolunteering = volunteering
-  .filter((volunteer) => !showHighPriorityOnly || volunteer.priority === "high")
-  .sort((a, b) => a.title.localeCompare(b.title));
-
-const volunteeringToDisplay = showHighPriorityOnly
-  ? filteredVolunteering.slice(0, 3)
-  : filteredVolunteering;
-
-const { chooseVolunteering, applyNow, seeMore, Requirements } = staticTexts;
+import { getCollection } from "astro:content";
+const jobs = await getCollection("work", ({ id }) => {
+  return id.startsWith("internship/") || id.startsWith("volunteering/");
+});
 ---
 
-<section class="mainVolunteering-main-container">
-  <h2 class="mainVolunteering-main-heading">{chooseVolunteering}</h2>
-  <div class="mainVolunteering-sub-container">
-    {volunteeringToDisplay.map((volunteer, index) => (
-      <div class={`mainVolunteering-card`} id={`c${index + 1}`}>
-        <div>
-          <h3 class="mainVolunteering-card-heading">{volunteer.title}</h3>
-          
-          <p class="mainVolunteering-card-subheading">
-            {volunteer.timeCommitment}
-          </p>
-          <h4 class="mainVolunteering-card-description-title">
-            {Requirements}:
-          </h4>
-          <ul class="mainVolunteering-card-description">
-            {(volunteer.requirements
-              ? volunteer.requirements
-                  .split("\n")
-                  .filter((desc) => desc.trim() !== "")
-              : []
-            ).map((point, _i) => (
-              <li>{point.trim().replace(/^-\s*/, "")}</li>
-            ))}
-          </ul>
-        </div>
-        <div class="mainVolunteering-card-buttons">
-          <a
-            class="mainVolunteering-btn mainVolunteering-btn-apply"
-            href={`/volunteering/${volunteer.url}/#form`}
-          >
-            {applyNow}
-          </a>
-          <button class="mainVolunteering-btn mainVolunteering-btn-see-more"
-            onclick={`window.location.href = '/volunteering/${volunteer.url}'`}>
-            {seeMore}
-          </button>
+<!-- Main Container -->
+<div
+  class="max-w-[1296px] mx-auto mt-[86px] lg:mt-[11.5rem] mb-16 lg:mb-[7.5rem] flex items-center justify-center flex-col p-1 !overflow-hidden "
+>
+  
+
+  <!-- Volunteer Positions Section -->
+  <section class="w-full ">
+    <div class="text-center space-y-4 mb-16 lg:mb-24">
+      <h2
+        class="text-2xl md:text-2xl xl:text-[2rem] font-semibold font-poppins text-[#1E1E1E]"
+      >
+        {volunteer.heading}
+      </h2>
+    </div>
+    <!-- -------------------------slider bar jobs ----------- -->
+    <div class="mt-6 max-w-7xl">
+      <VolunteerSwiper Data={jobs} />
+    </div>
+
+    <!-- Why Volunteer Section -->
+    <section
+      class="w-full flex flex-col lg:flex-row items-center justify-center lg:gap-8 xl:gap-16 overflow-hidden"
+    >
+      <div
+        class="flex lg:hidden flex-col lg:flex-row items-center justify-center gap-8 md:gap-16 mb-16 mx-6"
+      >
+        <!-- Image Container -->
+        <div
+          class="w-full"
+          data-aos="fade-left"
+          data-aos-duration="600"
+          data-aos-offset="280"
+          data-disable-parallax-down="sm"
+        >
+          <img
+            class="rounded-lg w-full h-auto object-cover"
+            src="/assets/images/Homepage/why.png"
+            alt="Volunteer illustration"
+            loading="lazy"
+          />
         </div>
       </div>
-    ))}
-  </div>
-</section>
+
+      <!-- Text Content -->
+      <div
+        class="mx-[24px] xl:mx-0 lg:max-w-[430px] lg:max-h-[980px] xl:max-w-[680px] xl:max-h-[750px] p-1"
+      >
+        <h2
+          class="text-[24px] xl:text-[32px] mb-[24px] xl:mb-8 font-semibold text-[#1E1E1E] leading-[100%]"
+        >
+          {volunteer.title}
+        </h2>
+        <p
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]"
+        >
+          {volunteer.join_why1}
+        </p>
+        <p
+          class="text-[16px] xl:text-lg mb-[24px] xl:mb-8 lg:py-2 leading-[32px] xl:leading-[36px] font-poppins text-[#49494C]"
+        >
+          {volunteer.join_why2}
+        </p>
+        <div
+          class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 md:gap-4 xl:gap-6 items-center"
+        >
+          <Button
+            link="/volunteering"
+            title="Become a Volunteer"
+            btn="btn1"
+            widthClass="w-full md:w-[235px] lg:w-full xl:w-[235px]"
+            heightClass="h-[60px]"
+          />
+          <Button
+            link="/volunteering"
+            title="See All Positions"
+            btn="btn3"
+            widthClass="w-full md:w-[235px] lg:w-full xl:w-[235px]"
+          />
+        </div>
+      </div>
+
+      <!-- Image Container  -->
+      <div
+        class="w-full max-w-full md:max-w-[555px] lg:w-full hidden lg:flex mx-6 xl:mx-0"
+         data-aos="fade-up-left"
+      >
+        <img
+          class="rounded-lg w-full h-auto object-cover lg:w-[549px] lg:h-[549px]"
+          src="/assets/images/Homepage/why.png"
+          alt="Volunteer illustration"
+          loading="lazy"
+        />
+      </div>
+    </section>
+  </section>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+  ></script>
+</div>
