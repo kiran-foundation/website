@@ -1,44 +1,476 @@
 ---
 import { getEntry } from "astro:content";
 const benefits = (await getEntry("pratibha", "benefits")).data;
+const image1 = '/assets/images/pratibha_page/group-1.png';
+const image2 = '/assets/images/pratibha_page/group-2.png';
 ---
 
-<div class="container">
-  <div class="row justify-content-center text-center">
-    <!-- Benefit 1: Tuition Fee -->
-    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-right"  data-aos-duration="1700">
-      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
-        <img src={benefits.image.tutionfee} alt="Tuition Fee Icon" style="width: 60%;" />
-      </div>
-      <h2 class="h5 text-black mb-2">{benefits.heading.tution}</h2>
-      <p class="text-black opacity-80">{benefits.paragraph.tution}</p>
+<section class="hero-section">
+  <h1 class="hero-title">How We Support Students</h1>
+<div class="hero-container">
+  <div class="hero-content">
+    
+    <p class="hero-description">
+      Our goal is by combining financial support with holistic guidance, to
+      help students build confidence, hone their talents, and achieve long-
+      term success in their chosen fields.
+    </p>
+    
+    <div class="financial-support">
+      <h2 class="support-title">Financial Support</h2>
+      <p class="support-description">
+        The foundation evaluates each student's family financial situation to
+        provide customized assistance. Aid amounts vary to match individual
+        needs, enabling talented students to pursue careers without
+        economic barriers.
+      </p>
     </div>
-
-    <!-- Benefit 2: Stationary -->
-    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-down"  data-aos-duration="1700">
-      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
-        <img src={benefits.image.stationary} alt="Stationary Icon" style="width: 60%;" />
+    
+    <div class="support-items">
+      <h3 class="support-subtitle">What we cover</h3>
+      
+      <div class="support-list">
+        <div class="support-item">
+          <div class="support-icon"><svg width="44" height="42" viewBox="0 0 44 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.6651 21.2031H18.0651C17.6651 21.2031 17.3984 21.4698 17.3984 21.8698V24.8698C17.3984 25.2698 17.6651 25.5365 18.0651 25.5365H21.6651C22.0651 25.5365 22.3318 25.2698 22.3318 24.8698V21.8698C22.3318 21.5365 21.9984 21.2031 21.6651 21.2031ZM20.9984 24.2031H18.7318V22.5365H20.9984V24.2031Z" fill="#1E1E1E"/>
+            <path d="M28.8005 21.8698V24.8698C28.8005 25.2031 28.4672 25.5365 28.1339 25.5365H24.5339C24.2005 25.5365 23.8672 25.2031 23.8672 24.8698V21.8698C23.8672 21.5365 24.2005 21.2031 24.5339 21.2031H28.1339C28.4672 21.2031 28.8005 21.5365 28.8005 21.8698Z" fill="#1E1E1E"/>
+            <path d="M15.1339 27.1367H11.5339C11.1339 27.1367 10.8672 27.4034 10.8672 27.8034V30.8034C10.8672 31.2034 11.1339 31.4701 11.5339 31.4701H15.1339C15.5339 31.4701 15.8005 31.2034 15.8005 30.8034V27.8034C15.8005 27.4034 15.5339 27.1367 15.1339 27.1367ZM14.4672 30.1367H12.2005V28.4701H14.4672V30.1367Z" fill="#1E1E1E"/>
+            <path d="M28.1339 27.1367H24.5339C24.1339 27.1367 23.8672 27.4034 23.8672 27.8034V30.8034C23.8672 31.2034 24.1339 31.4701 24.5339 31.4701H28.1339C28.5339 31.4701 28.8005 31.2034 28.8005 30.8034V27.8034C28.8005 27.4034 28.4672 27.1367 28.1339 27.1367ZM27.4672 30.1367H25.2005V28.4701H27.4672V30.1367Z" fill="#1E1E1E"/>
+            <path d="M43.3307 32.6693V29.6693V27.0026C43.3307 26.6693 43.0641 26.3359 42.6641 26.3359H31.4641V20.4026L36.0641 21.5359C36.1974 21.6026 36.3974 21.5359 36.5974 21.4693C36.7307 21.4026 36.8641 21.2026 36.9307 21.0693L37.8641 17.4026C37.9307 17.2026 37.8641 17.0693 37.7974 16.8693C37.7307 16.7359 37.5974 16.6026 37.3974 16.6026L36.1307 16.3359L37.7974 12.2026L40.9307 11.8693L39.7974 14.6693C39.6641 15.0026 39.7974 15.4026 40.1307 15.5359C40.1974 15.6026 40.2641 15.6026 40.3974 15.6026C40.6641 15.6026 40.9307 15.4693 40.9974 15.2026L42.5307 11.4026C42.5307 11.3359 42.5974 11.2693 42.5974 11.2026V11.1359C42.5974 11.0693 42.5974 11.0026 42.5307 10.9359V10.8693C42.5307 10.8026 42.4641 10.7359 42.3974 10.6693L35.0641 2.8026C34.9307 2.66927 34.7307 2.6026 34.5307 2.6026L23.6641 2.93594C23.3974 2.93594 23.1974 3.06927 23.0641 3.33594C22.9307 3.53594 22.9974 3.86927 23.1307 4.06927L25.8641 7.33594L23.4641 13.2693L19.9974 12.3359C19.8641 12.3359 19.7974 12.3359 19.6641 12.3359L17.2641 12.9359C18.1974 11.6026 18.7307 10.0693 18.7307 8.33594C18.7307 3.93594 15.1307 0.335938 10.7307 0.335938C6.26406 0.335938 2.66406 3.93594 2.73073 8.33594C2.73073 11.4693 4.53073 14.1359 7.13073 15.4693L2.3974 16.6693C2.26406 16.7359 2.06406 16.8026 1.9974 16.9359C1.93073 17.0693 1.86406 17.2693 1.93073 17.4693L2.86406 21.1359C2.93073 21.4693 3.1974 21.6693 3.53073 21.6693C3.5974 21.6693 3.66406 21.6693 3.66406 21.6693L8.26406 20.5359V24.6026H1.33073C0.997396 24.6026 0.664062 24.9359 0.664062 25.2693V41.0026C0.664062 41.4026 0.997396 41.6693 1.33073 41.6693H8.86406H14.9974H15.0641H24.6641H24.7307H30.7974C30.7974 41.6693 30.7974 41.6693 30.8641 41.6693H42.6641C43.0641 41.6693 43.3307 41.3359 43.3307 41.0026V38.3359V35.3359V32.6693C43.3307 32.7359 43.3307 32.7359 43.3307 32.6693ZM8.1974 40.3359H1.9974V25.8693H8.1974V40.3359ZM4.06406 8.33594C4.06406 4.66927 7.06406 1.66927 10.7307 1.66927C14.3974 1.66927 17.3974 4.66927 17.3974 8.33594C17.3974 12.0026 14.3974 15.0026 10.7307 15.0026C7.06406 15.0026 4.06406 12.0026 4.06406 8.33594ZM30.1307 40.3359H25.3307V33.8026C25.3307 33.4026 25.0641 33.1359 24.6641 33.1359H15.0641C14.6641 33.1359 14.3974 33.4026 14.3974 33.8026V40.3359H9.53073V20.1359L19.8641 17.6026L30.1974 20.1359V40.3359H30.1307ZM24.7307 13.6026L26.8641 8.4026L30.3307 12.6026C30.4641 12.7359 30.6641 12.8693 30.8641 12.8693H30.9307L36.3307 12.3359L34.1974 17.4693C30.6641 17.2026 27.4641 15.8693 24.7307 13.6026ZM41.9974 32.0026H39.4641V30.3359H41.9974V32.0026ZM41.9974 29.0026H38.7974C38.4641 29.0026 38.1307 29.2693 38.1307 29.6693V32.7359C38.1307 33.1359 38.4641 33.4026 38.7974 33.4026H41.9974V34.6026H38.7974C38.4641 34.6026 38.1307 34.9359 38.1307 35.2693V38.3359C38.1307 38.6693 38.4641 39.0026 38.7974 39.0026H41.9974V40.3359H31.4641V27.6693H41.9974V29.0026Z" fill="#1E1E1E"/>
+            <path d="M15.8005 21.8698V24.8698C15.8005 25.2031 15.4672 25.5365 15.1339 25.5365H11.5339C11.1339 25.5365 10.8672 25.2031 10.8672 24.8698V21.8698C10.8672 21.5365 11.1339 21.2031 11.5339 21.2031H15.1339C15.5339 21.2031 15.8005 21.5365 15.8005 21.8698Z" fill="#1E1E1E"/>
+            <path d="M22.3318 27.8034V30.8034C22.3318 31.2034 21.9984 31.4701 21.6651 31.4701H18.0651C17.7318 31.4701 17.3984 31.2034 17.3984 30.8034V27.8034C17.3984 27.4034 17.7318 27.1367 18.0651 27.1367H21.6651C21.9984 27.1367 22.3318 27.4034 22.3318 27.8034Z" fill="#1E1E1E"/>
+            <path d="M36.9307 29.6706V32.7372C36.9307 33.1372 36.6641 33.4039 36.2641 33.4039H33.3307C32.9307 33.4039 32.6641 33.1372 32.6641 32.7372V29.6706C32.6641 29.2706 32.9307 29.0039 33.3307 29.0039H36.2641C36.5974 29.0039 36.9307 29.2706 36.9307 29.6706Z" fill="#1E1E1E"/>
+            <path d="M36.2682 34.668H33.2682C32.8682 34.668 32.6016 34.9346 32.6016 35.3346V38.3346C32.6016 38.7346 32.8682 39.0013 33.2682 39.0013H36.2682C36.6682 39.0013 36.9349 38.7346 36.9349 38.3346V35.268C36.9349 34.9346 36.6016 34.668 36.2682 34.668ZM35.6016 37.668H33.9349V35.9346H35.6016V37.668Z" fill="#1E1E1E"/>
+            <path d="M6.59635 27.7344H3.59635C3.19635 27.7344 2.92969 28.001 2.92969 28.401V31.4677C2.92969 31.8677 3.19635 32.1344 3.59635 32.1344H6.59635C6.99635 32.1344 7.26302 31.8677 7.26302 31.4677V28.401C7.26302 28.0677 6.92969 27.7344 6.59635 27.7344ZM5.92969 30.801H4.26302V29.0677H5.92969V30.801Z" fill="#1E1E1E"/>
+            <path d="M7.26302 34.737V37.8036C7.26302 38.2036 6.99635 38.4703 6.59635 38.4703H3.59635C3.19635 38.4703 2.92969 38.2036 2.92969 37.8036V34.737C2.92969 34.4036 3.19635 34.0703 3.59635 34.0703H6.52969C6.92969 34.0703 7.26302 34.4036 7.26302 34.737Z" fill="#1E1E1E"/>
+            <path d="M10.7284 13.7331C11.1284 13.7331 11.395 13.3998 11.395 13.0665V12.4665C12.4617 12.1998 13.2617 11.1998 13.2617 10.0665C13.2617 8.66646 12.1284 7.53313 10.7284 7.53313C10.395 7.53313 10.1284 7.39979 9.86169 7.19979C9.66169 6.99979 9.52836 6.66646 9.52836 6.33313C9.52836 5.66646 10.0617 5.13313 10.7284 5.13313C11.0617 5.13313 11.3284 5.26646 11.595 5.46646C11.795 5.66646 11.9284 5.99979 11.9284 6.33313C11.9284 6.73313 12.195 6.99979 12.595 6.99979C12.995 6.99979 13.2617 6.73313 13.2617 6.33313C13.2617 5.66646 12.995 4.99979 12.5284 4.53313C12.195 4.19979 11.795 3.99979 11.395 3.86646V3.26646C11.395 2.86646 11.0617 2.59979 10.6617 2.66646C10.2617 2.66646 9.99503 2.99979 10.0617 3.39979V3.93313C8.99503 4.26646 8.19503 5.19979 8.26169 6.33313C8.26169 6.99979 8.52836 7.66646 8.99503 8.13313C9.46169 8.59979 10.1284 8.86646 10.795 8.86646C11.1284 8.86646 11.395 8.99979 11.6617 9.19979C11.8617 9.39979 11.995 9.73313 11.995 10.0665C11.995 10.7331 11.4617 11.2665 10.795 11.2665C10.4617 11.2665 10.195 11.1331 9.92836 10.9331C9.72836 10.7331 9.59503 10.3998 9.59503 10.0665C9.59503 9.66646 9.32836 9.39979 8.92836 9.39979C8.52836 9.39979 8.26169 9.66646 8.26169 10.0665C8.26169 10.7331 8.52836 11.3998 8.99503 11.8665C9.32836 12.1998 9.72836 12.3998 10.1284 12.5331V13.1331C10.0617 13.3998 10.3284 13.7331 10.7284 13.7331Z" fill="#1E1E1E"/>
+            </svg>
+            </div>
+          <div class="support-text">Tuition Fees</div>
+        </div>
+        
+        <div class="support-item">
+          <div class="support-icon"><svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M41.3239 13.2899H41.2882C40.6021 13.2943 40.4957 12.6984 40.4838 12.4217V8.09415C40.4838 7.63216 40.1095 7.25781 39.6488 7.25781H27.2759C24.1716 7.25781 23.0135 8.4084 22.7262 8.7696L22.6473 8.87915L22.6467 8.88102L22.4019 9.21656C22.0732 9.6679 21.7865 9.47572 21.6488 9.32799L21.1806 8.74393L20.9489 8.46474C20.5596 8.05596 19.5448 7.25781 17.5335 7.25781H4.35187C3.88989 7.25781 3.51554 7.63216 3.51554 8.09415V12.3666C3.51554 13.1146 3.10927 13.2649 2.86012 13.2899H2.67483C2.472 13.3024 2 13.4201 2 14.2884V34.6515C2 35.151 2.40502 35.5554 2.90457 35.5554H14.935C18.773 35.5554 20.4456 37.0027 20.9471 37.558L21.2332 37.9123C21.2332 37.9123 22.0013 38.7806 22.81 37.9123L22.9778 37.7157L22.9803 37.7145L23.1944 37.4641C23.2007 37.4566 23.252 37.399 23.3265 37.3226C23.9669 36.6997 25.5676 35.5554 28.6975 35.5554H41.0954C41.5956 35.5554 42 35.151 42 34.6515V14.0912C42 13.355 41.4673 13.2937 41.3239 13.2899ZM38.6209 31.4564C38.6209 31.8576 38.286 32.1813 37.869 32.1813H27.6684C24.0382 32.1813 22.7205 33.8214 22.7205 33.8214L22.5534 34.0455L22.4751 34.1538C22.129 34.6239 21.6194 34.1576 21.6169 34.1551L21.3821 33.8615C21.2081 33.6524 19.8747 32.1807 16.6477 32.1807H6.13096C5.71592 32.1807 5.38039 31.8564 5.38039 31.4558V9.75742C5.38039 9.35678 5.71592 9.03252 6.13096 9.03252H14.2958C20.3693 9.03252 20.9446 12.4824 20.984 13.4846V28.5749C20.984 29.6717 21.5067 29.8776 21.8016 29.9077H22.2404C22.5409 29.8776 23.0185 29.6992 23.0185 28.8435V13.2899H23.0135C23.0586 12.0348 23.5481 9.03189 27.2008 9.03189H37.869C38.286 9.03189 38.6209 9.35616 38.6209 9.7568V31.4564Z" fill="#1E1E1E"/>
+            </svg>
+            </div>
+          <div class="support-text">Study Materials</div>
+        </div>
+        
+        <div class="support-item">
+          <div class="support-icon"><svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_7712_13913)">
+            <path d="M36.6667 33C38.6925 33 40.315 31.3592 40.315 29.3333L40.3333 9.16667C40.3333 7.14083 38.6925 5.5 36.6667 5.5H7.33333C5.3075 5.5 3.66667 7.14083 3.66667 9.16667V29.3333C3.66667 31.3592 5.3075 33 7.33333 33H0C0 35.0258 1.64083 36.6667 3.66667 36.6667H40.3333C42.3592 36.6667 44 35.0258 44 33H36.6667ZM7.33333 9.16667H36.6667V29.3333H7.33333V9.16667ZM22 34.8333C20.9917 34.8333 20.1667 34.0083 20.1667 33C20.1667 31.9917 20.9917 31.1667 22 31.1667C23.0083 31.1667 23.8333 31.9917 23.8333 33C23.8333 34.0083 23.0083 34.8333 22 34.8333Z" fill="#1E1E1E"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_7712_13913">
+            <rect width="44" height="44" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            </div>
+          <div class="support-text">Equipment</div>
+        </div>
+        
+        <div class="support-item">
+          <div class="support-icon"> <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M34.75 4H24.25C21.355 4 19 6.355 19 9.25V13H8.5V4H4V40H8.5V35.5H35.5V40H40V9.25C40 6.355 37.645 4 34.75 4ZM35.5 31H23.5V27.25C23.5 26.836 23.836 26.5 24.25 26.5H35.5V31ZM35.5 22H24.25C21.355 22 19 24.355 19 27.25V31H8.5V17.5H35.5V22ZM35.5 13H23.5V9.25C23.5 8.836 23.836 8.5 24.25 8.5H34.75C35.164 8.5 35.5 8.836 35.5 9.25V13ZM10 7.75C10 5.6785 11.6785 4 13.75 4C15.8215 4 17.5 5.6785 17.5 7.75C17.5 9.8215 15.8215 11.5 13.75 11.5C11.6785 11.5 10 9.8215 10 7.75ZM10 25.75C10 23.6785 11.6785 22 13.75 22C15.8215 22 17.5 23.6785 17.5 25.75C17.5 27.8215 15.8215 29.5 13.75 29.5C11.6785 29.5 10 27.8215 10 25.75Z" fill="#1E1E1E"/>
+            </svg>
+            </div>
+          <div class="support-text">Boarding Expenses</div>
+        </div>
       </div>
-      <h2 class="h5 text-black mb-2">{benefits.heading.stationary}</h2>
-      <p class="text-black opacity-80">{benefits.paragraph.stationary}</p>
     </div>
-
-    <!-- Benefit 3: Equipment -->
-    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-up"  data-aos-duration="1700">
-      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
-        <img src={benefits.image.equipment} alt="Equipment Icon" style="width: 60%;" />
-      </div>
-      <h2 class="h5 text-black mb-2">{benefits.heading.equipments}</h2>
-      <p class="text-black opacity-80">{benefits.paragraph.equipments}</p>
+  </div>
+  
+  <div class="kiran-images">
+    <div class="image-top">
+      <img 
+        src={image1} 
+        alt="Students from Kiran Foundation" 
+        class="kiran-image" 
+      />
     </div>
-
-    <!-- Benefit 4: Boarding -->
-    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-left"  data-aos-duration="1700">
-      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width:100px; height: 100px;">
-        <img src={benefits.image.bording} alt="Boarding Icon" style="width: 60%;" />
+    <div class="image-bottom">
+      <div class="image-bottom-left">
+        <img 
+          src={image2} 
+          alt="More students from Kiran Foundation" 
+          class="kiran-image-small" 
+        />
       </div>
-      <h2 class="h5 text-black mb-2">{benefits.heading.bording}</h2>
-      <p class="text-black opacity-80">{benefits.paragraph.bording}</p>
+      <div class="image-bottom-right">
+        <div class="orange-box"></div>
+      </div>
     </div>
   </div>
 </div>
+</section>
+
+<style>
+  
+h1 {
+  /* padding-bottom: 3rem; */
+  width: 60%;
+}
+.hero-section {
+  /* width: 100%; */
+  background-color: #ffffff;
+  font-family: 'Source Serif Pro', serif;
+  padding: 3rem 0rem;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1440px;
+  margin: 0 auto;
+  /* gap: 8rem; */
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-title {
+  font-family: Merriweather;
+font-weight: 400;
+font-size: 2.4rem;
+line-height: 150%;
+letter-spacing: -2.2%;
+margin-left: 0%;
+  /* font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #222222;
+  margin: 0 0 2rem 0; */
+}
+
+.hero-description {
+
+  font-family: Poppins;
+font-weight: 400;
+font-size: 0.9rem;
+line-height: 2rem;
+letter-spacing: 0%;
+color: #49494C;
+padding: 1.5rem 0;
+
+}
+
+.financial-support {
+  margin-bottom: 2.5rem;
+}
+
+.support-title {
+  /* font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0; */
+  color: #1E1E1E;
+
+  font-family: Poppins;
+font-weight: 600;
+font-size: 1.5rem;
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+
+.support-description {
+  font-family: Poppins;
+font-weight: 400;
+font-size: 0.9rem;
+
+line-height: 1.7rem;
+letter-spacing: 0%;
+color: #49494C;
+padding: 1.5rem 0;
+}
+
+.support-subtitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0 0 1.5rem 0;
+  color: #49494C;
+}
+
+.support-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.support-item {
+  display: flex;
+  font-size: 1.124rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.support-icon {
+  /* font-size: 1.8rem; */
+  /* line-height: 1; */
+  width: 33;
+height: 33;
+
+}
+
+.support-text {
+  /* font-size: 1.2rem;
+  font-weight: 600; */
+  color: #333;
+  font-family: Poppins;
+font-weight: 400;
+font-size: 1.3rem;
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+
+.hero-images {
+  flex: 1;
+  position: relative;
+  min-height: 600px;
+  margin-left: 3rem;
+}
+
+.hero-image-top, 
+.hero-image-bottom {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image-top {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1rem;
+}
+
+.hero-image-bottom {
+  position: absolute;
+  right: 0;
+  top: 45%;
+  z-index: 1;
+}
+
+.hero-image-top img,
+.hero-image-bottom img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.kiran-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.image-top, 
+.image-bottom {
+  width: 100%;
+}
+
+.image-bottom {
+  display: flex;
+  gap: 1rem;
+}
+
+.image-bottom-left {
+  flex: 2;
+}
+
+.image-bottom-right {
+  flex: 1;
+}
+
+.kiran-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 6/3;
+}
+
+.kiran-image-small {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16/9;
+}
+
+.orange-box {
+  background-color: #FF5C00;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  aspect-ratio: 1/1;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .support-title {
+    font-size: var(--font-title-sub);
+  }
+  
+  .hero-images {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  
+  .hero-content {
+    padding-right: 0;
+    width: 100%;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .hero-images {
+    width: 100%;
+    min-height: 400px;
+    margin: 0 auto;
+    /* order: 2; */
+  }
+  
+  .hero-image-top,
+  .hero-image-bottom {
+    max-width: 450px;
+  }
+  
+  .orange-rectangle {
+    height: 100%;
+    width: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .hero-title {
+    width: 100%;
+    /* display: block; */
+    font-size: 2.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .support-title {
+    font-size: 2rem;
+  }
+  
+  .support-description {
+    font-size: 1rem;
+  }
+  .kiran-image {
+    width: 100%;
+  }
+  .hero-images {
+    min-height: 28rem;
+  }
+  
+  .hero-image-top,
+  .hero-image-bottom {
+    max-width: 380px;
+  }
+  
+  .hero-image-bottom {
+    top: 40%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    width: 100%;
+
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .support-title {
+    font-size: 1.8rem;
+    width: 100%;
+
+    margin-bottom: 1rem;
+  }
+  
+  .support-description {
+    font-size: 0.95rem;
+  }
+  
+  .support-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .support-text {
+    font-size: 1rem;
+  }
+  
+  .hero-images {
+    min-height: 300px;
+  }
+  
+  .hero-image-top,
+  .hero-image-bottom {
+    max-width: 300px;
+  }
+  
+  .orange-rectangle {
+    width: 40px;
+    right: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-images {
+    min-height: 260px;
+  }
+  
+  .hero-image-top,
+  .hero-image-bottom {
+    max-width: 280px;
+  }
+  
+  .hero-image-bottom {
+    top: 30%;
+  }
+}
+
+</style>  

@@ -1,26 +1,221 @@
 ---
-import { getEntry } from "astro:content"
-const pratibhaHero =(await getEntry("pratibha", "hero")).data
+import { getEntry } from "astro:content";
+const pratibhaHero = (await getEntry("pratibha", "hero")).data;
+const { image = "/assets/images/hero/heropratibha.png" } = Astro.props;
 
 ---
 
-<section class='position-relative' style='margin-top: 4rem'>
-  <div
-    class='position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4'
-    style='background-image: url(/assets/images/hero/heropratibha.png);'
-  >
+
+<section class="hero-section">
+
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="highlight-underline">Empowering </span> 
+        Talent Rise
+        <br />Above Circumstances
+      </h1>
+      
+      <div class="hero-description">
+        <h2 class="hero-subtitle">Kiran Pratibha:</h2>
+        <p class="hero-text">
+          Nurturing exceptional youth through 
+          mentorship and financial support in 
+          education, sports, and the arts
+        </p>
+      </div>
+    </div>
+    
+    <div class="hero-image">
+      <img 
+        src={image} 
+        alt="Student with folder smiling" 
+      />
+    </div>
   </div>
-  <div class='container position-relative z-2 text-center pt-2 pt-sm-4 pt-lg-5'>
-    <h1 class='h1 display-4 text-white pt-5'>
-      {pratibhaHero.heading}
-    </h1>
-    <p
-      class='hero-description-p text-white fs-xl opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5'
-      style=' max-width: 640px;'
-    >
-    </p>
-  </div>
-  <div class='d-none d-lg-block' style='height: 360px;'></div>
-  <div class='d-none d-md-block d-lg-none' style='height: 260px;'></div>
-  <div class='d-md-none' style='height: 160px;'></div>
 </section>
+
+
+<style>
+  
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 25.825rem;
+  background-color: rgb(241, 241, 241);
+  font-family: 'Source Serif Pro', serif;
+  /* overflow: hidden; */
+}
+
+.hero-container {
+  display: flex;
+  height: 25rem;
+  align-items: center;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 1.7rem 1rem 0;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+
+.hero-title {
+  /* width: 54.59625rem; */
+  height: 10rem;
+  margin-left: 0;
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.08rem;
+  color: #1E1E1E;
+}
+
+.highlight-underline {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.2rem;
+  height: 0.8rem;
+  width: 100%;
+  padding-top: 0.8rem;
+  background-color: rgb(0, 170, 94);
+  z-index: -1;
+}
+
+.hero-description {
+  max-width: 37.5rem;
+}
+
+.hero-subtitle, .hero-text {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  letter-spacing: 0%;
+  color: #49494C;
+}
+.hero-subtitle {
+  line-height: unset;
+}
+.hero-text {
+  line-height: 2.3rem;
+}
+img {
+  /* width: 29.6875rem; */
+  /* height: 17.8125rem; */
+}
+.hero-image {
+   position: absolute;
+  width: 23.4375rem;
+  bottom:  0.2rem ;
+  left: 56rem; 
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .hero-container {
+      max-width: 90%;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.4rem;
+    }
+    
+    .hero-text {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      height: fit-content;
+      flex-direction: row;
+      padding: 3rem 1.5rem;
+
+    }
+    .hero-image {
+      position: relative;
+      width: 20rem;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      
+    }
+    img {
+      height: 200px;
+      border-radius: 50%;
+
+    }
+    .hero-content {
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-description {
+       
+      display: none;  
+        margin: 0 auto;
+
+    }
+    
+    .hero-image {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero-container {
+      padding: 2rem 1rem;
+    }
+    
+    .hero-title {
+      font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+    
+    .hero-text {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    
+    .hero-image {
+      max-width: 90%;
+    }
+  }
+</style>
