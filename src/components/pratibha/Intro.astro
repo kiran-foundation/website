@@ -1,43 +1,204 @@
 ---
 import { getEntry } from "astro:content"
 const aboutPratibha =(await getEntry("pratibha", "about")).data
-
+const image1 ="/assets/images/pratibha_page/group-1.png"
+const image2 ="/assets/images/pratibha_page/group-2.png"
 ---
-<section class="overflow-hidden" style="margin-top: 50px;">
-    <div class="container pb-sm-3 mb-md-2 mb-lg-3">
-      <div class="row g-4">
-        <div
-          class="col-md-6"
-          data-aos="fade-right"
-          data-aos-duration="600"
-          data-aos-offset="280"
-          data-disable-parallax-down="md"
-        >
-          <img
-            class="object-fit-cover w-100 h-100 rounded-3"
-            src="/assets/images/programs/pratibhaFiancial.png"
-            alt="Image"
+<section class="kiran-section">
+  <div class="kiran-container">
+    <div class="kiran-content">
+      <h1 class="kiran-title">The Kiran Pratibha Way</h1>
+      
+      <p class="kiran-description">
+        The Kiran Foundation helps extremely talented students to overcome 
+        financial barriers to education and career growth.
+      </p>
+      
+      <p class="kiran-description">
+        We provide personalized and tailored approach to each student's 
+        needs by combining financial aid and holistic mentorship.
+      </p>
+      
+      <p class="kiran-description">
+        By ensuring economic constraints never limit their potential to achieve 
+        their career goals and build a fulfilling future.
+      </p>
+    </div>
+    
+    <div class="kiran-images">
+      <div class="image-top">
+        <img 
+          src={image1} 
+          alt="Students from Kiran Foundation" 
+          class="kiran-image" 
+        />
+      </div>
+      <div class="image-bottom">
+        <div class="image-bottom-left">
+          <img 
+            src={image2} 
+            alt="More students from Kiran Foundation" 
+            class="kiran-image-small" 
           />
         </div>
-        <div
-          class="col-md-6"
-          data-aos="fade-left"
-          data-aos-duration="600"
-          data-aos-offset="280"
-          data-disable-parallax-down="md"
-        >
-          <div
-            class="d-flex flex-column h-100 rounded-3 py-5 px-4 px-lg-5"
-            style="background: #F7FCFE;"
-          >
-            <h2 class="programe-title-h2 mb-xl-4">
-             {aboutPratibha.title}
-            </h2>
-            <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
-              {aboutPratibha.description}
-            </p>
-          </div>
+        <div class="image-bottom-right">
+          <div class="orange-box"></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<style>
+  /* Kiran Component Styles */
+  /* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap'); */
+
+.kiran-section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 4rem 0rem;
+  font-family: 'Merriweather', serif;
+}
+
+.kiran-container {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.kiran-content {
+  flex: 1;
+  /* width: 22rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-self: center;
+}
+
+.kiran-title {
+  /* font-size: 38px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -2.2%;
+  color: #2a2a2a;
+  margin: 0; */
+
+  font-family: Merriweather;
+font-weight: 400;
+font-size: var(--font-title);
+line-height: 150%;
+letter-spacing: -2.2%;
+
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+.kiran-description {
+  /* font-size: 1.25rem;
+  line-height: 1.6;
+  color: #4a4a4a; */
+  margin: 0;
+  font-family: Poppins;
+font-weight: 400;
+font-size: var(--font-desc);
+line-height: 1.7rem;
+letter-spacing: 0%;
+/* gap: 1em; */
+
+}
+
+.kiran-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.image-top, 
+.image-bottom {
+  width: 100%;
+}
+
+.image-bottom {
+  display: flex;
+  gap: 1rem;
+}
+
+.image-bottom-left {
+  flex: 2;
+}
+
+.image-bottom-right {
+  flex: 1;
+}
+
+.kiran-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16/9;
+}
+
+.kiran-image-small {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16/9;
+}
+
+.orange-box {
+  background-color: #FF5C00;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  aspect-ratio: 1/1;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .kiran-title {
+    font-size: 2.8rem;
+  }
+  
+  .kiran-description {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .kiran-container {
+    flex-direction: column-reverse;
+  }
+  
+  .kiran-title {
+    font-size: 2.5rem;
+  }
+  
+  .kiran-images {
+    order: -1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .kiran-section {
+    padding: 2rem 1rem;
+  }
+  
+  .kiran-title {
+    font-size: 2rem;
+  }
+  
+  .kiran-description {
+    font-size: 1rem;
+  }
+  
+  .image-bottom {
+    flex-direction: column;
+  }
+}
+</style>
