@@ -1,6 +1,8 @@
 ---
 const { Data } = Astro.props;
 import Button from "../common/button.astro";
+const {className=''}=Astro.props;
+// console.log(className)
 ---
 
 <!-- Add Splide CSS -->
@@ -24,12 +26,12 @@ import Button from "../common/button.astro";
 }
 
 </style>
-<section class="splide  px-3 mb-[64px] lg:mb-[120px]">
+<section class=`splide  px-3 mb-[64px] lg:mb-[120px] ${className}`>
   <div class="splide__track mainBox !p-[10px] !pl-[16px] sm:!pl-[14px] overflow-hidden">
     <ul class="splide__list">
       {
         Data.map((items:any) => (
-          <li class="splide__slide slidemy border-[1px] border-[#B3B3B3] rounded-[24px] min-w-[320px] max-w-[355px] md:min-w-[390px] md:min-h-[336px] md:max-w-[390px] md:ax-h-[336px]  p-[32px] flex flex-col justify-between ">
+          <li class="splide__slide slidemy border-[1px] bg-[#FFFFFF] border-[#B3B3B3] rounded-[24px] min-w-[320px] max-w-[355px] md:min-w-[390px] md:min-h-[336px] md:max-w-[390px] md:ax-h-[336px]  p-[32px] flex flex-col justify-between ">
             <h3 class="font-poppins text-xl sm:text-2xl font-semibold mb-3 text-[#1E1E1E] text-center">
               {items.data.title}
             </h3>

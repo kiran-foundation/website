@@ -3,7 +3,7 @@ join: "Join us and Shape the Future"
 join_description: "Even the smallest volunteer effort can create a lasting impact and change. You have the power to shape someone's future with just a few moments of your time. "
 
 join_why1: "A small act of volunteering can make a big impact in someone’s life. Based on your experience and skills, you can be a mentor, offering guidance and knowledge to others, or learn new skills by taking on internships or entry-level roles."
-join_why2: "You can bring value by mentoring and sharing your expertise and help others grow, or gain hands-on experience as an intern, which can significantly shape your personal and professional development."
+join_why2: "You can bring value by mentoring and sharing your expertise to help others grow, or gain hands-on experience as an intern, which can significantly shape your personal and professional development."
 
 heading: "Open Volunteer Positions "
 title: "Why Volunteer with us?"
