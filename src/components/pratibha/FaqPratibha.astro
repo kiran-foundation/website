@@ -1,172 +1,39 @@
 ---
 import { getEntry } from "astro:content";
-const faqPratibha = (await getEntry("pratibha", "faq")).data;
----
-<section class="bg-secondary">
-    <div
-        class="container py-md-2 py-lg-3 py-xl-5 my-2 my-sm-3 my-md-4 my-xxl-5"
-    >
-        <div class="row">
-            <div class="col-md-4 text-center text-md-start">
-                <h2 class="h1">{faqPratibha.title}</h2>
-                <p class="pb-3 pb-sm-4">
-                    {faqPratibha.paragraph}
-                </p>
-                <div class="d-none d-md-flex justify-content-center">
-                    <img src={faqPratibha.image} alt="vectorImage" />
-                </div>
-            </div>
-            <div class="col-md-8 col-lg-7 offset-lg-1">
-                <div class="accordion" id="faq">
-                    <div class="accordion-item bg-light">
-                        <h3 class="accordion-header" id="headingOne">
-                            <button
-                                class="accordion-button"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#questionOne"
-                                aria-expanded="true"
-                                aria-controls="questionOne"
-                                >Is there a free trial?</button
-                            >
-                        </h3>
-                        <div
-                            class="accordion-collapse collapse show"
-                            id="questionOne"
-                            aria-labelledby="headingOne"
-                            data-bs-parent="#faq"
-                        >
-                            <div class="accordion-body fs-sm">
-                                {faqPratibha.question1}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item bg-light">
-                        <h3 class="accordion-header" id="headingTwo">
-                            <button
-                                class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#questionTwo"
-                                aria-expanded="false"
-                                aria-controls="questionTwo"
-                                >  {faqPratibha.question1}</button
-                            >
-                        </h3>
-                        <div
-                            class="accordion-collapse collapse"
-                            id="questionTwo"
-                            aria-labelledby="headingTwo"
-                            data-bs-parent="#faq"
-                        >
-                            <div class="accordion-body fs-sm">
-                                {faqPratibha.answer1}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item bg-light">
-                        <h3 class="accordion-header" id="headingThree">
-                            <button
-                                class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#questionThree"
-                                aria-expanded="false"
-                                aria-controls="questionThree"
-                                >{faqPratibha.question2}</button
-                            >
-                        </h3>
-                        <div
-                            class="accordion-collapse collapse"
-                            id="questionThree"
-                            aria-labelledby="headingThree"
-                            data-bs-parent="#faq"
-                        >
-                            <div class="accordion-body fs-sm">
-                                {faqPratibha.answer2}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item bg-light">
-                        <h3 class="accordion-header" id="headingFour">
-                            <button
-                                class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#questionFour"
-                                aria-expanded="false"
-                                aria-controls="questionFour"
-                                > {faqPratibha.question3}</button
-                            >
-                        </h3>
-                        <div
-                            class="accordion-collapse collapse"
-                            id="questionFour"
-                            aria-labelledby="headingFour"
-                            data-bs-parent="#faq"
-                        >
-                            <div class="accordion-body fs-sm">
-                                {faqPratibha.answer3}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item bg-light">
-                        <h3 class="accordion-header" id="headingFive">
-                            <button
-                                class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#questionFive"
-                                aria-expanded="false"
-                                aria-controls="questionFive"
-                                > {faqPratibha.question4}</button
-                            >
-                        </h3>
-                        <div
-                            class="accordion-collapse collapse"
-                            id="questionFive"
-                            aria-labelledby="headingFive"
-                            data-bs-parent="#faq"
-                        >
-                            <div class="accordion-body fs-sm">
-                                {faqPratibha.answer4}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item bg-light">
-                        <h3 class="accordion-header" id="headingSix">
-                            <button
-                                class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#questionSix"
-                                aria-expanded="false"
-                                aria-controls="questionSix"
-                                > {faqPratibha.question5}</button
-                            >
-                        </h3>
-                        <div
-                            class="accordion-collapse collapse"
-                            id="questionSix"
-                            aria-labelledby="headingSix"
-                            data-bs-parent="#faq"
-                        >
-                            <div class="accordion-body fs-sm">
-                                {faqPratibha.answer5}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+const faqData = (await getEntry("pratibha", "faq")).data;
 
-<script>
-    document.querySelectorAll(".faq-accordion-question").forEach((item) => {
-        item.addEventListener("click", (event) => {
-            const accordionItem = item.parentNode as HTMLElement;
-            accordionItem.classList.toggle("active");
-        });
-    });
-</script>
+
+// import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+
+---
+<section class="w-full max-w-7xl mx-auto  flex flex-col md:flex-row gap-8">
+    <div class="w-full md:w-2/5"> <h2 class="text-4xl font-bold text-gray-900 mb-2">{faqData.title.split('Check out the FAQ')[0]}</h2>
+        <h3 class="text-4xl font-bold text-[#1E1E1E] mb-6 font-poppins">Check out the FAQ</h3>
+        
+        <p class="text-gray-700">
+          {faqData.paragraph}
+        </p>
+      </div>
+      
+      <div class="w-full md:w-3/5">
+        <div class="space-y-4">
+          {faqData.questions.map((item, index) => (
+            <div  class="border border-gray-200 rounded-md overflow-hidden">
+              <details class="group">
+                <summary class="w-full px-6 py-4 flex items-center justify-between text-left font-medium cursor-pointer">
+                  <span class="text-left font-medium font-poppins  text-[#383D38]">{item.question}</span>
+                  <div class="flex items-center justify-center">
+                    {/* <Plus class="h-5 w-5 shrink-0 text-gray-500 group-open:hidden" /> */}
+                    {/* <Minus class="h-5 w-5 shrink-0 text-gray-500 hidden group-open:block" /> */}
+                  </div>
+                </summary>
+                <div class="px-6 pb-4 pt-0 text-[#383D38]  font-Inter">
+                  {item.answer}
+                </div>
+              </details>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>

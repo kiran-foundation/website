@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         merriweather: ['Merriweather', 'serif'],
         poppins: ['Poppins', 'sans-serif'],
+        Inter: ['Inter','sans-serif'],
       },
       extend: {
         spacing: {
