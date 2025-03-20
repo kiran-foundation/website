@@ -6,22 +6,19 @@ const { slug, collection } = Astro.props;
 const heroEntry = await getEntry(collection, slug) as { data: {heroSubtitle:string,greenUnderline: string,heading2: string, heading: string, description: string, image:string, } };
 
 // Destructure safely with fallback
-const {greenUnderline, heading,heading2, description,image,heroSubtitle } = heroEntry?.data ?? {};
+const {greenUnderline, heading, heading2, description, image, heroSubtitle } = heroEntry?.data ?? {};
+console.log(heroEntry);
 
-const pratibhaHero = (await getEntry("pratibha", "hero")).data;
-// const { image = "/assets/images/hero/heropratibha.png" } = Astro.props;
-console.log(pratibhaHero)
-
+// const pratibhaHero = (await getEntry("pratibha", "hero")).data;
 ---
 
-<section class="hero-section md:h-[25.825rem] h-[13rem]">
-  <div class="hero-container lg:max-w-[60%]">
-    <div class="hero-content p-0 space-y-4">
-      <h1 class="hero-titles justify-center items-center align-middle my-auto">
-        <span class="highlight-underline">{greenUnderline} </span>
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-titles">
+        <span class="highlight-underline">{greenUnderline}</span>
         {heading}
-        <!-- <br /> -->
-        <p class=" block">{heading2}</p>
+        <p class="block">{heading2}</p>
       </h1>
 
       <div class="hero-description">
@@ -33,48 +30,49 @@ console.log(pratibhaHero)
     </div>
 
     <div class="hero-image">
-      <img class="" src={image} alt="Student with folder smiling" />
+      <img src={image} alt="Student with folder smiling" />
     </div>
   </div>
 </section>
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
   .hero-section {
     position: relative;
     width: 100%;
-    /* height: ; */
     background-color: rgb(241, 241, 241);
     font-family: "Source Serif Pro", serif;
+    height: 25.825rem;
     /* overflow: hidden; */
   }
 
   .hero-container {
     display: flex;
-    height: 25rem;
+    height: 100%;
     align-items: center;
-    max-width: 70%;
+    max-width: 60%;
     margin: 0 auto;
-    padding: 1.7rem 1rem 0;
+    padding: 0 1rem;
+    position: relative;
   }
 
   .hero-content {
     flex: 1;
     padding-right: 2rem;
-    padding-bottom: 2rem;
+    z-index: 1;
   }
 
   .hero-titles {
-    /* width: 54.59625rem; */
-    /* height: 10rem; */
-    margin-left: 0;
-    font-family: "Merriweather";
+    margin: 0 0 1.5rem 0;
+    font-family: "Merriweather", serif;
     font-style: normal;
     font-weight: 700;
-    /* font-size: 308%; */
     font-size: 3em;
     color: #1e1e1e;
+    line-height: 1.2;
   }
 
   .highlight-underline {
@@ -89,7 +87,6 @@ console.log(pratibhaHero)
     bottom: 0.2rem;
     height: 0.8rem;
     width: 100%;
-    padding-top: 0.8rem;
     background-color: rgb(0, 170, 94);
     z-index: -1;
   }
@@ -98,31 +95,28 @@ console.log(pratibhaHero)
     max-width: 37.5rem;
   }
 
-  .hero-subtitle,
+  .hero-subtitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: #49494c;
+    margin-bottom: 0.5rem;
+  }
+
   .hero-text {
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 1.6rem;
-    line-height: 2.2rem;
-    letter-spacing: 0%;
+    line-height: 2.3rem;
     color: #49494c;
   }
-  .hero-subtitle {
-    line-height: unset;
-  }
-  .hero-text {
-    line-height: 2.3rem;
-    /* z-index: -; */
-  }
-  img {
-    /* width: 29.6875rem; */
-    /* height: 17.8125rem; */
-  }
+
   .hero-image {
     position: absolute;
-    width: 23.4375rem; /* This can be left as rem for width */
-    bottom: 0.2%;
-    left: 56%;
+    right: -10%;
+    bottom: 0;
+    max-width: 23.4375rem;
+    height: auto;
   }
 
   .hero-image img {
@@ -130,66 +124,27 @@ console.log(pratibhaHero)
     height: auto;
     display: block;
   }
-  @media (max-width: 768px) {
-    .hero-section {
-      /* max-width: 90%; */
-      height: 45vb;
-      /* position: unset; */
-      /* max-width: fit-content; */
-      /* margin: 0 auto; */
-      /* padding: 0 auto; */
-    }
-    .hero-content {
-      /* padding-top: 2rem; */
-    }
+
+  /* Large screens */
+  @media (max-width: 1200px) {
     .hero-container {
-      height: 20rem;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      /* padding-top: 6rem; */
-      margin-left: 5% ;
+      max-width: 70%;
     }
-    .hero-titles {
-      font-size: 2.2rem;
-    }
+
     .hero-image {
-      /* display: none; */
-      /* max-width: 35%; */
-      /* bottom: auto; */
-      /* font-size: 1.2rem; */
-    }
-    .hero-subtitle {
-      font-size: 1rem;
-    }
-    .hero-text {
-      font-size: medium;
+      right: -8rem;
+      max-width: 22rem;
     }
   }
 
-  /* Responsive design */
-
-  /* @media (max-width: 1200px) {
+  /* Medium screens */
+  @media (max-width: 1024px) {
     .hero-container {
-      max-width: 90%;
+      max-width: 80%;
     }
-    
+
     .hero-titles {
       font-size: 2.5rem;
-    }
-  }
-
-  
-  
-  } */
-  /* @media (min-width: 500px) {
-    .hero-titles {
-      font-size: 1rem;
-    }
-  } */
-  @media (max-width: 1024px) {
-    .hero-titles {
-      /* font-size: 2.5rem; */
     }
 
     .hero-subtitle {
@@ -198,41 +153,76 @@ console.log(pratibhaHero)
 
     .hero-text {
       font-size: 1rem;
-      text-wrap: wrap;
-      max-width: 23rem;
+      line-height: 1.6;
+      max-width: 30rem;
     }
+
     .hero-image {
-      /* max-width: 30%; */
-      left: 54%;
+      right: -5rem;
+      max-width: 20rem;
     }
   }
-  @media (max-width: 576px) {
-    .hero-container {
-      padding: 2rem 1rem;
-      height: unset;
-      /* margin: unset; */
-      /* overflow: hidden; */
-      /* max-height: unset; */
 
-      max-width: 100%;
-    }
+  /* Tablet screens */
+  @media (max-width: 768px) {
     .hero-section {
-      height: unset;
+      height: 13rem;
     }
+
+    .hero-container {
+      max-width: 90%;
+      margin-left: 5%;
+      padding-top: 1rem;
+    }
+
     .hero-titles {
       font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-text {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .hero-image {
+      max-width: 40%;
+      right: 0;
+    }
+  }
+
+  /* Mobile screens */
+  @media (max-width: 576px) {
+    .hero-section {
+      height: auto;
+      padding: 2rem 0;
+    }
+
+    .hero-container {
+      padding: 0 1rem;
+      max-width: 100%;
+      margin-left: 0;
+    }
+
+    .hero-titles {
+      font-size: 2rem;
       width: 100%;
+    }
+
+    .hero-description {
+      max-width: 100%;
     }
 
     .hero-text,
     .hero-subtitle {
       display: none;
-      font-size: 1.2rem;
     }
 
     .hero-image {
       display: none;
-      max-width: 24vb;
     }
   }
 </style>
