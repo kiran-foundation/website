@@ -1,0 +1,33 @@
+---
+import { getEntry } from "astro:content";
+const pratibhaHero = (await getEntry("pratibha", "hero")).data;
+const { image = "/assets/images/hero/heropratibha.png" } = Astro.props;
+
+---
+<section class="w-full bg-gray-100 py-8 md:py-16 relative  font-serif">
+  <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between max-w-7xl lg:max-w-[60%]">
+    <div class="w-full md:w-3/5 z-10 mb-8 md:mb-0">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 md:mb-8">
+        <span class="relative inline-block z-10">
+          Empowering
+          <span class="absolute left-0 bottom-1 h-3 w-full bg-green-500 -z-10"></span>
+        </span> Talent Rise
+        <br />Above Circumstances
+      </h1>
+      <div class="mt-4 md:mt-6 lg:mt-8">
+        <h2 class="text-xl md:text-2xl font-semibold text-gray-700 mb-2">Kiran Pratibha:</h2>
+        <p class="text-base md:text-lg text-gray-700 max-w-xl leading-relaxed">
+          Nurturing exceptional youth through 
+          mentorship and financial support in 
+          education, sports, and the arts
+        </p>
+      </div>
+    </div>
+    <div class="w-full hidden md:w-2/5 md:flex justify-center md:justify-end z-10 md:absolute md:bottom-0 md:right-8 lg:right-16">
+      <img             src={image} 
+      alt="Student with folder smiling" 
+      class="max-w-full w-full md:w-auto h-auto object-contain"
+    />
+  </div>
+</div>
+</section>
