@@ -1,221 +1,238 @@
 ---
 import { getEntry } from "astro:content";
+const { slug, collection } = Astro.props;
+
+// Fetch entry from provided collection and slug
+const heroEntry = await getEntry(collection, slug) as { data: {heroSubtitle:string,greenUnderline: string,heading2: string, heading: string, description: string, image:string, } };
+
+// Destructure safely with fallback
+const {greenUnderline, heading,heading2, description,image,heroSubtitle } = heroEntry?.data ?? {};
+
 const pratibhaHero = (await getEntry("pratibha", "hero")).data;
-const { image = "/assets/images/hero/heropratibha.png" } = Astro.props;
+// const { image = "/assets/images/hero/heropratibha.png" } = Astro.props;
+console.log(pratibhaHero)
 
 ---
 
-
-<section class="hero-section">
-
-  <div class="hero-container">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span class="highlight-underline">Empowering </span> 
-        Talent Rise
-        <br />Above Circumstances
+<section class="hero-section md:h-[25.825rem] h-[13rem]">
+  <div class="hero-container lg:max-w-[60%]">
+    <div class="hero-content p-0 space-y-4">
+      <h1 class="hero-titles justify-center items-center align-middle my-auto">
+        <span class="highlight-underline">{greenUnderline} </span>
+        {heading}
+        <!-- <br /> -->
+        <p class=" block">{heading2}</p>
       </h1>
-      
+
       <div class="hero-description">
-        <h2 class="hero-subtitle">Kiran Pratibha:</h2>
+        <h2 class="hero-subtitle">{heroSubtitle}</h2>
         <p class="hero-text">
-          Nurturing exceptional youth through 
-          mentorship and financial support in 
-          education, sports, and the arts
+          {description}
         </p>
       </div>
     </div>
-    
+
     <div class="hero-image">
-      <img 
-        src={image} 
-        alt="Student with folder smiling" 
-      />
+      <img class="" src={image} alt="Student with folder smiling" />
     </div>
   </div>
 </section>
 
-
 <style>
-  
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap");
 
-.hero-section {
-  position: relative;
-  width: 100%;
-  height: 25.825rem;
-  background-color: rgb(241, 241, 241);
-  font-family: 'Source Serif Pro', serif;
-  /* overflow: hidden; */
-}
+  .hero-section {
+    position: relative;
+    width: 100%;
+    /* height: ; */
+    background-color: rgb(241, 241, 241);
+    font-family: "Source Serif Pro", serif;
+    /* overflow: hidden; */
+  }
 
-.hero-container {
-  display: flex;
-  height: 25rem;
-  align-items: center;
-  max-width: 70%;
-  margin: 0 auto;
-  padding: 1.7rem 1rem 0;
-}
+  .hero-container {
+    display: flex;
+    height: 25rem;
+    align-items: center;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 1.7rem 1rem 0;
+  }
 
-.hero-content {
-  flex: 1;
-  padding-right: 2rem;
-  padding-bottom: 2rem;
-}
+  .hero-content {
+    flex: 1;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+  }
 
-.hero-title {
-  /* width: 54.59625rem; */
-  height: 10rem;
-  margin-left: 0;
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 3.08rem;
-  color: #1E1E1E;
-}
+  .hero-titles {
+    /* width: 54.59625rem; */
+    /* height: 10rem; */
+    margin-left: 0;
+    font-family: "Merriweather";
+    font-style: normal;
+    font-weight: 700;
+    /* font-size: 308%; */
+    font-size: 3em;
+    color: #1e1e1e;
+  }
 
-.highlight-underline {
-  position: relative;
-  z-index: 1;
-}
+  .highlight-underline {
+    position: relative;
+    z-index: 1;
+  }
 
-.highlight-underline::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0.2rem;
-  height: 0.8rem;
-  width: 100%;
-  padding-top: 0.8rem;
-  background-color: rgb(0, 170, 94);
-  z-index: -1;
-}
+  .highlight-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.2rem;
+    height: 0.8rem;
+    width: 100%;
+    padding-top: 0.8rem;
+    background-color: rgb(0, 170, 94);
+    z-index: -1;
+  }
 
-.hero-description {
-  max-width: 37.5rem;
-}
+  .hero-description {
+    max-width: 37.5rem;
+  }
 
-.hero-subtitle, .hero-text {
-  font-family: 'Poppins';
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 2.2rem;
-  letter-spacing: 0%;
-  color: #49494C;
-}
-.hero-subtitle {
-  line-height: unset;
-}
-.hero-text {
-  line-height: 2.3rem;
-}
-img {
-  /* width: 29.6875rem; */
-  /* height: 17.8125rem; */
-}
-.hero-image {
-   position: absolute;
-  width: 23.4375rem;
-  bottom:  0.2rem ;
-  left: 56rem; 
-}
+  .hero-subtitle,
+  .hero-text {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    letter-spacing: 0%;
+    color: #49494c;
+  }
+  .hero-subtitle {
+    line-height: unset;
+  }
+  .hero-text {
+    line-height: 2.3rem;
+    /* z-index: -; */
+  }
+  img {
+    /* width: 29.6875rem; */
+    /* height: 17.8125rem; */
+  }
+  .hero-image {
+    position: absolute;
+    width: 23.4375rem; /* This can be left as rem for width */
+    bottom: 0.2%;
+    left: 56%;
+  }
 
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .hero-section {
+      /* max-width: 90%; */
+      height: 45vb;
+      /* position: unset; */
+      /* max-width: fit-content; */
+      /* margin: 0 auto; */
+      /* padding: 0 auto; */
+    }
+    .hero-content {
+      /* padding-top: 2rem; */
+    }
+    .hero-container {
+      height: 20rem;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      /* padding-top: 6rem; */
+      margin-left: 5% ;
+    }
+    .hero-titles {
+      font-size: 2.2rem;
+    }
+    .hero-image {
+      /* display: none; */
+      /* max-width: 35%; */
+      /* bottom: auto; */
+      /* font-size: 1.2rem; */
+    }
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+    .hero-text {
+      font-size: medium;
+    }
+  }
 
-/* Responsive design */
-@media (max-width: 1200px) {
+  /* Responsive design */
+
+  /* @media (max-width: 1200px) {
     .hero-container {
       max-width: 90%;
     }
     
-    .hero-title {
+    .hero-titles {
       font-size: 2.5rem;
     }
   }
 
-  @media (max-width: 992px) {
-    .hero-title {
-      font-size: 2.2rem;
+  
+  
+  } */
+  /* @media (min-width: 500px) {
+    .hero-titles {
+      font-size: 1rem;
     }
-    
+  } */
+  @media (max-width: 1024px) {
+    .hero-titles {
+      /* font-size: 2.5rem; */
+    }
+
     .hero-subtitle {
       font-size: 1.4rem;
     }
-    
+
     .hero-text {
-      font-size: 1.1rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero-container {
-      height: fit-content;
-      flex-direction: row;
-      padding: 3rem 1.5rem;
-
+      font-size: 1rem;
+      text-wrap: wrap;
+      max-width: 23rem;
     }
     .hero-image {
-      position: relative;
-      width: 20rem;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      
-    }
-    img {
-      height: 200px;
-      border-radius: 50%;
-
-    }
-    .hero-content {
-      max-width: 100%;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    
-    .hero-title {
-      font-size: 2rem;
-    }
-    
-    .hero-description {
-       
-      display: none;  
-        margin: 0 auto;
-
-    }
-    
-    .hero-image {
-      max-width: 70%;
-      margin: 0 auto;
+      /* max-width: 30%; */
+      left: 54%;
     }
   }
-
   @media (max-width: 576px) {
     .hero-container {
       padding: 2rem 1rem;
+      height: unset;
+      /* margin: unset; */
+      /* overflow: hidden; */
+      /* max-height: unset; */
+
+      max-width: 100%;
     }
-    
-    .hero-title {
-      font-size: 1.8rem;
+    .hero-section {
+      height: unset;
     }
-    
+    .hero-titles {
+      font-size: 2.2rem;
+      width: 100%;
+    }
+
+    .hero-text,
     .hero-subtitle {
+      display: none;
       font-size: 1.2rem;
     }
-    
-    .hero-text {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    
+
     .hero-image {
-      max-width: 90%;
+      display: none;
+      max-width: 24vb;
     }
   }
 </style>

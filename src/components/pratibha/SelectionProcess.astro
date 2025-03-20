@@ -1,13 +1,14 @@
 ---
 import { getEntry } from "astro:content";
 import TestimonialsCarousel from "../common/TestimonialsCarousel.astro";
+import Button from "../common/button.astro";
 const selectionProcess = (await getEntry("pratibha", "selection-process")).data;
 const common = (await getEntry("common", "common")).data;
-// console.log(selectionProcess);
+console.log(common);
 ---
 
 <section class=" bg-[#f1f1f1] py-[6.25rem] font-serif">
-  <div class="container mx-auto  w-[70%]">
+  <div class="container mx-auto  md:w-[70%]">
     <h1 class="mt-0 mb-[2rem]">Selection Process</h1>
 
     <div class="mb-12">
@@ -53,6 +54,7 @@ const common = (await getEntry("common", "common")).data;
         </li>
       </ul>
     </div>
+    <!-- <Button/> -->
     <div class="flex flex-col sm:flex-row gap-4 mt-10">
       <a 
         href="#" 
