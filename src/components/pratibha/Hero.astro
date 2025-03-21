@@ -7,7 +7,7 @@ const heroEntry = await getEntry(collection, slug) as { data: {heroSubtitle:stri
 
 // Destructure safely with fallback
 const {greenUnderline, heading, heading2, description, image, heroSubtitle } = heroEntry?.data ?? {};
-console.log(heroEntry);
+// console.log(heroEntry);
 
 // const pratibhaHero = (await getEntry("pratibha", "hero")).data;
 ---
@@ -60,6 +60,7 @@ console.log(heroEntry);
   }
 
   .hero-content {
+    /* position: absolute; */
     flex: 1;
     padding-right: 2rem;
     z-index: 1;
@@ -162,6 +163,12 @@ console.log(heroEntry);
       max-width: 20rem;
     }
   }
+  /* @media (max-width: 700px) { 
+    .hero-content {
+      position: absolute;
+      left: 1%;
+    }
+  } */
 
   /* Tablet screens */
   @media (max-width: 768px) {

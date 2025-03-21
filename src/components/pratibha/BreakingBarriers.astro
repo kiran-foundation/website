@@ -1,17 +1,23 @@
 ---
 
 
+import { getEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 // const image_src = "/assets/images/group-photo-1.png"
 const image_src = "/assets/images/group_photo.jpg"
+// const benefits = ;
 
+const aboutBreakingBarrier = (await getEntry("pratibha", "breaking-barriers"));
+// console.log(aboutBreakingBarrier);
+
+const {image,title} = aboutBreakingBarrier?.data ?? {};
 ---
-<section class="mb-[11.5rem] w-[90%] mx-auto">
+<section class="mb-[11.5rem] max-w-[100%] mx-auto">
     <div class="mb-[7.5rem]">
-        <h2 class="md:text-5xl text-4xl">Breaking Barriers Together</h2>
+        <h2 class="md:text-5xl text-4xl">{title}</h2>
     </div>
     <div class=" ">
-        <img class="w-full aspect-video rounder-md" src={image_src} alt=""/>
+        <img class="w-full aspect-video rounder-md" src={image} alt=""/>
     </div>
 </section>
 <style>

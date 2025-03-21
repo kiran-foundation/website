@@ -12,7 +12,6 @@ import BreakingBarriers from "../components/pratibha/BreakingBarriers.astro";
 import Faq from "../components/pratibha/FaqPratibha.astro";
 import FutuerBuilder from "../components/pratibha/FutuerBuilder.astro";
 import Mentoring from "../components/pratibha/Mentoring.astro";
-import HeroSection from "../components/pratibha/HeroSection.astro";
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -94,19 +93,26 @@ import HeroSection from "../components/pratibha/HeroSection.astro";
         width: 70%;
         justify-self: center;
       }
+
     }
     @media (max-width: 992px) {
       .wid {
         justify-self: center;
         width: 90%;
       }
+      .padding {
+      height: 5rem;
+    }
     }
     @media (max-width: 768px) {
       .wid {
         justify-self: center;
 
-        width: 95%;
+        width: 90%;
       }
+      .padding {
+      height: 5rem;
+    }
     }
   </style>
 </Layout>
