@@ -1,7 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
-
-
+import Button from "../common/button.astro";
 const { data } = await getEntry('volunteering', 'why-volunteer')
 
 ---
@@ -60,9 +59,21 @@ const { data } = await getEntry('volunteering', 'why-volunteer')
       </div>
 
       <!-- CTA Button -->
-      <a href={data.ctaLink} class="inline-block mt-4 px-6 py-3 rounded-md border-2 border-black font-poppins font-semibold bg-[#FF5722] text-white hover:bg-[#e64a19] transition">
+      <!-- <a href={data.ctaLink} class="inline-block mt-4 px-6 py-3 rounded-md border-2 border-black font-poppins font-semibold bg-[#FF5722] text-white hover:bg-[#e64a19] transition">
         {data.ctaText}
-      </a>
+        
+      </a> -->
+
+      <Button
+        link="/volunteering"
+        title={data.ctaText}
+        btn="btn1"
+        widthClass="w-[235px]"
+        heightClass="h-[60px]"
+      />
+
+
+
     </div>
   </div>
 </section>
