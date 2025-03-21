@@ -1,5 +1,6 @@
 ---
 import { getEntry } from "astro:content";
+import Button from "../common/button.astro";
 
 const { data } = await getEntry("volunteering", "why-intern");
 ---
@@ -52,12 +53,16 @@ const { data } = await getEntry("volunteering", "why-intern");
           }
         </div>
 
-        <!-- CTA Button -->
-        <button
-          class="mt-6 px-6 py-3 rounded-md bg-orange-600 text-white font-poppins font-semibold"
-        >
-          {data.buttonText}
-        </button>
+  
+
+        <Button
+        link="/volunteering"
+        title={data.buttonText}
+        btn="btn1"
+        widthClass="w-[235px]"
+        heightClass="h-[60px]"
+      />
+
       </div>
 
       
