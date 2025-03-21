@@ -1,29 +1,31 @@
 ---
+import { getEntry } from "astro:content";
+
+const futurebuilder = (await getEntry("pratibha" ,"future-builder"))
+
+const {title, paragraphs, button, imageGrid} = futurebuilder?.data ?? {};
+
 const image1 = "/assets/images/pratibha_page/future-group.png";
 const image2 = "/assets/images/pratibha_page/group-2.png";
 const image3 = "/assets/images/pratibha_page/group-1.png";
+
 ---
 
 <section class="max-w-[95%] mx-auto">
   <div class="flex flex-col md:flex-row gap-[2rem] md:max-h-[28.875rem]">
     <div class="text-block md:max-w-[30.75rem] max-w-[45.75rem] space-y-[1rem] font-poppins">
-      <h2 class="">Builder of Future</h2>
-      <p>
-        Mentors actively guide students by monitoring their progress,
-        facilitating communication with the Foundation’s administration, and
-        providing hands-on support. They challenge students to grow beyond their
-        comfort zones while offering practical guidance to overcome obstacles.
-      </p>
-      <p>
-        Want to learn more about how you can create an impact by becoming a
-        mentor?
-      </p>
+      <h2 class="">{title}</h2>
+      
+      {paragraphs.map((par) => (
+        <p>{par}</p>
+      ))}
+
       <div class="flex flex-col sm:flex-row gap-4 mb-12 mt-12">
         <a 
-          href="#" 
+          href={button.herf} 
           class="inline-flex font-poppins items-center justify-center px-3 py-[.75rem] bg-[#00AA5E] text-black rounded-md hover:bg-[#009b55] transition-colors font-semibold text-md"
         >
-        Become Member
+        {button.text}
         </a>
         </div>
       <!-- <div class="button p-1 md:p-3 bg-red-50 flex justify-center items-center"><a href=""></a></div> -->
@@ -37,27 +39,27 @@ const image3 = "/assets/images/pratibha_page/group-1.png";
     <div class="gallery-container flex-row space-y-3 py-3">
       <!-- First row with single image -->
       <div class="gallery-row">
-        <div class="gallery-item">
+        <div class="gallery-item  ">
           <img
-            src={image3}
+            src={imageGrid.image3}
             alt="Kiran Foundation team members standing in front of foundation banner"
           />
         </div>
       </div>
 
       <!-- Second row with image and accent block -->
-      <div class="gallery-container max-w-[37.5rem]">
+      <div class="gallery-container max-w-[25.5rem]">
         <!-- First row with single image -->
         <div class="gallery-row flex gap-2 ">
           <div class="gallery-item ">
             <img
-              src={image2}
+              src={imageGrid.image2}
               alt="Kiran Foundation team members standing in front of foundation banner"
             />
           </div>
-          <div class="gallery-item max-w-[50%] max-h-[100%] ">
+          <div class="gallery-item  ">
             <img
-              src={image2}
+              src={imageGrid.image2}
               alt="Kiran Foundation team members standing in front of foundation banner"
             />
           </div>

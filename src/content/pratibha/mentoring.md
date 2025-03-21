@@ -1,10 +1,28 @@
 ---
-title:  " Personal Mentoring"
-description:  " Personal mentoring is a unique proposition of the Kiran Foundation Scholarship. We believe in the holistic development of students to transform them into future leaders. Our students are some of the brightest minds in society, and they need to develop them into well-rounded individuals. This will empower them to bring about long-lasting, positive change in the world.
-Students are provided with counseling, guidance, and constant monitoring to ensure they are constantly challenged, which enables them to stay focused and achieve their full potential."
+title: "Career Guidance and Mentorship"
+image: "/assets/images/pratibha_page/mentoring.png" 
 
+description: [
+    "We provide our students with guidance and advice from mentors who are professionals in their field.",
+  ]
+subtitle: "They assist students with:"
 
+assist:
+  - svg: "assets/images/pratibha_page/svg/career.png"
+    title: "Career Planning"
 
-
-
+  - svg: "assets/images/pratibha_page/svg/skill.png"
+    title: "Skill Development"
+  
+  - svg: "assets/images/pratibha_page/svg/vector.png"
+    title: "Networking Opportunities"
+  
+  - svg: "assets/images/pratibha_page/svg/skill.png"
+    title: "Access to Skill-Building Workshops"
+  
+  - svg: "assets/images/pratibha_page/svg/education.png"
+    title: "Educational Resources"
+  
+  - svg: "assets/images/pratibha_page/svg/hands-on.png"
+    title: "Hands-on Training to Boost Academic and Professional Growth"
 ---
