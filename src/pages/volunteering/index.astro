@@ -2,7 +2,7 @@
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../../layouts/Layout.astro";
-import Hero from "../../components/volunteer/Hero.astro";
+//import Hero from "../../components/volunteer/Hero.astro";
 import WhyVolunteer from "../../components/volunteer/WhyVolunteer.astro";
 import ChooseVolunteering from "../../components/volunteer/ChooseVolunteering.astro";
 import WhyIntern from "../../components/volunteer/WhyIntern.astro";
@@ -10,13 +10,18 @@ import ChooseIntern from "../../components/volunteer/ChooseIntern.astro";
 import Faq from "../../components/volunteer/Faq.astro";
 import Volunteer from "../../components/home/Volunteer.astro"
 import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
+import Hero from "../../components/pratibha/Hero.astro";
+
 ---
 
 <Layout>
   
   <main class="page-wrapper">
+    <div class="mt-20 mb-5">home->volunteer</div>
+    <Hero collection="volunteering" slug="hero-volunteer"/>
+    
     <!-- <Hero /> -->
-    <WhyVolunteer />
+    <WhyVolunteer/>
     <!-- <ChooseVolunteering/> -->
   
     <!-- <Volunteer/> -->
