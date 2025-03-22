@@ -1,5 +1,6 @@
 ---
-title: "Any questions? Check out the FAQ"
+title: "Any questions?"
+title2: "Check out the FAQ"
 paragraph: "Certainly! The FAQ section provides answers to common questions. It covers a variety of topics and aims to address user queries efficiently."
 
 

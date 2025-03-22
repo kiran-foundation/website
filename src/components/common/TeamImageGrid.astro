@@ -1,0 +1,38 @@
+---
+const { imageSets, layoutType } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-4 justify-center">
+  {imageSets.map((images, index) => (
+    <div  class="max-w-[596px] h-[565px] p-2 bg-white grid gap-2"
+      class:list={
+        layoutType === 'two-by-two' ? 'grid-cols-2' :
+        layoutType === 'tall-left' ? 'grid-cols-3 grid-rows-2' :
+        layoutType === 'wide-top' ? 'grid-rows-3' : ''
+      }
+    >
+      {layoutType === 'two-by-two' && (
+        <>
+          <img src={images[0]} alt="Top Left" class="w-full h-auto rounded-lg object-cover" />
+          <img src={images[1]} alt="Top Right" class="w-full h-auto rounded-lg object-cover" />
+          <img src={images[2]} alt="Bottom Left" class="w-full h-auto rounded-lg object-cover" />
+          <img src={images[3]} alt="Bottom Right" class="w-full h-auto rounded-lg object-cover" />
+        </>
+      )}
+      {layoutType === 'tall-left' && (
+        <>
+          <img src={images[0]} alt="Tall Left" class="row-span-2 w-full h-full rounded-lg object-cover" />
+          <img src={images[1]} alt="Top Right" class="w-full h-auto rounded-lg object-cover" />
+          <img src={images[2]} alt="Bottom Right" class="w-full h-auto rounded-lg object-cover" />
+        </>
+      )}
+      {layoutType === 'wide-top' && (
+        <>
+          <img src={images[0]} alt="Wide Top" class="col-span-2 w-full h-auto rounded-lg object-cover" />
+          <img src={images[1]} alt="Bottom Left" class="w-full h-auto rounded-lg object-cover" />
+          <img src={images[2]} alt="Bottom Right" class="w-full h-auto rounded-lg object-cover" />
+        </>
+      )}
+    </div>
+  ))}
+</div>
