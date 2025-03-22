@@ -1,0 +1,66 @@
+---
+const { title, subLinks = [], className = "w-auto" } = Astro.props;
+---
+
+<style>
+  .scrollbar::-webkit-scrollbar {
+    width: 0px;
+    display: none; 
+  }
+  .scrollbar::-webkit-scrollbar-track{
+    background: red;
+  }
+  .scrollbar::-webkit-scrollbar-thumb{
+    width: 0px;
+  }
+  .scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+</style>
+
+
+<div class="group overflow-y-hidden scrollbar ">
+  <ul class="space-y-2 font-medium scrollbar">
+    <li>
+      <button
+        type="button"
+        class="flex scrollbar items-center w-full min-w-[342px] py-[16px] px-[24px] h-[76px] text-base text-gray-900 transition duration-75 hover:text-[#D33C0D]"
+      >
+        <span class="flex-1 text-left whitespace-nowrap">{title}</span>
+        <svg
+          class="w-3 h-3 group-hover:rotate-180 transition-transform"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 10 6"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 4 4 4-4"></path>
+        </svg>
+      </button>
+      {
+        subLinks.length > 0 && (
+          <ul
+            class={`${className} scrollbar bg-[#F7F6F6] py-[24px] px-[16px] hidden group-hover:block group-hover:delay-100 group-hover:transition-all duration-200 min-w-[342px] overflow-y-auto`}
+          >
+            {subLinks.map((el) => (
+              <li>
+                <a
+                  href={el.url || "#"}
+                  class="block py-[16px] px-[24px] text-[#1E1E1E] hover:text-[#D33C0D] transition text-base font-poppins text-nowrap scrollbar"
+                >
+                  {el.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </li>
+  </ul>
+</div>

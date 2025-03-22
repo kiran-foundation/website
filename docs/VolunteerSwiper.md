@@ -6,3 +6,11 @@ so, to change container styling pass prop as tailwind class named : `className={
                         `       <VolunteerSwiper Data={jobs} className={"!mb-0 bg-[#F1F1F1]"}/>       `
                         
 ----------------------------------------------------------------------------------------------------------------------------
+-------------------------------------Two use Button
+        <Button
+          link="/volunteering"
+          title="Become a Volunteer"
+          btn="btn1"                      [3 button option available here btn1,2,3]
+          widthClass="w-full"
+          heightClass="h-[60px]"
+        />
