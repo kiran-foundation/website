@@ -1,24 +1,24 @@
 ---
 import { getEntry } from "astro:content";
-const faqData = (await getEntry("pratibha", "faq")).data;
-
-
+const { collection, slug } = Astro.props;
+const faq = await getEntry(collection, slug) as { data: { title: string,  title2: string, paragraph: string, questions: { question: string, answer: string }[] } };
+const {title,title2, paragraph,questions} = faq.data ?? {};
 // import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 
 ---
 <section class="w-full max-w-[95%] mx-auto  flex flex-col md:flex-row gap-[7.5rem]">
-    <div class="w-full md:w-2/5"> <h2 class="font-poppins text-[2.125rem] font-bold text-gray-900 mb-2">{faqData.title.split('Check out the FAQ')[0]}</h2>
-        <h3 class="text-4xl font-bold text-[#1E1E1E] mb-6 font-poppins">Check out the FAQ</h3>
+    <div class="w-full md:w-2/5"> <h2 class="font-poppins text-[2.125rem] font-bold text-gray-900 mb-2">{title}</h2>
+        <h3 class="text-4xl font-bold text-[#1E1E1E] mb-6 font-poppins">{title2}</h3>
         
         <p class="text-[#49494C] font-[450] text-wrap text-[15px] md:min-w-[416px] md:max-h-[82px] md:pr-8 font-poppins">
-          {faqData.paragraph}
+          {paragraph}
         </p>
       </div>
       
       <div class="w-full md:w-3/5">
         <div class="space-y-4">
-          {faqData.questions.map((item, index) => (
+          {questions.map((item, index) => (
             <div  class=" border-[#1E1E1E] border-solid border-[0.0313rem] rounded-lg overflow-hidden">
               <details class="group">
                 <summary class=" font-poppins w-full px-6 py-4 flex items-center justify-between text-left font-medium cursor-pointer">
