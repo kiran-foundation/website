@@ -1,37 +1,51 @@
 ---
-const { title, subLinks = [],className='w-auto'} = Astro.props;
+const { title, subLinks = [], className = "w-auto" } = Astro.props;
+// console.log(title.url);
 ---
 
-<div class="group relative  p-1 group">
-  <button class="flex items-center gap-2 font-poppins font-medium text-base text-[#1E1E1E]"
-    >{title}
-    <svg
-      class="w-4 h-4 group-hover:rotate-180 transition-transform"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div
-    class="absolute left-0 bg-white border border-gray-500 rounded-lg transform scale-50 transition-all duration-300 hidden group-hover:block group-hover:scale-100 py-[12px]"
+<div
+  class="group relative py-[6px] pl-[32px] pr-[16px] h-[56px] flex justify-center items-center"
+>
+  <button
+    class="flex items-center font-poppins font-medium text-base text-[#1E1E1E] hover:text-[#D33C0D]"
   >
-  <ul class=`${className}`>
-      {subLinks.map((el) => (
-        <li>
-          <a
-            href={el.url || "#"}
-            class="block px-[20px] py-1 text-[#1E1E1E] hover:text-[#D33C0D] transition text-base font-poppins text-nowrap "
+    <a href={title.url ||"#"}  class=" flex items-center font-poppins">
+      {title.name}
+      {
+        subLinks.length > 0 && (
+          <svg
+            class="w-11 h-4 group-hover:rotate-180 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            {el.name}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        )
+      }
+    </a>
+  </button>
+  {
+    subLinks.length > 0 && (
+      <div class="absolute top-11 left-1/2 -translate-x-1/2 w-[292px] bg-white border border-gray-500 rounded-lg transform scale-50 transition-all duration-300 hidden group-hover:block group-hover:scale-100 py-[24px] px-[16px]">
+        <ul class={`${className}  p-0 flex flex-col gap-[12px]`}>
+          {subLinks.map((el) => (
+            <li>
+              <a
+                href={el.url || "#"}
+                class="block px-[20px] py-1  text-[#1E1E1E] hover:text-[#D33C0D] transition text-base font-poppins text-nowrap"
+              >
+                {el.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
 </div>
