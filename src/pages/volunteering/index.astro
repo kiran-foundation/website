@@ -2,22 +2,23 @@
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../../layouts/Layout.astro";
-//import Hero from "../../components/volunteer/Hero.astro";
 import WhyVolunteer from "../../components/volunteer/WhyVolunteer.astro";
 import ChooseVolunteering from "../../components/volunteer/ChooseVolunteering.astro";
 import WhyIntern from "../../components/volunteer/WhyIntern.astro";
 import ChooseIntern from "../../components/volunteer/ChooseIntern.astro";
-import Faq from "../../components/volunteer/Faq.astro";
 import Volunteer from "../../components/home/Volunteer.astro"
 import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
 import Hero from "../../components/pratibha/Hero.astro";
+import Faq from "../../components/common/FaqPratibha.astro";
+import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
 
 ---
 
 <Layout>
   
   <main class="page-wrapper">
-    <div class="mt-20 mb-5">home->volunteer</div>
+    <div class="mt-20 mb-5 ml-72"><Breadcrumb pageName="volunteer"  /></div>
+
     <Hero collection="volunteering" slug="hero-volunteer"/>
     
     <!-- <Hero /> -->
@@ -38,8 +39,13 @@ import Hero from "../../components/pratibha/Hero.astro";
 </h1>
 
      <TestimonialsCarousel pageTag="home"/>
+
+     <div class="w-full max-w-6xl h-[30rem]  bg-gray-300 mx-auto flex items-center justify-center m-6">
+      <span class="text-gray-500">Image Placeholder</span>
+    </div>
+    
      
-    <Faq/>
+    <Faq collection="volunteering" slug="faq"/>
   </main>
 
   <a
