@@ -2,10 +2,12 @@
 title: "Navigation Links"
 description: "Explore various sections of our platform."
 navigation:
-  - title: "Kiran Pratibha"
+  - title:
+      name: "Pratibha Scholarship"
+      url: "/pratibha"
     links:
       - name: "Programme Details"
-        url: "/pratibha/programme-details"
+        url: "/pratibha"
       - name: "Selection Process"
         url: "/pratibha/selection-process"
       - name: "Current Students"
@@ -15,41 +17,50 @@ navigation:
       - name: "Apply"
         url: "/pratibha/apply"
   
-  - title: "Kiran Shakti"
+  - title:
+      name: "Shakti Courses"
+      url: "/shakti"
     links:
-      - name: "Programme Details"
-        url: "/shakti/programme-details"
+      - name: "Shakti Details"
+        url: "/shakti"
       - name: "Workshop Schedule"
         url: "/shakti/workshop-schedule"
-      - name: "Essential Financial Skills"
+      - name: "Financial Skills"
         url: "/shakti/essential-financial-skills"
-      - name: "Essential Digital Skills"
+      - name: "Digital Skills"
         url: "/shakti/essential-digital-skills"
-      - name: "Everyday Law for Women"
+      - name: "Law for Women"
         url: "/shakti/everyday-law-for-women"
       - name: "English Speaking Club"
         url: "/shakti/english-speaking-club"
-      - name: "Join"
+      - name: "Join Sakti"
         url: "/shakti/join"
   
-  - title: "Who We Are?"
+  - title:
+      name: "Who We Are?"
+      url: "/about"
     links:
       - name: "About Us"
-        url: "/about-us"
-      - name: "Our Team"
-        url: "/team"
-      - name: "Our Vision"
-        url: "/vision"
-  
-  - title: "Resources"
-    links:
-      - name: "Updates"
+        url: "/about"
+      - name: "Resources"
+        url: "/resources"
+      - name: "News and Updates"
         url: "/updates"
       - name: "Gallery"
         url: "/gallery"
+      - name: "Our Team"
+        url: "/team"
   
-  - title: "Contact Us"
+  - title:
+      name: "Work with Us"
+      url: "/volunteering"
     links:
-      - name: "Contact Us"
-        url: "/contact"
+      - name: "Volunteer with Us"
+        url: "/volunteering"
+      - name: "Internship Opportunities"
+        url: "/volunteering"
+  
+  - title:
+      name: "Contact Us"
+      url: "/contact"
 ---

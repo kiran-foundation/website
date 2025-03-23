@@ -5,7 +5,7 @@ const headerDetails = (await getEntry("header", "details")).data;
 import Button from "./button.astro";
 const Language = [
   {
-    title: "En",
+    title: { name: "En", url: "/" },
     links: [
       { name: "English", url: "" },
       { name: "Hindi", url: "" },
@@ -17,15 +17,17 @@ import SlidbarDropdown from "./SlidbarDropdown.astro";
 ---
 
 <header class="w-full h-[84px] z-50 fixed py-3 bg-white">
-  <nav class="h-full mx-[24px] md:mx-[64px] xl:mx-[132px] flex justify-between items-center">
-    <!-- _________________________________________________________for desktop ________________________________________________________  -->
+  <nav
+    class="h-full mx-[24px] md:mx-[64px] xl:mx-2 2xl:mx-[132px] flex justify-between items-center"
+  >
+    <!-- _______________________________for desktop ______________________________  -->
 
     <!-- _______________lOGO_____________ -->
     <div>
       <a href="/" class="flex items-center shrink-0">
         <img
           src="/logo2.png"
-          class="w-[100px] h-[58px]"
+          class="w-[120px] h-[68px]"
           alt="kiran foundation logo"
         />
       </a>
@@ -50,36 +52,47 @@ import SlidbarDropdown from "./SlidbarDropdown.astro";
         link="/volunteering"
         title="Support Us"
         btn="btn3"
-        widthClass="!h-[20px] !min-h-[48px] text-[16px] font-medium min-w-[138px] hidden xl:block"
+        widthClass="!h-[20px] !min-h-[48px] text-[16px] font-medium !min-w-[138px] hidden xl:block"
       />
     </div>
 
-    <!-- _________________________________________________________for Mobile Drawer ________________________________________________________  -->
+    <!-- _____________________________for Mobile Drawer ___________________________  -->
 
     <!-- drawer init and show -->
     <div class="block xl:hidden text-center">
       <button
-        class="bg-white font-medium rounded-lg text-sm  p-1 shadow-sm"
+        class="bg-white font-medium rounded-md text-sm p-1 shadow-sm"
         type="button"
         data-drawer-target="drawer-navigation"
         data-drawer-show="drawer-navigation"
         aria-controls="drawer-navigation"
       >
         <svg
-          width="56px"
-          height="56px"
+          width="35px"
+          height="35px"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          stroke="#000000"
           ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
             id="SVGRepo_tracerCarrier"
             stroke-linecap="round"
             stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
             <path
-              d="M5 8H13.75M5 12H19M10.25 16L19 16"
-              stroke="#464455"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
+              d="M4 18L20 18"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"></path>
+            <path
+              d="M4 12L20 12"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"></path>
+            <path
+              d="M4 6L20 6"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"></path>
           </g></svg
         >
       </button>
