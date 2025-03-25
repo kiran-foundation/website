@@ -33,18 +33,19 @@ import SlidbarDropdown from "./SlidbarDropdown.astro";
       </a>
     </div>
     <!-- ______________DropDowns____________ -->
-    <div class="hidden xl:flex items-center justify-center gap-6">
+    <div class="hidden xl:flex items-center justify-center gap-2 2xl:gap-6">
       {
         headerDetails?.navigation?.map((el) => (
           <DropDown title={el.title} subLinks={el.links} />
         ))
       }
     </div>
+        <!-- ______________DropDowns____________ -->
     <div class="flex items-center justify-center gap-6">
       <div class="hidden xl:block">
         {
           Language.map((el) => (
-            <DropDown title={el.title} subLinks={el.links} />
+            <DropDown title={el.title} subLinks={el.links} className={'!w-[155px]'}/>
           ))
         }
       </div>
