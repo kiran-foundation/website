@@ -1,63 +1,64 @@
 ---
 import { getEntry } from "astro:content";
+import PratibhaLayout from "../../layouts/PratibhaLayout.astro";
 
-const futurebuilder = (await getEntry("pratibha" ,"future-builder"))
+const futurebuilder = await getEntry("pratibha", "future-builder");
 
-const {title, paragraphs, button, imageGrid} = futurebuilder?.data ?? {};
-
-const image1 = "/assets/images/pratibha_page/future-group.png";
-const image2 = "/assets/images/pratibha_page/group-2.png";
-const image3 = "/assets/images/pratibha_page/group-1.png";
-
+const { title, paragraphs, button, imageGrid } = futurebuilder?.data ?? {};
+const { mt } = Astro.props;
 ---
 
-<section class="max-w-[95%] mx-auto">
-  <div class="flex flex-col md:flex-row gap-[2rem] md:max-h-[28.875rem]">
-    <div class="text-block md:max-w-[30.75rem] max-w-[45.75rem] space-y-[1rem] font-poppins">
-      <h2 class="">{title}</h2>
-      
-      {paragraphs.map((par) => (
-        <p>{par}</p>
-      ))}
+<PratibhaLayout mt={  `${mt} gap-16`}>
+  <Fragment slot="content">
+    <!-- <section class="max-w-[95%] mx-auto md:gap-16 flex"> -->
+    <div class="fq flex flex-col   md:max-w-[39.75rem]">
+      <div class="md:max-w-[39.75rem] space-y-[1.5rem] max-w-[45.75rem] font-poppins">
+        <h2 class="text-[2rem]">{title}</h2>
 
-      <div class="flex flex-col sm:flex-row gap-4 mb-12 mt-12">
-        <a 
-          href={button.herf} 
-          class="inline-flex font-poppins items-center justify-center px-3 py-[.75rem] bg-[#00AA5E] text-black rounded-md hover:bg-[#009b55] transition-colors font-semibold text-md"
-        >
-        {button.text}
-        </a>
+        {paragraphs.map((par) => <p>{par}</p>)}
+
+        <div class="flex flex-col sm:flex-row mt-[1.5rem]  ">
+          <a
+            href={button.herf}
+            class="inline-flex font-poppins items-center justify-center px-3 py-[.75rem] bg-[#00AA5E] text-black rounded-md hover:bg-[#009b55] transition-colors font-semibold text-md"
+          >
+            {button.text}
+          </a>
         </div>
-      <!-- <div class="button p-1 md:p-3 bg-red-50 flex justify-center items-center"><a href=""></a></div> -->
-    </div>
-    <!-- <div class="flex  flex-row flex-wrap p-4 space-y-0 ">
-        <div class="  ">
-            <img src={image1} alt="">
-        </div>
-        
+        <!-- <div class="button p-1 md:p-3 bg-red-50 flex justify-center items-center"><a href=""></a></div> -->
+      </div>
+      <!-- <div class="flex  flex-row flex-wrap p-4 space-y-0 ">
+    <div class="  ">
+      <img src={image1} alt="">
+      </div>
+      
       </div> -->
-    <div class="gallery-container flex-row space-y-3 py-3">
+    </div>
+  </Fragment>
+
+  <Fragment slot="image-grid">
+    <div class="gallery-container flex-row space-y-3 py-1 md:max-w-[596px]">
       <!-- First row with single image -->
-      <div class="gallery-row">
-        <div class="gallery-item  ">
+      <div class="gallery-row max-w-full">
+        <div class="gallery-item md:max-h-[50%]">
           <img
-            src={imageGrid.image3}
+            src={imageGrid.image}
             alt="Kiran Foundation team members standing in front of foundation banner"
           />
         </div>
       </div>
 
       <!-- Second row with image and accent block -->
-      <div class="gallery-container max-w-[25.5rem]">
+      <div class="gallery-container ">
         <!-- First row with single image -->
-        <div class="gallery-row flex gap-2 ">
-          <div class="gallery-item ">
+        <div class="gallery-row flex gap-2">
+          <div class="gallery-item max-w-[80%]">
             <img
-              src={imageGrid.image2}
+              src={imageGrid.image}
               alt="Kiran Foundation team members standing in front of foundation banner"
             />
           </div>
-          <div class="gallery-item  ">
+          <div class="gallery-item ">
             <img
               src={imageGrid.image2}
               alt="Kiran Foundation team members standing in front of foundation banner"
@@ -68,15 +69,15 @@ const image3 = "/assets/images/pratibha_page/group-1.png";
         <!-- Second row with image and accent block -->
       </div>
     </div>
-  </div>
-</section>
+  </Fragment>
+</PratibhaLayout>
 
 <style>
-  .text-block {
+  /* .text-block {
     max-width: 29rem;
     max-height: 27rem;
     gap: 48px;
-  }
+  } */
   h2 {
     font-family: Poppins;
     font-weight: 600;
@@ -87,20 +88,34 @@ const image3 = "/assets/images/pratibha_page/group-1.png";
   p {
     font-family: Poppins;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 36px;
+    font-size: 1.125rem;
+    line-height: 2.25rem;
     letter-spacing: 0%;
   }
   .button {
     width: 10.625rem;
-height: 3.4375rem;
-/* gap: 1px; */
-border-radius: 8px;
-/* padding-top: 18px;
+    height: 3.4375rem;
+    /* gap: 1px; */
+    border-radius: 8px;
+    /* padding-top: 18px;
 padding-right: 24px;
 padding-bottom: 18px;
 padding-left: 24px; */
 
-background-color: #00AA5E;
+    background-color: #00aa5e;
   }
+  @media (max-width: 1024px) {
+   .fq {
+    flex-direction: column;
+    
+  }
+  .kiran-images {
+      
+      width: 100%;
+    }
+    .ds {
+      max-width: 39.5rem;
+    }
+}
+
 </style>

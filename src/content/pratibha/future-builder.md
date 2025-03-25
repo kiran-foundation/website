@@ -15,7 +15,7 @@ button:
   text: "Become Member"
   
 imageGrid:
-  image: "/assets/images/pratibha_page/future-group.png"
+  image: "/assets/images/pratibha_page/group-1.png"
   image2: "/assets/images/pratibha_page/group-2.png"
-  image3: "/assets/images/pratibha_page/group-2.png"
+  image3: "/assets/images/pratibha_page/group-3.png"
 ---

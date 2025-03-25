@@ -3,74 +3,70 @@ import { getEntry } from "astro:content";
 import TestimonialsCarousel from "../common/TestimonialsCarousel.astro";
 import Button from "../common/button.astro";
 const selectionProcess = (await getEntry("pratibha", "selection-process")).data;
+const {heading, eligiblity,paragraph,subheading, documents,apply,applylist,applyButton,statusButton} = selectionProcess;
 const common = (await getEntry("common", "common")).data;
-// console.log(common);
+// console.log(selectionProcess);
+const {mt} = Astro.props;
 ---
 
-<section class=" bg-[#f1f1f1] py-[6.25rem] font-serif">
+<section class:list={[" bg-[#f1f1f1] py-[6.25rem]  ",[mt]]}>
   <div class="container mx-auto  md:w-[70%]">
-    <h1 class="mt-0 mb-[2rem]">Selection Process</h1>
+    <h1 class="mt-0 mb-[2rem] font-merriweather">{heading}</h1>
 
     <div class="mb-12">
-      <h2 class="mb-6">Eligibility</h2>
+      <h2 class="mb-6">{eligiblity}</h2>
       <ul class="text-[1.12rem] list-disc pl-6 space-y-4 text-lg">
-        <li>Monthly income of the Family should be less than Rs. 20,000.</li>
-        <li>Child should have passed 8th Standard or 14 Years of age.</li>
-        <li>
-          Child should have shown enormous potential in his/her field of
-          interest.
-        </li>
+        {
+         paragraph.map((para)=> (
+          
+          <li>{para}</li>
+        ))
+        }
+        
       </ul>
     </div>
 
     <div class="mb-12">
-      <h2 class="mb-6">Documents</h2>
+      <h2 class="mb-6">{subheading}</h2>
       <ul class="list-disc pl-6 space-y-4 text-lg">
-        <li>Previous year's Marksheets</li>
-        <li>Identity proof (Aadhaar Card/Voter ID/Driving License)</li>
-        <li>
-          Two recommendation letters from school principle / college principle
-        </li>
+        {documents.map((list) => (
+          
+          <li>{list}</li>
+        ) )}
       </ul>
-      <p class="my-2">and Respectable person of your area.</p>
-      <ul class="list-disc pl-6 space-y-4 text-lg">
-        <li>Income certificate.</li>
-        <li>details of family/personal crisis (if applicable)</li>
-      </ul>
+
+
     </div>
 
     <div class="mb-12">
-      <h2 class="ml-0 mb-6">How can I apply?</h2>
+      <h2 class="ml-0 mb-6">{apply}</h2>
       <ul class="list-disc font-poppins pl-6 space-y-4 text-lg pb-2">
-        <li>click on the Apply now button below</li>
-        <li>Fill in the required details in the online application form.</li>
-        <li>Upload relevant documents</li>
-        <li>
-          check if all the details filled in the application are correctly
-          showing on the preview screen
-        </li>
-        <li>
-          click on the 'Submit' button to complete the application process
-        </li>
+        {
+          applylist.map((item) => (
+            
+            <li>{item}</li>
+          ))
+
+        }
       </ul>
     </div>
     <!-- <Button/> -->
     <div class="flex flex-col sm:flex-row gap-4 mt-10">
       <a 
-        href="#" 
+        href={applyButton?.title} 
         class="inline-flex items-center justify-center px-3 py-[.75rem] bg-[#D9340B] text-white rounded-md hover:bg-[#C02F0A] transition-colors font-medium text-lg"
       >
-        Apply for Scholarship
+        {applyButton.title}
       </a>
       <a 
-        href="#" 
-        class="inline-flex items-center justify-center px-3 py-2 bg-white border border-gray-300 text-gray-900 rounded-md hover:bg-gray-50 transition-colors font-medium text-lg"
+        href={statusButton?.herf} 
+        class="inline-flex items-center justify-center px-3 py-[.75rem] bg-white border border-gray-300 text-gray-900 rounded-md hover:bg-gray-50 transition-colors font-medium text-lg"
       >
-        See All Current Students
+        { statusButton?.title}
       </a>
     </div>
     <div class="padding m-[7.5rem]"></div>
-    <TestimonialsCarousel pageTag="pratibha" />
+    <TestimonialsCarousel pageTag="home" />
   </div>
 </section>
 
