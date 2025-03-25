@@ -1,20 +1,29 @@
 ---
 import { getEntry } from "astro:content";
+import PratibhaLayout from "../../layouts/PratibhaLayout.astro";
 const aboutPratibha = (await getEntry("pratibha", "about")).data;
 // console.log(aboutPratibha);
 const { title, description,image1,image2,image3 } = aboutPratibha;
 // console.log(aboutPratibha);
+const {mt} = Astro.props;
+// console.log(mt);
+
 ---
 
-<section class="kiran-section">
-  <div class="kiran-container">
-    <div class="kiran-content">
+
+  
+<PratibhaLayout mt={mt}>
+  <Fragment slot="content">
+  <div class="kiran-container ">
+    <div class="kiran-content max-w-[39.75rem]">
       <h1 class="kiran-title">{title}</h1>
 
-      {description.map((item) => <p class="kiran-description">{item}</p>)}
+      {description.map((item) => <p class="kiran-description md:w-[90%]">{item}</p>)}
     </div>
+</Fragment>
+<Fragment slot="image-grid">
 
-    <div class="kiran-images">
+    <div class="kiran-images max-w-[596px]">
       <div class="image-top">
         <img
           src={image1}
@@ -40,7 +49,9 @@ const { title, description,image1,image2,image3 } = aboutPratibha;
       </div>
     </div>
   </div>
-</section>
+  
+</Fragment>
+</PratibhaLayout>
 
 <style>
   /* Kiran Component Styles */
@@ -49,7 +60,7 @@ const { title, description,image1,image2,image3 } = aboutPratibha;
   .kiran-section {
     width: 100%;
     max-width: 90rem;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /* padding: 0rem 0rem; */
     font-family: "Merriweather", serif;
   }
@@ -146,17 +157,19 @@ const { title, description,image1,image2,image3 } = aboutPratibha;
   }
 
   /* Responsive design */
-  @media (max-width: 64rem) {
+  /* @media (max-width: 1024px) {
     .kiran-title {
       font-size: 2.8rem;
     }
-
+    .kiran-container {
+      flex-direction: column;
+    }
     .kiran-description {
       font-size: 1.15rem;
     }
-  }
+  } */
 
-  @media (max-width: 48rem) {
+  @media (max-width: 1024px) {
     .kiran-container {
       flex-direction: column-reverse;
     }
@@ -171,7 +184,7 @@ const { title, description,image1,image2,image3 } = aboutPratibha;
     }
   }
 
-  @media (max-width: 30rem) {
+  @media (max-width: 480px) {
     .kiran-section {
       /* padding: 2rem 1rem; */
     }

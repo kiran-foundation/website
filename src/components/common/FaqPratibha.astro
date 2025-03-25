@@ -1,13 +1,18 @@
 ---
 import { getEntry } from "astro:content";
+import PratibhaLayout from "../../layouts/PratibhaLayout.astro";
 const { collection, slug } = Astro.props;
 const faq = await getEntry(collection, slug) as { data: { title: string,  title2: string, paragraph: string, questions: { question: string, answer: string }[] } };
 const {title,title2, paragraph,questions} = faq.data ?? {};
 // import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+const {mt} = Astro.props;
 
 
 ---
-<section class="w-full max-w-[95%] mx-auto  flex flex-col md:flex-row gap-[7.5rem]">
+<PratibhaLayout mt={mt}>
+
+<!-- <section class="w-full max-w-[95%] mx-auto  flex flex-col md:flex-row gap-[7.5rem]"> -->
+ <Fragment slot="content">
     <div class="w-full md:w-2/5"> <h2 class="font-poppins text-[2.125rem] font-bold text-gray-900 mb-2">{title}</h2>
         <h3 class="text-4xl font-bold text-[#1E1E1E] mb-6 font-poppins">{title2}</h3>
         
@@ -15,8 +20,10 @@ const {title,title2, paragraph,questions} = faq.data ?? {};
           {paragraph}
         </p>
       </div>
+    </Fragment>
+ <Fragment slot="image-grid">
       
-      <div class="w-full md:w-3/5">
+      <div class="w-full md:w-3/5 pt-[1.5rem]">
         <div class="space-y-4">
           {questions.map((item, index) => (
             <div  class=" border-[#1E1E1E] border-solid border-[0.0313rem] rounded-lg overflow-hidden">
@@ -36,4 +43,6 @@ const {title,title2, paragraph,questions} = faq.data ?? {};
           ))}
         </div>
       </div>
-    </section>
+    </Fragment>
+    <!-- </section> -->
+  </PratibhaLayout>

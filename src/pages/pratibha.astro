@@ -12,6 +12,7 @@ import BreakingBarriers from "../components/pratibha/BreakingBarriers.astro";
 import Faq from "../components/common/FaqPratibha.astro";
 import FutuerBuilder from "../components/pratibha/FutuerBuilder.astro";
 import Mentoring from "../components/pratibha/Mentoring.astro";
+
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -26,30 +27,38 @@ import Mentoring from "../components/pratibha/Mentoring.astro";
 <Layout title="Pratibha">
   <!-- Page wrapper -->
 
-  <main class="page-wrapper flex flex-col justify-center items-center">
+  <main class="page-wrper">
     <div class="h-[4rem]"></div>
     <div class="wid"><Breadcrumb pageName="Pratibha Scholarship"  /></div>
     <Hero collection="pratibha" slug="hero" />
 
     <div class="padding"></div>
     <div class="wid">
-      <Intro />
-      <div class="padding"></div>
-      <Mentoring />
-      <div class="padding"></div>
-      <BenefitOne />
-      <div class="padding"></div>
+      <Breadcrumb />
+    </div>
+    <Hero collection="pratibha" slug="hero" />
 
-      <BreakingBarriers />
-    </div>
-    <SelectionProcess />
-    <div class="padding"></div>
-    <div class="wid"><FutuerBuilder /></div>
-    <div class="padding"></div>
-    <div class="wid">
-      <Faq collection="pratibha" slug="faq" />
-      <div class="padding"></div>
-    </div>
+    <!-- <div class="padding"></div> -->
+    <!-- <div class="wid"> -->
+      <Intro mt="mt-[5.375rem] md:mt-[11.5rem]"/>
+      <!-- <div class="padding"></div> -->
+      <Mentoring mt="mt-[5.375rem] md:mt-[11.5rem]"/>
+      <!-- <div class="padding"></div> -->
+      <BenefitOne mt="mt-[5.375rem] md:mt-[7.5rem]" />
+      <!-- <div class="padding"></div> -->
+
+      <BreakingBarriers mt="mt-[5.375rem] md:mt-[7.5rem]"/>
+    <!-- </div> -->
+    <SelectionProcess mt="mt-[5.375rem] md:mt-[7.5rem]" />
+    <!-- <div class="padding"></div> -->
+    <!-- <div class="wid"> -->
+      <FutuerBuilder mt="mt-[5.375rem] md:mt-[11.5rem]"/>
+    <!-- </div> -->
+    <!-- <div class="padding"></div> -->
+    <!-- <div class="wid"> -->
+      <Faq collection="pratibha" slug="faq" mt="mt-[5.375rem] md:mt-[11.5rem] mb-[7.5rem]" />
+      <!-- <div class="padding"></div> -->
+    <!-- </div> -->
 
     <!-- Back to top button -->
 
@@ -79,7 +88,12 @@ import Mentoring from "../components/pratibha/Mentoring.astro";
 
   <style>
     main {
-      /* width: 100%; */
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* align-self: center; */
+      align-items: center;
+      /* justify-content: center; */
     }
     .padding {
       height: 11.5rem;

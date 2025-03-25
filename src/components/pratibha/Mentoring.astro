@@ -1,30 +1,33 @@
 ---
 import { getEntry } from "astro:content"
+import PratibhaLayout from "../../layouts/PratibhaLayout.astro";
 const aboutMentoring =(await getEntry("pratibha", "mentoring")).data
 // const image ="/assets/images/pratibha_page/mentoring.png"
 // console.log(aboutMentoring);
-
+const {mt} = Astro.props;
 const {title, image, description,subtitle,assist} = aboutMentoring;
 
 ---
-<section class="w-full max-w-7xl mx-auto  font-serif">
-  <div class=" rounded-md  flex flex-col md:flex-row ">
-    <div class="w-[95%] mx-auto md:w-1/2 pr-0 md:pr-8 ">
+ 
+<PratibhaLayout mt={mt}>
+  <Fragment slot="content">
+  <div class="kiran-containers sm:w-[100%]  flex flex-col md:flex-row gap-16">
+    <div class="kira-content sm:w-[100%] mx-auto   ">
       <h2 class="text-3xl font-normal text-gray-900 mb-6 font-poppins">{title}</h2>
-      {description.map((item) => <p class="text-gray-700 text-lg mb-6">{item}</p>)}
+      {description.map((item: string) => <p class="text-gray-700 text-lg mb-6">{item}</p>)}
       
       
       <ul class="space-y-5">
       
-      <p class="text-gray-700 text-lg mb-4">{subtitle}</p>
-      {assist.map((item) => (
+      <p class="text-gray-700 text-lg mb-6">{subtitle}</p>
+      {assist.map((item: { svg: string; title: string }) => (
 
-        <li class="flex items-center gap-5">
+        <li class="flex items-center gap-6">
           <div class="w-8 h-8 flex items-center justify-center">
             <img src={item?.svg} alt={item?.title + " png "}>
               
           </div>
-          <span class="text-lg font-medium">{item?.title}</span>
+          <span class="text-[1.5rem] font-medium">{item?.title}</span>
             {/* <pre>{JSON.stringify(item)}</pre> */}
         </li>
         
@@ -32,8 +35,9 @@ const {title, image, description,subtitle,assist} = aboutMentoring;
         
       </ul>
     </div>
-    
-    <div class="w-full md:w-1/2 mt-8 md:mt-12">
+  </Fragment>
+<Fragment slot="image-grid">
+    <div class="img-grid w-full  mt-8 md:mt-12 ">
       <div class="">
         <div class="max-w-[37.5rem] ">
           <img 
@@ -58,7 +62,8 @@ const {title, image, description,subtitle,assist} = aboutMentoring;
       </div>
     </div>
   </div>
-</section>
+</Fragment>
+</PratibhaLayout>
 <style>
   h2{
     font-family: Poppins;
@@ -84,5 +89,27 @@ line-height: 110%;
 letter-spacing: 0%;
 color: #1E1E1E;
 
+  }
+@media (max-width: 1024px) {
+    .kiran-containers {
+      flex-direction: column;
+    }
+
+    .kiran-title {
+      font-size: 2.5rem;
+    }
+
+    .kiran-images {
+      order: -1;
+      width: 100%;
+    }
+    .kira-content {
+      max-width: 39.75rem;
+    }
+    .img-grid {
+      max-width: 39.75rem;
+
+      align-self: center;
+    }
   }
 </style>

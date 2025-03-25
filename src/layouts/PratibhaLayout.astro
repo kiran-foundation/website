@@ -1,0 +1,23 @@
+---
+const { mt, secTitle } = Astro.props;
+console.log(mt);
+
+---
+
+<section class:list={[" md:max-w-[80rem] mx-auto max-w-[98%] flex flex-col px-[1.5rem] md:flex-row      ",[mt]]}>
+
+      <slot name="content" />
+      
+      <slot name="image-grid" />
+</section>
+<style>
+  @media (max-width: 1260px) {
+    section {
+      flex-direction: column;
+      /* padding: 2rem 1rem; */
+    }
+  }
+  .breaking {
+    flex-direction: column;
+  }
+</style>
