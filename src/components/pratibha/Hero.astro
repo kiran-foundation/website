@@ -131,7 +131,9 @@ const {greenUnderline, heading, heading2, description, image, heroSubtitle } = h
     .hero-container {
       max-width: 70%;
     }
-
+    .hero-section {
+      height: 43vb;
+    }
     .hero-image {
       right: -8rem;
       max-width: 22rem;
@@ -140,6 +142,9 @@ const {greenUnderline, heading, heading2, description, image, heroSubtitle } = h
 
   /* Medium screens */
   @media (max-width: 1024px) {
+    .hero-section {
+      height: 39vb;
+    }
     .hero-container {
       max-width: 80%;
     }
@@ -191,27 +196,31 @@ const {greenUnderline, heading, heading2, description, image, heroSubtitle } = h
     }
 
     .hero-text {
+      max-width: 75%;
       font-size: 0.9rem;
       line-height: 1.4;
+      word-break: normal;
     }
 
     .hero-image {
-      max-width: 40%;
+      max-width: 23vb;
       right: 0;
     }
   }
 
   /* Mobile screens */
-  @media (max-width: 576px) {
+  @media (max-width: 600px) {
     .hero-section {
-      height: auto;
-      padding: 2rem 0;
+      height: 25vb;
+      padding: 3rem 0;
+
     }
 
     .hero-container {
       padding: 0 1rem;
       max-width: 100%;
       margin-left: 0;
+      
     }
 
     .hero-titles {
