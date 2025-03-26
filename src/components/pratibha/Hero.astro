@@ -14,7 +14,11 @@ const {greenUnderline, heading, heading2, description, image, heroSubtitle } = h
 
 <section class="hero-section">
   <div class="hero-container">
-    <div class="hero-content">
+    <div class="hero-content"
+    data-aos="fade-right"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
       <h1 class="hero-titles">
         <span class="highlight-underline">{greenUnderline}</span>
         {heading}
@@ -29,7 +33,11 @@ const {greenUnderline, heading, heading2, description, image, heroSubtitle } = h
       </div>
     </div>
 
-    <div class="hero-image">
+    <div class="hero-image"
+    data-aos="fade-left"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
       <img src={image} alt="Student with folder smiling" />
     </div>
   </div>
@@ -47,13 +55,14 @@ const {greenUnderline, heading, heading2, description, image, heroSubtitle } = h
     font-family: "Source Serif Pro", serif;
     height: 25.825rem;
     /* overflow: hidden; */
+    margin-top: 8.3125rem;
   }
 
   .hero-container {
     display: flex;
     height: 100%;
     align-items: center;
-    max-width: 60%;
+    max-width: 64%;
     margin: 0 auto;
     padding: 0 1rem;
     position: relative;
@@ -114,7 +123,7 @@ const {greenUnderline, heading, heading2, description, image, heroSubtitle } = h
 
   .hero-image {
     position: absolute;
-    right: -10%;
+    right: 4%;
     bottom: 0;
     max-width: 23.4375rem;
     height: auto;
