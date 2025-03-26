@@ -12,7 +12,6 @@ import BreakingBarriers from "../components/pratibha/BreakingBarriers.astro";
 import Faq from "../components/common/FaqPratibha.astro";
 import FutuerBuilder from "../components/pratibha/FutuerBuilder.astro";
 import Mentoring from "../components/pratibha/Mentoring.astro";
-
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -29,38 +28,23 @@ import Mentoring from "../components/pratibha/Mentoring.astro";
 
   <main class="page-wrper">
     <div class="h-[4rem]"></div>
-    <div class="wid"><Breadcrumb pageName="Pratibha Scholarship"  /></div>
+    <div class="wid"><Breadcrumb pageName="Pratibha Scholarship" /></div>
     <Hero collection="pratibha" slug="hero" />
+    <Intro mt="mt-[5.375rem] md:mt-[11.5rem]" />
 
-    <div class="padding"></div>
-    <div class="wid">
-      <Breadcrumb />
-    </div>
-    <Hero collection="pratibha" slug="hero" />
+    <BenefitOne mt="mt-[5.375rem] md:mt-[7.5rem]" />
+    <Mentoring mt="mt-[5.375rem] md:mt-[11.5rem]" />
 
-    <!-- <div class="padding"></div> -->
-    <!-- <div class="wid"> -->
-      <Intro mt="mt-[5.375rem] md:mt-[11.5rem]"/>
-      <!-- <div class="padding"></div> -->
-      <BenefitOne mt="mt-[5.375rem] md:mt-[7.5rem]" />
-      <Mentoring mt="mt-[5.375rem] md:mt-[11.5rem]"/>
-      <!-- <div class="padding"></div> -->
-      <!-- <div class="padding"></div> -->
+    <BreakingBarriers mt="mt-[5.375rem] md:mt-[7.5rem]" />
 
-      <BreakingBarriers mt="mt-[5.375rem] md:mt-[7.5rem]"/>
-    <!-- </div> -->
     <SelectionProcess mt="mt-[5.375rem] md:mt-[7.5rem]" />
-    <!-- <div class="padding"></div> -->
-    <!-- <div class="wid"> -->
-      <FutuerBuilder mt="mt-[5.375rem] md:mt-[11.5rem]"/>
-    <!-- </div> -->
-    <!-- <div class="padding"></div> -->
-    <!-- <div class="wid"> -->
-      <Faq collection="pratibha" slug="faq" mt="mt-[5.375rem] md:mt-[11.5rem] mb-[7.5rem]" />
-      <!-- <div class="padding"></div> -->
-    <!-- </div> -->
 
-    <!-- Back to top button -->
+    <FutuerBuilder mt="mt-[5.375rem] md:mt-[11.5rem]" />
+    <Faq
+      collection="pratibha"
+      slug="faq"
+      mt="mt-[5.375rem] md:mt-[11.5rem] mb-[7.5rem]"
+    />
 
     <a
       class="btn-scroll-top"
@@ -107,7 +91,6 @@ import Mentoring from "../components/pratibha/Mentoring.astro";
         width: 70%;
         justify-self: center;
       }
-
     }
     @media (max-width: 992px) {
       .wid {
@@ -115,8 +98,8 @@ import Mentoring from "../components/pratibha/Mentoring.astro";
         width: 90%;
       }
       .padding {
-      height: 5rem;
-    }
+        height: 5rem;
+      }
     }
     @media (max-width: 768px) {
       .wid {
@@ -125,8 +108,8 @@ import Mentoring from "../components/pratibha/Mentoring.astro";
         width: 90%;
       }
       .padding {
-      height: 5rem;
-    }
+        height: 5rem;
+      }
     }
   </style>
 </Layout>

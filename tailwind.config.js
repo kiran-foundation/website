@@ -8,6 +8,7 @@ export default {
     extend: {
       screens: {
         'xs': {'min': '400px'}, 
+        'tb': {'max': '1282px'}, 
       },
       fontFamily: {
         merriweather: ['Merriweather', 'serif'],
