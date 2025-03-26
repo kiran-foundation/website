@@ -11,6 +11,7 @@ import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.a
 import Hero from "../../components/pratibha/Hero.astro";
 import Faq from "../../components/common/FaqPratibha.astro";
 import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
+import ContentSection from "../../components/volunteer/ContentSection.astro";
 
 ---
 
@@ -22,21 +23,40 @@ import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
     <Hero collection="volunteering" slug="hero-volunteer"/>
     
     <!-- <Hero /> -->
-    <WhyVolunteer/>
-    <!-- <ChooseVolunteering/> -->
+    <!-- <WhyVolunteer/> -->
+                       <!-- <ChooseVolunteering/> -->
   
-    <!-- <Volunteer/> -->
-    <WhyIntern />
+                       <!-- <Volunteer/> -->
+    <!-- <WhyIntern /> -->
+  <ContentSection
+  collection="volunteering"
+  slug="why-volunteer"
+  classes="space-y-24"
+  textAlignment="order-2"
+  imageAlignment="order-1"
+/>
+
+<ContentSection
+  collection="volunteering"
+  slug="why-intern"
+  classes="space-y-24"
+  textAlignment="order-1"
+  imageAlignment="order-2"
+/>
+
+
+  
+
+
+  
     <ChooseIntern />
 
 
 
-    <h1 class="flex justify-center font-merriweather mt-8 mb-10 font-normal 
-  text-[28px] xs:text-[32px] sm:text-[40px] md:text-[48px] 
-  leading-[130%] sm:leading-[140%] md:leading-[150%] 
-  tracking-tight sm:tracking-[-1%] md:tracking-[-2.2%] text-center">
-  Breaking barriers together
-</h1>
+    <h1 class="font-merriweather text-center text-[28px] sm:text-[40px] md:text-[48px]">
+      Breaking barriers together
+    </h1>
+    
 
      <TestimonialsCarousel pageTag="home"/>
 
