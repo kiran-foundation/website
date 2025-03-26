@@ -1,5 +1,6 @@
 ---
 import { getEntry } from "astro:content";
+import Button from "../common/button.astro";
 const volunteer = (await getEntry("home", "volunteer")).data;
 import { getCollection } from "astro:content";
 const jobs = await getCollection("work", ({ id }) => {
@@ -9,7 +10,7 @@ import VolunteerSwiper from "../../components/common/VolunteerSwiper.astro";
 
 ---
 
-<section class="bg-gray-200 py-16 px-6 flex flex-col items-center">
+<section class="bg-gray-200  py-16 px-6 flex flex-col items-center">
   <!-- Heading -->
   <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-8">
     Highlighted Volunteer Roles
@@ -21,7 +22,14 @@ import VolunteerSwiper from "../../components/common/VolunteerSwiper.astro";
   </div>
 
   <!-- Bottom Button -->
-  <button class="mt-8 px-6 py-3 border border-black text-black font-semibold rounded-lg hover:bg-black hover:text-white transition">
+  <!-- <button class="mt-8 px-6 py-3 border border-black text-black font-semibold rounded-lg hover:bg-black hover:text-white transition">
     Discover More Opportunities
-  </button>
+  </button> -->
+  <Button
+        link="/volunteering"
+        title="Discover More Opportunities"
+        btn="btn3"
+        widthClass="w-[250px]"
+        heightClass="h-[60px]"
+      />
 </section>
