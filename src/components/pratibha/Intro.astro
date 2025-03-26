@@ -14,8 +14,8 @@ const {mt} = Astro.props;
   
 <PratibhaLayout mt={mt}>
   <Fragment slot="content">
-  <div class="kiran-container ">
-    <div class="kiran-content max-w-[39.75rem]">
+  <div class="kiran-container flex gap-16 items-start ">
+    <div class="kiran-content flex flex-1 flex-col gap-[1.5rem] self-center max-w-[39.75rem]">
       <h1 class="kiran-title">{title}</h1>
 
       {description.map((item) => <p class="kiran-description md:w-[90%]">{item}</p>)}
@@ -23,27 +23,27 @@ const {mt} = Astro.props;
 </Fragment>
 <Fragment slot="image-grid">
 
-    <div class="kiran-images max-w-[596px]">
-      <div class="image-top">
+    <div class="kiran-images max-w-[37.25rem] md:max-h-[32.75rem] flex flex-1 flex-col gap-4">
+      <div class="image-top w-full">
         <img
           src={image1}
           alt="Students from Kiran Foundation"
-          class="kiran-image"
+          class="kiran-image w-full max-h-[12.5rem] object-cover  rounded-xl aspect-video shadow-xl"
         />
       </div>
-      <div class="image-bottom">
-        <div class="image-bottom-left">
+      <div class="image-bottom flex gap-4  w-full">
+        <div class="image-bottom-left flex-2">
           <img
             src={image2}
             alt="More students from Kiran Foundation"
-            class="kiran-image-small"
+            class="kiran-image-small rounded-xl w-full h-full object-cover shadow-xl"
           />
         </div>
-        <div class="image-bottom-right">
+        <div class="image-bottom-right  flex-1">
           <img
           src={image3}
           alt="More students from Kiran Foundation"
-          class="kiran-image-small"
+          class="kiran-image-small rounded-xl w-full h-full object-cover shadow-xl"
         />
         </div>
       </div>
@@ -54,120 +54,13 @@ const {mt} = Astro.props;
 </PratibhaLayout>
 
 <style>
-  /* Kiran Component Styles */
-  /* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap'); */
 
-  .kiran-section {
-    width: 100%;
-    max-width: 90rem;
-    /* margin: 0 auto; */
-    /* padding: 0rem 0rem; */
-    font-family: "Merriweather", serif;
-  }
 
-  .kiran-container {
-    display: flex;
-    gap: 4rem;
-    align-items: flex-start;
-  }
 
-  .kiran-content {
-    flex: 1;
-    /* width: 22rem; */
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-self: center;
-  }
 
-  .kiran-title {
-    /* font-size: 2.375rem;
-  font-weight: 400;
-  line-height: 150%;
-  letter-spacing: -2.2%;
-  color: #2a2a2a;
-  margin: 0; */
 
-    font-family: Merriweather;
-    font-weight: 400;
-    font-size: var(--font-title);
-    line-height: 150%;
-    letter-spacing: -2.2%;
-  }
-
-  /* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
-  .kiran-description {
-    margin: 0;
-    font-family: Poppins;
-    font-weight: 400;
-    font-size: var(--font-desc);
-    line-height: 1.7rem;
-    letter-spacing: 0%;
-  }
-
-  .kiran-images {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .image-top,
-  .image-bottom {
-    width: 100%;
-  }
-
-  .image-bottom {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .image-bottom-left {
-    flex: 2;
-  }
-
-  .image-bottom-right {
-    flex: 1;
-  }
-
-  .kiran-image {
-    width: 100%;
-    height: 12.5rem;
-    object-fit: cover;
-    border-radius: 0.75rem;
-    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
-    aspect-ratio: 16/9;
-  }
-
-  .kiran-image-small {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.75rem;
-    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
-    aspect-ratio: 16/9;
-  }
-
-  .orange-box {
-    background-color: #ff5c00;
-    width: 100%;
-    height: 100%;
-    border-radius: 0.75rem;
-    aspect-ratio: 1/1;
-  }
-
-  /* Responsive design */
-  /* @media (max-width: 1024px) {
-    .kiran-title {
-      font-size: 2.8rem;
-    }
-    .kiran-container {
-      flex-direction: column;
-    }
-    .kiran-description {
-      font-size: 1.15rem;
-    }
-  } */
+  
+ 
 
   @media (max-width: 1024px) {
     .kiran-container {
@@ -184,21 +77,5 @@ const {mt} = Astro.props;
     }
   }
 
-  @media (max-width: 480px) {
-    .kiran-section {
-      /* padding: 2rem 1rem; */
-    }
 
-    .kiran-title {
-      font-size: 2rem;
-    }
-
-    .kiran-description {
-      font-size: 1rem;
-    }
-
-    .image-bottom {
-      flex-direction: column;
-    }
-  }
 </style>
