@@ -1,0 +1,79 @@
+---
+import { getEntry } from 'astro:content';
+import Button from "../common/button.astro";
+const { data } = await getEntry('volunteering', 'why-volunteer')
+
+---
+
+
+
+<section class="max-w-[1296px] max-h-[1211px]  mx-auto  px-4 md:px-8 py-24 space-y-24">
+  <!-- Top Section -->
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <!-- Text Content -->
+    <div class="space-y-6">
+      <h1 class="font-merriweather font-normal text-[48px] leading-[72px] tracking-[-2.2%]">
+        {data.title}
+      </h1>
+      <p class=" font-poppins font-normal text-[18px] leading-[36px] text-[#49494C]">
+        {data.description}
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden">
+      <img src={data.imageTop} alt="Grow While Giving" class="w-full h-full object-cover" />
+    </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <!-- Image Left -->
+    <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden">
+      <img src={data.imageBottom} alt="Why Volunteer" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Content Right -->
+    <div class="space-y-8">
+      <h3 class="font-poppins font-semibold text-[32px] leading-[32px] text-[#1E1E1E]">
+        {data.whyVolunteer.heading}
+      </h3>
+
+      <!-- Reasons List -->
+      <div class="space-y-6">
+        {data.whyVolunteer.reasons.map((reason: { title: unknown; text: unknown; }) => (
+          <div class="flex items-start gap-4">
+            <h2 class="font-poppins font-semibold text-[40px] leading-[46.8px] text-[#1E1E1E]">
+              <i class="fa-regular fa-square-check"></i>
+            </h2>
+            <div class="space-y-1">
+              <p class="font-poppins font-semibold text-[24px] leading-[46.8px] text-[#1E1E1E]">
+                {reason.title}
+              </p>
+              <p class="font-poppins text-[#1E1E1E] font-normal text-[18px] leading-[36px] tracking-[0%]">
+                {reason.text}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA Button -->
+      <!-- <a href={data.ctaLink} class="inline-block mt-4 px-6 py-3 rounded-md border-2 border-black font-poppins font-semibold bg-[#FF5722] text-white hover:bg-[#e64a19] transition">
+        {data.ctaText}
+        
+      </a> -->
+
+      <Button
+        link="/volunteering"
+        title={data.ctaText}
+        btn="btn1"
+        widthClass="w-[235px]"
+        heightClass="h-[60px]"
+      />
+
+
+
+    </div>
+  </div>
+</section>
