@@ -29,7 +29,8 @@ import Mentoring from "../components/pratibha/Mentoring.astro";
 
   <main class="page-wrper">
     <div class="h-[4rem]"></div>
-    <div class="wid"><Breadcrumb pageName="Pratibha Scholarship" /></div>
+    <!-- <div class="wid"><Breadcrumb pageName="Pratibha Scholarship" /></div> -->
+    <Breadcrumb pageName="Pratibha Scholarship" />
     <Hero collection="pratibha" slug="hero" />
     <Intro mt="mt-[5.375rem] md:mt-[11.5rem]"  />
 
@@ -73,16 +74,12 @@ import Mentoring from "../components/pratibha/Mentoring.astro";
 
   <style>
     main {
-      width: 100%;
+      /* width: 100%;
       display: flex;
       flex-direction: column;
-      /* align-self: center; */
-      align-items: center;
-      /* justify-content: center; */
+      align-items: center; */
     }
-    .padding {
-      height: 11.5rem;
-    }
+  
     .wid {
       justify-self: center;
       width: 67%;

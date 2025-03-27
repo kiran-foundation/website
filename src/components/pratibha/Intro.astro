@@ -1,6 +1,5 @@
 ---
 import { getEntry } from "astro:content";
-import PratibhaLayout from "../../layouts/PratibhaLayout.astro";
 const aboutPratibha = (await getEntry("pratibha", "about")).data;
 const { title, description,image1,image2,image3 } = aboutPratibha;
 const {mt} = Astro.props;

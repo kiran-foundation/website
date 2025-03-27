@@ -1,13 +1,7 @@
 ---
 import { getEntry } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import PratibhaLayout from "../../layouts/PratibhaLayout.astro";
-// const image_src = "/assets/images/group-photo-1.png"
 const image_src = "/assets/images/group_photo.jpg";
-// const benefits = ;
-
 const aboutBreakingBarrier = await getEntry("pratibha", "breaking-barriers");
-// console.log(aboutBreakingBarrier);
 const { mt, secTitle } = Astro.props;
 const { image, title } = aboutBreakingBarrier?.data ?? {};
 ---
