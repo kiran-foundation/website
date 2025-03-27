@@ -2,47 +2,15 @@
 const { pageName } = Astro.props;
 ---
 
-<div class="hidden md:flex items-center space-x-2 text-gray-800 text-sm mt-20  mx-auto w-full max-w-screen-lg px-4 md:px-6">
-    <a href="/" class="hover:underline">Home</a>
-    <svg class="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5.83709 4.90277L1.29221 0.452724C1.1871 0.349716 1.04677 0.292969 0.897152 0.292969C0.74753 0.292969 0.607207 0.349716 0.50209 0.452724L0.167391 0.780363C-0.0503999 0.993857 -0.0503999 1.34085 0.167391 1.55402L3.98384 5.2909L0.163156 9.03192C0.0580388 9.13493 0 9.27225 0 9.41867C0 9.56525 0.0580388 9.70257 0.163156 9.80566L0.497855 10.1332C0.603055 10.2362 0.743295 10.293 0.892917 10.293C1.04254 10.293 1.18286 10.2362 1.28798 10.1332L5.83709 5.6791C5.94246 5.57577 6.00033 5.43781 6 5.29114C6.00033 5.14391 5.94246 5.00602 5.83709 4.90277Z" fill="#1E1E1E"/>
-    </svg>
-    <span class="font-medium text-sm md:text-base">{pageName}</span>
+<!-- Breadcrumb Navigation -->
+<div class="hidden sm:flex items-center space-x-2 text-gray-800 text-sm  mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 2xl:mt-36 
+w-full max-w-[90%] md:max-w-[85%] lg:max-w-[1296px] mx-auto px-4 md:px-6 lg:px-0">
+  <a href="/" class="hover:underline">Home</a>
+  <svg class="w-3 h-3 sm:w-4 sm:h-4" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5.83709 4.90277L1.29221 0.452724C1.1871 0.349716 1.04677 0.292969 0.897152 0.292969C0.74753 0.292969 0.607207 0.349716 0.50209 0.452724L0.167391 0.780363C-0.0503999 0.993857 -0.0503999 1.34085 0.167391 1.55402L3.98384 5.2909L0.163156 9.03192C0.0580388 9.13493 0 9.27225 0 9.41867C0 9.56525 0.0580388 9.70257 0.163156 9.80566L0.497855 10.1332C0.603055 10.2362 0.743295 10.293 0.892917 10.293C1.04254 10.293 1.18286 10.2362 1.28798 10.1332L5.83709 5.6791C5.94246 5.57577 6.00033 5.43781 6 5.29114C6.00033 5.14391 5.94246 5.00602 5.83709 4.90277Z" fill="#1E1E1E"/>
+  </svg>
+  <span class="font-medium text-sm sm:text-base">{pageName}</span>
 </div>
 
-<style>
-    span {
-      color: #1E1E1E;
-
-    }
-.breadcrumb {
-    
-  /* max-width: 1440px; */
-  margin-top: 5rem;
-  font-family: Poppins;
-font-weight: 400;
-font-size: 0.700rem;
-line-height: 100%;
-letter-spacing: 0%;
-margin-bottom: 1.7rem;
-
-/* background: #1E1E1E; */
-
-  /* width: 833px; */
-  /* height: 21px; */
-  gap: 0.225rem ;
-  /* padding-right: 312px; */
-  /* padding-left: 312px; */
-}
-svg {
-  width: 6;
-  height: 100%;
-}
-.breadcrumb-separator {
-  margin: 0 0.25rem;
-  font-weight: 400;
-}
 
 
-
-</style>

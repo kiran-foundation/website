@@ -2,11 +2,7 @@
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../../layouts/Layout.astro";
-// WhyVolunteer
-// ChooseVolunteering
-// WhyIntern
-import ChooseIntern from "../../components/volunteer/ChooseIntern.astro";
-// Volunteer
+import ChooseVolunteering from "../../components/volunteer/ChooseVolunteering.astro";
 import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
 import Hero from "../../components/pratibha/Hero.astro";
 import Faq from "../../components/common/FaqPratibha.astro";
@@ -16,21 +12,16 @@ import ContentSection from "../../components/volunteer/ContentSection.astro";
 
 <Layout>
   <main class="page-wrapper">
-   <Breadcrumb pageName="volunteer"  />
+    <Breadcrumb pageName="volunteer" />
+    <Hero collection="volunteering" slug="hero-volunteer" />
 
-    <!-- <Hero /> -->
-    <!-- <WhyVolunteer/> -->
-    <!-- <ChooseVolunteering/> -->
-
-    <!-- <Volunteer/> -->
-    <!-- <WhyIntern /> -->
     <ContentSection
       collection="volunteering"
       slug="why-volunteer"
       classes="space-y-24"
       textAlignment="order-2"
       imageAlignment="order-1"
-    />
+   />
 
     <ContentSection
       collection="volunteering"
@@ -39,13 +30,10 @@ import ContentSection from "../../components/volunteer/ContentSection.astro";
       textAlignment="order-1"
       imageAlignment="order-2"
     />
-
-    <ChooseIntern />
+    <ChooseVolunteering fetch="internship" />
 
     <h1
-      class="font-merriweather text-center text-[28px] sm:text-[40px] md:text-[48px]"
-    >
-      Breaking barriers together
+class="font-merriweather text-center text-[28px] sm:text-[40px] md:text-[48px]">Breaking barriers together
     </h1>
 
     <TestimonialsCarousel pageTag="home" />

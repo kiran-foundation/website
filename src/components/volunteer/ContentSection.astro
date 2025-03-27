@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import Button from "../common/button.astro";
+import ChooseVolunteering from "./ChooseVolunteering.astro"
 
 const {
   collection,
@@ -56,12 +57,11 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
 <section class={`max-w-[1296px] mx-auto px-4 md:px-8 py-24 ${classes}`}>
   <!-- Heading + Description with Optional Top Image -->
   <div
-    class="grid md:grid-cols-2 gap-12 items-center"
-    data-aos="fade-left"
-    data-aos-duration="1200"
-    data-aos-offset="120px"
-    data-disable-parallax-down="lg"
-  >
+  data-aos="fade-right"
+        data-aos-duration="600"
+        data-aos-offset="120px"
+        data-disable-parallax-down="lg"
+    class="grid md:grid-cols-2 gap-12 items-center">
     <div class="space-y-4">
       <h1
         class="font-merriweather font-normal text-[48px] leading-[72px] tracking-tight"
@@ -88,10 +88,11 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
   <!-- Content below heading (Reasons + Image) -->
   <div
     class="grid md:grid-cols-2 gap-12 items-center mt-12"
-    data-aos="fade-right"
-    data-aos-duration="1200"
-    data-aos-offset="120px"
-    data-disable-parallax-down="lg"
+    data-aos="fade-left"
+        data-aos-duration="600"
+        data-aos-offset="120px"
+        data-disable-parallax-down="lg"
+   
   >
     <!-- Dynamic Reasons + Button (swappable) -->
     <div class={`flex flex-col space-y-6 ${textAlignment}`}>
@@ -142,4 +143,12 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
       />
     </div>
   </div>
+
+
+
 </section>
+{imageTop && <ChooseVolunteering fetch = "volunteer"/>}
+
+
+
+
