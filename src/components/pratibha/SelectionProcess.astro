@@ -9,48 +9,37 @@ const common = (await getEntry("common", "common")).data;
 const {mt} = Astro.props;
 ---
 
-<section class:list={[" bg-[#f1f1f1] py-[6.25rem]  ",[mt]]}>
-  <div class="container mx-auto  md:w-[70%]">
-    <h1 class="mt-0 mb-[2rem] font-merriweather">{heading}</h1>
+<section class={`bg-[#f1f1f1] py-[6.25rem] w-[100%] ${mt}`}>
+  <div class="container mx-auto md:w-[70%]">
+    <h1 class="mt-0 mb-[2rem] font-merriweather font-normal  leading-[150%] tracking-[-2.2%]">{heading}</h1>
 
     <div class="mb-12">
-      <h2 class="mb-6">{eligiblity}</h2>
-      <ul class="text-[1.12rem] list-disc pl-6 space-y-4 text-lg">
-        {
-         paragraph.map((para)=> (
-          
-          <li>{para}</li>
-        ))
-        }
-        
+      <h2 class="mb-6 font-poppins font-semibold text-[1.65rem] leading-[100%]">{eligiblity}</h2>
+      <ul class="text-[1.12rem] list-disc pl-6 space-y-4 text-lg font-poppins font-normal text-[#49494c] leading-[0.935rem]">
+        {paragraph.map((para) => (
+          <li class="leading-normal">{para}</li>
+        ))}
       </ul>
     </div>
 
     <div class="mb-12">
-      <h2 class="mb-6">{subheading}</h2>
-      <ul class="list-disc pl-6 space-y-4 text-lg">
+      <h2 class="mb-6 font-poppins font-semibold text-[1.65rem] leading-[100%]">{subheading}</h2>
+      <ul class="list-disc pl-6 space-y-4 text-lg font-poppins font-normal text-[#49494c] leading-[0.935rem]">
         {documents.map((list) => (
-          
-          <li>{list}</li>
-        ) )}
+          <li class="leading-normal">{list}</li>
+        ))}
       </ul>
-
-
     </div>
 
     <div class="mb-12">
-      <h2 class="ml-0 mb-6">{apply}</h2>
-      <ul class="list-disc font-poppins pl-6 space-y-4 text-lg pb-2">
-        {
-          applylist.map((item) => (
-            
-            <li>{item}</li>
-          ))
-
-        }
+      <h2 class="ml-0 mb-6 font-poppins font-semibold text-[1.65rem] leading-[100%]">{apply}</h2>
+      <ul class="list-disc font-poppins pl-6 space-y-4 text-lg pb-2 font-normal text-[#49494c] leading-[0.935rem]">
+        {applylist.map((item) => (
+          <li class="leading-normal">{item}</li>
+        ))}
       </ul>
     </div>
-    <!-- <Button/> -->
+
     <div class="flex flex-col sm:flex-row gap-4 mt-10">
       <a 
         href={applyButton?.title} 
@@ -62,56 +51,10 @@ const {mt} = Astro.props;
         href={statusButton?.herf} 
         class="inline-flex items-center justify-center px-3 py-[.75rem] bg-white border border-gray-300 text-gray-900 rounded-md hover:bg-gray-50 transition-colors font-medium text-lg"
       >
-        { statusButton?.title}
+        {statusButton?.title}
       </a>
     </div>
     <div class="padding m-[7.5rem]"></div>
     <TestimonialsCarousel pageTag="home" />
   </div>
 </section>
-
-<style>
-  section {
-    width: 100%;
-    background-color: #f1f1f1;
-  }
-  h1 {
-    font-family: Merriweather;
-    font-weight: 400;
-    font-size: var(--font-title);
-    line-height: 150%;
-    letter-spacing: -2.2%;
-  }
-  h2 {
-    font-family: Poppins;
-    font-weight: 600;
-    font-size: 1.65rem;
-    line-height: 100%;
-    letter-spacing: 0%;
-  }
-  ul {
-    font-family: Poppins;
-    font-weight: 400;
-    font-size: 0.9rem;
-    line-height: 0.935rem;
-    letter-spacing: 0%;
-    color: #49494c;
-    /* padding: 1.5rem 0; */
-  }
-  /* a   {
-    width: 247;
-    font-size: small;
-    display: block;
-height: 60;
-font-weight: bold;
-padding-top: 1.125rem;
-padding-right: 1.5rem;
-padding-bottom: 1.125rem;
-padding-left: 1.5rem;
-border-radius: 0.5rem;
-border: solid 0.5 #1E1E1E;
-  } */
-  li {
-    line-height: normal;
-  }
-</style>

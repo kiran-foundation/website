@@ -5,10 +5,71 @@ const aboutMentoring =(await getEntry("pratibha", "mentoring")).data
 // const image ="/assets/images/pratibha_page/mentoring.png"
 // console.log(aboutMentoring);
 const {mt} = Astro.props;
-const {title, image, description,subtitle,assist} = aboutMentoring;
+const {title, image, image1, image2, image3, description,subtitle,assist} = aboutMentoring;
 
 ---
- 
+<!-- 
+font-family: Poppins;
+font-weight: 600;
+font-size: 32px;
+line-height: 100%;
+letter-spacing: 0%;
+ -->
+<section class=`   justify-center lg:max-w-[79.5rem] mx-auto pr-[1.5rem] pl-[1.5rem]  ${mt}   md:gap-16 grid tb:grid-cols-1 md:grid-cols-2 gap-16  items-center `>
+  <div class="   md:max-w-[39.75rem] tb:items-center "  data-aos="fade-right"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg">
+  <h2 class="text-[2rem] font-semibold text-gray-900 mb-6 font-poppins">{title}</h2>
+  {description.map((item: string) => <p class="text-gray-700 text-lg mb-6">{item}</p>)}
+  
+  
+  <ul class="space-y-5">
+  
+  <p class="text-gray-700 text-lg mb-6">{subtitle}</p>
+  {assist.map((item: { svg: string; title: string }) => (
+
+    <li class="flex items-center gap-6">
+      <div class="max-w-8 max-h-8 flex items-center justify-center">
+        <img src={item?.svg} alt={item?.title + " png "}>
+          
+      </div>
+      <span class="lg:text-[1.5rem] text-[1.2rem] font-medium">{item?.title}</span>
+    </li>
+    
+  ))}
+    
+  </ul>
+</div> 
+<div class="image-team-grid w-full md:max-w-[37.25rem]"
+  data-aos="fade-left"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg">
+    {image?   <div class="max-w-[37.5rem] ">
+          <img 
+            src={image} 
+            alt="Students mentorship" 
+            class="w-full h-auto object-cover rounded-md"
+          />
+        </div> : <div class="grid grid-cols-[70%_30%] grid-rows-[auto_1fr] gap-4 w-full h-full">
+      <div class="team-top-image col-span-2 w-full h-full">
+        <img src={image1} alt="" class="rounded-xl w-full h-full object-cover">
+      </div>
+     
+      <div class="bottom-left w-full h-full">
+        <img src={image2} alt="" class="w-full h-full object-cover aspect-video rounded-xl">
+      </div>
+     
+      <div class="bottom-right w-full h-full">
+        <img src={image3} alt="" class="rounded-xl w-full h-full object-cover">
+      </div>
+    </div>}
+  </div>
+</section>
+
+{/* 
+
 <PratibhaLayout mt={mt}>
   <Fragment slot="content">
   <div class="kiran-containers sm:w-[100%]  flex flex-col md:flex-row gap-16">
@@ -28,7 +89,7 @@ const {title, image, description,subtitle,assist} = aboutMentoring;
               
           </div>
           <span class="text-[1.5rem] font-medium">{item?.title}</span>
-            {/* <pre>{JSON.stringify(item)}</pre> */}
+
         </li>
         
       ))}
@@ -46,7 +107,7 @@ const {title, image, description,subtitle,assist} = aboutMentoring;
             class="w-full h-auto object-cover rounded-md"
           />
         </div>
-        <!-- <div class="col-span-2 md:col-span-1 grid grid-rows-2 gap-5">
+        <div class="col-span-2 md:col-span-1 grid grid-rows-2 gap-5">
           <img 
             src="/lovable-uploads/d205e580-4035-4fb4-b4cc-782fbf39d6b3.png" 
             alt="Students in white t-shirts" 
@@ -112,4 +173,4 @@ color: #1E1E1E;
       align-self: center;
     }
   }
-</style>
+</style> */}

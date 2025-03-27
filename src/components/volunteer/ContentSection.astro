@@ -1,39 +1,49 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry } from "astro:content";
 import Button from "../common/button.astro";
 
-const { collection, slug, classes = "", textAlignment = "order-2", imageAlignment = "order-1" } = Astro.props;
+const {
+  collection,
+  slug,
+  classes = "",
+  textAlignment = "order-2",
+  imageAlignment = "order-1",
+} = Astro.props;
 
 // ✅ Fetch and strongly type the entry
-const entry = await getEntry(collection, slug) as {
+const entry = (await getEntry(collection, slug)) as {
   data: {
     title: string;
     description: string;
     image?: string;
     imageTop?: string;
-    imageBottom? : string;
+    imageBottom?: string;
     ctaLink?: string;
     ctaText?: string;
     buttonText?: string;
-    whyIntern?: { heading: string; reasons: { title: string; text?: string; description?: string }[] };
-    whyVolunteer?: { heading: string; reasons: { title: string; text?: string; description?: string }[] };
+    whyIntern?: {
+      heading: string;
+      reasons: { title: string; text?: string; description?: string }[];
+    };
+    whyVolunteer?: {
+      heading: string;
+      reasons: { title: string; text?: string; description?: string }[];
+    };
   };
 };
 
-
-
 // ✅ Destructure with safe fallbacks
-const { 
-  title = "", 
-  description = "", 
-  image, 
-  imageTop, 
+const {
+  title = "",
+  description = "",
+  image,
+  imageTop,
   imageBottom,
-  ctaLink = "/", 
-  ctaText, 
-  buttonText, 
-  whyIntern, 
-  whyVolunteer 
+  ctaLink = "/",
+  ctaText,
+  buttonText,
+  whyIntern,
+  whyVolunteer,
 } = entry?.data ?? {};
 
 // ✅ Ensure reasons array is properly handled
@@ -43,63 +53,74 @@ const reasons = whyIntern?.reasons || whyVolunteer?.reasons || [];
 const heading = whyIntern?.heading || whyVolunteer?.heading || "";
 ---
 
-<section class={`max-w-[1296px] mx-auto px-4 md:px-8 py-24 ${classes}`} 
-        >
+<section class={`max-w-[1296px] mx-auto px-4 md:px-8 py-24 ${classes}`}>
   <!-- Heading + Description with Optional Top Image -->
-  <div class="grid md:grid-cols-2 gap-12 items-center"
-  data-aos="fade-left"
-        data-aos-duration="1200"
-        data-aos-offset="120px"
-        data-disable-parallax-down="lg">
+  <div
+    class="grid md:grid-cols-2 gap-12 items-center"
+    data-aos="fade-left"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
     <div class="space-y-4">
-      <h1 class="font-merriweather font-normal text-[48px] leading-[72px] tracking-tight">
+      <h1
+        class="font-merriweather font-normal text-[48px] leading-[72px] tracking-tight"
+      >
         {title}
       </h1>
-      <p class="font-poppins font-normal text-[18px] leading-[36px] text-[#49494C]">
+      <p
+        class="font-poppins font-normal text-[18px] leading-[36px] text-[#49494C]"
+      >
         {description}
       </p>
     </div>
 
     <!-- Image beside title + description, if `imageTop` exists -->
-    {imageTop && (
-      <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden">
-        <img src={imageTop} alt={title} class="w-full h-full object-cover" />
-      </div>
-    )}
+    {
+      imageTop && (
+        <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden">
+          <img src={imageTop} alt={title} class="w-full h-full object-cover" />
+        </div>
+      )
+    }
   </div>
 
   <!-- Content below heading (Reasons + Image) -->
-  <div class="grid md:grid-cols-2 gap-12 items-center mt-12"
-  data-aos="fade-right"
-        data-aos-duration="1200"
-        data-aos-offset="120px"
-        data-disable-parallax-down="lg">
+  <div
+    class="grid md:grid-cols-2 gap-12 items-center mt-12"
+    data-aos="fade-right"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
     <!-- Dynamic Reasons + Button (swappable) -->
     <div class={`flex flex-col space-y-6 ${textAlignment}`}>
-      {reasons.length > 0 && (
-        <div class="space-y-6">
-          <h3 class="font-poppins font-semibold text-[32px] leading-[32px] text-[#1E1E1E]">
-            {heading}
-          </h3>
+      {
+        reasons.length > 0 && (
           <div class="space-y-6">
-            {reasons.map(({ title, text }) => (
-              <div class="flex items-start gap-4">
-                <h2 class="font-poppins font-semibold text-[40px] leading-[46.8px] text-[#1E1E1E]">
-                  <i class="fa-regular fa-square-check"></i>
-                </h2>
-                <div class="space-y-1">
-                  <p class="font-poppins font-semibold text-[24px] leading-[46.8px] text-[#1E1E1E]">
-                    {title}
-                  </p>
-                  <p class="font-poppins text-[#1E1E1E] font-normal text-[18px] leading-[36px]">
-                    {text}
-                  </p>
+            <h3 class="font-poppins font-semibold text-[32px] leading-[32px] text-[#1E1E1E]">
+              {heading}
+            </h3>
+            <div class="space-y-6">
+              {reasons.map(({ title, text }) => (
+                <div class="flex items-start gap-4">
+                  <h2 class="font-poppins font-semibold text-[40px] leading-[46.8px] text-[#1E1E1E]">
+                    <i class="fa-regular fa-square-check" />
+                  </h2>
+                  <div class="space-y-1">
+                    <p class="font-poppins font-semibold text-[24px] leading-[46.8px] text-[#1E1E1E]">
+                      {title}
+                    </p>
+                    <p class="font-poppins text-[#1E1E1E] font-normal text-[18px] leading-[36px]">
+                      {text}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
       <Button
         link={ctaLink}
@@ -111,8 +132,14 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
     </div>
 
     <!-- Dynamic Image (swappable) -->
-    <div class={`w-full h-64 md:h-80 rounded-lg overflow-hidden ${imageAlignment}`}>
-      <img src={image || imageBottom} alt={title} class="w-full h-full object-cover" />
+    <div
+      class={`w-full h-64 md:h-80 rounded-lg overflow-hidden ${imageAlignment}`}
+    >
+      <img
+        src={image || imageBottom}
+        alt={title}
+        class="w-full h-full object-cover"
+      />
     </div>
   </div>
 </section>

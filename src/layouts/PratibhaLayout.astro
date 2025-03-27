@@ -4,11 +4,17 @@ console.log(mt);
 
 ---
 
-<section class:list={[" md:max-w-[80rem] mx-auto max-w-[98%] flex flex-col px-[1.5rem] md:flex-row      ",[mt]]}>
-
-      <slot name="content" />
-      
-      <slot name="image-grid" />
+<section class:list={[" md:max-w-[80rem] mx-auto max-w-[98%] flex flex-col px-[1.5rem] md:flex-row      ",[mt]]}
+data-aos="fade-left"
+data-aos-duration="1200"
+data-aos-offset="7.5rem"
+data-disable-parallax-down="lg" 
+>
+      <slot name="content"  />
+        
+        
+        <slot name="image-grid" />
+        
 </section>
 <style>
   @media (max-width: 1260px) {

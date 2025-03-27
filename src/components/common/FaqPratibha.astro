@@ -2,47 +2,145 @@
 import { getEntry } from "astro:content";
 import PratibhaLayout from "../../layouts/PratibhaLayout.astro";
 const { collection, slug } = Astro.props;
-const faq = await getEntry(collection, slug) as { data: { title: string,  title2: string, paragraph: string, questions: { question: string, answer: string }[] } };
-const {title,title2, paragraph,questions} = faq.data ?? {};
+const faq = (await getEntry(collection, slug)) as {
+  data: {
+    title: string;
+    title2: string;
+    paragraph: string;
+    questions: { question: string; answer: string }[];
+  };
+};
+const { title, title2, paragraph, questions } = faq.data ?? {};
 // import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-const {mt} = Astro.props;
-
-
+const { mt } = Astro.props;
 ---
-<PratibhaLayout mt={mt}>
 
-<!-- <section class="w-full max-w-[95%] mx-auto  flex flex-col md:flex-row gap-[7.5rem]"> -->
- <Fragment slot="content">
-    <div class="w-full md:w-2/5"> <h2 class="font-poppins text-[2.125rem] font-bold text-gray-900 mb-2">{title}</h2>
-        <h3 class="text-4xl font-bold text-[#1E1E1E] mb-6 font-poppins">{title2}</h3>
-        
-        <p class="text-[#49494C] font-[450] text-wrap text-[15px] md:min-w-[416px] md:max-h-[82px] md:pr-8 font-poppins">
-          {paragraph}
-        </p>
-      </div>
-    </Fragment>
- <Fragment slot="image-grid">
-      
-      <div class="w-full md:w-3/5 pt-[1.5rem]">
-        <div class="space-y-4">
-          {questions.map((item, index) => (
-            <div  class=" border-[#1E1E1E] border-solid border-[0.0313rem] rounded-lg overflow-hidden">
+<!-- 
+<section class=`   justify-center lg:max-w-[79.5rem] mx-auto pr-[1.5rem] pl-[1.5rem]  ${mt}   md:gap-16 grid tb:grid-cols-1 md:grid-cols-2 gap-16  items-center `>
+  <div class="   md:max-w-[39.75rem] tb:items-center "  data-aos="fade-right"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg">
+  <h2 class="font-poppins text-[2.125rem] font-bold text-gray-900 mb-2">
+    {title}
+  </h2>
+  <h3 class="text-4xl font-bold text-[#1E1E1E] mb-6 font-poppins">
+    {title2}
+  </h3>
+
+  <p
+    class="text-[#49494C] font-[450] text-wrap text-[15px] md:min-w-[416px] md:max-h-[82px] md:pr-8 font-poppins"
+  >
+    {paragraph}
+  </p>
+</div>
+  <div class="image-team-grid w-full md:max-w-[37.25rem]"
+  data-aos="fade-left"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg">
+  <div class="w-full md:w-3/5 pt-[1.5rem]">
+
+      <div class="space-y-4">
+        {
+          questions.map((item, index) => (
+            <div class=" border-[#1E1E1E] border-solid border-[0.0313rem] rounded-lg overflow-hidden">
               <details class="group">
                 <summary class=" font-poppins w-full px-6 py-4 flex items-center justify-between text-left font-medium cursor-pointer">
-                  <span class="text-left  font-poppins text-sm font-[500]  text-[#383D38]">{item.question}</span>
-                  <div class="flex items-center justify-center">
-                    {/* <Plus class="h-5 w-5 shrink-0 text-gray-500 group-open:hidden" /> */}
-                    {/* <Minus class="h-5 w-5 shrink-0 text-gray-500 hidden group-open:block" /> */}
-                  </div>
+                  <span class="text-left  font-poppins text-sm font-[500]  text-[#383D38]">
+                    {item.question}
+                  </span>
+                  <div class="flex items-center justify-center"></div>
                 </summary>
                 <div class="answer px-6 py-3 text-[#383D38] border-[#1E1E1E] border-solid border-t-[0.0313rem] font-normal text-[0.875rem]  font-Inter">
                   {item.answer}
                 </div>
               </details>
             </div>
-          ))}
-        </div>
+          ))
+        }
       </div>
-    </Fragment>
-    <!-- </section> -->
-  </PratibhaLayout>
+  </div>
+</section>
+ -->
+ <section
+  class:list={[
+    " md:max-w-[80rem] mx-auto max-w-[98%] flex flex-col px-[1.5rem] md:flex-row  lg:gap-[7.5rem] md:gap-[1.5rem]     ",
+    [mt],
+  ]}
+  data-aos="fade-left"
+  data-aos-duration="1200"
+  data-aos-offset="7.5rem"
+  data-disable-parallax-down="lg"
+>
+  <div class="w-full md:max-w-[26rem]">
+    <h2 class="font-poppins text-[2.125rem] font-bold text-gray-900 mb-2">
+      {title}
+    </h2>
+    <h3 class="text-4xl font-bold text-[#1E1E1E] mb-6 font-poppins">
+      {title2}
+    </h3>
+
+    <p
+      class="text-[#49494C] font-[450] text-wrap text-[15px] md:min-w-[416px] md:max-h-[82px] md:pr-8 font-poppins"
+    >
+      {paragraph}
+    </p>
+  </div>
+
+  <!-- faq ques ans -->
+  <div class="w-full md:max-w-[47.5rem] pt-[1.5rem]">
+    <div class="space-y-4">
+      {
+        questions.map((item, index) => (
+          <div class=" border-[#1E1E1E] border-solid border-[0.0313rem] rounded-lg overflow-hidden">
+            <details class="group">
+              <summary class="font-poppins text-[1.125rem] text-[#383D38] align-middle w-full px-6 py-4 flex items-center justify-between text-left font-medium cursor-pointer">
+                <span class="text-left font-poppins text-[1.125rem] font-medium text-[#383D38] align-middle">
+                  {item.question}
+                </span>
+                <span class="ml-4">
+                  <!-- Plus icon (visible when closed) -->
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="block group-open:hidden"
+                  >
+                    <path
+                      opacity="0.8"
+                      d="M8 3V13M3 8H13"
+                      stroke="#1E1E1E"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <!-- Minus icon (visible when open) -->
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="hidden group-open:block"
+                  >
+                    <path
+                      opacity="0.8"
+                      d="M2.5 7.5H13.5"
+                      stroke="#1E1E1E"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+              </summary>
+              <div class="answer font-Inter px-6 py-3 text-[#383D38] border-[#1E1E1E] border-solid border-t-[0.0313rem] font-normal text-[0.9437rem] align-middle">
+                {item.answer}
+              </div>
+            </details>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

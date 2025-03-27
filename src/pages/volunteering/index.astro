@@ -2,70 +2,63 @@
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../../layouts/Layout.astro";
-// WhyVolunteer 
-// ChooseVolunteering 
-// WhyIntern 
+// WhyVolunteer
+// ChooseVolunteering
+// WhyIntern
 import ChooseIntern from "../../components/volunteer/ChooseIntern.astro";
-// Volunteer 
+// Volunteer
 import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
 import Hero from "../../components/pratibha/Hero.astro";
 import Faq from "../../components/common/FaqPratibha.astro";
 import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
 import ContentSection from "../../components/volunteer/ContentSection.astro";
-
 ---
 
 <Layout>
-  
   <main class="page-wrapper">
-    <div class="mt-20 mb-5 ml-72"><Breadcrumb pageName="volunteer"  /></div>
+    <div class="mt-20 mb-5 ml-72"><Breadcrumb pageName="volunteer" /></div>
 
-    <Hero collection="volunteering" slug="hero-volunteer"/>
-    
+    <Hero collection="volunteering" slug="hero-volunteer" />
+
     <!-- <Hero /> -->
     <!-- <WhyVolunteer/> -->
-                       <!-- <ChooseVolunteering/> -->
-  
-                       <!-- <Volunteer/> -->
+    <!-- <ChooseVolunteering/> -->
+
+    <!-- <Volunteer/> -->
     <!-- <WhyIntern /> -->
-  <ContentSection
-  collection="volunteering"
-  slug="why-volunteer"
-  classes="space-y-24"
-  textAlignment="order-2"
-  imageAlignment="order-1"
-/>
+    <ContentSection
+      collection="volunteering"
+      slug="why-volunteer"
+      classes="space-y-24"
+      textAlignment="order-2"
+      imageAlignment="order-1"
+    />
 
-<ContentSection
-  collection="volunteering"
-  slug="why-intern"
-  classes="space-y-24"
-  textAlignment="order-1"
-  imageAlignment="order-2"
-/>
+    <ContentSection
+      collection="volunteering"
+      slug="why-intern"
+      classes="space-y-24"
+      textAlignment="order-1"
+      imageAlignment="order-2"
+    />
 
-
-  
-
-
-  
     <ChooseIntern />
 
-
-
-    <h1 class="font-merriweather text-center text-[28px] sm:text-[40px] md:text-[48px]">
+    <h1
+      class="font-merriweather text-center text-[28px] sm:text-[40px] md:text-[48px]"
+    >
       Breaking barriers together
     </h1>
-    
 
-     <TestimonialsCarousel pageTag="home"/>
+    <TestimonialsCarousel pageTag="home" />
 
-     <div class="w-full max-w-6xl h-[30rem]  bg-gray-300 mx-auto flex items-center justify-center m-6">
+    <div
+      class="w-full max-w-6xl h-[30rem] bg-gray-300 mx-auto flex items-center justify-center m-6"
+    >
       <span class="text-gray-500">Image Placeholder</span>
     </div>
-    
-     
-    <Faq collection="volunteering" slug="faq"/>
+
+    <Faq collection="volunteering" slug="faq" />
   </main>
 
   <a
@@ -90,8 +83,4 @@ import ContentSection from "../../components/volunteer/ContentSection.astro";
     </svg>
     <i class="ai-arrow-up"></i>
   </a>
-
 </Layout>
-  
-
-  

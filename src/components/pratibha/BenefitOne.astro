@@ -2,269 +2,179 @@
 import { getEntry } from "astro:content";
 import PratibhaLayout from "../../layouts/PratibhaLayout.astro";
 const benefits = (await getEntry("pratibha", "benefits")).data;
-const image1 = '/assets/images/pratibha_page/group-1.png';
-const image2 = '/assets/images/pratibha_page/group-2.png';
-const {mt} = Astro.props;
-const {covers,supports,title,description} = benefits;
-
+const image1 = "/assets/images/pratibha_page/group-1.png";
+const image2 = "/assets/images/pratibha_page/group-2.png";
+const { mt } = Astro.props;
+const { covers, supports, title, description } = benefits;
 ---
 
-<PratibhaLayout mt={`${mt} `}>
-  <div slot="content" class="ds">
-    <div class="hero-contain    flex flex-col md:flex-row gap-16">
-      <div class="hero-content max-w-[100%] mx-auto ">
-    <h1 class="hero-title">{title}</h1>
-    {description.map((item) =>
-     <p class="hero-description  break-words">
-       {item}
-     </p>
-     )}
-    
-    {supports.map((item) => 
-    <div class="financial-support">
-      <h2 class="support-title">{item?.support}</h2>
-      <p class="support-description">
-      {item?.desc}
-      </p>
-    </div>
-    )}
+<section class=`   justify-center lg:max-w-[79.5rem] mx-auto pr-[1.5rem] pl-[1.5rem]  ${mt}   md:gap-16 grid tb:grid-cols-1 md:grid-cols-2 gap-16  items-center `>
+  <div class="   md:max-w-[39.75rem] tb:items-center "  data-aos="fade-right"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg">
+    {/* First column content */}
+    <div class="">
+      <h1
+        class="font-merriweather font-normal text-[2.4rem] leading-[150%] tracking-[-2.2%]"
+      >
+        {title}
+      </h1>
+      {
+        description.map((item) => (
+          <p class="font-poppins font-normal text-[0.9rem] leading-[2rem] text-[#49494C] py-6 break-words">
+            {item}
+          </p>
+        ))
+      }
 
-    <div class="support-items">
-      <h3 class="support-subtitle">What we cover</h3>
-      <div class="support-list">
-      {covers.map((items) => 
-      <div class="support-item">
-        <div class="support-icon">
-          <img src={items.svg} alt="" width="44" height="44">
+      {
+        supports.map((item) => (
+          <div class="mb-10">
+            <h2 class="text-[#1E1E1E] font-poppins font-semibold text-[1.5rem] leading-[100%]">
+              {item?.support}
+            </h2>
+            <p class="font-poppins font-normal text-[0.9rem] leading-[1.7rem] text-[#49494C] py-6">
+              {item?.desc}
+            </p>
           </div>
-        <div class="support-text font-poppins">{items.title}</div>
-      </div>
-      )}
+        ))
+      }
+
+      <div>
+        <h3 class="text-[1.125rem] font-normal text-[#49494C] mb-6">
+          What we cover
+        </h3>
+        <div class="flex flex-col gap-6">
+          {
+            covers.map((items) => (
+              <div class="flex items-center gap-6 text-[1.124rem]">
+                <div class="w-[33px] h-[33px]">
+                  <img src={items.svg} alt="" width="44" height="44" />
+                </div>
+                <div class="text-[#333] font-poppins font-normal text-[1.3rem] leading-[100%]">
+                  {items.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>
-</Fragment>
-<Fragment slot="image-grid">
-  <div class="kiran-images md:max-w-[596px] mx-auto">
-    <div class="image-top">
-      <img 
-        src={image1} 
-        alt="Students from Kiran Foundation" 
-        class="kiran-image" 
-      />
+  </div>
+  
+  <div class="image-team-grid w-full md:max-w-[37.25rem]" 
+  data-aos="fade-left"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg">
+    <div class="grid grid-cols-2 grid-rows-[auto_1fr] gap-4 w-full h-full">
+      <div class=" col-span-2 w-full h-full">
+        {/* Full width top item */}
+        <img src={image1} alt="">
+      </div>
+      
+      <div class=" w-full h-full md:w-auto">
+        {/* Bottom left item */}
+        <img src={image2} alt="">
+      </div>
+      
+      <div class=" w-full h-full md:w-auto">
+        {/* Bottom right item */}
+        <img src={image2} alt="">
+      </div>
     </div>
-    <div class="image-bottom">
-      <div class="image-bottom-left">
-        <img 
-          src={image2} 
-          alt="More students from Kiran Foundation" 
-          class="kiran-image-small" 
+  </div>
+</section>
+<!-- 
+
+<PratibhaLayout mt={`${mt} `}>
+  <Fragment slot="content" class="ds">
+    <div
+      class="flex flex-col md:flex-row gap-16 w-full"
+      data-aos="fade-left"
+      data-aos-duration="1200"
+      data-aos-offset="7.5rem"
+      data-disable-parallax-down="lg"
+    >
+      <div class="w-full mx-auto">
+        <h1
+          class="font-merriweather font-normal text-[2.4rem] leading-[150%] tracking-[-2.2%]"
+        >
+          {title}
+        </h1>
+        {
+          description.map((item) => (
+            <p class="font-poppins font-normal text-[0.9rem] leading-[2rem] text-[#49494C] py-6 break-words">
+              {item}
+            </p>
+          ))
+        }
+
+        {
+          supports.map((item) => (
+            <div class="mb-10">
+              <h2 class="text-[#1E1E1E] font-poppins font-semibold text-[1.5rem] leading-[100%]">
+                {item?.support}
+              </h2>
+              <p class="font-poppins font-normal text-[0.9rem] leading-[1.7rem] text-[#49494C] py-6">
+                {item?.desc}
+              </p>
+            </div>
+          ))
+        }
+
+        <div>
+          <h3 class="text-[1.125rem] font-normal text-[#49494C] mb-6">
+            What we cover
+          </h3>
+          <div class="flex flex-col gap-6">
+            {
+              covers.map((items) => (
+                <div class="flex items-center gap-6 text-[1.124rem]">
+                  <div class="w-[33px] h-[33px]">
+                    <img src={items.svg} alt="" width="44" height="44" />
+                  </div>
+                  <div class="text-[#333] font-poppins font-normal text-[1.3rem] leading-[100%]">
+                    {items.title}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </Fragment>
+  <Fragment slot="image-grid">
+    <div
+      class="md:max-w-[596px] mx-auto flex flex-col gap-4"
+      data-aos="fade-left"
+      data-aos-duration="1200"
+      data-aos-offset="7.5rem"
+      data-disable-parallax-down="lg"
+    >
+      <div>
+        <img
+          src={image1}
+          alt="Students from Kiran Foundation"
+          class="w-full h-[12.5rem] object-cover rounded-xl shadow-md aspect-[6/3]"
         />
       </div>
-      <div class="image-bottom-right">
-        <div class="orange-box"></div>
+      <div class="flex gap-4">
+        <div class="flex-2">
+          <img
+            src={image2}
+            alt="More students from Kiran Foundation"
+            class="w-full object-cover rounded-xl shadow-md aspect-[16/9]"
+          />
+        </div>
+        <div class="flex-1">
+          <div class="bg-[#FF5C00] w-full h-full rounded-xl aspect-square">
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</Fragment>
-</PratibhaLayout>
-
-<style>
-h1 {
-  width: 100%;
-}
-.hero-sectidon {
-  background-color: #ffffff;
-  font-family: 'Source Serif Pro', serif;
-  padding: 3rem 0rem;
-  overflow: hidden;
-}
-
-.hero-container {
-  display: flex;
-  margin: 0 auto;
-}
-
-.hero-content {
-  flex: 1;
-}
-
-.hero-title {
-  font-family: Merriweather;
-  font-weight: 400;
-  font-size: 2.4rem;
-  line-height: 150%;
-  letter-spacing: -2.2%;
-  margin-left: 0%;
-}
-
-.hero-description {
-  font-family: Poppins;
-  font-weight: 400;
-  font-size: 0.9rem;
-  line-height: 2rem;
-  letter-spacing: 0%;
-  color: #49494C;
-  padding: 1.5rem 0;
-}
-
-.financial-support {
-  margin-bottom: 2.5rem;
-}
-
-.support-title {
-  color: #1E1E1E;
-  font-family: Poppins;
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 100%;
-  letter-spacing: 0%;
-}
-
-.support-description {
-  font-family: Poppins;
-  font-weight: 400;
-  font-size: 0.9rem;
-  line-height: 1.7rem;
-  letter-spacing: 0%;
-  color: #49494C;
-  padding: 1.5rem 0;
-}
-
-.support-subtitle {
-  font-size: 1.125rem;
-  font-weight: 400;
-  margin: 0 0 1.5rem 0;
-  color: #49494C;
-}
-
-.support-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.support-item {
-  display: flex;
-  font-size: 1.124rem;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.support-icon {
-  width: 33px;
-  height: 33px;
-}
-
-.support-text {
-  color: #333;
-  font-family: Poppins;
-  font-weight: 400;
-  font-size: 1.3rem;
-  line-height: 100%;
-  letter-spacing: 0%;
-}
-
-.hero-images {
-  flex: 1;
-  position: relative;
-  min-height: 600px;
-  margin-left: 3rem;
-}
-
-.hero-image-top, 
-.hero-image-bottom {
-  width: 100%;
-  max-width: 550px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.hero-image-top {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 1rem;
-}
-
-.hero-image-bottom {
-  position: absolute;
-  right: 0;
-  top: 45%;
-  z-index: 1;
-}
-
-.hero-image-top img,
-.hero-image-bottom img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.kiran-images {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.image-top, 
-.image-bottom {
-  width: 100%;
-}
-
-.image-bottom {
-  display: flex;
-  gap: 1rem;
-}
-
-.image-bottom-left {
-  flex: 2;
-}
-
-.image-bottom-right {
-  flex: 1;
-}
-
-.kiran-image {
-  width: 100%;
-  height: 12.5rem;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  aspect-ratio: 6/3;
-}
-
-.kiran-image-small {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  aspect-ratio: 16/9;
-}
-
-.orange-box {
-  background-color: #FF5C00;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  aspect-ratio: 1/1;
-}
-@media (max-width: 1024px) {
-   .hero-contain {
-    flex-direction: column;
-    
-  }
-  .kiran-images {
-      
-      width: 100%;
-    }
-    .ds {
-      max-width: 39.5rem;
-    }
-}
-
-</style>
+  </Fragment>
+</PratibhaLayout> -->

@@ -2,29 +2,70 @@
 import { getEntry } from "astro:content";
 import PratibhaLayout from "../../layouts/PratibhaLayout.astro";
 const aboutPratibha = (await getEntry("pratibha", "about")).data;
-// console.log(aboutPratibha);
 const { title, description,image1,image2,image3 } = aboutPratibha;
-// console.log(aboutPratibha);
 const {mt} = Astro.props;
-// console.log(mt);
+
+
 
 ---
 
+<section class=`   justify-center lg:max-w-[79.5rem] mx-auto pr-[1.5rem] pl-[1.5rem]  ${mt}   md:gap-16 grid tb:grid-cols-1 md:grid-cols-2 gap-16  items-center `>
+  <div class="   md:max-w-[39.75rem] tb:items-center "  data-aos="fade-right"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg">
+  <h1 class="kiran-title py-[0.75rem]">{title}</h1>
 
-  
+  {description.map((item) => <p class=" py-[0.75rem] kiran-description md:w-[90%]">{item}</p>)}
+
+</div>
+<div class="image-team-grid w-full md:max-w-[37.25rem]"
+  data-aos="fade-left"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg">
+    <div class="grid grid-cols-[70%_30%] grid-rows-[auto_1fr] gap-4 w-full h-full">
+      <div class="team-top-image col-span-2 w-full h-full">
+        <img src={image1} alt="" class="rounded-xl w-full h-full object-cover">
+      </div>
+     
+      <div class="bottom-left w-full h-full">
+        <img src={image2} alt="" class="w-full h-full object-cover aspect-video rounded-xl">
+      </div>
+     
+      <div class="bottom-right w-full h-full">
+        <img src={image3} alt="" class="rounded-xl w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
 <PratibhaLayout mt={mt}>
-  <Fragment slot="content">
-  <div class="kiran-container flex gap-16 items-start ">
-    <div class="kiran-content flex flex-1 flex-col gap-[1.5rem] self-center max-w-[39.75rem]">
+  <Fragment slot="content"  >
+  <div class="kiran-container flex gap-16 items-start " 
+
+>
+    <div class="kiran-content flex flex-1 flex-col gap-[1.5rem] self-center max-w-[39.75rem]" 
+    data-aos="fade-right"
+    data-aos-duration="1200"
+    data-aos-offset="8.5rem"
+    data-disable-parallax-down="lg" 
+    >
       <h1 class="kiran-title">{title}</h1>
 
-      {description.map((item) => <p class="kiran-description md:w-[90%]">{item}</p>)}
+      {description.map((item) => <p class="kiran-description tb:w-[90%]">{item}</p>)}
     </div>
-</Fragment>
-<Fragment slot="image-grid">
+  </Fragment>
 
-    <div class="kiran-images max-w-[37.25rem] md:max-h-[32.75rem] flex flex-1 flex-col gap-4">
-      <div class="image-top w-full">
+<Fragment slot="image-grid"     data-aos="fade-right"
+data-aos-duration="1200"
+data-aos-offset="7.5rem"
+data-disable-parallax-down="lg">
+
+    <div class="kiran-images max-w-[37.25rem] tb:max-h-[32.75rem] flex flex-1 flex-col gap-4"
+    >
+      <div class="image-top max-w-full">
         <img
           src={image1}
           alt="Students from Kiran Foundation"
@@ -36,46 +77,20 @@ const {mt} = Astro.props;
           <img
             src={image2}
             alt="More students from Kiran Foundation"
-            class="kiran-image-small rounded-xl w-full h-full object-cover shadow-xl"
+            class="kiran-image-small rounded-xl tb:max:w-[60%] h-full object-cover shadow-xl"
           />
         </div>
         <div class="image-bottom-right  flex-1">
           <img
           src={image3}
           alt="More students from Kiran Foundation"
-          class="kiran-image-small rounded-xl w-full h-full object-cover shadow-xl"
+          class="kiran-image-small rounded-xl tb:max:w-[20%] h-full object-cover shadow-xl"
         />
         </div>
       </div>
     </div>
-  </div>
+  </Fragment>
   
-</Fragment>
-</PratibhaLayout>
+</div>
+</PratibhaLayout> -->
 
-<style>
-
-
-
-
-
-  
- 
-
-  @media (max-width: 1024px) {
-    .kiran-container {
-      flex-direction: column-reverse;
-    }
-
-    .kiran-title {
-      font-size: 2.5rem;
-    }
-
-    .kiran-images {
-      order: -1;
-      width: 100%;
-    }
-  }
-
-
-</style>

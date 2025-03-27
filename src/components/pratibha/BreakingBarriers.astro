@@ -12,31 +12,28 @@ const { mt, secTitle } = Astro.props;
 const { image, title } = aboutBreakingBarrier?.data ?? {};
 ---
 
-<PratibhaLayout mt={`${mt } breaking `}>
-  <Fragment slot="content">
-    <div class=" block mb-[7.5rem]" id="Barrier-container">
-      <h2 class="md:text-5xl text-4xl font-merriweather font-normal">
+<!-- <PratibhaLayout mt={`${mt } breaking `}>
+  <Fragment slot="content"> -->
+<section class:list={[" md:max-w-[80rem] mx-auto max-w-[98%] flex flex-col px-[1.5rem]       ",[mt]]}
+
+    <div class=" block " id="Barrier-container">
+      <h2 class="md:text-5xl text-4xl font-merriweather font-normal text-center lg:mb-[7.5rem] mb-[1.5rem]">
         {title}
       </h2>
     </div>
-  </Fragment>
-  <Fragment slot="image-grid">
-    <div class=" block">
+  <!-- </Fragment>
+  <Fragment slot="image-grid"> -->
+    <div class="lg:mb-[7.5rem] block">
       <img class="w-full aspect-video rounder-md" src={image} alt="" />
     </div>
-  </Fragment>
-</PratibhaLayout>
+  <!-- </Fragment> -->
+  </section>
+<!-- </PratibhaLayout> -->
 
-<style>
-  h2 {
-    /* width: 100%;     */
+<!-- <   /* width: 100%;     */
     font-family: Merriweather;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -2.2%;
     text-align: center;
-  } 
-  .breaking {
-    flex-direction: column;
-  }
-</style>
+  -->
