@@ -3,35 +3,35 @@
 @tailwind utilities;
 
 @layer components {
-  .heading-pratibha {
+  .pratibha-heading {
     font-family: "Merriweather", serif;
     font-size: 3rem; 
     line-height: 150%;
     letter-spacing: -2.2%;
     font-weight: 400;
   }
-  .subheading-pratibha {
+  .pratibha-subheading {
     font-family: Poppins;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 100%;
     letter-spacing: 0%;
     
   }
 
-  .subtile {
+  .pratibha-subtile {
     font-family: Poppins;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 100%;
     letter-spacing: 0%;
 
   }
-  .description {
+  .pratibha-description {
     font-family: Poppins;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 36px;
+    font-size: 1.125rem;
+    line-height: 2.25rem;
     letter-spacing: 0%;
 
   }

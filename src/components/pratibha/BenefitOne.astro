@@ -8,20 +8,20 @@ const { covers, supports, title, description } = benefits;
 ---
 
 <section class=`   justify-center lg:max-w-[79.5rem] mx-auto pr-[1.5rem] pl-[1.5rem]  ${mt}   md:gap-16 grid tb:grid-cols-1 md:grid-cols-2 gap-16  items-center `>
-  <div class="   md:max-w-[39.75rem] tb:items-center "  data-aos="fade-right"
+  <div class="md:max-w-[39.75rem] mx-auto tb:items-center "  data-aos="fade-right"
   data-aos-duration="1200"
   data-aos-offset="120px"
   data-disable-parallax-down="lg">
     {/* First column content */}
     <div class="">
       <h1
-        class="font-merriweather font-normal text-[2.4rem] leading-[150%] tracking-[-2.2%]"
+        class="pratibha-heading"
       >
         {title}
       </h1>
       {
         description.map((item) => (
-          <p class="font-poppins font-normal text-[0.9rem] leading-[2rem] text-[#49494C] py-6 break-words">
+          <p class="pratibha-description text-[#49494C] py-6 break-words">
             {item}
           </p>
         ))
@@ -29,11 +29,11 @@ const { covers, supports, title, description } = benefits;
 
       {
         supports.map((item) => (
-          <div class="mb-10">
-            <h2 class="text-[#1E1E1E] font-poppins font-semibold text-[1.5rem] leading-[100%]">
+          <div class="">
+            <h2 class="text-[#1E1E1E] pratibha-subheading">
               {item?.support}
             </h2>
-            <p class="font-poppins font-normal text-[0.9rem] leading-[1.7rem] text-[#49494C] py-6">
+            <p class="pratibha-description text-[#49494C] py-6">
               {item?.desc}
             </p>
           </div>
@@ -41,17 +41,17 @@ const { covers, supports, title, description } = benefits;
       }
 
       <div>
-        <h3 class="text-[1.125rem] font-normal text-[#49494C] mb-6">
+        <h3 class="pratibha-description text-[#49494C] mb-6">
           What we cover
         </h3>
         <div class="flex flex-col gap-6">
           {
             covers.map((items) => (
               <div class="flex items-center gap-6 text-[1.124rem]">
-                <div class="w-[33px] h-[33px]">
+                <div class="w-[2.0625rem] h-[2.0625rem]">
                   <img src={items.svg} alt="" width="44" height="44" />
                 </div>
-                <div class="text-[#333] font-poppins font-normal text-[1.3rem] leading-[100%]">
+                <div class="text-[#333] pratibha-subtile">
                   {items.title}
                 </div>
               </div>
@@ -63,7 +63,7 @@ const { covers, supports, title, description } = benefits;
   </div>
   </div>
   
-  <div class="image-team-grid w-full md:max-w-[37.25rem]" 
+  <div class="image-team-grid mx-auto w-full md:max-w-[37.25rem]" 
   data-aos="fade-left"
   data-aos-duration="1200"
   data-aos-offset="120px"

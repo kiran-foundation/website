@@ -3,57 +3,77 @@ import { getEntry } from "astro:content";
 import TestimonialsCarousel from "../common/TestimonialsCarousel.astro";
 import Button from "../common/button.astro";
 const selectionProcess = (await getEntry("pratibha", "selection-process")).data;
-const {heading, eligiblity,paragraph,subheading, documents,apply,applylist,applyButton,statusButton} = selectionProcess;
+const {
+  heading,
+  eligiblity,
+  paragraph,
+  subheading,
+  documents,
+  apply,
+  applylist,
+  applyButton,
+  statusButton,
+} = selectionProcess;
 const common = (await getEntry("common", "common")).data;
-const {mt} = Astro.props;
+const { mt } = Astro.props;
 ---
 
 <section class={`bg-[#f1f1f1] py-[6.25rem] w-[100%] ${mt}`}>
-  <div class="container mx-auto md:w-[70%]">
-    <h1 class="mt-0 mb-[2rem] heading-pratibha">{heading}</h1>
+  <div class="container mx-auto md:w-[70%] space-y-[2rem]">
+    <h1 class="mt-0 mb-[2rem] pratibha-heading">{heading}</h1>
 
-    <div class="mb-12">
-      <h2 class="mb-6 font-poppins font-semibold text-[1.65rem] leading-[100%]">{eligiblity}</h2>
-      <ul class="text-[1.12rem] list-disc pl-6 space-y-4 text-lg font-poppins font-normal text-[#49494c] leading-[0.935rem]">
-        {paragraph.map((para) => (
-          <li class="leading-normal">{para}</li>
-        ))}
+    <div class="">
+      <h2 class="mb-6 pratibha-subheading">{eligiblity}</h2>
+      <ul class="list-disc pl-6 space-y-4">
+        {
+          paragraph.map((para) => (
+            <li class=" text-[#49494c] pratibha-description">{para}</li>
+          ))
+        }
       </ul>
     </div>
 
-    <div class="mb-12">
-      <h2 class="mb-6 font-poppins font-semibold text-[1.65rem] leading-[100%]">{subheading}</h2>
-      <ul class="list-disc pl-6 space-y-4 text-lg font-poppins font-normal text-[#49494c] leading-[0.935rem]">
-        {documents.map((list) => (
-          <li class="leading-normal">{list}</li>
-        ))}
+    <div class="">
+      <h2 class="mb-6 pratibha-subheading">{subheading}</h2>
+      <ul
+        class="list-disc pl-6 space-y-4 text-lg font-poppins font-normal text-[#49494c] leading-[0.935rem]"
+      >
+        {
+          documents.map((list) => (
+            <li class="text-[#49494c] pratibha-description">{list}</li>
+          ))
+        }
       </ul>
     </div>
 
-    <div class="mb-12">
-      <h2 class="ml-0 mb-6 font-poppins font-semibold text-[1.65rem] leading-[100%]">{apply}</h2>
-      <ul class="list-disc font-poppins pl-6 space-y-4 text-lg pb-2 font-normal text-[#49494c] leading-[0.935rem]">
-        {applylist.map((item) => (
-          <li class="leading-normal">{item}</li>
-        ))}
+    <div class="">
+      <h2 class="ml-0 mb-6 pratibha-subheading">{apply}</h2>
+      <ul
+        class="list-disc font-poppins pl-6 space-y-4 text-lg pb-2 font-normal text-[#49494c] leading-[0.935rem]"
+      >
+        {
+          applylist.map((item) => (
+            <li class="text-[#49494c] pratibha-description">{item}</li>
+          ))
+        }
       </ul>
     </div>
 
-    <div class="flex flex-col sm:flex-row gap-4 mt-10">
-      <a 
-        href={applyButton?.title} 
+    <div class="flex flex-col sm:flex-row gap-4 pt-[1rem]">
+      <a
+        href={applyButton?.title}
         class="inline-flex items-center justify-center px-3 py-[.75rem] bg-[#D9340B] text-white rounded-md hover:bg-[#C02F0A] transition-colors font-medium text-lg"
       >
         {applyButton.title}
       </a>
-      <a 
-        href={statusButton?.herf} 
+      <a
+        href={statusButton?.herf}
         class="inline-flex items-center justify-center px-3 py-[.75rem] bg-white border border-gray-300 text-gray-900 rounded-md hover:bg-gray-50 transition-colors font-medium text-lg"
       >
         {statusButton?.title}
       </a>
     </div>
-    <div class="padding m-[7.5rem]"></div>
+    <div class=" h-[7.5rem]"></div>
     <TestimonialsCarousel pageTag="home" />
   </div>
 </section>
