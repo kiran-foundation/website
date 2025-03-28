@@ -1,11 +1,11 @@
 ---
-title: "Navigation Links"
+menu: "Navigation submenu"
 description: "Explore various sections of our platform."
 navigation:
-  - title:
+  - menu:
       name: "Pratibha Scholarship"
       url: "/pratibha"
-    links:
+    submenu:
       - name: "Programme Details"
         url: "/pratibha"
       - name: "Selection Process"
@@ -17,10 +17,10 @@ navigation:
       - name: "Apply"
         url: "/pratibha/apply"
   
-  - title:
+  - menu:
       name: "Shakti Courses"
       url: "/shakti"
-    links:
+    submenu:
       - name: "Shakti Details"
         url: "/shakti"
       - name: "Workshop Schedule"
@@ -36,10 +36,10 @@ navigation:
       - name: "Join Sakti"
         url: "/shakti/join"
   
-  - title:
+  - menu:
       name: "Who We Are?"
       url: "/about"
-    links:
+    submenu:
       - name: "About Us"
         url: "/about"
       - name: "Resources"
@@ -51,16 +51,16 @@ navigation:
       - name: "Our Team"
         url: "/team"
   
-  - title:
+  - menu:
       name: "Work with Us"
       url: "/volunteering"
-    links:
+    submenu:
       - name: "Volunteer with Us"
         url: "/volunteering"
       - name: "Internship Opportunities"
         url: "/volunteering"
   
-  - title:
+  - menu:
       name: "Contact Us"
       url: "/contact"
 ---
