@@ -10,21 +10,21 @@ description: [
 subtitle: "They assist students with:"
 
 assist:
-  - svg: "/assets/images/pratibha_page/svg/career.png"
+  - svg: "/assets/images/svg/career.png"
     title: "Career Planning"
 
-  - svg: "/assets/images/pratibha_page/svg/skill.png"
+  - svg: "/assets/images/svg/skill.png"
     title: "Skill Development"
   
-  - svg: "/assets/images/pratibha_page/svg/vector.png"
+  - svg: "/assets/images/svg/vector.png"
     title: "Networking Opportunities"
   
-  - svg: "/assets/images/pratibha_page/svg/skill.png"
+  - svg: "/assets/images/svg/skill.png"
     title: "Access to Skill-Building Workshops"
   
-  - svg: "/assets/images/pratibha_page/svg/education.png"
+  - svg: "/assets/images/svg/education.png"
     title: "Educational Resources"
   
-  - svg: "/assets/images/pratibha_page/svg/hands-on.png"
+  - svg: "/assets/images/svg/hands-on.png"
     title: "Hands-on Training to Boost Academic and Professional Growth"
 ---

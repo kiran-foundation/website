@@ -17,9 +17,7 @@ const { mt } = Astro.props;
 >
   <div
     class="md:max-w-[39.75rem] mx-auto tb:items-center space-y-[1.5rem]"
-    data-aos="fade-right"
-    data-aos-duration="1200"
-    data-disable-parallax-down="lg"
+  
   >
     <h1
       class="pratibha-subheading"
@@ -30,7 +28,11 @@ const { mt } = Astro.props;
     {
       paragraphs &&
         paragraphs.map((par) => (
-          <p class="pratibha-description text-[#49494C]">
+          <p class="pratibha-description text-[#49494C]"
+          data-aos="fade-right"
+    data-aos-duration="1200"
+    data-disable-parallax-down="lg"
+          >
             {par}
           </p>
         ))
@@ -50,15 +52,8 @@ const { mt } = Astro.props;
       </a>
     </div>
 
-    <!-- <Button
-         link={"#"}
-         title={"Become a Mentor"}
-         btn="btn2"
-         widthClass="lg:max-w-[13.0625rem] md:py-5"
-         heightClass="max-h-[3.75rem]"
-       /> -->
   </div>
-  <div class="image-team-grid w-full md:max-w-[37.25rem] mx-auto" data-aos="fade-right">
+  <div class="image-team-grid w-full md:max-w-[37.25rem] mx-auto" >
     <div
       class="grid md:grid-cols-[65%_25%] grid-rows-[auto_1fr] gap-4 w-full h-full"
     >

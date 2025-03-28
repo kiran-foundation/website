@@ -1,3 +1,7 @@
 {
-  "extends": "astro/tsconfigs/base"
+  "extends": "astro/tsconfigs/base",
+  "exclude": [
+    "src/components/common/DropDown.astro",
+    "src/components/common/SlidbarDropdown.astro"
+  ]
 }
