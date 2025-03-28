@@ -40,12 +40,16 @@ import SlidbarDropdown from "./SlidbarDropdown.astro";
         ))
       }
     </div>
-        <!-- ______________DropDowns____________ -->
+    <!-- ______________DropDowns____________Language -->
     <div class="flex items-center justify-center gap-6">
-      <div class="hidden xl:block">
+      <div class="hidden">
         {
           Language.map((el) => (
-            <DropDown title={el.title} subLinks={el.links} className={'!w-[155px]'}/>
+            <DropDown
+              title={el.title}
+              subLinks={el.links}
+              className={"!w-[155px]"}
+            />
           ))
         }
       </div>
@@ -62,7 +66,7 @@ import SlidbarDropdown from "./SlidbarDropdown.astro";
     <!-- drawer init and show -->
     <div class="block xl:hidden text-center">
       <button
-        class="bg-white font-medium rounded-md text-sm p-1 shadow-sm"
+        class="bg-white font-medium rounded-md text-sm p-1"
         type="button"
         data-drawer-target="drawer-navigation"
         data-drawer-show="drawer-navigation"
@@ -102,12 +106,14 @@ import SlidbarDropdown from "./SlidbarDropdown.astro";
     <!-- drawer component -->
     <div
       id="drawer-navigation"
-      class="fixed top-0 left-0 z-40 h-screen overflow-y-auto transition-transform -translate-x-full bg-white w-[390px] dark:bg-gray-800"
+      class="block xl:hidden fixed top-0 left-0 z-40 h-screen overflow-y-auto transition-transform -translate-x-full bg-white w-[390px] dark:bg-gray-800"
       tabindex="-1"
       aria-labelledby="drawer-navigation-label"
     >
       <!-- ______________________________logo + cut option_____________________________  -->
-      <div class="p-2 flex items-center justify-between mb-4">
+      <div
+        class="p-2 flex items-center justify-between mb-4"
+      >
         <a href="/" class="flex items-center shrink-0">
           <img
             src="/logo2.png"
@@ -136,6 +142,14 @@ import SlidbarDropdown from "./SlidbarDropdown.astro";
               d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
           </svg>
         </button>
+      </div>
+      <div class="flex items-center justify-center px-4 my-2">
+        <Button
+          link="/volunteering"
+          title="Support Us"
+          btn="btn3"
+          widthClass="!h-[20px] !min-h-[48px] text-[16px] font-medium !min-w-full"
+        />
       </div>
 
       <!-- ---------------- content----------------------- -->
