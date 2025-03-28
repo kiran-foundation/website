@@ -11,7 +11,7 @@ const faq = (await getEntry(collection, slug)) as {
   };
 };
 const { title, title2, paragraph, questions } = faq.data ?? {};
-// import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 const { mt } = Astro.props;
 ---
 
@@ -81,7 +81,7 @@ const { mt } = Astro.props;
     </h3>
 
     <p
-      class="text-[#49494C]  text-wrap text-[15px] md:min-w-[416px] md:max-h-[82px] md:pr-8 pratibha-description"
+      class="text-[#49494C]  md:min-w-[416px] md:max-h-[82px] md:pr-8 pratibha-description"
     >
       {paragraph}
     </p>

@@ -35,4 +35,16 @@
     letter-spacing: 0%;
 
   }
+  @media (max-width: 768px) {
+    .pratibha-heading {
+      font-size: 1.875rem;
+   
+    }
+    .pratibha-description, .pratibha-subtile {
+      font-size: 1rem;
+    }
+    .pratibha-subheading{
+      font-size: 1.5rem;
+    }
+  }
 }
