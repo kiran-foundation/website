@@ -1,0 +1,11 @@
+---
+export async function getStaticPaths() {
+  return [
+    { params: { path: "opportunity-volunteer" } },
+    { params: { path: "opportunity-internship" } },
+  ];
+}
+const { path } = Astro.params;
+console.log(path)
+---
+<h1>hello</h1>

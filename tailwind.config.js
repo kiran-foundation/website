@@ -15,6 +15,10 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         Inter: ['Inter','sans-serif'],
       },
+      colors: {
+        'orange': "#F1592A",
+        'webBlack':'#1E1E1E'
+      },
       extend: {
         spacing: {
             128: '32rem',
