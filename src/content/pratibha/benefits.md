@@ -15,14 +15,21 @@ supports:
         economic barriers."
 
 # what we cover
-covers: 
-     - svg: "/assets/images/benefits/iconNew1.png"
+listtitle: "what we cover"
+covers:
+     - svg: "/assets/images/pratibha/tution.svg"
        title: "Tuition Fees"
-     - svg: "/assets/images/benefits/iconNew2.png"
+     - svg: "/assets/images/pratibha/study.svg"
        title: "Study Materials"
-     - svg: "/assets/images/benefits/iconNew3.png"
+     - svg: "/assets/images/pratibha/equipment.svg"
        title: "Equipment"
-     - svg: "/assets/images/benefits/iconNew4.png"
+     - svg: "/assets/images/pratibha/boarding_expenses.svg"
        title: "Boarding Expenses"
+# "D:\coding\Kiran Foundation\website\public\assets\images\pratibha\PRATIBHA_1.png"
+image: "/assets/images/pratibha/pratibha-visual-1.png"
+imageGrid:
+  image1: "/assets/images/pratibha_page/group-1.png"
+  image2: "/assets/images/pratibha_page/group-2.png"
+  image3: "/assets/images/pratibha_page/group-3.png"
 
 ---

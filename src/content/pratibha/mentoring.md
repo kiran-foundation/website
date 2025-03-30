@@ -1,9 +1,9 @@
 ---
 title: "Career Guidance and Mentorship"
-image:  "/assets/images/pratibha_page/mentoring.png" # for single image other wise set ""
-image1: "/assets/images/pratibha_page/group-1.png"
-image2: "/assets/images/pratibha_page/group-2.png"
-image3: "/assets/images/pratibha_page/group-2.png"
+image:  "/assets/images/pratibha/pratibha-visual-3.png" # for single image other wise set ""
+image1: "/assets/images/pratibha/group-1.png"
+image2: "/assets/images/pratibha/group-2.png"
+image3: "/assets/images/pratibha/group-2.png"
 description: [
     "We provide our students with guidance and advice from mentors who are professionals in their field.",
   ]

@@ -1,79 +1,64 @@
 ---
 import { getEntry } from "astro:content";
 import TestimonialsCarousel from "../common/TestimonialsCarousel.astro";
-import Button from "../common/button.astro";
 const selectionProcess = (await getEntry("pratibha", "selection-process")).data;
 const {
   heading,
-  eligiblity,
-  paragraph,
-  subheading,
-  documents,
-  apply,
-  applylist,
+
   applyButton,
+  querys,
   statusButton,
 } = selectionProcess;
-const common = (await getEntry("common", "common")).data;
+
 const { mt } = Astro.props;
 ---
 
-<section class={`bg-[#f1f1f1] py-[6.25rem] w-[100%] ${mt}`}>
-  <div class="container mx-auto md:w-[70%] space-y-[2rem]">
-    <h1 class="mt-0 mb-[2rem] pratibha-heading">{heading}</h1>
+<section class={`bg-[#f1f1f1] py-[6.25rem]  w-full ${mt}`}>
+  <div
+    class="mx-auto max-w-full lg:max-w-[79.5rem] px-[1.5rem] mb-[7.5rem]"
+    data-aos="fade-right"
+  >
+    <div class="max-w-full lg:max-w-[43.5rem] space-y-6">
+      <h2 class="pratibha-heading py-2">{heading}</h2>
 
-    <div class="">
-      <h2 class="mb-6 pratibha-subheading">{eligiblity}</h2>
-      <ul class="list-disc pl-6 space-y-4">
-        {
-          paragraph.map((para) => (
-            <li class=" text-[#49494c] pratibha-description">{para}</li>
+      {
+        querys &&
+          querys.map((item: { title: string; description: string[]; }) => (
+            <div>
+              <h3 class="pratibha-subheading ">{item?.title}</h3>
+              <div>
+                <ul class="list-disc ml-8 mt-[1.5rem] ">
+                  {item?.description.map((desc: string) => (
+                    <li class=" pratibha-description  ">{desc}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           ))
-        }
-      </ul>
-    </div>
+      }
 
-    <div class="">
-      <h2 class="mb-6 pratibha-subheading">{subheading}</h2>
-      <ul
-        class="list-disc pl-6 space-y-4 text-lg font-poppins font-normal text-[#49494c] leading-[0.935rem]"
-      >
-        {
-          documents.map((list) => (
-            <li class="text-[#49494c] pratibha-description">{list}</li>
-          ))
-        }
-      </ul>
+      <div class="flex gap-6">
+        <button class="bg-[#D33C0D] py-[1rem] px-[1.5rem] rounded-lg">
+          <a
+            href={applyButton?.herf}
+            class="font-poppins text-white text-[1rem] font-bold"
+          >
+            {applyButton?.title}
+          </a>
+        </button>
+        <button
+          class="bg-transparent py-[1rem] px-[1.5rem] border border-black rounded-lg"
+        >
+          <a
+            href={statusButton?.herf}
+            class="font-poppins text-black text-[1rem] font-bold"
+          >
+            {statusButton?.title}
+          </a>
+        </button>
+      </div>
+      <!-- <div class="h-[7.5rem]"></div> -->
     </div>
-
-    <div class="">
-      <h2 class="ml-0 mb-6 pratibha-subheading">{apply}</h2>
-      <ul
-        class="list-disc font-poppins pl-6 space-y-4 text-lg pb-2 font-normal text-[#49494c] leading-[0.935rem]"
-      >
-        {
-          applylist.map((item) => (
-            <li class="text-[#49494c] pratibha-description">{item}</li>
-          ))
-        }
-      </ul>
-    </div>
-
-    <div class="flex flex-col sm:flex-row gap-4 pt-[1rem]">
-      <a
-        href={applyButton?.title}
-        class="inline-flex items-center justify-center px-3 py-[.75rem] bg-[#D9340B] text-white rounded-md hover:bg-[#C02F0A] transition-colors font-medium text-lg"
-      >
-        {applyButton.title}
-      </a>
-      <a
-        href={statusButton?.herf}
-        class="inline-flex items-center justify-center px-3 py-[.75rem] bg-white border border-gray-300 text-gray-900 rounded-md hover:bg-gray-50 transition-colors font-medium text-lg"
-      >
-        {statusButton?.title}
-      </a>
-    </div>
-    <div class=" h-[7.5rem]"></div>
-    <TestimonialsCarousel pageTag="home" />
   </div>
+  <TestimonialsCarousel pageTag="home" bgcolor="bg-white" />
 </section>

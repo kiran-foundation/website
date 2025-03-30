@@ -1,32 +1,21 @@
 ---
 import { getEntry } from "astro:content";
-const image_src = "/assets/images/group_photo.jpg";
+
 const aboutBreakingBarrier = await getEntry("pratibha", "breaking-barriers");
-const { mt, secTitle } = Astro.props;
+const { mt } = Astro.props;
 const { image, title } = aboutBreakingBarrier?.data ?? {};
 ---
-
-<!-- <PratibhaLayout mt={`${mt } breaking `}>
-  <Fragment slot="content"> -->
-<section class=` md:max-w-[80rem] mx-auto max-w-[98%] flex flex-col px-[1.5rem]  ${mt}`
-    <div class=" block " id="Barrier-container">
-      <h2 class="pratibha-heading text-center lg:mb-[7.5rem] mb-[1.5rem]">
-        {title}
-      </h2>
-    </div>
-  <!-- </Fragment>
-  <Fragment slot="image-grid"> -->
-    <div class="lg:mb-[7.5rem] block">
-      <img class="w-full aspect-video rounder-md" src={image} alt="" />
-    </div>
-  <!-- </Fragment> -->
-  </section>
-<!-- </PratibhaLayout> -->
-
-<!-- <   /* width: 100%;     */
-    font-family: Merriweather;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: -2.2%;
-    text-align: center;
-  -->
+,
+<section
+  class=` md:max-w-[80rem] mx-auto max-w-[98%] flex flex-col px-[1.5rem]  ${mt}`
+  <div
+  class="block"
+  id="Barrier-container"
+>
+  <h2 class="pratibha-heading text-center lg:mb-[7.5rem] mb-[1.5rem]">
+    {title}
+  </h2>
+</section>
+<div class="lg:mb-[7.5rem] block">
+  <img class="w-full rounder-md" src={image} alt="" />
+</div>

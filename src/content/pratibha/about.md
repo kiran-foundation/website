@@ -10,8 +10,13 @@ description: [
   
   "By ensuring economic constraints never limit their potential to achieve their career goals and build a fulfilling future."
   ]
-image1:  "/assets/images/pratibha_page/group-1.png"
-image2: "/assets/images/pratibha_page/group-2.png"
-image3: "/assets/images/pratibha_page/group-2.png"
+
+image: "/assets/images/pratibha/pratibha-visual-1.png"
+
+# to use grid image leave image empty string image: ""
+imageGrid:
+  image1:  "/assets/images/pratibha_page/group-1.png"
+  image2: "/assets/images/pratibha_page/group-2.png"
+  image3: "/assets/images/pratibha_page/group-2.png"
 
 ---

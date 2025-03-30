@@ -9,18 +9,17 @@ import { getEntry } from "astro:content";
 //     text: string;
 // }
 const testimonialsData = (await getEntry("testimonials", "testimonials")).data;
-// const common = (await getEntry("common", "common")).data;
-const { pageTag } = Astro.props;
+const { pageTag, bgcolor="bg-[#F1F1F1]" } = Astro.props;
 const testimonials = testimonialsData.testimonials.filter((testimonial) =>
     testimonial.tags.includes(pageTag),
 );
 ---
- <div class="carousel mb-2 md:mb-16 max-w-[1296px] " >
+ <div class="carousel mb-2 md:mb-16 max-w-[81rem] " >
             <div class="carousel-inner ">
                 {
                     testimonials.map((testimonial, index) => (
-                        <div class="carousel-item  max-w-[636px] max-h-[476px] px-6 py-2 md:px-[10px]" data-index={index}>
-                            <TestimonialComponent {...testimonial} />
+                        <div class="carousel-item  max-w-[636px] max-h-[476px] px-6 py-2 md:px-[0.625rem]" data-index={index}>
+                            <TestimonialComponent {...testimonial} bgcolor={bgcolor} />
                         </div>
                     ))
                 }

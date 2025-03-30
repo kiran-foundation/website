@@ -14,6 +14,7 @@ button:
   herf: "#"
   text: "Become Member"
   
+image: "/assets/images/pratibha/pratibha-visual-4.png"
 imageGrid:
   image: "/assets/images/pratibha_page/group-1.png"
   image2: "/assets/images/pratibha_page/group-2.png"

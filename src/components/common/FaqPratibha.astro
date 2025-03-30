@@ -14,88 +14,39 @@ const { title, title2, paragraph, questions } = faq.data ?? {};
 
 const { mt } = Astro.props;
 ---
-
-<!-- 
-<section class=`   justify-center lg:max-w-[79.5rem] mx-auto pr-[1.5rem] pl-[1.5rem]  ${mt}   md:gap-16 grid tb:grid-cols-1 md:grid-cols-2 gap-16  items-center `>
-  <div class="   md:max-w-[39.75rem] tb:items-center "  data-aos="fade-right"
-  data-aos-duration="1200"
-  data-aos-offset="120px"
-  data-disable-parallax-down="lg">
-  <h2 class="font-poppins text-[2.125rem] font-bold text-gray-900 mb-2">
-    {title}
-  </h2>
-  <h3 class="text-4xl font-bold text-[#1E1E1E] mb-6 font-poppins">
-    {title2}
-  </h3>
-
-  <p
-    class="text-[#49494C] font-[450] text-wrap text-[15px] md:min-w-[416px] md:max-h-[82px] md:pr-8 font-poppins"
-  >
-    {paragraph}
-  </p>
-</div>
-  <div class="image-team-grid w-full md:max-w-[37.25rem]"
-  data-aos="fade-left"
-  data-aos-duration="1200"
-  data-aos-offset="120px"
-  data-disable-parallax-down="lg">
-  <div class="w-full md:w-3/5 pt-[1.5rem]">
-
-      <div class="space-y-4">
-        {
-          questions.map((item, index) => (
-            <div class=" border-[#1E1E1E] border-solid border-[0.0313rem] rounded-lg overflow-hidden">
-              <details class="group">
-                <summary class=" font-poppins w-full px-6 py-4 flex items-center justify-between text-left font-medium cursor-pointer">
-                  <span class="text-left  font-poppins text-sm font-[500]  text-[#383D38]">
-                    {item.question}
-                  </span>
-                  <div class="flex items-center justify-center"></div>
-                </summary>
-                <div class="answer px-6 py-3 text-[#383D38] border-[#1E1E1E] border-solid border-t-[0.0313rem] font-normal text-[0.875rem]  font-Inter">
-                  {item.answer}
-                </div>
-              </details>
-            </div>
-          ))
-        }
-      </div>
-  </div>
-</section>
- --><section
-  class:list={[
-    " md:max-w-[80rem] mx-auto max-w-[98%] flex flex-col px-[1.5rem] md:flex-row  lg:gap-[7.5rem] md:gap-[1.5rem]     ",
-    [mt],
-  ]}
-  data-aos="fade-left"
-  data-aos-duration="1200"
-  data-aos-offset="7.5rem"
-  data-disable-parallax-down="lg"
+<section
+  class=`md:max-w-[80rem] mx-auto max-w-[98%] flex flex-col px-[1.5rem] md:flex-row  lg:gap-[7.5rem] md:gap-[1.5rem] overflow-hidden   ${mt}  `
+  
+  
 >
-  <div class="w-full md:max-w-[26rem]">
-    <h2 class="pratibha-subheading text-gray-900 mb-2">
+  <div class="w-full md:max-w-[26rem]"
+  data-aos="fade-left"
+  >
+    <h2 class="pratibha-subheading  mb-2">
       {title}
     </h2>
-    <h3 class="pratibha-subheading text-[#1E1E1E] mb-6 font-poppins">
+    <h3 class="pratibha-subheading  mb-6 font-poppins">
       {title2}
     </h3>
 
     <p
-      class="text-[#49494C]  md:min-w-[416px] md:max-h-[82px] md:pr-8 pratibha-description"
+      class="  md:min-w-[416px] md:max-h-[82px] md:pr-8 pratibha-description"
     >
       {paragraph}
     </p>
   </div>
 
   <!-- faq ques ans -->
-  <div class="w-full md:max-w-[47.5rem] pt-[1.5rem]">
-    <div class="space-y-4">
+  <div class="w-full md:max-w-[47.5rem] pt-[1.5rem] overflow-hidden">
+    <div class="space-y-4" 
+    >
       {
-        questions.map((item, index) => (
-          <div class=" border-[#1E1E1E] border-solid border-[0.0313rem] rounded-lg overflow-hidden">
+        questions.map((item) => (
+          <div class=" border-[#1E1E1E] border-solid border-[0.0313rem] rounded-lg overflow-hidden" 
+          data-aos="fade-right">
             <details class="group">
-              <summary class="font-poppins text-[1.125rem] text-[#383D38] align-middle w-full px-6 py-4 flex items-center justify-between text-left font-medium cursor-pointer">
-                <span class="text-left font-poppins text-[1.125rem] font-medium text-[#383D38] align-middle">
+              <summary class="font-poppins  text-[#383D38] align-middle w-full px-6 py-4 flex items-center justify-between text-left font-medium cursor-pointer">
+                <span class=" pratibha-description text-left font-poppins  font-medium text-[#383D38] align-middle">
                   {item.question}
                 </span>
                 <span class="ml-4">
