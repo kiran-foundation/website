@@ -4,6 +4,8 @@ import "jarallax/dist/jarallax.min.css";
 import Layout from "../../layouts/Layout.astro";
 import ChooseVolunteering from "../../components/volunteer/ChooseVolunteering.astro";
 import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
+import WhyVolunteer from "../../components/volunteer/WhyVolunteer.astro";
+import WhyIntern from "../../components/volunteer/WhyIntern.astro";
 import Hero from "../../components/pratibha/Hero.astro";
 import Faq from "../../components/common/FaqPratibha.astro";
 import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
@@ -12,8 +14,12 @@ import ContentSection from "../../components/volunteer/ContentSection.astro";
 
 <Layout>
   <main class="page-wrapper">
-    <Breadcrumb pageName="volunteer" />
-    <Hero collection="volunteering" slug="hero-volunteer" />
+
+
+
+<Breadcrumb url={Astro.url} />
+
+    <Hero collection="volunteering" slug="hero-volunteer" contentHeight = 247/>
 
     <ContentSection
       collection="volunteering"
@@ -30,18 +36,20 @@ import ContentSection from "../../components/volunteer/ContentSection.astro";
       textAlignment="order-1"
       imageAlignment="order-2"
     />
+
+
     <ChooseVolunteering fetch="internship" />
 
     <h1
-class="font-merriweather text-center text-[28px] sm:text-[40px] md:text-[48px]">Breaking barriers together
+class="font-merriweather text-center text-[28px] sm:text-[40px]  md:text-[48px] mt-28 mb-32">Breaking barriers together
     </h1>
 
     <TestimonialsCarousel pageTag="home" />
 
     <div
-      class="w-full max-w-6xl h-[30rem] bg-gray-300 mx-auto flex items-center justify-center m-6"
+      class="w-full max-w-6xl h-[30rem] mt-[120px] mb-[120px] bg-gray-300 mx-auto flex items-center justify-center m-6"
     >
-      <span class="text-gray-500">Image Placeholder</span>
+      <span class="text-gray-500 ">Image Placeholder</span>
     </div>
 
     <Faq collection="volunteering" slug="faq" />

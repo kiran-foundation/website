@@ -1,257 +1,74 @@
 ---
 import { getEntry } from "astro:content";
-const { slug, collection } = Astro.props;
+const { slug, collection, imageWidth = 608, imageHeight = 630, contentHeight = 384 } = Astro.props;
 
-// Fetch entry from provided collection and slug
-const heroEntry = await getEntry(collection, slug) as { data: {heroSubtitle:string,greenUnderline: string,heading2: string, heading: string, description: string, image:string, } };
+const heroEntry = (await getEntry(collection, slug)) as {
+  data: {
+    heroSubtitle: string;
+    greenUnderline: string;
+    greenUnderlineSvg: string;
+    heading2: string;
+    heading: string;
+    description: string;
+    image: string;
+  };
+};
 
-// Destructure safely with fallback
-const {greenUnderline, heading, heading2, description, image, heroSubtitle } = heroEntry?.data ?? {};
-// console.log(heroEntry);
-
-// const pratibhaHero = (await getEntry("pratibha", "hero")).data;
+const {
+  greenUnderline,
+  greenUnderlineSvg,
+  heading,
+  heading2,
+  description,
+  image,
+  heroSubtitle,
+} = heroEntry.data;
 ---
 
-<section class="hero-section">
-  <div class="hero-container">
-    <div class="hero-content"
-    data-aos="fade-right"
-        data-aos-duration="1200"
-        data-aos-offset="120px"
-        data-disable-parallax-down="lg"
-    >
-      <h1 class="hero-titles">
-        <span class="highlight-underline">{greenUnderline}</span>
+<section class=" w-full  h-[512px] overflow-y-visible bg-[#F1F1F1] mt-8">
+  <div class="relative max-w-[1296px] mx-auto  h-full flex items-center">
+    <!-- Content Section -->
+    <div class={`relative w-[768px] h-[${contentHeight}]`}>
+      <h1
+        class="w-[773px] h-[80.px]
+      max-w-full sm:w-[600px] md:w-[700px]
+       lg:w-[773px] font-merriweather text-[64px] font-bold leading-[100%] tracking-[0%] "
+      >
+      <span class="relative inline-block">
+        <span class="relative z-10">{greenUnderline}</span> <!-- Text on top -->
+        <span class="absolute bottom-[-5px] left-0 w-full z-0">
+          <img
+            src={greenUnderlineSvg}
+            alt="Green Underline"
+            class="w-full h-auto"
+          />
+        </span>
+      </span>
+      
         {heading}
         <p class="block">{heading2}</p>
       </h1>
-
-      <div class="hero-description">
-        <h2 class="hero-subtitle">{heroSubtitle}</h2>
-        <p class="hero-text">
+      <div class="mt-4">
+        <!-- <h2 class="text-lg font-medium">{heroSubtitle}</h2> -->
+        <p
+          class="mt-8 top-[113.11px] w-[746.44px] h-[144px]
+  sm:w-[600px] md:w-[700px] lg:w-[746.44px] text-[#49494C]
+  font-poppins font-normal text-[32px] leading-normal tracking-[0%] whitespace-pre-line" 
+        >
+        <!-- {heroSubtitle} <br> -->
           {description}
         </p>
       </div>
     </div>
 
-    <div class="hero-image"
-    data-aos="fade-left"
-        data-aos-duration="1500"
-        data-aos-offset="120px"
-        data-disable-parallax-down="lg"
-  >
-      <img src={image} alt="Student with folder smiling" />
+    <!-- Image Wrapper (Ensures bottom alignment) -->
+    <div class="absolute left-[900px] h-full w-auto hidden sm:block">
+      <div
+        class="absolute bottom-0 z-20"
+        style={`width: ${imageWidth}px; height: ${imageHeight}px; transform: translateY(-0%);`}
+      >
+        <img src={image} alt="Hero Image" class="w-full h-full object-cover" />
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
-  .hero-section {
-    position: relative;
-    width: 100%;
-    background-color: rgb(241, 241, 241);
-    font-family: "Source Serif Pro", serif;
-    height: 25.825rem;
-    /* overflow: hidden; */
-    margin-top: 2rem;
-  }
-
-  .hero-container {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    max-width: 64%;
-    margin: 0 auto;
-    padding: 0 1rem;
-    position: relative;
-  }
-
-  .hero-content {
-    /* position: absolute; */
-    flex: 1;
-    padding-right: 2rem;
-    z-index: 1;
-  }
-
-  .hero-titles {
-    margin: 0 0 1.5rem 0;
-    font-family: "Merriweather", serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 3em;
-    color: #1e1e1e;
-    line-height: 1.2;
-  }
-
-  .highlight-underline {
-    position: relative;
-    z-index: 1;
-  }
-
-  .highlight-underline::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0.2rem;
-    height: 0.8rem;
-    width: 100%;
-    background-color: rgb(0, 170, 94);
-    z-index: -1;
-  }
-
-  .hero-description {
-    max-width: 37.5rem;
-  }
-
-  .hero-subtitle {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 1.6rem;
-    color: #49494c;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero-text {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 2.3rem;
-    color: #49494c;
-  }
-
-  .hero-image {
-    position: absolute;
-    right: 4%;
-    bottom: 0;
-    max-width: 23.4375rem;
-    height: auto;
-   
-  }
-
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* Large screens */
-  @media (max-width: 1200px) {
-    .hero-container {
-      max-width: 70%;
-    }
-    .hero-section {
-      height: 43vb;
-    }
-    .hero-image {
-      right: -8rem;
-      max-width: 22rem;
-    }
-  }
-
-  /* Medium screens */
-  @media (max-width: 1024px) {
-    .hero-section {
-      height: 39vb;
-    }
-    .hero-container {
-      max-width: 80%;
-    }
-
-    .hero-titles {
-      font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.4rem;
-    }
-
-    .hero-text {
-      font-size: 1rem;
-      line-height: 1.6;
-      max-width: 30rem;
-    }
-
-    .hero-image {
-      right: -5rem;
-      max-width: 20rem;
-    }
-  }
-  /* @media (max-width: 700px) { 
-    .hero-content {
-      position: absolute;
-      left: 1%;
-    }
-  } */
-
-  /* Tablet screens */
-  @media (max-width: 768px) {
-    .hero-section {
-      height: 13rem;
-    }
-
-    .hero-container {
-      max-width: 90%;
-      margin-left: 5%;
-      padding-top: 1rem;
-    }
-
-    .hero-titles {
-      font-size: 2.2rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1rem;
-    }
-
-    .hero-text {
-      max-width: 75%;
-      font-size: 0.9rem;
-      line-height: 1.4;
-      word-break: normal;
-    }
-
-    .hero-image {
-      max-width: 23vb;
-      right: 0;
-    }
-  }
-
-  /* Mobile screens */
-  @media (max-width: 600px) {
-    .hero-section {
-      height: 25vb;
-      padding: 3rem 0;
-      margin-top: 5rem;
-
-    }
-
-    .hero-container {
-      padding: 0 1rem;
-      max-width: 100%;
-      margin-left: 0;
-      
-    }
-
-    .hero-titles {
-      font-size: 2rem;
-      width: 100%;
-    }
-
-    .hero-description {
-      max-width: 100%;
-    }
-
-    .hero-text,
-    .hero-subtitle {
-      display: none;
-    }
-
-    .hero-image {
-      display: none;
-    }
-  }
-</style>

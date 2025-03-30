@@ -29,8 +29,9 @@ import Mentoring from "../components/pratibha/Mentoring.astro";
 
   <main class="page-wrper">
     <!-- <div class="h-[4rem]"></div> -->
-    <Breadcrumb pageName="Pratibha Scholarship" />
-    <Hero collection="pratibha" slug="hero" />
+    <Breadcrumb url={Astro.url} />
+
+    <Hero collection="pratibha" slug="hero" imageHeight = 566 imageWidth = 476 />
     <Intro mt="mt-[5.375rem] md:mt-[11.5rem]"  />
 
     <BenefitOne mt="mt-[5.375rem] md:mt-[7.5rem]" />
