@@ -10,12 +10,12 @@ const {
   statusButton,
 } = selectionProcess;
 
-const { mt } = Astro.props;
+const { mt ,px='px-6'} = Astro.props;
 ---
 
 <section class={`bg-[#f1f1f1] py-[6.25rem]  w-full ${mt}`}>
   <div
-    class="mx-auto max-w-full lg:max-w-[79.5rem] px-[1.5rem] mb-[7.5rem]"
+    class=`mx-auto max-w-full lg:max-w-[81rem] ${px} mb-[7.5rem]`
     data-aos="fade-right"
   >
     <div class="max-w-full lg:max-w-[43.5rem] space-y-6">
@@ -37,7 +37,7 @@ const { mt } = Astro.props;
           ))
       }
 
-      <div class="flex gap-6">
+      <div class="flex gap-6 flex-col lg:flex-row md:flex-row   ">
         <button class="bg-[#D33C0D] py-[1rem] px-[1.5rem] rounded-lg">
           <a
             href={applyButton?.herf}

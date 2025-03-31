@@ -12,6 +12,10 @@ import BreakingBarriers from "../components/pratibha/BreakingBarriers.astro";
 import Faq from "../components/common/FaqPratibha.astro";
 import FutuerBuilder from "../components/pratibha/FutuerBuilder.astro";
 import Mentoring from "../components/pratibha/Mentoring.astro";
+const mt = "mt-[5.375rem] "  // margin top
+const mdmt = "md:mt-[7.5rem] "  // margin top for md screen 120px 
+const mdmt2 = "md:mt-[11.5rem] "  // margin top for md screen 184px 
+const px = "px-4 "  // paddding for scrren 
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -29,19 +33,22 @@ import Mentoring from "../components/pratibha/Mentoring.astro";
   <main class="page-wrper w-full">
     <div class="h-[4rem]"></div>
     <!-- <div class="wid"><Breadcrumb pageName="Pratibha Scholarship" /></div> -->
-    <div class="wid"><Breadcrumb pageName="Pratibha Scholarship" /></div>
-    <Hero collection="pratibha" slug="hero" />
-    <Intro mt="mt-[5.375rem] md:mt-[11.5rem]" />
+    <!-- <div class="wid"><Breadcrumb pageName="Pratibha Scholarship" /></div> -->
+     
+<Breadcrumb url={Astro.url} />  
+    <Hero collection="pratibha" slug="hero" imageWidth="476" height="586" />
+    <!-- <Intro mt={mt + mdmt2 + px } />  {/* Pritibha Way */  } -->
+    <Intro mt={mt + mdmt2 + px }/>  {/* Pritibha Way */  }
 
-    <BenefitOne mt="mt-[5.375rem] md:mt-[7.5rem]" />
-     <Mentoring mt="mt-[5.375rem] md:mt-[11.5rem]" />
+    <BenefitOne mt={mt + mdmt + px } />  {/* how we should students */  }
+     <Mentoring mt={mt + mdmt2 + px } />  {/* Career and guidance */  }
 
-    <BreakingBarriers mt="mt-[5.375rem] md:mt-[7.5rem]" />
+    <BreakingBarriers mt={mt + mdmt + px } />  {/* Breaking Barriers*/  }
 
-    <SelectionProcess mt="mt-[5.375rem] md:mt-[7.5rem]" />
+    <SelectionProcess mt={mt + mdmt} px={ px} />    
 
-    <FutuerBuilder mt="mt-[5.375rem] md:mt-[11.5rem]" />
-    <Faq collection="pratibha" slug="faq" mt="mt-[5.375rem] md:mt-[11.5rem] mb-[7.5rem]"/>
+    <FutuerBuilder mt={mt + mdmt2 + px } />
+    <Faq collection="pratibha" slug="faq" mt={mt + mdmt2 + px }/>
 
     <a
       class="btn-scroll-top"

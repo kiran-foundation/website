@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+
+
+
   .pratibha-heading {
     font-family: "Merriweather", serif;
     font-size: 3rem; 
@@ -43,7 +46,7 @@
   }
 
   .singleImage > img {
-    width: 97%;
+    width: 100%;
     margin: 0% auto;
     height: auto;
   }

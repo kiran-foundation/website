@@ -2,246 +2,53 @@
 import { getEntry } from "astro:content";
 const { slug, collection, imageWidth = 608, imageHeight = 630 } = Astro.props;
 
-// Fetch entry from provided collection and slug
-const heroEntry = await getEntry(collection, slug) as { data: {heroSubtitle:string,greenUnderline: string,heading2: string, heading: string, description: string, image:string, } };
+const heroEntry = (await getEntry(collection, slug)) as {
+  data: {
+    heroSubtitle: string;
+    greenUnderline: string;
+    greenUnderlineSvg: string;
+    heading2: string;
+    heading: string;
+    description: string;
+    image: string;
+  };
+};
 
-// Destructure safely with fallback
-const {greenUnderline, heading, heading2, description, image, heroSubtitle } = heroEntry?.data ?? {};
-// console.log(heroEntry);
-
-// const pratibhaHero = (await getEntry("pratibha", "hero")).data;
+const {
+  greenUnderline,
+  greenUnderlineSvg,
+  heading,
+  heading2,
+  description,
+  image,
+  heroSubtitle,
+} = heroEntry.data;
 ---
 
-<section class="hero-section">
-  <div class="hero-container">
-    <div class="hero-content"
-  
-    >
-      <h1 class="hero-titles">
-        <span class="highlight-underline">{greenUnderline}</span>
+<section class="w-full md:h-[32rem] bg-[#F1F1F1]  relative">
+  <div class="relative max-w-[81rem] mx-auto flex flex-col md:flex-row items-center h-full">
+    <!-- Content Section -->
+    <div class="relative w-full md:w-3/5 px-6 md:px-0">
+      <h1 class="text-[2.25rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-merriweather font-bold leading-[1.2]">
+        <span class="relative inline-block">
+          <span class="relative z-10">{greenUnderline}</span>
+          <span class="absolute bottom-[-5px] left-0 w-full z-0">
+            <img src={greenUnderlineSvg} alt="Green Underline" class="w-full h-auto" />
+          </span>
+        </span>
         {heading}
         <p class="block">{heading2}</p>
       </h1>
-      <p class="mt-4 text-[18px] sm:text-[24px] md:text-[32px] lg:text-[32px] text-[#49494C] font-poppins leading-normal whitespace-pre-line">
+      <p class="mt-4 text-[1.125rem] sm:text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] text-[#49494C] font-poppins leading-relaxed">
         {description}
       </p>
     </div>
 
-    <div class="hero-image"
-   
-  >
-      <img src={image} alt="Student with folder smiling" />
+    <!-- Image Wrapper (Hidden on Mobile, Uses Dynamic Width & Height) -->
+    <div class="hidden sm:block absolute bottom-0 right-0 md:right-[-10%] lg:right-[-5%] z-20"
+      style={`width: ${imageWidth}px; height: ${imageHeight}px;`}>
+      <img src={image} alt="Hero Image" class="w-full h-auto object-cover"
+        style="position: absolute; bottom: 0; transform: translateY(-0%);" />
     </div>
   </div>
 </section>
-
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
-  .hero-section {
-    position: relative;
-    width: 100%;
-    background-color: rgb(241, 241, 241);
-    font-family: "Source Serif Pro", serif;
-    height: 25.825rem;
-    /* overflow: hidden; */
-    margin-top: 2rem;
-  }
-
-  .hero-container {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    max-width: 84%;
-    margin: 0 auto;
-    padding: 0 1rem;
-    position: relative;
-  }
-
-  .hero-content {
-    /* position: absolute; */
-    flex: 1;
-    padding-right: 2rem;
-    z-index: 1;
-  }
-
-  .hero-titles {
-    margin: 0 0 1.5rem 0;
-    font-family: "Merriweather", serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 3em;
-    color: #1e1e1e;
-    line-height: 1.2;
-  }
-
-  .highlight-underline {
-    position: relative;
-    z-index: 1;
-  }
-
-  .highlight-underline::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0.2rem;
-    height: 0.8rem;
-    width: 100%;
-    background-color: rgb(0, 170, 94);
-    z-index: -1;
-  }
-
-  .hero-description {
-    max-width: 37.5rem;
-  }
-
-  .hero-subtitle {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 1.6rem;
-    color: #49494c;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero-text {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 2.3rem;
-    color: #49494c;
-  }
-
-  .hero-image {
-    position: absolute;
-    right: 4%;
-    bottom: 0;
-    max-width: 23.4375rem;
-    height: auto;
-   
-  }
-
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* Large screens */
-  @media (max-width: 1200px) {
-    .hero-container {
-      max-width: 70%;
-    }
-    .hero-section {
-      height: 43vb;
-    }
-    .hero-image {
-      right: -8rem;
-      max-width: 22rem;
-    }
-  }
-
-  /* Medium screens */
-  @media (max-width: 1024px) {
-    .hero-section {
-      height: 39vb;
-    }
-    .hero-container {
-      max-width: 80%;
-    }
-
-    .hero-titles {
-      font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.4rem;
-    }
-
-    .hero-text {
-      font-size: 1rem;
-      line-height: 1.6;
-      max-width: 30rem;
-    }
-
-    .hero-image {
-      right: -5rem;
-      max-width: 20rem;
-    }
-  }
-  /* @media (max-width: 700px) { 
-    .hero-content {
-      position: absolute;
-      left: 1%;
-    }
-  } */
-
-  /* Tablet screens */
-  @media (max-width: 768px) {
-    .hero-section {
-      height: 13rem;
-    }
-
-    .hero-container {
-      max-width: 90%;
-      margin-left: 5%;
-      padding-top: 1rem;
-    }
-
-    .hero-titles {
-      font-size: 2.2rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1rem;
-    }
-
-    .hero-text {
-      max-width: 75%;
-      font-size: 0.9rem;
-      line-height: 1.4;
-      word-break: normal;
-    }
-
-    .hero-image {
-      max-width: 23vb;
-      right: 0;
-    }
-  }
-
-  /* Mobile screens */
-  @media (max-width: 600px) {
-    .hero-section {
-      height: 25vb;
-      padding: 3rem 0;
-      margin-top: 1rem;
-
-    }
-
-    .hero-container {
-      padding: 0 1rem;
-      max-width: 100%;
-      margin-left: 0;
-      
-    }
-
-    .hero-titles {
-      font-size: 2rem;
-      width: 100%;
-    }
-
-    .hero-description {
-      max-width: 100%;
-    }
-
-    .hero-text,
-    .hero-subtitle {
-      display: none;
-    }
-
-    .hero-image {
-      display: none;
-    }
-  }
-</style>
