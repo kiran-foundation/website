@@ -1,7 +1,7 @@
 ---
-greenUnderline: "Two Paths"
+greenUnderline: "Two Paths,"
 greenUnderlineSvg: "/assets/svg/green-line-under-text-volunteer.svg"
-heading: ', One Mission ' 
+heading: 'One Mission ' 
 heading2: ''
 description: "Volunteer with us to inspire change, or intern
 

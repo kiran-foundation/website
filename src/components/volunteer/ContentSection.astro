@@ -51,7 +51,7 @@ const reasons = whyIntern?.reasons || whyVolunteer?.reasons || [];
 const heading = whyIntern?.heading || whyVolunteer?.heading || "";
 ---
 
-<section class={`max-w-[1296px] mx-auto px-4 md:px-8 ${classes} mt-[100px] md:mt-[184px] lg:mt-[184px]`}>
+<section class={`max-w-[1296px] mx-auto px-4 md:px-8  mt-[100px] md:mt-[184px] lg:mt-[184px]`}>
   <!-- Heading + Description with Optional Top Image -->
   <div
     data-aos="fade-right"
@@ -60,36 +60,38 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
     data-disable-parallax-down="lg"
     class="grid md:grid-cols-2 gap-8 md:gap-12 items-center"
   >
-    <div class="space-y-4 ">
-      <h1 class="font-merriweather font-normal text-[32px] md:text-[40px] lg:text-[48px] leading-[140%] md:leading-[150%] tracking-[-2.2%]">
-        {title}
-      </h1>
-      <p class="font-poppins font-normal text-[16px] md:text-[18px] leading-[28px] md:leading-[36px] tracking-[-0.25px] text-[#49494C]  
-   w-full max-w-[90%] sm:max-w-[500px] md:max-w-[636px]  
-   h-auto md:h-[180px]">
-  {description}
-</p>
-
-    </div>
-
-    <!-- Image beside title + description, if `imageTop` exists -->
-    {imageTop && (
-      <div class="w-full h-56 sm:h-64 md:h-80 lg:h-[400px] rounded-lg overflow-hidden">
-        <img src={imageTop} alt={title} class="w-full h-full object-cover" />
+    
+      <div class="space-y-4  sm:w-[300px] md:w-[500px] lg:w-[636px] lg:h-[284px]">
+        <h1 class="font-merriweather font-normal text-[32px] md:text-[40px] lg:text-[48px] leading-[140%] md:leading-[150%] tracking-[-2.2%]">
+          {title}
+        </h1>
+        <p class="font-poppins font-normal text-[16px] md:text-[18px] leading-[28px] md:leading-[36px] tracking-[0%] text-[#49494C]  
+     w-full max-w-[90%] sm:max-w-[500px] md:max-w-[636px]  
+     h-auto md:h-[180px]">
+    {description}
+  </p>
+  
       </div>
-    )}
-  </div>
+  
+      <!-- Image beside title + description, if `imageTop` exists -->
+      {imageTop && (
+        <div class="w-full h-56 sm:h-64 md:h-80 lg:h-[406px] lg:w-[596px] lg:ml-16 rounded-lg overflow-hidden">
+          <img src={imageTop} alt={title} class="w-full h-full object-cover" />
+        </div>
+      )}
+    </div>
+   
 
   <!-- Content below heading (Reasons + Image) -->
   <div
-    class="grid md:grid-cols-2 gap-8 md:gap-12 items-center mt-10 md:mt-12"
+    class={`grid md:grid-cols-2 gap-8 md:gap-12 items-center lg:h-[685px] ${imageTop ? "mt-[120px]" : "mt-[32px]"}`}
     data-aos="fade-left"
     data-aos-duration="600"
     data-aos-offset="120px"
     data-disable-parallax-down="lg"
   >
     <!-- Dynamic Reasons + Button (swappable) -->
-    <div class={`flex flex-col space-y-6 sm:space-y-8 lg:space-y-[40px] ${textAlignment}`}>
+    <div class={`flex flex-col space-y-6 sm:space-y-8 lg:space-y-[40px] lg:h-full lg:w-[636px]  ${imageTop ? 'lg:ml-16' : 'lg:mr-16'} ${textAlignment}`}>
       {reasons.length > 0 && (
         <div class="space-y-6 sm:space-y-8 lg:space-y-[40px]">
           <h3 class="font-poppins font-semibold text-[24px] md:text-[28px] lg:text-[32px] leading-[100%] text-[#1E1E1E]">
@@ -120,19 +122,19 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
         </div>
       )}
 
-      <div class="mt-10 md:mt-16 lg:mt-20">
+      <div class="mt-10 md:mt-16 lg:mt-12">
         <Button
           link={ctaLink}
           title={ctaText || buttonText}
           btn="btn1"
-          widthClass="w-[180px] sm:w-[200px] lg:w-[235px]"
+          widthClass="w-[180px] sm:w-[200px] lg:w-[252px]"
           heightClass="h-[50px] sm:h-[55px] lg:h-[60px]"
         />
       </div>
     </div>
 
     <!-- Dynamic Image (swappable) -->
-    <div class={`w-full h-56 sm:h-64 md:h-80 lg:h-[400px] rounded-lg overflow-hidden ${imageAlignment} bg-black`}>
+    <div class={`w-full h-56 sm:h-64 md:h-80  ${imageTop ? 'lg:h-[582px]' : 'lg:h-[426px]'} lg:w-[596px]  rounded-lg overflow-hidden ${imageAlignment}`}>
       <img src={image || imageBottom} alt={title} class="w-full h-full object-cover" />
     </div>
   </div>
