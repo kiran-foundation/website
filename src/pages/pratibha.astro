@@ -30,12 +30,8 @@ const px = "px-4 "  // paddding for scrren
 <Layout title="Pratibha">
  
 
-  <main class="page-wrper w-full">
-    <div class="h-[4rem]"></div>
-    <!-- <div class="wid"><Breadcrumb pageName="Pratibha Scholarship" /></div> -->
-    <!-- <div class="wid"><Breadcrumb pageName="Pratibha Scholarship" /></div> -->
-     
-<Breadcrumb url={Astro.url} />  
+  <main class="page-wrper w-full">     
+    <Breadcrumb url={Astro.url} />  
     <Hero collection="pratibha" slug="hero" imageWidth="476" height="586" />
     <!-- <Intro mt={mt + mdmt2 + px } />  {/* Pritibha Way */  } -->
     <Intro mt={mt + mdmt2 + px }/>  {/* Pritibha Way */  }
@@ -74,37 +70,4 @@ const px = "px-4 "  // paddding for scrren
     </a>
   </main>
 
-  <style>
-  
-
-    .wid {
-      justify-self: center;
-      width: 67%;
-    }
-    @media (max-width: 1024px) {
-      .wid {
-        width: 70%;
-        justify-self: center;
-      }
-    }
-    @media (max-width: 992px) {
-      .wid {
-        justify-self: center;
-        width: 90%;
-      }
-      .padding {
-        height: 5rem;
-      }
-    }
-    @media (max-width: 768px) {
-      .wid {
-        justify-self: center;
-
-        width: 90%;
-      }
-      .padding {
-        height: 5rem;
-      }
-    }
-  </style>
 </Layout>
