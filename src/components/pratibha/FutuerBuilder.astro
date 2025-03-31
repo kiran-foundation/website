@@ -1,86 +1,93 @@
 ---
 import { getEntry } from "astro:content";
+
+// Fetch the content entry for "future-builder"
 const futurebuilder = await getEntry("pratibha", "future-builder");
 
-const { title, paragraphs, button, imageGrid, image } =
-  futurebuilder?.data ?? {};
+// Destructure the fetched data
+const { title, paragraphs, button, imageGrid, image } = futurebuilder?.data ?? {};
 const { mt } = Astro.props;
 ---
 
 <section
-  class=`   justify-center lg:max-w-[81rem] mx-auto  ${mt}   md:gap-16 grid tb:grid-cols-1 md:grid-cols-2 gap-16  items-center overflow-hidden`
+  class={`grid items-center justify-center mx-auto overflow-hidden lg:max-w-[81rem] xl:gap-16 tb:grid-cols-1 md:grid-cols-2 gap-16 ${mt}`}
 >
-  <div
-    class="overflow-hidden lg:max-w-[39.75rem] md:w-full mx-auto tb:items-center space-y-[1.5rem]"
-  >
-    <h1 class="pratibha-subheading">
+  <!-- Left Section: Text Content -->
+  <div class="mx-auto mb-[1.5rem] overflow-hidden tb:items-center lg:max-w-[39.75rem] md:w-full">
+    <!-- Title -->
+    <h1 class="pratibha-subheading mb-[1.5rem]">
       {title}
     </h1>
 
-    {
-      paragraphs &&
-        paragraphs.map((par: string) => (
-          <p
-            class="pratibha-description"
-            data-aos="fade-right"
-            data-aos-duration="1200"
-            data-disable-parallax-down="lg"
-          >
-            {par}
-          </p>
-        ))
-    }
+    <!-- Paragraphs -->
+    {paragraphs &&
+      paragraphs.map((par: string) => (
+        <p
+          class="pratibha-description"
+          data-aos="fade-right"
+          data-aos-duration="1200"
+          data-disable-parallax-down="lg"
+        >
+          {par}
+        </p>
+      ))}
+
+    <!-- Button -->
     <div
-      class="flex flex-col sm:flex-row mt-[1.5rem] lg:max-w-[13.0625rem] overflow-hidden"
-      data-aos="fade-left"
+      class="flex flex-col mt-[3rem] overflow-hidden sm:flex-row lg:max-w-[13.0625rem]"
+      
     >
-      <button class="bg-[#00AA5E] py-[1rem] px-[1.5rem] rounded-lg">
+      <button class="py-[1rem] px-[1.5rem] bg-[#00AA5E] rounded-lg">
         <a
           href={button?.herf}
-          class="font-poppins text-[#1E1E1E] text-[1.125rem] font-bold"
+          class="font-poppins text-[1.125rem] font-bold text-[#1E1E1E]"
         >
           {button?.text}
         </a>
       </button>
     </div>
   </div>
+
+  <!-- Right Section: Image Content -->
   <div
-    class="overflow-hidden image-team-grid md:max-w-full lg:max-w-[37.25rem] mx-auto"
+    class="mx-auto overflow-hidden image-team-grid md:max-w-full lg:max-w-[37.25rem]"
     data-aos="fade-right"
   >
-    {
-      image ? (
-        <div class="singleImage">
-          <img src={image} alt="" />
+    {image ? (
+      <!-- Single Image -->
+      <div class="singleImage max-w-[37.25rem] max-h-[23.875rem]">
+        <img src={image} alt="" />
+      </div>
+    ) : (
+      <!-- Image Grid -->
+      <div class="grid w-full h-full grid-rows-[auto_1fr] gap-4 md:grid-cols-[65%_25%]">
+        <!-- Top Image -->
+        <div class="w-full h-full col-span-2 team-top-image">
+          <img
+            src={imageGrid.image}
+            alt=""
+            class="object-cover w-full h-full max-h-[12.5rem] rounded-xl shadow-xl kiran-image aspect-video"
+          />
         </div>
-      ) : (
-        <div class="grid md:grid-cols-[65%_25%] grid-rows-[auto_1fr] gap-4 w-full h-full">
-          <div class="team-top-image col-span-2 w-full h-full">
-            <img
-              src={imageGrid.image}
-              alt=""
-              class="rounded-xl w-full h-full object-cover kiran-image max-h-[12.5rem] aspect-video shadow-xl"
-            />
-          </div>
 
-          <div class="bottom-left w-full h-full">
-            <img
-              src={imageGrid.image2}
-              alt=""
-              class="w-full h-full object-cover aspect-video rounded-xl
-             kiran-image-small tb:max:w-[20%] shadow-xl"
-            />
-          </div>
-
-          <div class="bottom-right w-full h-full">
-            <img
-              src={imageGrid.image2}
-              alt=""
-              class="rounded-xl w-full h-full object-cover"
-            />
-          </div>
+        <!-- Bottom Left Image -->
+        <div class="w-full h-full bottom-left">
+          <img
+            src={imageGrid.image2}
+            alt=""
+            class="object-cover w-full h-full rounded-xl shadow-xl kiran-image-small aspect-video tb:max:w-[20%]"
+          />
         </div>
-      )
-    }
+
+        <!-- Bottom Right Image -->
+        <div class="w-full h-full bottom-right">
+          <img
+            src={imageGrid.image2}
+            alt=""
+            class="object-cover w-full h-full rounded-xl"
+          />
+        </div>
+      </div>
+    )}
   </div>
 </section>

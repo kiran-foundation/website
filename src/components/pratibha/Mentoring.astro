@@ -19,12 +19,12 @@ const {title, image, image1, image2, image3, description,subtitle,assist} = abou
   {description.map((item: string) => <p class=" pratibha-description mb-6">{item}</p>)}
   
   
-  <ul class="space-y-5">
+  <ul class="xl:space-y-10 space-y-6">
   
   <p class=" pratibha-description mb-6">{subtitle}</p>
   {assist.map((item: { svg: string; title: string }) => (
 
-    <li class="flex items-center gap-6">
+    <li class="flex items-center gap-4">
       <div class="max-w-8 max-h-8 flex items-center justify-center">
         <img src={item?.svg} alt={item?.title + " png "}>
           
@@ -46,7 +46,7 @@ const {title, image, image1, image2, image3, description,subtitle,assist} = abou
           <img 
             src={image} 
             alt="Students mentorship" 
-            class="w-full h-auto object-cover rounded-md"
+            class="w-[37.25rem] h-[32.75rem] object-cover rounded-md"
           />
         </div> : <div class="grid grid-cols-[70%_30%] grid-rows-[auto_1fr] gap-4 w-full h-full">
       <div class="team-top-image col-span-2 w-full h-full">

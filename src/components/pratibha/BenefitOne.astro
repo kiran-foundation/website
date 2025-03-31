@@ -3,89 +3,87 @@ import { getEntry } from "astro:content";
 const benefits = (await getEntry("pratibha", "benefits")).data;
 
 const { mt } = Astro.props;
-const { covers, supports,listtitle, title, description, imageGrid, image } = benefits;
+const { covers, supports, listtitle, title, description, imageGrid, image } = benefits;
 ---
 
-<section class=`justify-center lg:max-w-[81rem] mx-auto  overflow-hidden  ${mt}   md:gap-16 grid tb:grid-cols-1 md:grid-cols-2 gap-16  items-center overflow-hidden`>
-  <div class="lg:max-w-[39.75rem] mx-auto tb:items-center overflow-hidden " data-aos="fade-right"
+<section 
+  class={`grid items-center justify-center overflow-hidden mx-auto lg:max-w-[81rem] md:gap-16 tb:grid-cols-1 md:grid-cols-2 gap-16 ${mt}`}
+>
+  <!-- First Column -->
+  <div 
+    class="overflow-hidden mx-auto lg:max-w-[39.75rem] tb:items-center" 
+    data-aos="fade-right"
   >
-    {/* First column content */}
-    <div class="">
-      <h1
-        class="pratibha-heading"
-      >
+    <div>
+      <!-- Title -->
+      <h1 class="pratibha-heading">
         {title}
       </h1>
-      {
-        description.map((item: string) => (
-          <p class="pratibha-description py-6 break-words">
-            {item}
+
+      <!-- Description -->
+      {description.map((item: string) => (
+        <p class="pratibha-description py-6 break-words">
+          {item}
+        </p>
+      ))}
+
+      <!-- Supports -->
+      {supports.map((item: { support: string; desc: string; }) => (
+        <div>
+          <h2 class="pratibha-subheading">
+            {item?.support}
+          </h2>
+          <p class="pratibha-description py-6">
+            {item?.desc}
           </p>
-        ))
-      }
+        </div>
+      ))}
 
-      {
-        supports.map((item: { support: string; desc: string; }) => (
-          <div class="">
-            <h2 class=" pratibha-subheading">
-              {item?.support}
-            </h2>
-            <p class="pratibha-description  py-6">
-              {item?.desc}
-            </p>
-          </div>
-        ))
-      }
-
+      <!-- Covers -->
       <div>
         <h3 class="pratibha-description mb-6">
           {listtitle}
         </h3>
         <div class="flex flex-col gap-6">
-          {
-            covers.map((items: { svg: string; title: string; }) => (
-              <div class="flex items-center gap-6 text-[1.124rem]">
-                <div class="max-w-[2.75rem] max-h-[2.75rem]">
-                  <img src={items.svg} alt="" width="44" height="44" />
-                </div>
-                <div class=" pratibha-subtile">
-                  {items.title}
-                </div>
+          {covers.map((items: { svg: string; title: string; }) => (
+            <div class="flex items-center gap-6 text-[1.124rem]">
+              <div class="max-w-[2.75rem] max-h-[2.75rem]">
+                <img src={items.svg} alt="" width="44" height="44" />
               </div>
-            ))
-          }
+              <div class="pratibha-subtile">
+                {items.title}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </div>
-  </div>
-  
-  <div class="image-team-grid mx-auto w-full lg:max-w-[37.25rem] overflow-hidden" 
-  data-aos="fade-left"
-  data-aos-duration="1200"
-  data-aos-offset="120px"
-  data-disable-parallax-down="lg">
-    {image ? 
+
+  <!-- Second Column -->
+  <div 
+    class="image-team-grid mx-auto w-full overflow-hidden lg:max-w-[37.25rem]" 
+    data-aos="fade-left"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    {image ? (
       <div class="singleImage">
-        <img src={image} alt="">
+        <img src={image} alt="" class="w-[37.25rem] h-[35.3125rem]">
       </div>
-      
-    : <div class="grid grid-cols-2 grid-rows-[auto_1fr] gap-4 w-full h-full">
-      <div class=" col-span-2 w-full h-full">
-        
-        <img src={imageGrid.image1} alt="">
+    ) : (
+      <div class="grid w-full h-full grid-cols-2 grid-rows-[auto_1fr] gap-4">
+        <div class="col-span-2 w-full h-full">
+          <img src={imageGrid.image1} alt="">
+        </div>
+        <div class="w-full h-full md:w-auto">
+          <img src={imageGrid.image2} alt="">
+        </div>
+        <div class="w-full h-full md:w-auto">
+          <img src={imageGrid.image2} alt="">
+        </div>
       </div>
-      
-      <div class=" w-full h-full md:w-auto">
-        
-        <img src={imageGrid.image2} alt="">
-      </div>
-      
-      <div class=" w-full h-full md:w-auto">
-        
-        <img src={imageGrid.image2} alt="">
-      </div>
-    </div>}
+    )}
   </div>
 </section>
-

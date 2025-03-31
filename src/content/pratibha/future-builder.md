@@ -1,5 +1,5 @@
 ---
-title: "Builder of Future"
+title: "Builders of Future"
 
 paragraphs: [
     "Mentors actively guide students by monitoring their progress,

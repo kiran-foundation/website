@@ -12,10 +12,10 @@ import BreakingBarriers from "../components/pratibha/BreakingBarriers.astro";
 import Faq from "../components/common/FaqPratibha.astro";
 import FutuerBuilder from "../components/pratibha/FutuerBuilder.astro";
 import Mentoring from "../components/pratibha/Mentoring.astro";
-const mt = "mt-[5.375rem] "  // margin top
-const mdmt = "md:mt-[7.5rem] "  // margin top for md screen 120px 
-const mdmt2 = "md:mt-[11.5rem] "  // margin top for md screen 184px 
-const px = "px-4 "  // paddding for scrren 
+const mt = "mt-[5.375rem] "; // margin top
+const mdmt = "md:mt-[7.5rem] "; // margin top for md screen 120px
+const mdmt2 = "md:mt-[11.5rem] "; // margin top for md screen 184px
+const px = "px-4 "; // paddding for scrren
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -27,24 +27,29 @@ const px = "px-4 "  // paddding for scrren
 <script src="jarallax/dist/jarallax.min.js"></script>
 <script src="simplebar/dist/simplebar.min.js"></script>
 
+
+
+
 <Layout title="Pratibha">
- 
-
-  <main class="page-wrper w-full">     
-    <Breadcrumb url={Astro.url} />  
+  <main class="page-wrper w-full">
+    <Breadcrumb url={Astro.url} />
     <Hero collection="pratibha" slug="hero" imageWidth="476" height="586" />
-    <!-- <Intro mt={mt + mdmt2 + px } />  {/* Pritibha Way */  } -->
-    <Intro mt={mt + mdmt2 + px }/>  {/* Pritibha Way */  }
 
-    <BenefitOne mt={mt + mdmt + px } />  {/* how we should students */  }
-     <Mentoring mt={mt + mdmt2 + px } />  {/* Career and guidance */  }
+    <Intro mt={mt + mdmt2 + px} />
+    {/* Pritibha Way */}
 
-    <BreakingBarriers mt={mt + mdmt + px } />  {/* Breaking Barriers*/  }
+    <BenefitOne mt={mt + mdmt + px} />
+    {/* how we should students */}
+    <Mentoring mt={mt + mdmt2 + px} />
+    {/* Career and guidance */}
 
-    <SelectionProcess mt={mt + mdmt} px={ px} />    
+    <BreakingBarriers mt={mt + mdmt + px} />
+    {/* Breaking Barriers*/}
 
-    <FutuerBuilder mt={mt + mdmt2 + px } />
-    <Faq collection="pratibha" slug="faq" mt={mt + mdmt2 + px }/>
+    <SelectionProcess mt={mt + mdmt} px={px} />
+
+    <FutuerBuilder mt={mt + mdmt2 + px} />
+    <Faq collection="pratibha" slug="faq" mt={mt + mdmt2 + px} />
 
     <a
       class="btn-scroll-top"
@@ -69,5 +74,4 @@ const px = "px-4 "  // paddding for scrren
       <i class="ai-arrow-up"></i>
     </a>
   </main>
-
 </Layout>
