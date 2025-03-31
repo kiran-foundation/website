@@ -1,12 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-const {
-  slug,
-  collection,
-  imageWidth = 608,
-  imageHeight = 630,
-  greenSvgWidth = 95,
-} = Astro.props;
+const { slug, collection, imageWidth = 608, imageHeight = 630 } = Astro.props;
 
 const heroEntry = (await getEntry(collection, slug)) as {
   data: {
@@ -52,7 +46,7 @@ const {
             <img
               src={greenUnderlineSvg}
               alt="Green Underline"
-              class={`absolute ${collection === "pratibha" ? "w-full" : "w-[95%]"} bottom-[4px] left-0 h-auto`}
+              class="w-full h-auto"
             />
           </span>
         </span>
