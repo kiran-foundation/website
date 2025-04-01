@@ -769,8 +769,8 @@ vertical-align: middle;
 .volunteeringForm-input-container input:hover,
 .volunteeringForm-input-container textarea:hover,
 .volunteeringForm-input-container-half input:hover{
-  border: 2px solid #00AA5E;
-  border-radius: 8px;
+  border: 2px solid #00AA5E !important;
+  border-radius: 8px ;
 }
 
 
@@ -801,6 +801,16 @@ vertical-align: middle;
   content: '';
   display: block;
   clear: both;
+}
+
+.volunteeringForm-suberror {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #000;
 }
 
 .volunteeringForm-submit-button {
