@@ -2,12 +2,13 @@
 import type { MarkdownFile } from "../../types/Markdown";
 import { remark } from "remark";
 import html from "remark-html";
+import VolunteerComponent from "../../components/volunteer/volunteerComponent.astro";
 
 const roleFile = import.meta.glob<MarkdownFile>(
-  "/src/content/work/internship/*.md",
+  "/src/content/work/internship/*.md"
 );
 const staticTextsFile = import.meta.glob<MarkdownFile>(
- "/src/content/work/static-text.md",
+  "/src/content/work/static-text.md"
 );
 
 const role = await (async () => {
@@ -26,7 +27,7 @@ const role = await (async () => {
 if (!role) {
   console.warn(
     "Role not found for path:",
-    `/src/content/work/internship/${Astro.props.path}.md`,
+    `/src/content/work/internship/${Astro.props.path}.md`
   );
   // FIXME: Later
   // throw new Error('Role not found');
@@ -67,13 +68,16 @@ const {
 
 const {
   title = "Title not found",
+  quote = "Quote not found",
   about = "About information not available",
   startDate = "Start date not provided",
+  roleType = "Role type not specified",
   duration = "Duration not specified",
   timeCommitment = "Time commitment not mentioned",
   teamSize = "Team size not defined",
   responsibilities = "",
   requirements = "",
+  impact = "",
 } = role || {};
 
 /* FIXME:
@@ -95,39 +99,58 @@ const {
 <div class="aboutVolunteering-frame1">
   <div class="aboutVolunteering-frame2">
     <h1>{title}</h1>
-    <p>{about}</p>
+    <p>{quote}</p>
   </div>
   <p class="aboutVolunteering-info-text">
-    {startDate}<br />
-    {duration}<br />
-    {timeCommitment}<br />
+    <span>🗓️ Start Date:</span>
+    {startDate}
+    <br />
+    <br />
+    <span>💼 Role Type: </span>
+    {roleType}
+    <br />
+    <br />
+    <span>📅 Duration:</span>
+    {duration}
+    <br />
+    <br />
+    <span>⏳ Time Commitment:</span>
+    {timeCommitment}
+    <br />
+    <br />
+    <span>👥 Team Size:</span>
     {teamSize}
   </p>
+  <!-- TODO: after this, one component for what you'll do and one component for who you are and why volunteer ? -->
   <div class="aboutVolunteering-frame3">
-    <h2>{responsibilitiesHeading}:</h2>
+    <div class="aboutVolunteering-frame5">What You'll Do</div>
     <p>
-      {
-        responsibilities.split("\n").map((line) => (
-          <>
-            {line}
-            <br />
-          </>
-        ))
-      }
+      <span class="h4">🌟 Impact:</span>
+      {impact}
     </p>
+    <div class="aboutVolunteering-frame4">
+      <VolunteerComponent
+        path={Astro.props.path}
+        name="responsibilities"
+        title="🗒️ Responsibilities"
+      />
+    </div>
+    <div class="aboutVolunteering-frame4">
+      <div class="aboutVolunteering-frame5">Who You Are</div>
+      <VolunteerComponent
+        path={Astro.props.path}
+        name="requirements"
+        title="✅ Requirements"
+      />
+    </div>
+    <div class="aboutVolunteering-frame4">
+      <div class="aboutVolunteering-frame5">Why Volunteer?</div>
+
+      <VolunteerComponent
+        path={Astro.props.path}
+        name="benefits"
+        title="🎁 Benefits"
+      />
+    </div>
   </div>
-  <div class="aboutVolunteering-frame4">
-    <h2>{requirementsHeading}:</h2>
-    <p>
-      {
-        requirements.split("\n").map((line) => (
-          <>
-            {line}
-            <br />
-          </>
-        ))
-      }
-    </p>
-  </div>
- 
 </div>

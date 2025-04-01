@@ -18,12 +18,11 @@ export async function getStaticPaths() {
   const allVolunteering = await getCollection("work");
 
   return allVolunteering
-    .filter(entry => entry.slug.startsWith("internship/")) 
+    .filter((entry) => entry.slug.startsWith("internship/"))
     .map((entry) => ({
-      params: { path: entry.slug.replace(/^internship\//, "") }, 
+      params: { path: entry.slug.replace(/^internship\//, "") },
     }));
 }
-
 ---
 
 <Layout title="Intenrship Roles">
@@ -31,8 +30,8 @@ export async function getStaticPaths() {
     <Hero />
     <AboutInternship path={path ?? ""} />
     <Form />
-    <InfoVolunteering />
-    <HowDoesItWork />
+    <!-- <InfoVolunteering /> -->
+    <!-- <HowDoesItWork /> -->
   </main>
   <a
     class="btn-scroll-top"

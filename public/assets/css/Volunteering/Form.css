@@ -2,13 +2,13 @@
   width: 1000px;
   height: 868px;
   margin: 200px;
-  margin-bottom: 200px;
-  border-radius: 36px;
+  border-radius: 36px;  
   background: #051d40;
   padding: 96px;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   position: relative;
+  margin-bottom: 200px;
 }
 
 .volunteeringForm-frame h1 {
@@ -16,8 +16,9 @@
   font-weight: 700;
   line-height: 52px;
   text-align: center;
-  margin: 0 auto 52px;
   color: #fff;
+  margin-bottom: 50px;
+  margin-top: 100px;
 }
 
 .volunteeringForm-container {
@@ -28,30 +29,35 @@
 .volunteeringForm-input-container,
 .input-container-half {
   margin-bottom: 16px;
+  padding-top: 30px;
 }
 
 .volunteeringForm-input-container label,
 .input-container-half label {
-  font-size: 16px;
+  font-family: Poppins;
   font-weight: 600;
-  line-height: 24px;
-  text-align: left;
-  color: #fff;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #000;
+
+  
 }
 
 .volunteeringForm-input-container input,
 .volunteeringForm-input-container textarea,
 .volunteeringForm-input-container-half input {
-  width: 100%;
-  padding: 16px;
-  border-radius: 18px;
-  border: 1px solid #ffffff4d;
-  background: transparent;
-  color: #fff;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  
 }
 
 .volunteeringForm-input-container textarea {
-  height: 128px;
+  height: 250px;
 }
 
 .volunteeringForm-input-container-half {
@@ -73,9 +79,8 @@
 .volunteeringForm-submit-button {
   width: 249px;
   height: 56px;
-  padding: 12px 32px;
   border-radius: 8px;
-  background-color: #f1592a;
+  background-color: #D33C0D;
   color: white;
   font-size: 16px;
   font-weight: 700;
@@ -83,4 +88,5 @@
   text-align: center;
   border: none;
   cursor: pointer;
+  margin-top: 35px;
 }

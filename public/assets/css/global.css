@@ -686,17 +686,17 @@ body {
   position: relative;
   margin-left: 200px;
   margin-right: 200px; */ 
-  background: #051d40;
+  background: #F1F1F1;
   padding: 25px 60px;
   border-radius: 16px;
-  color: #fff;
   text-align: left;
   width: 90%;
   max-width: 1296px;
   margin:auto;
   max-height: auto;
   box-sizing: border-box;
-  margin-bottom: 30px;
+  margin-bottom: 200px;
+
 }
 
 
@@ -708,12 +708,24 @@ body {
 }
 
 .volunteeringForm-frame h1 {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 52px;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: 0px;
   text-align: center;
-  margin: 0 auto 52px;
-  color: #fff;
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+
+.volunteeringForm-frame label{
+  font-family: Poppins;
+font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0px;
+vertical-align: middle;
+
 }
 
 .volunteeringForm-container {
@@ -724,15 +736,19 @@ body {
 .volunteeringForm-input-container,
 .input-container-half {
   margin-bottom: 16px;
+  padding-top: 40px;
 }
 
 .volunteeringForm-input-container label,
 .input-container-half label {
-  font-size: 16px;
+  font-family: Poppins;
   font-weight: 600;
-  line-height: 24px;
-  text-align: left;
-  color: #fff;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #000;
+  
 }
 
 .volunteeringForm-input-container input,
@@ -740,14 +756,35 @@ body {
 .volunteeringForm-input-container-half input {
   width: 100%;
   padding: 16px;
-  border-radius: 18px;
   border: 1px solid #ffffff4d;
-  background: transparent;
-  color: #fff;
+  background: white;
+  color: #000;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+.volunteeringForm-input-container input:hover,
+.volunteeringForm-input-container textarea:hover,
+.volunteeringForm-input-container-half input:hover{
+  border: 2px solid #00AA5E;
+  border-radius: 8px;
+}
+
+
+.volunteeringForm-input-container input:focus,
+.volunteeringForm-input-container textarea:focus,
+.volunteeringForm-input-container-half input:focus{
+  border: 2px solid #00AA5E;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 0 0 3px #00AA5E66;
 }
 
 .volunteeringForm-input-container textarea {
-  height: 128px;
+  height: 250px;
 }
 
 .volunteeringForm-input-container-half {
@@ -771,14 +808,18 @@ body {
   height: 56px;
   padding: 12px 32px;
   border-radius: 8px;
-  background-color: #f1592a;
-  color: white;
+  background-color: #D33C0D;
   font-size: 16px;
   font-weight: 700;
   line-height: 32px;
   text-align: center;
   border: none;
   cursor: pointer;
+  margin-top: 35px;
+  margin-bottom: 60px;
+  color: white;
+
+
 }
 
 .image-container {
@@ -983,74 +1024,7 @@ body {
   background: #333;
 }
 
-.aboutVolunteering-frame1 {
-  margin-top: 3%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  justify-content: center;
-  align-items: flex-start;
-}
 
-.aboutVolunteering-frame2,
-.aboutVolunteering-frame3,
-.aboutVolunteering-frame4 {
- 
-
-  background: #fff;
-  border-radius: 8px;
-}
-
-
-
-.aboutVolunteering-frame2 p {
-  width: 100%;
-  font-size: 20px;
-  font-weight: 500;
-  text-align: left;
-}
-
-.aboutVolunteering-info-text {
-
-  
-  
-  font-size: 20px;
-  font-weight: 700;
-  text-align: left;
-  white-space: pre-wrap;
-}
-
-.aboutVolunteering-frame3 h2,
-.aboutVolunteering-frame4 h2 {
-  font-size: 24px;
-  font-weight: 600;
-  text-align: left;
-}
-
-.aboutVolunteering-frame3 p,
-.aboutVolunteering-frame4 p {
-  font-size: 20px;
-  font-weight: 500;
-  text-align: left;
-}
-
-
-
-.aboutVolunteering-apply-button {
-  width: 189px;
-  height: 48px;
-  
-  border-radius: 8px;
-  background: #f1592a;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-}
 
 .mainVolunteering-main-container {
   width: 100%;
@@ -1059,8 +1033,7 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: 'Poppins', sans-serif;
-  margin: 50px auto;
-  padding: 0 20px;
+
 }
 
 .mainVolunteering-main-heading {
@@ -3319,9 +3292,7 @@ h4 {
   font-weight: 600;
   line-height: 24px;
   text-align: left;
-  color: #ffff;
-  margin-top: -40px;
-  
+  margin-top: -20px;
 }
 
 .pratibhaCard-image-container-vectorstar {
@@ -4437,8 +4408,10 @@ h4 {
 
 .aboutVolunteering-frame1 {
  /* margin-top:400px;  */
+  margin-top: 3%;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   /* gap: 64px; */
   background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
@@ -4453,34 +4426,51 @@ h4 {
     position: relative;
 }
 .aboutVolunteering-frame2,
-.aboutVolunteering-frame3,
-.aboutVolunteering-frame4 {
+.aboutVolunteering-frame3 {
  
-
   background: #fff;
   border-radius: 8px;
 }
+
+.aboutVolunteering-frame4{
+  background: #fff;
+  border-radius: 8px;
+  padding-bottom: 80px;
+}
 .aboutVolunteering-frame2 h1 {
   
-  font-size: 48px;
+  font-size: 64px;
   font-weight: 600;
   text-align: left;
+  color: #1E1E1E;
 }
 .aboutVolunteering-frame2 p {
   width: 100%;
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 500;
-  text-align: left;
+  color:#1E1E1E;
+  text-align: center;
 }
-.aboutVolunteering-info-text {
-
-  
-  
-  font-size: 20px;
-  font-weight: 700;
+.aboutVolunteering-info-text{
+  font-size: 18px;
+  font-weight: 400;
   text-align: left;
   white-space: pre-wrap;
+  color: #1E1E1E;
+  padding-top: 150px;
+  padding-bottom: 100px;
 }
+
+.aboutVolunteering-info-text span{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  white-space: pre-wrap;
+  color: #000;
+}
+
+
+
 .aboutVolunteering-frame3 h2,
 .aboutVolunteering-frame4 h2 {
   font-size: 24px;
@@ -4500,7 +4490,7 @@ h4 {
   margin-left: 30px;
 }
 .aboutVolunteering-apply-button {
-  
+  width: 189px;
   height: 48px;
   
   border-radius: 8px;
@@ -4512,6 +4502,17 @@ h4 {
   border: none;
   cursor: pointer;
   margin-left: -10%;
+}
+
+.aboutVolunteering-frame5{
+  
+  background: #fff;
+  border-radius: 8px;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: left;
+  color: #000;
+  padding-bottom: 24px;
 }
 
 /* WhyVolunteer.css */
@@ -4526,6 +4527,7 @@ h4 {
   display: flex;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
+  
 }
 
 .WhyVolunteer-frame-heading {
