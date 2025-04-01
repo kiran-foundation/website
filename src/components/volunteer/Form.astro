@@ -25,13 +25,13 @@ const { path } = Astro.props;
         <label for="email"
           >Email <span style="font-weight: 400;">(Required)</span>
         </label>
-        <input type="email" id="email" name="email" placeholder="Your email" />
+        <input type="text" id="email" name="email" placeholder="Your email" />
       </div>
       <div class="volunteeringForm-input-container">
         <label for="phone"
           >Phone Number <span style="font-weight: 400;">(Required)</span>
         </label>
-        <input type="tel" id="phone" name="phone" placeholder="Your number" />
+        <input type="text" id="phone" name="phone" placeholder="Your number" />
       </div>
       <div class="volunteeringForm-input-container">
         <label for="more"
@@ -55,6 +55,44 @@ const { path } = Astro.props;
   const popUp = document.getElementById("pop-up") as HTMLElement;
   const form_id = "1GBxqZhw1JGOfkFAkehcN2cWJ6kfJPs5y7eCCWBH2l7c";
 
+  function validMail(email) {
+    if (!email) return false;
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+  }
+
+  function validPhone(phone) {
+    if (!phone) return false;
+    // starts with 6 7 8 or 9 and have 10 digits nd only numbers
+    const regex = /^[6-9]\d{9}$/;
+    return regex.test(phone);
+  }
+
+  // Function to add red border and error message
+  function addErrorMessage(inputId, messageText) {
+    const inputElement = document.getElementById(inputId);
+
+    // Set the border and border radius
+    inputElement.style.border = "2px solid #992424";
+    inputElement.style.borderRadius = "8px";
+
+    // Check if the adjacent sibling already contains the error message and replace it
+    const errorMessage = inputElement.nextElementSibling;
+    if (
+      errorMessage &&
+      errorMessage.classList.contains("volunteeringForm-suberror")
+    ) {
+      // Replace the existing error message
+      errorMessage.innerHTML = "❗" + messageText;
+    } else {
+      // Insert a new error message if not already present
+      inputElement.insertAdjacentHTML(
+        "afterend",
+        "<div class='volunteeringForm-suberror'>❗" + messageText + "</div>"
+      );
+    }
+  }
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -69,7 +107,7 @@ const { path } = Astro.props;
     const more = (document.getElementById("more") as HTMLTextAreaElement).value;
 
     // Check if all fields are filled
-    if (fullName && email && phone && role && more) {
+    if (fullName && validMail(email) && validPhone(phone) && role) {
       const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.2005620554=${encodeURIComponent(fullName)}&entry.1045781291=${encodeURIComponent(email)}&entry.1166974658=${encodeURIComponent(phone)}&entry.1929439720=${encodeURIComponent(role)}&entry.138103954=${encodeURIComponent(more)}`;
 
       try {
@@ -91,14 +129,27 @@ const { path } = Astro.props;
     } else {
       // make the form red where it is not filled
       if (!fullName) {
+        addErrorMessage("full-name", "Please enter your full name");
       }
-      if (!email) {
+      if (!validMail(email)) {
+        if (!email) {
+          addErrorMessage("email", "Please enter your email");
+        } else {
+          addErrorMessage(
+            "email",
+            "Invalid email format. Example: name@domain.com"
+          );
+        }
       }
-      if (!phone) {
-      }
-      if (!role) {
-      }
-      if (!more) {
+      if (!validPhone(phone)) {
+        if (!phone) {
+          addErrorMessage("phone", "Please enter your phone number");
+        } else {
+          addErrorMessage(
+            "phone",
+            " Invalid Format. Phone number must be 10 digits. Example: 6 301 234 567"
+          );
+        }
       }
     }
   });
