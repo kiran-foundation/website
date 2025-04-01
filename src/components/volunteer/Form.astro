@@ -2,108 +2,104 @@
 const { path } = Astro.props;
 ---
 
-<script src='/assets/js/theme.min.js' is:inline></script>
-<script src='/assets/js/common.js' is:inline></script>
+<script src="/assets/js/theme.min.js" is:inline></script>
+<script src="/assets/js/common.js" is:inline></script>
 
-<style>
-  input[type="file"] {
-    background-color: #051d40; /* Blue background */
-    color: white; /* White text */
-    padding: 10px;
-   
-   
-    cursor: pointer;
-  }
-
-  input[type="file"]::-webkit-file-upload-button {
-    background-color: #051d40; /* Blue background for Webkit browsers */
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-</style>
-<section id="form" >
+<section id="form">
   <div class="volunteeringForm-frame">
-    <h1>We'd love to hear from you</h1>
-    
-      <form id="volunteering-form">
-        <div class="volunteeringForm-input-container">
-          <label for="full-name">Full Name</label>
-          <input type="text" id="full-name" name="full-name" placeholder="Enter your full name">
-        </div>
-        <div class='info'>
-        <div class="volunteeringForm-input-container-half">
-          <label for="email" style="color: #fff; font-size: 16px;">Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email">
-        </div>
-        <div class="volunteeringForm-input-container-half">
-          <label for="phone" style="color: #fff; font-size: 16px;">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-        </div>
+    <h1>Let’s build something great together!</h1>
+
+    <form id="volunteering-form">
+      <div class="volunteeringForm-input-container">
+        <label for="full-name"
+          >Full Name <span style="font-weight: 400;">(Required)</span></label
+        >
+        <input
+          type="text"
+          id="full-name"
+          name="full-name"
+          placeholder="Your name"
+        />
       </div>
-        <div class="volunteeringForm-input-container">
-          <label for="resume">Resume</label>
-          <input type="file" id="resume" name="resume" placeholder="Upload your resume" style="color: #5e5e5c">
-        </div>
+      <div class="volunteeringForm-input-container">
+        <label for="email"
+          >Email <span style="font-weight: 400;">(Required)</span>
+        </label>
+        <input type="email" id="email" name="email" placeholder="Your email" />
+      </div>
+      <div class="volunteeringForm-input-container">
+        <label for="phone"
+          >Phone Number <span style="font-weight: 400;">(Required)</span>
+        </label>
+        <input type="tel" id="phone" name="phone" placeholder="Your number" />
+      </div>
+      <div class="volunteeringForm-input-container">
+        <label for="more"
+          >Tell us more about you <span style="font-weight: 400;"
+            >(Optional)</span
+          ></label
+        >
+        <textarea id="more" name="more" rows="5"></textarea>
+      </div>
 
-        <div class="volunteeringForm-input-container">
-          <label for="role">Role</label>
-          <input type="text" id="role" name="role" placeholder="Volunteering Role" value={path}>
-        </div>
-
-        <div class="volunteeringForm-input-container">
-          <label for="more">More Information</label>
-          <textarea id="more" name="more" placeholder="Tell us more about yourself" rows="3"></textarea>
-        </div>
-        
-        <button type="submit" class="volunteeringForm-submit-button">Submit</button>
-      </form>
-      <div id="pop-up" style="display: none;">Form submitted successfully!</div>
-    </div>
+      <button type="submit" class="volunteeringForm-submit-button"
+        >Apply for Position</button
+      >
+    </form>
+    <div id="pop-up" style="display: none;">Form submitted successfully!</div>
   </div>
 </section>
-  
- <script>
-  const form = document.getElementById('volunteering-form') as HTMLFormElement;
-  const popUp = document.getElementById('pop-up') as HTMLElement;
-  const form_id ='1GBxqZhw1JGOfkFAkehcN2cWJ6kfJPs5y7eCCWBH2l7c';
 
-  form.addEventListener('submit', async (e) => {
+<script>
+  const form = document.getElementById("volunteering-form") as HTMLFormElement;
+  const popUp = document.getElementById("pop-up") as HTMLElement;
+  const form_id = "1GBxqZhw1JGOfkFAkehcN2cWJ6kfJPs5y7eCCWBH2l7c";
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const fullName = (document.getElementById('full-name') as HTMLInputElement).value;
-    const email = (document.getElementById('email') as HTMLInputElement).value;
-    const phone = (document.getElementById('phone') as HTMLInputElement).value;
-    const resume = (document.getElementById('resume') as HTMLInputElement).value;
-    const role = (document.getElementById('role') as HTMLInputElement).value;
-    const more = (document.getElementById('more') as HTMLTextAreaElement).value;
+    const fullName = (document.getElementById("full-name") as HTMLInputElement)
+      .value;
+    const email = (document.getElementById("email") as HTMLInputElement).value;
+    const phone = (document.getElementById("phone") as HTMLInputElement).value;
+    // get information about the role using current url
+    const url = window.location.href;
+    const getInternshipName = (url) => url.split("/").slice(-2, -1)[0];
+    const role = getInternshipName(url);
+    const more = (document.getElementById("more") as HTMLTextAreaElement).value;
 
     // Check if all fields are filled
-    if (fullName && email && phone && resume && role && more) {
-      const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.2005620554=${encodeURIComponent(fullName)}&entry.1045781291=${encodeURIComponent(email)}&entry.1166974658=${encodeURIComponent(phone)}&entry.839337160=${encodeURIComponent(resume)}&entry.1929439720=${encodeURIComponent(role)}&entry.138103954=${encodeURIComponent(more)}`;
-
+    if (fullName && email && phone && role && more) {
+      const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.2005620554=${encodeURIComponent(fullName)}&entry.1045781291=${encodeURIComponent(email)}&entry.1166974658=${encodeURIComponent(phone)}&entry.1929439720=${encodeURIComponent(role)}&entry.138103954=${encodeURIComponent(more)}`;
 
       try {
-        const _response = await fetch(url, { method: 'POST' }); // Send form data to Google Form
+        const _response = await fetch(url, { method: "POST" }); // Send form data to Google Form
       } catch (error) {
         console.error(error);
       }
 
       // Show the "Form submitted successfully!" message
-      popUp.style.display = 'block';
+      popUp.style.display = "block";
 
       // Hide the message after 3 seconds
       setTimeout(() => {
-        popUp.style.display = 'none';
+        popUp.style.display = "none";
       }, 3000);
 
       // Reset the form fields
       form.reset();
     } else {
-      alert('Please fill in all required fields!');
+      // make the form red where it is not filled
+      if (!fullName) {
+      }
+      if (!email) {
+      }
+      if (!phone) {
+      }
+      if (!role) {
+      }
+      if (!more) {
+      }
     }
   });
 </script>
-
