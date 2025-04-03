@@ -751,6 +751,21 @@ vertical-align: middle;
   
 }
 
+/* Target autofilled inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  color: #000 !important;
+}
+
+
 .volunteeringForm-input-container input,
 .volunteeringForm-input-container textarea,
 .volunteeringForm-input-container-half input {
@@ -776,11 +791,20 @@ vertical-align: middle;
 
 .volunteeringForm-input-container input:focus,
 .volunteeringForm-input-container textarea:focus,
-.volunteeringForm-input-container-half input:focus{
+.volunteeringForm-input-container-half input:focus {
   border: 2px solid #00AA5E;
-  border-radius: 8px;
-  outline: none;
   box-shadow: 0 0 0 3px #00AA5E66;
+  border-radius: 8px ;
+  outline: none;
+}
+
+/* Keep the red border if the field has an error */
+.volunteeringForm-input-container input.error,
+.volunteeringForm-input-container textarea.error,
+.volunteeringForm-input-container-half input.error {
+  border: 2px solid #992424 !important;
+  border-radius: 8px ;
+  box-shadow: none !important;
 }
 
 .volunteeringForm-input-container textarea {
