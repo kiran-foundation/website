@@ -1,11 +1,23 @@
 ---
+import Layout from "../../../layouts/Layout.astro";
+import Head from "../../../components/opportunities/Head.astro";
+import Category from "../../../components/opportunities/Category.astro";
 export async function getStaticPaths() {
   return [
-    { params: { path: "opportunity-volunteer" } },
-    { params: { path: "opportunity-internship" } },
+    { params: { path: "volunteering" } },
+    { params: { path: "internship" } },
   ];
 }
 const { path } = Astro.params;
-console.log(path)
+// console.log(path)
+import { getCollection } from "astro:content";
+import OpportunityCard from "../../../components/opportunities/OpportunityCard.astro";
+const jobs = await getCollection("work", ({ id }) => {
+  return id.startsWith("internship/") || id.startsWith("volunteering/");
+});
+// console.log(jobs)
 ---
-<h1>hello</h1>
+<Layout>
+  <Head></Head>
+  <Category prop={path}/>
+</Layout>
