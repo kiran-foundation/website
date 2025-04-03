@@ -1,5 +1,5 @@
 ---
 title: "Breaking Barriers Together"
-image: "/assets/images/group_photo.jpg" 
+image: "/assets/images/pratibha/pratibha-visual-5.png" 
 
 ---

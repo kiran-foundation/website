@@ -25,8 +25,7 @@ const { mt } = Astro.props;
         <p
           class="pratibha-description"
           data-aos="fade-right"
-          data-aos-duration="1200"
-          data-disable-parallax-down="lg"
+         
         >
           {par}
         </p>
@@ -34,29 +33,36 @@ const { mt } = Astro.props;
 
     <!-- Button -->
     <div
-      class="flex flex-col mt-[3rem] overflow-hidden sm:flex-row lg:max-w-[13.0625rem]"
+      class="flex flex-col mt-[3rem] overflow-hidden sm:flex-row"
       
     >
-      <button class="py-[1rem] px-[1.5rem] bg-[#00AA5E] rounded-lg">
+      <div class=" w-[13.0625rem]  h-[3.75rem] py-[18px] px-[17.8px]   bg-[#00AA5E] rounded-lg ">
         <a
           href={button?.herf}
-          class="font-poppins text-[1.125rem] font-bold text-[#1E1E1E]"
+          class=" font-poppins text-[1.125rem] font-semibold text-[#1E1E1E] leading-6  "
         >
+        <!-- font-family: Poppins;
+font-weight: 600;
+font-size: 18px;
+line-height: 24px;
+letter-spacing: 0%;
+text-align: center;
+ -->
           {button?.text}
         </a>
-      </button>
+      </div>
     </div>
   </div>
 
   <!-- Right Section: Image Content -->
   <div
-    class="mx-auto overflow-hidden image-team-grid md:max-w-full lg:max-w-[37.25rem]"
+    class="mx-auto overflow-hidden image-team-grid md:max-w-full xl:max-w-[37.25rem]"
     data-aos="fade-right"
   >
     {image ? (
       <!-- Single Image -->
-      <div class="singleImage max-w-[37.25rem] max-h-[23.875rem]">
-        <img src={image} alt="" />
+      <div class="singleImage max-w-[596px] h-[382px]">
+        <img src={image} alt="" class=" w-full" />
       </div>
     ) : (
       <!-- Image Grid -->

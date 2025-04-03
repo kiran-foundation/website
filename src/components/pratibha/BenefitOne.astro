@@ -44,9 +44,9 @@ const { covers, supports, listtitle, title, description, imageGrid, image } = be
         <h3 class="pratibha-description mb-6">
           {listtitle}
         </h3>
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col space-y-10">
           {covers.map((items: { svg: string; title: string; }) => (
-            <div class="flex items-center gap-6 text-[1.124rem]">
+            <div class="flex items-center gap-4  text-[1.124rem]">
               <div class="max-w-[2.75rem] max-h-[2.75rem]">
                 <img src={items.svg} alt="" width="44" height="44" />
               </div>
@@ -70,7 +70,7 @@ const { covers, supports, listtitle, title, description, imageGrid, image } = be
   >
     {image ? (
       <div class="singleImage">
-        <img src={image} alt="" class="w-[37.25rem] h-[35.3125rem]">
+        <img src={image} alt="" class="w-[596px] h-[565px]">
       </div>
     ) : (
       <div class="grid w-full h-full grid-cols-2 grid-rows-[auto_1fr] gap-4">

@@ -13,7 +13,7 @@ assist:
   - svg: "/assets/images/svg/career.png"
     title: "Career Planning"
 
-  - svg: "/assets/images/svg/skill.png"
+  - svg: "/assets/images/svg/brain.png"
     title: "Skill Development"
   
   - svg: "/assets/images/svg/vector.png"

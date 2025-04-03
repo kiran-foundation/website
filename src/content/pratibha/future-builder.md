@@ -1,5 +1,5 @@
 ---
-title: "Builders of Future"
+title: "Builders of the Future"
 
 paragraphs: [
     "Mentors actively guide students by monitoring their progress,
@@ -12,7 +12,7 @@ paragraphs: [
 ]
 button:
   herf: "#"
-  text: "Become Member"
+  text: "Become a Member"
   
 image: "/assets/images/pratibha/pratibha-visual-4.png"
 imageGrid:

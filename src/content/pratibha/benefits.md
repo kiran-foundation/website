@@ -15,7 +15,7 @@ supports:
         economic barriers."
 
 # what we cover
-listtitle: "what we cover"
+listtitle: "what we cover:"
 covers:
      - svg: "/assets/images/pratibha/tution.svg"
        title: "Tuition Fees"

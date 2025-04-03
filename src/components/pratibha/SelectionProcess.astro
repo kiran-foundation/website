@@ -18,7 +18,7 @@ const { mt ,px='px-6'} = Astro.props;
     class=`mx-auto max-w-full lg:max-w-[81rem] ${px} mb-[7.5rem] xl:space-y-12 space-y-6`
     data-aos="fade-right"
   >
-    <div class="max-w-full lg:max-w-[43.5rem] space-y-8">
+    <div class="max-w-full lg:max-w-[696px] space-y-8">
       <h2 class="pratibha-heading py-2">{heading}</h2>
 
       {
@@ -27,9 +27,9 @@ const { mt ,px='px-6'} = Astro.props;
             <div>
               <h3 class="pratibha-subheading ">{item?.title}</h3>
               <div>
-                <ul class="list-disc ml-8 mt-[1.5rem] ">
+                <ul class="list-disc ml-2 mt-[1.5rem] ">
                   {item?.description.map((desc: string) => (
-                    <li class=" pratibha-description  ">{desc}</li>
+                    <li class=" pratibha-description  leading-9 ">{desc}</li>
                   ))}
                 </ul>
               </div>
@@ -39,9 +39,10 @@ const { mt ,px='px-6'} = Astro.props;
 
 <!-- <div class="h-[7.5rem]"></div> -->
 </div>
+
 <div class="flex gap-6 flex-col lg:flex-row md:flex-row    ">
-  <button class="bg-[#D33C0D] py-[1rem] px-[1.5rem] rounded-lg">
-    <a
+  <button class=" max-h-[3.75rem] bg-[#D33C0D] py-[1rem] px-[1.5rem] rounded-lg">
+    <a 
       href={applyButton?.herf}
       class="font-poppins text-white  text-[1.125rem] font-bold"
     >
@@ -49,7 +50,7 @@ const { mt ,px='px-6'} = Astro.props;
     </a>
   </button>
   <button
-    class="bg-transparent py-[1rem] px-[1.5rem] border border-black rounded-lg"
+    class="max-h-[3.75rem] bg-transparent py-[1.0313rem] px-[1.5rem] border border-black rounded-lg"
   >
     <a
       href={statusButton?.herf}
