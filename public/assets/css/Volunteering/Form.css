@@ -56,6 +56,21 @@
   
 }
 
+/* Target autofilled inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  color: #000 !important;
+}
+
+
 .volunteeringForm-input-container textarea {
   height: 250px;
 }

@@ -72,26 +72,50 @@ const { path } = Astro.props;
   function addErrorMessage(inputId, messageText) {
     const inputElement = document.getElementById(inputId);
 
-    // Set the border and border radius
-    inputElement.style.border = "2px solid #992424";
-    inputElement.style.borderRadius = "8px";
+    // Add error class
+    inputElement.classList.add("error");
 
-    // Check if the adjacent sibling already contains the error message and replace it
+    // Check if the error message already exists
     const errorMessage = inputElement.nextElementSibling;
     if (
       errorMessage &&
       errorMessage.classList.contains("volunteeringForm-suberror")
     ) {
-      // Replace the existing error message
       errorMessage.innerHTML = "❗" + messageText;
     } else {
-      // Insert a new error message if not already present
       inputElement.insertAdjacentHTML(
         "afterend",
         "<div class='volunteeringForm-suberror'>❗" + messageText + "</div>"
       );
     }
   }
+
+  function removeErrorMessage(inputId) {
+    const inputElement = document.getElementById(inputId);
+    if (!inputElement) return;
+
+    // Remove error class
+    inputElement.classList.remove("error");
+
+    // Remove the error message
+    const errorMessage = inputElement.nextElementSibling;
+    if (
+      errorMessage &&
+      errorMessage.classList.contains("volunteeringForm-suberror")
+    ) {
+      errorMessage.remove();
+    }
+  }
+
+  document
+    .getElementById("full-name")
+    .addEventListener("input", () => removeErrorMessage("full-name"));
+  document
+    .getElementById("email")
+    .addEventListener("input", () => removeErrorMessage("email"));
+  document
+    .getElementById("phone")
+    .addEventListener("input", () => removeErrorMessage("phone"));
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
