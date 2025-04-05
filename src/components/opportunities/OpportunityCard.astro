@@ -1,6 +1,7 @@
 ---
 import Button from "../common/button.astro";
-const {data=''}=Astro.props;
+const {datas=''}=Astro.props;
+// console.log(datas)
 // console.log(data)
 ---
 
@@ -9,14 +10,14 @@ const {data=''}=Astro.props;
 >
   <!-- Title -->
   <h2 class="text-2xl leading-[140%] font-semibold text-webBlack">
-    {data.data.title}
+    {datas.data.title}
   </h2>
 
   <!-- Details -->
   <div>
     <div class="mt-3 space-y-2 text-webBlack text-[16px] flex flex-col gap-[16px] font-normal">
       <p>🆘 <span class="font-normal">Immediate Start</span></p>
-      <p>⏳ <span class="font-normal">{data.data.duration} • {data.data.timeCommitment}</span></p>
+      <p>⏳ <span class="font-normal">{datas.data.duration} • {datas.data.timeCommitment}</span></p>
       <p>🌟 Build a community team to drive local change.</p>
       <p>📅 Organize events • Recruit volunteers • Lead meetings</p>
     </div>
@@ -25,16 +26,19 @@ const {data=''}=Astro.props;
     <hr class="my-4 border-gray-300" />
 
     <!-- Buttons Section -->
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center px-1">
       <Button
         link="/volunteering"
         title="Explore Opportunity"
         btn="btn3"
-        widthClass="w-full md:w-[235px] lg:w-full xl:w-[235px]"
+        widthClass="w-[235px]"
       />
-      <span class="flex items-center gap-2 text-webBlack text-lg font-poppins pr-3">
-        <img src="/assets/icons/hand-heart.png" alt="">Volunteer Position
-      </span>
+      <a class="ring-1 ring-webBlack p-3 rounded-lg active:ring-gray-400" href={"/internship/"+datas.data.url}>
+        Appy Now
+      </a>
+      <!-- <span class="flex items-center gap-2 text-webBlack text-lg font-poppins pr-3">
+        <img src="/assets/icons/hand-heart.png" alt=""><a href={data.url}>Apply Now</a>
+      </span> -->
     </div>
   </div>
 </div>

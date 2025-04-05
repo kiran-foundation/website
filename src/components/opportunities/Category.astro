@@ -9,53 +9,53 @@ const jobs = await getCollection("work", ({ id }) => {
     return id.startsWith(filter.prop)
   }
 });
-console.log("props are ",filter)
+// console.log("props are ",filter)
 
 ---
-
-<section class="!container !max-w-[1296px] !mx-auto ">
-  <div>
-    <h1 class="text-webBlack font-poppins text-[32px] font-semibold mb-4">
-      Categories
-    </h1>
-    <div class="flex flex-wrap gap-4">
-      <div class="flex items-center gap-4">
-        <input
-        id="volunteer1"
-        type="checkbox"
-        checked={filter?.prop?.toLowerCase()=="volunteering"}
-          class="checkBox1 relative appearance-none rounded-md border-[1px] max-w-[44px] max-h-[44px] checked:bg-black text-white p-3
-            checked:before:content-['✔'] checked:before:text-white checked:before:absolute checked:before:left-1/2 checked:before:top-1/2
-            checked:before:-translate-x-1/2 checked:before:-translate-y-1/2 checked:before:text-lg"
-        />
-        <label for="volunteer1" class="text-lg text-webBlack font-semibold">
-          <a href="/volunteering/opportunities/volunteering">Volunteer Positions</a>
-        </label>
-      </div>
-      <div class="flex items-center gap-2">
-        <input
-          id="volunteer2"
+{jobs.length > 0 && (
+  <section class="!container !max-w-[1296px] !mx-auto">
+    <div>
+      <h1 class="text-webBlack font-poppins text-[32px] font-semibold mt-[64px] mb-8">
+        Categories
+      </h1>
+      <div class="flex flex-wrap gap-4 ">
+        <div class="flex items-center gap-4">
+          <input
+          id="volunteer1"
           type="checkbox"
-          checked={filter?.prop?.toLowerCase()=="internship"}
-          class="relative appearance-none rounded-md border-[1px] max-w-[44px] max-h-[44px] checked:bg-black text-white p-3
-        checked:before:content-['✔'] checked:before:text-white checked:before:absolute checked:before:left-1/2 checked:before:top-1/2
-        checked:before:-translate-x-1/2 checked:before:-translate-y-1/2 checked:before:text-lg"
-        />
-        <label for="volunteer2" class="text-lg text-webBlack font-semibold"
+          checked={filter?.prop?.toLowerCase()=="volunteering"}
+            class="checkBox1 relative appearance-none rounded-md border-[1px] max-w-[44px] max-h-[44px] checked:bg-black text-white p-3
+              checked:before:content-['✔'] checked:before:text-white checked:before:absolute checked:before:left-1/2 checked:before:top-1/2
+              checked:before:-translate-x-1/2 checked:before:-translate-y-1/2 checked:before:text-lg"
+          />
+          <label for="volunteer1" class="text-lg text-webBlack font-semibold">
+            <a href="/volunteering/opportunities/volunteering">Volunteer Positions</a>
+          </label>
+        </div>
+        <div class="flex items-center gap-2">
+          <input
+            id="volunteer2"
+            type="checkbox"
+            checked={filter?.prop?.toLowerCase()=="internship"}
+            class="relative appearance-none rounded-md border-[1px] max-w-[44px] max-h-[44px] checked:bg-black text-white p-3
+          checked:before:content-['✔'] checked:before:text-white checked:before:absolute checked:before:left-1/2 checked:before:top-1/2
+          checked:before:-translate-x-1/2 checked:before:-translate-y-1/2 checked:before:text-lg"
+          />
+          <label for="volunteer2" class="text-lg text-webBlack font-semibold"
+            >
+            <a href="/volunteering/opportunities/internship">Internship Positions</a></label
           >
-          <a href="/volunteering/opportunities/internship">Internship Positions</a></label
-        >
+        </div>
       </div>
     </div>
-  </div>
-  <!-- ----All Vacencies --- -->
-  <div class="mt-6 pt-[80px] bg-[#F1F1F1] flex justify-center flex-wrap gap-10 py-[80px] rounded-sm ">
-    {jobs.map((el) => <OpportunityCards data={el} />)}
-  </div>
-</section>
+    <!-- ----All Vacencies --- -->
+    <div class="pt-[80px] bg-[#F1F1F1] flex justify-center flex-wrap gap-10 py-[80px] rounded-sm my-[120px]">
+      {jobs.map((el) => <OpportunityCards datas={el} />)}
+    </div>
+  </section>
+)}
 
-<!-- ---Pagination--- -->
-<div class="flex items-center justify-center my-[164px]">
+{/* <div class="flex items-center justify-center my-[164px]">
   <nav aria-label="Page navigation example">
     <ul class="flex items-center -space-x-px h-8 text-sm">
       <li>
@@ -140,4 +140,4 @@ console.log("props are ",filter)
       </li>
     </ul>
   </nav>
-</div>
+</div> */}
