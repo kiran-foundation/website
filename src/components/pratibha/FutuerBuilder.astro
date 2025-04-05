@@ -1,5 +1,6 @@
 ---
 import { getEntry } from "astro:content";
+import Button from "../common/button.astro";
 
 // Fetch the content entry for "future-builder"
 const futurebuilder = await getEntry("pratibha", "future-builder");
@@ -11,9 +12,14 @@ const { mt } = Astro.props;
 
 <section
   class={`grid items-center justify-center mx-auto overflow-hidden lg:max-w-[81rem] xl:gap-16 tb:grid-cols-1 md:grid-cols-2 gap-16 ${mt}`}
->
+  
+  >
   <!-- Left Section: Text Content -->
-  <div class="mx-auto mb-[1.5rem] overflow-hidden tb:items-center lg:max-w-[39.75rem] md:w-full">
+  <div class="mx-auto mb-[1.5rem] overflow-hidden tb:items-center lg:max-w-[39.75rem] md:w-full" 
+  data-aos="fade-up"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg">
     <!-- Title -->
     <h1 class="pratibha-subheading mb-[1.5rem]">
       {title}
@@ -24,7 +30,7 @@ const { mt } = Astro.props;
       paragraphs.map((par: string) => (
         <p
           class="pratibha-description"
-          data-aos="fade-right"
+          data-aos="fade-up"
          
         >
           {par}
@@ -32,36 +38,39 @@ const { mt } = Astro.props;
       ))}
 
     <!-- Button -->
-    <div
-      class="flex flex-col mt-[3rem] overflow-hidden sm:flex-row"
-      
-    >
-      <div class=" w-[13.0625rem]  h-[3.75rem] py-[18px] px-[17.8px]   bg-[#00AA5E] rounded-lg ">
+    <div class="flex flex-col mt-[3rem] overflow-hidden sm:flex-row"     data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
+    <Button
+    link={button?.herf}
+    title={button?.text}
+    btn="btn2"
+    widthClass="w-[13.0625rem] md:w-[13.0625rem] lg:w-[13.0625rem] xl:w-[13.0625rem] "
+    heightClass="h-[60px]"
+  />
+    <!--   <div class=" w-[13.0625rem]  h-[3.75rem] py-[18px] px-[17.8px]   bg-[#00AA5E] rounded-lg ">
         <a
           href={button?.herf}
           class=" font-poppins text-[1.125rem] font-semibold text-[#1E1E1E] leading-6  "
         >
-        <!-- font-family: Poppins;
-font-weight: 600;
-font-size: 18px;
-line-height: 24px;
-letter-spacing: 0%;
-text-align: center;
- -->
           {button?.text}
         </a>
-      </div>
-    </div>
+      </div> -->
+    </div> 
   </div>
 
   <!-- Right Section: Image Content -->
   <div
     class="mx-auto overflow-hidden image-team-grid md:max-w-full xl:max-w-[37.25rem]"
-    data-aos="fade-right"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
   >
     {image ? (
       <!-- Single Image -->
-      <div class="singleImage max-w-[596px] h-[382px]">
+      <div class="singleImage max-w-[596px] h-[382px]" >
         <img src={image} alt="" class=" w-full" />
       </div>
     ) : (

@@ -12,10 +12,13 @@ import BreakingBarriers from "../components/pratibha/BreakingBarriers.astro";
 import Faq from "../components/common/FaqPratibha.astro";
 import FutuerBuilder from "../components/pratibha/FutuerBuilder.astro";
 import Mentoring from "../components/pratibha/Mentoring.astro";
-const mt = "mt-[5.375rem] "; // margin top
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+const mt = "mt-[5.375rem] "; // margin top 86px
 const mdmt = "md:mt-[7.5rem] "; // margin top for md screen 120px
 const mdmt2 = "md:mt-[11.5rem] "; // margin top for md screen 184px
 const px = "px-4 "; // paddding for scrren
+console.log(Astro.url);
+
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -35,20 +38,24 @@ const px = "px-4 "; // paddding for scrren
     <Breadcrumb url={Astro.url} />
     <Hero collection="pratibha" slug="hero" imageWidth="476" height="586" />
 
-    <Intro mt={mt + mdmt2 + px} />
+    <Intro mt={mt + mdmt2 + px + " mb-[7.5rem]"} />
     {/* Pritibha Way */}
 
-    <BenefitOne mt={mt + mdmt + px} />
+    <TestimonialsCarousel pageTag="home" bgcolor="bg-white" />
+    
+    <BenefitOne mt={" mt-[7.5rem] " + mdmt + px} />
     {/* how we should students */}
+    
     <Mentoring mt={mt + mdmt2 + px} />
     {/* Career and guidance */}
-
-    {/* Breaking Barriers*/}
     
     <SelectionProcess mt={mt + mdmt} px={px} />
     
     <FutuerBuilder mt={mt + mdmt2 + px} />
+    
+    {/* Breaking Barriers*/}
     <BreakingBarriers mt={mt + mdmt + px} />
+    
     <Faq collection="pratibha" slug="faq" mt={mt + mdmt2 + px} />
 
     <a

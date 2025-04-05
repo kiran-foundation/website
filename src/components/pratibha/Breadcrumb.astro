@@ -12,11 +12,11 @@ const segments = url.pathname.split("/").filter(Boolean);
 const findBreadcrumbName = (path) => {
   if (headerData && headerData.data.navigation) {
     for (const section of headerData.data.navigation) {
-      if (section.title.url === path) {
-        return section.title.name;
+      if (section.menu.url === path) {
+        return section.menu.name;
       }
-      if (section.links) {
-        for (const link of section.links) {
+      if (section.submenu) {
+        for (const link of section.submenu) {
           if (link.url === path) {
             return link.name;
           }
@@ -37,8 +37,8 @@ const breadcrumbs = segments.map((_, index) => {
 });
 ---
 
-<nav class="hidden sm:flex h-[21px] gap-[10px] pr-[312px] pl-[312px] max-w-[1296px] text-[14px] font-normal leading-[100%] tracking-[0%] font-poppins ml-16 mt-40 mr-auto">
-  <ol class="flex items-center space-x-2">
+<nav class="hidden sm:flex h-[21px] gap-[10px] px-6 lg:px-2 max-w-[1296px] text-[14px] font-normal leading-[100%] tracking-[0%] font-poppins mx-auto mt-40 ">
+  <ol class="flex  space-x-2 items-start">
     <li>
       <a href="/" class="text-[#1E1E1E] hover:underline">Home</a>
     </li>
@@ -54,4 +54,3 @@ const breadcrumbs = segments.map((_, index) => {
     ))}
   </ol>
 </nav>
-

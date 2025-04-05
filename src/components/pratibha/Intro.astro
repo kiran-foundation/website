@@ -24,7 +24,10 @@ const { mt } = Astro.props;
   <!-- Left Content: Title and Description -->
   <div
     class="lg:max-w-[39.75rem] mx-auto overflow-hidden my-auto"
-    data-aos="fade-right"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
   >
     <h1 class="pratibha-heading py-[0.75rem]  max-w-[39.75rem] ">
       {title}
@@ -38,7 +41,10 @@ const { mt } = Astro.props;
   <!-- Right Content: Image or Image Grid -->
   <div
     class="image-team-grid w-full xl:max-w-[39.75rem] mx-auto overflow-hidden"
-    data-aos="fade-left"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
   >
     {image ? image && (
       // here it is single image will display if md file has image path if not then it will display image grid but we have to provide image path in md file

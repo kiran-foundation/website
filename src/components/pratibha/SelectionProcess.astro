@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import TestimonialsCarousel from "../common/TestimonialsCarousel.astro";
+import Button from "../common/button.astro";
 const selectionProcess = (await getEntry("pratibha", "selection-process")).data;
 const {
   heading,
@@ -16,7 +17,7 @@ const { mt ,px='px-6'} = Astro.props;
 <section class={`bg-[#f1f1f1] py-[6.25rem]  w-full ${mt}`}>
   <div
     class=`mx-auto max-w-full lg:max-w-[81rem] ${px} mb-[7.5rem] xl:space-y-12 space-y-6`
-    data-aos="fade-right"
+    data-aos="fade-up"
   >
     <div class="max-w-full lg:max-w-[696px] space-y-8">
       <h2 class="pratibha-heading py-2">{heading}</h2>
@@ -24,7 +25,10 @@ const { mt ,px='px-6'} = Astro.props;
       {
         querys &&
           querys.map((item: { title: string; description: string[]; }) => (
-            <div>
+            <div     data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg" > 
               <h3 class="pratibha-subheading ">{item?.title}</h3>
               <div>
                 <ul class="list-disc ml-2 mt-[1.5rem] ">
@@ -40,27 +44,44 @@ const { mt ,px='px-6'} = Astro.props;
 <!-- <div class="h-[7.5rem]"></div> -->
 </div>
 
-<div class="flex gap-6 flex-col lg:flex-row md:flex-row    ">
-  <button class=" max-h-[3.75rem] bg-[#D33C0D] py-[1rem] px-[1.5rem] rounded-lg">
+<div class="flex gap-6 flex-col lg:flex-row md:flex-row    "     data-aos="fade-up"
+data-aos-duration="1200"
+data-aos-offset="120px"
+data-disable-parallax-down="lg">
+  <!-- <button class=" max-h-[3.75rem] bg-[#D33C0D] py-[1rem] px-[1.5rem] rounded-lg">
     <a 
       href={applyButton?.herf}
-      class="font-poppins text-white  text-[1.125rem] font-bold"
+      class="font-poppins text-white  text-[16px] font-semibold"
     >
       {applyButton?.title}
     </a>
-  </button>
-  <button
+  </button> -->
+  
+  <Button
+  link={applyButton?.herf}
+  title={applyButton?.title}
+  btn="btn1"
+  widthClass="w-full md:w-[209px] lg:w-full xl:w-[235px]"
+  heightClass="h-[60px]"
+/>
+  <Button
+  link={statusButton?.herf}
+  title={statusButton?.title}
+  btn="btn3"
+  widthClass="w-full md:w-[209px] lg:w-full xl:w-[235px] "
+  heightClass="h-[60px]"
+/>
+  <!-- <button
     class="max-h-[3.75rem] bg-transparent py-[1.0313rem] px-[1.5rem] border border-black rounded-lg"
   >
     <a
       href={statusButton?.herf}
-      class="font-poppins text-black  text-[1.125rem] font-bold ">
+      class="font-poppins text-[#1E1E1E]  text-[16px] font-semibold ">
     
 
       {statusButton?.title}
     </a>
-  </button>
+  </button> -->
 </div>
   </div>
-  <TestimonialsCarousel pageTag="home" bgcolor="bg-white" />
 </section>

@@ -12,11 +12,14 @@ const { covers, supports, listtitle, title, description, imageGrid, image } = be
   <!-- First Column -->
   <div 
     class="overflow-hidden mx-auto lg:max-w-[39.75rem] tb:items-center" 
-    data-aos="fade-right"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
   >
     <div>
       <!-- Title -->
-      <h1 class="pratibha-heading">
+      <h1 class="pratibha-heading" data-aos="fade-up">
         {title}
       </h1>
 
@@ -29,7 +32,7 @@ const { covers, supports, listtitle, title, description, imageGrid, image } = be
 
       <!-- Supports -->
       {supports.map((item: { support: string; desc: string; }) => (
-        <div>
+        <div     >
           <h2 class="pratibha-subheading">
             {item?.support}
           </h2>
@@ -46,9 +49,13 @@ const { covers, supports, listtitle, title, description, imageGrid, image } = be
         </h3>
         <div class="flex flex-col space-y-10">
           {covers.map((items: { svg: string; title: string; }) => (
-            <div class="flex items-center gap-4  text-[1.124rem]">
-              <div class="max-w-[2.75rem] max-h-[2.75rem]">
-                <img src={items.svg} alt="" width="44" height="44" />
+            <div class="flex items-center gap-4  text-[1.124rem] "     data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
+              <div class="max-w-[2.75rem] max-h-[44px]  ">
+                {/* <img src={items.svg} alt="" width="44" height="44" /> */}
+                <i class="m-auto h2 text-nav fw-normal ai-check items-center"></i>
               </div>
               <div class="pratibha-subtile">
                 {items.title}
@@ -63,7 +70,7 @@ const { covers, supports, listtitle, title, description, imageGrid, image } = be
   <!-- Second Column -->
   <div 
     class="image-team-grid mx-auto w-full overflow-hidden lg:max-w-[37.25rem]" 
-    data-aos="fade-left"
+    data-aos="fade-up"
     data-aos-duration="1200"
     data-aos-offset="120px"
     data-disable-parallax-down="lg"
