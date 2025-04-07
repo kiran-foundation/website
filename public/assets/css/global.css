@@ -773,7 +773,7 @@ select:-webkit-autofill {
 .volunteeringForm-input-container-half input {
   width: 100%;
   padding: 16px;
-  border: 1px solid #ffffff4d;
+  border: 1px solid rgba(30, 30, 30, 0.3);
   background: white;
   color: #000;
   font-family: 'Poppins', sans-serif;
@@ -781,6 +781,8 @@ select:-webkit-autofill {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0px;
+  border-radius: 8px;
+
 }
 
 .volunteeringForm-input-container input:hover,
@@ -836,7 +838,8 @@ select:-webkit-autofill {
   line-height: 150%;
   letter-spacing: 0px;
   vertical-align: middle;
-  color: #000;
+  color: #1E1E1E;
+  margin-top: 12px;
 }
 
 .volunteeringForm-submit-button {
@@ -4523,7 +4526,7 @@ h4 {
   line-height: 100%;
   letter-spacing: 0;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 32px;
 
 }
 .aboutVolunteering-info-text{

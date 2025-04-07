@@ -64,6 +64,7 @@ const { path } = Astro.props;
 
     // Add error class
     inputElement.classList.add("error");
+    inputElement.style.color = "#992424"; // Set text color to red
 
     // Check if the error message already exists
     const errorMessage = inputElement.nextElementSibling;
@@ -84,8 +85,9 @@ const { path } = Astro.props;
     const inputElement = document.getElementById(inputId);
     if (!inputElement) return;
 
-    // Remove error class
+    // Remove error class and reset text color
     inputElement.classList.remove("error");
+    inputElement.style.color = "#1E1E1E"; // Reset to default
 
     // Remove the error message
     const errorMessage = inputElement.nextElementSibling;
