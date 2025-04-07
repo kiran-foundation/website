@@ -695,7 +695,7 @@ body {
   margin:auto;
   max-height: auto;
   box-sizing: border-box;
-  margin-bottom: 200px;
+  margin-bottom: 62px;
 
 }
 
@@ -710,9 +710,9 @@ body {
 
 .volunteeringForm-frame h1 {
   color: #1E1E1E;
-  margin-bottom: 50px;
-  margin-top: 100px;
-  font-family: Poppins;
+  margin-bottom: 80px;
+  margin-top: 128px;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 100%;
@@ -721,7 +721,7 @@ body {
 }
 
 .volunteeringForm-frame label{
-  font-family: Poppins;
+font-family: 'Poppins', sans-serif;
 font-weight: 600;
 font-size: 16px;
 line-height: 150%;
@@ -738,12 +738,12 @@ vertical-align: middle;
 .volunteeringForm-input-container,
 .input-container-half {
   margin-bottom: 16px;
-  padding-top: 40px;
+  padding-bottom: 48px;
 }
 
 .volunteeringForm-input-container label,
 .input-container-half label {
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
@@ -776,7 +776,7 @@ select:-webkit-autofill {
   border: 1px solid #ffffff4d;
   background: white;
   color: #000;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
@@ -830,7 +830,7 @@ select:-webkit-autofill {
 }
 
 .volunteeringForm-suberror {
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -842,7 +842,7 @@ select:-webkit-autofill {
 .volunteeringForm-submit-button {
  
   height: 56px;
-  padding: 12px 32px;
+  padding: 0px 32px;
   border-radius: 8px;
   background-color: #D33C0D;
   font-size: 16px;
@@ -851,11 +851,17 @@ select:-webkit-autofill {
   text-align: center;
   border: none;
   cursor: pointer;
-  margin-top: 35px;
-  margin-bottom: 60px;
+  margin-top: 32px;
+  margin-bottom: 95px;
   color: white;
 
 
+}
+
+.volunteeringForm-submit-button:disabled {
+  background: linear-gradient(0deg, rgba(211, 60, 13, 0.7), rgba(211, 60, 13, 0.7)),
+              linear-gradient(0deg, rgba(30, 30, 30, 0.2), rgba(30, 30, 30, 0.2));
+  cursor: not-allowed;
 }
 
 .image-container {
@@ -2845,7 +2851,7 @@ h4 {
   height: 24px;
   text-decoration: none;
   color: #f7fcff;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 22.4px;
@@ -3175,7 +3181,6 @@ h4 {
 /* AboutVolunteerRole */
 
 .aboutVolunteering-frame1 {
-  margin-top: 30%;
   display: flex;
   flex-direction: column;
   /*gap: 64px;*/
@@ -3192,8 +3197,9 @@ h4 {
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
-  margin-bottom: 5%;
-  margin-top: 5%;
+  margin-bottom: 40px;
+  margin-top: 120px;
+  margin-left: 80px;
 }
 
 .mainVolunteering-main-heading {
@@ -3327,7 +3333,7 @@ h4 {
   font-size: 18px;
   text-align: left;
   margin-top: -20px;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   line-height: 100%;
   letter-spacing: 0%;
@@ -3336,7 +3342,7 @@ h4 {
 }
 
 .volunteeringForm-input-container label span {
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 36px;
@@ -3585,7 +3591,7 @@ h4 {
   color: rgba(241, 89, 42, 1);
   text-align: left;
   
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-size: 72px;
   font-weight: 700;
   line-height: 80px;
@@ -3936,7 +3942,7 @@ h4 {
   color: rgba(241, 89, 42, 1);
   text-align: left;
   
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-size: 72px;
   font-weight: 700;
   line-height: 80px;
@@ -4458,24 +4464,21 @@ h4 {
 /* AboutVolunteerRole.css */
 
 .aboutVolunteering-frame1 {
- /* margin-top:400px;  */
-  margin-top: 3%;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* gap: 64px; */
-  background-color: #ffffff;
+  background: #ffffff;
   font-family: 'Poppins', sans-serif;
   justify-content: center;
   align-items: flex-start;
   max-width: 1076px;
-    margin: 50px auto;
-    border-radius: 36px;
-    background: #ffffff;
-    box-sizing: border-box;
-    padding: 20px;
-    position: relative;
+  border-radius: 36px;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+  margin: 40px auto;
 }
+
 .aboutVolunteering-frame2,
 .aboutVolunteering-frame3 {
  
@@ -4502,19 +4505,19 @@ h4 {
 .aboutVolunteering-frame2 p {
   width: 100%;
   color:#1E1E1E;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 100%;
   letter-spacing: 0;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 32px;
 
 }
 .aboutVolunteering-frame2 h3 {
   width: 100%;
   color:#1E1E1E;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 100%;
@@ -4528,9 +4531,9 @@ h4 {
   text-align: left;
   white-space: pre-wrap;
   color: #1E1E1E;
-  padding-top: 125px;
-  padding-bottom: 85px;
-  font-family: Poppins;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 36px;
@@ -4541,10 +4544,10 @@ h4 {
 
 
 .aboutVolunteering-info-text span{
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 18px;
-  line-height: 36px;
+  line-height: 46px;
   letter-spacing: 0%;
   color : #1E1E1E;
 }
@@ -4554,7 +4557,7 @@ h4 {
 .aboutVolunteering-frame3 h2,
 .aboutVolunteering-frame4 h2 {
   text-align: left;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 36px;
@@ -4565,7 +4568,18 @@ h4 {
 .aboutVolunteering-frame3 p,
 .aboutVolunteering-frame4 p {
   text-align: left;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0%;
+  color: #1E1E1E;
+}
+
+.aboutVolunteering-frame3 li,
+.aboutVolunteering-frame4 li{
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 36px;
@@ -4575,7 +4589,7 @@ h4 {
 
 .aboutVolunteering-frame3 span,
 .aboutVolunteering-frame4 span {
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 36px;
@@ -4611,7 +4625,7 @@ h4 {
   text-align: left;
   color: #1E1E1E;
   padding-bottom: 24px;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 32px;
   line-height: 36px;
