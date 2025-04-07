@@ -97,6 +97,73 @@ const { path } = Astro.props;
     }
   }
 
+  // Full Name - Blur validation
+  document.getElementById("full-name").addEventListener("blur", () => {
+    const nameInput = document.getElementById("full-name") as HTMLInputElement;
+    if (!nameInput.value.trim()) {
+      addErrorMessage("full-name", "Please enter your full name");
+    } else {
+      removeErrorMessage("full-name");
+    }
+  });
+
+  // Email - Blur validation
+  document.getElementById("email").addEventListener("blur", () => {
+    const emailInput = document.getElementById("email") as HTMLInputElement;
+    if (!emailInput.value.trim()) {
+      addErrorMessage("email", "Please enter your email");
+    } else if (!validMail(emailInput.value)) {
+      addErrorMessage(
+        "email",
+        "Invalid email format. Example: name@domain.com"
+      );
+    } else {
+      removeErrorMessage("email");
+    }
+  });
+
+  // Phone - Blur validation
+  document.getElementById("phone").addEventListener("blur", () => {
+    const phoneInput = document.getElementById("phone") as HTMLInputElement;
+    if (!phoneInput.value.trim()) {
+      addErrorMessage("phone", "Please enter your phone number");
+    } else if (!validPhone(phoneInput.value)) {
+      addErrorMessage(
+        "phone",
+        "Invalid Format. Phone number must be 10 digits. Example: 6301234567"
+      );
+    } else {
+      removeErrorMessage("phone");
+    }
+  });
+
+  const submitButton = document.querySelector(
+    ".volunteeringForm-submit-button"
+  ) as HTMLButtonElement;
+
+  function validateAllFields() {
+    const name = (
+      document.getElementById("full-name") as HTMLInputElement
+    ).value.trim();
+    const email = (
+      document.getElementById("email") as HTMLInputElement
+    ).value.trim();
+    const phone = (
+      document.getElementById("phone") as HTMLInputElement
+    ).value.trim();
+
+    const isFormValid = name !== "" && validMail(email) && validPhone(phone);
+    submitButton.disabled = !isFormValid;
+  }
+
+  // Disable submit button on page load
+  submitButton.disabled = true;
+
+  // Re-validate on every input
+  ["full-name", "email", "phone"].forEach((id) => {
+    document.getElementById(id)?.addEventListener("input", validateAllFields);
+  });
+
   document
     .getElementById("full-name")
     .addEventListener("input", () => removeErrorMessage("full-name"));

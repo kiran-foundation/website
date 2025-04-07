@@ -13,9 +13,9 @@
 
 .volunteeringForm-frame h1 {
   color: #1E1E1E;
-  margin-bottom: 50px;
-  margin-top: 100px;
-  font-family: Poppins;
+  margin-bottom: 80px;
+  margin-top: 128px;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 100%;
@@ -36,7 +36,7 @@
 
 .volunteeringForm-input-container label,
 .input-container-half label {
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
@@ -45,7 +45,7 @@
   color: #1E1E1E;
 }
 .volunteeringForm-input-container label span {
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 36px;
@@ -57,7 +57,7 @@
 .volunteeringForm-input-container input,
 .volunteeringForm-input-container textarea,
 .volunteeringForm-input-container-half input {
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
@@ -113,4 +113,10 @@ select:-webkit-autofill {
   border: none;
   cursor: pointer;
   margin-top: 35px;
+}
+
+.volunteeringForm-submit-button:disabled {
+  background: linear-gradient(0deg, rgba(211, 60, 13, 0.7), rgba(211, 60, 13, 0.7)),
+              linear-gradient(0deg, rgba(30, 30, 30, 0.2), rgba(30, 30, 30, 0.2));
+  cursor: not-allowed;
 }
