@@ -12,13 +12,15 @@
 }
 
 .volunteeringForm-frame h1 {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 52px;
-  text-align: center;
-  color: #fff;
+  color: #1E1E1E;
   margin-bottom: 50px;
   margin-top: 100px;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
 }
 
 .volunteeringForm-container {
@@ -36,13 +38,20 @@
 .input-container-half label {
   font-family: Poppins;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0px;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
   vertical-align: middle;
-  color: #000;
-
-  
+  color: #1E1E1E;
+}
+.volunteeringForm-input-container label span {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #1E1E1E;
 }
 
 .volunteeringForm-input-container input,
