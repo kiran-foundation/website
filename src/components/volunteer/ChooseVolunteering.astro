@@ -7,17 +7,17 @@ import VolunteerSwiper from "../../components/common/VolunteerSwiper.astro";
 
 
 ---
-<section class={`bg-gray-200 mt-[164px] ${fetch === "volunteer" ? 'md:mt-[164px]' : 'lg:mt-[252px]'} lg:py-20 lg:h-[756px]`}>
+<section class={`bg-gray-200 py-20  mt-[164px] min-h-[662px] lg:h-[756px] ${fetch === "volunteer" ? 'md:mt-[164px]' : 'lg:mt-[252px]'}`}>
 
   <!-- Heading -->
-  <div class="flex flex-col items-center lg:h-[596px]">
-    <h2 class="font-poppins font-semibold text-[32px] leading-[100%] tracking-[0%] text-center text-[#1E1E1E]">
-      {fetch === "volunteer" ? "Highlighted Volunteer Roles" : "Highlight Internships"}
-    </h2>
+  <div class="flex flex-col items-center  lg:h-[596px]">
+    <h3 class="font-poppins font-semibold leading-[100%] tracking-[0%] text-center text-[#1E1E1E] text-[24px] lg:text-[32px]">
+      {fetch === "volunteer" ? "Highlighted Volunteer Roles" : "Highlighted Internships"}
+    </h3>
 
     <!-- Swiper Component, passing className for styling -->
     <VolunteerSwiper  
-      className="mx-auto w-full max-w-7xl mt-8 mb-5 sm:mt-12 md:mt-16 lg:mt-24 lg:mb-14" 
+      className="mx-auto w-full max-w-7xl my-20 sm:mt-12 md:mt-16 lg:mt-24 lg:mb-14" 
       call="volunteer" 
       type={fetch} 
     />
@@ -27,9 +27,9 @@ import VolunteerSwiper from "../../components/common/VolunteerSwiper.astro";
       link="/volunteering"
       title="Discover More Opportunities"
       btn="btn3"
-      widthClass="w-[180px] sm:w-[200px] md:w-[283px]"
-      heightClass="h-[50px] sm:h-[55px] md:h-[60px]"
-      className="mt-6 sm:mt-10 md:mt-12 lg:mt-8"
+      widthClass="w-[342px] sm:w-[200px] md:w-[283px]"
+      heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
+      className="mb-20 sm:mt-10 md:mt-12 lg:mt-8"
     />
   </div>
 
