@@ -25,14 +25,20 @@ const { covers, supports, listtitle, title, description, imageGrid, image } = be
 
       <!-- Description -->
       {description.map((item: string) => (
-        <p class="pratibha-description py-6 break-words">
+        <p class="pratibha-description py-6 break-words" data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
           {item}
         </p>
       ))}
 
       <!-- Supports -->
       {supports.map((item: { support: string; desc: string; }) => (
-        <div     >
+        <div     data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
           <h2 class="pratibha-subheading">
             {item?.support}
           </h2>
@@ -43,7 +49,7 @@ const { covers, supports, listtitle, title, description, imageGrid, image } = be
       ))}
 
       <!-- Covers -->
-      <div>
+      <div >
         <h3 class="pratibha-description mb-6">
           {listtitle}
         </h3>
