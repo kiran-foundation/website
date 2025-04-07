@@ -20,7 +20,9 @@ export interface MarkdownFile {
     featured_image?: string
     link?: string
     content?:string
-
+    impact?: string
+    quote?: string
+    roleType?: string
   };
   default: string;
 }

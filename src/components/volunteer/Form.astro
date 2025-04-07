@@ -11,9 +11,7 @@ const { path } = Astro.props;
 
     <form id="volunteering-form">
       <div class="volunteeringForm-input-container">
-        <label for="full-name"
-          >Full Name <span style="font-weight: 400;">(Required)</span></label
-        >
+        <label for="full-name">Full Name <span>(Required)</span></label>
         <input
           type="text"
           id="full-name"
@@ -22,23 +20,15 @@ const { path } = Astro.props;
         />
       </div>
       <div class="volunteeringForm-input-container">
-        <label for="email"
-          >Email <span style="font-weight: 400;">(Required)</span>
-        </label>
+        <label for="email">Email <span>(Required)</span> </label>
         <input type="text" id="email" name="email" placeholder="Your email" />
       </div>
       <div class="volunteeringForm-input-container">
-        <label for="phone"
-          >Phone Number <span style="font-weight: 400;">(Required)</span>
-        </label>
+        <label for="phone">Phone Number <span>(Required)</span> </label>
         <input type="text" id="phone" name="phone" placeholder="Your number" />
       </div>
       <div class="volunteeringForm-input-container">
-        <label for="more"
-          >Tell us more about you <span style="font-weight: 400;"
-            >(Optional)</span
-          ></label
-        >
+        <label for="more">Tell us more about you <span>(Optional)</span></label>
         <textarea id="more" name="more" rows="5"></textarea>
       </div>
 
