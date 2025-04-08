@@ -12,7 +12,7 @@ paragraphs: [
 ]
 button:
   herf: "#"
-  text: "Become a Member"
+  text: "Become a Mentor"
   
 image: "/assets/images/pratibha/pratibha-visual-4.png"
 imageGrid:
