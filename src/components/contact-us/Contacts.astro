@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import { getEntry } from 'astro:content'
+import Breadcrumb from '../pratibha/Breadcrumb.astro'
 const commonComingsoon = (await getEntry('common', 'coming-soon')).data
 ---
 
@@ -8,105 +9,21 @@ const commonComingsoon = (await getEntry('common', 'coming-soon')).data
 <script src='/assets/js/common.js' is:inline></script>
 
   <!-- Contact details -->
-  <section class="bg-secondary ">
-  <div class="container pt-5">
+  <section class=" w-full h-[472px]   ">
 
-    <!-- Page title -->
-    <h1 class="display-2" style="font-size: 50px;">Contact Us</h1>
-      <p class="sub-heading"  style="font-size: 18px;">Get in touch with us by completing the below form or call us now</p>
-  </div>
-</section>
-<!-- Contact form -->
-<div class='contact-form'>
-  <h2 class='form'>{commonComingsoon.fname}</h2>
-  <form id='contactForm'>
-    <label for='name'>{commonComingsoon.name}</label>
-    <input type='text' id='name' placeholder='Your name' required />
-    <div class='info'>
-      <div>
-        <label for='contactEmail'>{commonComingsoon.email}</label>
-        <input
-          type='email'
-          id='contactEmail'
-          placeholder='Email address'
-          required
-        />
-      </div>
-      <div>
-        <label for='phone'>{commonComingsoon.phone}</label>
-        <input
-          type='text'
-          id='phone'
-          placeholder='Phone number'
-          required
-        />
+    <div class="  w-[1296px] h-[255px] m-auto flex-col  items-center ">
+      <div class=" flex flex-col mx-auto  h-[255px] gap-8">
+
+        <h1 class="  relative inline-block mx-auto justify-center ">
+          <span class="relative z-10 pratibha-heading">Reach Out Your Way</span>
+          <span class="absolute bottom-[-5px] left-0 w-full z-0">
+            <img src="/assets/svg/green-line-under-text-volunteer.svg" alt="Green Underline" class="w-full h-auto" />
+          </span>
+        </h1>
+        <p class=" pratibha-description justify-center mx-auto  max-h-[104px]">Whether you prefer filling out the form below, sending an email, or giving us a call, we’re ready to help, and we’ll respond as quickly as possible.</p>
       </div>
     </div>
-    <label for='message'>{commonComingsoon.help}</label>
-    <textarea
-      id='message'
-      placeholder='How can we help?'
-      rows='4'
-      style="overflow: hidden;"
-      required></textarea>
 
-    <button type='submit'>{commonComingsoon.request}</button>
-  </form>
-</div>
-
-    <section class="bg-secondary ">
-      <div class="container pt-5 pb-xl-4 ">
-
-        <!-- Details cards -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4 ">
-  
-          <!-- Address -->
-          <div class="col">
-            <div class="card border-0 h-100">
-              <div class="card-body">
-                <h4 class="card-title mb-4">Address</h4>
-                <p class="fs-lg fw-medium pb-3 mb-3">{commonComingsoon.address}</p>
-              </div>
-            </div>
-          </div>                                                             
-  
-          <!-- Phone -->
-          <div class="col">
-            <div class="card border-0 h-100">
-              <div class="card-body">
-                <h4 class="card-title mb-4">Phone</h4>
-                <ul class="list-unstyled mb-0">
-                  <li class="pb-1 mb-2">
-                    <span class="d-block fs-sm text-body-secondary mb-1">Give us a Call</span>
-                    <a class="nav-link fs-lg p-0" href="tel:+919303397100" style="color: rgba(241, 89, 42, 1);">+91-&nbsp;93033 97100</a>
-                  </li>
-                  <li>
-                    <span class="d-block fs-sm text-body-secondary mb-1">WhatsApp</span>
-                    <a class="nav-link fs-lg p-0" href="https://wa.me/919880141412" style="color: rgba(241, 89, 42, 1);">+91-&nbsp;98801 41412</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Email -->
-         
-      <div class="col">
-        <div class="card border-0 h-100">
-         <div class="card-body">
-         <h4 class="card-title mb-4" style="padding-top: -30px ">Email</h4>
-         <ul class="list-unstyled mb-0">
-           <li class="pb-1 mb-2">
-            <span class="d-block fs-sm text-body-secondary mb-1">{commonComingsoon.aemail}</span>
-            <a class="nav-link fs-lg p-0" href="mailto:info@kiran.foundation" style="color: rgba(241, 89, 42, 1);">info@kiran.foundation</a>
-           </li>
-          </ul>
-        </div>
-      </div>
-     </div>
-
-        </div>
-      </div>
   
   </section>
 
