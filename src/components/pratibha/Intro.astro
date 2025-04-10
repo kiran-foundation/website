@@ -46,42 +46,40 @@ const { mt } = Astro.props;
     data-aos-offset="120px"
     data-disable-parallax-down="lg"
   >
-    {image ? image && (
-      // here it is single image will display if md file has image path if not then it will display image grid but we have to provide image path in md file
-      <!-- Single Image --> 
-      <div class="singleImage overflow-hidden">
-        <img src={image} alt="pratibha team image" class="w-full xl:max-w-[37.25rem] xl:max-h-[32.75rem]" />
+  {image ? (
+    // Single Image
+    <div class="singleImage overflow-hidden">
+      <img src={image} alt="pratibha team image" class="w-full xl:max-w-[37.25rem] xl:max-h-[32.75rem]" />
+    </div>
+  ) : imageGrid ? (
+    // Image Grid
+    <div class="grid grid-cols-[65%_30%] grid-rows-[auto_1fr] gap-4 w-full h-full">
+      <!-- Top Image -->
+      <div class="team-top-image col-span-2 w-full h-full">
+        <img
+          src={imageGrid.image1}
+          alt="Top Image"
+          class="rounded-xl w-full h-full object-cover"
+        />
       </div>
-    ) : imageGrid && (
-      <!-- Image Grid -->
-      <div class="grid grid-cols-[65%_30%] grid-rows-[auto_1fr] gap-4 w-full h-full">
-        <!-- Top Image -->
-        <div class="team-top-image col-span-2 w-full h-full">
-          <img
-            src={imageGrid.image1}
-            alt="Top Image"
-            class="rounded-xl w-full h-full object-cover"
-          />
-        </div>
 
-        <!-- Bottom Left Image -->
-        <div class="bottom-left w-full h-full">
-          <img
-            src={imageGrid.image2}
-            alt="Bottom Left Image"
-            class="w-full h-full object-cover aspect-video rounded-xl"
-          />
-        </div>
-
-        <!-- Bottom Right Image -->
-        <div class="bottom-right w-full h-full">
-          <img
-            src={imageGrid.image3}
-            alt="Bottom Right Image"
-            class="rounded-xl w-full h-full object-cover"
-          />
-        </div>
+      <!-- Bottom Left Image -->
+      <div class="bottom-left w-full h-full">
+        <img
+          src={imageGrid.image2}
+          alt="Bottom Left Image"
+          class="w-full h-full object-cover aspect-video rounded-xl"
+        />
       </div>
-    )}
-  </div>
+
+      <!-- Bottom Right Image -->
+      <div class="bottom-right w-full h-full">
+        <img
+          src={imageGrid.image3}
+          alt="Bottom Right Image"
+          class="rounded-xl w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  ) : null}
 </section>
