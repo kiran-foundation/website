@@ -1,4 +1,6 @@
 ---
+import Button from "../common/button.astro";
+
 const { requriedlabel=true } = Astro.props;
 
 ---
@@ -6,9 +8,9 @@ const { requriedlabel=true } = Astro.props;
 <script src="/assets/js/theme.min.js" is:inline></script>
 <script src="/assets/js/common.js" is:inline></script>
 
-<section id="form">
-  <div class="volunteeringForm-frame">
-    <h1>Let’s build something great together!</h1>
+<section id="form mt-[5rem]">
+  <div class="volunteeringForm-frame mt-[5rem]">
+    <h1 class=" pratibha-subtitle">Your questions, feedback or concerns matter!</h1>
 
     <form id="volunteering-form">
       <div class="volunteeringForm-input-container">
@@ -29,13 +31,14 @@ const { requriedlabel=true } = Astro.props;
         <input type="text" id="phone" name="phone" placeholder="Your number" />
       </div>
       <div class="volunteeringForm-input-container">
-        <label for="more">Tell us more about you {requriedlabel && <span>(Optional)</span>}</label>
+        <label for="more">How we can help?  {requriedlabel && <span>(Optional)</span>}</label>
         <textarea id="more" name="more" rows="5"></textarea>
       </div>
-
+<!-- 
       <button type="submit" class="volunteeringForm-submit-button"
-        >Apply for Position</button
-      >
+        >Send Message</button
+      > -->
+      <Button btn="btn1" title="Send Message" widthClas="   bg-[rgba(211, 60, 13, 0.7)] w-[11.375rem] h-[3.75rem]" />
     </form>
     <div id="pop-up" style="display: none;">Form submitted successfully!</div>
   </div>
