@@ -30,7 +30,7 @@ applyButton:
     herf: "/pratibha/apply"
     title: "Apply for Scholarship"
 statusButton:
-    herf: "#"
+    herf: "/pratibha/current-students"
     title: "See All Current Students"
 
 
