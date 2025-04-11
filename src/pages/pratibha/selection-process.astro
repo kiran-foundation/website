@@ -1,0 +1,15 @@
+---
+import ComingSoon from "../../components/coming-soon/ComingSoon.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import SelectionProcessComponent from "../../components/pratibha/SelectionProcess.astro"; // Selection process section component
+import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
+
+---
+<Layout title="Current Students">
+  <main class="page-wrapper w-full">
+   <Breadcrumb url={Astro.url} />
+    <SelectionProcessComponent mt="my-5"/>
+  </main>
+</Layout>
+<!-- <ComingSoon/> -->

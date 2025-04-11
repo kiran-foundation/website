@@ -1,68 +1,91 @@
 ---
-import Layout from '../../layouts/Layout.astro'
 import { getEntry } from 'astro:content'
-const commonComingsoon = (await getEntry('common', 'coming-soon')).data
+const comingSoonData = (await getEntry('common', 'coming-soon')).data
 ---
 
-<script src='/assets/js/theme.min.js' is:inline></script>
-<script src='/assets/js/coming-soon.js' is:inline></script>
-<script src='/assets/js/common.js' is:inline></script>
-<link rel='stylesheet' href='/assets/css/theme.min.css' />
-<link rel='stylesheet' href='/assets/css/global.css' />
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const countdownElement = document.querySelector('.countdown');
+    const targetDate = new Date(countdownElement.getAttribute('data-countdown-date')).getTime();
 
-<Layout title={commonComingsoon.title}>
-  <main class='page-wrapper' style='overflow-x: hidden;'>
-    <section class='coming-soon-section'>
-      <div class='overlay-effect'></div>
-      <div class='content' data-aos='fade-up'>
-        <h2 class='counter-title'>{commonComingsoon.h2}</h2>
-        <p class='coming-soon-text'>
-          {commonComingsoon.p}
-        </p>
-        <div class='countdown'>
-          <div class='countdown-item'>
-            <span class='countdown-number' id='days'>00</span>
-            <span class='countdown-label'>Days</span>
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        document.querySelectorAll('[data-days], [data-hours], [data-minutes], [data-seconds]').forEach(el => el.textContent = '00');
+        return;
+      }
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.querySelector('[data-days]').textContent = String(days).padStart(2, '0');
+      document.querySelector('[data-hours]').textContent = String(hours).padStart(2, '0');
+      document.querySelector('[data-minutes]').textContent = String(minutes).padStart(2, '0');
+      document.querySelector('[data-seconds]').textContent = String(seconds).padStart(2, '0');
+    }
+
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+  });
+</script>
+
+    <!-- Page wrapper -->
+    <main class="page-wrapper py-5">
+      <div class="container d-flex flex-column justify-content-center align-items-center h-100 text-center pb-2 py-sm-3 py-md-4 py-lg-5">
+
+        <h1 class="display-2 text-primary">{comingSoonData.title}</h1>
+        <p class="fs-xl mx-auto mb-5" style="max-width: 680px;">{comingSoonData.p}</p>
+
+        <!-- Countdown -->
+        <div class="   countdown flex flex-wrap justify-content-center mb-5" data-countdown-date="08/01/2025 12:00:00">
+          <div class="text-center mb-2">
+            <div class="position-relative p-2">
+              <span class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-1 d-dark-mode-none"></span>
+              <span class="position-absolute top-0 start-0 w-100 h-100 bg-secondary rounded-1 d-none d-dark-mode-block"></span>
+              <div class="h3 fw-medium position-relative z-1 mb-0 mx-1" data-days></div>
+            </div>
+            <span class="fs-sm">days</span>
           </div>
-          <div class='countdown-item'>
-            <span class='countdown-number' id='hours'>00</span>
-            <span class='countdown-label'>Hours</span>
+          <span class="blinking text-body-secondary fs-2 mx-2">:</span>
+          <div class="text-center mb-2">
+            <div class="position-relative p-2">
+              <span class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-1 d-dark-mode-none"></span>
+              <span class="position-absolute top-0 start-0 w-100 h-100 bg-secondary rounded-1 d-none d-dark-mode-block"></span>
+              <div class="h3 fw-medium position-relative z-1 mb-0 mx-1" data-hours></div>
+            </div>
+            <span class="fs-sm">hours</span>
           </div>
-          <div class='countdown-item'>
-            <span class='countdown-number' id='minutes'>00</span>
-            <span class='countdown-label'>Minutes</span>
+          <span class="blinking text-body-secondary fs-2 mx-2">:</span>
+          <div class="text-center mb-2">
+            <div class="position-relative p-2">
+              <span class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-1 d-dark-mode-none"></span>
+              <span class="position-absolute top-0 start-0 w-100 h-100 bg-secondary rounded-1 d-none d-dark-mode-block"></span>
+              <div class="h3 fw-medium position-relative z-1 mb-0 mx-1" data-minutes></div>
+            </div>
+            <span class="fs-sm">mins</span>
           </div>
-          <div class='countdown-item'>
-            <span class='countdown-number' id='seconds'>00</span>
-            <span class='countdown-label'>Seconds</span>
+          <span class="blinking text-body-secondary fs-2 mx-2">:</span>
+          <div class="text-center mb-2">
+            <div class="position-relative p-2">
+              <span class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-1 d-dark-mode-none"></span>
+              <span class="position-absolute top-0 start-0 w-100 h-100 bg-secondary rounded-1 d-none d-dark-mode-block"></span>
+              <div class="h3 fw-medium position-relative z-1 mb-0 mx-1" data-seconds></div>
+            </div>
+            <span class="fs-sm">secs</span>
           </div>
         </div>
-        <button
-          class='notify-button'
-          id='notifyMeBtn'
-          onclick='openNotifyPopup()'
-        >
-          {commonComingsoon.button}</button
-        >
-        <div class='thank-you-message' id='thankYouMessage'>
-          {commonComingsoon.message}
-        </div>
-      </div>
-    </section>
 
-    <div id='notifyPopup' class='notify-popup'>
-      <div class='notify-popup-content'>
-        <span class='close-popup' onclick='closeNotifyPopup()'>&times;</span>
-        <h3>{commonComingsoon.button}</h3>
-        <form id='notifyForm'>
-          <label for='notifyEmail'>{commonComingsoon.email}</label>
-          <input type='email' id='notifyEmail' name='email' required />
 
-          <input type='hidden' id='sourcePage' name='sourcePage' readonly />
-
-          <button type='submit'>{commonComingsoon.button}</button>
+        <!-- Notification form -->
+        <form class="input-group mx-auto" style="max-width: 480px;">
+          <input type="email" class="form-control" placeholder="Enter your email" required>
+          <button type="submit" class="btn btn-primary">Notify me</button>
         </form>
       </div>
-    </div>
-  </main>
-</Layout>
+    </main>
+

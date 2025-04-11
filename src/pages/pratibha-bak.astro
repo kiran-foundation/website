@@ -1,0 +1,95 @@
+---
+import "aos/dist/aos.css"; // Importing AOS (Animate On Scroll) CSS
+import "jarallax/dist/jarallax.min.css"; // Importing Jarallax CSS for parallax effects
+import Layout from "../layouts/Layout.astro"; // Layout component
+import Hero from "../components/pratibha/Hero.astro"; // Hero section component
+import Intro from "../components/pratibha/Intro.astro"; // Introduction section component
+import BenefitOne from "../components/pratibha/BenefitOne.astro"; // Benefits section component
+import SelectionProcess from "../components/pratibha/SelectionProcess.astro"; // Selection process section component
+import Breadcrumb from "../components/pratibha/Breadcrumb.astro"; // Breadcrumb navigation component
+import BreakingBarriers from "../components/pratibha/BreakingBarriers.astro"; // Breaking Barriers section component
+import Faq from "../components/common/FaqPratibha.astro"; // FAQ section component
+import FutuerBuilder from "../components/pratibha/FutuerBuilder.astro"; // Future Builder section component
+import Mentoring from "../components/pratibha/Mentoring.astro"; // Mentoring section component
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro"; // Testimonials carousel component
+
+// Utility classes for styling
+const mt = "mt-[86px] "; // Margin top 86px
+const mdmt = "lg:mt-[11.5rem] "; // Margin top for medium screens (120px)
+const mdmt2 = "lg:mt-[11.5rem] "; // Margin top for medium screens (184px)
+const px = "px-4 "; // Padding for screens
+
+console.log(Astro.url); // Log the current URL
+---
+
+<!-- Inline script for theme initialization -->
+<script src="/assets/js/theme.min.js" is:inline></script>
+
+<!-- AOS (Animate On Scroll) initialization -->
+<script>
+  import AOS from "aos";
+  AOS.init();
+</script>
+
+<!-- External scripts for additional functionality -->
+<script src="jarallax/dist/jarallax.min.js"></script>
+<script src="simplebar/dist/simplebar.min.js"></script>
+
+<Layout title="Pratibha">
+  <main class="page-wrper w-full">
+    <!-- Breadcrumb navigation -->
+    <Breadcrumb url={Astro.url} />
+
+    <!-- Hero section -->
+    <Hero collection="pratibha" slug="hero" imageWidth="476" height="586" />
+
+    <!-- Introduction section -->
+    <Intro mt={mt + mdmt2 + px + " mb-[7.5rem]"} />
+
+    <!-- Testimonials carousel -->
+    <TestimonialsCarousel pageTag="home" />
+
+    <!-- Benefits section -->
+    <BenefitOne mt={" mt-[7.5rem] " + mdmt + px} />
+
+    <!-- Mentoring section -->
+    <Mentoring mt={mt + mdmt2 + px} />
+
+    <!-- Selection process section -->
+    <SelectionProcess mt={mt + mdmt} px={px} />
+
+    <!-- Future Builder section -->
+    <FutuerBuilder mt={mt + mdmt2 + px} />
+
+    <!-- Breaking Barriers section -->
+    <BreakingBarriers mt={mt + mdmt + px} />
+
+    <!-- FAQ section -->
+    <Faq collection="pratibha" slug="faq" mt={mt + mdmt2 + px} />
+
+    <!-- Scroll to top button -->
+    <a
+      class="btn-scroll-top"
+      href="#top"
+      data-scroll
+      aria-label="Scroll back to top"
+    >
+      <svg
+        viewBox="0 0 40 40"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="20"
+          cy="20"
+          r="19"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+        ></circle>
+      </svg>
+      <i class="ai-arrow-up"></i>
+    </a>
+  </main>
+</Layout>

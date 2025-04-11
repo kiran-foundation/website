@@ -27,7 +27,7 @@ querys:
 
 
 applyButton:
-    herf: "#"
+    herf: "/pratibha/apply"
     title: "Apply for Scholarship"
 statusButton:
     herf: "#"

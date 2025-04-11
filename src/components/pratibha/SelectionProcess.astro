@@ -1,87 +1,78 @@
 ---
 import { getEntry } from "astro:content";
-import TestimonialsCarousel from "../common/TestimonialsCarousel.astro";
 import Button from "../common/button.astro";
+
+// Fetching the selection process data from the content collection
 const selectionProcess = (await getEntry("pratibha", "selection-process")).data;
+
+// Destructuring the fetched data for easier access
 const {
   heading,
-
   applyButton,
   querys,
   statusButton,
 } = selectionProcess;
 
-const { mt ,px='px-6'} = Astro.props;
+// Destructuring Astro.props for additional styling options
+const { mt, px = "px-6" } = Astro.props;
 ---
 
-<section class={`bg-[#f1f1f1] py-[6.25rem]  w-full ${mt}`}>
+<section class={`bg-[#f1f1f1] py-[6.25rem] w-full ${mt}`}>
   <div
-    class=`mx-auto max-w-full lg:max-w-[81rem] ${px} mb-[7.5rem] xl:space-y-12 space-y-6`
+    class={`mx-auto max-w-full lg:max-w-[81rem] ${px} mb-[7.5rem] xl:space-y-12 space-y-6`}
     data-aos="fade-up"
   >
-    <div class="max-w-full lg:max-w-[696px] space-y-8">
+    <!-- Section Heading -->
+    <div class="max-w-full lg:max-w-[43.5rem] space-y-8">
       <h2 class="pratibha-heading py-2">{heading}</h2>
 
-      {
-        querys &&
-          querys.map((item: { title: string; description: string[]; }) => (
-            <div     data-aos="fade-up"
-    data-aos-duration="1200"
-    data-aos-offset="120px"
-    data-disable-parallax-down="lg" > 
-              <h3 class="pratibha-subheading ">{item?.title}</h3>
-              <div>
-                <ul class="list-disc ml-2 mt-[1.5rem] ">
-                  {item?.description.map((desc: string) => (
-                    <li class=" pratibha-description  leading-9 ">{desc}</li>
-                  ))}
-                </ul>
-              </div>
+      <!-- Rendering the list of queries -->
+      {querys &&
+        querys.map((item: { title: string; description: string[] }) => (
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            data-aos-offset="120px"
+            data-disable-parallax-down="lg"
+          >
+            <!-- Query Title -->
+            <h3 class="pratibha-subheading">{item?.title}</h3>
+            <div>
+              <!-- Query Description -->
+              <ul class="list-disc ml-2 mt-[1.5rem]">
+                {item?.description.map((desc: string) => (
+                  <li class="pratibha-description leading-9">{desc}</li>
+                ))}
+              </ul>
             </div>
-          ))
-      }
+          </div>
+        ))}
+    </div>
 
-<!-- <div class="h-[7.5rem]"></div> -->
-</div>
-
-<div class="flex gap-6 flex-col lg:flex-row md:flex-row    "     data-aos="fade-up"
-data-aos-duration="1200"
-data-aos-offset="120px"
-data-disable-parallax-down="lg">
-  <!-- <button class=" max-h-[3.75rem] bg-[#D33C0D] py-[1rem] px-[1.5rem] rounded-lg">
-    <a 
-      href={applyButton?.herf}
-      class="font-poppins text-white  text-[16px] font-semibold"
+    <!-- Buttons Section -->
+    <div
+      class="flex gap-6 flex-col lg:flex-row md:flex-row"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-offset="120px"
+      data-disable-parallax-down="lg"
     >
-      {applyButton?.title}
-    </a>
-  </button> -->
-  
-  <Button
-  link={applyButton?.herf}
-  title={applyButton?.title}
-  btn="btn1"
-  widthClass="w-full md:w-[209px] lg:w-full xl:w-[235px]"
-  heightClass="h-[60px]"
-/>
-  <Button
-  link={statusButton?.herf}
-  title={statusButton?.title}
-  btn="btn3"
-  widthClass="w-full md:w-[209px] lg:w-full xl:w-[235px] "
-  heightClass="h-[60px]"
-/>
-  <!-- <button
-    class="max-h-[3.75rem] bg-transparent py-[1.0313rem] px-[1.5rem] border border-black rounded-lg"
-  >
-    <a
-      href={statusButton?.herf}
-      class="font-poppins text-[#1E1E1E]  text-[16px] font-semibold ">
-    
-
-      {statusButton?.title}
-    </a>
-  </button> -->
-</div>
+      <!-- Apply Button -->
+      <Button
+        link={applyButton?.herf}
+        title={applyButton?.title}
+        btn="btn1"
+        widthClass="w-full md:w-[13.0625rem] lg:w-full xl:w-[14.6875rem]"
+        heightClass="h-[3.75rem]"
+      />
+      <!-- Status Button -->
+      <Button
+        link={statusButton?.herf}
+        title={statusButton?.title}
+        btn="btn3"
+        widthClass="w-full md:w-[13.0625rem] lg:w-full xl:w-[14.6875rem]"
+        heightClass="h-[3.75rem]"
+      />
+    </div>
   </div>
 </section>

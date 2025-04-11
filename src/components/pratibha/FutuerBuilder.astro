@@ -11,8 +11,7 @@ const { mt } = Astro.props;
 ---
 
 <section
-  class={`grid items-center justify-center mx-auto overflow-hidden lg:max-w-[81rem] xl:gap-16 tb:grid-cols-1 md:grid-cols-2 gap-16 ${mt}`}
-  
+  class={`grid items-center justify-center mx-auto overflow-hidden lg:max-w-[81rem] xl:gap-16 tdb:grid-cols-1 md:grid-cols-2 gap-16 ${mt}`}
   >
   <!-- Left Section: Text Content -->
   <div class="mx-auto mb-[1.5rem] overflow-hidden tb:items-center lg:max-w-[39.75rem] md:w-full" 
@@ -49,14 +48,6 @@ const { mt } = Astro.props;
     widthClass="w-[13.0625rem] md:w-[13.0625rem] lg:w-[13.0625rem] xl:w-[13.0625rem] "
     heightClass="h-[60px]"
   />
-    <!--   <div class=" w-[13.0625rem]  h-[3.75rem] py-[18px] px-[17.8px]   bg-[#00AA5E] rounded-lg ">
-        <a
-          href={button?.herf}
-          class=" font-poppins text-[1.125rem] font-semibold text-[#1E1E1E] leading-6  "
-        >
-          {button?.text}
-        </a>
-      </div> -->
     </div> 
   </div>
 
@@ -70,7 +61,7 @@ const { mt } = Astro.props;
   >
     {image ? (
       <!-- Single Image -->
-      <div class="singleImage max-w-[596px] h-[382px]" >
+      <div class="singleImage w-full lg:max-w-[596px] lg:h-[382px]" >
         <img src={image} alt="" class=" w-full" />
       </div>
     ) : (
