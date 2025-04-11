@@ -1,0 +1,99 @@
+---
+import { getEntry } from "astro:content";
+import Button from "../common/button.astro";
+
+// Fetch the content entry for "future-builder"
+const futurebuilder = await getEntry("pratibha", "future-builder");
+
+// Destructure the fetched data
+const { title, paragraphs, button, imageGrid, image } = futurebuilder?.data ?? {};
+const { mt } = Astro.props;
+---
+
+<section
+  class={`grid items-center justify-center mx-auto overflow-hidden lg:max-w-[81rem] xl:gap-16 tdb:grid-cols-1 md:grid-cols-2 gap-16 ${mt}`}
+  >
+  <!-- Left Section: Text Content -->
+  <div class="mx-auto mb-[1.5rem] overflow-hidden tb:items-center lg:max-w-[39.75rem] md:w-full" 
+  data-aos="fade-up"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg">
+    <!-- Title -->
+    <h1 class="pratibha-subheading mb-[1.5rem]">
+      {title}
+    </h1>
+
+    <!-- Paragraphs -->
+    {paragraphs &&
+      paragraphs.map((par: string) => (
+        <p
+          class="pratibha-description"
+          data-aos="fade-up"
+         
+        >
+          {par}
+        </p>
+      ))}
+
+    <!-- Button -->
+    <div class="flex flex-col mt-[3rem] overflow-hidden sm:flex-row"     data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
+    <Button
+    link={button?.herf}
+    title={button?.text}
+    btn="btn2"
+    widthClass="w-[13.0625rem] md:w-[13.0625rem] lg:w-[13.0625rem] xl:w-[13.0625rem] "
+    heightClass="h-[60px]"
+  />
+    </div> 
+  </div>
+
+  <!-- Right Section: Image Content -->
+  <div
+    class="mx-auto overflow-hidden image-team-grid md:max-w-full xl:max-w-[37.25rem]"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    {image ? (
+      <!-- Single Image -->
+      <div class="singleImage w-full lg:max-w-[596px] lg:h-[382px]" >
+        <img src={image} alt="" class=" w-full" />
+      </div>
+    ) : (
+      <!-- Image Grid -->
+      <div class="grid w-full h-full grid-rows-[auto_1fr] gap-4 md:grid-cols-[65%_25%]">
+        <!-- Top Image -->
+        <div class="w-full h-full col-span-2 team-top-image">
+          <img
+            src={imageGrid.image}
+            alt=""
+            class="object-cover w-full h-full max-h-[12.5rem] rounded-xl shadow-xl kiran-image aspect-video"
+          />
+        </div>
+
+        <!-- Bottom Left Image -->
+        <div class="w-full h-full bottom-left">
+          <img
+            src={imageGrid.image2}
+            alt=""
+            class="object-cover w-full h-full rounded-xl shadow-xl kiran-image-small aspect-video tb:max:w-[20%]"
+          />
+        </div>
+
+        <!-- Bottom Right Image -->
+        <div class="w-full h-full bottom-right">
+          <img
+            src={imageGrid.image2}
+            alt=""
+            class="object-cover w-full h-full rounded-xl"
+          />
+        </div>
+      </div>
+    )}
+  </div>
+</section>

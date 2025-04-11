@@ -1,24 +1,22 @@
 ---
-title: "Any questions? Check out the FAQ"
+title: "Any questions?"
+title2: "Check out the FAQ"
 paragraph: "Certainly! The FAQ section provides answers to common questions. It covers a variety of topics and aims to address user queries efficiently."
-image: "/assets/images/benefits/Vector.png"
-question1: "Q. Is Kiran Pratibha Scholarship awarded only to economically challenged students?"
-answer1:  "Yes, more than one student from the same family can also apply for the scholarship."
-
-question2: "Q. Can more than one student from the same family apply for KPS"
-answer2:  "Yes, more than one student from the same family can also apply for the scholarship."
-
-question3: "Q. How long do you provide scholarship to the students?"
-answer3:  "Yes, more than one student from the same family can also apply for the scholarship."
-
-question4: "Q. What are the major check points for scholarship?"
-answer4:  "Yes, more than one student from the same family can also apply for the scholarship."
-
-question5: "Q. What is the expectation of Kiran Foundation from the students selected in KP?"
-answer5:  "Yes, more than one student from the same family can also apply for the scholarship."
 
 
+questions:
+  - question: "Q. Is Kiran Pratibha Scholarship awarded only to economically challenged students?"
+    answer: "Yes, the scholarship is awarded based on financial need and academic performance."
 
+  - question: "Q. Can more than one student from the same family apply for KPS?"
+    answer: "Yes, more than one student from the same family can also apply for the scholarship."
 
+  - question: "Q. How long do you provide scholarships to the students?"
+    answer: "The scholarship is provided based on eligibility criteria for a specified duration."
 
+  - question: "Q. What are the major checkpoints for the scholarship?"
+    answer: "Academic performance, financial background, and participation in foundation activities."
+
+  - question: "Q. What is the expectation of Kiran Foundation from the students selected in KP?"
+    answer: "Students are expected to maintain good academic records and contribute to community projects."
 ---

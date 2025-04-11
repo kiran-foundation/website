@@ -1,41 +1,65 @@
 ---
 import { getEntry } from "astro:content"
 const aboutMentoring =(await getEntry("pratibha", "mentoring")).data
+const {mt} = Astro.props;
+const {title, image, image1, image2, image3, description,subtitle,assist} = aboutMentoring;
+
 ---
-<section class="overflow-hidden" style="margin-top:60px;">
-  <div class="container pb-sm-3 mb-md-2 mb-lg-3">
-    <div class="row g-4">
-      <div
-        class="col-md-7 order-md-2"
-        data-aos="fade-left"
-        data-aos-duration="600"
-        data-aos-offset="280"
-        data-disable-parallax-down="md"
-      >
-        <img
-          class="object-fit-cover w-100 h-100 rounded-3"
-          src="/assets/images/programs/pratibhaMentoring.png"
-          alt="Image"
-        />
+
+<!-- Career Guidance and Mentorship Page -->
+
+<section class=`   justify-center  lg:max-w-[81rem] mx-auto ${mt}   md:gap-16 grid tdb:grid-cols-1 md:grid-cols-2 gap-16   overflow-hidden items-center `>
+  <div class="   lg:max-w-[39.75rem] mx-auto tb:items-center overflow-hidden"  
+  
+  >
+  <h2 class="pratibha-subheading  mb-6">{title}</h2>
+  {description.map((item: string) => <p class=" pratibha-description mb-6">{item}</p>)}
+  
+  
+  <ul class="xl:space-y-10 space-y-6">
+  
+  <p class=" pratibha-description mb-6">{subtitle}</p>
+  {assist.map((item: { svg: string; title: string }) => (
+
+    <li class="flex items-center gap-4" data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
+      <div class="max-w-[2.75rem] max-h-[2.75rem] flex items-center justify-center">
+        {/* <img src={item?.svg} alt={item?.title + " png "} class=" w-[2.75rem] h-[2.75rem]"> */}
+        <i class="h2 text-nav fw-normal ai-check m-auto"></i>
       </div>
-      <div
-        class="col-md-5 order-md-1"
-        data-aos="fade-right"
-        data-aos-duration="600"
-        data-aos-offset="280"
-        data-disable-parallax-down="md"
-      >
-        <div
-          class="d-flex flex-column h-100 rounded-3 py-5 px-4 px-lg-5"
-          style="background: #F7FCFE;"
-        >
-          <h2 class="programe-title-h2 mb-xl-4">{aboutMentoring.title}</h2>
-          <p class="programe-paragraph-p mb-4 mb-xl-5" style="line-height: 2;">
-            {aboutMentoring.description}
-          </p>
-          
-        </div>
+      <span class="pratibha-subtile leading-relaxed">{item?.title}</span>
+    </li>
+    
+  ))}
+    
+  </ul>
+</div> 
+<div class="image-team-grid mx-auto w-full lg:max-w-[37.25rem] overflow-hidden"
+  data-aos="fade-up"
+  data-aos-duration="1200"
+  data-aos-offset="120px"
+  data-disable-parallax-down="lg"
+  >
+    {image?   <div class="singleImage ">
+          <img 
+            src={image} 
+            alt="Students mentorship" 
+            class="w-[596px] h-[524px] object-cover rounded-md"
+          />
+        </div> : <div class="grid grid-cols-[70%_30%] grid-rows-[auto_1fr] gap-4 w-full h-full">
+      <div class="team-top-image col-span-2 w-full h-full">
+        <img src={image1} alt="" class="rounded-xl w-full h-full object-cover">
       </div>
-    </div>
+     
+      <div class="bottom-left w-full h-full">
+        <img src={image2} alt="" class="w-full h-full object-cover aspect-video rounded-xl">
+      </div>
+     
+      <div class="bottom-right w-full h-full">
+        <img src={image3} alt="" class="rounded-xl w-full h-full object-cover">
+      </div>
+    </div>}
   </div>
 </section>

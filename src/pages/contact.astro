@@ -1,6 +1,14 @@
 ---
-import Contacts from '../components/contact-us/Contacts.astro'
-import Layout from '../layouts/Layout.astro'
+import Contacts from "../components/contact-us/Contacts.astro";
+import Breadcrumb from "../components/pratibha/Breadcrumb.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title='Contacts'> <Contacts /></Layout>
+<Layout title="Contacts">
+  <main class="page-wrper w-full">
+    <Breadcrumb url={Astro.url} />
+    <Contacts />
+
+  </main>
+
+</Layout>

@@ -1,0 +1,41 @@
+---
+import { getEntry } from "astro:content";
+
+// Fetch the content entry for "breaking-barriers" from the "pratibha" collection
+const aboutBreakingBarrier = await getEntry("pratibha", "breaking-barriers");
+
+// Extract properties from Astro props and the fetched content
+const { mt } = Astro.props;
+const { image, title } = aboutBreakingBarrier?.data ?? {};
+---
+
+<!-- 
+  Breaking Barriers Section Component
+  This component displays a section with a title and an image fetched from the content collection.
+-->
+<section
+  class={`lg:max-w-[81rem] mx-auto flex flex-col ${mt}`}
+>
+  <!-- Title Section -->
+  <div
+    class="block"
+    id="Barrier-container"
+    data-aos="fade-up"
+  >
+    <h2 class="pratibha-heading text-center lg:mb-[7.5rem] mb-[1.5rem]">
+      {title}
+    </h2>
+  </div>
+</section>
+
+<!-- Image Section -->
+<div
+  class="mx-auto rounded-lg lg:max-w-[81rem] max-h-[53.375rem] lg:mb-[7.5rem] block"
+  data-aos="fade-up"
+>
+  <img
+    class="w-full rounded-lg"
+    src={image}
+    alt=""
+  />
+</div>

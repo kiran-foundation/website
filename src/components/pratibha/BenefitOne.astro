@@ -1,44 +1,102 @@
 ---
 import { getEntry } from "astro:content";
 const benefits = (await getEntry("pratibha", "benefits")).data;
+
+const { mt } = Astro.props;
+const { covers, supports, listtitle, title, description, imageGrid, image } = benefits;
 ---
 
-<div class="container">
-  <div class="row justify-content-center text-center">
-    <!-- Benefit 1: Tuition Fee -->
-    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-right"  data-aos-duration="1700">
-      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
-        <img src={benefits.image.tutionfee} alt="Tuition Fee Icon" style="width: 60%;" />
-      </div>
-      <h2 class="h5 text-black mb-2">{benefits.heading.tution}</h2>
-      <p class="text-black opacity-80">{benefits.paragraph.tution}</p>
-    </div>
+<section 
+  class={`grid items-center justify-center overflow-hidden mx-auto lg:max-w-[81rem] md:gap-16 tdb:grid-cols-1 md:grid-cols-2 gap-16 ${mt}`}
+>
+  <!-- First Column -->
+  <div 
+    class="overflow-hidden mx-auto lg:max-w-[39.75rem] tb:items-center" 
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    <div>
+      <!-- Title -->
+      <h1 class="pratibha-heading" data-aos="fade-up">
+        {title}
+      </h1>
 
-    <!-- Benefit 2: Stationary -->
-    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-down"  data-aos-duration="1700">
-      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
-        <img src={benefits.image.stationary} alt="Stationary Icon" style="width: 60%;" />
-      </div>
-      <h2 class="h5 text-black mb-2">{benefits.heading.stationary}</h2>
-      <p class="text-black opacity-80">{benefits.paragraph.stationary}</p>
-    </div>
+      <!-- Description -->
+      {description.map((item: string) => (
+        <p class="pratibha-description py-6 break-words" data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
+          {item}
+        </p>
+      ))}
 
-    <!-- Benefit 3: Equipment -->
-    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-up"  data-aos-duration="1700">
-      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
-        <img src={benefits.image.equipment} alt="Equipment Icon" style="width: 60%;" />
-      </div>
-      <h2 class="h5 text-black mb-2">{benefits.heading.equipments}</h2>
-      <p class="text-black opacity-80">{benefits.paragraph.equipments}</p>
-    </div>
+      <!-- Supports -->
+      {supports.map((item: { support: string; desc: string; }) => (
+        <div     data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
+          <h2 class="pratibha-subheading">
+            {item?.support}
+          </h2>
+          <p class="pratibha-description py-6">
+            {item?.desc}
+          </p>
+        </div>
+      ))}
 
-    <!-- Benefit 4: Boarding -->
-    <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-left"  data-aos-duration="1700">
-      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width:100px; height: 100px;">
-        <img src={benefits.image.bording} alt="Boarding Icon" style="width: 60%;" />
+      <!-- Covers -->
+      <div >
+        <h3 class="pratibha-description mb-6">
+          {listtitle}
+        </h3>
+        <div class="flex flex-col space-y-10">
+          {covers.map((items: { svg: string; title: string; }) => (
+            <div class="flex items-center gap-4  text-[1.124rem] "     data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
+              <div class="max-w-[2.75rem] max-h-[44px]  ">
+                {/* <img src={items.svg} alt="" width="44" height="44" /> */}
+                <i class="m-auto h2 text-nav fw-normal ai-check items-center"></i>
+              </div>
+              <div class="pratibha-subtile">
+                {items.title}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <h2 class="h5 text-black mb-2">{benefits.heading.bording}</h2>
-      <p class="text-black opacity-80">{benefits.paragraph.bording}</p>
     </div>
   </div>
-</div>
+
+  <!-- Second Column -->
+  <div 
+    class="image-team-grid mx-auto w-full overflow-hidden lg:max-w-[37.25rem]" 
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    {image ? (
+      <div class="singleImage">
+        <img src={image} alt="" class="w-[596px] h-[565px]">
+      </div>
+    ) : (
+      <div class="grid w-full h-full grid-cols-2 grid-rows-[auto_1fr] gap-4">
+        <div class="col-span-2 w-full h-full">
+          <img src={imageGrid.image1} alt="">
+        </div>
+        <div class="w-full h-full md:w-auto">
+          <img src={imageGrid.image2} alt="">
+        </div>
+        <div class="w-full h-full md:w-auto">
+          <img src={imageGrid.image2} alt="">
+        </div>
+      </div>
+    )}
+  </div>
+</section>

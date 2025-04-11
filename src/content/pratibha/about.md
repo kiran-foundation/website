@@ -1,4 +1,22 @@
 ---
-title:  "Financial Support"
-description:  "The Kiran Foundation is committed to empowering Pratibha students by addressing financial barriers to their education and career development. Through a tailored approach, the foundation covers career-building expenses based on each student's family financial circumstances, ensuring that no capable individual is hindered by economic constraints. Beyond financial aid, the program offers comprehensive support, including mentoring and additional resources. By nurturing the talents of Pratibha students, the Kiran Foundation strives to unlock their full potential and facilitate their journey toward achieving successful career goals."
+title:  "The Kiran Pratibha Way"
+description: [ 
+  
+  "The Kiran Foundation helps extremely talented students to overcome financial barriers to education and career growth.",
+  
+  
+  "We provide personalized and tailored approach to each student's needs by combining financial aid and holistic mentorship.",
+  
+  
+  "By ensuring economic constraints never limit their potential to achieve their career goals and build a fulfilling future."
+  ]
+
+image: "/assets/images/pratibha/pratibha-visual-1.png"
+
+# to use grid image leave image empty string image: ""
+imageGrid:
+  image1:  "/assets/images/pratibha_page/group-1.png"
+  image2: "/assets/images/pratibha_page/group-2.png"
+  image3: "/assets/images/pratibha_page/group-2.png"
+
 ---

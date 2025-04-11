@@ -4,9 +4,11 @@ export interface Props {
   name: string;
   location: string;
   text: string;
+  bgcolor: string;
 }
 
 const { image, name, location, text } = Astro.props;
+const {bgcolor} = Astro.props;
 ---
 
 <style>
@@ -23,7 +25,7 @@ const { image, name, location, text } = Astro.props;
     background: #f1f1f1; 
   } */
 </style>
-<div class="testimonial-container mt-5 bg-[#F1F1F1] px-4">
+<div class=`testimonial-container mt-5 ${bgcolor} px-4`>
   <img src={image} alt={name} class="testimonial-image" />
   <p
     class="box text-base md:text-[18px] p-2 lg:px-4 overflow-auto text-[#1E1E1E] font-poppins md:leading-9"
