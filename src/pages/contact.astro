@@ -1,13 +1,19 @@
 ---
-import Contacts from "../components/contact-us/Contacts.astro";
+// import Header from "../components/common/Header.astro";
+
+import Details from "../components/contact-us/Details.astro";
+import Header from "../components/contact-us/Header.astro";
 import Breadcrumb from "../components/pratibha/Breadcrumb.astro";
+import Form from "../components/volunteer/Form.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Contacts">
-  <main class="page-wrper w-full">
+  <main class=" ">
     <Breadcrumb url={Astro.url} />
-    <Contacts />
+    <Header />
+    <Details />
+    <!-- <Form requriedlabel={false}/> -->
 
   </main>
 
