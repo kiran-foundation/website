@@ -703,7 +703,7 @@ body {
 @media (min-width: 1400px) {
   .volunteeringForm-frame {
     width: 90%;
-    max-width: 1250px; 
+    max-width: 1136px; 
   }
 }
 
@@ -3330,6 +3330,7 @@ h4 {
 .volunteeringForm-container {
   width: 800px;
   margin: 0 auto;
+  
 }
 
 .volunteeringForm-input-container,

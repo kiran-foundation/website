@@ -1,5 +1,5 @@
 ---
-const { path } = Astro.props;
+const { requriedlabel } = Astro.props;
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -204,6 +204,7 @@ const { path } = Astro.props;
       } catch (error) {
         console.error(error);
       }
+      localStorage.setItem("formSubmitted", "true");
 
       // take to thankyou page
       window.location.href = "/work-with-us/opportunities/thank-you";
