@@ -11,7 +11,7 @@ description: [
   "By ensuring economic constraints never limit their potential to achieve their career goals and build a fulfilling future."
   ]
 
-image: "/assets/images/pratibha/pratibha-visual-1.png"
+image: "/assets/images/pratibha/pratibha-visual-1.webp"
 
 # to use grid image leave image empty string image: ""
 imageGrid:
