@@ -43,7 +43,7 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
         class="font-merriweather font-normal text-[32px] md:text-[40px] lg:text-[48px] leading-[140%] md:leading-[150%] tracking-[-2.2%]"
       >
         {title}
-      </h1>
+      </h2>
       <p
         class="font-poppins font-normal text-[16px] md:text-[18px] leading-[28px] md:leading-[36px] tracking-[0%] text-[#49494C]
         w-full max-w-[90%] sm:max-w-[500px] md:max-w-[636px]
@@ -93,35 +93,36 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
                     >
                       {title}
                     </p>
-                  </div>
-
-                  {/* 2️⃣ Text below */}
-                  <div>
-                    <p
-                      class="font-poppins sm:ml-16 ml-0 text-[#1E1E1E] font-normal text-[16px] sm:text-[18px] 
-        leading-[32px] sm:leading-[36px] tracking-[0%] lg:tracking-[0%]
-        w-full  sm:max-w-[500px] md:max-w-[566.84px]"
-                    >
-                      {text}
+                    <p class="font-poppins text-[#1E1E1E] font-normal text-[18px] leading-[36px] tracking-[0%]">
+                      {item.description}
                     </p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        )
-      }
+              )
+            )
+          }
+        </div>
 
       <!-- ml-[10px] sm:ml-0 -->
       <div class="mt-10 sm:mt-1">
         <Button
-          link={ctaLink}
-          title={ctaText || buttonText}
+          link="/volunteering"
+          title={data.buttonText}
           btn="btn1"
-          widthClass="w-[342px] sm:w-[200px] lg:w-[252px]"
-          heightClass="h-[60px] sm:h-[55px] lg:h-[60px]"
+          widthClass="w-[235px]"
+          heightClass="h-[60px]"
         />
       </div>
+    </div>
+    <!-- Right Image Placeholder -->
+    <div
+      class="order-2 md:order-1 w-full h-64 md:h-full rounded-lg overflow-hidden"
+    >
+      <img
+        src={data.image}
+        alt="Internship Image"
+        class="w-full h-full object-cover"
+      />
     </div>
   </div>
 </section>
