@@ -3,11 +3,15 @@ import { getEntry } from "astro:content";
 const benefits = (await getEntry("pratibha", "benefits")).data;
 
 const { mt } = Astro.props;
-const { covers, supports, listtitle, title, description, imageGrid, image } = benefits;
+const { covers, supports, listtitle, title, description, imageGrid, image } =
+  benefits;
 ---
-<section class={`flex flex-col-reverse md:grid items-center justify-center overflow-hidden mx-auto lg:max-w-[81rem] gap-8 md:gap-16 md:grid-cols-2 ${mt}`}>
+
+<section
+  class={`flex flex-col-reverse md:grid items-center justify-center overflow-hidden mx-auto lg:max-w-[81rem] gap-8 md:gap-16 md:grid-cols-2 ${mt}`}
+>
   <!-- Content Column -->
-  <div 
+  <div
     class="overflow-hidden mx-auto lg:max-w-[39.75rem]"
     data-aos="fade-up"
     data-aos-duration="1200"
@@ -20,23 +24,23 @@ const { covers, supports, listtitle, title, description, imageGrid, image } = be
     </h1>
 
     <!-- Description -->
-    {description.map((item: string) => (
-      <p class="pratibha-description py-3 mb-4" data-aos="fade-up">
-        {item}
-      </p>
-    ))}
+    {
+      description.map((item: string) => (
+        <p class="pratibha-description py-3 mb-4" data-aos="fade-up">
+          {item}
+        </p>
+      ))
+    }
 
     <!-- Supports -->
-    {supports.map((item: { support: string; desc: string; }) => (
-      <div class="mb-8" data-aos="fade-up">
-        <h2 class="pratibha-subheading mb-3">
-          {item?.support}
-        </h2>
-        <p class="pratibha-description">
-          {item?.desc}
-        </p>
-      </div>
-    ))}
+    {
+      supports.map((item: { support: string; desc: string }) => (
+        <div class="mb-8" data-aos="fade-up">
+          <h2 class="pratibha-subheading mb-3">{item?.support}</h2>
+          <p class="pratibha-description">{item?.desc}</p>
+        </div>
+      ))
+    }
 
     <!-- Covers -->
     <div class="mt-8">
@@ -44,60 +48,85 @@ const { covers, supports, listtitle, title, description, imageGrid, image } = be
         {listtitle}
       </h3>
       <div class="space-y-4">
-        {covers.map((items: { svg: string; title: string; }) => (
-          <div class="flex items-center gap-4" data-aos="fade-up">
-            <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center">
-              <i class="text-nav text-2xl ai-check"></i>
+        {
+          covers.map((items: { svg: string; title: string }) => (
+            <div class="flex items-center gap-4" data-aos="fade-up">
+              <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center">
+                {/* <i class="text-nav text-2xl ai-check"></i> */}
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_9412_21322)">
+                    <path
+                      d="M28.5 0H7.5C5.51161 0.00238179 3.60534 0.793323 2.19933 2.19933C0.793323 3.60534 0.00238179 5.51161 0 7.5L0 28.5C0.00238179 30.4884 0.793323 32.3947 2.19933 33.8007C3.60534 35.2067 5.51161 35.9976 7.5 36H28.5C30.4884 35.9976 32.3947 35.2067 33.8007 33.8007C35.2067 32.3947 35.9976 30.4884 36 28.5V7.5C35.9976 5.51161 35.2067 3.60534 33.8007 2.19933C32.3947 0.793323 30.4884 0.00238179 28.5 0ZM33 28.5C33 29.6935 32.5259 30.8381 31.682 31.682C30.8381 32.5259 29.6935 33 28.5 33H7.5C6.30653 33 5.16193 32.5259 4.31802 31.682C3.47411 30.8381 3 29.6935 3 28.5V7.5C3 6.30653 3.47411 5.16193 4.31802 4.31802C5.16193 3.47411 6.30653 3 7.5 3H28.5C29.6935 3 30.8381 3.47411 31.682 4.31802C32.5259 5.16193 33 6.30653 33 7.5V28.5Z"
+                      fill="#1E1E1E"
+                    />
+                    <path
+                      d="M14.0012 23.8797L8.12268 18.0012C7.84139 17.72 7.45993 17.562 7.06218 17.562C6.66443 17.562 6.28297 17.72 6.00168 18.0012C5.72047 18.2825 5.5625 18.6639 5.5625 19.0617C5.5625 19.4594 5.72047 19.8409 6.00168 20.1222L11.8802 26.0007C12.1588 26.2794 12.4895 26.5005 12.8536 26.6513C13.2177 26.8022 13.6079 26.8798 14.0019 26.8798C14.396 26.8798 14.7862 26.8022 15.1503 26.6513C15.5143 26.5005 15.8451 26.2794 16.1237 26.0007L30.0017 12.1227C30.2829 11.8414 30.4409 11.4599 30.4409 11.0622C30.4409 10.6644 30.2829 10.283 30.0017 10.0017C29.7204 9.72047 29.3389 9.5625 28.9412 9.5625C28.5434 9.5625 28.162 9.72047 27.8807 10.0017L14.0012 23.8797Z"
+                      fill="#1E1E1E"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_9412_21322">
+                      <rect width="36" height="36" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="pratibha-subtile">{items.title}</div>
             </div>
-            <div class="pratibha-subtile">
-              {items.title}
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </div>
 
   <!-- Image Column -->
-  <div 
+  <div
     class="w-full mx-auto overflow-hidden lg:max-w-[37.25rem]"
     data-aos="fade-up"
     data-aos-duration="1200"
     data-aos-offset="120px"
     data-disable-parallax-down="lg"
   >
-    {image ? (
-      <div class="singleImage">
-        <img 
-          src={image} 
-          alt="" 
-          class="w-full aspect-[596/565] object-cover rounded-lg"
-        >
-      </div>
-    ) : (
-      <div class="grid grid-cols-2 gap-3 md:gap-4">
-        <div class="col-span-2">
-          <img 
-            src={imageGrid.image1} 
-            alt="" 
-            class="w-full h-auto aspect-video object-cover rounded-lg"
-          >
-        </div>
-        <div>
-          <img 
-            src={imageGrid.image2} 
+    {
+      image ? (
+        <div class="singleImage">
+          <img
+            src={image}
             alt=""
-            class="w-full h-auto aspect-square object-cover rounded-lg"
-          >
+            class="w-full aspect-[596/565] object-cover rounded-lg"
+          />
         </div>
-        <div>
-          <img 
-            src={imageGrid.image3} 
-            alt=""
-            class="w-full h-auto aspect-square object-cover rounded-lg"
-          >
+      ) : (
+        <div class="grid grid-cols-2 gap-3 md:gap-4">
+          <div class="col-span-2">
+            <img
+              src={imageGrid.image1}
+              alt=""
+              class="w-full h-auto aspect-video object-cover rounded-lg"
+            />
+          </div>
+          <div>
+            <img
+              src={imageGrid.image2}
+              alt=""
+              class="w-full h-auto aspect-square object-cover rounded-lg"
+            />
+          </div>
+          <div>
+            <img
+              src={imageGrid.image3}
+              alt=""
+              class="w-full h-auto aspect-square object-cover rounded-lg"
+            />
+          </div>
         </div>
-      </div>
-    )}
+      )
+    }
   </div>
 </section>
