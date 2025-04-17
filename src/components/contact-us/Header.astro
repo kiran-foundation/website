@@ -1,4 +1,9 @@
 ---
+import { getEntry } from "astro:content"
+import { getEntries } from "astro:content"
+
+const data = await getEntry("contact","contact");
+const {title,subTitle} = data.data;
 ---
 
 <div class="container text-center  mt-[105px] md:mt-[105px]  ">
@@ -6,14 +11,14 @@
       <!-- <h1 class="display-3 position-relative z-2 mb-0">Task management assistant you gonna love</h1> -->
       <h1 class="  relative inline-block mx-auto justify-start max-w-[644px]">
             <span class="relative inline-block">
-          <span class="relative z-10 pratibha-heading font-bold text-[30px] lg:text-[4rem]">Reach Way Out </span>
-          <span class="absolute bottom-[-5px] left-0 w-full z-0">
+          <span class="relative z-10 pratibha-heading font-bold text-[30px] lg:text-[4rem]">{title} </span>
+          <span class="absolute -bottom-[0.3125rem] left-0 w-full z-0">
             <img src="/assets/svg/green-line-under-text-volunteer.svg" alt="Green Underline" class="w-full h-auto" />
           </span>
         </span>
       </h1>
       
     </div>
-    <p class=" mx-auto hero-subtitle lg:max-h-[104px] pratibha-heading text-[24px] leading-[3.25rem]  text-[#49494C]">Whether you prefer filling out the form below, sending an email, or giving us a call, we’re ready to help, and we’ll respond as quickly as possible.</p>
+    <p class=" mx-auto hero-subtitle lg:max-h-[104px] pratibha-heading text-[24px] leading-[3.25rem]  text-[#49494C]">{subTitle}</p>
     
   </div>
