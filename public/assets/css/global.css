@@ -4830,10 +4830,10 @@ h4 {
     vertical-align: middle;
   }
   
-  .volunteeringForm-input-container input{
+  /* .volunteeringForm-input-container input{
     padding-top: 12px;
     padding-bottom: 0px;
-  }
+  } */
 
   .volunteeringForm-submit-button{
     width: 100%;
