@@ -17,9 +17,8 @@ const { mt } = Astro.props;
   mt props is used to set the margin-top of the section.
   imageGrid is used to display a grid of images if no single image is provided.
 -->
-
 <section
-  class={`justify-center lg:max-w-[81rem] mx-auto ${mt} md:gap-16 grid  md:grid-cols-2 gap-16 sm:gap-[1.5rem] md:items-center overflow-hidden`}
+  class={`justify-center lg:max-w-[81rem] mx-auto ${mt} md:gap-16 gap-[120px] flex flex-col-reverse md:grid md:grid-cols-2  sm:gap-[1.5rem] md:items-center overflow-hidden`}
 >
   <!-- Left Content: Title and Description -->
   <div
@@ -29,7 +28,7 @@ const { mt } = Astro.props;
     data-aos-offset="120px"
     data-disable-parallax-down="lg"
   >
-    <h1 class="pratibha-heading py-[0.75rem]  max-w-[39.75rem] ">
+    <h1 class="pratibha-heading py-[0.75rem] max-w-[39.75rem]">
       {title}
     </h1>
 
@@ -47,7 +46,6 @@ const { mt } = Astro.props;
     data-disable-parallax-down="lg"
   >
     {image ? image && (
-      // here it is single image will display if md file has image path if not then it will display image grid but we have to provide image path in md file
       <!-- Single Image --> 
       <div class="singleImage overflow-hidden">
         <img src={image} alt="pratibha team image" class="w-full xl:max-w-[37.25rem] xl:max-h-[32.75rem]" />

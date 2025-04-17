@@ -9,51 +9,47 @@ const futurebuilder = await getEntry("pratibha", "future-builder");
 const { title, paragraphs, button, imageGrid, image } = futurebuilder?.data ?? {};
 const { mt } = Astro.props;
 ---
-
-<section
-  class={`grid items-center justify-center mx-auto overflow-hidden lg:max-w-[81rem] xl:gap-16 tdb:grid-cols-1 md:grid-cols-2 gap-16 ${mt}`}
+<section class={`flex flex-col-reverse md:grid items-center justify-center mx-auto overflow-hidden max-w-[81rem] gap-20 md:gap-16 md:grid-cols-2 ${mt}`}>
+  <!-- Text Content Column -->
+  <div 
+    class="mx-auto w-full overflow-hidden lg:max-w-[39.75rem]"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
   >
-  <!-- Left Section: Text Content -->
-  <div class="mx-auto mb-[1.5rem] overflow-hidden tb:items-center lg:max-w-[39.75rem] md:w-full" 
-  data-aos="fade-up"
-  data-aos-duration="1200"
-  data-aos-offset="120px"
-  data-disable-parallax-down="lg">
     <!-- Title -->
-    <h1 class="pratibha-subheading mb-[1.5rem]">
+    <h1 class="pratibha-subheading mb-6">
       {title}
     </h1>
 
     <!-- Paragraphs -->
-    {paragraphs &&
-      paragraphs.map((par: string) => (
-        <p
-          class="pratibha-description"
-          data-aos="fade-up"
-         
-        >
-          {par}
-        </p>
-      ))}
+    {paragraphs && paragraphs.map((par: string) => (
+      <p class="pratibha-description mb-4" data-aos="fade-up">
+        {par}
+      </p>
+    ))}
 
     <!-- Button -->
-    <div class="flex flex-col mt-[3rem] overflow-hidden sm:flex-row"     data-aos="fade-up"
-    data-aos-duration="1200"
-    data-aos-offset="120px"
-    data-disable-parallax-down="lg">
-    <Button
-    link={button?.herf}
-    title={button?.text}
-    btn="btn2"
-    widthClass="w-[13.0625rem] md:w-[13.0625rem] lg:w-[13.0625rem] xl:w-[13.0625rem] "
-    heightClass="h-[60px]"
-  />
-    </div> 
+    <div 
+      class="mt-12 flex flex-col sm:flex-row"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-offset="120px"
+      data-disable-parallax-down="lg"
+    >
+      <Button
+        link={button?.herf}
+        title={button?.text}
+        btn="btn2"
+        class="w-[13.0625rem] h-[60px]"
+      />
+    </div>
   </div>
 
-  <!-- Right Section: Image Content -->
+  <!-- Image Content Column -->
   <div
-    class="mx-auto overflow-hidden image-team-grid md:max-w-full xl:max-w-[37.25rem]"
+    class="w-full mx-auto overflow-hidden lg:max-w-[37.25rem]"
     data-aos="fade-up"
     data-aos-duration="1200"
     data-aos-offset="120px"
@@ -61,36 +57,40 @@ const { mt } = Astro.props;
   >
     {image ? (
       <!-- Single Image -->
-      <div class="singleImage w-full lg:max-w-[596px] lg:h-[382px]" >
-        <img src={image} alt="" class=" w-full" />
+      <div class="w-full aspect-[596/382]">
+        <img 
+          src={image} 
+          alt="" 
+          class="w-full h-full object-cover rounded-lg shadow-lg"
+        />
       </div>
     ) : (
       <!-- Image Grid -->
-      <div class="grid w-full h-full grid-rows-[auto_1fr] gap-4 md:grid-cols-[65%_25%]">
-        <!-- Top Image -->
-        <div class="w-full h-full col-span-2 team-top-image">
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Top Image (full width) -->
+        <div class="col-span-2 aspect-video">
           <img
             src={imageGrid.image}
             alt=""
-            class="object-cover w-full h-full max-h-[12.5rem] rounded-xl shadow-xl kiran-image aspect-video"
+            class="w-full h-full object-cover rounded-xl shadow-xl"
           />
         </div>
 
         <!-- Bottom Left Image -->
-        <div class="w-full h-full bottom-left">
+        <div class="aspect-video">
           <img
             src={imageGrid.image2}
             alt=""
-            class="object-cover w-full h-full rounded-xl shadow-xl kiran-image-small aspect-video tb:max:w-[20%]"
+            class="w-full h-full object-cover rounded-xl shadow-xl"
           />
         </div>
 
         <!-- Bottom Right Image -->
-        <div class="w-full h-full bottom-right">
+        <div class="aspect-video">
           <img
-            src={imageGrid.image2}
+            src={imageGrid.image3}
             alt=""
-            class="object-cover w-full h-full rounded-xl"
+            class="w-full h-full object-cover rounded-xl shadow-xl"
           />
         </div>
       </div>
