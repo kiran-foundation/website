@@ -38,12 +38,19 @@ const { mt } = Astro.props;
       data-aos-offset="120px"
       data-disable-parallax-down="lg"
     >
-      <Button
+    <Button
+        link={button?.herf}
+        title={button?.text}
+        btn="btn2"
+        widthClass="w-full lg:w-[209px] md:w-[209px] "
+        heightClass="h-[3.75rem]"
+      />
+      <!-- <Button
         link={button?.herf}
         title={button?.text}
         btn="btn2"
         widthClass="!w-[13.0625rem] h-[60px]   "
-      />
+      /> -->
     </div>
   </div>
 
@@ -62,6 +69,8 @@ const { mt } = Astro.props;
           src={image} 
           alt="" 
           class="w-full h-full object-cover rounded-lg shadow-lg"
+          loading="lazy"
+
         />
       </div>
     ) : (
