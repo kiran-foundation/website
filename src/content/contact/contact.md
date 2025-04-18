@@ -4,7 +4,7 @@ subTitle: "Whether you prefer filling out the form below, sending an email, or g
 address: "Kiran Social Foundation 101 Sahil Veer Apartments, Vandana Nagar, Indore 452018 Madhya Pradesh, India"
 contactNo:
   - option: "Main Office"
-    answer: "+919303997100"
+    answer: "+91 93039 97100"
     
   - option: "WhatsApp"
     answer: "+91 98801 41412"

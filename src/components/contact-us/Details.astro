@@ -49,7 +49,7 @@ const { address, contactNo, contactEmails } = contacts.data;
                     {contact.option}
                   </div>
                   <a
-                    href="tel:+919303997100"
+                    href={"tel:" + (contact.answer).replace(/ /g, "")}
                     class="w-full font-normal text-lg leading-[36px] text-[#1E1E1E]"
                   >
                     {contact.answer}
@@ -100,7 +100,7 @@ const { address, contactNo, contactEmails } = contacts.data;
                     {contact.option}
                   </div>
                   <a
-                    href="tel:+919303997100"
+                    href={"mailto:" + contact.answer}
                     class="w-full font-normal text-lg leading-[36px] text-[#1E1E1E]"
                   >
                     {contact.answer}
