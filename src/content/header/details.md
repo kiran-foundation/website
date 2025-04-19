@@ -58,9 +58,9 @@ navigation:
       - name: "why join us?"
         url: "/volunteering"
       - name: "find your oppurtinity"
-        url: "/volunteering"
+        url: "/volunteering/opportunities"
       - name: "Internship Opportunities"
-        url: "/volunteering"
+        url: "/volunteering/opportunities"
   
   - menu:
       name: "Contact Us"
