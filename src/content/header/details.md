@@ -55,7 +55,9 @@ navigation:
       name: "Work with Us"
       url: "/volunteering"
     submenu:
-      - name: "Volunteer with Us"
+      - name: "why join us?"
+        url: "/volunteering"
+      - name: "find your oppurtinity"
         url: "/volunteering"
       - name: "Internship Opportunities"
         url: "/volunteering"
