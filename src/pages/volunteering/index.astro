@@ -2,70 +2,62 @@
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../../layouts/Layout.astro";
-// WhyVolunteer 
-// ChooseVolunteering 
-// WhyIntern 
-import ChooseIntern from "../../components/volunteer/ChooseIntern.astro";
-// Volunteer 
+import ChooseVolunteering from "../../components/volunteer/ChooseVolunteering.astro";
 import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
+import WhyVolunteer from "../../components/volunteer/WhyVolunteer.astro";
+import WhyIntern from "../../components/volunteer/WhyIntern.astro";
 import Hero from "../../components/pratibha/Hero.astro";
 import Faq from "../../components/common/FaqPratibha.astro";
 import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
 import ContentSection from "../../components/volunteer/ContentSection.astro";
-
 ---
 
 <Layout>
-  
   <main class="page-wrapper">
-    <div ><Breadcrumb pageName="volunteer"  /></div>
+    <div class="mt-20 mb-5 ml-72"><Breadcrumb pageName="volunteer"  /></div>
 
-    <Hero collection="volunteering" slug="hero-volunteer"/>
-    
-    <!-- <Hero /> -->
-    <!-- <WhyVolunteer/> -->
-                       <!-- <ChooseVolunteering/> -->
-  
-                       <!-- <Volunteer/> -->
-    <!-- <WhyIntern /> -->
-  <ContentSection
-  collection="volunteering"
-  slug="why-volunteer"
-  classes="space-y-24"
-  textAlignment="order-2"
-  imageAlignment="order-1"
-/>
+<Breadcrumb url={Astro.url} />
 
-<ContentSection
-  collection="volunteering"
-  slug="why-intern"
-  classes="space-y-24"
-  textAlignment="order-1"
-  imageAlignment="order-2"
-/>
+    <Hero collection="volunteering" slug="hero-volunteer" />
+
+    <ContentSection
+      collection="volunteering"
+      slug="why-volunteer"
+      classes="space-y-24"
+      textAlignment="order-2"
+      imageAlignment="order-1"
+   />
+
+    <ContentSection
+      collection="volunteering"
+      slug="why-intern"
+      classes="space-y-24"
+      textAlignment="order-1"
+      imageAlignment="order-2"
+    />
 
 
-  
+    <!-- <ChooseVolunteering fetch="internship" /> -->
 
-
-  
-    <ChooseIntern />
-
-
-
-    <h1 class="font-merriweather text-center text-[28px] sm:text-[40px] md:text-[48px]">
-      Breaking barriers together
+    <h1
+class="font-merriweather text-center text-[28px] sm:text-[40px]  md:text-[48px] mt-28 mb-[120px]">Breaking barriers together
     </h1>
-    
 
-     <TestimonialsCarousel pageTag="home"/>
+    <TestimonialsCarousel pageTag="home" />
 
-     <div class="w-full max-w-6xl h-[30rem]  bg-gray-300 mx-auto flex items-center justify-center m-6">
-      <span class="text-gray-500">Image Placeholder</span>
+    <div class="w-full max-w-[1296px] h-[406px] sm:h-[250px]  md:h-[320px] lg:h-[406px] mx-auto mt-[120px] mb-[184px] overflow-hidden">
+      <img 
+        src="/assets/images/volunter/work-with-us-bottom-img.jpeg" 
+        class="w-full h-full object-cover object-[50%_107%]"
+      />
     </div>
     
-     
-    <Faq collection="volunteering" slug="faq"/>
+    
+    
+    
+  
+
+    <Faq collection="volunteering" slug="faq" />
   </main>
 
   <a
@@ -90,8 +82,4 @@ import ContentSection from "../../components/volunteer/ContentSection.astro";
     </svg>
     <i class="ai-arrow-up"></i>
   </a>
-
 </Layout>
-  
-
-  
