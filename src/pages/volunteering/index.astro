@@ -1,4 +1,16 @@
 ---
+import { getEntry } from "astro:content";
+
+const entry = await getEntry({ collection: "common", slug: "headings" }) as any;
+
+const {
+  testimonial = "",
+  internship_card = "",
+  volunteer_card = "",
+} = entry?.data ?? {};
+
+
+
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../../layouts/Layout.astro";
@@ -9,7 +21,7 @@ import WhyIntern from "../../components/volunteer/WhyIntern.astro";
 import Hero from "../../components/pratibha/Hero.astro";
 import Faq from "../../components/common/FaqPratibha.astro";
 import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
-import ContentSection from "../../components/volunteer/ContentSection.astro";
+
 ---
 
 <Layout>
@@ -21,21 +33,7 @@ import ContentSection from "../../components/volunteer/ContentSection.astro";
 
     <Hero collection="volunteering" slug="hero-volunteer" />
 
-    <!-- <ContentSection
-      collection="volunteering"
-      slug="why-volunteer"
-      classes="space-y-24"
-      textAlignment="order-2"
-      imageAlignment="order-1"
-   />
-
-    <ContentSection
-      collection="volunteering"
-      slug="why-intern"
-      classes="space-y-24"
-      textAlignment="order-1"
-      imageAlignment="order-2"
-    /> -->
+    
 
     <WhyVolunteer 
     collection="volunteering"
@@ -63,7 +61,7 @@ import ContentSection from "../../components/volunteer/ContentSection.astro";
     <section class="flex items-center justify-center  mt-[120px] md:mt-[120px] mb-20 lg:mt-28 lg:mb-[120px]">
       <h1
         class="font-merriweather font-normal text-center leading-[150%] tracking-[-2.2%] text-[30px] sm:text-[40px] md:text-[48px] w-[292px] lg:w-[1296px] lg:h-[72px]">
-        Breaking Barriers Together
+      {testimonial}
       </h1>
     </section>
     
