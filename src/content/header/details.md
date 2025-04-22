@@ -55,10 +55,12 @@ navigation:
       name: "Work with Us"
       url: "/volunteering"
     submenu:
-      - name: "Volunteer with Us"
+      - name: "Join our team"
         url: "/volunteering"
+      - name: "Volunteering Opportunities"
+        url: "/volunteering/opportunities"
       - name: "Internship Opportunities"
-        url: "/volunteering"
+        url: "/volunteering/opportunities"
   
   - menu:
       name: "Contact Us"

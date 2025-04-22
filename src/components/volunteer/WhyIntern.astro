@@ -2,80 +2,124 @@
 import { getEntry } from "astro:content";
 import Button from "../common/button.astro";
 
-const { data } = await getEntry("volunteering", "why-intern");
+const {
+  collection,
+  slug,
+  classes = "",
+  textAlignment = "order-2",
+  imageAlignment = "order-1",
+} = Astro.props;
+
+const entry = (await getEntry(collection, slug)) as any;
+
+const {
+  title = "",
+  description = "",
+  image,
+  imageBottom,
+  ctaLink = "/",
+  ctaText,
+  buttonText,
+  whyIntern,
+  whyVolunteer,
+} = entry?.data ?? {};
+
+const reasons = whyIntern?.reasons || whyVolunteer?.reasons || [];
+const heading = whyIntern?.heading || whyVolunteer?.heading || "";
 ---
 
-<section class="max-w-[1296px] mx-auto px-4 md:px-8 py-24">
-  <!-- Main Wrapper -->
-  <div class="grid md:grid-cols-2 gap-8 items-center">
-    <!-- Left Content -->
-    <div class="space-y-6 order-1 md:order-2">
-      <!-- Heading -->
-      <h2
-        class="font-merriweather font-normal text-[32px] md:text-[48px] leading-tight tracking-[-2.2%]"
-      >
-        {data.title}
-        
-      </h2>
-
-      <!-- Subheading -->
-      <p
-        class="font-poppins font-normal text-[18px] leading-[36px] text-[#49494C]"
-      >
-        {data.description}
-      </p>
-
-      <!-- Why Intern Section -->
-      <div class="space-y-4">
-        <h3
-          class="font-poppins font-semibold text-[24px] md:text-[32px] text-[#1E1E1E]"
-        >
-          Why Intern?
-        </h3>
-
-        <div class="space-y-6">
-          {
-            data.whyIntern.map((item: { title: unknown; description: unknown; }) => (
-              <div class="flex items-start gap-4">
-                <h2 class="font-poppins font-semibold text-[40px] leading-[46.8px] text-[#1E1E1E]">
-                  <i class="fa-regular fa-square-check" />
-                </h2>
-                <div class="space-y-1">
-                  <p class="font-poppins font-semibold text-[24px] leading-[46.8px] text-[#1E1E1E]">
-                    {item.title}
-                  </p>
-                  <p class="font-poppins text-[#1E1E1E] font-normal text-[18px] leading-[36px] tracking-[0%]">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-
-  
-
-        <Button
-        link="/volunteering"
-        title={data.buttonText}
-        btn="btn1"
-        widthClass="w-[235px]"
-        heightClass="h-[60px]"
-      />
-
-      </div>
-
-      
-    </div>
-    <!-- Right Image Placeholder -->
-    <div
-    class="order-2 md:order-1 w-full h-64 md:h-full rounded-lg overflow-hidden"
+<section class="w-[342px] sm:w-[600px] md:w-[700px] lg:w-[1296px]  mx-auto mt-[120px]">
+  <div
+    data-aos="fade-up"
+    data-aos-duration="600"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+    class="grid md:grid-cols-2 gap-8 md:gap-16 items-center"
   >
-    <img
-      src={data.image}
-      alt="Internship Image"
-      class="w-full h-full object-cover"
-    />
+    <div class="space-y-4 sm:w-[300px] md:w-[500px] lg:w-[636px] lg:h-[212px]">
+      <h1
+        class="font-merriweather font-normal text-[32px] md:text-[40px] lg:text-[48px] leading-[140%] md:leading-[150%] tracking-[-2.2%]"
+      >
+        {title}
+      </h1>
+      <p
+        class="font-poppins font-normal text-[16px] md:text-[18px] leading-[28px] md:leading-[36px] tracking-[0%] text-[#49494C]
+        w-full max-w-[90%] sm:max-w-[500px] md:max-w-[636px]
+        h-auto md:h-[180px]"
+      >
+        {description}
+      </p>
+    </div>
   </div>
+
+  <div
+    class="grid md:grid-cols-2 gap-20 md:gap-16 mt-10 md:mt-[32px] lg:h-[613px]"
+    data-aos="fade-up"
+    data-aos-duration="600"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    <div class={`relative  md:order-2`}>
+      <img
+        src={image || imageBottom}
+        alt={title}
+        class="w-[342px] h-[244.45px] lg:h-[426px] lg:w-[596px] object-cover md:mt-[93.5px]rounded-lg overflow-hidden"
+      />
+    </div>
+
+    <div
+      class={`flex flex-col md:gap-12 h-full justify-between lg:w-[636px]  md:order-1`}
+    >
+      {
+        reasons.length > 0 && (
+          <div class="space-y-6 sm:space-y-8 lg:space-y-8 lg:h-[613px]">
+            <h3 class="font-poppins font-medium text-[24px] md:text-[28px] lg:text-[32px] leading-[100%] text-[#1E1E1E]">
+              {heading}
+            </h3>
+            <div class="space-y-6 sm:space-y-8 md:space-y-[40px] lg:h-[533px]">
+              {reasons.map(({ title, text }, index) => (
+                <div
+                  data-key={index}
+                  class="w-full sm:max-w-[500px] md:max-w-[636px] flex flex-col gap-2 sm:gap-4"
+                >
+                  {/* 1️⃣ Image + Title in one row */}
+                  <div class="flex items-start gap-3 sm:gap-4">
+                    <i class="h2 text-[30px] lg:text-[44px] fw-normal ai-check mt-0 lg:mt-6"></i>
+                    <p
+                      class="font-poppins font-semibold text-[20px] sm:text-[22px] lg:text-[24px] 
+         lg:leading-[46.8px] text-[#1E1E1E] flex items-center"
+                    >
+                      {title}
+                    </p>
+                  </div>
+
+                  {/* 2️⃣ Text below */}
+                  <div>
+                    <p
+                      class="font-poppins sm:ml-16 ml-0 text-[#1E1E1E] font-normal text-[16px] sm:text-[18px] 
+        leading-[32px] sm:leading-[36px] tracking-[0%] lg:tracking-[0%]
+        w-full  sm:max-w-[500px] md:max-w-[566.84px]"
+                    >
+                      {text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      }
+
+<!-- ml-[10px] sm:ml-0 -->
+      <div class="mt-10  sm:mt-1">
+        <Button
+          link={ctaLink}
+          title={ctaText || buttonText}
+          btn="btn1"
+          widthClass="w-[342px] sm:w-[200px] lg:w-[252px]"
+          heightClass="h-[60px] sm:h-[55px] lg:h-[60px]"
+        />
+      </div>
+    </div>
   </div>
 </section>
