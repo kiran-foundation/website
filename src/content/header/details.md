@@ -57,10 +57,12 @@ navigation:
     submenu:
       - name: "Join our team"
         url: "/volunteering"
+      - name: "Opportunities"
+        url: "/volunteering/opportunities"
       - name: "Volunteering Opportunities"
-        url: "/volunteering/opportunities"
+        url: "/volunteering/opportunities/volunteering"
       - name: "Internship Opportunities"
-        url: "/volunteering/opportunities"
+        url: "/volunteering/opportunities/internship"
   
   - menu:
       name: "Contact Us"
