@@ -696,7 +696,7 @@ body {
   max-height: auto;
   box-sizing: border-box;
   /* margin-bottom: 80px; */
-  
+
 }
 
 
@@ -711,7 +711,7 @@ body {
 .volunteeringForm-frame h1 {
   color: #1E1E1E;
   margin-bottom: 80px;
-  margin-top: 128px;
+  margin-top: 95px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 32px;
@@ -853,7 +853,7 @@ input:-webkit-autofill:active {
   border: none;
   cursor: pointer;
   margin-top: 32px;
-  margin-bottom: 95px;
+  margin-bottom: 143px;
   color: white;
 
 
@@ -3356,6 +3356,16 @@ h4 {
   color: #1E1E1E;
 }
 
+.volunteeringForm-input-container label span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #1E1E1E;
+}
+
 
 .pratibhaCard-image-container-vectorstar {
   position: relative;
@@ -4735,22 +4745,39 @@ h4 {
 }
 
 
+
+.intership-container {
+  margin: 0 auto;
+  padding: 0 80px;
+  margin-top: 120px;
+}
+
+.intership-wrapper {
+  background-color: #fff;
+  margin: 120px auto;
+  padding: 0 80px;
+  padding-bottom: 80px;
+}
+
+
 @media (max-width: 768px) {
 
   .aboutVolunteering-frame2 h1 {
     font-family: Merriweather;
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 150%;
-  letter-spacing: -2.2%;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: -2.2%;
+    text-align: left;
   }
-
+  
   .aboutVolunteering-frame2 h3{
     font-family: Poppins;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 38px;
-  letter-spacing: 0%;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 38px;
+    letter-spacing: 0%;
+    text-align: left;
   }
 
   
@@ -4763,7 +4790,7 @@ h4 {
   }
   
   .aboutVolunteering-frame4{
-    padding-bottom: 40px;
+    padding-bottom: 48px;
   }
 
   .aboutVolunteering-frame3 h2, .aboutVolunteering-frame4 h2 , .aboutVolunteering-frame3 span, .aboutVolunteering-frame4 span{
@@ -4803,7 +4830,7 @@ h4 {
 
   .volunteeringForm-frame{
     width: auto;
-    padding: 20px 24px;
+    padding: 24px 24px;
     font-family: Poppins;
     font-weight: 600;
     margin-left: 0px ;
@@ -4821,7 +4848,7 @@ h4 {
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 16px;
     margin-bottom: 80px;
   }
 
@@ -4853,4 +4880,53 @@ h4 {
   .volunteeringForm-input-container, .input-container-half{
     margin-bottom: 0px;
   }
+
+
+  .intership-container {
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 18px;
+  }
+
+  .intership-wrapper {
+    background-color: #fff;
+    margin: 0px auto;
+    padding: 0;
+    padding-bottom: 120px;
+    margin-top: -64px;
+  }
+  
+
+  .intership-logo{
+    width: 120px;
+    height: 68px;
+    margin-bottom: 82px;
+    margin-left: 24px;
+  }
+
+  .aboutVolunteering-frame1{
+    padding-top: 40px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  #volunteeringForm-input-container-big{
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+
+  .aboutVolunteering-frame1 a{
+    padding-top: 0px;
+  }
+
+  .thankyou-image2{
+
+  }
+}
+
+
+
+#volunteeringForm-input-container-big{
+  padding: 0px; 
+  margin-bottom: 0px; 
 }

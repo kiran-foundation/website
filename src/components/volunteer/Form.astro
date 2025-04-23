@@ -27,7 +27,10 @@ const { path } = Astro.props;
         <label for="phone">Phone Number <span>(Required)</span> </label>
         <input type="text" id="phone" name="phone" placeholder="Your number" />
       </div>
-      <div class="volunteeringForm-input-container">
+      <div
+        class="volunteeringForm-input-container"
+        id="volunteeringForm-input-container-big"
+      >
         <label for="more">Tell us more about you <span>(Optional)</span></label>
         <textarea id="more" name="more" rows="5"></textarea>
       </div>
@@ -206,12 +209,8 @@ const { path } = Astro.props;
 
       // Show the "Form submitted successfully!" message
       popUp.style.display = "block";
-
-      // Hide the message after 3 seconds
-      setTimeout(() => {
-        popUp.style.display = "none";
-      }, 3000);
-
+      // take to thankyou page
+      window.location.href = "/work-with-us/opportunities/thankyou";
       // Reset the form fields
       form.reset();
     } else {

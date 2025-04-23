@@ -1,6 +1,6 @@
 ---
 title: "Career Guidance and Mentorship"
-image:  "/assets/images/pratibha/pratibha-visual-3.webp" # to use as single image otherwise set  "" to use grid images 
+image:  "/assets/images/pratibha/pratibha-visual-3.png" # for single image other wise set ""
 image1: "/assets/images/pratibha/group-1.png"
 image2: "/assets/images/pratibha/group-2.png"
 image3: "/assets/images/pratibha/group-2.png"

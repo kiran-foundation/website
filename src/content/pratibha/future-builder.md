@@ -14,7 +14,7 @@ button:
   herf: "pratibha/become-a-mentor"
   text: "Become a Mentor"
   
-image: "/assets/images/pratibha/pratibha-visual-4.webp"
+image: "/assets/images/pratibha/pratibha-visual-4.png"
 imageGrid:
   image: "/assets/images/pratibha_page/group-1.png"
   image2: "/assets/images/pratibha_page/group-2.png"

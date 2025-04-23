@@ -3,7 +3,7 @@
 import Button from "../common/button.astro";
 
 
-const { className = '', type = "all" , call="home" } = Astro.props;
+const { className = '', type = "all" } = Astro.props;
 
 import { getCollection } from "astro:content";
 
@@ -42,9 +42,7 @@ const filteredJobs = jobs.filter(({ id }) => {
 }
 
 </style>
-<section class={`splide px-3 ${call == "home" ? 'mb-[64px] lg:mb-[120px]' : className}`}>
-
-
+<section class=`splide  px-3 mb-[64px] lg:mb-[120px] ${className}`>
   <div class="splide__track mainBox !p-[10px] !pl-[16px] sm:!pl-[14px] overflow-hidden">
     <ul class="splide__list">
       {

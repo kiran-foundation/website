@@ -3,7 +3,7 @@ title: "Launch Your Career"
 description: "An internship isn’t just a line on your resume—it’s a launchpad for your 
  professional journey. Dive into real-world projects, master industry 
  tools, and build the expertise employers value most."
-image: "/assets/images/volunter/why-intern-img.jpeg"
+image: "/assets/images/gyan.png"
 
 whyIntern:
   heading: "Why Intern?"

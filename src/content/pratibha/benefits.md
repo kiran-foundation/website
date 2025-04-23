@@ -26,7 +26,7 @@ covers:
      - svg: "/assets/images/pratibha/boarding_expenses.svg"
        title: "Boarding Expenses"
 # "D:\coding\Kiran Foundation\website\public\assets\images\pratibha\PRATIBHA_1.png"
-image: "/assets/images/pratibha/pratibha-visual-2.webp"
+image: "/assets/images/pratibha/pratibha-visual-2.png"
 imageGrid:
   image1: "/assets/images/pratibha_page/group-1.png"
   image2: "/assets/images/pratibha_page/group-2.png"
