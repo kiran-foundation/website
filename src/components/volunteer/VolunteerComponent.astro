@@ -34,7 +34,10 @@ const roleValue = role[roleKey];
 <h2>{Astro.props.title}:</h2>
 {
   roleValue ? (
-    <ul style="list-style-type: disc; padding-left: 1.5rem;">
+    <ul
+      class="volunteer-list-disc"
+      style="list-style-type: disc; padding-left: 1.5rem;"
+    >
       {roleValue
         .split("\n")
         .map((line) => (line.trim() !== "" ? <li>{line}</li> : null))}
