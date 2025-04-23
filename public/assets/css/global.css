@@ -3207,6 +3207,12 @@ h4 {
   padding-top: 60px;
 }
 
+.aboutVolunteering-frame1 a:hover{
+  text-decoration: underline;
+}
+
+
+
 .mainVolunteering-main-heading {
   width: 100%;
   max-width: 604px;
@@ -4529,17 +4535,16 @@ h4 {
   padding-top: 32px;
 
 }
-.aboutVolunteering-frame2 h3 {
+.aboutVolunteering-frame2 h2 {
   width: 100%;
   color:#1E1E1E;
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 100%;
-  letter-spacing: 0;
-  text-align: center;
   padding-top: 32px;
-
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  text-align: center;
 }
 .aboutVolunteering-info-text{
   font-weight: 400;
@@ -4771,7 +4776,7 @@ h4 {
     text-align: left;
   }
   
-  .aboutVolunteering-frame2 h3{
+  .aboutVolunteering-frame2 h2{
     font-family: Poppins;
     font-weight: 400;
     font-size: 20px;
@@ -4779,6 +4784,7 @@ h4 {
     letter-spacing: 0%;
     text-align: left;
   }
+
 
   
   .aboutVolunteering-frame3 li, .aboutVolunteering-frame4 li , .aboutVolunteering-frame3 p, .aboutVolunteering-frame4 p{

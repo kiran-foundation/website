@@ -39,13 +39,11 @@ const { path } = Astro.props;
         >Apply for Position</button
       >
     </form>
-    <div id="pop-up" style="display: none;">Form submitted successfully!</div>
   </div>
 </section>
 
 <script>
   const form = document.getElementById("volunteering-form") as HTMLFormElement;
-  const popUp = document.getElementById("pop-up") as HTMLElement;
   const form_id = "1GBxqZhw1JGOfkFAkehcN2cWJ6kfJPs5y7eCCWBH2l7c";
 
   function validMail(email) {
@@ -207,8 +205,6 @@ const { path } = Astro.props;
         console.error(error);
       }
 
-      // Show the "Form submitted successfully!" message
-      popUp.style.display = "block";
       // take to thankyou page
       window.location.href = "/work-with-us/opportunities/thankyou";
       // Reset the form fields

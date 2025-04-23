@@ -1,4 +1,5 @@
 ---
+import Breadcrumb from "../pratibha/Breadcrumb.astro";
 import { getEntry } from "astro:content";
 const hero = (await getEntry("home", "hero")).data;
 const common = (await getEntry("common", "common")).data;
