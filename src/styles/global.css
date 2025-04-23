@@ -7,7 +7,7 @@
   
   
   /* Style Guide Fonts Desktop */
-  .Hero-title {
+  .hero-title {
     font-family: "Merriweather", serif;
     font-weight: 700;
     font-size: 4rem;
@@ -15,7 +15,7 @@
     letter-spacing: -2.2%;
     color: #1E1E1E;
   }
-  .Hero-subtitle {
+  .hero-subtitle {
     font-family: Merriweather;
     font-weight: 400;
     font-size: 2rem;
@@ -25,7 +25,7 @@
 
 
   }
-  .Heading-1 {
+  .heading-1 {
     font-family: Merriweather;
     font-weight: 400;
     font-size: 3rem;
@@ -34,16 +34,16 @@
     color: #1E1E1E;
 
   }
-  .Heading-2 {
+  .heading-2 {
     font-family: Poppins;
     font-weight: 400;
     font-size: 2rem;
     line-height: 3.75rem;
     letter-spacing: 0%;
-    color: #1E1E1E;
+    color: #49494C;
 
   }
-  .Heading-3 {
+  .heading-3 {
     font-family: Poppins;
     font-weight: 500;
     font-size: 2rem;
@@ -52,7 +52,7 @@
     color: #1E1E1E;
 
   }
-  .Heading-4 {
+  .heading-4 {
     font-family: Poppins;
     font-weight: 600;
     font-size: 1.5rem;
@@ -61,15 +61,17 @@
     color: #1E1E1E;
 
   }
-  .Body-text-1 {
+  .body-text-1 {
     font-family: Poppins;
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 2.25rem;
     letter-spacing: 0%;
+    color: #49494C;
+
   }
 
-  .Body-text-2 {
+  .body-text-2 {
     font-family: Poppins;
     font-weight: 600;
     font-size: 1.125rem;
@@ -78,7 +80,7 @@
     color: #49494C;
 
   }
-  .Body-text-3 {
+  .body-text-3 {
     font-family: Poppins;
     font-weight: 400;
     font-size: 1.5rem;
@@ -88,7 +90,7 @@
     color: #49494C;
   }
 
-  .Breadcrumbs-text {
+  .breadcrumbs-text {
     font-family: Poppins;
     font-weight: 400;
     font-size: 0.875rem;
@@ -110,41 +112,41 @@
 
   /* Fonts Mobile  */
   @media (max-width: 48rem) {
-    .Hero-title {
+    .hero-title {
       font-size: 2.25rem;
       font-weight: 900;
     }
-    .Hero-subtitle {
+    .hero-subtitle {
       font-size: 1.25rem;
       line-height: 1.75rem;
 
     }
-    .Heading-1{
+    .heading-1{
       font-size: 1.875rem;
   
     }
-    .Heading-2{
+    .heading-2{
       font-size: 1.25rem;
     line-height: 2.375rem;
     letter-spacing: 0%;
     }
-    .Heading-3{
+    .heading-3{
       font-size: 1.5rem;
       font-weight: 600;
     }
-    .Heading-4{
+    .heading-4{
       font-size: 1.25rem;
   
     }
-    .Body-text-1{
+    .body-text-1{
       font-size: 1rem;
       line-height: 2rem;
     }
-    .Body-text-2{
+    .body-text-2{
       font-size: 1rem;
       line-height: 2rem;
     }
-    .Body-text-3{
+    .body-text-3{
       font-size: 1.125rem;
       line-height: 2.25rem;
     }
