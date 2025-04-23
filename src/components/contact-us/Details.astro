@@ -7,7 +7,7 @@ const { address, contactNo, contactEmails } = contacts.data;
 ---
 
 <div
-  class="flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52 2xl:px-64 gap-8 w-full mb-[120px]"
+  class="flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52 2xl:px-64 gap-8 w-full md:mb-[120px] mb-0 "
 >
   <!-- Frame 1000006142 -->
   <div
@@ -15,15 +15,23 @@ const { address, contactNo, contactEmails } = contacts.data;
   >
     <!-- Address Card -->
     <div
-      class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[2.375rem] pt-[42px] flex-none"
+      class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[24px] sm:pl-[46px] pt-[42px] flex-none"
     >
       <div class="flex flex-col items-start gap-8 w-[282px]">
-        <!-- Heading 4 → Address -->
-        <div class="w-full font-semibold text-lg leading-[27px] text-[#1E1E1E]">
+        <!-- Heading 4 → Address 
+        font-family: Poppins;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+ 
+        -->
+        <div class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E] ">
           Address
         </div>
         <!-- Address Text -->
-        <div class="w-full font-normal text-lg leading-[27px] text-[#49494C]">
+        <div class="w-full font-poppins text-[16px] font-normal md:text-lg leading-[2rem] md:leading-[100%]  text-[#49494C]">
           {address}
         </div>
       </div>
@@ -31,12 +39,12 @@ const { address, contactNo, contactEmails } = contacts.data;
 
     <!-- Phone Card -->
     <div
-      class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[46px] pt-[42px] flex-none"
+      class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[24px] sm:pl-[46px] pt-[42px] flex-none"
     >
       <div class="flex flex-col items-start gap-8 w-[144px]">
         <!-- Heading 4 → Phone -->
 
-        <div class="w-full font-semibold text-lg leading-[27px] text-[#1E1E1E]">
+        <div class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%]  text-[#1E1E1E]">
           Phone
         </div>
         <div class="flex flex-col items-start gap-6 w-full">
@@ -50,7 +58,7 @@ const { address, contactNo, contactEmails } = contacts.data;
                   </div>
                   <a
                     href={"tel:" + (contact.answer).replace(/ /g, "")}
-                    class="w-full font-normal text-lg leading-[36px] text-[#1E1E1E]"
+                    class="w-full font-poppins text-[16px] font-normal md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
                   >
                     {contact.answer}
                   </a>
@@ -87,7 +95,7 @@ const { address, contactNo, contactEmails } = contacts.data;
     >
       <div class="flex flex-col items-start gap-8 w-[12.4375rem]">
         <!-- Heading 4 → Email -->
-        <div class="w-full font-semibold text-lg leading-[27px] text-[#1E1E1E]">
+        <div class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%]  text-[#1E1E1E]">
           Email
         </div>
         <div class="flex flex-col items-start gap-6 w-full">
@@ -96,12 +104,12 @@ const { address, contactNo, contactEmails } = contacts.data;
               // console.log(contact);
               return (
                 <div class="flex flex-col items-start w-full">
-                  <div class="w-full font-normal text-sm leading-[21px] text-[#49494C]">
+                  <div class="w-full font-poppins font-normal text-sm leading-[21px] text-[#49494C]">
                     {contact.option}
                   </div>
                   <a
                     href={"mailto:" + contact.answer}
-                    class="w-full font-normal text-lg leading-[36px] text-[#1E1E1E]"
+                    class="w-full font-poppins text-[16px] font-normal md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
                   >
                     {contact.answer}
                   </a>

@@ -5,24 +5,35 @@ import { getEntries } from "astro:content"
 const data = await getEntry("contact","contact");
 const {title,subTitle} = data.data;
 ---
+<!-- 
+font-family: Merriweather;
+font-weight: 900;
+font-size: 36px;
+line-height: 150%;
+letter-spacing: -2.2%;
+text-align: center;
 
-<div class=" text-center lg:w-[1296px] mx-auto px-6  max-h-[15.9375rem] mt-[6.375rem] mb-[123px] ">
-    <div class="position-relative mx-auto mb-8  h-[88px]">
-      <!-- <h1 class="display-3 position-relative z-2 mb-0">Task management assistant you gonna love</h1> -->
-      <h1 class="  relative inline-block mx-auto justify-start max-w-[644px] leading-[150%]">
-            <span class="relative inline-block">
-          <span class="relative z-10 pratibha-heading font-bold !text-[64px] !lg:text-[64px]">{title} </span>
-          <span class="absolute bottom-[0.5125rem] left-0 w-full z-0">
-            <!-- <img src="/assets/svg/green-line-under-text-volunteer.svg" alt="Green Underline" class="w-full h-auto" /> -->
-            <svg  width="608" height="19" viewBox="0 0 608 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0.898438" y="0.585938" width="606.57" height="18" fill="#00AA5E"/>
-              </svg>
-              
-          </span>
+-->
+<div class=" text-center lg:max-w-[1296px] mx-auto px-6  max-h-[15.9375rem] mt-[6.375rem] md:mb-[123px] mb-0  ">
+  <div class="pb-9  relative w-full tb:w-full  px-6 mx-auto ">
+    <h1 class=" text-[36px]   sm:text-[48px] md:text-[56px] lg:text-[60px] font-merriweather font-bold leading-[1.2]">
+      <span class="relative inline-block">  
+        <span class="relative z-10">{title}</span>
+        <span class="absolute bottom-[38px] xs:bottom-[-10px] left-0 w-full z-0">
+        <img src="/assets/svg/green-line-under-text-volunteer.svg" alt="Green Underline" class="w-full h-auto" />
+
         </span>
+        
+        
       </h1>
       
     </div>
-    <p class=" mx-auto max-w-[1200px]  lg:max-h-[104px] font-merriweather text-[32px] font-normal leading-[3.25rem] justify-center  text-center text-[#49494C]">{subTitle}</p>
+    <!-- font-family: Poppins;
+font-weight: 400;
+font-size: 20px;
+line-height: 38px;
+letter-spacing: 0%;
+ -->
+    <p class=" mx-auto max-w-[1200px]  lg:max-h-[104px] font-merriweather text-[20px] md:text-[32px] font-normal leading-[2.375rem] md:leading-[3.25rem] justify-center  md:text-center text-justify text-[#49494C]">{subTitle}</p>
     
   </div>
