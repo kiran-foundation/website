@@ -4937,7 +4937,7 @@ h4 {
   .intership-wrapper {
     background-color: #fff;
     margin: 0px auto;
-    padding: 0;
+    padding: 0 24px;
     padding-bottom: 120px;
     margin-top: -64px;
     border-radius: 0px;
@@ -4965,12 +4965,13 @@ h4 {
   .aboutVolunteering-frame1 a{
     padding-top: 0px;
   }
+}
 
+@media (max-width: 500px) {
   .thankyou-title{
     max-width: 400px;
   }
 }
-
 
 
 #volunteeringForm-input-container-big{
