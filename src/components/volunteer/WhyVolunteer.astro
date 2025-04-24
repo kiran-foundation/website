@@ -1,7 +1,31 @@
 ---
 import { getEntry } from "astro:content";
 import Button from "../common/button.astro";
-const { data } = await getEntry("volunteering", "why-volunteer");
+
+const {
+  collection,
+  slug,
+  classes = "",
+  textAlignment = "order-2",
+  imageAlignment = "order-1",
+} = Astro.props;
+
+const entry = (await getEntry(collection, slug)) as any;
+
+const {
+  title = "",
+  description = "",
+  imageTop,
+  imageBottom,
+  ctaLink = "/",
+  ctaText,
+  buttonText,
+  whyIntern,
+  whyVolunteer,
+} = entry?.data ?? {};
+
+const reasons = whyIntern?.reasons || whyVolunteer?.reasons || [];
+const heading = whyIntern?.heading || whyVolunteer?.heading || "";
 ---
 
 <section
@@ -26,24 +50,17 @@ const { data } = await getEntry("volunteering", "why-volunteer");
       class="space-y-4 md:order-1 h-[325px] sm:w-[300px] md:w-[500px] lg:w-[636px] lg:h-[284px]"
     >
       <h1
-        class="font-merriweather font-normal text-[48px] leading-[72px] tracking-[-2.2%]"
+        class="font-merriweather font-normal text-[32px] md:text-[40px] lg:text-[48px] leading-[150%] tracking-[-2.2%] text-[#1e1e1e]"
       >
-        {data.title}
+        {title}
       </h1>
       <p
-        class="font-poppins font-normal text-[18px] leading-[36px] text-[#49494C]"
+        class="font-poppins font-normal text-[16px] md:text-[18px] leading-[32px] md:leading-[36px] tracking-[0%] text-[#49494C]
+        w-full sm:max-w-[500px] md:max-w-[636px]
+        h-auto md:h-[180px]"
       >
-        {data.description}
+        {description}
       </p>
-    </div>
-
-    <!-- Image -->
-    <div class="w-full h-64 md:h-80 rounded-lg overflow-hidden">
-      <img
-        src={data.imageTop}
-        alt="Grow While Giving"
-        class="w-full h-full object-cover"
-      />
     </div>
   </div>
 
@@ -113,19 +130,13 @@ const { data } = await getEntry("volunteering", "why-volunteer");
           heightClass="h-[60px] sm:h-[60px] lg:h-[60px]"
         />
       </div>
+    </div>
 
-      <!-- CTA Button -->
-      <!-- <a href={data.ctaLink} class="inline-block mt-4 px-6 py-3 rounded-md border-2 border-black font-poppins font-semibold bg-[#FF5722] text-white hover:bg-[#e64a19] transition">
-        {data.ctaText}
-        
-      </a> -->
-
-      <Button
-        link="/volunteering"
-        title={data.ctaText}
-        btn="btn1"
-        widthClass="w-[235px]"
-        heightClass="h-[60px]"
+    <div class={` relative ${imageAlignment}`}>
+      <img
+        src={imageBottom}
+        alt={title}
+        class="w-[342px] h-[334px] lg:h-[582px] lg:w-[596px] object-cover md:mt-[89.86px] md:mb-[13.14px] rounded-lg overflow-hidden"
       />
     </div>
   </div>
