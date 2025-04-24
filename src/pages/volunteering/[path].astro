@@ -15,7 +15,7 @@ const { path } = Astro.params;
 
 export function getStaticPaths() {
   const allVolunteering = import.meta.glob<MarkdownFile>(
-    "/src/content/work/volunteering/*.md"
+    "/src/content/work/volunteering/*.md",
   );
 
   let parameters = [];
@@ -26,6 +26,7 @@ export function getStaticPaths() {
   });
 
   console.log(parameters);
+  
 
   return parameters;
 }
@@ -36,13 +37,15 @@ export function getStaticPaths() {
   <main class="page-wrapper">
     <Header />
     <Hero />
+   
+    <AboutVolunteerRole path={path} />  
+    
 
-    <AboutVolunteerRole path={path} />
-
-    <!-- <Form /> -->
-
+    <Form />
+  
     <InfoVolunteering />
     <HowDoesItWork />
+   
   </main>
 
   <!-- Back to top button -->

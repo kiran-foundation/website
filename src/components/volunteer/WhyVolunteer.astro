@@ -28,9 +28,8 @@ const reasons = whyIntern?.reasons || whyVolunteer?.reasons || [];
 const heading = whyIntern?.heading || whyVolunteer?.heading || "";
 ---
 
-<section
-  class="w-[342px] sm:w-[600px] md:w-[700px] lg:w-[1296px] mx-auto mt-[120px]"
->
+<section class="w-[342px] sm:w-[600px] md:w-[700px] lg:w-[1296px]  mx-auto mt-[120px]">
+
   <div
     data-aos="fade-up"
     data-aos-duration="600"
@@ -94,7 +93,8 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
                       class="h-8 w-8 sm:h-10 sm:w-10 lg:h-11 lg:w-11 mt-1"
                     /> */}
                     {/* <i class="fa-solid fa-check text-[30px] lg:text-[44px] text-[#1E1E1E]  lg:mt-1"></i> */}
-                    <i class="h2 text-[30px] lg:text-[44px] fw-normal ai-check mt-0 lg:mt-6" />
+                    <i class="h2 text-[30px] lg:text-[44px] fw-normal ai-check mt-0 lg:mt-6"></i>
+
 
                     <p
                       class="font-poppins font-semibold text-[20px] sm:text-[22px] lg:text-[24px] 
@@ -121,7 +121,7 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
         )
       }
 
-      <div class="mt-10 sm:mt-1">
+      <div class="mt-10  sm:mt-1">
         <Button
           link={ctaLink}
           title={ctaText || buttonText}

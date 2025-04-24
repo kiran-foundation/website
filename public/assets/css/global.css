@@ -1066,9 +1066,6 @@ input:-webkit-autofill:active {
 .carousel-bullet.active {
   background: #333;
 }
-
-
-
 .mainVolunteering-main-container {
   width: 100%;
   max-width: 1296px;
@@ -1076,7 +1073,8 @@ input:-webkit-autofill:active {
   flex-direction: column;
   align-items: center;
   font-family: 'Poppins', sans-serif;
-
+  margin: 50px auto;
+  padding: 0 20px;
 }
 
 .mainVolunteering-main-heading {
@@ -2852,7 +2850,7 @@ h4 {
   height: 24px;
   text-decoration: none;
   color: #f7fcff;
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins;
   font-size: 16px;
   font-weight: 600;
   line-height: 22.4px;
@@ -3612,7 +3610,7 @@ h4 {
   color: rgba(241, 89, 42, 1);
   text-align: left;
   
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins;
   font-size: 72px;
   font-weight: 700;
   line-height: 80px;
@@ -3963,7 +3961,7 @@ h4 {
   color: rgba(241, 89, 42, 1);
   text-align: left;
   
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins;
   font-size: 72px;
   font-weight: 700;
   line-height: 80px;
@@ -4575,8 +4573,6 @@ h4 {
   color: #1E1E1E;
 }
 
-
-
 .aboutVolunteering-info-text span{
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -4585,8 +4581,6 @@ h4 {
   letter-spacing: 0%;
   color : #1E1E1E;
 }
-
-
 
 .aboutVolunteering-frame3 h2,
 .aboutVolunteering-frame4 h2 {
@@ -4630,7 +4624,6 @@ h4 {
   letter-spacing: 0%;
   color: #1E1E1E;
 }
-
 .aboutVolunteering-button-container {
   display: flex;
   justify-content: flex-start;
@@ -4679,7 +4672,6 @@ h4 {
   display: flex;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
-  
 }
 
 .WhyVolunteer-frame-heading {
@@ -4762,7 +4754,6 @@ h4 {
     z-index: -1;
  
 }
-
 
 
 .intership-container {
@@ -4965,6 +4956,8 @@ h4 {
   .aboutVolunteering-frame1 a{
     padding-top: 0px;
   }
+
+
 }
 
 @media (max-width: 500px) {
@@ -4972,6 +4965,7 @@ h4 {
     max-width: 400px;
   }
 }
+
 
 
 #volunteeringForm-input-container-big{

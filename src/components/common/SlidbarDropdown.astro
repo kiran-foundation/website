@@ -1,0 +1,85 @@
+---
+const { title, subLinks = [], className = "w-auto" } = Astro.props;
+---
+
+<style>
+  .scrollbar::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+  }
+  .scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<div class="group overflow-y-hidden scrollbar">
+  <ul class="space-y-2 font-medium scrollbar">
+    <li>
+      <button
+        type="button"
+        class="flex items-center w-full min-w-[342px] py-[16px] px-[24px] h-[76px] text-base text-gray-900 transition duration-75 hover:text-[#D33C0D]"
+        data-toggle="dropdown"
+      >
+        {
+          title.name === "Contact Us" ? (
+            <a class="flex-1 text-left whitespace-nowrap" href="/contact">{title.name}</a>
+          ) : (
+            <span class="flex-1 text-left whitespace-nowrap">{title.name}</span>
+          )
+        }
+
+        {
+          subLinks.length > 0 && (
+            <svg
+              class="w-3 h-3 transition-transform"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          )
+        }
+      </button>
+      {
+        subLinks.length > 0 && (
+          <ul
+            class={`${className} scrollbar bg-[#F7F6F6] py-[24px] px-[16px] hidden transition-all duration-200 min-w-[342px] overflow-y-auto`}
+            data-dropdown
+          >
+            {subLinks.map((el) => (
+              <li>
+                <a
+                  href={el.url || "#"}
+                  class="block py-[16px] px-[24px] text-[#1E1E1E] hover:text-[#D33C0D] transition text-base font-poppins text-nowrap"
+                >
+                  {el.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </li>
+  </ul>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-toggle='dropdown']").forEach((button) => {
+      button.addEventListener("click", () => {
+        const dropdown = button.nextElementSibling;
+        dropdown.classList.toggle("hidden");
+        button.querySelector("svg").classList.toggle("rotate-180");
+      });
+    });
+  });
+</script>
