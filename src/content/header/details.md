@@ -59,7 +59,7 @@ navigation:
         url: "/volunteering"
       - name: "Opportunities"
         url: "/volunteering/opportunities"
-      - name: "Volunteering Opportunities"
+      - name: "Volunteer Opportunities"
         url: "/volunteering/opportunities/volunteering"
       - name: "Internship Opportunities"
         url: "/volunteering/opportunities/internship"
