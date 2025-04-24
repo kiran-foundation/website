@@ -1,16 +1,15 @@
 ---
 import { getEntry } from "astro:content";
 
-const entry = (await getEntry({
-  collection: "common",
-  slug: "headings",
-})) as any;
+const entry = await getEntry({ collection: "common", slug: "headings" }) as any;
 
 const {
   testimonial = "",
   internship_card = "",
   volunteer_card = "",
 } = entry?.data ?? {};
+
+
 
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
@@ -22,54 +21,69 @@ import WhyIntern from "../../components/volunteer/WhyIntern.astro";
 import Hero from "../../components/pratibha/Hero.astro";
 import Faq from "../../components/common/FaqPratibha.astro";
 import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
+
 ---
 
 <Layout>
   <main class="page-wrapper">
-    <Breadcrumb url={Astro.url} />
+
+
+
+<Breadcrumb url={Astro.url} />
 
     <Hero collection="volunteering" slug="hero-volunteer" />
 
-    <WhyVolunteer
-      collection="volunteering"
+    
+
+    <WhyVolunteer 
+    collection="volunteering"
       slug="why-volunteer"
+     
       textAlignment="order-2"
       imageAlignment="order-1"
-    />
+     /> 
 
-    <ChooseVolunteering fetch="volunteer" />
-
-    <WhyIntern
-      collection="volunteering"
+     <ChooseVolunteering fetch="volunteer"/>
+  
+     <WhyIntern
+     collection="volunteering"
       slug="why-intern"
+      
       textAlignment="order-1"
       imageAlignment="order-2"
-    />
-    <ChooseVolunteering fetch="internship" />
+      />
+      <ChooseVolunteering fetch="internship"/>
+
+    
+
 
     <!-- <ChooseVolunteering fetch="internship" /> -->
-    <section
-      class="flex items-center justify-center mt-[120px] md:mt-[120px] mb-20 lg:mt-28 lg:mb-[120px]"
-    >
+    <section class="flex items-center justify-center  mt-[120px] md:mt-[120px] mb-20 lg:mt-28 lg:mb-[120px]">
       <h1
-        class="font-merriweather font-normal text-center leading-[150%] tracking-[-2.2%] text-[30px] sm:text-[40px] md:text-[48px] w-[292px] lg:w-[1296px] lg:h-[72px]"
-      >
-        {testimonial}
+        class="font-merriweather font-normal text-center leading-[150%] tracking-[-2.2%] text-[30px] sm:text-[40px] md:text-[48px] w-[292px] lg:w-[1296px] lg:h-[72px]">
+      {testimonial}
       </h1>
     </section>
+    
 
     <TestimonialsCarousel pageTag="home" />
-
-    <div
-      class="w-[342px] h-[208px] sm:w-[600px] md:w-[700px] sm:h-[408px] lg:w-[1296px] lg:h-[406px] rounded-[8px] mx-auto mt-[120px] mb-[184px] overflow-hidden"
-    >
-      <img
-        src="/assets/images/volunter/work-with-us-bottom-img.jpeg"
+    
+    <div class="w-[342px] h-[208px] sm:w-[600px] md:w-[700px] sm:h-[408px] lg:w-[1296px] lg:h-[406px] rounded-[8px] mx-auto mt-[120px] mb-[184px] overflow-hidden">
+      <img 
+        src="/assets/images/volunter/work-with-us-bottom-img.jpeg" 
         class="w-full h-full object-cover object-[80%_90%] sm:object-[50%_107%]"
       />
     </div>
-
-    <Faq collection="volunteering" slug="faq" mt="px-[24px] lg:px-0" />
+    
+    
+    
+    
+    
+  
+    
+      <Faq collection="volunteering" slug="faq" mt = "px-[24px] lg:px-0"/>
+    
+    
   </main>
 
   <a
