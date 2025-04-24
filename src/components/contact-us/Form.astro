@@ -7,11 +7,11 @@ const { path } = Astro.props;
 <script src="/assets/js/theme.min.js" is:inline></script>
 <!-- <script src="/assets/js/common.js" is:inline></script> -->
 
-<section id="form" class="bg-[#F1F1F1] max-w-[81rem] mx-auto   px-4 lg:px-0 mb-[128px] rounded-2xl">
-  <div id="formframe" class="volunteeringForm-frame max-w-[800px] py-9 sm:pt-[120px] sm:pb-[168px]" style="display: block;">
-    <h1 class=" m-0 pb-[80px] font-poppins font-[500] text-[24px] md:text-[2rem]">Your questions, feedback or concerns matter!</h1>
+<section id="form" class="bg-[#F1F1F1] max-w-[81rem] mx-auto   px-0 lg:px-0 mb-[128px] rounded-2xl">
+  <div id="formframe" class="volunteeringForm-frame px-0 max-w-[800px] py-[2.5rem] sm:pt-[120px] sm:pb-[168px] " style="display: block;">
+    <h1 class=" m-0 pb-[80px] font-poppins !font-[500] !text-[24px] !md:text-[2rem] tracking-normal !leading-[100%]">Your questions, feedback or concerns matter!</h1>
 
-    <form id="volunteering-form" class=" ">
+    <form id="volunteering-form" class="  ">
       <div class="volunteeringForm-input-container mb-0">
         <label for="full-name">Full Name </label>
         <input
@@ -52,7 +52,7 @@ const { path } = Astro.props;
   const form = document.getElementById("volunteering-form") as HTMLFormElement;
   const formframe = document.getElementById("formframe") as HTMLFormElement;
   const popUp = document.getElementById("pop-up") as HTMLElement;
-  const form_id = "1GBxqZhw1JGOfkFAkehcN2cWJ6kfJPs5y7eCCWBH2l7c";
+  const form_id = "1FAIpQLSfoiKWC0Np2Clnq1DDj8Un9GCrkB86AX-Dg_QZcwxPiU2QNbQ";
 
   function validMail(email) {
     if (!email) return false;
@@ -213,16 +213,26 @@ const { path } = Astro.props;
     // get information about the role using current url
     const url = window.location.href;
     // const getInternshipName = (url) => url.split("/").slice(-2, -1)[0];
-    // const role = getInternshipName(url);
+    const role = "";
     const more = (document.getElementById("more") as HTMLTextAreaElement).value;
 
     // Check if all fields are filled
     if (fullName && validMail(email) && validPhone(phone) && more) {
-    // const url = `https://docs.google.com/forms/d/se/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.2005620554=${encodeURIComponent(fullName)}&entry.1045781291=${encodeURIComponent(email)}&entry.1166974658=${encodeURIComponent(phone)}&entry.1929439720=${encodeURIComponent(role)}&entry.138103954=${encodeURIComponent(more)}`;
-
+      const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.1405737972=${encodeURIComponent(fullName)}&entry.1290086262=${encodeURIComponent(email)}&entry.1357912889=${encodeURIComponent(phone)}&entry.1943470005=${encodeURIComponent(role)}&entry.1695954646=${encodeURIComponent(more)}&entry.1681195710=${encodeURIComponent("contact-us")}&entry.emailAddress=${encodeURIComponent(email)}`;
+//       // ids for google form production version -
+      // form_id = 1FAIpQLSefpzhGl46T63TuroNAmyfnRERfeeJjv8Z0hH6WNtNzp-bmgQ
+      // entry.1405737972: testforid (name)
+      // entry.1290086262: test@gmail.com (mail)
+      // entry.1357912889: 123 (number)
+      // entry.132713313: testrole (role)
+      // entry.1964045563: test (info)
+      // entry.579156192: internship (type , this has to be hardcoded)
+      // entry.1067411802: [[["1GIwhzX7qsDKfHcP4-MASYTE_eUlqrtpV","wallpaper.png","image/png"]]] (resume)
     try {
       // Add a timeout to ensure the pop-up shows even if the request fails
-      // const fetchPromise = fetch(url, { method: "POST" });
+      // const fetchPromise = fetch(url, { method: "POST" }, )
+      // ;
+      const _response = await fetch(url, { method: "POST", mode: "no-cors" });
       formframe.style.display = "none"     // Show pop-up immediately, don't wait for fetch to complete
       popUp.style.display = "block";
       
