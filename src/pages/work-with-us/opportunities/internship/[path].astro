@@ -1,14 +1,14 @@
 ---
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
-import Hero from "../../components/volunteer/Hero.astro";
-import AboutVolunteerRole from "../../components/volunteer/AboutVolunteerRole.astro";
-import Form from "../../components/volunteer/Form.astro";
-import InfoVolunteering from "../../components/volunteer/InfoVolunteering.astro";
-import HowDoesItWork from "../../components/volunteer/HowDoesItWork.astro";
-import Layout from "../../layouts/Layout.astro";
-import AboutInternship from "../../components/volunteer/AboutInternship.astro";
-import type { MarkdownFile } from "../../types/Markdown";
+import Hero from "../../../../components/volunteer/InternshipHero.astro";
+import AboutVolunteerRole from "../../../../components/volunteer/AboutVolunteerRole.astro";
+import Form from "../../../../components/volunteer/Form.astro";
+import InfoVolunteering from "../../../../components/volunteer/InfoVolunteering.astro";
+import HowDoesItWork from "../../../../components/volunteer/HowDoesItWork.astro";
+import Layout from "../../../../layouts/internship.astro";
+import AboutInternship from "../../../../components/volunteer/AboutInternship.astro";
+import type { MarkdownFile } from "../../../../types/Markdown";
 
 const { path } = Astro.params;
 
@@ -18,21 +18,20 @@ export async function getStaticPaths() {
   const allVolunteering = await getCollection("work");
 
   return allVolunteering
-    .filter(entry => entry.slug.startsWith("internship/")) 
+    .filter((entry) => entry.slug.startsWith("internship/"))
     .map((entry) => ({
-      params: { path: entry.slug.replace(/^internship\//, "") }, 
+      params: { path: entry.slug.replace(/^internship\//, "") },
     }));
 }
-
 ---
 
-<Layout title="Intenrship Roles">
+<Layout title="Internship Roles">
   <main class="page-wrapper">
     <Hero />
     <AboutInternship path={path ?? ""} />
     <Form />
-    <InfoVolunteering />
-    <HowDoesItWork />
+    <!-- <InfoVolunteering /> -->
+    <!-- <HowDoesItWork /> -->
   </main>
   <a
     class="btn-scroll-top"
