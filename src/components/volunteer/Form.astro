@@ -201,6 +201,26 @@ const { path } = Astro.props;
     if (fullName && validMail(email) && validPhone(phone) && role) {
       const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.1405737972=${encodeURIComponent(fullName)}&entry.1290086262=${encodeURIComponent(email)}&entry.1357912889=${encodeURIComponent(phone)}&entry.1943470005=${encodeURIComponent(role)}&entry.1695954646=${encodeURIComponent(more)}&entry.1681195710=${encodeURIComponent("internship")}&entry.emailAddress=${encodeURIComponent(email)}`;
 
+      // ids for google form test version -
+      // form_id = 1FAIpQLSfoiKWC0Np2Clnq1DDj8Un9GCrkB86AX-Dg_QZcwxPiU2QNbQ
+      // entry.1405737972: testAnshul2 (name)
+      // entry.1290086262: test@gmail.com (mail)
+      // entry.1357912889: 1234 (number)
+      // entry.1943470005: testrole (role)
+      // entry.1964045563: testresume (resume)
+      // entry.1695954646: testinfo (info)
+      // entry.1681195710: internship (type , this has to be hard coded)
+
+      // ids for google form production version -
+      // form_id = 1FAIpQLSefpzhGl46T63TuroNAmyfnRERfeeJjv8Z0hH6WNtNzp-bmgQ
+      // entry.1405737972: testforid (name)
+      // entry.1290086262: test@gmail.com (mail)
+      // entry.1357912889: 123 (number)
+      // entry.132713313: testrole (role)
+      // entry.1964045563: test (info)
+      // entry.579156192: internship (type , this has to be hardcoded)
+      // entry.1067411802: [[["1GIwhzX7qsDKfHcP4-MASYTE_eUlqrtpV","wallpaper.png","image/png"]]] (resume)
+
       try {
         const _response = await fetch(url, { method: "POST", mode: "no-cors" }); // Send form data to Google Form
       } catch (error) {
