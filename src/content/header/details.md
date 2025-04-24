@@ -16,7 +16,7 @@ navigation:
         url: "/pratibha/become-a-mentor"
       - name: "Apply"
         url: "/pratibha/apply"
-
+  
   - menu:
       name: "Shakti Courses"
       url: "/shakti"
@@ -35,7 +35,7 @@ navigation:
         url: "/shakti/english-speaking-club"
       - name: "Join Sakti"
         url: "/shakti/join"
-
+  
   - menu:
       name: "Who We Are?"
       url: "/about"
@@ -50,7 +50,7 @@ navigation:
         url: "/gallery"
       - name: "Our Team"
         url: "/team"
-
+  
   - menu:
       name: "Work with Us"
       url: "/volunteering"
@@ -61,7 +61,7 @@ navigation:
         url: "/volunteering/opportunities"
       - name: "Internship Opportunities"
         url: "/volunteering/opportunities"
-
+  
   - menu:
       name: "Contact Us"
       url: "/contact"
