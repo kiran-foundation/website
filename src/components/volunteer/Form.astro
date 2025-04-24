@@ -43,8 +43,10 @@ const { path } = Astro.props;
 </section>
 
 <script>
+  import Internship from "../../layouts/internship.astro";
+
   const form = document.getElementById("volunteering-form") as HTMLFormElement;
-  const form_id = "1GBxqZhw1JGOfkFAkehcN2cWJ6kfJPs5y7eCCWBH2l7c";
+  const form_id = "1FAIpQLSfoiKWC0Np2Clnq1DDj8Un9GCrkB86AX-Dg_QZcwxPiU2QNbQ";
 
   function validMail(email) {
     if (!email) return false;
@@ -197,10 +199,10 @@ const { path } = Astro.props;
 
     // Check if all fields are filled
     if (fullName && validMail(email) && validPhone(phone) && role) {
-      const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.2005620554=${encodeURIComponent(fullName)}&entry.1045781291=${encodeURIComponent(email)}&entry.1166974658=${encodeURIComponent(phone)}&entry.1929439720=${encodeURIComponent(role)}&entry.138103954=${encodeURIComponent(more)}`;
+      const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.1405737972=${encodeURIComponent(fullName)}&entry.1290086262=${encodeURIComponent(email)}&entry.1357912889=${encodeURIComponent(phone)}&entry.1943470005=${encodeURIComponent(role)}&entry.1695954646=${encodeURIComponent(more)}&entry.1681195710=${encodeURIComponent("internship")}&entry.emailAddress=${encodeURIComponent(email)}`;
 
       try {
-        const _response = await fetch(url, { method: "POST" }); // Send form data to Google Form
+        const _response = await fetch(url, { method: "POST", mode: "no-cors" }); // Send form data to Google Form
       } catch (error) {
         console.error(error);
       }

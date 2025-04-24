@@ -4974,14 +4974,13 @@ h4 {
   margin-bottom: 0px; 
 }
 
-/* form.css */
+/* form.css
 
 .volunteeringForm-frame {
   width: 1000px;
   height: 868px;
   margin: 200px;
   border-radius: 36px;  
-  background: #051d40;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   position: relative;
@@ -5040,9 +5039,10 @@ h4 {
   line-height: 150%;
   letter-spacing: 0px;
   
-}
+}*/
 
 /* Target autofilled inputs */
+/*
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -5096,4 +5096,4 @@ select:-webkit-autofill {
   background: linear-gradient(0deg, rgba(211, 60, 13, 0.7), rgba(211, 60, 13, 0.7)),
               linear-gradient(0deg, rgba(30, 30, 30, 0.2), rgba(30, 30, 30, 0.2));
   cursor: not-allowed;
-}
+} */
