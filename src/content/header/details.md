@@ -58,9 +58,9 @@ navigation:
       - name: "Join our team"
         url: "/volunteering"
       - name: "Volunteering Opportunities"
-        url: "/volunteering/opportunities"
+        url: "/volunteering"
       - name: "Internship Opportunities"
-        url: "/volunteering/opportunities"
+        url: "/volunteering"
   
   - menu:
       name: "Contact Us"
