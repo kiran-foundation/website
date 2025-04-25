@@ -1,0 +1,64 @@
+---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/shakti/Hero.astro";
+import Programe from "../components/shakti/Programe.astro";
+import DigitalSkills from "../components/shakti/DigitalSkills.astro";
+import FinancialSkills from "../components/shakti/FinancialSkills.astro";
+import SpeakingClub from "../components/shakti/SpeakingClub.astro";
+import Card from "../components/shakti/Card.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+import Join from "../components/shakti/Join.astro";
+
+---
+
+<script src="/assets/js/theme.min.js" is:inline></script>
+
+<script>
+  import AOS from "aos";
+  AOS.init();
+</script>
+<script src="jarallax/dist/jarallax.min.js"></script>
+<script src="simplebar/dist/simplebar.min.js"></script>
+<link rel="stylesheet" href="/assets/css/theme.min.css" />
+<link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
+
+<Layout title="Shakti">
+  <!-- Page wrapper -->
+  <main class="page-wrapper">
+    <Hero />
+    <Programe/>
+    <DigitalSkills/>
+    <SpeakingClub/>
+    <FinancialSkills/>
+    <Card/>
+    <TestimonialsCarousel pageTag="pratibha" />
+    <Join/>
+    
+  </main>
+
+  <!-- Back to top button -->
+  <a
+    class="btn-scroll-top"
+    href="#top"
+    data-scroll
+    aria-label="Scroll back to top"
+  >
+    <svg
+      viewBox="0 0 40 40"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="20"
+        cy="20"
+        r="19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"></circle>
+    </svg>
+    <i class="ai-arrow-up"></i>
+  </a>
+</Layout>
