@@ -43,17 +43,15 @@ const { path } = Astro.props;
 </section>
 
 <script>
+  import { isProduction } from "../../../public/assets/js/global-variables";
   import Internship from "../../layouts/internship.astro";
-  var isProduction = false;
-  if (typeof window !== "undefined") {
-    isProduction = window.location.hostname.includes(".foundation");
-  }
 
   const form = document.getElementById("volunteering-form") as HTMLFormElement;
   var form_id = "1FAIpQLSfoiKWC0Np2Clnq1DDj8Un9GCrkB86AX-Dg_QZcwxPiU2QNbQ";
   if (isProduction) {
     form_id = "1FAIpQLSefpzhGl46T63TuroNAmyfnRERfeeJjv8Z0hH6WNtNzp-bmgQ";
   }
+
   function validMail(email) {
     if (!email) return false;
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
