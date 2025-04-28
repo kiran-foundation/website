@@ -14,7 +14,7 @@ letter-spacing: -2.2%;
 text-align: center;
 
 -->
-<div class=" text-center lg:max-w-[1296px] mx-auto  px-6   mt-[32px] md:mt-[102px] md:mb-[123px]    ">
+<div class=" !bg-none text-center lg:max-w-[1296px] mx-auto  px-6   mt-[32px] md:mt-[102px] md:mb-[123px]    ">
   <div class="pb-9  relative w-full tb:w-full  px-6 mx-auto ">
     <h1 class="w-full  text-[30px]   md:text-[64px]  font-merriweather font-bold leading-[150%]  tracking-[-2.2%]">
       <span class="relative inline-block ">  
@@ -46,12 +46,52 @@ letter-spacing: 0%;
       width: 100%;
       z-index: 0;
     }
-    @media (max-width: 376px) {
+    /* @media (max-width: 387px) {
+      .rec {
+         bottom: 48px;
+         width: 120%;
+          left: -10%;         
+      }
+      
+    } */
+    @media (max-width: 360px) {
       .rec {
         /* position: absolute; */
          bottom: 48px;
-         /* width: 80%; */
-         
+         width: 70%;
+          left: -10%;         
+      }
+      
+    }
+    @media (max-width: 387px) {
+      .rec {
+        /* position: absolute; */
+         bottom: 48px;
+         width: 100%;
+        right: -10%  ;  
+
+          /* left: -1/auto;          */
+      }
+      
+    }
+    @media (max-width: 321px) {
+      .rec {
+        /* position: absolute; */
+         bottom: 48px;
+         width: 120%;
+        right: -10%  ;  
+        left: -10%;       
+      }
+      
+    }
+    
+    @media (max-width: 318px) {
+      .rec {
+        /* position: absolute; */
+         bottom: 48px;
+         width: 85%;
+        right: -10%;  
+        left: -10%;       
       }
       
     }
