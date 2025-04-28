@@ -57,7 +57,7 @@ navigation:
     submenu:
       - name: "Join our team"
         url: "/volunteering"
-      - name: "Opportunities"
+      - name: "All Opportunities"
         url: "/volunteering/opportunities"
       - name: "Volunteer Opportunities"
         url: "/volunteering/opportunities/volunteering"

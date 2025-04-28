@@ -14,12 +14,12 @@ import Button from "../common/button.astro";
   <!-- Details -->
   <div>
     <div class="mt-3 text-[14px] md:text-[18px] text-webBlack flex flex-col gap-3 md:gap-[18px] font-normal">
-      <p><span class="font-normal">Immediate Start</span></p>
+      <p><span class="font-normal">{datas.data.join}</span></p>
       <p class="lg:mt-4">
         <span class="font-normal">{datas.data.duration} • {datas.data.timeCommitment}</span>
       </p>
-      <p class="lg:mt-4">Build a community team to drive local change.</p>
-      <p class="lg:mt-4">Organize events • Recruit volunteers • Lead meetings</p>
+      <p class="lg:mt-4">{datas.data.team}</p>
+      <p class="lg:mt-4">{datas.data.event}</p>
     </div>
 
     <!-- Divider -->
