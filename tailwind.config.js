@@ -4,11 +4,16 @@ export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,ts,tsx}",
   ],
+  plugins: [],
   theme: {
     extend: {
       screens: {
         'xs': {'min': '400px'}, 
         'tb': {'max': '64rem'}, 
+      },
+      colors: {
+        'orange': "#F1592A",
+        'webBlack':'#1E1E1E'
       },
       fontFamily: {
         merriweather: ['Merriweather', 'serif'],
@@ -26,7 +31,7 @@ export default {
       'title-sub': '2.2rem',
       'desc': '0.9rem',
     }
+    
     },
   },
-  plugins: [],
 }

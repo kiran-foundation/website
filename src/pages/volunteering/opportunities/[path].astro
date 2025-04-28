@@ -1,0 +1,25 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import Head from "../../../components/opportunities/Head.astro";
+import Category from "../../../components/opportunities/Category.astro";
+import Breadcrumb from "../../../components/pratibha/Breadcrumb.astro";
+const { path } = Astro.params;
+
+export async function getStaticPaths() {
+  const filtersEntry = await getEntry("opportunities", "filters");
+  const filters = filtersEntry.data.filters;
+
+  return filters.map((filter) => ({
+    params: { path: filter },
+  }));
+}
+---
+
+<Layout>
+  <div class="mt-20 sm:mt-0">
+    <Breadcrumb />
+  </div>
+  <Head />
+  <Category prop={path} />
+</Layout>
