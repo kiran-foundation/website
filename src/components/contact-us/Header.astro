@@ -14,7 +14,7 @@ letter-spacing: -2.2%;
 text-align: center;
 
 -->
-<div class=" !bg-none text-center lg:max-w-[1296px] mx-auto  px-6   mt-[32px] md:mt-[102px] md:mb-[123px]    ">
+<div class=" !bg-none text-center lg:max-w-[1296px] mx-auto  px-6   mt-[32px] md:mt-[80px] md:mb-[42px]    ">
   <div class="pb-9  relative w-full tb:w-full  px-6 mx-auto ">
     <h1 class="w-full  text-[30px]   md:text-[64px]  font-merriweather font-bold leading-[150%]  tracking-[-2.2%]">
       <span class="relative inline-block ">  
@@ -34,14 +34,14 @@ font-size: 20px;
 line-height: 38px;
 letter-spacing: 0%;
  -->
-    <p class=" mx-auto max-w-[1200px]  block  lg:max-h-[104px] font-merriweather text-[20px] md:text-[32px] font-normal leading-[2.375rem] md:leading-[3.25rem] justify-center  md:text-center text-justify text-[#49494C]">{subTitle}</p>
+    <p class=" mx-auto max-w-[1296px]  block  lg:max-h-[104px] font-merriweather text-[20px] md:text-[32px] font-normal leading-[2.375rem] md:leading-[3.25rem] justify-center  md:text-center text-justify text-[#49494C]">{subTitle}</p>
     
   </div>
 
   <style> 
     .rec {
       position: absolute;
-      bottom: -4px;
+      bottom: 48px;
       left: 0;
       width: 100%;
       z-index: 0;
@@ -54,11 +54,27 @@ letter-spacing: 0%;
       }
       
     } */
-     
-    @media (max-width: 372px) {
+    /* @media (max-width: 400px and min-width: 380px) {
+      .rec {
+         bottom: 0px;
+         width: 120%;
+        }
+      
+    } */
+    @media ( min-width: 380px) {
       .rec {
         /* position: absolute; */
-         bottom: 48px;
+         bottom: -2px;
+         width: 100%;
+          /* left: -10%;          */
+      }
+      
+    }
+   
+    @media (max-width: 386px and min-width: 378px) {
+      .rec {
+        /* position: absolute; */
+         bottom: 0px;
          width: 100%;
           /* left: -10%;          */
       }

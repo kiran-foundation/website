@@ -1,18 +1,16 @@
 ---
-import Button from "../common/button.astro";
 
-const { path } = Astro.props;
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
 <!-- <script src="/assets/js/common.js" is:inline></script> -->
 
-<section id="form" class="bg-[#F1F1F1] max-w-[81rem] mx-auto   px-0 lg:px-0 mb-[128px] rounded-2xl">
+<section id="form" class="bg-[#F1F1F1] max-w-[81rem] mx-auto   px-4 mb-[164px] rounded-2xl">
   <div id="formframe" class=" mx-auto px-0 max-w-[800px] py-[2.5rem] sm:pt-[120px] sm:pb-[168px] " style="display: block;">
-    <h1 class="px-4 m-0 pb-[80px] font-poppins !font-[500] text-center  !text-[24px] !md:text-[2rem] tracking-normal !leading-[100%]">Your questions, feedback or concerns matter!</h1>
+    <h1 class="px-1 m-0 pb-[80px] font-poppins !font-[500] text-center  !text-[24px] !md:text-[2rem] tracking-normal !leading-[100%]">Your questions, feedback or concerns matter!</h1>
 
-    <form id="volunteering-form" class=" mx-6 ">
-      <div class="volunteeringForm-input-container mb-0">
+    <form id="volunteering-form" class="  mx-0  ">
+      <div class="volunteeringForm-input-container m-0  pt-0  pb-[48px] ">
         <label for="full-name">Full Name </label>
         <input
           type="text"
@@ -21,20 +19,20 @@ const { path } = Astro.props;
           placeholder="Your name"
         />
       </div>
-      <div class="volunteeringForm-input-container mb-0">
+      <div class="volunteeringForm-input-container m-0  pt-0  pb-[48px]">
         <label for="email">Email  </label>
         <input type="text" id="email" name="email" placeholder="Your email" />
       </div>
-      <div class="volunteeringForm-input-container mb-0">
+      <div class="volunteeringForm-input-container m-0  pt-0  pb-[48px]">
         <label for="phone">Phone Number  </label>
         <input type="text" id="phone" name="phone" placeholder="Your number" />
       </div>
-      <div class="volunteeringForm-input-container mb-0 pb-[32px]">
+      <div class="volunteeringForm-input-container m-0  pt-0  pb-[32px]">
         <label for="more">How we can help?  </label>
         <textarea id="more" name="more" rows="5"></textarea>
       </div>
       
-      <button type="submit" class="volunteeringForm-submit-button font-poppins font-medium w-full md:w-[182px]  px-3 sm:px-5 md:px-6 p-0 m-0   text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E]  " 
+      <button type="submit" class="volunteeringForm-submit-button font-poppins font-medium w-full sm:w-[182px]  justify-center    items-center px-3 sm:px-5 md:px-6 m-0  text-center align-middle   text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E]  " 
         >Send Message</button
       >
     </form>
