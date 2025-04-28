@@ -2,10 +2,13 @@
 title: "Disability Research and Publication  Intern (Remote)"
 quote: "Build a thriving community that drives real changes."
 about: "As a Disability Research and Publication Intern, you will play a vital role in supporting our efforts to advance understanding and awareness of disability-related issues through rigorous research and well-crafted publications. This internship offers an excellent opportunity for individuals passionate about contributing to the field of disability studies and promoting inclusivity in society. You will gain hands-on experience in disability research and publication processes, contributing to meaningful projects that drive positive social change and impact."
-startDate: "Immediate"
-duration: "3 - 6 Months"
-timeCommitment: "10 hr/week"
-teamSize: "3-5"
+startDate: "Start Date: Immediate"
+join : "Immediate Start" 
+team : "Build a community team to drive local change."
+event : "Organize events • Recruit volunteers • Lead meetings" 
+duration: "Duration: 3 - 6 Months"
+timeCommitment: "Average : 10 hr/week"
+teamSize: "Team Size: 3-5"
 responsibilities: |
   Conduct thorough literature reviews and research related to disability studies and associated topics
   Collect, analyze, and synthesize data to contribute to research projects focused on disability-related issues

@@ -56,11 +56,13 @@ navigation:
       url: "/volunteering"
     submenu:
       - name: "Join our team"
-        url: "/volunteering"
-      - name: "Volunteering Opportunities"
+        url:  "/volunteering"
+      - name: "All Opportunities"
         url: "/volunteering/opportunities"
+      - name: "Volunteer Opportunities"
+        url: "/volunteering/opportunities/volunteering"
       - name: "Internship Opportunities"
-        url: "/volunteering/opportunities"
+        url: "/volunteering/opportunities/internship"
   
   - menu:
       name: "Contact Us"
