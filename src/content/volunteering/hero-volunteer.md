@@ -7,7 +7,7 @@ description: "Volunteer with us to inspire change, or intern
 
  to build professional skills. 
 
- Both change lives—including yours"
+ Both change lives—including yours."
 image: "/assets/images/volunter/volunteer-hero-character.png"
 heroSubtitle: ''
 ---
