@@ -49,10 +49,9 @@
       <lottie-player
         src="/assets/json/Message Sent Kiran.json"
         background="transparent"
-        speed="1"
+        speed="0.5"
         style="max-width: 400px; max-height: 400px; overflow: hidden; margin: auto;"
-        
-        
+        loop
         direction="1"
         playMode="normal"
         autoplay
@@ -64,11 +63,16 @@
 </section>
 
 <script>
-  const form = document.getElementById("volunteering-form") as HTMLFormElement;
+  // const form = document.getElementById("volunteering-form") as HTMLFormElement;
   const formframe = document.getElementById("formframe") as HTMLFormElement;
   const popUp = document.getElementById("pop-up") as HTMLElement;
-  const form_id = "1FAIpQLSfoiKWC0Np2Clnq1DDj8Un9GCrkB86AX-Dg_QZcwxPiU2QNbQ";
+  import { isProduction } from "../../../public/assets/json/global-variables.js";
 
+  const form = document.getElementById("volunteering-form") as HTMLFormElement;
+  var form_id = "1FAIpQLSfoiKWC0Np2Clnq1DDj8Un9GCrkB86AX-Dg_QZcwxPiU2QNbQ";
+  if (isProduction) {
+    form_id = "1FAIpQLSefpzhGl46T63TuroNAmyfnRERfeeJjv8Z0hH6WNtNzp-bmgQ";
+  }
   function validMail(email) {
     if (!email) return false;
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -238,7 +242,8 @@
     // Check if all fields are filled
     if (fullName && validMail(email) && validPhone(phone) && more) {
       const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.1405737972=${encodeURIComponent(fullName)}&entry.1290086262=${encodeURIComponent(email)}&entry.1357912889=${encodeURIComponent(phone)}&entry.1943470005=${encodeURIComponent(role)}&entry.1695954646=${encodeURIComponent(more)}&entry.1681195710=${encodeURIComponent("contact-us")}&entry.emailAddress=${encodeURIComponent(email)}`;
-//       // ids for google form production version -
+
+      //       // ids for google form production version -
       // form_id = 1FAIpQLSefpzhGl46T63TuroNAmyfnRERfeeJjv8Z0hH6WNtNzp-bmgQ
       // entry.1405737972: testforid (name)
       // entry.1290086262: test@gmail.com (mail)
