@@ -4974,13 +4974,14 @@ h4 {
   margin-bottom: 0px; 
 }
 
-/* form.css
+/* form.css */
 
-.volunteeringForm-frame {
+/* .volunteeringForm-frame {
   width: 1000px;
   height: 868px;
   margin: 200px;
   border-radius: 36px;  
+  background: #051d40;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   position: relative;
@@ -5039,11 +5040,10 @@ h4 {
   line-height: 150%;
   letter-spacing: 0px;
   
-}*/
+} */
 
 /* Target autofilled inputs */
-/*
-input:-webkit-autofill,
+/* input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
