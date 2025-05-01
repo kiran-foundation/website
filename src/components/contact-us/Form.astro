@@ -1,16 +1,22 @@
 ---
+import { getEntry } from "astro:content"
+
+const sr = await getEntry("contact", "form");
+const { fullname_label, email_label, phone_label, more_label, button_label, thankyou_message,animation_path} = sr.data;
+
+
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
-<!-- <script src="/assets/js/common.js" is:inline></script> -->
+<script type="module" src="/assets/js/common.js" is:inline></script>
 
 <section id="form" class="bg-[#F1F1F1] max-w-[81rem] mx-auto   px-4 mb-[10.25rem] md:rounded-2xl">
   <div id="formframe" class=" mx-auto px-0 max-w-[50rem] py-[2.5rem] sm:pt-[7.5rem] sm:pb-[10.5rem] " style="display: block;">
     <h1 class="px-1 m-0 pb-[5rem] font-poppins !font-[500] text-center  !text-[24px] !md:text-[2rem] tracking-normal !leading-[100%]">Your questions, feedback or concerns matter!</h1>
 
-    <form id="volunteering-form" class="  mx-0  ">
+    <form id="contact-form" class="  mx-0  ">
       <div class="volunteeringForm-input-container m-0  pt-0  pb-[3rem] ">
-        <label for="full-name">Full Name </label>
+        <label for="full-name">{fullname_label}</label>
         <input
           type="text"
           id="full-name"
@@ -19,33 +25,33 @@
         />
       </div>
       <div class="volunteeringForm-input-container m-0  pt-0  pb-[3rem]">
-        <label for="email">Email  </label>
+        <label for="email">{email_label} </label>
         <input type="text" id="email" name="email" placeholder="Your email" />
       </div>
       <div class="volunteeringForm-input-container m-0  pt-0  pb-[3rem]">
-        <label for="phone">Phone Number  </label>
+        <label for="phone">{phone_label}  </label>
         <input type="text" id="phone" name="phone" placeholder="Your number" />
       </div>
       <div class="volunteeringForm-input-container m-0  pt-0  pb-[2rem]">
-        <label for="more">How we can help?  </label>
+        <label for="more">{more_label}  </label>
         <textarea id="more" name="more" rows="5"></textarea>
       </div>
       
-      <button type="submit" class="volunteeringForm-submit-button font-poppins font-medium w-full sm:w-[11.375rem]  justify-center    items-center px-3 sm:px-5 md:px-6 m-0  text-center align-middle   text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E]  " 
-        >Send Message</button
+      <button type="submit" class="volunteeringForm-submit-button form-submit-button font-poppins font-medium w-full sm:w-[11.375rem]  justify-center    items-center px-3 sm:px-5 md:px-6 m-0  text-center align-middle   text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E]  " 
+        >{button_label}</button
       >
     </form>
   </div>
   <div id="pop-up" style="display: none;" class=" md:rounded-2xl bg-[#F1F1F1] max-w-[71rem]  mx-auto  " >
       <div class=" max-w-[50rem]  mx-auto   py-[8rem] overflow-hidden">
 
-      <h1 class=" tracking-normal text-center font-poppins font-[600] text-[24px] md:text-[2rem] leading-[140%] ">Thank you for reaching out! We will get back to you as soon as possible!</h1>
+      <h1 class=" tracking-normal text-center font-poppins font-[600] text-[24px] md:text-[2rem] leading-[140%] ">{thankyou_message}</h1>
       <script
         src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"
         type="module"></script>
         
         <lottie-player
-        src="/assets/json/Message Sent Kiran.json"
+        src={animation_path}
         background="transparent"
         speed="1"
         style="max-width: 25rem; max-height: 25rem; overflow: hidden; margin: auto;"
@@ -72,262 +78,3 @@
     observer.observe(popUp, { attributes: true, attributeFilter: ["style"] });
   </script>
 </section>
-
-<script>
-  // const form = document.getElementById("volunteering-form") as HTMLFormElement;
-  import { isProduction } from "../../../public/assets/js/global-variables";
-  const formframe = document.getElementById("formframe") as HTMLFormElement;
-  const popUp = document.getElementById("pop-up") as HTMLElement;
-
-  const form = document.getElementById("volunteering-form") as HTMLFormElement;
-  var form_id = "1FAIpQLSfoiKWC0Np2Clnq1DDj8Un9GCrkB86AX-Dg_QZcwxPiU2QNbQ";
-  if (isProduction) {
-    form_id = "1FAIpQLSefpzhGl46T63TuroNAmyfnRERfeeJjv8Z0hH6WNtNzp-bmgQ";
-  }
-  function validMail(email) {
-    if (!email) return false;
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regex.test(email);
-  }
-  function validMessage(more) {
-    if (!more) return false;
-    return true;
-  }
-
-  function validPhone(phone) {
-    if (!phone) return false;
-        // Remove spaces, dashes, and brackets
-        const cleaned = phone.replace(/[\s\-()]/g, "");
-
-// Match international formats like +919876543210, 09876543210, 9876543210, etc.
-        const regex = /^\+?[1-9]\d{1,14}$/;
-
-          return regex.test(cleaned);
-  }
-
-  // Function to add red border and error message
-  function addErrorMessage(inputId, messageText) {
-    const inputElement = document.getElementById(inputId);
-
-    // Add error class
-    inputElement.classList.add("error");
-    inputElement.style.color = "#992424"; // Set text color to red
-
-    // Check if the error message already exists
-    const errorMessage = inputElement.nextElementSibling;
-    if (
-      errorMessage &&
-      errorMessage.classList.contains("volunteeringForm-suberror")
-    ) {
-      errorMessage.innerHTML = "❗" + messageText;
-    } else {
-      inputElement.insertAdjacentHTML(
-        "afterend",
-        "<div class='volunteeringForm-suberror'>❗" + messageText + "</div>"
-      );
-    }
-  }
-
-  function removeErrorMessage(inputId) {
-    const inputElement = document.getElementById(inputId);
-    if (!inputElement) return;
-
-    // Remove error class and reset text color
-    inputElement.classList.remove("error");
-    inputElement.style.color = "#1E1E1E"; // Reset to default
-
-    // Remove the error message
-    const errorMessage = inputElement.nextElementSibling;
-    if (
-      errorMessage &&
-      errorMessage.classList.contains("volunteeringForm-suberror")
-    ) {
-      errorMessage.remove();
-    }
-  }
-
-  // Full Name - Blur validation
-  document.getElementById("full-name").addEventListener("blur", () => {
-    const nameInput = document.getElementById("full-name") as HTMLInputElement;
-    if (!nameInput.value.trim()) {
-      addErrorMessage("full-name", "Please enter your full name");
-    } else {
-      removeErrorMessage("full-name");
-    }
-  });
-  document.getElementById("more").addEventListener("blur", () => {
-    const nameInput = document.getElementById("more") as HTMLInputElement;
-    if (!nameInput.value.trim()) {
-      addErrorMessage("more", "Please enter your Message");
-    } else {
-      removeErrorMessage("more");
-    }
-  });
-
-  // Email - Blur validation
-  document.getElementById("email").addEventListener("blur", () => {
-    const emailInput = document.getElementById("email") as HTMLInputElement;
-    if (!emailInput.value.trim()) {
-      addErrorMessage("email", "Please enter your email");
-    } else if (!validMail(emailInput.value)) {
-      addErrorMessage(
-        "email",
-        "Invalid email format. Example: name@domain.com"
-      );
-    } else {
-      removeErrorMessage("email");
-    }
-  });
-
-  // Phone - Blur validation
-  document.getElementById("phone").addEventListener("blur", () => {
-    const phoneInput = document.getElementById("phone") as HTMLInputElement;
-    if (!phoneInput.value.trim()) {
-      addErrorMessage("phone", "Please enter your phone number");
-    } else if (!validPhone(phoneInput.value)) {
-      addErrorMessage(
-        "phone",
-        "Invalid Format. Phone number must be 10 digits. Example: 6301234567"
-      );
-    } else {
-      removeErrorMessage("phone");
-    }
-  });
-
-  const submitButton = document.querySelector(
-    ".volunteeringForm-submit-button"
-  ) as HTMLButtonElement;
-
-  function validateAllFields() {
-    const name = (
-      document.getElementById("full-name") as HTMLInputElement
-    ).value.trim();
-    const email = (
-      document.getElementById("email") as HTMLInputElement
-    ).value.trim();
-    const phone = (
-      document.getElementById("phone") as HTMLInputElement
-    ).value.trim();
-    const more = (
-      document.getElementById("more") as HTMLInputElement
-    ).value;
-
-    const isFormValid = name !== "" && validMail(email) && validPhone(phone) ;
-    submitButton.disabled = !isFormValid;
-  }
-
-  // Disable submit button on page load
-  submitButton.disabled = true;
-
-  // Re-validate on every input
-  ["full-name", "email", "phone"].forEach((id) => {
-    document.getElementById(id)?.addEventListener("input", validateAllFields);
-  });
-
-  document
-    .getElementById("full-name")
-    .addEventListener("input", () => removeErrorMessage("full-name"));
-  document
-    .getElementById("email")
-    .addEventListener("input", () => removeErrorMessage("email"));
-  document
-    .getElementById("phone")
-    .addEventListener("input", () => removeErrorMessage("phone"));
-  document
-    .getElementById("more")
-    .addEventListener("input", () => removeErrorMessage("more"));
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const fullName = (document.getElementById("full-name") as HTMLInputElement)
-      .value;
-    const email = (document.getElementById("email") as HTMLInputElement).value;
-    const phone = (document.getElementById("phone") as HTMLInputElement).value;
-    // get information about the role using current url
-    const url = window.location.href;
-    // const getInternshipName = (url) => url.split("/").slice(-2, -1)[0];
-    const role = "";
-    const more = (document.getElementById("more") as HTMLTextAreaElement).value;
-
-    // Check if all fields are filled
-    if (fullName && validMail(email) && validPhone(phone) && more) {
-      const url = `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url&entry.1405737972=${encodeURIComponent(fullName)}&entry.1290086262=${encodeURIComponent(email)}&entry.1357912889=${encodeURIComponent(phone)}&entry.1943470005=${encodeURIComponent(role)}&entry.1695954646=${encodeURIComponent(more)}&entry.1681195710=${encodeURIComponent("contact-us")}&entry.emailAddress=${encodeURIComponent(email)}`;
-
-      //       // ids for google form production version -
-      // form_id = 1FAIpQLSefpzhGl46T63TuroNAmyfnRERfeeJjv8Z0hH6WNtNzp-bmgQ
-      // entry.1405737972: testforid (name)
-      // entry.1290086262: test@gmail.com (mail)
-      // entry.1357912889: 123 (number)
-      // entry.132713313: testrole (role)
-      // entry.1964045563: test (info)
-      // entry.579156192: internship (type , this has to be hardcoded)
-      // entry.1067411802: [[["1GIwhzX7qsDKfHcP4-MASYTE_eUlqrtpV","wallpaper.png","image/png"]]] (resume)
-    try {
-      // Add a timeout to ensure the pop-up shows even if the request fails
-      // const fetchPromise = fetch(url, { method: "POST" }, )
-      // ;
-      const _response = await fetch(url, { method: "POST", mode: "no-cors" });
-      formframe.style.display = "none"     // Show pop-up immediately, don't wait for fetch to complete
-      popUp.style.display = "block";
-      
-      // Make sure the pop-up is prominently positioned
-      
-      
-      // Reset the form fields
-      form.reset();
-      
-      // Hide the message after 3 seconds
-    
-      
-      // Wait for fetch to complete (but we've already shown the popup)
-      // await fetchPromise;
-      
-    } catch (error) {
-      console.error(error);
-      // Still show the pop-up even if there's an error
-      popUp.style.display = "block";
-      
-      // Hide the message after 3 seconds
-      setTimeout(() => {
-        popUp.style.display = "none";
-      }, 3000);
-    }
-  } else {
-      // make the form red where it is not filled
-      if (!fullName) {
-        addErrorMessage("full-name", "Please enter your full name");
-      }
-      if (!validMail(email)) {
-        if (!email) {
-          addErrorMessage("email", "Please enter your email");
-        } else {
-          addErrorMessage(
-            "email",
-            "Invalid email format. Example: name@domain.com"
-          );
-        }
-      }
-      if (!validPhone(phone)) {
-        if (!phone) {
-          addErrorMessage("phone", "Please enter your phone number");
-        } else {
-          addErrorMessage(
-            "phone",
-            " Invalid Format. Phone number must be 10 digits. Example: 6 301 234 567"
-          );
-        }
-      }
-      if (!validMessage(more)) {
-        if (!more) {
-          addErrorMessage("more", "Please enter your Message");
-        } else {
-          addErrorMessage(
-            "more",
-            "Please enter your Message"
-          );
-        }
-      }
-    }
-  });
-</script>
