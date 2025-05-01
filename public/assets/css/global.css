@@ -735,13 +735,13 @@ vertical-align: middle;
   margin: 0 auto;
 }
 
-.volunteeringForm-input-container,
+.form-input-container,
 .input-container-half {
   margin-bottom: 16px;
   padding-bottom: 48px;
 }
 
-.volunteeringForm-input-container label,
+.form-input-container label,
 .input-container-half label {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -766,9 +766,9 @@ input:-webkit-autofill:active {
 
 
 
-.volunteeringForm-input-container input,
-.volunteeringForm-input-container textarea,
-.volunteeringForm-input-container-half input {
+.form-input-container input,
+.form-input-container textarea,
+.form-input-container-half input {
   width: 100%;
   padding: 16px;
   border: 1px solid rgba(30, 30, 30, 0.3);
@@ -783,17 +783,17 @@ input:-webkit-autofill:active {
 
 }
 
-.volunteeringForm-input-container input:hover,
-.volunteeringForm-input-container textarea:hover,
-.volunteeringForm-input-container-half input:hover{
+.form-input-container input:hover,
+.form-input-container textarea:hover,
+.form-input-container-half input:hover{
   border: 2px solid #00AA5E !important;
   border-radius: 8px ;
 }
 
 
-.volunteeringForm-input-container input:focus,
-.volunteeringForm-input-container textarea:focus,
-.volunteeringForm-input-container-half input:focus {
+.form-input-container input:focus,
+.form-input-container textarea:focus,
+.form-input-container-half input:focus {
   border: 2px solid #00AA5E;
   box-shadow: 0 0 0 3px #00AA5E66;
   border-radius: 8px ;
@@ -801,24 +801,24 @@ input:-webkit-autofill:active {
 }
 
 /* Keep the red border if the field has an error */
-.volunteeringForm-input-container input.error,
-.volunteeringForm-input-container textarea.error,
-.volunteeringForm-input-container-half input.error {
+.form-input-container input.error,
+.form-input-container textarea.error,
+.form-input-container-half input.error {
   border: 2px solid #992424 !important;
   border-radius: 8px ;
   box-shadow: none !important;
 }
 
-.volunteeringForm-input-container textarea {
+.form-input-container textarea {
   height: 250px;
 }
 
-.volunteeringForm-input-container-half {
+.form-input-container-half {
   width: 100%;
   float: left;
 }
 
-.volunteeringForm-input-container-half:nth-child(odd) {
+.form-input-container-half:nth-child(odd) {
   padding-left: 1%;
   margin-right: 16px;
 }
@@ -829,7 +829,7 @@ input:-webkit-autofill:active {
   clear: both;
 }
 
-.volunteeringForm-suberror {
+.form-suberror {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -3333,12 +3333,12 @@ h4 {
   
 }
 
-.volunteeringForm-input-container,
+.form-input-container,
 .input-container-half {
   margin-bottom: 16px;
 }
 
-.volunteeringForm-input-container label,
+.form-input-container label,
 .input-container-half label {
   font-size: 18px;
   text-align: left;
@@ -3351,7 +3351,7 @@ h4 {
   color: #1E1E1E;
 }
 
-.volunteeringForm-input-container label span {
+.form-input-container label span {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -3361,7 +3361,7 @@ h4 {
   color: #1E1E1E;
 }
 
-.volunteeringForm-input-container label span {
+.form-input-container label span {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -3389,7 +3389,7 @@ h4 {
   rotate: z -5deg;
 }
 
-.volunteeringForm-input-container-half:nth-child(odd) {
+.form-input-container-half:nth-child(odd) {
   padding-left: 1%;
   margin-right: 16px;
   width: 100%;
@@ -4894,7 +4894,7 @@ h4 {
     vertical-align: middle;
   }
   
-  /* .volunteeringForm-input-container input{
+  /* .form-input-container input{
     padding-top: 12px;
     padding-bottom: 0px;
   } */
@@ -4915,7 +4915,7 @@ h4 {
   }
 
 
-  .volunteeringForm-input-container, .input-container-half{
+  .form-input-container, .input-container-half{
     margin-bottom: 0px;
   }
 
@@ -4949,7 +4949,7 @@ h4 {
     margin-bottom: 12px;
   }
 
-  #volunteeringForm-input-container-big{
+  #form-input-container-big{
     padding: 0px;
     margin-bottom: 0px;
   }
@@ -4969,7 +4969,7 @@ h4 {
 
 
 
-#volunteeringForm-input-container-big{
+#form-input-container-big{
   padding: 0px; 
   margin-bottom: 0px; 
 }
@@ -5005,13 +5005,13 @@ h4 {
   margin: 0 auto;
 }
 
-.volunteeringForm-input-container,
+.form-input-container,
 .input-container-half {
   margin-bottom: 16px;
   padding-top: 30px;
 }
 
-.volunteeringForm-input-container label,
+.form-input-container label,
 .input-container-half label {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -5021,7 +5021,7 @@ h4 {
   vertical-align: middle;
   color: #1E1E1E;
 }
-.volunteeringForm-input-container label span {
+.form-input-container label span {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -5031,9 +5031,9 @@ h4 {
   color: #1E1E1E;
 }
 
-.volunteeringForm-input-container input,
-.volunteeringForm-input-container textarea,
-.volunteeringForm-input-container-half input {
+.form-input-container input,
+.form-input-container textarea,
+.form-input-container-half input {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -5057,16 +5057,16 @@ select:-webkit-autofill {
 }
 
 
-.volunteeringForm-input-container textarea {
+.form-input-container textarea {
   height: 250px;
 }
 
-.volunteeringForm-input-container-half {
+.form-input-container-half {
   width: calc(50% - 8px);
   float: left;
 }
 
-.volunteeringForm-input-container-half:nth-child(odd) {
+.form-input-container-half:nth-child(odd) {
   padding-left: 1%;
   margin-right: 16px;
 }

@@ -1,29 +1,29 @@
 ---
 import { getEntry } from "astro:content";
 const contacts = await getEntry("contact", "contact");
-const { address, contactNo, contactEmails } = contacts.data;
+const {phonetitle,emailtitle,addresstitle, address, contactNo, contactEmails } = contacts.data;
 ---
 
 <div
-  class="!bg-none flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52 2xl:px-64 gap-8 w-full md:mb-[120px] mb-0"
+  class="!bg-none flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52 2xl:px-64 gap-8 w-full md:mb-[7.5rem] mb-0"
 >
   <!-- Frame 1000006142 -->
   <div
-    class="flex flex-col font-poppins flex-wrap md:flex-row items-center justify-center p-0 gap-6 w-full max-w-[1122px] sm:my-[96px] mt-[96px] mb-[120px]"
+    class="flex flex-col font-poppins flex-wrap md:flex-row items-center justify-center p-0 gap-6 w-full max-w-[70.125rem] sm:my-[6rem] mt-[6rem] mb-[7.5rem]"
   >
     <!-- Address Card -->
     <div
-      class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[46px] pt-[2.625rem] flex-none"
+      class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[2.875rem] pr-4 pt-[2.625rem] flex-none"
     >
-      <div class="flex flex-col items-start gap-8 max-w-[282px]">
+      <div class="flex flex-col items-start gap-8 ">
         <div
-          class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
+          class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
         >
-          Address
+          {addresstitle}
         </div>
         <!-- Address Text -->
         <div
-          class="w-full h-auto font-poppins text-[16px] font-normal md:text-lg leading-[2rem] md:leading-[1.6875rem] text-[#49494C]"
+          class="w-full h-auto font-poppins text-[1rem] font-normal md:text-lg leading-[2rem] md:leading-[1.6875rem] text-[#49494C]"
         >
           {address}
         </div>
@@ -32,15 +32,15 @@ const { address, contactNo, contactEmails } = contacts.data;
 
     <!-- Phone Card -->
     <div
-      class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[24px] sm:pl-[46px] pt-[42px] flex-none"
+      class="w-full md:w-[22.375rem] h-auto min-h-[19.6875rem] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[2.875rem] pt-[2.625rem] flex-none"
     >
-      <div class="flex flex-col items-start gap-8 w-[144px]">
+      <div class="flex flex-col items-start gap-8 ">
         <!-- Heading 4 → Phone -->
 
         <div
-          class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
+          class="w-full font-poppins text-[1rem] font-semibold md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
         >
-          Phone
+          {phonetitle}
         </div>
         <div class="flex flex-col items-start gap-6 w-full">
           {
@@ -53,7 +53,7 @@ const { address, contactNo, contactEmails } = contacts.data;
                   </div>
                   <a
                     href={"tel:" + contact.answer.replace(/ /g, "")}
-                    class="w-full font-poppins text-[16px] font-normal md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
+                    class="w-full font-poppins text-[1rem] font-normal md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
                   >
                     {contact.answer}
                   </a>
@@ -67,13 +67,13 @@ const { address, contactNo, contactEmails } = contacts.data;
 
     <!-- Email Card -->
     <div
-      class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[24px] sm:pl-[46px] pt-[42px] flex-none"
+      class="w-full md:w-[22.375rem] h-auto min-h-[19.6875rem] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[2.875rem] pt-[2.625rem] flex-none"
     >
-      <div class="flex flex-col items-start gap-8 w-[12.4375rem]">
+      <div class="flex flex-col items-start gap-8 ">
         <div
-          class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
+          class="w-full font-poppins text-[1rem] font-semibold md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
         >
-          Email
+          {emailtitle}
         </div>
         <div class="flex flex-col items-start gap-6 w-full">
           {
@@ -81,12 +81,12 @@ const { address, contactNo, contactEmails } = contacts.data;
   
               return (
                 <div class="flex flex-col items-start w-full">
-                  <div class="w-full font-poppins font-normal text-sm leading-[21px] text-[#49494C]">
+                  <div class="w-full font-poppins font-normal text-sm leading-[1.3125rem] text-[#49494C]">
                     {contact.option}
                   </div>
                   <a
                     href={"mailto:" + contact.answer}
-                    class="w-full font-poppins text-[16px] font-normal md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
+                    class="w-full font-poppins text-[1rem] font-normal md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
                   >
                     {contact.answer}
                   </a>
