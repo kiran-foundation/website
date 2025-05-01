@@ -1,9 +1,7 @@
 ---
-
 import Button from "../common/button.astro";
 
-
-const { className = '', type = "all" , call="home" } = Astro.props;
+const { className = "", type = "all", call = "home" } = Astro.props;
 
 import { getCollection } from "astro:content";
 
@@ -17,7 +15,6 @@ const filteredJobs = jobs.filter(({ id }) => {
   return id.startsWith("volunteering/") || id.startsWith("internship/");
 });
 
-
 //// console.log(className)
 ---
 
@@ -28,27 +25,28 @@ const filteredJobs = jobs.filter(({ id }) => {
 />
 <style>
   .slidemy:hover {
-    box-shadow: 0px 4px 8px #D9D9D9;
-    transition: box-shadow 0.3s ;
+    box-shadow: 0px 4px 8px #d9d9d9;
+    transition: box-shadow 0.3s;
   }
   @media (max-width: 399px) {
-    .mainBox{
-        padding-left: 10px !important;
+    .mainBox {
+      padding-left: 10px !important;
     }
-    .slidemy{
-        max-width: 328px !important;
-        min-width: auto;
+    .slidemy {
+      max-width: 328px !important;
+      min-width: auto;
+    }
   }
-}
-
 </style>
-<section class={`splide px-3 ${call == "home" ? 'mb-[64px] lg:mb-[120px]' : className}`}>
-
-
-  <div class="splide__track mainBox !p-[10px] !pl-[16px] sm:!pl-[14px] overflow-hidden">
+<section
+  class={`splide px-3 ${call == "home" ? "mb-[64px] lg:mb-[120px]" : className}`}
+>
+  <div
+    class="splide__track mainBox !p-[10px] !pl-[16px] sm:!pl-[14px] overflow-hidden"
+  >
     <ul class="splide__list">
       {
-        filteredJobs.map((items:any) => (
+        filteredJobs.map((items: any) => (
           <li class="splide__slide slidemy border-[1px] bg-[#FFFFFF] border-[#B3B3B3] rounded-[24px] min-w-[320px] max-w-[355px] md:min-w-[390px] md:min-h-[336px] md:max-w-[390px] md:ax-h-[336px]  p-[32px] flex flex-col justify-between ">
             <h3 class="font-poppins text-xl sm:text-2xl font-semibold mb-3 text-[#1E1E1E] text-center">
               {items.data.title}
@@ -57,7 +55,7 @@ const filteredJobs = jobs.filter(({ id }) => {
               {items.data.timeCommitment}
             </p>
             <Button
-              link={`${items.slug}`}
+              link={`work-with-us/opportunities/${items.slug}`}
               title="Explore Opportunity"
               btn="btn3"
             />
@@ -71,7 +69,7 @@ const filteredJobs = jobs.filter(({ id }) => {
 <!-- Add client:load directive -->
 <script type="module">
   import Splide from "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/+esm";
-  
+
   document.querySelectorAll(".splide").forEach((el) => {
     new Splide(el, {
       type: "loop",
@@ -86,4 +84,3 @@ const filteredJobs = jobs.filter(({ id }) => {
     }).mount();
   });
 </script>
-
