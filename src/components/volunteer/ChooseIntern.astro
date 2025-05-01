@@ -7,10 +7,9 @@ const jobs = await getCollection("work", ({ id }) => {
   return id.startsWith("internship/") || id.startsWith("volunteering/");
 });
 import VolunteerSwiper from "../../components/common/VolunteerSwiper.astro";
-
 ---
 
-<section class="bg-gray-200  py-16 px-6 flex flex-col items-center">
+<section class="bg-gray-200 py-16 px-6 flex flex-col items-center">
   <!-- Heading -->
   <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-8">
     Highlighted Volunteer Roles
@@ -26,10 +25,10 @@ import VolunteerSwiper from "../../components/common/VolunteerSwiper.astro";
     Discover More Opportunities
   </button> -->
   <Button
-        link="/volunteering"
-        title="Discover More Opportunities"
-        btn="btn3"
-        widthClass="w-[250px]"
-        heightClass="h-[60px]"
-      />
+    link="/work-with-us"
+    title="Discover More Opportunities"
+    btn="btn3"
+    widthClass="w-[250px]"
+    heightClass="h-[60px]"
+  />
 </section>
