@@ -1,13 +1,11 @@
 ---
 import { getEntry } from "astro:content";
-
 const contacts = await getEntry("contact", "contact");
-console.log(contacts.data);
 const { address, contactNo, contactEmails } = contacts.data;
 ---
 
 <div
-  class=" !bg-none flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52 2xl:px-64 gap-8 w-full md:mb-[120px] mb-0 "
+  class="!bg-none flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52 2xl:px-64 gap-8 w-full md:mb-[120px] mb-0"
 >
   <!-- Frame 1000006142 -->
   <div
@@ -18,12 +16,15 @@ const { address, contactNo, contactEmails } = contacts.data;
       class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[46px] pt-[2.625rem] flex-none"
     >
       <div class="flex flex-col items-start gap-8 max-w-[282px]">
-
-        <div class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E] ">
+        <div
+          class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
+        >
           Address
         </div>
         <!-- Address Text -->
-        <div class="w-full h-auto font-poppins text-[16px] font-normal md:text-lg leading-[2rem] md:leading-[1.6875rem]  text-[#49494C]">
+        <div
+          class="w-full h-auto font-poppins text-[16px] font-normal md:text-lg leading-[2rem] md:leading-[1.6875rem] text-[#49494C]"
+        >
           {address}
         </div>
       </div>
@@ -36,7 +37,9 @@ const { address, contactNo, contactEmails } = contacts.data;
       <div class="flex flex-col items-start gap-8 w-[144px]">
         <!-- Heading 4 → Phone -->
 
-        <div class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%]  text-[#1E1E1E]">
+        <div
+          class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
+        >
           Phone
         </div>
         <div class="flex flex-col items-start gap-6 w-full">
@@ -49,7 +52,7 @@ const { address, contactNo, contactEmails } = contacts.data;
                     {contact.option}
                   </div>
                   <a
-                    href={"tel:" + (contact.answer).replace(/ /g, "")}
+                    href={"tel:" + contact.answer.replace(/ /g, "")}
                     class="w-full font-poppins text-[16px] font-normal md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
                   >
                     {contact.answer}
@@ -58,25 +61,6 @@ const { address, contactNo, contactEmails } = contacts.data;
               );
             })
           }
-          <!-- Main office -->
-
-          <!-- <div class="flex flex-col items-start w-full">
-                      <div class="w-full font-normal text-sm leading-[21px] text-[#49494C]">
-                          Main office
-                      </div>
-                      <a href="tel:+919303997100" class="w-full font-normal text-lg leading-[36px] text-[#1E1E1E]">
-                          +91 93039 97100
-                      </a>
-                  </div> -->
-          <!-- WhatsApp -->
-          <!-- <div class="flex flex-col items-start w-full">
-                      <div class="w-full font-normal text-sm leading-[21px] text-[#49494C]">
-                          WhatsApp
-                      </div>
-                      <a href="tel:+919880141412" class="w-full font-normal text-lg leading-[36px] text-[#1E1E1E]">
-                          +91 98801 41412
-                      </a>
-                  </div> -->
         </div>
       </div>
     </div>
@@ -86,14 +70,15 @@ const { address, contactNo, contactEmails } = contacts.data;
       class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[24px] sm:pl-[46px] pt-[42px] flex-none"
     >
       <div class="flex flex-col items-start gap-8 w-[12.4375rem]">
-        <!-- Heading 4 → Email -->
-        <div class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%]  text-[#1E1E1E]">
+        <div
+          class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[32px] md:leading-[100%] text-[#1E1E1E]"
+        >
           Email
         </div>
         <div class="flex flex-col items-start gap-6 w-full">
           {
             contactEmails.map((contact) => {
-              // console.log(contact);
+  
               return (
                 <div class="flex flex-col items-start w-full">
                   <div class="w-full font-poppins font-normal text-sm leading-[21px] text-[#49494C]">
@@ -109,24 +94,6 @@ const { address, contactNo, contactEmails } = contacts.data;
               );
             })
           }
-          <!-- Main office email -->
-          <!-- <div class="flex flex-col items-start w-full">
-                      <div class="w-full font-normal text-sm leading-[21px] text-[#49494C]">
-                          Main office
-                      </div>
-                      <a href="mailto:info@kiran.foundation" class="w-full font-normal text-lg leading-[36px] text-[#1E1E1E] break-all">
-                          info@kiran.foundation
-                      </a>
-                  </div> -->
-          <!-- CSR email -->
-          <!-- <div class="flex flex-col items-start w-full">
-                      <div class="w-full font-normal text-sm leading-[21px] text-[#49494C]">
-                          CSR email
-                      </div>
-                      <a href="mailto:csr@kiran.foundation" class="w-full font-normal text-lg leading-[36px] text-[#1E1E1E] break-all">
-                          csr@kiran.foundation
-                      </a>
-                  </div> -->
         </div>
       </div>
     </div>

@@ -1,105 +1,76 @@
 ---
-import { getEntry } from "astro:content"
+import { getEntry } from "astro:content";
 
-const data = await getEntry("contact","contact");
-const {title,subTitle} = data.data;
+const data = await getEntry("contact", "contact");
+const { title, subTitle } = data.data;
 ---
-<!-- 
-font-family: Merriweather;
-font-weight: 900;
-font-size: 36px;
-line-height: 150%;
-letter-spacing: -2.2%;
-text-align: center;
 
--->
-<div class=" !bg-none text-center lg:max-w-[1296px] mx-auto  px-6   mt-[32px] md:mt-[80px] md:mb-[42px]    ">
-  <div class="pb-9  relative w-full tb:w-full  px-6 mx-auto ">
-    <h1 class="w-full  text-[30px]   md:text-[64px]  font-merriweather font-bold leading-[150%]  tracking-[-2.2%]">
-      <span class="relative inline-block ">  
+<div
+  class="!bg-none text-center lg:max-w-[1296px] mx-auto px-6 mt-[32px] md:mt-[80px] md:mb-[42px]"
+>
+  <div class="pb-9 relative w-full tb:w-full px-6 mx-auto">
+    <h1
+      class="w-full text-[30px] md:text-[64px] font-merriweather font-bold leading-[150%] tracking-[-2.2%]"
+    >
+      <span class="relative inline-block">
         <span class="relative z-10">{title}</span>
-        <span  class="rec  mx-auto">
-        <img src="/assets/svg/green-line-under-text-volunteer.svg" alt="Green Underline" class="xs:w-full w-[80%] mx-auto h-auto" />
-
+        <span class="rec mx-auto">
+          <img
+            src="/assets/svg/green-line-under-text-volunteer.svg"
+            alt="Green Underline"
+            class="xs:w-full w-[80%] mx-auto h-auto"
+          />
         </span>
-        
-        
-      </h1>
-      
-    </div>
-    <!-- font-family: Poppins;
-font-weight: 400;
-font-size: 20px;
-line-height: 38px;
-letter-spacing: 0%;
- -->
-    <p class=" mx-auto max-w-[1296px]  block  lg:max-h-[104px] font-merriweather text-[20px] md:text-[32px] font-normal leading-[2.375rem] md:leading-[3.25rem] justify-center  md:text-center text-justify text-[#49494C]">{subTitle}</p>
-    
+      </span>
+    </h1>
   </div>
 
-  <style> 
+  <p
+    class="mx-auto max-w-[1296px] block lg:max-h-[104px] font-merriweather text-[20px] md:text-[32px] font-normal leading-[2.375rem] md:leading-[3.25rem] justify-center md:text-center text-justify text-[#49494C]"
+  >
+    {subTitle}
+  </p>
+</div>
+
+<style>
+  .rec {
+    position: absolute;
+    bottom: 48px;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
+  @media (min-width: 380px) {
     .rec {
-      position: absolute;
-      bottom: 48px;
-      left: 0;
+      bottom: -2px;
       width: 100%;
-      z-index: 0;
+      /* left: -10%;          */
     }
-    /* @media (max-width: 387px) {
-      .rec {
-         bottom: 48px;
-         width: 120%;
-          left: -10%;         
-      }
-      
-    } */
-    /* @media (max-width: 400px and min-width: 380px) {
-      .rec {
-         bottom: 0px;
-         width: 120%;
-        }
-      
-    } */
-    @media ( min-width: 380px) {
-      .rec {
-        /* position: absolute; */
-         bottom: -2px;
-         width: 100%;
-          /* left: -10%;          */
-      }
-      
-    }
-   
-    @media (max-width: 386px and min-width: 378px) {
-      .rec {
-        /* position: absolute; */
-         bottom: 0px;
-         width: 100%;
-          /* left: -10%;          */
-      }
-      
-    }
+  }
 
-    @media (max-width: 321px) {
-      .rec {
-        /* position: absolute; */
-         bottom: 48px;
-         width: 120%;
-        right: -10%  ;  
-        left: -10%;       
-      }
-      
+  @media (max-width: 386px and min-width: 378px) {
+    .rec {
+      bottom: 0px;
+      width: 100%;
     }
-    
-    @media (max-width: 318px) {
-      .rec {
-        /* position: absolute; */
-         bottom: 48px;
-         width: 85%;
-        right: -10%;  
-        left: -10%;       
-      }
-      
-    }
+  }
 
-  </style>
+  @media (max-width: 321px) {
+    .rec {
+      bottom: 48px;
+      width: 120%;
+      right: -10%;
+      left: -10%;
+    }
+  }
+
+  @media (max-width: 318px) {
+    .rec {
+      bottom: 48px;
+      width: 85%;
+      right: -10%;
+      left: -10%;
+    }
+  }
+</style>

@@ -1,21 +1,61 @@
 ---
-import { getEntry } from "astro:content"
+/*
+ * Contact Us Form Component
 
-const sr = await getEntry("contact", "form");
-const {form_title, fullname_label, email_label, phone_label, more_label, button_label, thankyou_message,animation_path} = sr.data;
+ * Props:
+ * - `form_title`: Title of the form.
+ * - `fullname_label`: Label for the full name input field.
+ * - `email_label`: Label for the email input field.
+ * - `phone_label`: Label for the phone number input field.
+ * - `more_label`: Label for the additional information textarea.
+ * - `button_label`: Text for the form submission button.
+ * - `thankyou_message`: Message displayed in the thank-you popup.
+ * - `animation_path`: Path to the Lottie animation file.
+ * 
+ * Scripts:
+ * - `theme.min.js`: Inline script for theme-related functionality.
+ * - `common.js`: Inline script for common functionality.
+ * - Lottie Player: External script for rendering the Lottie animation.
+ * 
+ * JavaScript:
+ * - A MutationObserver monitors the popup's `style` attribute to detect visibility changes.
+ * - The Lottie animation is stopped and replayed when the popup becomes visible.
+ */
 
-
+import { getEntry } from "astro:content";
+const form_data = await getEntry("contact", "form");
+const {
+  form_title,
+  fullname_label,
+  email_label,
+  phone_label,
+  more_label,
+  button_label,
+  thankyou_message,
+  animation_path,
+} = form_data.data;
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
 <script type="module" src="/assets/js/common.js" is:inline></script>
 
-<section id="form" class="bg-[#F1F1F1] max-w-[81rem] mx-auto   px-4 mb-[10.25rem] md:rounded-2xl">
-  <div id="formframe" class=" mx-auto px-0 max-w-[50rem] py-[2.5rem] sm:pt-[7.5rem] sm:pb-[10.5rem] " style="display: block;">
-    <h1 class="px-1 m-0 pb-[5rem] font-poppins !font-[500] text-center  !text-[24px] !md:text-[2rem] tracking-normal !leading-[100%]">{form_title}</h1>
+<section
+  id="form"
+  class="bg-[#F1F1F1] max-w-[81rem] mx-auto px-4 mb-[10.25rem] md:rounded-2xl"
+>
+  <div
+    id="formframe"
+    class="mx-auto px-0 max-w-[50rem] py-[2.5rem] sm:pt-[7.5rem] sm:pb-[10.5rem]"
+    style="display: block;"
+  >
+    <h1
+      class="px-1 m-0 pb-[5rem] font-poppins !font-[500] text-center !text-[1.5rem] !md:text-[2rem] tracking-normal !leading-[100%]"
+    >
+      {form_title}
+    </h1>
 
-    <form id="contact-form" class="  mx-0  ">
-      <div class="volunteeringForm-input-container m-0  pt-0  pb-[3rem] ">
+    <form id="contactForm" class="mx-0">
+      <div class="volunteeringForm-input-container m-0 pt-0 pb-[3rem]">
         <label for="full-name">{fullname_label}</label>
         <input
           type="text"
@@ -24,34 +64,43 @@ const {form_title, fullname_label, email_label, phone_label, more_label, button_
           placeholder="Your name"
         />
       </div>
-      <div class="volunteeringForm-input-container m-0  pt-0  pb-[3rem]">
+      <div class="volunteeringForm-input-container m-0 pt-0 pb-[3rem]">
         <label for="email">{email_label} </label>
-        <input type="text" id="email" name="email" placeholder="Your email" />
+        <input type="email" id="email" name="email" placeholder="Your email" />
       </div>
-      <div class="volunteeringForm-input-container m-0  pt-0  pb-[3rem]">
-        <label for="phone">{phone_label}  </label>
-        <input type="text" id="phone" name="phone" placeholder="Your number" />
+      <div class="volunteeringForm-input-container m-0 pt-0 pb-[3rem]">
+        <label for="phone">{phone_label} </label>
+        <input type="tel" id="phone" name="phone" placeholder="Your number" />
       </div>
-      <div class="volunteeringForm-input-container m-0  pt-0  pb-[2rem]">
-        <label for="more">{more_label}  </label>
-        <textarea id="more" name="more" rows="5"></textarea>
+      <div class="volunteeringForm-input-container m-0 pt-0 md:pb-[5rem]  pb-8">
+        <label for="more">{more_label} </label>
+        <textarea id="message" name="more" rows="5"></textarea>
       </div>
-      
-      <button type="submit" class="volunteeringForm-submit-button form-submit-button font-poppins font-medium w-full sm:w-[11.375rem]  justify-center    items-center px-3 sm:px-5 md:px-6 m-0  text-center align-middle   text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E]  " 
+
+      <button
+        type="submit"
+        class="form-submit-button h-[60px] px-[2rem] w-full md:w-[11.375rem] rounded-[8px] bg-[#D33C0D] text-[1rem] font-[700] leading-[2rem] text-center border-none cursor-pointer text-white disabled:bg-opacity-70 disabled:cursor-not-allowed hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E]"
         >{button_label}</button
       >
     </form>
   </div>
-  <div id="pop-up" style="display: none;" class=" md:rounded-2xl bg-[#F1F1F1] max-w-[71rem]  mx-auto  " >
-      <div class=" max-w-[50rem]  mx-auto   py-[8rem] overflow-hidden">
-
-      <h1 class=" tracking-normal text-center font-poppins font-[600] text-[24px] md:text-[2rem] leading-[140%] ">{thankyou_message}</h1>
+  <div
+    id="pop-up"
+    style="display: none;"
+    class="md:rounded-2xl bg-[#F1F1F1] max-w-[71rem] mx-auto"
+  >
+    <div class="max-w-[50rem] mx-auto py-[8rem] overflow-hidden">
+      <h1
+        class="tracking-normal text-center font-poppins font-[600] text-[1.5rem] md:text-[2rem] leading-[140%]"
+      >
+        {thankyou_message}
+      </h1>
       <script
         src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"
         type="module"></script>
-        
-        <lottie-player
-        src={animation_path}
+
+      <lottie-player
+        src={animation_path || "/assets/animations/fallback.json"}
         background="transparent"
         speed="1"
         style="max-width: 25rem; max-height: 25rem; overflow: hidden; margin: auto;"
@@ -59,22 +108,9 @@ const {form_title, fullname_label, email_label, phone_label, more_label, button_
         playMode="normal"
         autoplay
         id="lottie-player"
-        >
-        </lottie-player>  
+      >
+      </lottie-player>
     </div>
   </div>
 
-  <script>
-    const popUp = document.getElementById("pop-up");
-    const lottiePlayer = document.getElementById("lottie-player") as any;
-
-    const observer = new MutationObserver(() => {
-      if (popUp.style.display === "block") {
-        (lottiePlayer as any).stop();
-        lottiePlayer.play();
-      }
-    });
-
-    observer.observe(popUp, { attributes: true, attributeFilter: ["style"] });
-  </script>
 </section>
