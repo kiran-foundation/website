@@ -21,7 +21,7 @@ const jobs = await getCollection("work", ({ id }) => {
     </div>
     <div class="flex flex-col md:flex-row max-w-[300px] md:max-w-[800px] gap-10 px-[24px]">
       <button  class={` ${filter.prop !="all"?"bg-white border-[1px] border-gray-200 shadow-sm":"bg-black"} py-1 rounded-lg `} >
-        <a href="/volunteering/opportunities" class={`text-[18px] min-h-[44px] px-4 py-2 rounded-lg w-full ${filter.prop=="all"?"text-white ":"text-black"} flex gap-2 font-poppins`}>All Opportunities
+        <a href="/work-with-us/opportunities" class={`text-[18px] min-h-[44px] px-4 py-2 rounded-lg w-full ${filter.prop=="all"?"text-white ":"text-black"} flex gap-2 font-poppins`}>All Opportunities
           {filter.prop=="all"?(            
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256">
           <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M11,4c-3.89844,0 -7,3.10156 -7,7v28c0,3.89844 3.10156,7 7,7h28c3.89844,0 7,-3.10156 7,-7v-24l-2,2.3125v21.6875c0,2.80078 -2.19922,5 -5,5h-28c-2.80078,0 -5,-2.19922 -5,-5v-28c0,-2.80078 2.19922,-5 5,-5h26.40625l1.59375,-2zM43.25,7.75l-19.34375,22.8125l-8.125,-7.59375l-1.375,1.46875l8.90625,8.28125l0.78125,0.71875l0.65625,-0.78125l20,-23.625z"></path></g></g>
@@ -31,7 +31,7 @@ const jobs = await getCollection("work", ({ id }) => {
       </button>
 
       <button  class={` ${filter.prop !="volunteering"?"bg-white border-[1px] border-gray-200 shadow-sm":"bg-black"} py-1 rounded-lg `} >
-        <a href="/volunteering/opportunities/volunteering" class={`!justify-evenly text-[18px] min-h-[44px] px-4 py-2 rounded-lg w-full ${filter.prop=="volunteering"?"text-white ":"text-black"} flex gap-2 font-poppins`}>Volunteer
+        <a href="/work-with-us/opportunities/volunteering" class={`!justify-evenly text-[18px] min-h-[44px] px-4 py-2 rounded-lg w-full ${filter.prop=="volunteering"?"text-white ":"text-black"} flex gap-2 font-poppins`}>Volunteer
           {filter.prop=="volunteering"?(            
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256">
           <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M11,4c-3.89844,0 -7,3.10156 -7,7v28c0,3.89844 3.10156,7 7,7h28c3.89844,0 7,-3.10156 7,-7v-24l-2,2.3125v21.6875c0,2.80078 -2.19922,5 -5,5h-28c-2.80078,0 -5,-2.19922 -5,-5v-28c0,-2.80078 2.19922,-5 5,-5h26.40625l1.59375,-2zM43.25,7.75l-19.34375,22.8125l-8.125,-7.59375l-1.375,1.46875l8.90625,8.28125l0.78125,0.71875l0.65625,-0.78125l20,-23.625z"></path></g></g>
@@ -40,7 +40,7 @@ const jobs = await getCollection("work", ({ id }) => {
         </a>
       </button>
       <button class={` ${filter.prop !="internship"?"bg-white border-[1px] border-gray-200 shadow-sm":"bg-black"} py-1 rounded-lg `}>
-        <a href="/volunteering/opportunities/internship" class={`!justify-evenly  text-[18px] min-h-[44px]  px-4 py-2 rounded-lg w-full ${filter.prop=="internship"?"text-white ":"text-black"} flex gap-2 font-poppins`}>Internship
+        <a href="/work-with-us/opportunities/internship" class={`!justify-evenly  text-[18px] min-h-[44px]  px-4 py-2 rounded-lg w-full ${filter.prop=="internship"?"text-white ":"text-black"} flex gap-2 font-poppins`}>Internship
           {filter.prop=="internship"?(            
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256">
           <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M11,4c-3.89844,0 -7,3.10156 -7,7v28c0,3.89844 3.10156,7 7,7h28c3.89844,0 7,-3.10156 7,-7v-24l-2,2.3125v21.6875c0,2.80078 -2.19922,5 -5,5h-28c-2.80078,0 -5,-2.19922 -5,-5v-28c0,-2.80078 2.19922,-5 5,-5h26.40625l1.59375,-2zM43.25,7.75l-19.34375,22.8125l-8.125,-7.59375l-1.375,1.46875l8.90625,8.28125l0.78125,0.71875l0.65625,-0.78125l20,-23.625z"></path></g></g>
