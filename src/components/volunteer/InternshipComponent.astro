@@ -4,11 +4,11 @@ import { remark } from "remark";
 import html from "remark-html";
 
 const roleFile = import.meta.glob<MarkdownFile>(
-  "/src/content/work/volunteering/*.md"
+  "/src/content/work/internship/*.md"
 );
 
 const role = await (async () => {
-  const volunteerPath = `/src/content/work/volunteering/${Astro.props.path}.md`;
+  const volunteerPath = `/src/content/work/internship/${Astro.props.path}.md`;
   const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
@@ -23,7 +23,7 @@ const role = await (async () => {
 if (!role) {
   console.warn(
     "Role not found for path:",
-    `/src/content/work/volunteering/${Astro.props.path}.md`
+    `/src/content/work/internship/${Astro.props.path}.md`
   );
 }
 

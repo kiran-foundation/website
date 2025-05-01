@@ -2,7 +2,7 @@
 import type { MarkdownFile } from "../../types/Markdown";
 import { remark } from "remark";
 import html from "remark-html";
-import VolunteerComponent from "../../components/volunteer/VolunteerComponent.astro";
+import InternshipComponent from "../../components/volunteer/InternshipComponent.astro";
 
 const roleFile = import.meta.glob<MarkdownFile>(
   "/src/content/work/internship/*.md"
@@ -125,7 +125,7 @@ const {
       {impact}
     </p>
     <div class="aboutVolunteering-frame4">
-      <VolunteerComponent
+      <InternshipComponent
         path={Astro.props.path}
         name="responsibilities"
         title="🗒️ Responsibilities"
@@ -133,7 +133,7 @@ const {
     </div>
     <div class="aboutVolunteering-frame4">
       <div class="aboutVolunteering-frame5">Who You Are</div>
-      <VolunteerComponent
+      <InternshipComponent
         path={Astro.props.path}
         name="requirements"
         title="✅ Requirements"
@@ -142,7 +142,7 @@ const {
     <div class="aboutVolunteering-frame4">
       <div class="aboutVolunteering-frame5">Why Volunteer?</div>
 
-      <VolunteerComponent
+      <InternshipComponent
         path={Astro.props.path}
         name="benefits"
         title="🎁 Benefits"

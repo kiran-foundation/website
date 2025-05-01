@@ -5,7 +5,7 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/volunteer/Hero.astro";
 import Header from "../../components/common/Header.astro";
 import Footer from "../../components/common/Footer.astro";
-import AboutVolunteerRole from "../../components/volunteer/AboutVolunteerRole.astro";
+import AboutVolunteerRole from "../../components/volunteer/AboutVolunteer.astro";
 import Form from "../../components/volunteer/Form.astro";
 import InfoVolunteering from "../../components/volunteer/InfoVolunteering.astro";
 import HowDoesItWork from "../../components/volunteer/HowDoesItWork.astro";
@@ -15,7 +15,7 @@ const { path } = Astro.params;
 
 export function getStaticPaths() {
   const allVolunteering = import.meta.glob<MarkdownFile>(
-    "/src/content/work/volunteering/*.md",
+    "/src/content/work/volunteering/*.md"
   );
 
   let parameters = [];
@@ -26,7 +26,6 @@ export function getStaticPaths() {
   });
 
   console.log(parameters);
-  
 
   return parameters;
 }
@@ -37,15 +36,13 @@ export function getStaticPaths() {
   <main class="page-wrapper">
     <Header />
     <Hero />
-   
-    <AboutVolunteerRole path={path} />  
-    
+
+    <AboutVolunteerRole path={path} />
 
     <Form />
-  
+
     <InfoVolunteering />
     <HowDoesItWork />
-   
   </main>
 
   <!-- Back to top button -->

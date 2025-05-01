@@ -2,7 +2,7 @@
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Hero from "../../../../components/volunteer/InternshipHero.astro";
-import AboutVolunteerRole from "../../../../components/volunteer/AboutVolunteer.astro";
+import AboutVolunteer from "../../../../components/volunteer/AboutVolunteer.astro";
 import Form from "../../../../components/volunteer/Form.astro";
 import InfoVolunteering from "../../../../components/volunteer/InfoVolunteering.astro";
 import HowDoesItWork from "../../../../components/volunteer/HowDoesItWork.astro";
@@ -18,9 +18,9 @@ export async function getStaticPaths() {
   const allVolunteering = await getCollection("work");
 
   return allVolunteering
-    .filter((entry) => entry.slug.startsWith("internship/"))
+    .filter((entry) => entry.slug.startsWith("volunteering/"))
     .map((entry) => ({
-      params: { path: entry.slug.replace(/^internship\//, "") },
+      params: { path: entry.slug.replace(/^volunteering\//, "") },
     }));
 }
 ---
@@ -28,7 +28,7 @@ export async function getStaticPaths() {
 <Layout title="Internship Roles">
   <main class="page-wrapper">
     <Hero />
-    <AboutInternship path={path ?? ""} />
+    <AboutVolunteer path={path ?? ""} />
     <Form />
     <!-- <InfoVolunteering /> -->
     <!-- <HowDoesItWork /> -->
