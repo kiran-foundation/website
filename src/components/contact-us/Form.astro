@@ -2,7 +2,7 @@
 import { getEntry } from "astro:content"
 
 const sr = await getEntry("contact", "form");
-const { fullname_label, email_label, phone_label, more_label, button_label, thankyou_message,animation_path} = sr.data;
+const {form_title, fullname_label, email_label, phone_label, more_label, button_label, thankyou_message,animation_path} = sr.data;
 
 
 ---
@@ -12,7 +12,7 @@ const { fullname_label, email_label, phone_label, more_label, button_label, than
 
 <section id="form" class="bg-[#F1F1F1] max-w-[81rem] mx-auto   px-4 mb-[10.25rem] md:rounded-2xl">
   <div id="formframe" class=" mx-auto px-0 max-w-[50rem] py-[2.5rem] sm:pt-[7.5rem] sm:pb-[10.5rem] " style="display: block;">
-    <h1 class="px-1 m-0 pb-[5rem] font-poppins !font-[500] text-center  !text-[24px] !md:text-[2rem] tracking-normal !leading-[100%]">Your questions, feedback or concerns matter!</h1>
+    <h1 class="px-1 m-0 pb-[5rem] font-poppins !font-[500] text-center  !text-[24px] !md:text-[2rem] tracking-normal !leading-[100%]">{form_title}</h1>
 
     <form id="contact-form" class="  mx-0  ">
       <div class="volunteeringForm-input-container m-0  pt-0  pb-[3rem] ">
