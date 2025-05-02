@@ -1,15 +1,17 @@
 ---
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/shakti/Hero.astro";
-import Programe from "../components/shakti/Programe.astro";
-import DigitalSkills from "../components/shakti/DigitalSkills.astro";
-import FinancialSkills from "../components/shakti/FinancialSkills.astro";
-import SpeakingClub from "../components/shakti/SpeakingClub.astro";
-import Card from "../components/shakti/Card.astro";
-import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
-import Join from "../components/shakti/Join.astro";
+import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
+import Layout from "../../layouts/Layout.astro";
+import Heading from "../../components/common/heading.astro";
+import Hero from "../../components/pratibha/Hero.astro";
+import Programe from "../../components/shakti/Programe.astro";
+import DigitalSkills from "../../components/shakti/DigitalSkills.astro";
+import FinancialSkills from "../../components/shakti/FinancialSkills.astro";
+import SpeakingClub from "../../components/shakti/SpeakingClub.astro";
+import Card from "../../components/shakti/Card.astro";
+import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
+import Join from "../../components/shakti/Join.astro";
 
 ---
 
@@ -27,7 +29,11 @@ import Join from "../components/shakti/Join.astro";
 <Layout title="Shakti">
   <!-- Page wrapper -->
   <main class="page-wrapper">
-    <Hero />
+
+
+   <Breadcrumb url={Astro.url} />
+    <Hero collection="shakti" slug="hero"  imageWidth="560.28" height="580.26" />
+    <Heading title=" Four Pillars of Shakti" />
     <Programe/>
     <DigitalSkills/>
     <SpeakingClub/>

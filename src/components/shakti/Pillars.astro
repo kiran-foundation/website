@@ -1,62 +1,62 @@
 ---
-const teamMembers = [
-  { name: "Nick Black", role: "Web Designer", socials: ["facebook", "dribbble", "stack-overflow"] },
-  { name: "Emilia Denver", role: "Identity Designer", socials: ["facebook", "instagram", "behance"] },
-  { name: "Jane Cooper", role: "Marketing Coordinator", socials: ["facebook", "x", "google"] },
-  { name: "Jenny Wilson", role: "Web Designer", socials: ["facebook", "dribbble", "behance"] },
-  { name: "Robert Fox", role: "Graphic Designer", socials: ["instagram", "dribbble", "behance"] },
-  { name: "Jacob Jones", role: "Branding Designer", socials: ["facebook", "x", "behance"] }
-];
-
+import { getEntry } from "astro:content";
 import Heading from "./Heading.astro";
 import Button from "../common/button.astro";
+
+const entry = (await getEntry("shakti", "pillars")) as any;
+
+const pillars = entry?.data?.pillars ?? [];
 ---
-<section class="mx-auto max-w-[1296px] pt-2 xl:pt-3 pb-5 mb-2 lg:mb-3 xl:mb-4 2xl:mb-5">
-    <div class="flex flex-col md:flex-row pb-3 md:pb-3">
-      <div class="md:w-1/3 mb-2 sm:mb-3 md:mb-4 pb-2 -mt-[120px]">
-        <div class="sticky top-0 pt-[120px]">
-          <Heading head="pillarHeading" />
-          <a class="text-primary text-lg inline-flex items-center space-x-2" href="#">
-            <span>View all 16 members</span>
-            <i class="ai-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-      <div class="md:w-2/3">
-        <div class="mx-4 max-w-[1296px] grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {teamMembers.map((member, index) => (
-              <div
-                class={`group pb-3 mb-0 lg:mb-2 xl:mb-3 hover:shadow-md transition duration-300 rounded-lg overflow-hidden bg-white ${
-                  index % 2 === 0 ? 'sm:mr-1 xl:pr-3' : 'sm:ml-1 xl:pl-3'
-                }`}
-              >
-                {/* Image placeholder — Replace with member.image from Markdown */}
-                <div class="w-full aspect-square bg-gray-300">
-                  {/* TODO: Replace with <img src={member.image} alt={member.name} /> */}
-                </div>
-          
-                <div class="p-4 border-t">
-                  {/* Heading — Replace with Markdown-based title */}
-                  <h3 class="text-xl font-semibold mb-2">Sample Heading</h3>
-          
-                  {/* Description — Replace with Markdown-based description */}
-                  <p class="text-sm text-gray-600 mb-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.
-                  </p>
-          
-                  {/* Button — Optional link or action */}
-                  <a
-                    href="#"
-                    class="inline-block px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700 transition"
-                  >
-                    Know More
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-          
+<section class="mx-auto max-w-[1296px] pt-2 xl:pt-3 pb-5 mt-[164px] box-border">
+  <div class="flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-120px)]">
+    
+    <!-- Left Sticky Section -->
+    <div class="lg:w-1/3">
+      <div class="lg:sticky lg:top-28 lg:mt-[402px]">
+        <Heading head="pillarHeading1" />
+        <Heading head="pillarHeading2" />
+        <Button
+          link="/volunteering"
+          title="See the Workshops Schedule"
+          btn="btn1"
+          widthClass="w-[342px] sm:w-[200px] md:w-[315px]"
+          heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
+          className="mt-4"
+        />
       </div>
     </div>
-  </section>
-  
+
+    <!-- Right Scrollable Pillar Cards -->
+    <div class="lg:w-2/3 w-full overflow-auto lg:ml-[132px]">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pr-1">
+        {pillars.map((pillar, index) => (
+          <div
+            class="group pb-3 mb-0 lg:mb-2 xl:mb-3 hover:shadow-md transition duration-300 rounded-lg overflow-hidden bg-white w-full max-w-[342px] h-[740px]"
+          >
+            <div class="w-full aspect-square bg-gray-100">
+              <img src={pillar.image} alt={pillar.title} class="w-full h-full object-cover" />
+            </div>
+
+            <div class="h-[256px]">
+              <h3 class="font-medium text-[32px] leading-[100%] tracking-[0] font-poppins text-[#1E1E1E] mt-4">
+                {pillar.title}
+              </h3>
+              <p class="font-normal text-[18px] leading-[36px] tracking-[0] font-poppins text-[#49494C] mt-4 md:mb-[68px]">
+                {pillar.text}
+              </p>
+
+              <Button
+                link={pillar.ctaLink}
+                title={pillar.buttonText}
+                btn="btn2"
+                widthClass="w-[342px] sm:w-[200px] md:w-[150px]"
+                heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
+                className="mt-auto"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
