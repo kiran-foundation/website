@@ -9,24 +9,26 @@ const {
   heading1 = "",
   heading2 = "",
   heading3 = "",
-  pillarHeading= "",
+  pillarHeading1= "",
+  pillarHeading2= "",
 } = entry?.data ?? {};
 
 // Match head prop with data key
 const headingMap = {
-    heading1,
+  heading1,
   heading2,
   heading3,
-  pillarHeading,
+  pillarHeading1,
+  pillarHeading2,
 };
 
 const headingText = headingMap[head] || "";
 ---
 
 {headingText && (
-  <section class="flex items-center justify-center mt-[120px] md:mt-[120px] mb-20 lg:mt-28 lg:mb-[120px]">
+  <section class={` flex items-center justify-center ${head === "pillarHeading1" || head === "pillarHeading2"  ? "mt-0" : " mt-[120px] md:mt-[120px] mb-20 lg:mt-28 lg:mb-[120px]"}`}>
     <h1
-      class="font-merriweather font-normal text-center leading-[150%] tracking-[-2.2%] text-[30px] sm:text-[40px] md:text-[48px] w-[292px] lg:w-[1296px] lg:h-[72px]">
+      class={`font-merriweather font-normal ${head === "pillarHeading1" || head === "pillarHeading2"  ? "mt-0" : "text-center"}  leading-[150%] tracking-[-2.2%] text-[30px] sm:text-[40px] md:text-[48px] w-[292px] lg:w-[1296px] lg:h-[72px]`}>
       {headingText}
     </h1>
   </section>

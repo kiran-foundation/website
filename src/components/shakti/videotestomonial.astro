@@ -1,0 +1,23 @@
+---
+// Main Component (e.g., VideoSection.astro)
+
+import VideoCard from './VideoCard.astro';
+import Heading from './Heading.astro';
+
+const videos = [
+  { videoUrl: 'novideo', alt: 'Video 1 Title' },
+  { videoUrl: 'novideo', alt: 'Video 2 Title' },
+  { videoUrl: 'novideo', alt: 'Video 3 Title' },
+  { videoUrl: 'novideo', alt: 'Video 4 Title' }
+];
+---
+
+<section class="max-w-[1296px] mx-auto">
+
+<Heading head="heading2"/>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[1296px] mx-auto">
+    {videos.map((video) => (
+      <VideoCard videoUrl={video.videoUrl} alt={video.alt} />
+    ))}
+  </div>
+</section>
