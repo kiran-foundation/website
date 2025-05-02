@@ -3,8 +3,12 @@ import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
 import Layout from "../../layouts/Layout.astro";
-import Heading from "../../components/common/heading.astro";
 import Hero from "../../components/pratibha/Hero.astro";
+import CertificateSection from "../../components/shakti/CertificateSection.astro";
+import PageBottom from "../../components/shakti/PageBottom.astro";
+import Pillars from "../../components/shakti/Pillars.astro"
+
+import Heading from "../../components/common/heading.astro";
 import Programe from "../../components/shakti/Programe.astro";
 import DigitalSkills from "../../components/shakti/DigitalSkills.astro";
 import FinancialSkills from "../../components/shakti/FinancialSkills.astro";
@@ -33,15 +37,21 @@ import Join from "../../components/shakti/Join.astro";
 
    <Breadcrumb url={Astro.url} />
     <Hero collection="shakti" slug="hero"  imageWidth="560.28" height="580.26" />
-    <Heading title=" Four Pillars of Shakti" />
-    <Programe/>
+    <Pillars/>
+    <CertificateSection/>
+    <PageBottom/>
+
+
+
+
+    <!-- <Programe/>
     <DigitalSkills/>
     <SpeakingClub/>
     <FinancialSkills/>
     <Card/>
     <Heading title="Testimonials" />
     <TestimonialsCarousel pageTag="pratibha" />
-    <Join/>
+    <Join/> -->
     
   </main>
 
