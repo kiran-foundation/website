@@ -1,0 +1,29 @@
+---
+// VideoCard.astro
+const { videoUrl, alt } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 h-[400px]">
+  {videoUrl === 'novideo' ? (
+    <div class="w-full h-full flex items-center justify-center bg-black text-white text-xl">
+      No Testimony Found
+    </div>
+  ) : (
+    <>
+      <div class="w-full aspect-video bg-gray-100">
+        <iframe
+          src={videoUrl}
+          title={alt}
+          class="w-full h-full object-cover"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      
+      <div class="flex flex-col h-[100px] justify-between">
+        <h3 class="font-medium text-[18px] leading-[100%] tracking-[0] font-poppins text-[#1E1E1E] mt-4">{alt}</h3>
+      </div>
+    </>
+  )}
+</div>
