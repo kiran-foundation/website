@@ -1,173 +1,223 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const notifyForm = document.getElementById('notifyForm');
-  if (notifyForm) {
-    notifyForm.addEventListener('submit', function(event) {
-      event.preventDefault(); 
-      submitNotifyForm();
-    });
-  } else {
-    console.error("Notify form not found");
-  }
+import {  form_id  } from "../js/global-variables.js";
+import { emailField,roleField, moreField,typeField,resumeField,nameField,phoneField,emailAddressField } from "../js/global-variables.js";
 
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(event) {
-      event.preventDefault(); 
-      submitContactForm();
-    });
-  } else {
-    console.error("Contact form not found");
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  const formSubmitButton = document.querySelector(
+    ".volunteeringForm-submit-button, .form-submit-button"
+  );
+  formSubmitButton.disabled = true;
 
-  const volunteeringForm = document.getElementById('volunteering-form');
-  if (volunteeringForm) {
-    volunteeringForm.addEventListener('submit', function(event) {
-      event.preventDefault(); 
-      submitvolunteeringForm();
-    });
-  } else {
-    console.error("volunteering-form not found");
-  }
+  const formFieldConfig = {
+    "full-name": {
+      validate: (value) => /^[a-zA-Z\s]+$/.test(value),
+      errorText: "Please enter your full name, only letters",
+      emptyText: "Please enter your name",
+    },
+    email: {
+      validate: (value) =>
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value),
+      errorText: "Invalid email format. Example: name@domain.com",
+      emptyText: "Please enter your email",
+    },
+    phone: {
+      validate: (value) =>
+        /^\+?[1-9][0-9]{7,14}$/.test(value.replace(/[\s\-()]/g, "")),
+      errorText: "Phone number must be between 8 and 15 digits, and can include an optional '+' at the start.",
+      emptyText: "Please enter your phone number",
+    },  
+    message: {
+      validate: (value) => value.trim().length > 0,
+      errorText: "Message cannot be empty",
+      emptyText: "Please enter your message",
+    },
+  };
 
+  const validateEntireForm = () => {
+    const allValid = Object.entries(formFieldConfig).every(
+      ([fieldId, { validate }]) => {
+        const fieldValue = document.getElementById(fieldId)?.value.trim() || "";
+        return validate(fieldValue);
+      }
+    );
+    formSubmitButton.disabled = !allValid;
+  };
 
-  function submitNotifyForm() {
-    const email = document.getElementById('notifyEmail').value;
-    const sourcePage = document.getElementById('sourcePage').value;
+  const validateFieldOnBlur = (fieldId) => {
+    const inputElement = document.getElementById(fieldId);
+    if (!inputElement) return;
 
-    if (email && sourcePage) {
-      postToGoogleForm1(email, sourcePage);
-    } else {
-      displayMessage('Please fill in all fields for notification form.', false);
+    const fieldValue = inputElement.value.trim();
+    const { validate, errorText, emptyText } = formFieldConfig[fieldId];
+
+    if (!fieldValue) {
+      showFieldError(fieldId, emptyText);
+    } else if (!validate(fieldValue)) {
+      showFieldError(fieldId, errorText);
     }
-  }
+  };
 
-  function submitContactForm() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('contactEmail').value;
-    const phone = document.getElementById('phone').value;
-    const message = document.getElementById('message').value;
+  const setupFieldEventListeners = () => {
+    Object.keys(formFieldConfig).forEach((fieldId) => {
+      const inputElement = document.getElementById(fieldId);
+      if (!inputElement) return;
 
-    if (name && email && phone && message) {
-      postToGoogleForm2(name, email, phone, message);
-    } else {
-      displayMessage('Please fill in all fields for contact form.', false);
-    }
-  }
-
-  function submitvolunteeringForm() {
-    const fullname = document.getElementById('name').value;
-    const email = document.getElementById('contactEmail').value;
-    const phone = document.getElementById('phone').value;
-    const resume = document.getElementById('resume').value;
-    const role = document.getElementById('role').value;
-    const moreinformation = document.getElementById('more').value;
-
-    if (fullname && email && phone && resume && role && moreinformation) {
-      postToGoogleForm3(fullname, email, phone, resume,role,moreinformation);
-    } else {
-      displayMessage('Please fill in all fields for volunteerform.', false);
-    }
-  }
-
-  function postToGoogleForm1(email, sourcePage) {
-    const scriptURL1 = "https://docs.google.com/forms/d/e/1FAIpQLSc1AbPhiVXtwIGlP1aZst136YzaZCQaf51X5fzk4NzzYRcNBQ/formResponse";
-    const formData1 = new URLSearchParams({
-      "entry.24309726": email,
-      "entry.1659573731": sourcePage, 
-    });
-
-    fetch(scriptURL1, {
-      method: "POST",
-      body: formData1,
-      mode: "no-cors"
-    })
-    .then(() => {
-      displayMessage('Your notification request has been recorded.', true);
-      notifyForm.reset(); 
-      closeNotifyPopup(); 
-    })
-    .catch(() => {
-      displayMessage('There was an error submitting the notification request. Please try again.', false);
-    });
-  }
-
-  function postToGoogleForm2(name, email, phone, message) {
-    const scriptURL2 = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSefpzhGl46T63TuroNAmyfnRERfeeJjv8Z0hH6WNtNzp-bmgQ/formResponse";
-    const formData2 = new URLSearchParams({
-      "entry.1290086262": name,
-      "entry.1357912889": email,
-      "entry.1405737972": phone,
-      "entry.1964045563": message
-    });
-
-    fetch(scriptURL2, {
-      method: "POST",
-      body: formData2,
-      mode: "no-cors"
-    })
-    .then(() => {
-      displayMessage('Your contact request has been recorded.', true);
-      contactForm.reset();
-    })
-    .catch(() => {
-      displayMessage('There was an error submitting the contact request. Please try again.', false);
-    });
-  }
-
-  function postToGoogleForm3(name, email, phone, resume, role, moreinformation) {
-    const scriptURL3 = "https://docs.google.com/forms/d/e/1FAIpQLScRCHRWAEMoAfuKx_vVjRZpfoKJp7TvHNsDRJBj4Hf34DDF1Q/formResponse";
-    const formData3 = new URLSearchParams({
-      "entry.2005620554": name,
-      "entry.1045781291": email,
-      "entry.1166974658": phone,
-      "entry.839337160": resume, // Captures file name only
-      "entry.1929439720": role,
-      "entry.138103954": moreinformation
-    });
-  
-    fetch(scriptURL3, {
-      method: "POST",
-      body: formData3,
-      mode: "no-cors"
-    })
-      .then(() => {
-        displayMessage('Your volunteer request has been recorded.', true);
-        volunteeringForm.reset();
-      })
-      .catch(() => {
-        displayMessage('There was an error submitting the volunteer request. Please try again.', false);
+      inputElement.addEventListener("input", () => {
+        validateEntireForm();
+        clearFieldError(fieldId);
       });
-  }
-  
-  function displayMessage(message, success) {
-    console.log("Display Message:", message, "Success:", success);
 
-    const existingMessageElement = document.querySelector('.notification-message');
+      inputElement.addEventListener("blur", () => {
+        validateFieldOnBlur(fieldId);
+      });
+    });
+  };
 
-    if (existingMessageElement) {
-      existingMessageElement.remove();
+  const showFieldError = (fieldId, message) => {
+    const inputElement = document.getElementById(fieldId);
+    if (!inputElement) return;
+
+    inputElement.classList.add("error");
+    inputElement.style.color = "#992424";
+
+    const existingErrorElement = inputElement.nextElementSibling;
+    if (existingErrorElement?.classList.contains("form-suberror")) {
+      existingErrorElement.innerHTML = `❗${message}`;
+    } else {
+      inputElement.insertAdjacentHTML(
+        "afterend",
+        `<div class='form-suberror'>❗${message}</div>`
+      );
     }
-
-    const messageElement = document.createElement('div');
-    messageElement.className = 'notification-message';
-    messageElement.innerText ='message';
-    messageElement.style.display = 'block';
-    messageElement.style.color = success ? 'green' : 'red';
-    messageElement.style.marginTop = '10px';
-
-    document.body.appendChild(messageElement);
-
-    setTimeout(() => {
-      messageElement.remove();
-    }, 15000);
-  }
-
-  window.openNotifyPopup = function () {
-    document.getElementById('sourcePage').value = window.location.href;
-    document.getElementById('notifyPopup').style.display = 'block';
   };
 
-  window.closeNotifyPopup = function () {
-    document.getElementById('notifyPopup').style.display = 'none';
+  const clearFieldError = (fieldId) => {
+    const inputElement = document.getElementById(fieldId);
+    if (!inputElement) return;
+
+    inputElement.classList.remove("error");
+    inputElement.style.color = "#1E1E1E";
+
+    const existingErrorElement = inputElement.nextElementSibling;
+    if (existingErrorElement?.classList.contains("form-suberror")) {
+      existingErrorElement.remove();
+    }
   };
+
+  const submitFormHandler = (formType) => {
+    const fullName = document.getElementById("full-name")?.value.trim();
+    const email = document.getElementById("email")?.value.trim();
+    const phone = document.getElementById("phone")?.value.trim();
+    const message =
+      formType === "contact-us"
+        ? document.getElementById("message")?.value
+        : document.getElementById("more")?.value;
+    const role =
+      formType === "contact-us"
+        ? "n/a"
+        : window.location.href.split("/").slice(-2, -1)[0];
+    const resume = "n/a";
+
+    if (
+      formFieldConfig["full-name"].validate(fullName) &&
+      formFieldConfig["email"].validate(email) &&
+      formFieldConfig["phone"].validate(phone) &&
+      message
+    ) {
+      postToGoogleForm({
+        name: fullName,
+        email,
+        phone,
+        resume,
+        role,
+        moreinformation: message,
+        typeofrole: formType,
+      })
+        .then(() => {
+          showGlobalMessage("Your request has been recorded.", true);
+          if (formType === "contact-us") {
+            showSuccessPopUp();
+          } else {
+            const redirectUrl = document
+              .getElementById("volunteering-form")
+              ?.getAttribute("data-redirect");
+            if (redirectUrl) window.location.href = redirectUrl;
+          }
+        })
+        .catch((err) => {
+          console.error("Submission error:", err);
+          showGlobalMessage(
+            "There was an error submitting the request. Please try again.",
+            false
+          );
+        });
+    } else {
+      if (!formFieldConfig["full-name"].validate(fullName)) {
+        showFieldError("full-name", formFieldConfig["full-name"].errorText);
+      }
+      if (!formFieldConfig["email"].validate(email)) {
+        showFieldError("email", formFieldConfig["email"].errorText);
+      }
+      if (!formFieldConfig["phone"].validate(phone)) {
+        showFieldError("phone", formFieldConfig["phone"].errorText);
+      }
+    }
+  };
+
+  const postToGoogleForm = async ({
+    name,
+    email,
+    phone,
+    resume,
+    role,
+    moreinformation,
+    typeofrole,
+  }) => {
+
+    const url =
+      `https://docs.google.com/forms/d/e/${form_id}/formResponse?&submit=Submit?usp=pp_url` +
+      `&entry.${nameField}=${encodeURIComponent(name)}` +
+      `&entry.${emailField}=${encodeURIComponent(email)}` +
+      `&entry.${phoneField}=${encodeURIComponent(phone)}` +
+      `&entry.${roleField}=${encodeURIComponent(role)}` +
+      `&entry.${moreField}=${encodeURIComponent(moreinformation)}` +
+      `&entry.${typeField}=${encodeURIComponent(typeofrole)}` +
+      `&entry.${resumeField}=${encodeURIComponent(resume)}` +
+      `&entry.${emailAddressField}=${encodeURIComponent(email)}`;
+
+    return fetch(url, { method: "POST", mode: "no-cors" });
+  };
+
+  const showSuccessPopUp = () => {
+    const lottiePlayer = document.getElementById("lottie-player");
+    const formFrame = document.getElementById("formframe");
+    const popUp = document.getElementById("pop-up");
+
+    const observer = new MutationObserver(() => {
+      if (popUp.style.display === "block") {
+        lottiePlayer.stop();
+        lottiePlayer.play();
+      }
+    });
+    observer.observe(popUp, { attributes: true, attributeFilter: ["style"] });
+
+    formFrame.style.display = "none";
+    popUp.style.display = "block";
+    document.getElementById("contactForm")?.reset();
+  };
+
+  const showGlobalMessage = (message, success) => {
+    console.log("Display Message:", message, "Success:", success);
+  };
+
+  document.getElementById("contactForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    submitFormHandler("contact-us");
+  });
+
+  document.getElementById("volunteering-form")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    submitFormHandler("volunteering");
+  });
+
+  setupFieldEventListeners();
 });

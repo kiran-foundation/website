@@ -2,9 +2,12 @@
 title: "Reach Out Your Way"
 subTitle: "Whether you prefer filling out the form below, sending an email, or giving us a call, we’re ready to help, and we’ll respond as quickly as possible."
 address: "Kiran Social Foundation 101 Sahil Veer Apartments, Vandana Nagar, Indore 452018 Madhya Pradesh, India"
+phonetitle: "Phone" 
+emailtitle: "Email"
+addresstitle: "Address" 
 contactNo:
   - option: "Main Office"
-    answer: "+919303997100"
+    answer: "+91 93039 97100"
     
   - option: "WhatsApp"
     answer: "+91 98801 41412"

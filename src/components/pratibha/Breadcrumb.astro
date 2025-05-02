@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-
+const {hidden = true} = Astro.props;
 // Fetch header details directly
 const headerData = await getEntry("header", "details");
 
@@ -10,8 +10,6 @@ const segments = url.pathname.split("/").filter(Boolean);
 
 // Function to find breadcrumb names from Markdown
 const findBreadcrumbName = (path: string) => {
-  console.log(path);
-  
   if (headerData && headerData.data.navigation) {
     for (const section of headerData.data.navigation) {
       if (section.menu.url === path) {
@@ -40,8 +38,9 @@ const breadcrumbs = segments.map((_, index) => {
 
 
 ---
+<div class=" h-[5.25rem]"></div>
 
-<nav class="hidden sm:flex h-[21px] gap-[10px] px-6 lg:px-1 max-w-[81rem] text-[0.875rem] font-normal leading-[100%] tracking-[0%] font-poppins mx-auto mt-32 ">
+<nav class=` ${hidden ? "hidden" : ""} sm:flex h-[21px] gap-[10px] px-6 lg:px-8 max-w-[81rem] text-[0.875rem] font-normal leading-[100%] tracking-[0%] font-poppins mx-auto my-8 `>
   <ol class="flex  space-x-2 items-start">
     <li>
       <a href="/" class="text-[#1E1E1E] hover:underline">Home</a>

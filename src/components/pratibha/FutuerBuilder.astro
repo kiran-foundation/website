@@ -31,27 +31,24 @@ const { mt } = Astro.props;
     ))}
 
     <!-- Button -->
-    <div 
-      class="mt-12 flex flex-col sm:flex-row"
-      data-aos="fade-up"
-      data-aos-duration="1200"
-      data-aos-offset="120px"
-      data-disable-parallax-down="lg"
-    >
-    <Button
-        link={button?.herf}
-        title={button?.text}
-        btn="btn2"
-        widthClass="w-full lg:w-[13.375rem] md:w-[13.375rem] "
-        heightClass="h-[3.75rem]"
-      />
-      <!-- <Button
-        link={button?.herf}
-        title={button?.text}
-        btn="btn2"
-        widthClass="!w-[13.0625rem] h-[60px]   "
-      /> -->
-    </div>
+    <div class="flex flex-col mt-[3rem] overflow-hidden sm:flex-row"     data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
+    <!-- <Button
+    link={button?.herf}
+    title={button?.text}
+    btn="btn2"
+    widthClass="w-[13.0625rem] !md:w-[13.0625rem] !lg:w-[13.0625rem] !xl:w-[13.0625rem] "
+    heightClass="h-[60px]"
+  /> -->
+  <button
+  onclick={`window.location.href='${button?.herf}'`}
+  class={`font-poppins font-semibold  h-[3.75rem] text-lg lg:text-lg lg:h-[3.75rem] w-full md:w-[13.0625rem]  !rounded-[0.5rem] sm:rounded-md bg-[#00AA5E] transition-all text-black hover:bg-[#00FF8D] active:ring-2 active:ring-[#00AA5E] active:bg-[#00FF8D]`}
+>
+  {button?.text}
+</button>
+    </div> 
   </div>
 
   <!-- Image Content Column -->
