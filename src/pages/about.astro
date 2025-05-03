@@ -16,6 +16,7 @@ const testimonials = (await getEntry("testimonials", "testimonials")).data;
 interface Props {
   title: string;
 }
+
 ---
 
 <Layout>
@@ -26,12 +27,15 @@ interface Props {
     <Heading />
     <section class="overflow-hidden py-5 my-md-2 my-xl-4 my-xxl-5">
       <div class="container py-2 py-sm-4 py-lg-5">
-        <GridContainer arrow="right" slug=""/>
-        <GridContainer flip={true} arrow="left" />
-        <GridContainer arrow="right"/>
-        <GridContainer flip={true} arrow="left" />
-        <GridContainer arrow="right"/>
-        <GridContainer flip={true}  />
+        <GridContainer arrow="right" slug="vision"/>
+        <GridContainer flip={true} arrow="left" slug="first-std"/>
+         <GridContainer arrow="right" slug="shakti"/>
+        <GridContainer flip={true} arrow="left" slug="first-grad"/>
+        <GridContainer arrow="right" slug="volunteer-led"/>
+        <GridContainer flip={true} arrow="left" slug="nationwide-reach"/>
+        <GridContainer  arrow="right" slug="contributing-back"  /> 
+        <GridContainer   arrow="left" flip="true" slug="year-of-inspiration"  /> 
+        <GridContainer  slug="what-next"  /> 
       </div>
     </section>
 
