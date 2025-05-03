@@ -10,6 +10,9 @@ import GridContainer from "../components/about/GridContainer.astro";
 import ArrowRight from "../components/about/ArrowRight.astro";
 import ArrowLeft from "../components/about/ArrowLeft.astro";
 import Heading from "../components/about/Heading.astro";
+import Mission from "../components/donation/Mission.astro";
+import MissionVison from "../components/about/MissionVison.astro";
+import EnduringSpirit from "../components/about/EnduringSpirit.astro";
 
 const testimonials = (await getEntry("testimonials", "testimonials")).data;
 
@@ -38,7 +41,8 @@ interface Props {
         <GridContainer  slug="what-next"  /> 
       </div>
     </section>
-
+    <MissionVison/>
+    <EnduringSpirit/>
     <!-- <TestimonialsCarousel pageTag='pratibha' /> -->
   </main>
 
