@@ -10,7 +10,7 @@ const { slug = "vision", arrow, flip = false } = Astro.props as {
   flip: boolean;
 };
 const data = await getEntry("about", slug);
-console.log(data);
+// console.log(data);
 
 const { title, year, description, button, image, image2 } = data.data;
 ---
