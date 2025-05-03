@@ -1,50 +1,64 @@
 ---
-import 'aos/dist/aos.css'
-import 'jarallax/dist/jarallax.min.css'
-import Layout from '../layouts/Layout.astro'
-import Hero from '../components/about/Hero.astro'
-import { getEntry } from 'astro:content'
-import Breadcrumb from '../components/pratibha/Breadcrumb.astro'
-import TestimonialsCarousel from '../components/common/TestimonialsCarousel.astro'
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/about/Hero.astro";
+import { getEntry } from "astro:content";
+import Breadcrumb from "../components/pratibha/Breadcrumb.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+import GridContainer from "../components/about/GridContainer.astro";
+import ArrowRight from "../components/about/ArrowRight.astro";
+import ArrowLeft from "../components/about/ArrowLeft.astro";
+import Heading from "../components/about/Heading.astro";
 
-const testimonials = (await getEntry('testimonials', 'testimonials')).data
+const testimonials = (await getEntry("testimonials", "testimonials")).data;
 
 interface Props {
-  title: string
+  title: string;
 }
-
 ---
 
 <Layout>
   <!-- Page wrapper -->
-  <main class='page-wrapper' style='overflow-x: hidden;'>
+  <main class="page-wrapper" style="overflow-x: hidden;">
     <!-- <Breadcrumb/> -->
-    <Hero/>
+    <Hero />
+    <Heading />
+    <section class="overflow-hidden py-5 my-md-2 my-xl-4 my-xxl-5">
+      <div class="container py-2 py-sm-4 py-lg-5">
+        <GridContainer arrow="right" slug=""/>
+        <GridContainer flip={true} arrow="left" />
+        <GridContainer arrow="right"/>
+        <GridContainer flip={true} arrow="left" />
+        <GridContainer arrow="right"/>
+        <GridContainer flip={true}  />
+      </div>
+    </section>
+
     <!-- <TestimonialsCarousel pageTag='pratibha' /> -->
-   
   </main>
 
   <!-- Back to top button -->
   <a
-    class='btn-scroll-top'
-    href='#top'
+    class="btn-scroll-top"
+    href="#top"
     data-scroll
-    aria-label='Scroll back to top'
+    aria-label="Scroll back to top"
   >
     <svg
-      viewBox='0 0 40 40'
-      fill='currentColor'
-      xmlns='http://www.w3.org/2000/svg'
+      viewBox="0 0 40 40"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <circle
-        cx='20'
-        cy='20'
-        r='19'
-        fill='none'
-        stroke='currentColor'
-        stroke-width='1.5'
-        stroke-miterlimit='10'></circle>
+        cx="20"
+        cy="20"
+        r="19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"></circle>
     </svg>
-    <i class='ai-arrow-up'></i>
+    <i class="ai-arrow-up"></i>
   </a>
 </Layout>
