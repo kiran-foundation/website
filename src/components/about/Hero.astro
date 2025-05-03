@@ -1,28 +1,144 @@
 ---
-import { getEntry } from "astro:content"
-const aboutHero =(await getEntry("about","hero")).data
+import { getEntry } from "astro:content";
+const hero = (await getEntry("about", "hero"));
+const {qoute } = hero.data;
 ---
-<section class="position-relative" style="margin-top: 4rem;">
-  <div
-      class="position-absolute w-100 h-100 object-fit-cover bg-size-cover bg-position-center mt-4"
-      style="background-image: url(/assets/images/hero/aboutHero.png);"
-  >
-  </div>
-  <div class="container position-relative z-2 text-center pt-2 pt-sm-4 pt-lg-5" style="top:35px">
-     <h1 class="heroAbout-heading display-0 text-white pt-5">
-         {aboutHero.heading}
-      </h1>
-      <p class="heroAbout-paragraph text-white opacity-90 mx-auto pb-3 pb-md-0 mb-4 mb-md-5"
-       >
-       "There is no force more powerfull than a woman determined to rise"
-       </p>
-       
+
+<!-- -----hero swiper animation ---- -->
+<section
+  class="position-relative hidden md:block h-[864px]  mt-[5.5rem]"
+  data-bs-theme="light"
+>
+  <!-- Background image slider -->
+  <div class="swiper swiper-scale-effect position-absolute top-0 start-0 w-100 h-100">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div
+          class="swiper-slide-cover aspect-video "
+          style="background-image: url('/assets/images/about/about-us-hero-image.jpg');"
+        >
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="d-none d-lg-block" style="height:70px;"></div>
-<div class="d-none d-md-block d-lg-none" style="height: 260px;"></div>
-<div class="d-md-none" style="height: 160px;"></div>
-
+  <!-- ---------content box----------- -->
+  <div class=" absolute z-[2] left-[44.9%] px-4   h-full flex flex-col justify-center items-start">
+      <!-- 
+    font-family: Merriweather;
+font-weight: 400;
+font-size: 32px;
+line-height: 52px;
+letter-spacing: -2.2%;
+vertical-align: middle;
+ -->
+        <p
+          class="block !text-[#FFFFFF] hero-subtitle   max-w-full md:max-w-[700px] xl:max-w-[700px]"
+        >
+          {qoute}
+        </p>
+        <!-- font-family: Inter;
+font-weight: 400;
+font-size: 18px;
+line-height: 27px;
+letter-spacing: 0%;
+vertical-align: middle;
+ -->
+        <p class="text-[18px] font-normal leading-[27px] tracking-normal mt-4 !text-[#F5F5F5]" style="font-family: 'Merriweather', serif;">Maa Kiran Jain
+          (17th Oct 1955- 15th Jun 2015) </p>
   
+  </div>
 </section>
 
+<!-- ----------mobile --- -->
+<section class="md:hidden block relative mt-[5rem]">
+  <div class="relative h-[760px]">
+    <!-- Swiper for mobile -->
+    <div
+      class="swiper mobile-swiper position-absolute top-0 start-0 w-100 h-100"
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div
+            class="swiper-slide-cover aspect-[4/4]"
+            style="background-image: url('/assets/images/about/hero-mobile-woman.png');"
+          >
+          </div>
+        </div>
+   
+      </div>
+    </div>
+
+    <!-- Text Content Container -->
+    <div class="absolute inset-0 mt-20 flex flex-col px-4 justify-between z-20">
+      <!-- Title at Top -->
+      <!-- Bottom-aligned Content -->
+      <div >
+        <p class="hero-subtitle !text-[#FFFFFF] " style="font-family: 'Merriweather', serif;" >
+          {qoute}
+        </p>
+        <p class="text-[18px] font-normal leading-[27px] tracking-normal mt-4 !text-[#F5F5F5]" style="font-family: 'Merriweather', serif;">Maa Kiran Jain <br>
+            (17th Oct 1955- 15th Jun 2015) </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Update the script to handle both swipers -->
+<script type="module">
+  import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+  // Common configuration for both swipers
+  const swiperConfig = {
+    effect: "fade",
+    speed: 800,
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}" style="
+          width: 13.5px;
+          height: 13px;
+          background: transparent;
+          border: 1px solid black;
+          margin: 0 8px;
+          opacity: 1;
+          transition: all 0.3s ease;
+          display: inline-block;
+          border-radius: 50%;
+          cursor: pointer;
+        "></span>`;
+      },
+    },
+    on: {
+      init: function () {
+        this.pagination.bullets.forEach((bullet) => {
+          if (bullet.classList.contains("swiper-pagination-bullet-active")) {
+            bullet.style.background = "rgb(47 83 3)";
+            bullet.style.borderColor = "#333";
+          }
+        });
+      },
+      slideChange: function () {
+        this.pagination.bullets.forEach((bullet) => {
+          bullet.style.background = "transparent";
+          bullet.style.borderColor = "#333";
+
+          if (bullet.classList.contains("swiper-pagination-bullet-active")) {
+            bullet.style.background = "rgb(47 83 3)";
+            bullet.style.borderColor = "#333";
+          }
+        });
+      },
+    },
+  };
+
+  // Initialize both swipers
+  new Swiper(".swiper-scale-effect", swiperConfig);
+  new Swiper(".mobile-swiper", swiperConfig);
+</script>

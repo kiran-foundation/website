@@ -3,13 +3,9 @@ import 'aos/dist/aos.css'
 import 'jarallax/dist/jarallax.min.css'
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/about/Hero.astro'
-import Mission from '../components/about/Mission.astro'
-import TestimonialsCarousel from '../components/common/TestimonialsCarousel.astro'
-import Team from '../components/about/Team.astro'
-import Gallery from '../components/about/Gallery.astro'
 import { getEntry } from 'astro:content'
-import Introduction from '../components/about/Introduction.astro'
-import PersonList from '../components/person-list/PersonList.astro'
+import Breadcrumb from '../components/pratibha/Breadcrumb.astro'
+import TestimonialsCarousel from '../components/common/TestimonialsCarousel.astro'
 
 const testimonials = (await getEntry('testimonials', 'testimonials')).data
 
@@ -22,14 +18,10 @@ interface Props {
 <Layout>
   <!-- Page wrapper -->
   <main class='page-wrapper' style='overflow-x: hidden;'>
-    <Hero />
-    <Introduction />
-    <Mission />
-    <Team />
-    <PersonList foldername="work" path="team/" filter="Student" title="Student"/> 
-    <!-- <Volunteers />                                removed this component for new changes above  -->
-    <TestimonialsCarousel pageTag='pratibha' />
-    <Gallery />
+    <!-- <Breadcrumb/> -->
+    <Hero/>
+    <!-- <TestimonialsCarousel pageTag='pratibha' /> -->
+   
   </main>
 
   <!-- Back to top button -->
