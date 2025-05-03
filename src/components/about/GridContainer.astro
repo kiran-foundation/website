@@ -1,0 +1,27 @@
+---
+import ArrowLeft from "./ArrowLeft.astro";
+import ArrowRight from "./ArrowRight.astro";
+const { arrow , isbutton=false, flip=false, year="2020" } = Astro.props as { arrow: string,isbutton: boolean,flip: boolean , year: string };
+
+---
+     <!-- Step -->
+     <div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
+      <div class=`col-md-6 col-xl-5  ${flip ? " " : "order-md-2  offset-lg-1"} pb-2 pb-md-0 mb-4 mb-md-0` data-aos={flip ? "fade-right" : "fade-left"} data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
+        <img class="d-dark-mode-none" src="assets/images/about/ray-of-light.png" width="525" alt="Image">
+        <img class="d-none d-dark-mode-block" src="assets/images/about/ray-of-light.png" width="525" alt="Image">
+      </div>
+      <div class=`col-md-6 col-lg-5 col-xl-4  ${flip ? "" : "order-md-1 offset-xl-1"}` data-aos={flip ? "fade-left" : "fade-right"} data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
+        <div class="pe-md-4 pe-lg-0">
+          <span class="badge fs-sm !bg-[#448C741A]  !rounded bg-opacity-10 text-[#00AA5E]  mb-8 px-[10px] py-[7px]">{year}</span>
+          <h3 class="h2 mb-3 mb-lg-4">Connect your site to the platform using a code</h3>
+          <p class="pb-1 pb-lg-0 mb-4 mb-lg-5">Nec id eget malesuada urna at sed est adipiscing auctor at massa id duis fames ut condimentum velit est, donec mauris tortor massa et viverra.</p>
+          {isbutton && <a class="btn btn-outline-primary rounded-pill" href="#">Get connected</a>}
+        </div>
+      </div>
+    </div>
+
+    <!-- Arrow -->
+     {arrow === "left" && <ArrowLeft/> }
+     {arrow === "right" && <ArrowRight/> }
+    
+     
