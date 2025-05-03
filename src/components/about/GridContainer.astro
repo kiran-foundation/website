@@ -15,9 +15,9 @@ const data = await getEntry("about", slug);
 const { title, year, description, button, image, image2 } = data.data;
 ---
      <!-- Step -->
-     <div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
+     <div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0 max-w-[1360]">
       <div class={`col-md-6 col-xl-5 flex flex-col  ${flip ? " " : "order-md-2  offset-lg-1"} pb-2 pb-md-0 mb-4 mb-md-0`} data-aos={flip ? "fade-right" : "fade-left"} data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
-        <img class="" src={image} width="525" alt="image">
+        <img class=" " src={image} width="525" alt="image">
         {image2 && <img class="" src={image2} width="525" alt="Image"> }
         <img class="d-none d-dark-mode-block" src={image} width="525" alt="Image">
       </div>
