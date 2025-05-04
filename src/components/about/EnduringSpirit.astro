@@ -1,54 +1,71 @@
 ---
 import { getEntry } from "astro:content";
 
-const { title, paragraph, author,testimonial } = (await getEntry("about", "enduring-spirit")).data;
+const { title, paragraph, author, testimonial } = (
+  await getEntry("about", "enduring-spirit")
+).data;
 ---
 
-<section  class=" max-w-[1116px] mx-auto mt-[120px] mb-[96px] "> 
-    <div class="flex flex-col mx-auto my-[120px] items-center gap-8 w-[636px] h-[1004px] p-0">
-        <!-- Title -->
-        <h1 class="heading-1 text-center  text-[#1E1E1E] w-full">
-          {title}
-        </h1>
-        
-        <!-- Poem content -->
-        <div class="font-poppins font-normal text-[18px] leading-[36px] text-center text-[#49494C] w-[455.23px] h-[900px]">
-          In the memory of Kiran Ma, a foundation grew,<br>
-          To uplift lives, her legacy, they pursue.<br><br>
-          
-          With humble beginnings, a son's education secure,<br>
-          Anurag's story, values profound, pure.<br><br>
-          
-          Eight years since its start, a journey so grand,<br>
-          Supporting dreams, across the land.<br><br>
-          
-          Scholarships provided, a beacon of hope,<br>
-          Mental support, helping each one cope.<br><br>
-          
-          Monthly meetings, guidance and care,<br>
-          Instilling belief, dreams to dare.<br><br>
-          
-          Anurag, simplicity personified,<br>
-          From his mother's grace, he derived.<br><br>
-          
-          Though Kiran Ma's gone, her spirit endures,<br>
-          Inspiring greatness, forever ensures.<br><br>
-          
-          Nine years since she left, yet her light shines bright,<br>
-          Kiran Foundation, spreading hope's - delight.<br><br>
-          
-          <strong>{author}</strong>
-        </div>
+<section class="max-w-[1116px] mx-auto mt-[120px] mb-[96px] px-4">
+  <div
+    class="flex flex-col mx-auto my-[120px] items-center gap-8 max-w-[636px] h-[1004px] p-0"
+  >
+    <!-- Title -->
+    <h1 class="heading-1 text-center text-[#1E1E1E] w-full">
+      {title}
+    </h1>
 
-      </div>
+    <!-- Poem content -->
+    <div
+      class="font-poppins font-normal text-[18px] leading-[36px] text-center text-[#49494C] max-w-[455.23px] h-[900px]"
+    >
+      In the memory of Kiran Ma, a foundation grew,<br />
+      To uplift lives, her legacy, they pursue.<br /><br />
 
+      With humble beginnings, a son's education secure,<br />
+      Anurag's story, values profound, pure.<br /><br />
 
-      <div class=" flex flex-col lg:flex-row gap-16 mx-auto my-[120px] items-center w-full ">
-        <div class=" max-w-[416px]"> <img  class=" rounded-3xl" src="/assets/images/about/yadava.png" width="416px" height="402px" alt=" yadava.png"></div>
-        <div class=" max-w-[636px]">
-            <p class="font-poppins font-normal text-[16px] leading-[36px] tracking-[1px]">
-              <strong>{author}</strong> {testimonial}
-            </p>
-        </div>
-      </div>
+      Eight years since its start, a journey so grand,<br />
+      Supporting dreams, across the land.<br /><br />
+
+      Scholarships provided, a beacon of hope,<br />
+      Mental support, helping each one cope.<br /><br />
+
+      Monthly meetings, guidance and care,<br />
+      Instilling belief, dreams to dare.<br /><br />
+
+      Anurag, simplicity personified,<br />
+      From his mother's grace, he derived.<br /><br />
+
+      Though Kiran Ma's gone, her spirit endures,<br />
+      Inspiring greatness, forever ensures.<br /><br />
+
+      Nine years since she left, yet her light shines bright,<br />
+      Kiran Foundation, spreading hope's - delight.<br /><br />
+
+      <strong>{author}</strong>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col lg:flex-row gap-16 mx-auto my-[120px] items-center w-full"
+  >
+    <div class="max-w-[416px]">
+      <img
+        class="rounded-3xl"
+        src="/assets/images/about/yadava.png"
+        width="416px"
+        height="402px"
+        alt=" yadava.png"
+      />
+    </div>
+    <div class="max-w-[636px]">
+      <p
+        class="font-poppins font-normal text-[16px] leading-[36px] tracking-[1px]"
+      >
+        <strong>{author}</strong>
+        {testimonial}
+      </p>
+    </div>
+  </div>
 </section>
