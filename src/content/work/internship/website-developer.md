@@ -8,7 +8,7 @@ timeCommitment: "15 hr/week"
 teamQuote: "Craft seamless digital experiences for users."
 event: "Build websites • Fix bugs • Deploy"
 teamSize: "3-5"
-roleType: "Unpaid Volunteer Position"
+roleType: "Volunteer Position"
 responsibilities: |
   Design, develop, and maintain responsive websites
   Collaborate with designers to implement UI/UX designs

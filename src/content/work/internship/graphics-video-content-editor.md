@@ -8,7 +8,7 @@ timeCommitment: "16 hr/week"
 teamQuote: "Shape stories with visuals that resonate."
 event: "Design graphics • Edit videos • Publish"
 teamSize: "3-5"
-roleType: "Unpaid Volunteer Position"
+roleType: "Volunteer Position"
 responsibilities: |
   Create visually compelling graphics for reports, social media, and campaigns
   Edit and produce short-form videos for digital platforms

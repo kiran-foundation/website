@@ -8,7 +8,7 @@ timeCommitment: "12 hr/week"
 teamQuote: "Spark conversations that grow digital communities."
 event: "Create posts • Manage campaigns • Analyze"
 teamSize: "3-5"
-roleType: "Unpaid Volunteer Position"
+roleType: "Volunteer Position"
 responsibilities: |
   Develop and schedule engaging content for various social media platforms
   Monitor social media trends and audience interactions

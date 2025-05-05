@@ -8,7 +8,7 @@ timeCommitment: "10 hr/week"
 teamQuote: "Build a community team to drive local change."
 event: "Organize events • Recruit volunteers • Lead meetings"
 teamSize: "3-5"
-roleType: "Unpaid Volunteer Position"
+roleType: "Volunteer Position"
 responsibilities: |
   Conduct thorough literature reviews and research related to disability studies and associated topics
   Collect, analyze, and synthesize data to contribute to research projects focused on disability-related issues
