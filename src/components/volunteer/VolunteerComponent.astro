@@ -4,11 +4,24 @@ import { remark } from "remark";
 import html from "remark-html";
 
 const roleFile = import.meta.glob<MarkdownFile>(
-  "/src/content/work/volunteering/*.md"
+  "/src/content/work/{volunteering/*.md,default-content.md}"
 );
 
 const role = await (async () => {
   const volunteerPath = `/src/content/work/volunteering/${Astro.props.path}.md`;
+  const volunteer = roleFile[volunteerPath];
+
+  if (volunteer) {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  } else {
+    return null;
+  }
+})();
+
+const defaultRole = await (async () => {
+  const volunteerPath = "/src/content/work/default-content.md";
   const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
@@ -28,7 +41,7 @@ if (!role) {
 }
 
 const roleKey = Astro.props.name;
-const roleValue = role[roleKey];
+const roleValue = role[roleKey] ?? defaultRole[roleKey];
 ---
 
 <h2>{Astro.props.title}:</h2>

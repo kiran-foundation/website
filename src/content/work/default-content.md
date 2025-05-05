@@ -1,12 +1,11 @@
 ---
-title: "Disability Research and Publication  Intern (Remote)"
 quote: "Build a thriving community that drives real changes."
-about: "As a Disability Research and Publication Intern, you will play a vital role in supporting our efforts to advance understanding and awareness of disability-related issues through rigorous research and well-crafted publications. This internship offers an excellent opportunity for individuals passionate about contributing to the field of disability studies and promoting inclusivity in society. You will gain hands-on experience in disability research and publication processes, contributing to meaningful projects that drive positive social change and impact."
 startDate: "Immediate"
 duration: "3 - 6 Months"
 timeCommitment: "10 hr/week"
 teamSize: "3-5"
 roleType: "Unpaid Volunteer Position"
+impact: "Lead a chapter that connects members, drives collaboration, and amplifies the Foundation's mission locally."
 responsibilities: |
   Conduct thorough literature reviews and research related to disability studies and associated topics
   Collect, analyze, and synthesize data to contribute to research projects focused on disability-related issues
@@ -23,11 +22,9 @@ requirements: |
   Familiarity with academic and publication formatting guidelines is a plus
   Ability to work collaboratively in a team environment
   Demonstrated commitment to promoting diversity, equity, and inclusion
-impact: "Lead a chapter that connects members, drives collaboration, and amplifies the Foundation's mission locally."
 benefits: |
   Leadership development and networking opportunities.
   Direct impact on your community’s growth.
   Recognition in Foundation publications.
   Reference letter upon successful completion.
-url: "disability-research-and-publication"
 ---

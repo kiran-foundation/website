@@ -7,12 +7,22 @@ import VolunteerComponent from "../../components/volunteer/VolunteerComponent.as
 const roleFile = import.meta.glob<MarkdownFile>(
   "/src/content/work/volunteering/*.md"
 );
-const staticTextsFile = import.meta.glob<MarkdownFile>(
-  "/src/content/work/static-text.md"
-);
 
 const role = await (async () => {
   const volunteerPath = `/src/content/work/volunteering/${Astro.props.path}.md`;
+  const volunteer = roleFile[volunteerPath];
+
+  if (volunteer) {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  } else {
+    return null;
+  }
+})();
+
+const defaultRole = await (async () => {
+  const volunteerPath = "/src/content/work/default-content.md";
   const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
@@ -29,71 +39,27 @@ if (!role) {
     "Role not found for path:",
     `/src/content/work/volunteering/${Astro.props.path}.md`
   );
-  // FIXME: Later
-  // throw new Error('Role not found');
-  // console.warn("Role not found")
 }
 
-const staticTexts = await (async () => {
-  const staticFilePath = Object.keys(staticTextsFile)[0];
-  const staticFile = staticTextsFile[staticFilePath];
-
-  if (staticFile) {
-    const { frontmatter } = await staticFile();
-    return frontmatter;
-  } else {
-    return null;
-  }
-})();
-
-if (!staticTexts) {
-  console.warn("Static texts not found");
-  // FIXME: Later
-  // throw new Error('Static texts not found');
-}
-
-/* FIXME:
-const {
-  title,
-  about,
-  startDate,
-  duration,
-  timeCommitment,
-  teamSize,
-  responsibilities,
-  requirements
-} = role;
-
-*/
+const fallback = (key, defaultValue) =>
+  role?.[key] ?? defaultRole?.[key] ?? defaultValue;
 
 const {
-  title = "Title not found",
-  quote = "Quote not found",
-  about = "About information not available",
-  startDate = "Start date not provided",
-  roleType = "Role type not specified",
-  duration = "Duration not specified",
-  timeCommitment = "Time commitment not mentioned",
-  teamSize = "Team size not defined",
-  responsibilities = "",
-  requirements = "",
-  impact = "",
-} = role || {};
-
-/* FIXME:
-const {
-  applyNow,
-  responsibilitiesHeading,
-  requirementsHeading
-} = staticTexts;
-
-*/
-
-const {
-  applyNow = "Apply Now",
-  responsibilitiesHeading = "Responsibilities",
-  requirementsHeading = "Requirements",
-} = staticTexts || {};
+  title = fallback("title", "Title not found"),
+  quote = fallback(
+    "quote",
+    "Build a thriving community that drives real changes."
+  ),
+  startDate = fallback("startDate", "Start date not provided"),
+  roleType = fallback("roleType", "Role type not specified"),
+  duration = fallback("duration", "Duration not specified"),
+  timeCommitment = fallback("timeCommitment", "Time commitment not mentioned"),
+  teamSize = fallback("teamSize", "Team size not defined"),
+  impact = fallback(
+    "impact",
+    "Lead a chapter that connects members, drives collaboration, and amplifies the Foundation's mission locally."
+  ),
+} = {};
 ---
 
 <div class="aboutVolunteering-frame1">
