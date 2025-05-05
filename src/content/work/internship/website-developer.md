@@ -1,26 +1,35 @@
 ---
-title: "Website Developer - Intern (Remote)"
-about: "As a Website Developer Intern, you will gain hands-on experience in web development by working on our live website. Under the guidance of experienced developers, you will learn about web technologies, coding practices, and best practices for creating effective online platforms. This internship is designed to provide you with valuable skills and insights into the world of web development."
-startDate: "Start Date: Immediate"
-join : "Immediate Start" 
-team : "Build a community team to drive local change."
-event : "Organize events • Recruit volunteers • Lead meetings" 
-duration: "Duration: 3 - 6 Months"
-timeCommitment: "Average : 10 hr/week"
-teamSize: "Team Size: 3-5"
+title: "Website Developer Intern (Remote)"
+quote: "Build platforms that empower communities online."
+about: "As a Website Developer Intern, you will play a vital role in designing, developing, and maintaining web platforms that support our mission. This internship provides a valuable opportunity for individuals passionate about web development, user experience, and technology to apply their skills to meaningful projects that drive social impact and enhance our digital presence."
+startDate: "Immediate"
+duration: "2 - 5 Months"
+timeCommitment: "15 hr/week"
+teamQuote: "Craft seamless digital experiences for users."
+event: "Build websites • Fix bugs • Deploy"
+teamSize: "3-5"
+roleType: "Unpaid Volunteer Position"
 responsibilities: |
-  - Work on our Mobile app
-  - Build new pages and modules using HTML, CSS, and Jekyll
-  - Build integrations with various APIs and payment gateways
-  - Integrate with Google Services
-  - Optimize website for performance and SEO
-
+  Design, develop, and maintain responsive websites
+  Collaborate with designers to implement UI/UX designs
+  Optimize website performance, accessibility, and SEO
+  Troubleshoot and debug website issues
+  Write clean, maintainable, and scalable code
+  Integrate APIs and third-party services as needed
+  Stay updated on web development trends and best practices
 requirements: |
-  - B. Tech 2nd/3rd Year (Computer Science preferred)
-  - Basic understanding of Javascript, HTML, CSS
-  - Strong analytical and problem-solving skills
-  - Self-driven, goal-oriented attitude, and willingness to learn
-  - Experience with Jekyll and Ruby is a plus, but not required
-
+  Currently pursuing or recently completed a degree in a relevant field (e.g., Computer Science, Web Development, Information Technology)
+  Proficiency in HTML, CSS, JavaScript, and at least one web framework (e.g., React, Vue, Angular)
+  Familiarity with backend technologies and databases is a plus
+  Understanding of responsive design and cross-browser compatibility
+  Ability to troubleshoot and solve technical problems
+  Strong attention to detail and code quality
+  Ability to work independently and collaboratively in a remote team
+impact: "Develop digital platforms that extend the Foundation’s reach and improve access to its programs."
+benefits: |
+  Real-world experience in full-stack web development.
+  Leadership development and collaboration opportunities.
+  Recognition in Foundation publications.
+  Reference letter upon successful completion.
 url: "website-developer"
 ---

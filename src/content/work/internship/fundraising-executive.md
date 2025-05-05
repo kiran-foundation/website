@@ -1,27 +1,36 @@
 ---
-title: "Fundraising Executive - Intern (Remote)"
-about: "As a Fundraising Executive Intern, you will have the opportunity to gain hands-on experience in the field of NGO fundraising while contributing to the financial sustainability of our organization. You will work closely with our fundraising team to learn about Corporate Social Responsibility (CSR), campaign development, and grant writing. This internship will provide valuable insights into the world of fundraising and help you develop your communication skills, persuasion skills, ability to research and analyze data, and writing skills."
-startDate: "Start Date: Immediate"
-join : "Immediate Start" 
-team : "Build a community team to drive local change."
-event : "Organize events • Recruit volunteers • Lead meetings" 
-duration: "Duration: 3 - 6 Months"
-timeCommitment: "Average : 10 hr/week"
-teamSize: "Team Size: 3-5"
+title: "Fundraising Executive (Remote)"
+quote: "Empower change through impactful fundraising."
+about: "As a Fundraising Executive, you will play a pivotal role in securing resources to support our mission and initiatives. This position offers an excellent opportunity for individuals passionate about social impact, philanthropy, and strategic fundraising. You will gain hands-on experience in donor outreach, campaign development, and partnership building, contributing to sustainable funding streams that drive meaningful change."
+startDate: "Immediate"
+duration: "2 - 4 Months"
+timeCommitment: "20 hr/week"
+teamQuote: "Collaborate to unlock new funding opportunities."
+event: "Plan events • Engage donors • Fundraise"
+teamSize: "3-5"
+roleType: "Unpaid Volunteer Position"
 responsibilities: |
-  - Research various channels for grant opportunities, including Corporate Social Responsibility (CSR) initiatives and government grants.
-  - Explore CSR opportunities with corporate partners and identify potential funding sources.
-  - Contribute to writing grant proposals, crafting persuasive narratives, and preparing application materials.
-  - Document the criteria for CSR and government grants to ensure successful applications.
-  - Optimize the foundation's website for performance and SEO to enhance online visibility.
-  - Assist in planning and organizing appreciation events, thank-you letters, and recognition initiatives to acknowledge donors.
-  - Participate in networking events, community outreach, and partnership-building activities to expand the foundation's reach.
-  - Attend training sessions and workshops to learn about fundraising best practices and ethical considerations.
+  Develop and implement fundraising strategies to meet organizational goals
+  Research and identify potential donors, sponsors, and funding opportunities
+  Draft compelling proposals, grant applications, and donor communications
+  Coordinate and support fundraising campaigns and virtual events
+  Maintain accurate donor records and track fundraising progress
+  Collaborate with marketing to create promotional materials for fundraising initiatives
+  Foster relationships with donors and stakeholders to encourage long-term support
 requirements: |
-  - - MBA candidates are preferred, but BBA, BA LLB, and B Com graduates from reputed institutes are also welcome.
-  - Excellent written and verbal communication skills in English.
-  - Basic proficiency in Microsoft Word and Google Docs.
-  - Strong analytical and problem-solving skills.
-  - Self-driven and goal-oriented attitude, with a willingness to learn and grow.
+  Currently pursuing or recently completed a degree in a relevant field (e.g., Business, Marketing, Communications, Nonprofit Management)
+  Strong interest in fundraising, philanthropy, and nonprofit development
+  Excellent written and verbal communication skills
+  Ability to craft persuasive messaging and proposals
+  Strong organizational and project management skills
+  Familiarity with fundraising tools, CRM systems, or donor databases is a plus
+  Ability to work collaboratively and independently
+  Commitment to promoting the organization’s mission and values
+impact: "Drive fundraising efforts that empower the Foundation to expand its reach and deepen its community impact."
+benefits: |
+  Leadership development and networking opportunities.
+  Hands-on experience in nonprofit fundraising and donor relations.
+  Recognition in Foundation publications.
+  Reference letter upon successful completion.
 url: "fundraising-executive"
 ---

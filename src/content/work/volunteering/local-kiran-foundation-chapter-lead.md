@@ -1,24 +1,34 @@
 ---
-title: "Local Kiran Foundation Chapter Lead"
-about: "We are seeking dedicated and motivated Local Chapter Leads to start, oversee and coordinate activities for our chapters. As a Local Chapter Lead, you will be responsible for fostering a sense of community, building a team, organizing events, and facilitating engagement among members. If you are a proactive and enthusiastic individual with excellent organizational and leadership skills, we invite you to join our team."
-startDate: "Start Date: Immediate"
-join: "Immediate Start"
-team: "Build a community team to drive local change."
-event: "Organize events • Recruit volunteers • Lead meetings"
-duration: "Duration: 12 Months"
-timeCommitment: "Average : 10 hr/week"
-teamSize: "Team Size: 3-5"
+title: "Local Kiran Foundation Chapter Lead (Remote)"
+quote: "Drive local impact through community leadership."
+about: "As the Local Kiran Foundation Chapter Lead, you will play a key role in building and leading a chapter that drives local initiatives and brings the Foundation's mission to life within your community. This is a dynamic position where you will organize events, recruit volunteers, and lead efforts that foster change and improve the lives of those around you."
+startDate: "Immediate"
+duration: "4 - 6 Months"
+timeCommitment: "18 hr/week"
+teamQuote: "Inspire local change through strong leadership."
+event: "Lead initiatives • Organize events • Recruit"
+teamSize: "3-7"
+roleType: "Unpaid Intern Position"
 responsibilities: |
-  - Serve as the primary point of contact and leader for your City/Region
-  - Develop and execute a strategic plan for the chapter's growth, engagement, and impact
-  - Foster a sense of community and collaboration among chapter members by organizing regular meetings, events, and networking opportunities
-  - Recruit and onboard new members, ensuring they are informed about the Foundation's goals and activities
-  - Attend monthly meetings with Kiran Foundation leadership team to understand direction and vision and align your local chapter to Foundation's goals and objectives
-  - Act as a representative of the chapter at local and regional events, conferences, and meetings
+  Lead and coordinate local chapter activities and initiatives
+  Recruit and manage a team of volunteers and community members
+  Organize and facilitate local events, workshops, and outreach programs
+  Develop and implement strategies to increase community engagement and impact
+  Collaborate with the Foundation’s central team to align local efforts with national goals
+  Provide regular updates and reports on chapter activities and outcomes
+  Foster a positive and inclusive community atmosphere for volunteers and participants
 requirements: |
-  - Excellent communication and interpersonal skills
-  - Strong problem-solving skills and attention to detail
-  - Ability to motivate and lead other volunteers
-  - Experience in event planning, coordination, and execution
+  Strong interest in community leadership, social impact, and nonprofit work
+  Excellent communication and interpersonal skills
+  Previous experience in event planning, volunteer management, or community organizing is a plus
+  Ability to work independently and collaboratively with a remote team
+  Strong organizational skills and attention to detail
+  Passion for driving change and making a positive impact in your local community
+impact: "Lead a chapter that connects and empowers local members, creating tangible social change and amplifying the Foundation’s mission."
+benefits: |
+  Leadership development and hands-on experience in nonprofit management.
+  Networking opportunities with like-minded community leaders.
+  Recognition in Foundation publications and across digital platforms.
+  Reference letter upon successful completion.
 url: "local-kiran-foundation-chapter-lead"
 ---

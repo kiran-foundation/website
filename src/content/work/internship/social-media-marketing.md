@@ -1,28 +1,35 @@
 ---
-title: "Social Media Marketing - Intern (Remote)"
-about: "As a Social Media Marketing Intern, you'll have the opportunity to gain hands-on experience in developing and implementing social media strategies that drive engagement, boost awareness, and foster community growth. You'll work alongside our team to explore social media platforms, content creation, analytics, and online marketing techniques. Through this internship, you'll develop valuable skills and expertise in the fast-paced and dynamic field of social media marketing."
-startDate: "Start Date: Immediate"
-join : "Immediate Start" 
-team : "Build a community team to drive local change."
-event : "Organize events • Recruit volunteers • Lead meetings" 
-duration: "Duration: 3 - 6 Months"
-timeCommitment: "Average : 10 hr/week"
-teamSize: "Team Size: 3-5"
+title: "Social Media Marketing Intern (Remote)"
+quote: "Amplify our mission through digital engagement."
+about: "As a Social Media Marketing Intern, you will play a crucial role in expanding our online presence and driving engagement with diverse audiences. This internship offers an exciting opportunity for individuals passionate about social media, digital marketing, and content creation to contribute to meaningful campaigns that inspire action and promote our initiatives."
+startDate: "Immediate"
+duration: "1 - 2 Months"
+timeCommitment: "12 hr/week"
+teamQuote: "Spark conversations that grow digital communities."
+event: "Create posts • Manage campaigns • Analyze"
+teamSize: "3-5"
+roleType: "Unpaid Volunteer Position"
 responsibilities: |
-  - Create engaging and visually appealing social media content
-  - Collaborate with the design team to develop brand-aligned assets
-  - Manage and maintain our organization's social media profiles across platforms such as Facebook, Instagram, Twitter, LinkedIn, and others
-  - Monitor and engage with the audience by responding to comments, messages, and mentions across social media channels
-  - Participate in planning and executing social media campaigns, contests, and promotions to boost engagement and visibility
-  - Attend workshops and training sessions to enhance your understanding of social media marketing techniques and tools
+  Develop and schedule engaging content for various social media platforms
+  Monitor social media trends and audience interactions
+  Assist in planning and executing digital campaigns
+  Track and analyze key metrics to evaluate campaign effectiveness
+  Collaborate with designers and content creators to align messaging and visuals
+  Engage with followers, respond to inquiries, and foster online community
+  Research and recommend strategies to improve reach and engagement
 requirements: |
-  - Currently pursuing a degree in Marketing, Communications, Business, or a related field
-  - Passion for social media and digital marketing
-  - Creative mindset with the ability to develop engaging content
-  - Strong written communication skills, including crafting compelling captions and messages
-  - Familiarity with social media platforms and their features
-  - Detail-oriented with good organizational skills
-  - Enthusiasm for learning and keeping up with social media trends
-  - Basic understanding of social media analytics is a plus, but not required
+  Currently pursuing or recently completed a degree in a relevant field (e.g., Marketing, Communications, Digital Media, Public Relations)
+  Strong interest in social media marketing and digital communications
+  Familiarity with major social media platforms and content trends
+  Excellent written communication and creativity
+  Ability to manage multiple projects and meet deadlines
+  Basic knowledge of social media analytics tools is a plus
+  Collaborative mindset and attention to detail
+impact: "Grow our online community and amplify the Foundation’s voice through impactful digital storytelling."
+benefits: |
+  Practical experience managing social media campaigns.
+  Leadership development and networking opportunities.
+  Recognition in Foundation publications.
+  Reference letter upon successful completion.
 url: "social-media-marketing"
 ---

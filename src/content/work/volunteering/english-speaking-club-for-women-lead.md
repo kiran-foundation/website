@@ -1,27 +1,35 @@
 ---
-title: "English Speaking Club for Women Lead (Remote)"
-about: "As a dedicated and passionate English Speaking Club Lead, you will possess a strong command of the English language, a love for teaching, and the ability to inspire participants. If you are an experienced educator who believes in fostering a positive and engaging learning environment, we invite you to apply. You will lead a small group of 4-5 women, guiding them to become confident in holding conversations in English."
-startDate: "Start Date: Immediate"
-join: "Immediate Start"
-team: "Build a community team to drive local change."
-event: "Organize events • Recruit volunteers • Lead meetings"
-duration: "Duration: 12 Months"
-timeCommitment: "Average : 2 hr/week"
-teamSize: "Team Size: 3-5"
-additionalRequirements: "Candidate must be a girl/woman."
-numberOfVacancies: "Number of Vacancies: 10"
+title: "English-Speaking Club for Women Lead (Remote)"
+quote: "Empower women through language and community."
+about: "As the Lead of the English-Speaking Club for Women, you will facilitate a supportive environment where women can practice and improve their English-speaking skills. This role offers an opportunity to lead discussions, organize language-learning activities, and foster a community where women feel empowered to communicate effectively and confidently in English."
+startDate: "Immediate"
+duration: "2 - 4 Months"
+timeCommitment: "15 hr/week"
+teamQuote: "Lead a supportive community of learners."
+event: "Organize meetings • Facilitate discussions • Support"
+teamSize: "3-5"
+roleType: "Unpaid Intern Position"
 responsibilities: |
-  - Organize and lead weekly remote English speaking sessions with participants
-  - Assess and evaluate student progress through various methods (assignments, quizzes, tests, and projects), providing constructive feedback
-  - Maintain accurate records of attendance, lesson plans and student progress
-  - Adhere to the Kiran Foundation's structure and guidelines
-  - Encourage and support participants in overcoming barriers to learning
+  Plan and organize weekly or bi-weekly English practice sessions
+  Facilitate group discussions, ensuring all participants are engaged
+  Provide guidance and resources to help participants improve speaking skills
+  Encourage a safe and welcoming environment for women to practice confidently
+  Collaborate with other team members to develop new activities and learning methods
+  Track progress and provide constructive feedback to participants
+  Create and share educational materials to support language development
 requirements: |
-  - Exceptional command of the English language, including grammar and syntax
-  - Excellent communication and interpersonal skills
-  - Passion for creating a positive learning environment and inspiring participants
-  - Ability to adapt instruction to meet the diverse students' needs
-  - Patience, adaptability, and a growth mindset
-  - Proficiency in using technology for teaching and learning purposes
+  Strong proficiency in spoken and written English
+  Previous experience in teaching, tutoring, or group facilitation is a plus
+  Excellent communication and interpersonal skills
+  Ability to foster a supportive and inclusive learning environment
+  Passion for empowering women through language and communication
+  Ability to organize and lead virtual meetings
+  Creative thinking and ability to adapt activities to participants' needs
+impact: "Foster a community where women gain confidence in their English skills, opening up new opportunities for personal and professional growth."
+benefits: |
+  Leadership experience in a community-driven initiative.
+  Opportunity to develop skills in facilitation and public speaking.
+  Recognition in Foundation publications.
+  Reference letter upon successful completion.
 url: "english-speaking-club-for-women-lead"
 ---

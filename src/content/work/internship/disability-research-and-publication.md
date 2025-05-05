@@ -5,6 +5,8 @@ about: "As a Disability Research and Publication Intern, you will play a vital r
 startDate: "Immediate"
 duration: "3 - 6 Months"
 timeCommitment: "10 hr/week"
+teamQuote: "Build a community team to drive local change."
+event: "Organize events • Recruit volunteers • Lead meetings"
 teamSize: "3-5"
 roleType: "Unpaid Volunteer Position"
 responsibilities: |

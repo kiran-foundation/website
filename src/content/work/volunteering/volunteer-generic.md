@@ -1,27 +1,32 @@
 ---
-title: "Volunteer - Generic (Remote)"
-about: "We are seeking enthusiastic and dedicated volunteers to join our family to contribute towards our mission of providing equal opportunities and creating a merit-driven society. As a volunteer, you will play a vital role in supporting our programs, initiatives, and events that benefit disadvantaged students, women, and create a positive change in our society."
-startDate: "Start Date: Immediate"
-join: "Immediate Start"
-team: "Build a community team to drive local change."
-event: "Organize events • Recruit volunteers • Lead meetings"
-duration: "Duration: 12 Months"
-timeCommitment: "Average : 5 hr/week"
-teamSize: "Team Size: 3-5"
+title: "Volunteer (Remote)"
+quote: "Contribute to meaningful projects and make a difference."
+about: "As a Volunteer, you will assist in a variety of tasks to support the Foundation’s ongoing projects and initiatives. This is a versatile role that provides an opportunity to gain hands-on experience and contribute to impactful social change. You will work closely with team members to help organize events, develop content, and support various initiatives that align with the Foundation’s mission."
+startDate: "Immediate"
+duration: "2 - 4 Months"
+timeCommitment: "14 hr/week"
+teamQuote: "Support meaningful change through teamwork and dedication."
+event: "Assist with tasks • Organize events • Provide support"
+teamSize: "Varied"
+roleType: "Unpaid Intern Position"
 responsibilities: |
-  - Build strong and positive relationships with assigned mentees to establish trust and open communication
-  - Provide guidance and mentorship to students in alignment with their academic, career, and personal aspirations
-  - Assist students in setting realistic goals and developing action plans to achieve them
-  - Offer insights, advice, and strategies based on your own experiences and expertise
-  - Help students navigate challenges, setbacks, and decisions related to their academic journey
-  - Align students with Kiran Foundation's Vision and Mission and foster a sense of responsibility towards the future
-  - Participate in training sessions or workshops to enhance mentoring skills and effectiveness
+  Provide support across various projects and initiatives
+  Assist in organizing events, workshops, and outreach programs
+  Help create and distribute content, including social media posts and educational materials
+  Contribute ideas to improve existing programs and increase community engagement
+  Collaborate with other volunteers and team members to ensure smooth project execution
+  Provide administrative support as needed
 requirements: |
-  - Demonstrated expertise in your field or profession and ability to inspire
-  - Strong interpersonal and communication skills, with the ability to listen and empathize
-  - A passion for mentoring and a desire to contribute to the growth of young talent
-  - Patience, adaptability, and the ability to guide students without imposing personal preferences
-  - Familiarity with the challenges and opportunities faced by talented students
-
+  Strong interest in social impact, community service, or nonprofit work
+  Excellent communication and organizational skills
+  Ability to work independently and as part of a team
+  Proactive attitude and eagerness to contribute to a variety of tasks
+  Passion for helping others and making a difference in the community
+impact: "Support the Foundation’s mission and directly contribute to impactful projects that improve the community."
+benefits: |
+  Gain hands-on experience in nonprofit work and community development.
+  Networking opportunities with professionals and other volunteers.
+  Recognition in Foundation publications.
+  Reference letter upon successful completion.
 url: "volunteer-generic"
 ---
