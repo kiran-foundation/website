@@ -1,5 +1,5 @@
 ---
-year: "2023"
+year: "2025"
 title: "What Next?"
 description: ["While we celebrate our achievements, we must not forget that we are not able to support many equally talented students. Many dreams get crushed due to harsh realities of life.",
             "India has about 125 million youth who are in their formative years of life (14-20 years of age) across 787 districts; to put it in perspective, this is about double the population of the entire United Kingdom. We are setting a modest goal of supporting about 10 students from every district; a total of 7,870, which is about 0.06 percent of eligible youth.",
