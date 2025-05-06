@@ -1,5 +1,4 @@
 ---
 heading: "About Us"
-paragraph: '"There is no force more powerful than a woman determined to rise
-           There is no force more powerful than a woman determined to rise."'
+qoute: '‘’If a hardworking and talented youth, can not fulfil their dreams due to lack of resources, it is failure of the whole society. We must keep their hopes and dreams alive!’’'
 ---
