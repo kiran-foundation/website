@@ -28,11 +28,11 @@ import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
   <main class="page-wrapper">
     <Breadcrumb url={Astro.url} />
 
-    <Hero collection="volunteering" slug="hero-volunteer" />
+    <Hero collection="work" slug="volunteering-items/hero-volunteer" />
 
     <WhyVolunteer
-      collection="volunteering"
-      slug="why-volunteer"
+      collection="work"
+      slug="volunteering-items/why-volunteer"
       textAlignment="order-2"
       imageAlignment="order-1"
     />
@@ -40,8 +40,8 @@ import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
     <ChooseVolunteering fetch="volunteer" />
 
     <WhyIntern
-      collection="volunteering"
-      slug="why-intern"
+      collection="work"
+      slug="volunteering-items/why-intern"
       textAlignment="order-1"
       imageAlignment="order-2"
     />
@@ -69,7 +69,11 @@ import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
       />
     </div>
 
-    <Faq collection="volunteering" slug="faq" mt="px-[24px] lg:px-0" />
+    <Faq
+      collection="work"
+      slug="volunteering-items/faq"
+      mt="px-[24px] lg:px-0"
+    />
   </main>
 
   <a

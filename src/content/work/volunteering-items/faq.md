@@ -3,7 +3,6 @@ title: "Any questions?"
 title2: "Check out the FAQ"
 paragraph: "Certainly! The FAQ section provides answers to common questions. It covers a variety of topics and aims to address user queries efficiently."
 
-
 questions:
   - question: "Q. Is Kiran Pratibha Scholarship awarded only to economically challenged students?"
     answer: "Yes, the scholarship is awarded based on financial need and academic performance."
