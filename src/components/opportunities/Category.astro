@@ -10,7 +10,6 @@ const jobs = await getCollection("work", ({ id }) => {
     return id.startsWith(filter.prop)
   }
 });
-// console.log("props are ",filter.prop)
 ---
 {jobs.length > 0 && (
   <section class="!container !max-w-[1296px] !mx-auto ">
