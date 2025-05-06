@@ -8,7 +8,7 @@ timeCommitment: "15 hr/week"
 teamQuote: "Lead a supportive community of learners."
 event: "Organize meetings • Facilitate discussions • Support"
 teamSize: "3-5"
-roleType: "Intern Position"
+roleType: "Volunteer Position"
 responsibilities: |
   Plan and organize weekly or bi-weekly English practice sessions
   Facilitate group discussions, ensuring all participants are engaged

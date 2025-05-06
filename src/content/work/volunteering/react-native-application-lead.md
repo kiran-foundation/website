@@ -8,7 +8,7 @@ timeCommitment: "12 hr/week"
 teamQuote: "Shape innovative apps through technical leadership."
 event: "Develop features • Lead development • Test"
 teamSize: "4-6"
-roleType: "Intern Position"
+roleType: "Volunteer Position"
 responsibilities: |
   Lead the development of React Native mobile applications
   Collaborate with designers and backend developers to integrate UI/UX and APIs

@@ -8,7 +8,7 @@ timeCommitment: "14 hr/week"
 teamQuote: "Support meaningful change through teamwork and dedication."
 event: "Assist with tasks • Organize events • Provide support"
 teamSize: "Varied"
-roleType: "Intern Position"
+roleType: "Volunteer Position"
 responsibilities: |
   Provide support across various projects and initiatives
   Assist in organizing events, workshops, and outreach programs

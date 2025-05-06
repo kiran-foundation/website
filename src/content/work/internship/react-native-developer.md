@@ -8,7 +8,7 @@ timeCommitment: "14 hr/week"
 teamQuote: "Code solutions that connect communities digitally."
 event: "Develop apps • Test features • Deploy"
 teamSize: "3-5"
-roleType: "Volunteer Position"
+roleType: "Intern Position"
 responsibilities: |
   Design and develop mobile applications using React Native
   Collaborate with designers and backend developers to integrate APIs and UI components

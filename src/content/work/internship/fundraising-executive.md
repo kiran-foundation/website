@@ -8,7 +8,7 @@ timeCommitment: "20 hr/week"
 teamQuote: "Collaborate to unlock new funding opportunities."
 event: "Plan events • Engage donors • Fundraise"
 teamSize: "3-5"
-roleType: "Volunteer Position"
+roleType: "Intern Position"
 responsibilities: |
   Develop and implement fundraising strategies to meet organizational goals
   Research and identify potential donors, sponsors, and funding opportunities

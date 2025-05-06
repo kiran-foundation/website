@@ -8,7 +8,7 @@ timeCommitment: "18 hr/week"
 teamQuote: "Inspire local change through strong leadership."
 event: "Lead initiatives • Organize events • Recruit"
 teamSize: "3-7"
-roleType: "Intern Position"
+roleType: "Volunteer Position"
 responsibilities: |
   Lead and coordinate local chapter activities and initiatives
   Recruit and manage a team of volunteers and community members
