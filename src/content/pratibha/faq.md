@@ -6,7 +6,7 @@ paragraph: "Certainly! The FAQ section provides answers to common questions. It 
 
 questions:
   - question: "Q. Is Kiran Pratibha Scholarship awarded only to economically challenged students?"
-    answer: "Yes, the scholarship is awarded based on financial need and academic performance."
+    answer: "Yes, the schinolarship is awarded based on financial need and academic performance."
 
   - question: "Q. Can more than one student from the same family apply for KPS?"
     answer: "Yes, more than one student from the same family can also apply for the scholarship."

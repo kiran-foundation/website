@@ -21,35 +21,35 @@ const { title, year, description, button, image, image2 } = data.data;
 
 <!-- Step -->
 <div
-  class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0 max-w-[1360]"
+  class="row align-items-center position-relative  pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0 max-w-[1260px] mx-auto"
 >
   <div
-    class={`col-md-6 col-xl-5 flex flex-col  ${flip ? " " : "order-md-2  offset-lg-1"} pb-2 pb-md-0 mb-4 mb-md-0`}
+    class={`col-md-6 col-xl-5 flex flex-col  ${flip ? " " : " order-2  offset-lg-1"} pb-2 pb-md-0 mb-4 mb-md-0`}
     data-aos={flip ? "fade-right" : "fade-left"}
     data-aos-duration="500"
     data-aos-offset="250"
     data-disable-parallax-down="md"
   >
-    <img class="" src={image} width="525" alt="image" />
-    {image2 && <img class="" src={image2} width="525" alt="Image" />}
-    <img class="d-none d-dark-mode-block" src={image} width="525" alt="Image" />
+    <img class="" src={image} width="525px" alt="image" />
+    {image2 && <img class="" src={image2} width="525px" alt="Image" />}
+    <img class="d-none d-dark-mode-block" src={image} width="525px" alt="Image" />
   </div>
   <div
-    class={`col-md-6 col-lg-5 col-xl-4  ${flip ? "" : "order-md-1 offset-xl-1"}`}
+    class={`col-md-6 col-lg-5 col-xl-4 text-start  ${flip ? " offset-xl-1 " : " order-1 offset-xl-1"}`}
     data-aos={flip ? "fade-left" : "fade-right"}
     data-aos-duration="500"
     data-aos-offset="250"
     data-disable-parallax-down="md"
   >
-    <div class="pe-md-4 pe-lg-0">
+    <div class="pe-md-4 pe-lg-0 !mb-4">
       <span
-        class="badge fs-sm !bg-[#448C741A] !rounded bg-opacity-10 text-[#00AA5E] mb-8 px-[10px] py-[7px]"
+        class="badge fs-sm !bg-[#448C741A]  md:!rounded-[4px] !rounded-[8px] bg-opacity-10 text-[#00AA5E] mb-8 px-[10px] "
         >{year}</span
       >
       <h3 class="h2 mb-3 mb-lg-4 !heading-1">{title}</h3>
       {
         description.map((para) => (
-          <p class="pb-1 pb-lg-0 mb-4 mb-lg-5 body-text-1">{para}</p>
+          <p class=" text-pretty md:text-justify text-start max-w-[416px]  pb-1 pb-lg-0 mb-4 mb-lg-5 body-text-1">{para}</p>
         ))
       }
       <!-- <button class="btn btn-primary" >sdise</button> -->
@@ -60,7 +60,7 @@ const { title, year, description, button, image, image2 } = data.data;
             link={button?.path}
             btn={button?.type}
             title={button?.text}
-            widthClass=" !px-4 "
+            widthClass=" !px-4 !md:w-[235px] w-full mb-5"
             heightClass="!h-[60px]"
           />
         ) : (

@@ -6,9 +6,9 @@ const { title, paragraph, author, testimonial } = (
 ).data;
 ---
 
-<section class="max-w-[1116px] mx-auto mt-[120px] mb-[96px] px-4">
+<section class="max-w-[1116px] mx-auto mt-[80px] mb-[64px] md:mb-[96px] ">
   <div
-    class="flex flex-col mx-auto my-[120px] items-center gap-8 max-w-[636px] h-[1004px] p-0"
+    class="flex flex-col mx-auto  mt-20 mb-6 md:my-[120px] items-center gap-8 max-w-[636px]  p-0"
   >
     <!-- Title -->
     <h1 class="heading-1 text-center text-[#1E1E1E] w-full">
@@ -17,7 +17,7 @@ const { title, paragraph, author, testimonial } = (
 
     <!-- Poem content -->
     <div
-      class="font-poppins font-normal text-[18px] leading-[36px] text-center text-[#49494C] max-w-[455.23px] h-[900px]"
+      class="font-poppins font-normal px-3 text-[16px] leading-[36px] text-center text-[#49494C] max-w-[455.23px] "
     >
       In the memory of Kiran Ma, a foundation grew,<br />
       To uplift lives, her legacy, they pursue.<br /><br />
@@ -48,20 +48,18 @@ const { title, paragraph, author, testimonial } = (
   </div>
 
   <div
-    class="flex flex-col lg:flex-row gap-16 mx-auto my-[120px] items-center w-full"
+    class=" md:max-w-[1116px] px-4 mx-auto flex flex-col lg:flex-row md:gap-16 gap-6  my-20 md:my-[120px] items-center w-full"
   >
-    <div class="max-w-[416px]">
-      <img
-        class="rounded-3xl"
+    <div class=" mx-auto ">
+      <img 
+        class="rounded-3xl  max-w-full  "
         src="/assets/images/about/yadava.png"
-        width="416px"
-        height="402px"
         alt=" yadava.png"
       />
     </div>
-    <div class="max-w-[636px]">
+    <div class="max-w-[636px] mx-auto">
       <p
-        class="font-poppins font-normal text-[16px] leading-[36px] tracking-[1px]"
+        class=" font-poppins font-normal text-[16px] leading-[36px] tracking-[1px]"
       >
         <strong>{author}</strong>
         {testimonial}

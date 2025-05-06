@@ -1,5 +1,5 @@
 ---
-year: ""
+year: "2020"
 title: "Contributing Back"
 description: ["One of 2024’s defining moments was welcoming twelve exceptionally talented students into the Kiran Pratibha Program. These young individuals, from 11 districts across 8 states, have extended Kiran Foundation's reach nationwide.",]
 

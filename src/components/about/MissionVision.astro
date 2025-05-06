@@ -5,13 +5,13 @@ const { title, image, author,quote } = (await getEntry("about", "our-mission-vis
 
 <section class=" max-w-[1920px] mx-auto bg-[#F1F1F1] px-4">
 
-    <div class=" max-w-[1296px] py-[120px] mx-auto">
-        <h1 class=" text-center heading-3 md:heading-1">{title}</h1>
-        <div class=" w-max-[1296px] mt-[3.75rem] mx-auto flex flex-col-reverse lg:flex-row  items-center gap-[60px]  ">
+    <div class=" max-w-[1296px] py-6 md:py-[120px] mx-auto">
+        <h1 class="text-center  heading-1">{title}</h1>
+        <div class=" w-max-[1296px] mt-[3.75rem] mx-auto flex flex-col-reverse lg:flex-row  items-center md:gap-[60px] gap-8  ">
             <img src={image} class=" rounded-3xl" width="390" height="502" alt="">
             <div class=" ">
-                <p class=" max-w-[841px]  font-poppins font-light text-[20px] md:text-[36px] leading-[38px] md:leading-[68px] tracking-[1px]"> <span class=" lg:font-light lg:text-[96px] lg:leading-[68px] lg:tracking-[1px]">‘’</span>{quote}<span class="lg:font-light lg:text-[64px] lg:leading-[68px] lg:tracking-[1px]">’’</span></p>
-                <h4 class="  font-poppins font-semibold md:font-bold text-[1.125rem] md:text-[20px] leading-[38px] tracking-[1px] text-right">{author}</h4>
+                <p class=" max-w-[841px]  !text-[#49494C] font-poppins font-normal text-[20px] md:text-[36px] leading-[38px] md:leading-[68px] tracking-[1px]"> <span class=" lg:font-light lg:text-[96px] lg:leading-[68px] lg:tracking-[1px]">‘’</span>{quote}<span class="lg:font-light lg:text-[64px] lg:leading-[68px] lg:tracking-[1px]">’’</span></p>
+                <h4 class=" text-[#1E1E1E] body-text-2 tracking-[1px] text-right">{author}</h4>
             </div>
         </div>
     </div>
