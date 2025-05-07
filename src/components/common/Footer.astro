@@ -11,7 +11,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
     <div class="container max-w-[1296px]">
       <div class="row text-center">
         <!-- Logo & Description text-md-start -->
-        <div class="col-sm-6 col-md-3 text-white">
+        <div class="col-sm-6 col-md-3 text-white font-light">
           <div class="logo-container">
             <a class="footer navbar-brand px-1" href="/">
               <img
@@ -22,11 +22,13 @@ const footerDetails = (await getEntry("footer", "details")).data;
               />
             </a>
           </div>
-          <p class="text-xs text-left font-poppins px-2 py-1 text-white">
+          <p
+            class="text-xs text-left font-poppins px-2 py-1 text-white font-light"
+          >
             {footerDetails.description}
           </p>
           <p
-            class="text-xs text-left font-poppins font-thin px-2 py-1 italic text-white"
+            class="text-xs text-left font-poppins px-2 py-1 italic text-white font-light"
           >
             " {footerDetails.by} "
           </p>
@@ -66,7 +68,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               <li class="mb-4">
                 <a
                   href="/about"
-                  class="text-white font-poppins font-semibold text-lg hover:border-b-[1px]"
+                  class="text-white font-light font-poppins font-semibold text-lg hover:border-b-[1px]"
                   style="color:black;"
                 >
                   {footerDetails.aboutTitle.about}
@@ -74,19 +76,19 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="text-white font-poppins font-thin hover:border-b-[1px]"
+                  class="text-white font-light font-poppins hover:border-b-[1px]"
                   href="/compliance">{footerDetails.aboutTitle.compliance}</a
                 >
               </li>
               <li>
                 <a
-                  class="text-white font-poppins font-thin hover:border-b-[1px]"
+                  class="text-white font-light font-poppins hover:border-b-[1px]"
                   href="/newsletter">{footerDetails.aboutTitle.newsletter}</a
                 >
               </li>
               <li>
                 <a
-                  class="text-white font-poppins font-thin hover:border-b-[1px]"
+                  class="text-white font-light font-poppins hover:border-b-[1px]"
                   href="/privacy-policy">{footerDetails.aboutTitle.policy}</a
                 >
               </li>
@@ -102,7 +104,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
             <ul class="flex flex-col items-start">
               <li class="mb-4">
                 <a
-                  class="text-white font-poppins font-semibold text-lg hover:border-b-[1px]"
+                  class="text-white font-light font-poppins font-semibold text-lg hover:border-b-[1px]"
                   href="/contact"
                   style="color:black;"
                 >
@@ -111,7 +113,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="text-white font-poppins font-thin hover:border-b-[1px]"
+                  class="text-white font-light font-poppins hover:border-b-[1px]"
                   href="mailto:info@kiran.foundation"
                 >
                   {footerDetails.contactTitle.info}</a
@@ -119,7 +121,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="text-white font-poppins font-thin hover:border-b-[1px]"
+                  class="text-white font-light font-poppins hover:border-b-[1px]"
                   href="tel:919303997100"
                 >
                   {footerDetails.contactTitle.phone}</a
@@ -127,7 +129,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="text-white font-poppins font-thin hover:border-b-[1px]"
+                  class="text-white font-light font-poppins hover:border-b-[1px]"
                   href="https://wa.me/919880141412"
                 >
                   {footerDetails.contactTitle.whatsApp}</a
@@ -145,14 +147,14 @@ const footerDetails = (await getEntry("footer", "details")).data;
             <ul class="flex flex-col items-start">
               <li class="mb-4">
                 <h4
-                  class="text-white font-poppins font-semibold text-lg hover:border-b-[1px] m-0 p-0 hover:!text-orange-600 h-7"
+                  class="text-white font-light font-poppins font-semibold text-lg hover:border-b-[1px] m-0 p-0 hover:!text-orange-600 h-7"
                 >
                   {footerDetails.listTitle.heading}
                 </h4>
               </li>
               <li>
                 <a
-                  class="text-white font-poppins font-thin hover:border-b-[1px]"
+                  class="text-white font-light font-poppins hover:border-b-[1px]"
                   href="/work-with-us/opportunities/volunteering"
                 >
                   {footerDetails.listTitle.volunteerWithUs}</a
@@ -160,7 +162,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="text-white font-poppins font-thin hover:border-b-[1px]"
+                  class="text-white font-light font-poppins hover:border-b-[1px]"
                   href="/work-with-us/opportunities/internship"
                 >
                   {footerDetails.listTitle.internshipOpportunities}</a
@@ -168,7 +170,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
               </li>
               <li>
                 <a
-                  class="text-white font-poppins font-thin hover:border-b-[1px]"
+                  class="text-white font-light font-poppins hover:border-b-[1px]"
                   href="/become-mentor"
                 >
                   {footerDetails.listTitle.becomeMentor}</a
@@ -180,7 +182,7 @@ const footerDetails = (await getEntry("footer", "details")).data;
       </div>
 
       <!-- Copyright -->
-      <div class="footer-copy-right p-2 text-center text-body-secondary mt-3">
+      <div class="footer-copy-right p-2 text-center text-white mt-3 font-light">
         &copy; Kiran Foundation
       </div>
     </div>
