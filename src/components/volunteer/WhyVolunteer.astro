@@ -40,8 +40,12 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
   >
     {
       imageTop && (
-        <div class="w-full h-[232px] md:order-2 sm:h-64 md:h-80 lg:h-[406px] lg:w-[596px] lg:ml-16 rounded-lg overflow-hidden ">
-          <img src={imageTop} alt={title} class="w-full h-full object-cover" />
+        <div class={`relative  md:order-2`}>
+          <img
+            src={imageTop}
+            alt={title}
+            class="w-full h-[232px] md:order-2 sm:h-64 md:h-80 lg:h-[406px] lg:w-[596px] lg:ml-16 rounded-[32px] overflow-hidden"
+          />
         </div>
       )
     }
@@ -132,7 +136,7 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
       </div>
     </div>
 
-    <div class={` relative ${imageAlignment}`}>
+    <div class={` relative ${imageAlignment} ]`}>
       <img
         src={imageBottom}
         alt={title}
