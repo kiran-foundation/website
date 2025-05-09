@@ -1,6 +1,6 @@
 ---
 const { datas = "" } = Astro.props;
-import Button from "../common/button.astro";
+import Button from "../../common/button.astro";
 ---
 
 <div
@@ -38,13 +38,13 @@ import Button from "../common/button.astro";
     class="flex flex-col md:flex-row items-center gap-4 md:gap-[16px] mt-auto"
   >
     <Button
-      link={"/work-with-us/opportunities/" + datas.slug}
+      link={"/work-with-us/" + datas.slug}
       title="Explore Opportunity"
       btn="btn3"
       widthClass="w-full md:w-[254px] px-[32px] py-3 !text-base"
     />
     <Button
-      link={"/work-with-us/opportunities/" + datas.slug + "/#form"}
+      link={"/work-with-us/" + datas.slug + "/#form"}
       title="Apply Now"
       btn="btn1"
       widthClass="w-full md:w-[254px] px-[32px] py-3"

@@ -1,13 +1,10 @@
 ---
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
-import Hero from "../../../../components/volunteer/InternshipHero.astro";
-import AboutVolunteer from "../../../../components/volunteer/AboutVolunteer.astro";
-import Form from "../../../../components/volunteer/Form.astro";
-import InfoVolunteering from "../../../../components/volunteer/InfoVolunteering.astro";
-import HowDoesItWork from "../../../../components/volunteer/HowDoesItWork.astro";
-import Layout from "../../../../layouts/internship.astro";
-import AboutInternship from "../../../../components/volunteer/AboutInternship.astro";
+import Hero from "../../../../components/work-with-us/volunteering/InternshipHero.astro";
+import AboutVolunteer from "../../../../components/work-with-us/volunteering/AboutVolunteer.astro";
+import Form from "../../../../components/work-with-us/volunteering/Form.astro";
+import Layout from "../../../../layouts/WorkwithusLayout.astro";
 import type { MarkdownFile } from "../../../../types/Markdown";
 
 const { path } = Astro.params;
@@ -15,12 +12,14 @@ const { path } = Astro.params;
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const allVolunteering = await getCollection("work");
+  const allVolunteering = await getCollection("work-with-us");
 
   return allVolunteering
-    .filter((entry) => entry.slug.startsWith("volunteering/"))
+    .filter((entry) => entry.slug.startsWith("opportunities/volunteering/"))
     .map((entry) => ({
-      params: { path: entry.slug.replace(/^volunteering\//, "") },
+      params: {
+        path: entry.slug.replace(/^opportunities\/volunteering\//, ""),
+      },
     }));
 }
 ---
@@ -31,7 +30,6 @@ export async function getStaticPaths() {
     <AboutVolunteer path={path ?? ""} />
     <Form />
     <!-- <InfoVolunteering /> -->
-    <!-- <HowDoesItWork /> -->
   </main>
   <a
     class="btn-scroll-top"

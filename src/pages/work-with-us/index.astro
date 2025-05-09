@@ -15,10 +15,10 @@ const {
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../../layouts/Layout.astro";
-import ChooseVolunteering from "../../components/volunteer/ChooseVolunteering.astro";
+import ChooseVolunteering from "../../components/work-with-us/volunteering/ChooseVolunteering.astro";
 import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
-import WhyVolunteer from "../../components/volunteer/WhyVolunteer.astro";
-import WhyIntern from "../../components/volunteer/WhyIntern.astro";
+import WhyVolunteer from "../../components/work-with-us/volunteering/WhyVolunteer.astro";
+import WhyIntern from "../../components/work-with-us/volunteering/WhyIntern.astro";
 import Hero from "../../components/pratibha/Hero.astro";
 import Faq from "../../components/common/FaqPratibha.astro";
 import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
@@ -28,11 +28,14 @@ import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
   <main class="page-wrapper">
     <Breadcrumb url={Astro.url} />
 
-    <Hero collection="work" slug="items-volunteering/hero-volunteer" />
+    <Hero
+      collection="work-with-us"
+      slug="opportunities/items-volunteering/hero-volunteer"
+    />
 
     <WhyVolunteer
-      collection="work"
-      slug="items-volunteering/why-volunteer"
+      collection="work-with-us"
+      slug="opportunities/items-volunteering/why-volunteer"
       textAlignment="order-2"
       imageAlignment="order-1"
     />
@@ -40,8 +43,8 @@ import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
     <ChooseVolunteering fetch="volunteer" />
 
     <WhyIntern
-      collection="work"
-      slug="items-volunteering/why-intern"
+      collection="work-with-us"
+      slug="opportunities/items-volunteering/why-intern"
       textAlignment="order-1"
       imageAlignment="order-2"
     />
@@ -71,8 +74,8 @@ import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
     </div>
 
     <Faq
-      collection="work"
-      slug="items-volunteering/faq"
+      collection="work-with-us"
+      slug="opportunities/items-volunteering/faq"
       mt="px-[24px] lg:px-0"
     />
   </main>

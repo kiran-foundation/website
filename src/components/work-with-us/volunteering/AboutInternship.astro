@@ -1,15 +1,15 @@
 ---
-import type { MarkdownFile } from "../../types/Markdown";
+import type { MarkdownFile } from "../../../types/Markdown";
 import { remark } from "remark";
 import html from "remark-html";
-import InternshipComponent from "../../components/volunteer/InternshipComponent.astro";
+import InternshipComponent from "../../../components/work-with-us/volunteering/InternshipComponent.astro";
 
 const roleFile = import.meta.glob<MarkdownFile>(
-  "/src/content/work/internship/*.md"
+  "/src/content/work-with-us/opportunities/internship/*.md"
 );
 
 const role = await (async () => {
-  const volunteerPath = `/src/content/work/internship/${Astro.props.path}.md`;
+  const volunteerPath = `/src/content/work-with-us/opportunities/internship/${Astro.props.path}.md`;
   const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
@@ -22,7 +22,8 @@ const role = await (async () => {
 })();
 
 const defaultRole = await (async () => {
-  const volunteerPath = "/src/content/work/default-content.md";
+  const volunteerPath =
+    "/src/content/work-with-us/opportunities/default-content.md";
   const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
@@ -37,7 +38,7 @@ const defaultRole = await (async () => {
 if (!role) {
   console.warn(
     "Role not found for path:",
-    `/src/content/work/internship/${Astro.props.path}.md`
+    `/src/content/work-with-us/opportunities/internship/${Astro.props.path}.md`
   );
 }
 

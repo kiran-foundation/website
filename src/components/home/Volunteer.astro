@@ -5,8 +5,11 @@ const volunteer = (await getEntry("home", "volunteer")).data;
 import VolunteerSwiper from "../common/VolunteerSwiper.astro";
 
 import { getCollection } from "astro:content";
-const jobs = await getCollection("work", ({ id }) => {
-  return id.startsWith("internship/") || id.startsWith("volunteering/");
+const jobs = await getCollection("work-with-us", ({ id }) => {
+  return (
+    id.startsWith("opportunities/internship/") ||
+    id.startsWith("opportunities/volunteering/")
+  );
 });
 ---
 

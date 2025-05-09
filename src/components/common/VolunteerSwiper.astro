@@ -6,12 +6,12 @@ const { className = "", type = "all", call = "home" } = Astro.props;
 import { getCollection } from "astro:content";
 
 // Fetch all job listings
-const jobs = await getCollection("work");
+const jobs = await getCollection("work-with-us");
 
 // Filter based on type prop
 const filteredJobs = jobs.filter(({ id }) => {
-  if (type === "volunteer") return id.startsWith("volunteering/");
-  if (type === "internship") return id.startsWith("internship/");
+  if (type === "volunteer") return id.startsWith("opportunities/volunteering/");
+  if (type === "internship") return id.startsWith("opportunities/internship/");
   return id.startsWith("volunteering/") || id.startsWith("internship/");
 });
 
@@ -55,7 +55,7 @@ const filteredJobs = jobs.filter(({ id }) => {
               Average: {items.data.timeCommitment}
             </p>
             <Button
-              link={`/work-with-us/opportunities/${items.slug}`}
+              link={`/work-with-us/${items.slug}`}
               title="Explore Opportunity"
               btn="btn3"
             />

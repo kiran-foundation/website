@@ -1,14 +1,14 @@
 ---
-import type { MarkdownFile } from "../../types/Markdown";
+import type { MarkdownFile } from "../../../types/Markdown";
 import { remark } from "remark";
 import html from "remark-html";
 
 const roleFile = import.meta.glob<MarkdownFile>(
-  "/src/content/work/{volunteering/*.md,default-content.md}"
+  "/src/content/work-with-us/opportunities/{volunteering/*.md,default-content.md}"
 );
 
 const role = await (async () => {
-  const volunteerPath = `/src/content/work/volunteering/${Astro.props.path}.md`;
+  const volunteerPath = `/src/content/work-with-us/opportunities/volunteering/${Astro.props.path}.md`;
   const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
@@ -21,7 +21,8 @@ const role = await (async () => {
 })();
 
 const defaultRole = await (async () => {
-  const volunteerPath = "/src/content/work/default-content.md";
+  const volunteerPath =
+    "/src/content/work-with-us/opportunities/default-content.md";
   const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
@@ -36,7 +37,7 @@ const defaultRole = await (async () => {
 if (!role) {
   console.warn(
     "Role not found for path:",
-    `/src/content/work/volunteering/${Astro.props.path}.md`
+    `/src/content/work-with-us/opportunities/volunteering/${Astro.props.path}.md`
   );
 }
 

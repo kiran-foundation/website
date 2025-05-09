@@ -3,11 +3,11 @@ const filter = Astro.props;
 import { getCollection } from "astro:content";
 import OpportunityCards from "./OpportunityCard.astro";
 
-const jobs = await getCollection("work", ({ id }) => {
+const jobs = await getCollection("work-with-us", ({ id }) => {
   if(filter?.prop?.toLowerCase()=="all"){
-    return id.startsWith("internship/") || id.startsWith("volunteering/");
+    return id.startsWith("opportunities/internship/") || id.startsWith("opportunities/volunteering/");
   }else{
-    return id.startsWith(filter.prop)
+    return id.startsWith("opportunities/" + filter.prop)
   }
 });
 ---
@@ -28,7 +28,6 @@ const jobs = await getCollection("work", ({ id }) => {
           ):(<img src="/assets/icons/box.png" class="h-[25px]" />)}
         </a>
       </button>
-
       <button  class={` ${filter.prop !="volunteering"?"bg-white border-[1px] border-gray-200 shadow-sm":"bg-black"} py-1 rounded-lg `} >
         <a href="/work-with-us/opportunities/volunteering" class={`!justify-evenly text-[18px] min-h-[44px] px-4 py-2 rounded-lg w-full ${filter.prop=="volunteering"?"text-white ":"text-black"} flex gap-2 font-poppins`}>Volunteer
           {filter.prop=="volunteering"?(            

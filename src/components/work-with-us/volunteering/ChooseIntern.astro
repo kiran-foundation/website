@@ -1,12 +1,15 @@
 ---
 import { getEntry } from "astro:content";
-import Button from "../common/button.astro";
+import Button from "../../common/button.astro";
 const volunteer = (await getEntry("home", "volunteer")).data;
 import { getCollection } from "astro:content";
-const jobs = await getCollection("work", ({ id }) => {
-  return id.startsWith("internship/") || id.startsWith("volunteering/");
+const jobs = await getCollection("work-with-us", ({ id }) => {
+  return (
+    id.startsWith("opportunities/internship/") ||
+    id.startsWith("opportunities/volunteering/")
+  );
 });
-import VolunteerSwiper from "../../components/common/VolunteerSwiper.astro";
+import VolunteerSwiper from "../../../components/common/VolunteerSwiper.astro";
 ---
 
 <section class="bg-gray-200 py-16 px-6 flex flex-col items-center">
@@ -21,9 +24,6 @@ import VolunteerSwiper from "../../components/common/VolunteerSwiper.astro";
   </div>
 
   <!-- Bottom Button -->
-  <!-- <button class="mt-8 px-6 py-3 border border-black text-black font-semibold rounded-lg hover:bg-black hover:text-white transition">
-    Discover More Opportunities
-  </button> -->
   <Button
     link="/work-with-us"
     title="Discover More Opportunities"

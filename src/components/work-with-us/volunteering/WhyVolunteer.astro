@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-import Button from "../common/button.astro";
+import Button from "../../common/button.astro";
 
 const {
   collection,
@@ -81,7 +81,7 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
       {
         reasons.length > 0 && (
           <div class="space-y-6 sm:space-y-8 lg:space-y-8 w-full lg:h-[577px]">
-            <h3 class="font-poppins font-medium text-[24px] md:text-[28px] lg:text-[32px] leading-[100%] text-[#1E1E1E]">
+            <h3 class="font-poppins font-medium text-[24px] md:text-[28px] lg:text-[32px] leading-[100%] text-[#1E1E1E] pb-[32px]">
               {heading}
             </h3>
             <div class="space-y-6 sm:space-y-8 md:space-y-[40px] w-full  lg:h-[497px]">

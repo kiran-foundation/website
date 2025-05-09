@@ -1,24 +1,33 @@
 ---
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
-import Layout from "../../../layouts/internship.astro";
+import Layout from "../../../layouts/WorkwithusLayout.astro";
+import { getEntry } from "astro:content";
+const entry = (await getEntry(
+  "work-with-us",
+  "opportunities/thank-you"
+)) as any;
+
+const {
+  navigationText = "",
+  thanksText = "",
+  reviewText = "",
+} = entry?.data ?? {};
 ---
 
 <Layout title="Internship Roles">
   <main class="page-wrapper">
-    <!-- ancor tag in start -->
     <section class="position-relative">
       <div class="aboutVolunteering-frame1" id="responsiveNavContainer">
         <a
           style="font-family: Poppins; font-weight: 400; font-size: 14px; line-height: 100%; letter-spacing: 0%; color: #1E1E1E;"
           href="/"
         >
-          &lt; Back to Home
+          &lt; {navigationText}
         </a>
       </div>
     </section>
 
-    <!-- Desktop image (visible on md+ only) -->
     <div
       class="thankyou-image1 flex items-center justify-center pt-[40px] pb-[28px] hidden md:flex"
     >
@@ -40,11 +49,8 @@ import Layout from "../../../layouts/internship.astro";
 
     <div class="aboutVolunteering-frame1">
       <div class="aboutVolunteering-frame2">
-        <h1 class="thankyou-title">
-          Thank you for wanting to make a difference!
-        </h1>
+        <h1 class="thankyou-title">{thanksText}</h1>
 
-        <!-- Mobile image (visible on small screens only) -->
         <div
           class="thankyou-image2 flex items-center justify-center pt-[80px] pb-[48px] md:hidden"
         >
@@ -60,14 +66,9 @@ import Layout from "../../../layouts/internship.astro";
           </lottie-player>
         </div>
 
-        <h2>
-          We will review your application and reach out to you! In the mean
-          time, meet our team:
-        </h2>
+        <h2>{reviewText}</h2>
       </div>
     </div>
-
-    <!-- a component will be added here showing whole team -->
   </main>
   <a
     class="btn-scroll-top"
