@@ -10,7 +10,7 @@ const redirectTo = "/work-with-us/opportunities/thank-you";
     <h1>Let’s build something great together!</h1>
 
     <form id="volunteering-form" data-redirect={redirectTo}>
-      <div class="volunteeringForm-input-container">
+      <div class="form-input-container">
         <label for="full-name">Full Name <span>(Required)</span></label>
         <input
           type="text"
@@ -19,18 +19,15 @@ const redirectTo = "/work-with-us/opportunities/thank-you";
           placeholder="Your name"
         />
       </div>
-      <div class="volunteeringForm-input-container">
+      <div class="form-input-container">
         <label for="email">Email <span>(Required)</span> </label>
         <input type="text" id="email" name="email" placeholder="Your email" />
       </div>
-      <div class="volunteeringForm-input-container">
+      <div class="form-input-container">
         <label for="phone">Phone Number <span>(Required)</span> </label>
         <input type="text" id="phone" name="phone" placeholder="Your number" />
       </div>
-      <div
-        class="volunteeringForm-input-container"
-        id="volunteeringForm-input-container-big"
-      >
+      <div class="form-input-container" id="form-input-container-big">
         <label for="more">Tell us more about you <span>(Optional)</span></label>
         <textarea id="more" name="more" rows="5"></textarea>
       </div>
