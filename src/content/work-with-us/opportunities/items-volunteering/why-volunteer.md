@@ -4,8 +4,8 @@ description: "Volunteering isn’t just about giving back—it’s a journey of 
   discovery. By engaging in diverse activities, you’ll uncover what truly
   motivates you, whether it’s mentoring students, tackling community
   challenges, or leading initiatives."
-imageTop: "/assets/images/volunter/why-volunteer-img-top.png"
-imageBottom: "/assets/images/volunter/why-volunteer-img-bottom.png"
+imageTop: "/assets/images/work-with-us/volunteering/why-volunteer-img-top.png"
+imageBottom: "/assets/images/work-with-us/volunteering/why-volunteer-img-bottom.png"
 
 whyVolunteer:
   heading: "Why Volunteer?"

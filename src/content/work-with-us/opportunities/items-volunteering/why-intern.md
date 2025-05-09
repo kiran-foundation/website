@@ -4,7 +4,7 @@ description:
   "An internship isn’t just a line on your resume—it’s a launchpad for your
   professional journey. Dive into real-world projects, master industry
   tools, and build the expertise employers value most."
-image: "/assets/images/volunter/why-intern-img.jpeg"
+image: "/assets/images/work-with-us/volunteering/why-intern-img.jpeg"
 
 whyIntern:
   heading: "Why Intern?"
