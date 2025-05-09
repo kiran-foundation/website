@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-const {hidden = true} = Astro.props;
+const { hidden = true } = Astro.props;
 // Fetch header details directly
 const headerData = await getEntry("header", "details");
 
@@ -35,25 +35,30 @@ const breadcrumbs = segments.map((_, index) => {
     path,
   };
 });
-
-
 ---
-<div class=" h-[5.25rem]"></div>
 
-<nav class=` ${hidden ? "hidden" : ""} sm:flex h-[21px] gap-[10px] px-6 lg:px-8 max-w-[81rem] text-[0.875rem] font-normal leading-[100%] tracking-[0%] font-poppins mx-auto my-8 `>
-  <ol class="flex  space-x-2 items-start">
+<div class="h-[5.25rem]"></div>
+
+<nav
+  class=` ${hidden ? "hidden" : ""} sm:flex h-[21px] gap-[10px] px-6 lg:px-8 max-w-[81rem] text-[0.875rem] font-normal leading-[100%] tracking-[0%] font-poppins mx-auto my-8 `
+>
+  <ol class="flex space-x-2 items-start">
     <li>
       <a href="/" class="text-[#1E1E1E] hover:underline">Home</a>
     </li>
-    {breadcrumbs.map((breadcrumb, index) => (
-      <>
-        <li class="mx-1"><i class="fa-solid fa-angle-right" style="color: #1E1E1E;"></i></li>
-        <li>
-          <a href={breadcrumb.path} class="text-[#1E1E1E] hover:underline">
-            {breadcrumb.name.replace("/", " ")}
-          </a>
-        </li>
-      </>
-    ))}
+    {
+      breadcrumbs.map((breadcrumb, index) => (
+        <>
+          <li class="mx-1">
+            <i class="fa-solid fa-angle-right" style="color: #1E1E1E;" />
+          </li>
+          <li>
+            <a href={breadcrumb.path} class="text-[#1E1E1E] hover:underline">
+              {breadcrumb.name.replace("/", " ")}
+            </a>
+          </li>
+        </>
+      ))
+    }
   </ol>
 </nav>

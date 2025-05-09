@@ -16,7 +16,9 @@ const Language = [
 import SlidbarDropdown from "./SlidbarDropdown.astro";
 ---
 
-<header class="w-full h-[84px] z-50 fixed py-3 bg-white shadow-[0_8px_20px_0_rgba(30,30,30,0.1)]">
+<header
+  class="w-full h-[84px] z-50 fixed py-3 bg-white shadow-[0_8px_20px_0_rgba(30,30,30,0.1)]"
+>
   <nav
     class="h-full mx-[24px] md:mx-[64px] xl:mx-2 2xl:mx-[132px] flex justify-between items-center"
   >
@@ -54,7 +56,7 @@ import SlidbarDropdown from "./SlidbarDropdown.astro";
         }
       </div>
       <Button
-        link="/volunteering"
+        link="/work-with-us"
         title="Support Us"
         btn="btn3"
         widthClass="!h-[20px] !min-h-[48px] text-[16px] font-bold !min-w-[138px] hidden xl:block"
@@ -111,9 +113,7 @@ import SlidbarDropdown from "./SlidbarDropdown.astro";
       aria-labelledby="drawer-navigation-label"
     >
       <!-- ______________________________logo + cut option_____________________________  -->
-      <div
-        class="p-2 flex items-center justify-between mb-4"
-      >
+      <div class="p-2 flex items-center justify-between mb-4">
         <a href="/" class="flex items-center shrink-0">
           <img
             src="/logo2.png"
@@ -145,7 +145,7 @@ import SlidbarDropdown from "./SlidbarDropdown.astro";
       </div>
       <div class="flex items-center justify-center px-4 my-2">
         <Button
-          link="/volunteering"
+          link="/work-with-us"
           title="Support Us"
           btn="btn3"
           widthClass="!h-[20px] !min-h-[48px] text-[16px] font-bold !min-w-full"
