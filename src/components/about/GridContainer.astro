@@ -14,14 +14,14 @@ const {
   flip: boolean;
 };
 const data = await getEntry("about", slug);
-// console.log(data);
+
 
 const { title, year, description, button, image, image2 } = data.data;
 ---
 
 <!-- Step -->
 <div
-  class="row align-items-center position-relative  pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0 max-w-[1260px] mx-auto"
+  class="row align-items-center  pb-lg-0   mx-auto"
 >
   <div
     class={`col-md-6 col-xl-5 flex flex-col  ${flip ? " " : " order-2  offset-lg-1"} pb-2 pb-md-0 mb-4 mb-md-0`}
