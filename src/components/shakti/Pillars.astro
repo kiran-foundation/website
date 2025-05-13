@@ -7,52 +7,55 @@ const entry = (await getEntry("shakti", "pillars")) as any;
 
 const pillars = entry?.data?.pillars ?? [];
 ---
-<section class="mx-auto max-w-[1296px] pt-2 xl:pt-3 pb-5 mt-[164px] box-border">
-  <div class="flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-120px)]">
+<section class="mx-auto max-w-[1296px] pt-2 xl:pt-3 mt-[164px] box-border">
+  <div class="flex flex-col lg:flex-row min-h-screen">
     
     <!-- Left Sticky Section -->
     <div class="lg:w-1/3">
       <div class="lg:sticky lg:top-28 lg:mt-[402px]">
         <Heading head="pillarHeading1" />
         <Heading head="pillarHeading2" />
+        
         <Button
           link="/volunteering"
           title="See the Workshops Schedule"
           btn="btn1"
           widthClass="w-[342px] sm:w-[200px] md:w-[315px]"
           heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
-          className="mt-4"
+          className=""
         />
       </div>
     </div>
 
     <!-- Right Scrollable Pillar Cards -->
-    <div class="lg:w-2/3 w-full overflow-auto lg:ml-[132px]">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pr-1">
+    <div class="w-[855px] flex-shrink-0 overflow-y-auto overflow-x-hidden lg:ml-[132px] px-4 pb-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16">
         {pillars.map((pillar, index) => (
           <div
-            class="group pb-3 mb-0 lg:mb-2 xl:mb-3 hover:shadow-md transition duration-300 rounded-lg overflow-hidden bg-white w-full max-w-[342px] h-[740px]"
+            class="group hover:shadow-xl hover:shadow-gray-400 transition duration-300 rounded-lg overflow-hidden bg-white w-[382px] h-[760px] px-6 pb-6 box-border flex flex-col"
           >
             <div class="w-full aspect-square bg-gray-100">
               <img src={pillar.image} alt={pillar.title} class="w-full h-full object-cover" />
             </div>
 
-            <div class="h-[256px]">
+            <div class="flex flex-col flex-grow">
               <h3 class="font-medium text-[32px] leading-[100%] tracking-[0] font-poppins text-[#1E1E1E] mt-4">
                 {pillar.title}
               </h3>
-              <p class="font-normal text-[18px] leading-[36px] tracking-[0] font-poppins text-[#49494C] mt-4 md:mb-[68px]">
+              <p class="font-normal text-[18px] leading-[36px] tracking-[0] font-poppins text-[#49494C] mt-4 mb-4">
                 {pillar.text}
               </p>
 
-              <Button
-                link={pillar.ctaLink}
-                title={pillar.buttonText}
-                btn="btn2"
-                widthClass="w-[342px] sm:w-[200px] md:w-[150px]"
-                heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
-                className="mt-auto"
-              />
+              <div class="mt-auto">
+                <Button
+                  link={pillar.ctaLink}
+                  title={pillar.buttonText}
+                  btn="btn2"
+                  widthClass="w-[342px] sm:w-[200px] md:w-[150px]"
+                  heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
+                  className="mt-auto"
+                />
+              </div>
             </div>
           </div>
         ))}
@@ -60,3 +63,5 @@ const pillars = entry?.data?.pillars ?? [];
     </div>
   </div>
 </section>
+
+
