@@ -5,8 +5,8 @@ import VideoCard from './VideoCard.astro';
 import Heading from './Heading.astro';
 
 const videos = [
-  { videoUrl: 'novideo', alt: 'Video 1 Title' },
-  { videoUrl: 'novideo', alt: 'Video 2 Title' },
+  { videoUrl: 'https://www.youtube.com/embed/W_Ozar0vPAo?si=efJoCaEALx0J7d36', alt: 'Video 1 Title' , desc: 'vide 1 desc'},
+  { videoUrl: 'https://www.youtube.com/embed/-Cer8iOoPrw?si=uANs0ZRSn5-8_3p-', alt: 'Video 2 Title' },
   { videoUrl: 'novideo', alt: 'Video 3 Title' },
   { videoUrl: 'novideo', alt: 'Video 4 Title' }
 ];
@@ -17,7 +17,7 @@ const videos = [
 <Heading head="heading2"/>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[1296px] mx-auto">
     {videos.map((video) => (
-      <VideoCard videoUrl={video.videoUrl} alt={video.alt} />
+      <VideoCard videoUrl={video.videoUrl} alt={video.alt}  desc  = {video.desc} />
     ))}
   </div>
 </section>
