@@ -3,7 +3,6 @@ import { getEntry } from "astro:content";
 import Button from "../common/button.astro";
 const panterForProgress = await getEntry("about", "panter-for-progress");
 const { title, paragraph, button, image } = panterForProgress.data;
-console.log(button);
 ---
 
 <section class="bg-[#F1F1F1] my-auto px-4">
@@ -11,7 +10,7 @@ console.log(button);
     class="flex flex-col md:flex-row justify-center items-center gap-16 mx-auto max-w-[1296px] py-6  md:py-[160px]"
   >
     <div class="max-w-[636px]">
-      <h1 class="heading-1 mb-8">Partner for Progress</h1>
+      <h1 class="heading-1 mb-8">{title}</h1>
       {paragraph.map((para) => <p class=" body-text-1 mb-4">{para}</p>)}
 
       <div class="flex flex-col md:flex-row gap-4 mt-12">

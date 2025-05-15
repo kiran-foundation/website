@@ -1,11 +1,14 @@
 ---
+import { getEntry } from "astro:content";
 
+const headingdata  = await getEntry("about", "heading");
+const  { title } = headingdata.data;
 ---
 
 <div class="mt-20 sm:mt-[7.5rem] relative md:mb-8 mb-16">
   <h1 class="text-[36px] text-center">
     <span class="relative inline-block">
-      <span class="relative z-10 hero-title !ml-0">Our Story</span>
+      <span class="relative z-10 hero-title !ml-0">{title}</span>
       <span class="absolute bottom-[0.3125rem] left-0 w-full z-0">
         <img
           src="/assets/images/about/our-story-green-rectangle-line.png"
