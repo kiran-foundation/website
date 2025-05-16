@@ -319,3 +319,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setupFieldEventListeners();
 });
+
+
+
+
+// swipper animation js for home page and about page 
+import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+// Common configuration for both swipers
+const swiperConfig = {
+  effect: "fade",
+  speed: 800,
+  autoplay: {
+    delay: 7000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return `<span class="${className}" style="
+          width: 13.5px;
+          height: 13px;
+          background: transparent;
+          border: 1px solid black;
+          margin: 0 8px;
+          opacity: 1;
+          transition: all 0.3s ease;
+          display: inline-block;
+          border-radius: 50%;
+          cursor: pointer;
+        "></span>`;
+    },
+  },
+  on: {
+    init: function () {
+      this.pagination.bullets.forEach((bullet) => {
+        if (
+          bullet.classList.contains("swiper-pagination-bullet-active")
+        ) {
+          bullet.style.background = "rgb(47 83 3)";
+          bullet.style.borderColor = "#333";
+        }
+      });
+    },
+    slideChange: function () {
+      this.pagination.bullets.forEach((bullet) => {
+        bullet.style.background = "transparent";
+        bullet.style.borderColor = "#333";
+
+        if (
+          bullet.classList.contains("swiper-pagination-bullet-active")
+        ) {
+          bullet.style.background = "rgb(47 83 3)";
+          bullet.style.borderColor = "#333";
+        }
+      });
+    },
+  },
+};
+
+// Initialize both swipers
+new Swiper(".swiper-scale-effect", swiperConfig);
+new Swiper(".mobile-swiper", swiperConfig);

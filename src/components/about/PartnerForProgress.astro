@@ -7,7 +7,7 @@ const { title, paragraph, button, image } = panterForProgress.data;
 
 <section class="bg-[#F1F1F1] my-auto px-4">
   <div
-    class="flex flex-col xl:flex-row justify-center items-center gap-16 mx-auto max-w-[1296px] py-6  md:py-[160px]"
+    class="flex flex-col xl:flex-row justify-center items-center gap-16 mx-auto max-w-[1296px] py-6 md:py-[160px]"
   >
     <div class="max-w-[636px]">
       <h1 class="heading-1 mb-8">{title}</h1>
@@ -27,7 +27,7 @@ const { title, paragraph, button, image } = panterForProgress.data;
                   heightClass="h-[60px]"
                 />
               )
-            )
+            ),
           )
         }
         <Button />
@@ -35,7 +35,13 @@ const { title, paragraph, button, image } = panterForProgress.data;
       </div>
     </div>
     <div class="">
-      <img class=" rounded-3xl" src={image} alt="" width="592px" height="502px" />
+      <img
+        class="rounded-3xl"
+        src={image}
+        alt=""
+        width="592px"
+        height="502px"
+      />
     </div>
   </div>
 </section>
