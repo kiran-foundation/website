@@ -15,13 +15,13 @@ const {
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../../layouts/Layout.astro";
-import ChooseVolunteering from "../../components/work-with-us/volunteering/ChooseVolunteering.astro";
+import RoleComponent from "../../components/work-with-us/RoleComponent.astro";
 import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
-import WhyVolunteer from "../../components/work-with-us/volunteering/WhyVolunteer.astro";
-import WhyIntern from "../../components/work-with-us/volunteering/WhyIntern.astro";
-import Hero from "../../components/pratibha/Hero.astro";
-import Faq from "../../components/common/FaqPratibha.astro";
-import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
+import WhyVolunteer from "../../components/work-with-us/WhyVolunteer.astro";
+import WhyIntern from "../../components/work-with-us/WhyIntern.astro";
+import Hero from "../../components/common/Hero.astro";
+import Faq from "../../components/common/Faq.astro";
+import Breadcrumb from "../../components/common/Breadcrumb.astro";
 ---
 
 <Layout>
@@ -40,7 +40,7 @@ import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
       imageAlignment="order-1"
     />
 
-    <ChooseVolunteering fetch="volunteer" />
+    <RoleComponent fetch="volunteer" />
 
     <WhyIntern
       collection="work-with-us"
@@ -48,7 +48,7 @@ import Breadcrumb from "../../components/pratibha/Breadcrumb.astro";
       textAlignment="order-1"
       imageAlignment="order-2"
     />
-    <ChooseVolunteering fetch="internship" />
+    <RoleComponent fetch="internship" />
 
     <!-- <ChooseVolunteering fetch="internship" /> -->
     <section

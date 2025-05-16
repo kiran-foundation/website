@@ -2,14 +2,14 @@
 import type { MarkdownFile } from "../../../types/Markdown";
 import { remark } from "remark";
 import html from "remark-html";
-import InternshipComponent from "../../../components/work-with-us/volunteering/InternshipComponent.astro";
+import VolunteerComponent from "./VolunteerComponent.astro";
 
 const roleFile = import.meta.glob<MarkdownFile>(
-  "/src/content/work-with-us/opportunities/internship/*.md"
+  "/src/content/work-with-us/opportunities/volunteering/*.md"
 );
 
 const role = await (async () => {
-  const volunteerPath = `/src/content/work-with-us/opportunities/internship/${Astro.props.path}.md`;
+  const volunteerPath = `/src/content/work-with-us/opportunities/volunteering/${Astro.props.path}.md`;
   const volunteer = roleFile[volunteerPath];
 
   if (volunteer) {
@@ -38,7 +38,7 @@ const defaultRole = await (async () => {
 if (!role) {
   console.warn(
     "Role not found for path:",
-    `/src/content/work-with-us/opportunities/internship/${Astro.props.path}.md`
+    `/src/content/work-with-us/opportunities/volunteering/${Astro.props.path}.md`
   );
 }
 
@@ -91,7 +91,7 @@ const {
       {impact}
     </p>
     <div class="aboutVolunteering-frame4">
-      <InternshipComponent
+      <VolunteerComponent
         path={Astro.props.path}
         name="responsibilities"
         title="🗒️ Responsibilities"
@@ -99,7 +99,7 @@ const {
     </div>
     <div class="aboutVolunteering-frame4">
       <div class="aboutVolunteering-frame5">Who You Are</div>
-      <InternshipComponent
+      <VolunteerComponent
         path={Astro.props.path}
         name="requirements"
         title="✅ Requirements"
@@ -108,7 +108,7 @@ const {
     <div class="aboutVolunteering-frame4">
       <div class="aboutVolunteering-frame5">Why Volunteer?</div>
 
-      <InternshipComponent
+      <VolunteerComponent
         path={Astro.props.path}
         name="benefits"
         title="🎁 Benefits"
