@@ -6,7 +6,7 @@ navigation:
       name: "Pratibha Scholarship"
       url: "/pratibha"
     submenu:
-      - name: "Programme Details"
+      - name: "Program Details"
         url: "/pratibha"
       - name: "Selection Process"
         url: "/pratibha/selection-process"
