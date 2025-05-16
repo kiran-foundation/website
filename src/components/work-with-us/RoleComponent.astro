@@ -1,12 +1,9 @@
 ---
 import Button from "../common/button.astro";
-
 import VolunteerSwiper from "../../components/common/VolunteerSwiper.astro";
-
 import { getEntry } from "astro:content";
 
 const { fetch = "all" } = Astro.props;
-
 const entry = (await getEntry({
   collection: "common",
   slug: "headings",
