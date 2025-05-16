@@ -6,7 +6,7 @@ import Button from "../common/button.astro";
 
 <!-- -----hero swiper animation ---- -->
 <section
-  class="position-relative hidden md:block h-[864px] py-5  mt-[5.5rem]"
+  class="position-relative hidden md:block h-[864px] py-5 mt-[5.5rem]"
   data-bs-theme="light"
 >
   <!-- Background image slider -->
@@ -34,13 +34,9 @@ import Button from "../common/button.astro";
   </div>
 
   <!-- ---------content box----------- -->
-  <div
-    class="relative z-[2] container mx-auto px-4  lg:py-0"
-  >
-    <div class="flex flex-wrap -mx-4 my-8 md:my-12 ">
-      <div
-        class="w-full px-4 py-8 md:py-12 mb-6 md:mb-8 lg:mb-10 "
-      >
+  <div class="relative z-[2] container mx-auto px-4 lg:py-0">
+    <div class="flex flex-wrap -mx-4 my-8 md:my-12">
+      <div class="w-full px-4 py-8 md:py-12 mb-6 md:mb-8 lg:mb-10">
         <h1
           class="text-white font-merriweather text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] leading-tight md:leading-snug lg:leading-[150%] mb-8 max-w-full lg:max-w-[772px]"
         >
@@ -53,12 +49,12 @@ import Button from "../common/button.astro";
         </p>
         <div class="relative inline-flex items-center group">
           <Button
-          link="/volunteering"
-          title="Become a Volunteer"
-          btn="btn1"
-          widthClass="w-[235px]"
-          heightClass="h-[60px]"
-        />
+            link="/work-with-us"
+            title="Become a Volunteer"
+            btn="btn1"
+            widthClass="w-[235px]"
+            heightClass="h-[60px]"
+          />
         </div>
       </div>
     </div>
@@ -69,19 +65,23 @@ import Button from "../common/button.astro";
 <section class="md:hidden block relative mt-[5.5rem]">
   <div class="relative h-[760px]">
     <!-- Swiper for mobile -->
-    <div class="swiper mobile-swiper position-absolute top-0 start-0 w-100 h-100">
+    <div
+      class="swiper mobile-swiper position-absolute top-0 start-0 w-100 h-100"
+    >
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div
             class="swiper-slide-cover aspect-[4/4]"
             style="background-image: url('/assets/images/Homepage/home-2-2.png');"
-          ></div>
+          >
+          </div>
         </div>
         <div class="swiper-slide">
           <div
             class="swiper-slide-cover aspect-[4/4]"
             style="background-image: url('/assets/images/Homepage/home-2.png');"
-          ></div>
+          >
+          </div>
         </div>
       </div>
       <!-- Pagination -->
@@ -107,7 +107,7 @@ import Button from "../common/button.astro";
           {hero.titlehero}
         </p>
         <Button
-          link="/volunteering"
+          link="/work-with-us"
           title="Become a Volunteer"
           btn="btn1"
           widthClass="w-full"
@@ -121,7 +121,7 @@ import Button from "../common/button.astro";
 <!-- Update the script to handle both swipers -->
 <script type="module">
   import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
-  
+
   // Common configuration for both swipers
   const swiperConfig = {
     effect: "fade",
@@ -150,25 +150,25 @@ import Button from "../common/button.astro";
     },
     on: {
       init: function () {
-        this.pagination.bullets.forEach(bullet => {
-          if (bullet.classList.contains('swiper-pagination-bullet-active')) {
-            bullet.style.background = 'rgb(47 83 3)';
-            bullet.style.borderColor = '#333';
+        this.pagination.bullets.forEach((bullet) => {
+          if (bullet.classList.contains("swiper-pagination-bullet-active")) {
+            bullet.style.background = "rgb(47 83 3)";
+            bullet.style.borderColor = "#333";
           }
         });
       },
       slideChange: function () {
-        this.pagination.bullets.forEach(bullet => {
-          bullet.style.background = 'transparent';
-          bullet.style.borderColor = '#333';
-          
-          if (bullet.classList.contains('swiper-pagination-bullet-active')) {
-            bullet.style.background = 'rgb(47 83 3)';
-            bullet.style.borderColor = '#333';
+        this.pagination.bullets.forEach((bullet) => {
+          bullet.style.background = "transparent";
+          bullet.style.borderColor = "#333";
+
+          if (bullet.classList.contains("swiper-pagination-bullet-active")) {
+            bullet.style.background = "rgb(47 83 3)";
+            bullet.style.borderColor = "#333";
           }
         });
-      }
-    }
+      },
+    },
   };
 
   // Initialize both swipers

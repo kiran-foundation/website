@@ -1,6 +1,5 @@
 ---
 import type { MarkdownFile } from "../../types/Markdown";
-import Heading from "../common/heading.astro";
 import UpdateCard from "../common/UpdateCard.astro";
 
 const allUpdates = import.meta.glob<MarkdownFile>("/src/content/updates/*.md");
@@ -26,7 +25,6 @@ const updatesToDisplay = filteredUpdates.slice(0, 3);
   style="background-color: white;"
 >
   <div class="container">
-    <Heading title="Updates" />
 
     <div
       class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4"

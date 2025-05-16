@@ -1,6 +1,5 @@
 ---
 import { getEntry } from "astro:content";
-import Heading from "../common/heading.astro";
 const cardData = (await getEntry("donation", "donationmatter")).data;
 ---
 
@@ -8,7 +7,6 @@ const cardData = (await getEntry("donation", "donationmatter")).data;
   <div class="row pb-sm-2 w-100 pb-md-3 pb-lg-4 mt-3 d-flex justify-content-center" 
     style="gap:10px; margin-left: 0.3rem">
 
-    <Heading title={cardData.title}/>
 
     <section class="overflow-hidden" style="margin-top: 5rem;">
       <div class="container pb-sm-3 mb-md-2 mb-lg-3">

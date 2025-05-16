@@ -6,7 +6,6 @@ import Hero from '../components/about/Hero.astro'
 import Mission from '../components/about/Mission.astro'
 import TestimonialsCarousel from '../components/common/TestimonialsCarousel.astro'
 import Team from '../components/about/Team.astro'
-import Heading from '../components/common/heading.astro'
 import Gallery from '../components/about/Gallery.astro'
 import { getEntry } from 'astro:content'
 import Introduction from '../components/about/Introduction.astro'
@@ -29,7 +28,6 @@ interface Props {
     <Team />
     <PersonList foldername="work" path="team/" filter="Student" title="Student"/> 
     <!-- <Volunteers />                                removed this component for new changes above  -->
-    <Heading title={testimonials.title} />
     <TestimonialsCarousel pageTag='pratibha' />
     <Gallery />
   </main>

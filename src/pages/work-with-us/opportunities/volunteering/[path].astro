@@ -1,0 +1,56 @@
+---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Hero from "../../../../components/work-with-us/opportunities/Hero.astro";
+import AboutVolunteer from "../../../../components/work-with-us/opportunities/Volunteering.astro";
+import Form from "../../../../components/work-with-us/opportunities/Form.astro";
+import Layout from "../../../../layouts/WorkwithusLayout.astro";
+import type { MarkdownFile } from "../../../../types/Markdown";
+
+const { path } = Astro.params;
+
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const allVolunteering = await getCollection("work-with-us");
+
+  return allVolunteering
+    .filter((entry) => entry.slug.startsWith("opportunities/volunteering/"))
+    .map((entry) => ({
+      params: {
+        path: entry.slug.replace(/^opportunities\/volunteering\//, ""),
+      },
+    }));
+}
+---
+
+<Layout title="Internship Roles">
+  <main class="page-wrapper">
+    <Hero />
+    <AboutVolunteer path={path ?? ""} />
+    <Form />
+    <!-- <InfoVolunteering /> -->
+  </main>
+  <a
+    class="btn-scroll-top"
+    href="#top"
+    data-scroll
+    aria-label="Scroll back to top"
+  >
+    <svg
+      viewBox="0 0 40 40"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="20"
+        cy="20"
+        r="19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"></circle>
+    </svg>
+    <i class="ai-arrow-up"></i>
+  </a>
+</Layout>

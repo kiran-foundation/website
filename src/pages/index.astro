@@ -9,9 +9,8 @@ import Volunteer from "../components/home/Volunteer.astro";
 import Updates from "../components/common/UpdateComponent.astro";
 import Values from "../components/home/Values.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
-import OurSupporters from "../components/home/our_supporters.astro";
-// import Trusted from "../components/home/trusted.astro";
-import Trusted from "../components/home/trusted.astro";
+import OurSupporters from "../components/home/Supporters.astro";
+import Trusted from "../components/home/Accreditation.astro";
 ---
 
 <Layout title="Kiran Foundation"
@@ -25,7 +24,6 @@ import Trusted from "../components/home/trusted.astro";
     <Volunteer/>
     <TestimonialsCarousel pageTag="home"/>
     <OurSupporters/>
-    <!-- <Heading title={testimonials.title}/> -->
     <Updates showHighPriorityOnly={true} isMainPage={true} /> 
   </main>
 </Layout>

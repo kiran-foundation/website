@@ -6,7 +6,7 @@ sections:
       imgOne: "/assets/images/programs/imageGallery.png"
       imgTwo: "/assets/images/programs/smallImageSecond.png"
       imgThree: "/assets/images/programs/shreyagoldmedal.png"
-      imgFour: "/assets/images/volunter/group.png"
+      imgFour: "/assets/images/work-with-us/volunteering/group.png"
       imgFive: "/assets/images/programs/image.png"
       imgSix: "/assets/images/hero/hero-image.jpg"
 
@@ -19,7 +19,7 @@ sections:
       imgFour: "/assets/images/programs/image.png"
       imgFive: "/assets/images/programs/program1.png"
       imgSix: "/assets/images/programs/program2.png"
-  
+
   - title: "Random Images Frame"
     paragraph: "This is the third frame with random images."
     galleryImg:

@@ -1,3 +1,0 @@
----
-filters: ["volunteering", "internship"]
----
