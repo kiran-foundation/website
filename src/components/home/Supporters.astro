@@ -1,80 +1,33 @@
-<section class='container py-5 my-lg-3 my-xl-4 my-xxl-5'>
-  <div class='col d-flex justify-content-center'>
-    <img
-      class='d-dark-mode-none'
-      src='/assets/images/supporters/supporter.png'
-      width='544'
-      alt='Image'
-      style='margin-bottom: 3%;'
-    />
+---
+import { getEntry } from "astro:content";
+import Button from "../common/button.astro";
+const volunteer = (await getEntry("home", "supporters")).data;
+---
+
+<!-- Main Container -->
+<div class="max-w-[1296px]  mt-[86px] lg:mt-[11.5rem] flex items-center justify-center flex-col p-1 !overflow-hidden mx-[24px] md:mx-auto ">
+  <!-- Heading Section -->
+  <div class="w-full  text-center max-w-[852px] mb-[64px] lg:mb-[7.5rem] ">
+    <h1 class="text-3xl md:text-[2.5rem] xl:text-[3rem] font-normal mb-8 font-merriweather leading-[150%] text-[#1E1E1E] ">
+      {volunteer.title}
+    </h1>
+    <p class="mx-auto text-xl md:text-2xl xl:text-[2rem] text-center max-w-[374px] sm:max-w-[700px] lg:max-w-full font-poppins text-[#49494C]  mb-12 !tracking-normal leading-[38px] lg:!leading-[60px]">
+      {volunteer.description}
+    </p>
+    <Button link="" title="Support Us" btn="btn3" widthClass="w-full md:w-[198px]"/>
   </div>
-  <div
-    class='overflow-auto pb-sm-4 pb-md-5 pt-sm-2 pt-md-3 mt-n2 mt-sm-0 mt-md-1 mt-lg-3 mb-lg-2'
-  >
-    <div class='row row-cols-5 g-0 pb-2' style='min-width: 768px;'>
-      <div class='col d-flex justify-content-center'>
+
+  <!-- Supporters Grid -->
+  <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-4 lg:gap-2 items-center justify-center w-full ">
+    {volunteer.supporters.map((supporter:any, index:any) => (
+      <div class={`w-full aspect-[7/2.25] flex items-center justify-center p-2 rounded-lg  ${index === 4 ? 'hidden lg:flex' : ''}`}>
         <img
-          class='d-dark-mode-none'
-          src='/assets/images/supporters/supporter1.png'
-          width='196'
-          alt='Deloitte'
-        />
-        <img
-          class='d-none d-dark-mode-block'
-          src='/assets/images/supporters/supporter1.png'
-          width='196'
-          alt='Deloitte'
+          src={supporter.image}
+          alt={supporter.name}
+          class="w-full h-full object-scale-down max-w-[160px] sm:max-w-[150px] lg:max-w-[140px]"
+          loading="lazy"
         />
       </div>
-      <div class='col d-flex justify-content-center'>
-        <img
-          src='/assets/images/supporters/supporter2.png'
-          width='196'
-          alt='Airbnb'
-        />
-      </div>
-      <div class='col d-flex justify-content-center'>
-        <img
-          class='d-dark-mode-none'
-          src='/assets/images/supporters/supporter3.png'
-          width='196'
-          alt='Champion'
-        />
-        <img
-          class='d-none d-dark-mode-block'
-          src='/assets/images/supporters/supporter3.png'
-          width='196'
-          alt='Champion'
-        />
-      </div>
-      <div class='col d-flex justify-content-center'>
-        <img
-          class='d-dark-mode-none'
-          src='/assets/images/supporters/supporter4.png'
-          width='196'
-          alt='Financial Times'
-        />
-        <img
-          class='d-none d-dark-mode-block'
-          src='/assets/images/supporters/supporter4.png'
-          width='196'
-          alt='Financial Times'
-        />
-      </div>
-      <div class='col d-flex justify-content-center'>
-        <img
-          class='d-dark-mode-none'
-          src='/assets/images/supporters/supporter5.png'
-          width='196'
-          alt='Clutch'
-        />
-        <img
-          class='d-none d-dark-mode-block'
-          src='/assets/images/supporters/supporter5.png'
-          width='196'
-          alt='Clutch'
-        />
-      </div>
-    </div>
+    ))}
   </div>
-</section>
+</div>
