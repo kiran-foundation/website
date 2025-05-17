@@ -6,7 +6,7 @@ navigation:
       name: "Pratibha Scholarship"
       url: "/pratibha"
     submenu:
-      - name: "Programme Details"
+      - name: "Program Details"
         url: "/pratibha"
       - name: "Selection Process"
         url: "/pratibha/selection-process"
@@ -33,7 +33,7 @@ navigation:
         url: "/shakti/everyday-law-for-women"
       - name: "English Speaking Club"
         url: "/shakti/english-speaking-club"
-      - name: "Join Sakti"
+      - name: "Join Shakti"
         url: "/shakti/join"
 
   - menu:

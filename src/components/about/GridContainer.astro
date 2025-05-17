@@ -1,0 +1,108 @@
+---
+/**
+ * GridContainer.astro
+ *
+ * A flexible and responsive grid container component for the "About" section.
+ *
+ * Props:
+ * - slug (string): The identifier for the content entry to fetch (default: "vision").
+ * - arrow (string): Determines which arrow component to display ("left" or "right").
+ * - flip (boolean): If true, flips the layout direction of the grid.
+ *
+ * Functionality:
+ * - Fetches content data using the provided slug from the "about" collection.
+ * - Displays a two-column layout with an image (and optional second image) and text content.
+ * - Supports layout flipping for alternating content alignment.
+ * - Renders a badge for the year, a title, a description (as paragraphs), and an optional button.
+ * - Shows an arrow (left or right) based on the arrow prop.
+ * - Includes responsive and accessibility-friendly classes.
+ */
+import { getEntry } from "astro:content";
+import ArrowLeft from "./ArrowLeft.astro";
+import ArrowRight from "./ArrowRight.astro";
+import Button from "../common/button.astro";
+
+const {
+  slug = "vision",
+  arrow,
+  flip = false,
+} = Astro.props as {
+  slug: string;
+  arrow: string;
+  flip: boolean;
+};
+const data = await getEntry("about", slug);
+
+const { title, year, description, button, image, image2 } = data.data;
+---
+
+<!-- Step -->
+<div
+  class=`flex md:flex-row flex-col items-center self-center align-items-center w-full ${button?.text && button.type ? " " : "pb-5 "} pb-lg-0 mb-1 gap-8  mx-auto max-w-[1320px]`
+>
+  <div
+    class={` flex flex-col  mx-auto ${flip ? " " : " md:order-2  "} `}
+    data-aos={flip ? "fade-right" : "fade-left"}
+    data-aos-duration="500"
+    data-aos-offset="250"
+    data-disable-parallax-down="md"
+  >
+    <img class="!rounded-3xl" src={image} width="530px" alt="image" />
+    {
+      image2 && (
+        <img
+          class=" !rounded-3xl"
+          src={image2}
+          width="530px"
+          height="300px"
+          alt="Image"
+        />
+      )
+    }
+    <img
+      class="d-none d-dark-mode-block"
+      src={image}
+      width="525px"
+      alt="Image"
+    />
+  </div>
+  <div
+    class={`mx-auto text-start  ${flip ? " " : " md:order-1"}`}
+    data-aos={flip ? "fade-left" : "fade-right"}
+    data-aos-duration="500"
+    data-aos-offset="250"
+    data-disable-parallax-down="md"
+  >
+    <div class="pe-md-4 pe-lg-0 !mb-4">
+      <span
+        class="badge fs-sm !bg-[#448C741A] md:!rounded-[4px] !rounded-[8px] bg-opacity-10 text-[#00AA5E] mb-4 md:mb-[1.4375rem] px-[10px]"
+        >{year}</span
+      >
+      <h3 class="h2 mb-3 mb-lg-4 !heading-1">{title}</h3>
+      {
+        description.map((para: string) => (
+          <p class=" text-pretty md:text-justify text-start md:max-w-[416px]  pb-1 pb-lg-0 mb-4 mb-lg-5 body-text-1">
+            {para}
+          </p>
+        ))
+      }
+      {
+        button.type && button.text ? (
+          <Button
+            link={button?.path}
+            btn={button?.type}
+            title={button?.text}
+            widthClass=" !px-4 sm:w-[280px] w-full mb-5"
+            heightClass="!h-[60px]"
+          />
+        ) : (
+          ""
+        )
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Arrow -->
+{arrow === "left" && <ArrowLeft />}
+{arrow === "right" && <ArrowRight />}

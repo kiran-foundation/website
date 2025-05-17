@@ -9,7 +9,7 @@ export default {
     extend: {
       screens: {
         'xs': {'min': '400px'}, 
-        'tb': {'max': '64rem'}, 
+        'tb': {'min': '1024px'}, 
       },
       colors: {
         'orange': "#F1592A",
