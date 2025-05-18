@@ -49,7 +49,7 @@ navigation:
       - name: "Gallery"
         url: "/gallery"
       - name: "Our Team"
-        url: "/team"
+        url: "/who-we-are/team"
 
   - menu:
       name: "Work with Us"

@@ -1,0 +1,34 @@
+<div class="row row-cols-1 row-cols-sm-2 g-4 max-w-[1296px] mx-auto">
+    {
+        Array.from({ length: 15 }).map((_, index) => (
+            <div class="col w-[400px] ">
+                <div class="card-hover pb-3 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3">
+                    <div class="position-relative ">
+                        <img
+                            class=" rounded-3xl"
+                            src="/assets/images/people/shreya.jpg"
+                            alt="Image"
+                        />
+                        <div class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
+                            <a
+                                class="btn btn-light  btn-sm btn-dribbble rounded-lg mx-2"
+                                href="#"
+                                aria-label="Dribbble"
+                            >
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    <div class=" pt-4 space-y-4 pb-3">
+                        <h3 class="h4 mb-2 text-center heading-3">
+                            Nick Black
+                        </h3>
+                        <h3 class="fs-lg body-text-2 text-center text-[#1E1E1E]">
+                            Web Designer
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        ))
+    }
+</div>

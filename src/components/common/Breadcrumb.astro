@@ -7,6 +7,7 @@ const headerData = await getEntry("header", "details");
 // Get current URL
 const url = Astro.url;
 const segments = url.pathname.split("/").filter(Boolean);
+console.log(segments[segments.length - 1]);
 
 // Function to find breadcrumb names from Markdown
 const findBreadcrumbName = (path: string) => {
@@ -35,6 +36,8 @@ const breadcrumbs = segments.map((_, index) => {
     path,
   };
 });
+// console.log(breadcrumbs.name);
+
 ---
 
 <div class="h-[5.25rem]"></div>
@@ -55,6 +58,7 @@ const breadcrumbs = segments.map((_, index) => {
           <li>
             <a href={breadcrumb.path} class="text-[#1E1E1E] hover:underline">
               {breadcrumb.name.replace("/", " ")}
+              {/* {segments[segments.length - 1]} */}
             </a>
           </li>
         </>
