@@ -1,5 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getEntry } from "astro:content";
+const entry = (await getEntry("common-pages", "404")) as any;
+
+const { title = "", subtitle = "", link = "" } = entry?.data ?? {};
 ---
 
 <link rel="stylesheet" href="/assets/css/404.css" />
@@ -8,10 +12,10 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="404 - Kiran Foundation">
   <main class="page-wrapper">
     <div class="container-404">
-      <h1>404</h1>
-      <p>Sorry, the page you are looking for doesn't exist.</p>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
       <p>
-        <a href="/">Return to Homepage</a>
+        <a href="/">{link}</a>
       </p>
     </div>
   </main>

@@ -1,20 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getEntry } from "astro:content";
+const entry = (await getEntry("common-pages", "newsletter")) as any;
+
+const { title = "" } = entry?.data ?? {};
 ---
 
 <Layout>
-    <!-- Page wrapper -->
-    <main class="page-wrapper" style="overflow-x: hidden;">
-        <div
-            class="d-flex justify-content-center align-item-center"
-            style="height:50%;"
-        >
-            <h1
-                class="h1 display-2 fw-bold text-center"
-                style="font-size: 50px; margin: 100px auto; color:#e3410f;"
-            >
-                Newsletter Page
-            </h1>
-        </div>
-    </main>
+  <!-- Page wrapper -->
+  <main class="page-wrapper" style="overflow-x: hidden;">
+    <div
+      class="d-flex justify-content-center align-item-center"
+      style="height:50%;"
+    >
+      <h1
+        class="h1 display-2 fw-bold text-center"
+        style="font-size: 50px; margin: 100px auto; color:#e3410f;"
+      >
+        {title}
+      </h1>
+    </div>
+  </main>
 </Layout>
