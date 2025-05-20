@@ -1,30 +1,39 @@
+---
+import { getEntry } from "astro:content"
+
+const team = await getEntry("team", "people");
+const {people } = team?.data;
+---
 <div class="row row-cols-1 row-cols-sm-2 g-4 max-w-[1296px] mx-auto mt-[96px] mb-[196px]">
     {
-        Array.from({ length: 25 }).map(() => (
-            <div class="col w-[400px] ">
-                <div class="card-hover pb-3 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3 flex flex-col justify-center items-center">
+        people.map(({name,role, image}) => (
+            <div class="col max-w-[400px] ">
+                <div class="card-hover pb-4 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3 flex flex-col justify-center items-center">
                     <div class="position-relative ">
                         <img
                             class=" rounded-3xl"
-                            src="/assets/images/people/shreya.jpg"
+                            src={image}
                             alt="Image"
                         />
-                        <div class="d-flex justify-content-center  rounded-lg ml-2 position-absolute  bottom-0  w-[336px] h-[60px] mx-auto mb-4 opacity-0 border-white border-1">
-                            <a
-                                class=" rounded-lg text-white  font-bold w-full   mx-auto  flex items-center justify-center"
+                        <div class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
+                      
+                        <a
+                                class="w-[336px] rounded-lg text-white border-white border-1 md:py-4 py-2  font-bold    mx-auto  flex items-center justify-center"
                                 href="#"
                                 aria-label="Dribbble"
                             >
                                 LinkedIn
                             </a>
-                        </div>
+                      
                     </div>
-                    <div class=" pt-4 space-y-4 pb-3">
+                      
+                    </div>
+                    <div class=" pt-4 space-y-4 pb-4">
                         <h3 class="h4 mb-2 text-center heading-3">
-                            Nick Black
+                            {name}
                         </h3>
                         <h3 class="fs-lg body-text-2 text-center text-[#1E1E1E]">
-                            Web Designer
+                            {role}
                         </h3>
                     </div>
                 </div>

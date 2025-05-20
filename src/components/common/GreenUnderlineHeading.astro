@@ -5,66 +5,17 @@ const data = await getEntry(collection, slug) as { data?: { title?: string; } };
 const { title } = data?.data || {title: "null"};
 ---
 
-<div
-  class="!bg-none text-center lg:max-w-[81rem] mx-auto px-6 mt-[2rem] md:mt-[5rem] md:mb-[2.625rem]"
->
-  <div class="pb-9 relative w-full px-6 mx-auto">
-    <h1
-      class="w-full text-[1.875rem] md:text-[4rem] hero-title text-center"
-    >
-      <span class="relative inline-block">
-        <span class="relative z-10 ">{title}</span>
-        <span class="rec mx-auto">
-          <img
-            src="/assets/svg/green-line-under-text-volunteer.svg"
-            alt="Green Underline"
-            class="xs:w-full w-[80%] mx-auto h-auto"
-          />
-        </span>
+<div class="mt-20 sm:mt-[7.5rem] relative md:mb-8 mb-16">
+  <h1 class="text-[36px] text-center">
+    <span class="relative inline-block">
+      <span class="relative z-10 hero-title !ml-0">{title}</span>
+      <span class="absolute -bottom-[.5125rem] left-0 w-full z-0">
+        <img
+          src="/assets/images/about/our-story-green-rectangle-line.png"
+          alt="Green Underline"
+          class="w-full h-auto"
+        />
       </span>
-    </h1>
-  </div>
+    </span>
+  </h1>
 </div>
-
-<style>
-  .rec {
-    position: absolute;
-    bottom: 48px;
-    left: 0;
-    width: 100%;
-    z-index: 0;
-  }
-
-  @media (min-width: 380px) {
-    .rec {
-      bottom: -2px;
-      width: 100%;
-      /* left: -10%;          */
-    }
-  }
-
-  @media (max-width: 386px and min-width: 378px) {
-    .rec {
-      bottom: 0px;
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 321px) {
-    .rec {
-      bottom: 48px;
-      width: 120%;
-      right: -10%;
-      left: -10%;
-    }
-  }
-
-  @media (max-width: 318px) {
-    .rec {
-      bottom: 48px;
-      width: 85%;
-      right: -10%;
-      left: -10%;
-    }
-  }
-</style>
