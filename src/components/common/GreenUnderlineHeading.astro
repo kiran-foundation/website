@@ -5,7 +5,7 @@ const data = await getEntry(collection, slug) as { data?: { title?: string; } };
 const { title } = data?.data || {title: "null"};
 ---
 
-<div class="mt-20 sm:mt-[7.5rem] relative md:mb-8 mb-16">
+<div class="mt-20 sm:mt-[80px] relative md:mb-8 mb-16">
   <h1 class="text-[36px] text-center">
     <span class="relative inline-block">
       <span class="relative z-10 hero-title !ml-0">{title}</span>
