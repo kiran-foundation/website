@@ -3,139 +3,134 @@ import { getEntry } from "astro:content";
 const heroData = (await getEntry("donation", "hero")).data;
 ---
 
-<section class="position-relative" style="margin-top: 4rem;margin-bottom: 5rem;">
+<section
+  class="position-relative"
+  style="margin-top: 4rem;margin-bottom: 5rem;"
+>
+  <div
+    class="position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4"
+    style="background-image: url(/assets/images/programs/donationhero1.png);"
+  >
+  </div>
+
+  <div class="hero-container">
+    <h1 class="hero-title display-0 text-white pt-5 z-2">
+      {heroData.heading}
+    </h1>
+
     <div
-        class="position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4"
-        style="background-image: url(/assets/images/programs/donationhero1.png);"
+      class="container position-relative z-2 text-center pt-5 donation-form-container"
     >
-    </div>
-
-    <div class="hero-container">
-        <h1 class="hero-title display-0 text-white pt-5 z-2">
-            {
-                heroData.heading ||
-                    "Make a Lasting Impact: Support the Future with Your Donation"
-            }
-        </h1>
-
-        <div
-            class="container position-relative z-2 text-center pt-5 donation-form-container"
-        >
-            <div
-                class="donation-form-wrapper p-4 bg-white shadow rounded form-container"
-            >
-                <div class="form-img">
-                    <img src="/assets/images/programs/formimage.png" alt="" class="formm-imgg"  />
-                </div>
-                <div class="formm">
-                    <h3 class="form-title mb-4">Make a Donation</h3>
-                    <form>
-                        <!-- Donation Amount -->
-                        <div class="mb-3">
-                            <label class="form-label"
-                                >Choose a donation amount</label
-                            >
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="donationAmount"
-                                    id="amount500"
-                                    value="500"
-                                    checked
-                                />
-                                <label class="form-check-label" for="amount500"
-                                    >₹500</label
-                                >
-                            </div>
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="donationAmount"
-                                    id="amount1000"
-                                    value="1000"
-                                />
-                                <label class="form-check-label" for="amount1000"
-                                    >₹1000</label
-                                >
-                            </div>
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="donationAmount"
-                                    id="amount5000"
-                                    value="5000"
-                                />
-                                <label class="form-check-label" for="amount5000"
-                                    >₹5000</label
-                                >
-                            </div>
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="donationAmount"
-                                    id="customAmount"
-                                    value="custom"
-                                />
-                                <label
-                                    class="form-check-label"
-                                    for="customAmount">Custom donation</label
-                                >
-                            </div>
-                        </div>
-
-                        <!-- Donation Frequency -->
-                        <div class="mb-3">
-                            <label class="form-label"
-                                >Choose a donation frequency</label
-                            >
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="donationFrequency"
-                                    id="monthly"
-                                    value="monthly"
-                                    checked
-                                />
-                                <label class="form-check-label" for="monthly"
-                                    >Monthly</label
-                                >
-                            </div>
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="donationFrequency"
-                                    id="onetime"
-                                    value="onetime"
-                                />
-                                <label class="form-check-label" for="onetime"
-                                    >One time</label
-                                >
-                            </div>
-                        </div>
-                        <p class="form-text mt-3">
-                            Every gift, whether monthly or one-time, makes a
-                            profound impact. We appreciate your commitment to
-                            fostering hope and resilience within our community.
-                            Thank you for being part of this transformative
-                            journey.
-                        </p>
-                        <div class="d-flex justify-content-between mt-4">
-                            <button type="button" class="btn btn-secondary"
-                                >Cancel</button
-                            >
-                            <button type="submit" class="btn btn-primary"
-                                >Donate Now</button
-                            >
-                        </div>
-                    </form>
-                </div>
-            </div>
+      <div
+        class="donation-form-wrapper p-4 bg-white shadow rounded form-container"
+      >
+        <div class="form-img">
+          <img
+            src="/assets/images/programs/formimage.png"
+            alt=""
+            class="formm-imgg"
+          />
         </div>
+        <div class="formm">
+          <h3 class="form-title mb-4">{heroData.subheading}</h3>
+          <form>
+            <!-- Donation Amount -->
+            <div class="mb-3">
+              <label class="form-label">{heroData.label}</label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationAmount"
+                  id="amount500"
+                  value="500"
+                  checked
+                />
+                <label class="form-check-label" for="amount500"
+                  >{heroData.price1}</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationAmount"
+                  id="amount1000"
+                  value="1000"
+                />
+                <label class="form-check-label" for="amount1000"
+                  >{heroData.price2}</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationAmount"
+                  id="amount5000"
+                  value="5000"
+                />
+                <label class="form-check-label" for="amount5000"
+                  >{heroData.price3}</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationAmount"
+                  id="customAmount"
+                  value="custom"
+                />
+                <label class="form-check-label" for="customAmount"
+                  >{heroData.custom}</label
+                >
+              </div>
+            </div>
+
+            <!-- Donation Frequency -->
+            <div class="mb-3">
+              <label class="form-label">{heroData.freq}</label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationFrequency"
+                  id="monthly"
+                  value="monthly"
+                  checked
+                />
+                <label class="form-check-label" for="monthly"
+                  >{heroData.monthly}</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationFrequency"
+                  id="onetime"
+                  value="onetime"
+                />
+                <label class="form-check-label" for="onetime"
+                  >{heroData.onetime}</label
+                >
+              </div>
+            </div>
+            <p class="form-text mt-3">
+              {heroData.para}
+            </p>
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn btn-secondary"
+                >{heroData.cancel}</button
+              >
+              <button type="submit" class="btn btn-primary"
+                >{heroData.donate}</button
+              >
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </section>

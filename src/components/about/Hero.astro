@@ -1,8 +1,17 @@
 ---
 import { getEntry } from "astro:content";
 const hero = await getEntry("about", "hero");
-const { qoute, date, desktop_image, tablet_image, mobile_image } = hero.data;
+const {
+  qoute,
+  date,
+  desktop_image,
+  tablet_image,
+  mobile_image,
+  name,
+  Flatseal,
+} = hero.data;
 ---
+
 <script type="module" src="/assets/js/common.js" is:inline></script>
 
 <!-- -----hero swiper animation ---- -->
@@ -39,131 +48,132 @@ const { qoute, date, desktop_image, tablet_image, mobile_image } = hero.data;
       class="text-[18px] font-normal leading-[27px] tracking-normal mt-4 !text-[#F5F5F5]"
       style="font-family: 'Merriweather', serif;"
     >
-      Maa Kiran Jain
+      {name}
       {date}
     </p>
   </div>
-    </section>
+</section>
 
-  <!-- ---------- tablet --- -->
-  <section class="tablet-view relative mt-[5rem]">
-    <div class="relative h-[760px]">
-      <!-- Swiper for tablet -->
-      <div
-        class="swiper mobile-swiper position-absolute top-0 start-0 w-100 h-100"
-      >
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div
-              class="swiper-slide-cover aspect-[4/4]"
-              style=`background-image: url(${tablet_image});`
-            >
-            </div>
+<!-- ---------- tablet --- -->
+<section class="tablet-view relative mt-[5rem]">
+  <div class="relative h-[760px]">
+    <!-- Swiper for tablet -->
+    <div
+      class="swiper mobile-swiper position-absolute top-0 start-0 w-100 h-100"
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div
+            class="swiper-slide-cover aspect-[4/4]"
+            style=`background-image: url(${tablet_image});`
+          >
           </div>
-        </div>
-      </div>
-      Flatseal
-      <!-- Text Content Container -->
-      <div
-        class="max-w-[342px] absolute inset-0 ml-[50%] mt-[10%] flex flex-col px-2 justify-between z-20"
-      >
-        <div>
-          <p
-            class="hero-subtitle !text-[#FFFFFF] !text-[20px] font-normal leading-[28px] tracking-[-2.2%] align-middle"
-            style="font-family: 'Merriweather', serif; font-weight: 400; font-size: 20px; line-height: 28px; letter-spacing: -2.2%; vertical-align: middle;"
-          >
-            {qoute}
-          </p>
-          <p
-            class="body-text-1 !text-[#FFFFFF] mt-4"
-            style="font-family: 'Merriweather', serif;"
-          >
-            Maa Kiran Jain <br />
-            {date}
-          </p>
         </div>
       </div>
     </div>
-  </section>
-
-    <!-- ---------- mobile --- -->
-    <section class="mobile-view relative mt-[5rem]">
-      <div class="relative h-[760px]">
-        <!-- Swiper for mobile -->
-        <div
-          class="swiper mobile-swiper position-absolute top-0 start-0 w-100 h-100"
+    {Flatseal}
+    <!-- Text Content Container -->
+    <div
+      class="max-w-[342px] absolute inset-0 ml-[50%] mt-[10%] flex flex-col px-2 justify-between z-20"
+    >
+      <div>
+        <p
+          class="hero-subtitle !text-[#FFFFFF] !text-[20px] font-normal leading-[28px] tracking-[-2.2%] align-middle"
+          style="font-family: 'Merriweather', serif; font-weight: 400; font-size: 20px; line-height: 28px; letter-spacing: -2.2%; vertical-align: middle;"
         >
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div
-                class="swiper-slide-cover aspect-[4/4]"
-                style=`background-image: url(${mobile_image});`
-              >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Text Content Container -->
-        <div
-          class="absolute inset-0 mt-[30%] flex flex-col px-4 justify-between z-20"
+          {qoute}
+        </p>
+        <p
+          class="body-text-1 !text-[#FFFFFF] mt-4"
+          style="font-family: 'Merriweather', serif;"
         >
-          <!-- Title at Top -->
-          <!-- Bottom-aligned Content -->
-          <div>
-            <p
-              class="hero-subtitle !text-[#FFFFFF]"
-              style="font-family: 'Merriweather', serif;"
-            >
-              {qoute}
-            </p>
-            <p
-              class="text-[18px] font-normal leading-[27px] tracking-normal mt-4 !text-[#F5F5F5]"
-              style="font-family: 'Merriweather', serif;"
-            >
-              Maa Kiran Jain <br />
-              {date}
-            </p>
+          {name}
+          <br />
+          {date}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- mobile --- -->
+<section class="mobile-view relative mt-[5rem]">
+  <div class="relative h-[760px]">
+    <!-- Swiper for mobile -->
+    <div
+      class="swiper mobile-swiper position-absolute top-0 start-0 w-100 h-100"
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div
+            class="swiper-slide-cover aspect-[4/4]"
+            style=`background-image: url(${mobile_image});`
+          >
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Text Content Container -->
+    <div
+      class="absolute inset-0 mt-[30%] flex flex-col px-4 justify-between z-20"
+    >
+      <!-- Title at Top -->
+      <!-- Bottom-aligned Content -->
+      <div>
+        <p
+          class="hero-subtitle !text-[#FFFFFF]"
+          style="font-family: 'Merriweather', serif;"
+        >
+          {qoute}
+        </p>
+        <p
+          class="text-[18px] font-normal leading-[27px] tracking-normal mt-4 !text-[#F5F5F5]"
+          style="font-family: 'Merriweather', serif;"
+        >
+          {name}
+          <br />
+          {date}
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
-      <style>
-        @media screen and (max-width: 2000px) {
-          .mobile-view {
-            display: none;
-          }
-          .tablet-view {
-            display: none;
-          }
-          .desktop-view {
-            display: block;
-          }
-        }
-        @media screen and (max-width: 808px) {
-          .mobile-view {
-            display: none;
-          }
-          .tablet-view {
-            display: block;
-          }
-          .desktop-view {
-            display: none;
-          }
-        }
+<style>
+  @media screen and (max-width: 2000px) {
+    .mobile-view {
+      display: none;
+    }
+    .tablet-view {
+      display: none;
+    }
+    .desktop-view {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 808px) {
+    .mobile-view {
+      display: none;
+    }
+    .tablet-view {
+      display: block;
+    }
+    .desktop-view {
+      display: none;
+    }
+  }
 
-        @media screen and (max-width: 564px) {
-          .mobile-view {
-            display: block;
-          }
-          .tablet-view {
-            display: none;
-          }
-          .desktop-view {
-            display: none;
-          }
-        }
-      </style>
+  @media screen and (max-width: 564px) {
+    .mobile-view {
+      display: block;
+    }
+    .tablet-view {
+      display: none;
+    }
+    .desktop-view {
+      display: none;
+    }
+  }
+</style>
 
-      <!-- Update the script to handle both swipers -->
-
+<!-- Update the script to handle both swipers -->

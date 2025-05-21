@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/common/Header.astro";
 
 import { getEntry } from "astro:content";
-const entry = (await getEntry("common-pages", "privacy-policy")) as any;
+const entry = (await getEntry("pages", "privacy-policy")) as any;
 
 const {
   title = "",
@@ -50,6 +50,7 @@ const {
   head10 = "",
   head11 = "",
   head12 = "",
+  head13 = "",
   mail = "",
 } = entry?.data ?? {};
 ---
@@ -131,7 +132,7 @@ const {
             </p>
           </li>
         </ul>
-        <p class="head">Device identifiers:</p>
+        <p class="head">{head13}</p>
         <ul>
           <li>
             <p>

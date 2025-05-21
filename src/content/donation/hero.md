@@ -1,3 +1,15 @@
 ---
 heading: "Make a Lasting Impact: Support the Future with Your Donation"
+subheading: "Make a Donation"
+label: "Choose a donation amount"
+price1: "₹500"
+price2: "₹1000"
+price3: "₹5000"
+custom: "Custom donation"
+freq: "Choose a donation frequency"
+monthly: "Monthly"
+onetime: "One time"
+para: "Every gift, whether monthly or one-time, makes a profound impact.We appreciate your commitment to fostering hope and resilience within our community. Thank you for being part of this transformative journey."
+cancel: "Cancel"
+donate: "Donate Now"
 ---

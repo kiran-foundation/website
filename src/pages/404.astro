@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getEntry } from "astro:content";
-const entry = (await getEntry("common-pages", "404")) as any;
+const entry = (await getEntry("pages", "404")) as any;
 
 const { title = "", subtitle = "", link = "" } = entry?.data ?? {};
 ---

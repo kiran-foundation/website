@@ -42,5 +42,6 @@ head11: "How long we keep your User Content:"
 info28: "The Kiran Social Foundation or its Service Providers may retain information (including your profile information) for a reasonable time for backup, archival, and/or audit purposes."
 head12: "5. HOW TO CONTACT US"
 info29: "If you have any questions about this Privacy Policy or the application, please contact us at"
-mail: "info@kiran.foundation:
+mail: "info@kiran.foundation:"
+head13: "Device identifiers:"
 ---

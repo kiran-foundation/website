@@ -1,16 +1,23 @@
+---
+import { getEntry } from "astro:content";
+const entry = (await getEntry("pages", "preloading")) as any;
+
+const { title = "" } = entry?.data ?? {};
+---
+
 <style>
-    .load-Div{
-        position:fixed;
-        width: 100%;
-        background-color: red;
-        z-index: 1000;
-    }
+  .load-Div {
+    position: fixed;
+    width: 100%;
+    background-color: red;
+    z-index: 1000;
+  }
 </style>
 <div class="load load-Div">
-    <div class='page-loading active'>
-        <div class='page-loading-inner'>
-          <div class='page-spinner'></div>
-          <span>Loading...</span>
-        </div>
-      </div>
+  <div class="page-loading active">
+    <div class="page-loading-inner">
+      <div class="page-spinner"></div>
+      <span>{title}</span>
+    </div>
+  </div>
 </div>
