@@ -10,22 +10,16 @@ const {
   imageAlignment = "order-1",
 } = Astro.props;
 
-const entry = (await getEntry(collection, slug)) as any;
-
-const {
-  title = "",
-  description = "",
-  image,
-  imageBottom,
-  ctaLink = "/",
-  ctaText,
-  buttonText,
-  whyIntern,
-  whyVolunteer,
-} = entry?.data ?? {};
-
-const reasons = whyIntern?.reasons || whyVolunteer?.reasons || [];
-const heading = whyIntern?.heading || whyVolunteer?.heading || "";
+const componentWhyintern = (await getEntry(collection, slug)) as any;
+const componentWhyinternData = componentWhyintern.data;
+const reasons =
+  componentWhyinternData.whyIntern?.reasons ||
+  componentWhyinternData.whyVolunteer?.reasons ||
+  [];
+const heading =
+  componentWhyinternData.whyIntern?.heading ||
+  componentWhyinternData.whyVolunteer?.heading ||
+  "";
 ---
 
 <section
@@ -42,14 +36,14 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
       <h1
         class="font-merriweather font-normal text-[32px] md:text-[40px] lg:text-[48px] leading-[140%] md:leading-[150%] tracking-[-2.2%]"
       >
-        {title}
+        {componentWhyinternData.title}
       </h1>
       <p
         class="font-poppins font-normal text-[16px] md:text-[18px] leading-[28px] md:leading-[36px] tracking-[0%] text-[#49494C]
         w-full max-w-[90%] sm:max-w-[500px] md:max-w-[636px]
         h-auto md:h-[180px]"
       >
-        {description}
+        {componentWhyinternData.description}
       </p>
     </div>
   </div>
@@ -63,8 +57,8 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
   >
     <div class={`relative  md:order-2`}>
       <img
-        src={image || imageBottom}
-        alt={title}
+        src={componentWhyinternData.image || componentWhyinternData.imageBottom}
+        alt={componentWhyinternData.title}
         class="w-[342px] h-[244.45px] lg:h-[426px] lg:w-[596px] object-cover md:mt-[93.5px] rounded-[32px] overflow-hidden"
       />
     </div>
@@ -116,7 +110,8 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
       <div class="pt-[48px] sm:mt-1">
         <Button
           link="/work-with-us/opportunities/internship"
-          title={ctaText || buttonText}
+          title={componentWhyinternData.ctaText ||
+            componentWhyinternData.buttonText}
           btn="btn1"
           widthClass="w-[342px] sm:w-[200px] lg:w-[252px]"
           heightClass="h-[60px] sm:h-[55px] lg:h-[60px]"

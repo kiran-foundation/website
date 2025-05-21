@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getEntry } from "astro:content";
-const entry = (await getEntry("pages", "404")) as any;
-
-const { title = "", subtitle = "", link = "" } = entry?.data ?? {};
+const pages404 = (await getEntry("pages", "404")).data;
 ---
 
 <link rel="stylesheet" href="/assets/css/404.css" />
@@ -12,10 +10,10 @@ const { title = "", subtitle = "", link = "" } = entry?.data ?? {};
 <Layout title="404 - Kiran Foundation">
   <main class="page-wrapper">
     <div class="container-404">
-      <h1>{title}</h1>
-      <p>{subtitle}</p>
+      <h1>{pages404.title}</h1>
+      <p>{pages404.subtitle}</p>
       <p>
-        <a href="/">{link}</a>
+        <a href="/">{pages404.link}</a>
       </p>
     </div>
   </main>

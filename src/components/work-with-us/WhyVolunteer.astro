@@ -10,22 +10,16 @@ const {
   imageAlignment = "order-1",
 } = Astro.props;
 
-const entry = (await getEntry(collection, slug)) as any;
-
-const {
-  title = "",
-  description = "",
-  imageTop,
-  imageBottom,
-  ctaLink = "/",
-  ctaText,
-  buttonText,
-  whyIntern,
-  whyVolunteer,
-} = entry?.data ?? {};
-
-const reasons = whyIntern?.reasons || whyVolunteer?.reasons || [];
-const heading = whyIntern?.heading || whyVolunteer?.heading || "";
+const componentWhyVolunteer = (await getEntry(collection, slug)) as any;
+const componentWhyVolunteerData = componentWhyVolunteer.data;
+const reasons =
+  componentWhyVolunteerData.WhyVolunteer?.reasons ||
+  componentWhyVolunteerData.whyVolunteer?.reasons ||
+  [];
+const heading =
+  componentWhyVolunteerData.WhyVolunteer?.heading ||
+  componentWhyVolunteerData.whyVolunteer?.heading ||
+  "";
 ---
 
 <section
@@ -39,11 +33,11 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
     class="grid md:grid-cols-2 gap-20 md:gap-16 items-center"
   >
     {
-      imageTop && (
+      componentWhyVolunteerData.imageTop && (
         <div class={`relative  md:order-2`}>
           <img
-            src={imageTop}
-            alt={title}
+            src={componentWhyVolunteerData.imageTop}
+            alt={componentWhyVolunteerData.title}
             class="w-full h-[232px] md:order-2 sm:h-64 md:h-80 lg:h-[406px] lg:w-[596px] lg:ml-16 rounded-[32px] overflow-hidden"
           />
         </div>
@@ -56,14 +50,14 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
       <h1
         class="font-merriweather font-normal text-[32px] md:text-[40px] lg:text-[48px] leading-[150%] tracking-[-2.2%] text-[#1e1e1e]"
       >
-        {title}
+        {componentWhyVolunteerData.title}
       </h1>
       <p
         class="font-poppins font-normal text-[16px] md:text-[18px] leading-[32px] md:leading-[36px] tracking-[0%] text-[#49494C]
         w-full sm:max-w-[500px] md:max-w-[636px]
         h-auto md:h-[180px]"
       >
-        {description}
+        {componentWhyVolunteerData.description}
       </p>
     </div>
   </div>
@@ -82,7 +76,7 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
         reasons.length > 0 && (
           <div class="space-y-6 sm:space-y-8 lg:space-y-8 w-full lg:h-[577px]">
             <h3 class="font-poppins font-medium text-[24px] md:text-[28px] lg:text-[32px] leading-[100%] text-[#1E1E1E] pb-[32px]">
-              {heading}
+              {componentWhyVolunteerData.heading}
             </h3>
             <div class="space-y-6 sm:space-y-8 md:space-y-[40px] w-full  lg:h-[497px]">
               {reasons.map(({ title, text }, index) => (
@@ -104,7 +98,7 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
                       class="font-poppins font-semibold text-[20px] sm:text-[22px] lg:text-[24px] 
          lg:leading-[46.8px] text-[#1E1E1E] flex items-center"
                     >
-                      {title}
+                      {componentWhyVolunteerData.title}
                     </p>
                   </div>
 
@@ -128,7 +122,8 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
       <div class="mt-10 sm:mt-1 pt-[48px]">
         <Button
           link="/work-with-us/opportunities/volunteering"
-          title={ctaText || buttonText}
+          title={componentWhyVolunteerData.ctaText ||
+            componentWhyVolunteerData.buttonText}
           btn="btn1"
           widthClass="w-[342px] sm:w-[300px] lg:w-[252px]"
           heightClass="h-[60px] sm:h-[60px] lg:h-[60px]"
@@ -138,8 +133,8 @@ const heading = whyIntern?.heading || whyVolunteer?.heading || "";
 
     <div class={` relative ${imageAlignment} ]`}>
       <img
-        src={imageBottom}
-        alt={title}
+        src={componentWhyVolunteerData.imageBottom}
+        alt={componentWhyVolunteerData.title}
         class="w-[342px] h-[334px] lg:h-[582px] lg:w-[596px] object-cover md:mt-[89.86px] md:mb-[13.14px] rounded-lg overflow-hidden"
       />
     </div>

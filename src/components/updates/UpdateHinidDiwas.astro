@@ -1,17 +1,8 @@
 ---
 import { getEntry } from "astro:content";
-const entry = (await getEntry("updates", "2022-09-14-hindi-diwas")) as any;
-
-const {
-  content1 = "",
-  content2 = "",
-  title1 = "",
-  title2 = "",
-  title3 = "",
-  title4 = "",
-  title5 = "",
-  title6 = "",
-} = entry?.data ?? {};
+const componentUpdateHindiDiwas = (
+  await getEntry("updates", "2022-09-14-hindi-diwas")
+).data;
 ---
 
 <div
@@ -19,13 +10,13 @@ const {
   style="margin-top:130px; font-size:23px; color:#051D40; text-aling:justify;"
 >
   <p>
-    {content1}
+    {componentUpdateHindiDiwas.Para}
   </p>
   <br />
 
   <p style="text-align: center; font-size:19px; color:#051D40;">
     <b>
-      {content2}
+      {componentUpdateHindiDiwas.subPara}
     </b>
   </p>
 
@@ -43,7 +34,7 @@ const {
       </li>
       <li>
         <hr />
-        <p><b>{title1}</b></p>
+        <p><b>{componentUpdateHindiDiwas.neerJain}</b></p>
         <img
           src="/assets/images/hindidiwas/neer_jain.jpg"
           style="border: 1px solid #888; width:600px; margin-bottom: 20px;"
@@ -51,7 +42,7 @@ const {
       </li>
       <li>
         <hr />
-        <p><b>{title2}</b></p>
+        <p><b>{componentUpdateHindiDiwas.sarikaJain}</b></p>
         <img
           src="/assets/images/hindidiwas/sarika_jain.jpg"
           style="border: 1px solid #888; width:600px; margin-bottom: 20px;"
@@ -59,7 +50,7 @@ const {
       </li>
       <li>
         <hr />
-        <p><b>{title3}</b></p>
+        <p><b>{componentUpdateHindiDiwas.anurimaJain}</b></p>
         <img
           src="/assets/images/hindidiwas/anurima_jain.jpeg"
           style="border: 1px solid #888; width:600px; margin-bottom: 20px;"
@@ -67,7 +58,7 @@ const {
       </li>
       <li>
         <hr />
-        <p><b>{title4}</b></p>
+        <p><b>{componentUpdateHindiDiwas.bindubalaJain}</b></p>
         <img
           src="/assets/images/hindidiwas/bindubala_jain.jpeg"
           style="border: 1px solid #888; width:600px; margin-bottom: 20px;"
@@ -75,7 +66,7 @@ const {
       </li>
       <li>
         <hr />
-        <p><b>{title5}</b></p>
+        <p><b>{componentUpdateHindiDiwas.anjaliRai}</b></p>
         <img
           src="/assets/images/hindidiwas/anjali_rai_1.jpeg"
           style="border: 1px solid #888; width:600px; margin-bottom: 20px;"
@@ -83,7 +74,7 @@ const {
       </li>
       <li>
         <hr />
-        <p><b>{title6}</b></p>
+        <p><b>{componentUpdateHindiDiwas.sushmaBadkul}</b></p>
         <img
           src="/assets/images/hindidiwas/sushma_badkul.jpeg"
           style="border: 1px solid #888; width:600px; margin-bottom: 20px;"

@@ -3,29 +3,20 @@ const { path } = Astro.props;
 const redirectTo = "/work-with-us/opportunities/thank-you";
 
 import { getEntry } from "astro:content";
-const entry = (await getEntry("work-with-us", "content/form")) as any;
-
-const {
-  title = "",
-  fullname = "",
-  required = "",
-  email = "",
-  phone = "",
-  aboutyou = "",
-  optional = "",
-  apply = "",
-} = entry?.data ?? {};
+const componentForm = (await getEntry("work-with-us", "content/form")).data;
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
 <script type="module" src="/assets/js/common.js" is:inline></script>
 <section id="form">
   <div class="volunteeringForm-frame">
-    <h1>{title}</h1>
+    <h1>{componentForm.title}</h1>
 
     <form id="volunteering-form" data-redirect={redirectTo}>
       <div class="form-input-container">
-        <label for="full-name">{fullname} <span>{required}</span></label>
+        <label for="full-name"
+          >{componentForm.fullname} <span>{componentForm.required}</span></label
+        >
         <input
           type="text"
           id="full-name"
@@ -34,20 +25,26 @@ const {
         />
       </div>
       <div class="form-input-container">
-        <label for="email">{email} <span>{required}</span> </label>
+        <label for="email"
+          >{componentForm.email} <span>{componentForm.required}</span>
+        </label>
         <input type="text" id="email" name="email" placeholder="Your email" />
       </div>
       <div class="form-input-container">
-        <label for="phone">{phone} <span>{required}</span> </label>
+        <label for="phone"
+          >{componentForm.phone} <span>{componentForm.required}</span>
+        </label>
         <input type="text" id="phone" name="phone" placeholder="Your number" />
       </div>
       <div class="form-input-container" id="form-input-container-big">
-        <label for="more">{aboutyou} <span>{optional}</span></label>
+        <label for="more"
+          >{componentForm.aboutyou} <span>{componentForm.optional}</span></label
+        >
         <textarea id="more" name="more" rows="5"></textarea>
       </div>
 
       <button type="submit" class="volunteeringForm-submit-button"
-        >{apply}</button
+        >{componentForm.apply}</button
       >
     </form>
   </div>

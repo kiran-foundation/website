@@ -1,15 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-const hero = await getEntry("about", "hero");
-const {
-  qoute,
-  date,
-  desktop_image,
-  tablet_image,
-  mobile_image,
-  name,
-  Flatseal,
-} = hero.data;
+const componentHero = (await getEntry("about", "hero")).data;
 ---
 
 <script type="module" src="/assets/js/common.js" is:inline></script>
@@ -27,7 +18,7 @@ const {
       <div class="swiper-slide">
         <div
           class="swiper-slide-cover aspect-[4/4]"
-          style=`background-image: url(${desktop_image});`
+          style=`background-image: url(${componentHero.desktop_image});`
         >
         </div>
       </div>
@@ -41,15 +32,15 @@ const {
     <p
       class="block !text-[#FFFFFF] hero-subtitle max-w-full md:max-w-[700px] xl:max-w-[700px]"
     >
-      {qoute}
+      {componentHero.qoute}
     </p>
 
     <p
       class="text-[18px] font-normal leading-[27px] tracking-normal mt-4 !text-[#F5F5F5]"
       style="font-family: 'Merriweather', serif;"
     >
-      {name}
-      {date}
+      {componentHero.name}
+      {componentHero.date}
     </p>
   </div>
 </section>
@@ -65,13 +56,13 @@ const {
         <div class="swiper-slide">
           <div
             class="swiper-slide-cover aspect-[4/4]"
-            style=`background-image: url(${tablet_image});`
+            style=`background-image: url(${componentHero.tablet_image});`
           >
           </div>
         </div>
       </div>
     </div>
-    {Flatseal}
+    {componentHero.Flatseal}
     <!-- Text Content Container -->
     <div
       class="max-w-[342px] absolute inset-0 ml-[50%] mt-[10%] flex flex-col px-2 justify-between z-20"
@@ -81,15 +72,15 @@ const {
           class="hero-subtitle !text-[#FFFFFF] !text-[20px] font-normal leading-[28px] tracking-[-2.2%] align-middle"
           style="font-family: 'Merriweather', serif; font-weight: 400; font-size: 20px; line-height: 28px; letter-spacing: -2.2%; vertical-align: middle;"
         >
-          {qoute}
+          {componentHero.qoute}
         </p>
         <p
           class="body-text-1 !text-[#FFFFFF] mt-4"
           style="font-family: 'Merriweather', serif;"
         >
-          {name}
+          {componentHero.name}
           <br />
-          {date}
+          {componentHero.date}
         </p>
       </div>
     </div>
@@ -107,7 +98,7 @@ const {
         <div class="swiper-slide">
           <div
             class="swiper-slide-cover aspect-[4/4]"
-            style=`background-image: url(${mobile_image});`
+            style=`background-image: url(${componentHero.mobile_image});`
           >
           </div>
         </div>
@@ -125,15 +116,15 @@ const {
           class="hero-subtitle !text-[#FFFFFF]"
           style="font-family: 'Merriweather', serif;"
         >
-          {qoute}
+          {componentHero.qoute}
         </p>
         <p
           class="text-[18px] font-normal leading-[27px] tracking-normal mt-4 !text-[#F5F5F5]"
           style="font-family: 'Merriweather', serif;"
         >
-          {name}
+          {componentHero.name}
           <br />
-          {date}
+          {componentHero.date}
         </p>
       </div>
     </div>

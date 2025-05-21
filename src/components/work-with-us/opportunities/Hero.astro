@@ -1,8 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-const entry = (await getEntry("work-with-us", "content/form")) as any;
-
-const { title = "" } = entry?.data ?? {};
+const componentHero = (await getEntry("work-with-us", "content/form")).data;
 ---
 
 <section class="position-relative" style="margin-top: 4rem">
@@ -12,7 +10,7 @@ const { title = "" } = entry?.data ?? {};
       style="font-family: Poppins; font-weight: 400; font-size: 14px; line-height: 100%; letter-spacing: 0%; color: #1E1E1E;"
       href="/work-with-us/opportunities"
     >
-      {title}
+      {componentHero.title}
     </a>
   </div>
 </section>

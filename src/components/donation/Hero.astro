@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-const heroData = (await getEntry("donation", "hero")).data;
+const componentheroData = (await getEntry("donation", "hero")).data;
 ---
 
 <section
@@ -15,7 +15,7 @@ const heroData = (await getEntry("donation", "hero")).data;
 
   <div class="hero-container">
     <h1 class="hero-title display-0 text-white pt-5 z-2">
-      {heroData.heading}
+      {componentheroData.heading}
     </h1>
 
     <div
@@ -32,11 +32,11 @@ const heroData = (await getEntry("donation", "hero")).data;
           />
         </div>
         <div class="formm">
-          <h3 class="form-title mb-4">{heroData.subheading}</h3>
+          <h3 class="form-title mb-4">{componentheroData.subheading}</h3>
           <form>
             <!-- Donation Amount -->
             <div class="mb-3">
-              <label class="form-label">{heroData.label}</label>
+              <label class="form-label">{componentheroData.label}</label>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -47,7 +47,7 @@ const heroData = (await getEntry("donation", "hero")).data;
                   checked
                 />
                 <label class="form-check-label" for="amount500"
-                  >{heroData.price1}</label
+                  >{componentheroData.price1}</label
                 >
               </div>
               <div class="form-check">
@@ -59,7 +59,7 @@ const heroData = (await getEntry("donation", "hero")).data;
                   value="1000"
                 />
                 <label class="form-check-label" for="amount1000"
-                  >{heroData.price2}</label
+                  >{componentheroData.price2}</label
                 >
               </div>
               <div class="form-check">
@@ -71,7 +71,7 @@ const heroData = (await getEntry("donation", "hero")).data;
                   value="5000"
                 />
                 <label class="form-check-label" for="amount5000"
-                  >{heroData.price3}</label
+                  >{componentheroData.price3}</label
                 >
               </div>
               <div class="form-check">
@@ -83,14 +83,14 @@ const heroData = (await getEntry("donation", "hero")).data;
                   value="custom"
                 />
                 <label class="form-check-label" for="customAmount"
-                  >{heroData.custom}</label
+                  >{componentheroData.custom}</label
                 >
               </div>
             </div>
 
             <!-- Donation Frequency -->
             <div class="mb-3">
-              <label class="form-label">{heroData.freq}</label>
+              <label class="form-label">{componentheroData.freq}</label>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -101,7 +101,7 @@ const heroData = (await getEntry("donation", "hero")).data;
                   checked
                 />
                 <label class="form-check-label" for="monthly"
-                  >{heroData.monthly}</label
+                  >{componentheroData.monthly}</label
                 >
               </div>
               <div class="form-check">
@@ -113,19 +113,19 @@ const heroData = (await getEntry("donation", "hero")).data;
                   value="onetime"
                 />
                 <label class="form-check-label" for="onetime"
-                  >{heroData.onetime}</label
+                  >{componentheroData.onetime}</label
                 >
               </div>
             </div>
             <p class="form-text mt-3">
-              {heroData.para}
+              {componentheroData.para}
             </p>
             <div class="d-flex justify-content-between mt-4">
               <button type="button" class="btn btn-secondary"
-                >{heroData.cancel}</button
+                >{componentheroData.cancel}</button
               >
               <button type="submit" class="btn btn-primary"
-                >{heroData.donate}</button
+                >{componentheroData.donate}</button
               >
             </div>
           </form>

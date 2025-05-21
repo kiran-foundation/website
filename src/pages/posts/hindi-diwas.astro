@@ -10,9 +10,7 @@ interface Props {
   title: string;
 }
 
-const entry = (await getEntry("pages", "hindi-diwas")) as any;
-
-const { title = "", loading = "" } = entry?.data ?? {};
+const postsHindiDiwas = (await getEntry("pages", "hindi-diwas")).data;
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -33,7 +31,7 @@ const { title = "", loading = "" } = entry?.data ?? {};
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{postsHindiDiwas.title}</title>
     <link rel="manifest" href="/manifest.json" />
     <link
       rel="icon"
@@ -170,7 +168,7 @@ const { title = "", loading = "" } = entry?.data ?? {};
     <div class="page-loading active">
       <div class="page-loading-inner">
         <div class="page-spinner"></div>
-        <span>{loading}</span>
+        <span>{postsHindiDiwas.loading}</span>
       </div>
     </div>
 

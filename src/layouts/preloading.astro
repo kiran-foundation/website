@@ -1,8 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-const entry = (await getEntry("pages", "preloading")) as any;
-
-const { title = "" } = entry?.data ?? {};
+const layoutPreloading = (await getEntry("pages", "preloading")).data;
 ---
 
 <style>
@@ -17,7 +15,7 @@ const { title = "" } = entry?.data ?? {};
   <div class="page-loading active">
     <div class="page-loading-inner">
       <div class="page-spinner"></div>
-      <span>{title}</span>
+      <span>{layoutPreloading.title}</span>
     </div>
   </div>
 </div>

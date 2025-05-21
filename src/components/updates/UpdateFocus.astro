@@ -1,58 +1,25 @@
 ---
 import { getEntry } from "astro:content";
-const entry = (await getEntry(
-  "updates",
-  "2023-03-18-shreya-gold-medal.md"
-)) as any;
-
-const {
-  summary = "",
-  content1 = "",
-  content2 = "",
-  content3 = "",
-  content4 = "",
-  content5 = "",
-  title2 = "",
-  sign = "",
-} = entry?.data ?? {};
+const componentUpdateFocus = (
+  await getEntry("updates", "2023-03-18-shreya-gold-medal.md")
+).data;
 ---
 
 <div class="container" style="text-align: center;">
   <div class="updateFocus-header">
     <h1>
-      {summary}
+      {componentUpdateFocus.title}
     </h1>
   </div>
   <div class="updateFocus-line"></div>
   <div class="updateFocus-content">
-    <div class="updateFocus-paragraph" id="c4">
-      {content1}
-    </div>
-    <div class="updateFocus-paragraph-2" id="c5">
-      {content2}
-    </div>
-    <div class="updateFocus-paragraph" id="c6">
-      {content3}
-    </div>
+    <div set:html={componentUpdateFocus.content} />
     <div class="image-container">
       <img
         src="/assets/images/posts/shreyagoldmedal.png"
-        alt="Ms. Shreya Jain receiving her gold medal"
+        alt={componentUpdateFocus.alt}
       />
     </div>
-    <div class="updateFocus-text-container">
-      <h2>
-        {title2}
-      </h2>
-      <p>
-        {content4}
-      </p>
-      <div class="updateFocus-box">
-        <p>
-          {content5}
-        </p>
-        <div class="updateFocus-signature">{sign}</div>
-      </div>
-    </div>
+    <div set:html={componentUpdateFocus.information} />
   </div>
 </div>

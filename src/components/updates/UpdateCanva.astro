@@ -1,20 +1,22 @@
 ---
 import { getEntry } from "astro:content";
-const entry = (await getEntry("updates", "2023-05-06-shakti-canva")) as any;
-
-const { part1 = "", part2 = "", register = "" } = entry?.data ?? {};
+const componentUpdateCanva = (
+  await getEntry("updates", "2023-05-06-shakti-canva")
+).data;
 ---
 
 <div class="container" style="margin-top: 150px;">
-  {part1}
+  {componentUpdateCanva.info}
   <br />
-  {part2}
+  {componentUpdateCanva.paragraph}
   <br />
   <br />
   <br />
 
   <div class="button" style="align-items: center;">
-    <a href="https://forms.gle/wAMS7Ns9n7Sw1SKX8">{register}</a>
+    <a href="https://forms.gle/wAMS7Ns9n7Sw1SKX8"
+      >{componentUpdateCanva.register}</a
+    >
   </div>
   <br />
   <br />

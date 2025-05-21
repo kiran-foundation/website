@@ -63,19 +63,8 @@ const {
   ),
 } = {};
 
-const entry = (await getEntry("work-with-us", "content/listing")) as any;
-
-const {
-  sdate = "",
-  rtype = "",
-  dur = "",
-  time = "",
-  team = "",
-  todo = "",
-  imp = "",
-  who = "",
-  why = "",
-} = entry?.data ?? {};
+const componentInternship = (await getEntry("work-with-us", "content/listing"))
+  .data;
 ---
 
 <div class="aboutVolunteering-frame1">
@@ -84,25 +73,25 @@ const {
     <h3>{quote}</h3>
   </div>
   <p class="aboutVolunteering-info-text">
-    <span>{sdate}</span>
+    <span>{componentInternship.sdate}</span>
     {startDate}
     <br />
-    <span>{rtype}</span>
+    <span>{componentInternship.rtype}</span>
     {roleType}
     <br />
-    <span>{dur}</span>
+    <span>{componentInternship.dur}</span>
     {duration}
     <br />
-    <span>{time}</span>
+    <span>{componentInternship.time}</span>
     {timeCommitment}
     <br />
-    <span>{team}</span>
+    <span>{componentInternship.team}</span>
     {teamSize + " Volunteers"}
   </p>
   <div class="aboutVolunteering-frame3">
-    <div class="aboutVolunteering-frame5">{todo}</div>
+    <div class="aboutVolunteering-frame5">{componentInternship.todo}</div>
     <p>
-      <span>{imp}</span>
+      <span>{componentInternship.imp}</span>
       {impact}
     </p>
     <div class="aboutVolunteering-frame4">
@@ -113,7 +102,7 @@ const {
       />
     </div>
     <div class="aboutVolunteering-frame4">
-      <div class="aboutVolunteering-frame5">{who}</div>
+      <div class="aboutVolunteering-frame5">{componentInternship.who}</div>
       <InternshipComponent
         path={Astro.props.path}
         name="requirements"
@@ -121,7 +110,7 @@ const {
       />
     </div>
     <div class="aboutVolunteering-frame4">
-      <div class="aboutVolunteering-frame5">{why}</div>
+      <div class="aboutVolunteering-frame5">{componentInternship.why}</div>
 
       <InternshipComponent
         path={Astro.props.path}

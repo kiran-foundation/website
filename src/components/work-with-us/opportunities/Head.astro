@@ -1,11 +1,8 @@
 ---
 import { getEntry } from "astro:content";
-const entry = (await getEntry(
-  "work-with-us",
-  "opportunities/items-volunteering/head"
-)) as any;
-
-const { title = "", subtitle = "" } = entry?.data ?? {};
+const componentHead = (
+  await getEntry("work-with-us", "opportunities/items-volunteering/head")
+).data;
 ---
 
 <div class="w-full mt-[32px] bg-white">
@@ -14,10 +11,10 @@ const { title = "", subtitle = "" } = entry?.data ?? {};
       class="!container !max-w-[1296px] mx-auto flex flex-col gap-[32px] justify-center"
     >
       <h1 class="font-merriweather text-[36px] md:text-[64px] text-white">
-        {title}
+        {componentHead.title}
       </h1>
       <h3 class="font-poppins text-[32px] font-normal text-white">
-        {subtitle}
+        {componentHead.subtitle}
       </h3>
     </section>
   </div>

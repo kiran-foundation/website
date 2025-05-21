@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getEntry } from "astro:content";
-const entry = (await getEntry("pages", "compliance")) as any;
-
-const { title = "" } = entry?.data ?? {};
+const pagesCompliance = (await getEntry("pages", "compliance")).data;
 ---
 
 <Layout>
@@ -14,7 +12,7 @@ const { title = "" } = entry?.data ?? {};
         class="h1 display-2 fw-bold text-center"
         style="font-size: 50px; margin: 100px auto; color:#e3410f;"
       >
-        {title}
+        {pagesCompliance.title}
       </h1>
     </div>
   </main>

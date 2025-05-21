@@ -35,7 +35,7 @@ content: |
 
   <a href="https://forms.gle/wAMS7Ns9n7Sw1SKX8"><img src="/images/posts/canva2023.png" style="border: 1px solid #888;"/></a>
 
-part1:
+info:
   "किरण फाउंडेशन प्रस्तुत करते हैं महिलाओं के लिए नि:शुल्क कोर्स on Advance Canva
   । यह कोर्स केवल उन्ही महिलाओं के लिए है जो किरण फाउंडेशन द्वारा संचालित
   Essential Digital Skills कोर्स कम्प्लीट कर चुके हैं। कोर्स में निम्नलिखित
@@ -46,7 +46,7 @@ part1:
   सोशल मीडिया मैनेजमेंट( connect social media accounts with canva,schedule a
   Post, edit and delete a scheduled post, see post insights etc.)"
 
-part2:
+paragraph:
   "इन कोर्स का उपयोग आप अपने दैनिक जीवन में, education में, लघु व्यवसाय में,
   ग्राफिक्स डिजाइन कर आत्मनिर्भर बनने में कर सकते है। कोर्स के दौरान हम आपके सभी
   प्रश्नों का उत्तर देने का प्रयास करेंगे।कोर्स के अंत में परीक्षा आयोजित की
