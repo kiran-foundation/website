@@ -6,31 +6,30 @@ const {people } = team?.data;
 ---
 <div class="row row-cols-1 row-cols-sm-2 g-4 max-w-[1296px] mx-auto mt-[96px] mb-[196px]">
     {
-        people.map(({name,role, image}) => (
-            <div class="col max-w-[400px] ">
-                <div class="card-hover pb-4 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3 flex flex-col justify-center items-center">
+        people.map(({name,role, image,social, connectLink}) => (
+            <div class="col max-w-[400px] group">
+                <div class="card-hover pb-4 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3 flex flex-col justify-center items-center   ">
                     <div class="position-relative ">
                         <img
-                            class=" rounded-3xl"
+                            class="rounded-3xl transition duration-100 group-hover:brightness-75"
                             src={image}
                             alt="Image"
                         />
                         <div class="d-flex justify-content-center position-absolute  start-2 bottom-0 w-[336px] px-3 mb-4 opacity-0">
                       
                         <a
-                                class=" rounded-lg text-white border-white border-1 md:py-8 px-[74px]  h-[60px]  py-2 font-bold mx-auto flex items-center justify-center"
+                                class=" rounded-lg text-white border-white border-1 md:py-8  px-6  h-[60px]  py-2 font-bold mx-auto flex items-center justify-center"
                                 style="font-family: Poppins; font-weight: 700; font-size: 18px; line-height: 100%; letter-spacing: 0%; text-align: center;"
-                                href="#"
+                                href={connectLink}
                                 aria-label="Dribbble"
                             >
-                                LinkedIn
-                            </a>
+                                {social}</a>
                       
                     </div>
                       
                     </div>
-                    <div class=" pt-4 space-y-4 pb-4">
-                        <h3 class="h4 mb-2 text-center heading-3">
+                    <div class=" w-[400px] pt-4 space-y-4 pb-4">
+                        <h3 class=" mb-2 text-center heading-3">
                             {name}
                         </h3>
                         <h3 class="fs-lg body-text-2 text-center text-[#1E1E1E]">
