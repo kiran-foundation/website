@@ -1,8 +1,8 @@
 ---
 import { getEntry } from "astro:content";
-
-const team = await getEntry("team", "people");
-const { people } = team?.data;
+const { collection, slug } = Astro.props;
+const team = await getEntry(collection, slug) as { data?: { people: any[] } } | undefined;
+const { people } = team?.data ?? { people: [] };
 ---
 
 <div
