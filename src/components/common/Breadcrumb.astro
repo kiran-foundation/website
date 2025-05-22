@@ -19,7 +19,7 @@ const findBreadcrumbName = (path: string) => {
       if (section.submenu) {
         for (const link of section.submenu) {
           if (link.url === path) {
-            return link.name;
+            return (link.name);
           }
         }
       }
@@ -45,7 +45,7 @@ const breadcrumbs = segments.map((_, index) => {
 <nav
   class=` ${hidden ? "hidden" : ""} sm:flex h-[21px] gap-[10px] px-6 lg:px-8 max-w-[81rem] text-[0.875rem] font-normal leading-[100%] tracking-[0%] font-poppins mx-auto my-8 `
 >
-  <ol class="flex space-x-2 items-start">
+  <ol class="flex space-x-2 items-start capitalize">
     <li>
       <a href="/" class="text-[#1E1E1E] hover:underline">Home</a>
     </li>
@@ -58,7 +58,6 @@ const breadcrumbs = segments.map((_, index) => {
           <li>
             <a href={breadcrumb.path} class="text-[#1E1E1E] hover:underline">
               {breadcrumb.name.replace("/", " ")}
-              {/* {segments[segments.length - 1]} */}
             </a>
           </li>
         </>
