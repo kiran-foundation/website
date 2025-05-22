@@ -11,8 +11,7 @@ interface Props {
 }
 
 import { getEntry } from "astro:content";
-const postsShreya = (await getEntry("pages", "shreya")) as any;
-const postsShreyaData = postsShreya.data;
+const postsShreya = (await getEntry("pages", "shreya")).data;
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -33,7 +32,7 @@ const postsShreyaData = postsShreya.data;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{postsShreyaData.title}</title>
+    <title>{postsShreya.title}</title>
     <link rel="manifest" href="/manifest.json" />
     <link
       rel="icon"
