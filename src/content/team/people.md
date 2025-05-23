@@ -66,7 +66,7 @@ people:
     social: "Connect on LinkedIn"
     connectLink: "#"
     
-  - name: "Manju Cholra"
+  - name: "Manju Chopra"
     image: "/assets/images/our_team/blank.png"
     role: "Kiran Shakti"
     social: "Connect on LinkedIn"
