@@ -55,7 +55,7 @@ people:
     connectLink: "#"
     
   - name: "Swayam Jain"
-    image: "/assets/images/our_team/blank.png"
+    image: "/assets/images/our_team/sheam.png"
     role: "Student Representative"
     social: "Connect on LinkedIn"
     connectLink: "#"
@@ -97,7 +97,7 @@ people:
     connectLink: "#"
     
   - name: "Kanchan Jha"
-    image: "/assets/images/our_team/bahwa.png"
+    image: "/assets/images/our_team/kanchan.png"
     role: "Kiran Shakti (English Speaking Club)"
     social: "Connect on LinkedIn"
     connectLink: "#"
