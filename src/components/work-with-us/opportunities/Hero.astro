@@ -1,5 +1,6 @@
 ---
-
+import { getEntry } from "astro:content";
+const componentHero = (await getEntry("work-with-us", "content/form")).data;
 ---
 
 <section class="position-relative" style="margin-top: 4rem">
@@ -9,7 +10,7 @@
       style="font-family: Poppins; font-weight: 400; font-size: 14px; line-height: 100%; letter-spacing: 0%; color: #1E1E1E;"
       href="/work-with-us/opportunities"
     >
-      &lt; Back to Volunteer and Internship Opportunities
+      {componentHero.title}
     </a>
   </div>
 </section>

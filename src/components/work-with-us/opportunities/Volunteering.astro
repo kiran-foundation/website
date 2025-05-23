@@ -2,6 +2,7 @@
 import type { MarkdownFile } from "../../../types/Markdown";
 import { remark } from "remark";
 import html from "remark-html";
+import { getEntry } from "astro:content";
 import VolunteerComponent from "./VolunteerComponent.astro";
 
 const roleFile = import.meta.glob<MarkdownFile>(
@@ -61,6 +62,10 @@ const {
     "Lead a chapter that connects members, drives collaboration, and amplifies the Foundation's mission locally."
   ),
 } = {};
+
+const componentVolunteering = (
+  await getEntry("work-with-us", "content/listing")
+).data;
 ---
 
 <div class="aboutVolunteering-frame1">
@@ -69,25 +74,25 @@ const {
     <h3>{quote}</h3>
   </div>
   <p class="aboutVolunteering-info-text">
-    <span>🗓️ Start Date:</span>
+    <span>{componentVolunteering.sdate}</span>
     {startDate}
     <br />
-    <span>💼 Role Type: </span>
+    <span>{componentVolunteering.rtype} </span>
     {roleType}
     <br />
-    <span>📅 Duration:</span>
+    <span>{componentVolunteering.dur}</span>
     {duration}
     <br />
-    <span>⏳ Time Commitment:</span>
+    <span>{componentVolunteering.time}</span>
     {timeCommitment}
     <br />
-    <span>👥 Team Size:</span>
+    <span>{componentVolunteering.team}</span>
     {teamSize + " Volunteers"}
   </p>
   <div class="aboutVolunteering-frame3">
-    <div class="aboutVolunteering-frame5">What You'll Do</div>
+    <div class="aboutVolunteering-frame5">{componentVolunteering.todo}</div>
     <p>
-      <span>🌟 Impact:</span>
+      <span>{componentVolunteering.imp}</span>
       {impact}
     </p>
     <div class="aboutVolunteering-frame4">
@@ -98,7 +103,7 @@ const {
       />
     </div>
     <div class="aboutVolunteering-frame4">
-      <div class="aboutVolunteering-frame5">Who You Are</div>
+      <div class="aboutVolunteering-frame5">{componentVolunteering.who}</div>
       <VolunteerComponent
         path={Astro.props.path}
         name="requirements"
@@ -106,7 +111,7 @@ const {
       />
     </div>
     <div class="aboutVolunteering-frame4">
-      <div class="aboutVolunteering-frame5">Why Volunteer?</div>
+      <div class="aboutVolunteering-frame5">{componentVolunteering.why}</div>
 
       <VolunteerComponent
         path={Astro.props.path}

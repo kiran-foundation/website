@@ -23,7 +23,9 @@ const { title, subLinks = [], className = "w-auto" } = Astro.props;
       >
         {
           title.name === "Contact Us" ? (
-            <a class="flex-1 text-left whitespace-nowrap" href="/contact">{title.name}</a>
+            <a class="flex-1 text-left whitespace-nowrap" href="/contact">
+              {title.name}
+            </a>
           ) : (
             <span class="flex-1 text-left whitespace-nowrap">{title.name}</span>
           )

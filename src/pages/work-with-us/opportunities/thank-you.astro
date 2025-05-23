@@ -3,16 +3,8 @@ import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../../../layouts/WorkwithusLayout.astro";
 import { getEntry } from "astro:content";
-const entry = (await getEntry(
-  "work-with-us",
-  "opportunities/thank-you"
-)) as any;
-
-const {
-  navigationText = "",
-  thanksText = "",
-  reviewText = "",
-} = entry?.data ?? {};
+const pageThankyou = (await getEntry("work-with-us", "opportunities/thank-you"))
+  .data;
 ---
 
 <Layout title="Internship Roles">
@@ -23,7 +15,7 @@ const {
           style="font-family: Poppins; font-weight: 400; font-size: 14px; line-height: 100%; letter-spacing: 0%; color: #1E1E1E;"
           href="/"
         >
-          &lt; {navigationText}
+          &lt; {pageThankyou.navigationText}
         </a>
       </div>
     </section>
@@ -49,7 +41,7 @@ const {
 
     <div class="aboutVolunteering-frame1">
       <div class="aboutVolunteering-frame2">
-        <h1 class="thankyou-title">{thanksText}</h1>
+        <h1 class="thankyou-title">{pageThankyou.thanksText}</h1>
 
         <div
           class="thankyou-image2 flex items-center justify-center pt-[80px] pb-[48px] md:hidden"
@@ -66,7 +58,7 @@ const {
           </lottie-player>
         </div>
 
-        <h2>{reviewText}</h2>
+        <h2>{pageThankyou.reviewText}</h2>
       </div>
     </div>
   </main>

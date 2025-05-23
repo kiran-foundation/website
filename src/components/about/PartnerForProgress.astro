@@ -15,20 +15,15 @@ const { title, paragraph, button, image } = panterForProgress.data;
 
       <div class="flex flex-col md:flex-row gap-4 mt-12">
         {
-          button.map(
-            (btn) => (
-              console.log(btn.button),
-              (
-                <Button
-                  btn={btn.type}
-                  title={btn.button}
-                  link={btn.path}
-                  widthClass=""
-                  heightClass="h-[60px]"
-                />
-              )
-            ),
-          )
+          button.map((btn) => (
+            <Button
+              btn={btn.type}
+              title={btn.button}
+              link={btn.path}
+              widthClass=""
+              heightClass="h-[60px]"
+            />
+          ))
         }
         <Button />
         <Button />

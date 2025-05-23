@@ -1,17 +1,22 @@
 ---
 const { path } = Astro.props;
 const redirectTo = "/work-with-us/opportunities/thank-you";
+
+import { getEntry } from "astro:content";
+const componentForm = (await getEntry("work-with-us", "content/form")).data;
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
 <script type="module" src="/assets/js/common.js" is:inline></script>
 <section id="form">
   <div class="volunteeringForm-frame">
-    <h1>Let’s build something great together!</h1>
+    <h1>{componentForm.title}</h1>
 
     <form id="volunteering-form" data-redirect={redirectTo}>
       <div class="form-input-container">
-        <label for="full-name">Full Name <span>(Required)</span></label>
+        <label for="full-name"
+          >{componentForm.fullname} <span>{componentForm.required}</span></label
+        >
         <input
           type="text"
           id="full-name"
@@ -20,20 +25,26 @@ const redirectTo = "/work-with-us/opportunities/thank-you";
         />
       </div>
       <div class="form-input-container">
-        <label for="email">Email <span>(Required)</span> </label>
+        <label for="email"
+          >{componentForm.email} <span>{componentForm.required}</span>
+        </label>
         <input type="text" id="email" name="email" placeholder="Your email" />
       </div>
       <div class="form-input-container">
-        <label for="phone">Phone Number <span>(Required)</span> </label>
+        <label for="phone"
+          >{componentForm.phone} <span>{componentForm.required}</span>
+        </label>
         <input type="text" id="phone" name="phone" placeholder="Your number" />
       </div>
       <div class="form-input-container" id="form-input-container-big">
-        <label for="more">Tell us more about you <span>(Optional)</span></label>
+        <label for="more"
+          >{componentForm.aboutyou} <span>{componentForm.optional}</span></label
+        >
         <textarea id="more" name="more" rows="5"></textarea>
       </div>
 
       <button type="submit" class="volunteeringForm-submit-button"
-        >Apply for Position</button
+        >{componentForm.apply}</button
       >
     </form>
   </div>

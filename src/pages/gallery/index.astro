@@ -1,13 +1,15 @@
 ---
-import { getEntry } from 'astro:content'
-import Layout from '../../layouts/Layout.astro'
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 // import Gallery from '../../components/about/Gallery.astro'
 // const aboutImage = (await getEntry('about', 'gallery')).data
+
+const galleryIndex = (await getEntry("pages", "index")).data;
 ---
 
-<Layout title='Gallery'>
-  <div style='padding-top: 120px;'>
+<Layout title="Gallery">
+  <div style="padding-top: 120px;">
     <!-- <Gallery /> -->
-     <h1>work on progress</h1>
+    <h1>{galleryIndex.title}</h1>
   </div>
 </Layout>

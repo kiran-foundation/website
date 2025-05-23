@@ -1,48 +1,29 @@
 ---
 import { getEntry } from "astro:content";
-
-const { title, paragraph, author, testimonial } = (
-  await getEntry("about", "enduring-spirit")
-).data;
+const componentEnduringSpirit = (await getEntry("about", "enduring-spirit"))
+  .data;
 ---
 
 <section class="max-w-[1116px] mx-auto mt-[80px] mb-[64px] md:mb-[96px]">
-  <div class="flex flex-col mx-auto mt-20 mb-6 md:my-[120px] items-center gap-8 max-w-[636px] p-0" >
+  <div
+    class="flex flex-col mx-auto mt-20 mb-6 md:my-[120px] items-center gap-8 max-w-[636px] p-0"
+  >
     <!-- Title -->
     <h1 class="heading-1 text-center text-[#1E1E1E] w-full">
-      {title}
+      {componentEnduringSpirit.title}
     </h1>
     <!-- Poem content -->
-    <div class="font-poppins font-normal px-3 text-[16px] leading-[36px] text-center text-[#49494C] max-w-[455.23px]" >
-      In the memory of Kiran Ma, a foundation grew,<br />
-      To uplift lives, her legacy, they pursue.<br /><br />
-
-      With humble beginnings, a son's education secure,<br />
-      Anurag's story, values profound, pure.<br /><br />
-
-      Eight years since its start, a journey so grand,<br />
-      Supporting dreams, across the land.<br /><br />
-
-      Scholarships provided, a beacon of hope,<br />
-      Mental support, helping each one cope.<br /><br />
-
-      Monthly meetings, guidance and care,<br />
-      Instilling belief, dreams to dare.<br /><br />
-
-      Anurag, simplicity personified,<br />
-      From his mother's grace, he derived.<br /><br />
-
-      Though Kiran Ma's gone, her spirit endures,<br />
-      Inspiring greatness, forever ensures.<br /><br />
-
-      Nine years since she left, yet her light shines bright,<br />
-      Kiran Foundation, spreading hope's - delight.<br /><br />
-
-      <strong>{author}</strong>
+    <div
+      class="font-poppins font-normal px-3 text-[16px] leading-[36px] text-center text-[#49494C] max-w-[455.23px]"
+    >
+      <div set:html={componentEnduringSpirit.peom} />
+      <strong>{componentEnduringSpirit.author}</strong>
     </div>
   </div>
 
-  <div class="md:max-w-[1116px] px-4 mx-auto flex flex-col lg:flex-row md:gap-16 gap-6 my-20 md:my-[120px] items-center w-full" >
+  <div
+    class="md:max-w-[1116px] px-4 mx-auto flex flex-col lg:flex-row md:gap-16 gap-6 my-20 md:my-[120px] items-center w-full"
+  >
     <div class="mx-auto">
       <img
         class="rounded-3xl max-w-full"
@@ -51,9 +32,11 @@ const { title, paragraph, author, testimonial } = (
       />
     </div>
     <div class="max-w-[636px] mx-auto">
-      <p  class="font-poppins font-normal text-[#49494C] text-[16px] leading-[36px] tracking-[1px]">
-        <strong>{author}</strong>
-        {testimonial}
+      <p
+        class="font-poppins font-normal text-[#49494C] text-[16px] leading-[36px] tracking-[1px]"
+      >
+        <strong>{componentEnduringSpirit.author}</strong>
+        {componentEnduringSpirit.testimonial}
       </p>
     </div>
   </div>

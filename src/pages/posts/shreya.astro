@@ -1,60 +1,63 @@
 ---
-import 'aos/dist/aos.css'
-import 'jarallax/dist/jarallax.min.css'
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
 
-import Header from '../../components/common/Header.astro'
-import Footer from '../../components/common/Footer.astro'
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
 
-import UpdateFocus from '../../components/updates/UpdateFocus.astro'
+import UpdateFocus from "../../components/updates/UpdateFocus.astro";
 interface Props {
-  title: string
+  title: string;
 }
+
+import { getEntry } from "astro:content";
+const postsShreya = (await getEntry("pages", "shreya")).data;
 ---
 
-<script src='/assets/js/theme.min.js' is:inline></script>
+<script src="/assets/js/theme.min.js" is:inline></script>
 
 <script>
-  import AOS from 'aos'
-  AOS.init()
+  import AOS from "aos";
+  AOS.init();
 </script>
-<script src='jarallax/dist/jarallax.min.js'></script>
-<script src='simplebar/dist/simplebar.min.js'></script>
-<link rel='stylesheet' href='/assets/css/theme.min.css' />
-<link rel='stylesheet' href='/assets/icons/around-icons.min.css' />
+<script src="jarallax/dist/jarallax.min.js"></script>
+<script src="simplebar/dist/simplebar.min.js"></script>
+<link rel="stylesheet" href="/assets/css/theme.min.css" />
+<link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
 
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='description' content='Astro description' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
-    <title>Ms. Shreya Jain's Achievement</title>
-    <link rel='manifest' href='/manifest.json' />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{postsShreya.title}</title>
+    <link rel="manifest" href="/manifest.json" />
     <link
-      rel='icon'
-      type='image/png'
-      href='assets/app-icons/favicon-96x96.png'
-      sizes='96x96'
+      rel="icon"
+      type="image/png"
+      href="assets/app-icons/favicon-96x96.png"
+      sizes="96x96"
     />
     <link
-      rel='apple-touch-icon'
-      href='assets/app-icons/apple-icon-180x180.png'
+      rel="apple-touch-icon"
+      href="assets/app-icons/apple-icon-180x180.png"
     />
     <link
-      rel='stylesheet'
-      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
     <!-- Theme switcher (color modes) -->
 
     <!-- Import Google font (Inter) -->
-    <link rel='preconnect' href='https://fonts.googleapis.com' />
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
-      rel='stylesheet'
-      id='google-font'
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      id="google-font"
     />
 
     <!-- Vendor styles -->
@@ -76,7 +79,7 @@ interface Props {
         visibility: hidden;
         z-index: 9999;
       }
-      [data-bs-theme='dark'] .page-loading {
+      [data-bs-theme="dark"] .page-loading {
         background-color: #121519;
       }
       .page-loading.active {
@@ -100,12 +103,12 @@ interface Props {
       }
       .page-loading-inner > span {
         display: block;
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         font-size: 1rem;
         font-weight: normal;
         color: #6f788b;
       }
-      [data-bs-theme='dark'] .page-loading-inner > span {
+      [data-bs-theme="dark"] .page-loading-inner > span {
         color: #fff;
         opacity: 0.6;
       }
@@ -121,7 +124,7 @@ interface Props {
         -webkit-animation: spinner 0.75s linear infinite;
         animation: spinner 0.75s linear infinite;
       }
-      [data-bs-theme='dark'] .page-spinner {
+      [data-bs-theme="dark"] .page-spinner {
         background-color: rgba(255, 255, 255, 0.25);
       }
       @-webkit-keyframes spinner {
@@ -150,28 +153,28 @@ interface Props {
 
     <!-- Page loading scripts -->
     <script>
-      ;(function () {
+      (function () {
         window.onload = function () {
-          const preloader = document.querySelector('.page-loading')
-          preloader.classList.remove('active')
+          const preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
           setTimeout(function () {
-            preloader.remove()
-          }, 1500)
-        }
-      })()
+            preloader.remove();
+          }, 1500);
+        };
+      })();
     </script>
   </head>
   <body>
     <!-- Page loading spinner -->
-    <div class='page-loading active'>
-      <div class='page-loading-inner'>
-        <div class='page-spinner'></div>
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
         <span>Loading...</span>
       </div>
     </div>
 
     <!-- Page wrapper -->
-    <main class='page-wrapper'>
+    <main class="page-wrapper">
       <Header />
       <UpdateFocus />
       <Footer />
@@ -179,26 +182,26 @@ interface Props {
 
     <!-- Back to top button -->
     <a
-      class='btn-scroll-top'
-      href='#top'
+      class="btn-scroll-top"
+      href="#top"
       data-scroll
-      aria-label='Scroll back to top'
+      aria-label="Scroll back to top"
     >
       <svg
-        viewBox='0 0 40 40'
-        fill='currentColor'
-        xmlns='http://www.w3.org/2000/svg'
+        viewBox="0 0 40 40"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <circle
-          cx='20'
-          cy='20'
-          r='19'
-          fill='none'
-          stroke='currentColor'
-          stroke-width='1.5'
-          stroke-miterlimit='10'></circle>
+          cx="20"
+          cy="20"
+          r="19"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-miterlimit="10"></circle>
       </svg>
-      <i class='ai-arrow-up'></i>
+      <i class="ai-arrow-up"></i>
     </a>
   </body>
 </html>

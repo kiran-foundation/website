@@ -1,7 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-const contacts = await getEntry("contact", "contact");
-const {phonetitle,emailtitle,addresstitle, address, contactNo, contactEmails } = contacts.data;
+const componentContacts = (await getEntry("contact", "contact")).data;
 ---
 
 <div
@@ -15,17 +14,17 @@ const {phonetitle,emailtitle,addresstitle, address, contactNo, contactEmails } =
     <div
       class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[2.875rem] pr-4 pt-[2.625rem] flex-none"
     >
-      <div class="flex flex-col items-start gap-8 ">
+      <div class="flex flex-col items-start gap-8">
         <div
           class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
         >
-          {addresstitle}
+          {componentContacts.addresstitle}
         </div>
         <!-- Address Text -->
         <div
           class="w-full h-auto font-poppins text-[1rem] font-normal md:text-lg leading-[2rem] md:leading-[1.6875rem] text-[#49494C]"
         >
-          {address}
+          {componentContacts.address}
         </div>
       </div>
     </div>
@@ -34,28 +33,28 @@ const {phonetitle,emailtitle,addresstitle, address, contactNo, contactEmails } =
     <div
       class="w-full md:w-[22.375rem] h-auto min-h-[19.6875rem] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[2.875rem] pt-[2.625rem] flex-none"
     >
-      <div class="flex flex-col items-start gap-8 ">
+      <div class="flex flex-col items-start gap-8">
         <!-- Heading 4 → Phone -->
 
         <div
           class="w-full font-poppins text-[1rem] font-semibold md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
         >
-          {phonetitle}
+          {componentContacts.phonetitle}
         </div>
         <div class="flex flex-col items-start gap-6 w-full">
           {
-            contactNo.map((contact) => {
+            componentContacts.contactNo.map((componentContacts) => {
               // console.log(contact);
               return (
                 <div class="flex flex-col items-start w-full">
                   <div class="w-full font-normal text-sm leading-[21px] text-[#49494C]">
-                    {contact.option}
+                    {componentContacts.option}
                   </div>
                   <a
-                    href={"tel:" + contact.answer.replace(/ /g, "")}
+                    href={"tel:" + componentContacts.answer.replace(/ /g, "")}
                     class="w-full font-poppins text-[1rem] font-normal md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
                   >
-                    {contact.answer}
+                    {componentContacts.answer}
                   </a>
                 </div>
               );
@@ -69,26 +68,25 @@ const {phonetitle,emailtitle,addresstitle, address, contactNo, contactEmails } =
     <div
       class="w-full md:w-[22.375rem] h-auto min-h-[19.6875rem] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[2.875rem] pt-[2.625rem] flex-none"
     >
-      <div class="flex flex-col items-start gap-8 ">
+      <div class="flex flex-col items-start gap-8">
         <div
           class="w-full font-poppins text-[1rem] font-semibold md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
         >
-          {emailtitle}
+          {componentContacts.emailtitle}
         </div>
         <div class="flex flex-col items-start gap-6 w-full">
           {
-            contactEmails.map((contact) => {
-  
+            componentContacts.contactEmails.map((componentContacts) => {
               return (
                 <div class="flex flex-col items-start w-full">
                   <div class="w-full font-poppins font-normal text-sm leading-[1.3125rem] text-[#49494C]">
-                    {contact.option}
+                    {componentContacts.option}
                   </div>
                   <a
-                    href={"mailto:" + contact.answer}
+                    href={"mailto:" + componentContacts.answer}
                     class="w-full font-poppins text-[1rem] font-normal md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
                   >
-                    {contact.answer}
+                    {componentContacts.answer}
                   </a>
                 </div>
               );

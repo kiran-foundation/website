@@ -1,16 +1,12 @@
 ---
 import { getEntry } from "astro:content";
 
-const entry = (await getEntry({
-  collection: "common",
-  slug: "headings",
-})) as any;
-
-const {
-  testimonial = "",
-  internship_card = "",
-  volunteer_card = "",
-} = entry?.data ?? {};
+const pagesIndex = (
+  await getEntry({
+    collection: "common",
+    slug: "headings",
+  })
+).data;
 
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
@@ -57,7 +53,7 @@ import Breadcrumb from "../../components/common/Breadcrumb.astro";
       <h1
         class="font-merriweather font-normal text-center leading-[150%] tracking-[-2.2%] text-[30px] sm:text-[40px] md:text-[48px] w-[292px] lg:w-[1296px] lg:h-[72px]"
       >
-        {testimonial}
+        {pagesIndex.testimonial}
       </h1>
     </section>
 

@@ -5,52 +5,12 @@ date: "2024-05-10"
 priority: "high"
 featured_image: "/assets/images/posts/Hindidiwas.jpg"
 link: "/update/2022-09-14-hindi-diwas/"
-content: |
-  <p>संघ की राजभाषा हिन्दी और लिपि देवनागरी होगी। संघ के राजकीय प्रयोजनों के लिए प्रयोग होने वाले अंकों का रूप अन्तरराष्ट्रीय रूप होगा। यह निर्णय 14 सितम्बर को लिया गया, इसी दिन हिन्दी के मूर्धन्य साहित्यकार व्यौहार राजेन्द्र सिंह का 50वाँ जन्मदिन था, इस कारण हिन्दी दिवस के लिए इस दिन को श्रेष्ठ माना गया था।</p>   
-  
-  <br/>
-
-  <p style="text-align: center;"><b>हिंदी दिवस पर, किरण फाउंडेशन के सदस्यों द्वारा रचित रंगीन पंक्तियों का समर्पण, एक साहित्यिक कला की उच्चता को प्रकट करता है।</b></p> 
-
-  <br/>
- 
-  <div style="text-align: center;">
-    <ul style="list-style-type: none; padding: 0;">
-      <li>
-        <hr>
-        <p></p>
-        <img src="/assets/images/hindidiwas/poster.jpeg" style="border: 1px solid #888; width:600px; margin-bottom: 20px;"/>
-      </li>
-      <li>
-        <hr>
-        <p><b>नीर जैन, सागर (मध्य प्रदेश)</b></p>
-        <img src="/assets/images/hindidiwas/neer_jain.jpg" style="border: 1px solid #888; width:600px; margin-bottom: 20px;"/>
-      </li>
-      <li>
-        <hr>
-        <p><b>सारिका जैन, घंसौर (मध्य प्रदेश)</b></p>
-        <img src="/assets/images/hindidiwas/sarika_jain.jpg" style="border: 1px solid #888; width:600px; margin-bottom: 20px;"/>
-      </li>
-      <li>
-        <hr>
-        <p><b>अनुरिमा जैन (मध्य प्रदेश)</b></p>
-        <img src="/assets/images/hindidiwas/anurima_jain.jpeg" style="border: 1px solid #888; width:600px; margin-bottom: 20px;"/>
-      </li>
-      <li>
-        <hr>
-        <p><b>श्रीमति बिंदुबाला जैन, नरसिंहपुर (मध्य प्रदेश)</b></p>
-        <img src="/assets/images/hindidiwas/bindubala_jain.jpeg" style="border: 1px solid #888; width:600px; margin-bottom: 20px;"/>
-      </li>
-      <li>
-        <hr>
-        <p><b>अंजलि राय (मध्य प्रदेश)</b></p>
-        <img src="/assets/images/hindidiwas/anjali_rai_1.jpeg" style="border: 1px solid #888; width:600px; margin-bottom: 20px;"/>
-      </li>
-      <li>
-        <hr>
-        <p><b>श्रीमति सुषमा बड़कुल, इंदौर (मध्य प्रदेश)</b></p>
-        <img src="/images/hindidiwas/sushma_badkul.jpeg" style="border: 1px solid #888; width:600px; margin-bottom: 20px;"/>
-      </li>
-    </ul>
-  </div>
+startingPara: "संघ की राजभाषा हिन्दी और लिपि देवनागरी होगी। संघ के राजकीय प्रयोजनों के लिए प्रयोग होने वाले अंकों का रूप अन्तरराष्ट्रीय रूप होगा। यह निर्णय 14 सितम्बर को लिया गया, इसी दिन हिन्दी के मूर्धन्य साहित्यकार व्यौहार राजेन्द्र सिंह का 50वाँ जन्मदिन था, इस कारण हिन्दी दिवस के लिए इस दिन को श्रेष्ठ माना गया था।"
+subPara: "हिंदी दिवस पर, किरण फाउंडेशन के सदस्यों द्वारा रचित रंगीन पंक्तियों का समर्पण, एक साहित्यिक कला की उच्चता को प्रकट करता है।"
+neerJain: "नीर जैन, सागर (मध्य प्रदेश)"
+sarikaJain: "सारिका जैन, घंसौर (मध्य प्रदेश)"
+anurimaJain: "अनुरिमा जैन (मध्य प्रदेश)"
+bindubalaJain: "श्रीमति बिंदुबाला जैन, नरसिंहपुर (मध्य प्रदेश)"
+anjaliRai: "अंजलि राय (मध्य प्रदेश)"
+shusmaBadkul: "श्रीमति सुषमा बड़कुल, इंदौर (मध्य प्रदेश)"
 ---
