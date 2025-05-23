@@ -1,0 +1,47 @@
+---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Layout from '../../../layouts/Layout.astro';
+import GreenUnderlineHeading from "../../../components/common/GreenUnderlineHeading.astro";
+import Breadcrumb from "../../../components/common/Breadcrumb.astro";
+import MissionVision from "../../../components/common/MissionVision.astro";
+import Gallery from "../../../components/common/Gallery.astro";
+import BottomContainer from "../../../components/common/BottomContainer.astro";
+
+---
+
+<Layout title="Our Team"
+>
+  <main class="page-wrapper ">
+    <Breadcrumb hidden={false} />
+    <GreenUnderlineHeading  slug="heading" collection="team" recLen="md:-bottom-[.7rem] -bottom-[.4125rem]" />
+    <MissionVision bgColor="none" isTitle={false}/>
+    <Gallery collection="team" slug="people" />
+    <BottomContainer collection="team" slug="shape-the-future" />
+  </main>
+</Layout>
+
+<!-- Back to top button -->
+<a
+class="btn-scroll-top"
+href="#top"
+data-scroll
+aria-label="Scroll back to top"
+>
+<svg
+  viewBox="0 0 40 40"
+  fill="currentColor"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="20"
+    cy="20"
+    r="19"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-miterlimit="10"></circle>
+</svg>
+<i class="ai-arrow-up"></i>
+</a>
+
