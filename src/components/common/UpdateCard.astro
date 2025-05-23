@@ -2,33 +2,43 @@
 const { update } = Astro.props;
 ---
 
-<div class="flex-1 bg-white rounded-xl shadow-sm p-4 md:p-6  hover:shadow-md transition-all hover:scale-105">
+<div
+  class="flex-1 bg-white rounded-xl p-4 md:p-6 hover:shadow-md transition-all hover:scale-105"
+  style="filter: drop-shadow(0 4px 16px rgba(208 , 208 , 196 , 0.24)); box-shadow: inset 0 0 0 1px rgba(73 , 73 , 76 , 0.10);"
+>
   <a href={update.link} class="block">
     <div class="aspect-auto overflow-hidden rounded-xl">
-      <img 
-        class="w-full h-full object-cover" 
-        src={update.featured_image} 
+      <img
+        class="w-full h-full object-cover"
+        src={update.featured_image}
         alt={update.title || "Update image"}
         loading="lazy"
       />
     </div>
   </a>
   <div class="pt-4">
-    <a href={update.link} class="hover:text-primary-600 ">
-      <h3 class="text-xl md:text-2xl font-bold text-[#1E1E1E] mb-2 line-clamp-2 font-poppins">
+    <a href={update.link} class="hover:text-primary-600">
+      <h3
+        class="text-xl md:text-2xl font-bold text-[#1E1E1E] mb-2 line-clamp-2 font-poppins"
+      >
         {update.title}
       </h3>
     </a>
-    <p class="text-[#49494C] mb-3 text-sm md:text-base line-clamp-3 font-poppins">
-      {update.summary}
+    <p
+      class="text-[#49494C] mb-3 text-sm md:text-base line-clamp-3 font-poppins"
+      set:html={update.summary}
+    >
+      <!-- {update.summary} -->
     </p>
-    <div class="text-sm text-gray-500 ">
+    <div class="text-sm text-gray-500">
       <small>
-        Posted on: {new Date(update.date).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        })}
+        Posted on: {
+          new Date(update.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
       </small>
     </div>
   </div>

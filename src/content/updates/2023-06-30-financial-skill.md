@@ -2,7 +2,7 @@
 title: "Essential Financial for Women"
 author_staff_member:
 date: 2023-06-30
-featured_image: assets/images/posts/financial.jpg
+featured_image: /assets/images/posts/financial.jpg
 more: true
 summary: नि:शुल्क नि:शुल्क नि:शुल्क कोर्स महिलाओं के लिए अनिवार्य वित्त कौशल इस कार्यक्रम के अंतर्गत हमारा उद्देश्य महिलाओं को वित्तीय प्रबंधन में कुशल बनाना है।
 link: "/update/2023-06-30-financial-skill"
