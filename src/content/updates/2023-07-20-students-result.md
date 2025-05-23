@@ -2,7 +2,7 @@
 title: "Kiran Pratibha Scholarship Result 2023"
 author_staff_member:
 date: 2023-07-20
-featured_image: assets/images/posts/pratibharesult.png
+featured_image: /assets/images/posts/pratibharesult.png
 more: true
 summary: "List of selected applicants who applied for <b>Kiran Pratibha</b> Scholarship 2023."
 link: "/update/2023-07-20-students-result"

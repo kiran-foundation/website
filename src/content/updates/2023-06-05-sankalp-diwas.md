@@ -1,7 +1,7 @@
 ---
 title: संकल्प दिवस
 date: 2023-06-05
-featured_image: assets/images/posts/SankalpDiwas.jpeg
+featured_image: /assets/images/posts/SankalpDiwas.jpeg
 image: /images/posts/SankalpDiwas.jpeg
 description: "किरण फाउंडेशन की स्थापना के सफलतापूर्वक 7 वर्ष पूर्ण होने एवं 8वें वर्ष में प्रवेश के अवसर पर आप को स्नेहपूर्वक आमंत्रित करते हैं। किरण फाउंडेशन परिवार के सदस्य इस अवसर पर सांस्कृतिक, प्रेरणादायक एवं ज्ञानवर्धक कार्यक्रम प्रस्तुत करेंगे। (7:30 PM Thursday, 15th June 2015)"
 more: true
