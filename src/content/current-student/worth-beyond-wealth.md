@@ -4,7 +4,7 @@ paragraph: ["No one should feel shame for their circumstances. Our students are 
 image: "/assets/images/about/about-us-3.png"
 
 button: 
-    - button: "Donate" 
+    - button: "Support Us" 
       type: "btn1"
       path: "#"
     # - button: "Support Us"
