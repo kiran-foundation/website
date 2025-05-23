@@ -10,21 +10,21 @@ title: "Ms. Shreya Jain was a testament to her outstanding academic
 
 alt: "Ms. Shreya Jain receiving her gold medal"
 content: |
-  <div class="updateFocus-paragraph" id="c4">
+  <div >
     Ms. Shreya Jain, a distinguished scholar, was honored as one of the Kiran
     Pratibha scholars, a prestigious recognition in the academic realm. This
     accolade underscores her exceptional academic prowess and dedication to
     her studies. Her commitment to excellence has not only earned her
     admiration but also tangible recognition in the form of a gold medal.
   </div>
-  <div class="updateFocus-paragraph-2" id="c5">
+  <div style="padding-top: 24px;">
     The ceremony where Ms. Shreya Jain received her gold medal was graced by
     the presence of the Honourable Chief Minister of Uttar Pradesh, Shri Yogi
     Adityanath. His participation added significance and grandeur to the
     event, highlighting the importance of academic achievements and scholarly
     endeavors.
   </div>
-  <div class="updateFocus-paragraph" id="c6">
+  <div style="padding-top: 24px; padding-bottom: 80px;">
     As Ms. Shreya Jain stood on the stage, adorned with her gold medal, she
     embodied the culmination of hard work, perseverance, and academic
     brilliance. Her achievements serve as an inspiration to aspiring scholars
@@ -32,19 +32,18 @@ content: |
     commitment to one's educational journey.
   </div>
 information: |
-  <div class="updateFocus-text-container">
-   <h2>
+  <div class="heading-4" style="padding-top: 80px;">
      Ms. Shreya Jain was a testament to her outstanding academic
      accomplishment.
-   </h2>
-   <p>
+   </div>
+   <p style="padding-top: 24px;">
      The moment when Shri Yogi Adityanath, the Chief Minister of Uttar
      Pradesh, bestowed the gold medal upon Ms. Shreya Jain was a testament to
      her outstanding academic accomplishments. It marked not only a personal
      triumph for her but also a proud moment for her family, teachers, and
      mentors who have supported her throughout her academic endeavors.
    </p>
-   <div class="updateFocus-box">
+   <div style="padding-top: 24px;">
      <p>
        I stood before the Chief Minister of Uttar Pradesh, My heart swelled
        with pride and gratitude. With trembling hands, I accepted the gold
@@ -52,6 +51,5 @@ information: |
        that moment, as the audience erupted into applause, I knew my hard
        work had truly paid off.
      </p>
-     <div class="updateFocus-signature">-Shreya Jain</div>
    </div>
 ---
