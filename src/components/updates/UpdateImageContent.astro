@@ -1,0 +1,50 @@
+---
+import { getEntry } from "astro:content";
+const { path } = Astro.props;
+const componentContent = (await getEntry("updates", path)).data;
+---
+
+<div>
+  <div
+    class="gap-[10px] px-6 lg:px-8 max-w-[81rem] text-[1rem] font-normal leading-[100%] font-poppins mx-auto my-8"
+  >
+    <div>
+      <div class="heading-1">
+        {componentContent.title}
+      </div>
+      <div class="flex justify-between">
+        <div>
+          Date: {componentContent.date}
+        </div>
+        <div>
+          Share post:
+          <a href={componentContent.instagramLink} aria-label="Instagram">
+            <i class="ai-instagram"></i>
+          </a>
+          <a href={componentContent.facebookLink} aria-label="Instagram">
+            <i class="ai-facebook"></i>
+          </a>
+          <a href={componentContent.telegramLink} aria-label="Instagram">
+            <i class="ai-telegram"></i>
+          </a>
+          <a href={componentContent.xLink} aria-label="Instagram">
+            <i class="ai-x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="updateFocus-content" style="padding-top: 120px;">
+      <div set:html={componentContent.content} />
+      <div class="overflow-hidden h-[600px] w-full">
+        <img
+          src={componentContent.featured_image}
+          alt={componentContent.alt}
+          class="w-full h-full object-cover [object-position:50%_20%]"
+          loading="lazy"
+        />
+      </div>
+      <p style="padding-top: 16px;">{componentContent.alt}</p>
+      <div set:html={componentContent.information} />
+    </div>
+  </div>
+</div>

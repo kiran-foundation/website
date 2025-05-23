@@ -1,0 +1,10 @@
+---
+const update = Astro.props.update;
+---
+
+<div>
+  <img src={update.featured_image} alt={update.alt} />
+  <div>
+    <p>{update.title}</p>
+  </div>
+</div>
