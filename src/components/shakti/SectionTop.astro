@@ -1,0 +1,35 @@
+---
+
+
+
+const { sec, title } = Astro.props;
+
+import Button from "../common/button.astro";
+import Heading from "../shakti/Heading.astro"
+---
+
+
+<section class="max-w-[1296px] mx-auto mb-[120px]">
+
+    {sec === "certificateSection" && <Heading head="heading-1 text-center mb-[48px]" title={title} />}
+    {sec === "bottomSection" && <Heading head="heading-1  text-center mb-[48px]" title={title} />}
+  
+    <div class="flex justify-center flex-wrap gap-4 mb-10 ">
+      <Button
+        link="/volunteering"
+        title="See the Workshops Schedule"
+        btn="btn1"
+        widthClass="w-[342px] sm:w-[200px] md:w-[315px]"
+        heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
+      />
+      <Button
+        link="/volunteering"
+        title="Connect on WhatsApp"
+        btn="btn3"
+        widthClass="w-[342px] sm:w-[200px] md:w-[234px]"
+        heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
+      />
+    </div>
+  
+  </section>
+  

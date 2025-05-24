@@ -1,0 +1,78 @@
+---
+import MissionVision from "../common/MissionVision.astro";
+import Heading from "./Heading.astro";
+import { getEntry } from "astro:content";
+const { bgColor = "#F1F1F1", isTitle = true } = Astro.props;
+const { title, image, author, quote } = (
+  await getEntry("about", "our-mission-vision")
+).data;
+---
+
+<section class=`max-w-full mx-auto px-4 mb-40  space-y-8`>
+<Heading title="Meet Your Mentors" head="heading-1" />
+
+  <div class="max-w-[1296px] mx-auto">
+    <div
+      class="w-max-[1296px] mt-[1rem] md:mt-[3.75rem] mx-auto flex flex-col lg:flex-row items-center md:gap-[60px] gap-8"
+    >
+      <div class="">
+        <img
+          src="/assets/images/financial/mentor-harshil.png"
+          class="rounded-3xl"
+          width="390"
+          height="502"
+          alt=""
+        />
+        <h4 class="text-[#1E1E1E] body-text-2 tracking-[1px] text-center mt-4">
+          {author}
+        </h4>
+      </div>
+      <div class="">
+        <p
+          class="max-w-[841px] !text-[#49494C] font-poppins font-normal text-[20px] md:text-[36px] leading-[38px] md:leading-[68px] tracking-[1px]"
+        >
+          <span
+            class="lg:font-light lg:text-[96px] lg:leading-[68px] lg:tracking-[1px]"
+            >‘’</span
+          >I am driven by the belief that every woman has the power to shape her financial future. When women take charge of money matters, they not only strengthen themselves but uplift families and fuel the nation's growth. With the right guidance and confidence, no financial challenge is too big. Let’s break the silence around money and build a generation of financially fearless women.<span
+            class="lg:font-light lg:text-[64px] lg:leading-[68px] lg:tracking-[1px]"
+            >’’</span
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-[1296px] mx-auto">
+    <div
+      class="w-max-[1296px] mt-[1rem] md:mt-[3.75rem] mx-auto flex flex-col lg:flex-row-reverse items-center md:gap-[60px] gap-8"
+    >
+      <div class="class">
+          <img
+            src="/assets/images/financial/mentor-isha.png"
+            class="rounded-3xl"
+            width="390"
+            height="502"
+            alt=""
+          />
+            <h4 class="text-[#1E1E1E] body-text-2 tracking-[1px] mt-4 text-center">
+              {author}
+            </h4>
+      </div>
+      <div class="">
+        <p
+          class="max-w-[841px] !text-[#49494C] font-poppins font-normal text-[20px] md:text-[36px] leading-[38px] md:leading-[68px] tracking-[1px]"
+        >
+          <span
+            class="lg:font-light lg:text-[96px] lg:leading-[68px] lg:tracking-[1px]"
+            >‘’</span
+          >I have been associated with Kiran Foundation for the past two years, and it has been a deeply fulfilling journey. What excites me to teach selflessly is the initiative itself and, most importantly, the students at the foundation. Their curiosity, energy, and eagerness to learn continuously inspire me. 
+Being part of this initiative not only allows me to give back but also brings a renewed sense of purpose and motivation to my own life.<span
+            class="lg:font-light lg:text-[64px] lg:leading-[68px] lg:tracking-[1px]"
+            >’’</span
+          >
+        </p>
+      
+      </div>
+    </div>
+  </div>
+</section>

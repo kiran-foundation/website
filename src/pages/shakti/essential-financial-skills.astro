@@ -5,6 +5,10 @@ import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from "../../components/common/Breadcrumb.astro";
 import Hero from "../../components/common/Hero.astro";
 import TestimonialComponent from "../../components/common/TestimonialComponent.astro";
+import PageBottom from "../../components/shakti/PageBottom.astro";
+import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
+import Videotestomonial from "../../components/shakti/videotestomonial.astro";
+import Mentors from "../../components/shakti/Mentors.astro";
 ---
 
 <Layout title="financial skills"
@@ -12,6 +16,12 @@ import TestimonialComponent from "../../components/common/TestimonialComponent.a
   <main class="page-wrapper ">
     <Breadcrumb hidden={false} />
     <Hero collection="shakti" slug="financial-skills/hero" />
+    
+    <PageBottom image="/assets/images/financial/financial-certificate.png" title="Learn for Free and Get Your Certificate" sec="certificateSection" className=" mt-[164px]"/>
+    <Videotestomonial className="mb-[164px]"/>
+    <Mentors />
+    <TestimonialsCarousel pageTag="shakti" />
+    <PageBottom title="Make Decisions with Knowledge and Help Build  a Strong and Resilient Society" sec="bottomSection" className=" mt-[164px]"/>
   </main>
 </Layout>
 
