@@ -1,0 +1,20 @@
+---
+import MessageCard from "./MessageCard.astro";
+const { title } = Astro.props;
+---
+
+<div class=" mx-auto  max-w-[1260px] ">
+    <div class="  flex gap-2">
+
+        <div class="md:w-[776px]">
+            <h3 class="md:w-[736px] heading-3 mb-32"> {title}</h3>
+            <MessageCard type="send"/>
+            <MessageCard />
+
+            
+        </div>
+        <div class="  my-auto">
+            <img src="/assets/images/financial/financial-visual.png" alt="" width="500px">
+        </div>
+    </div>
+</div>
