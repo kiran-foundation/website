@@ -13,15 +13,15 @@ const heroEntry = (await getEntry(collection, slug)) as {
     image: string;
   };
 };
-
+console.log(heroEntry);
 const {
-  greenUnderline,
-  greenUnderlineSvg,
-  heading,
-  heading2,
-  description,
-  image,
-  heroSubtitle,
+  greenUnderline ="",
+  greenUnderlineSvg="",
+  heading="",
+  heading2="",
+  description="",
+  image="",
+  heroSubtitle="",
 } = heroEntry.data;
 ---
 
