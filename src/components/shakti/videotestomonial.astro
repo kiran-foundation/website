@@ -3,7 +3,7 @@
 
 import VideoCard from './VideoCard.astro';
 import Heading from './Heading.astro';
-const { className } = Astro.props;
+const { className,bg } = Astro.props;
 const videos = [
   { videoUrl: 'https://www.youtube.com/embed/W_Ozar0vPAo?si=efJoCaEALx0J7d36', alt: 'Video 1 Title' , desc: 'vide 1 desc'},
   { videoUrl: 'https://www.youtube.com/embed/-Cer8iOoPrw?si=uANs0ZRSn5-8_3p-', alt: 'Video 2 Title' },
@@ -17,7 +17,7 @@ const videos = [
 <Heading title="Recordings of Previous Sessions" head='heading-1' />
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[1296px] mx-auto">
     {videos.map((video) => (
-      <VideoCard videoUrl={video.videoUrl} alt={video.alt}  desc  = {video.desc} />
+      <VideoCard bg={bg} videoUrl={video.videoUrl} alt={video.alt}  desc  = {video.desc} />
     ))}
   </div>
 </section>

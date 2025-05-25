@@ -3,20 +3,20 @@ const {type,mentor,mentorImage, message = "Can you tell me more about the course
 ---
 { type=== "send" ?
 
-<div  class="body-text-2  flex md:max-w-[786px] w-fit h-[216px] justify-end  rounded-lg mb-[80px] px-4 gap-16 bg-[#D9F3E6]">
+<div  class="heading-4 flex md:max-w-[786px] w-fit h-[216px] justify-end  rounded-lg mb-[80px] px-4 gap-16 bg-[#D9F3E6]">
   <h3 class=" self-center ">{message}</h3>
   <div class="self-center">
-    <img src="/assets/images/financial/preeti.png" alt="" />
-    <h4 class=" text-center">{mentor}</h4>
+    <img src={mentorImage} alt=""  width="120px" class="h-[120px] w-[120px]"/>
+    <h4 class="body-text-2 text-center">{mentor}</h4>
   </div>
 </div>
 :
 
-<div  class="body-text-3  h-[216px] self-center flex  flex-row-reverse md:max-w-[786px] w-fit  rounded-lg mb-[80px] px-4 gap-16 bg-[#F1F1F1]">
+<div  class="heading-4  h-[216px] self-center flex  flex-row-reverse md:max-w-[786px] w-fit  rounded-lg mb-[80px] px-4 gap-16 bg-[#F1F1F1]">
   <h3 class=" self-center">{message}</h3>
   <div class="flex flex-col  align-middle self-center items-center">
-    <img src={mentorImage} class=" rounded-full" alt=""  width="120px" />
-    <h4 class=" text-center">{mentor}</h4>
+    <img src={mentorImage} class=" rounded-full !max-w-none w-[120px]" alt="" width="120"   />
+    <h4 class=" body-text-2 text-center">{mentor}</h4>
   </div>
 </div>
 }
