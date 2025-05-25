@@ -1,0 +1,35 @@
+---
+import MessageCard from "./MessageCard.astro";
+const { title } = Astro.props;
+---
+
+<div class="mx-auto max-w-[1260px] mt-40">
+  <div class="flex gap-2 flex-col">
+      <h3 class=" heading-1 mb-32">what after the course</h3>
+    <div class="lg:w-[1056px] mx-auto">
+      <div class=" justify-end flex">
+          <MessageCard
+            type="send" mentor="preeti"
+            message="What happens after I attend all 8 sessions?"
+          />
+      </div>
+      <MessageCard mentorImage="/assets/images/financial/harshil.jpg" mentor="Harshil"
+        message=`You will receive a Certificate of Successful Completion of the Financial Skills Course.
+But there is more- you will receive additional guidance from me and Harshil.`
+      />
+      <div class=" justify-end flex">
+
+      <MessageCard type="send" mentor="preeti" message="What does that mean?" />
+    </div>
+            <MessageCard mentorImage="/assets/images/financial/harshil.jpg" mentor="Harshil"
+        message=`We are Certified Wealth Managers and we will provide you with free consultations and financial plan to continue your journey to financial freedom!`
+      />
+      <div class=" justify-end flex">
+
+      <MessageCard type="send" mentor="preeti" message="I would love that! Thank you both!" />
+</div>
+
+    </div>
+
+  </div>
+</div>

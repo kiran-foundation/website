@@ -1,5 +1,5 @@
 ---
-const {type, message = "Can you tell me more about the course?" } = Astro.props;
+const {type,mentor,mentorImage, message = "Can you tell me more about the course?" } = Astro.props;
 ---
 { type=== "send" ?
 
@@ -7,16 +7,16 @@ const {type, message = "Can you tell me more about the course?" } = Astro.props;
   <h3 class=" self-center ">{message}</h3>
   <div class="self-center">
     <img src="/assets/images/financial/preeti.png" alt="" />
-    <h4 class=" text-center">preeti</h4>
+    <h4 class=" text-center">{mentor}</h4>
   </div>
 </div>
 :
 
-<div  class="body-text-2  h-[216px] self-center flex  flex-row-reverse md:max-w-[786px] w-fit  mx-auto rounded-lg mb-[120px] px-4 gap-16 bg-[#F1F1F1]">
-  <h3 class=" self-center">{"The course is free and divided into 8 sessions, once a week, for 2 months."}</h3>
+<div  class="body-text-3  h-[216px] self-center flex  flex-row-reverse md:max-w-[786px] w-fit  rounded-lg mb-[80px] px-4 gap-16 bg-[#F1F1F1]">
+  <h3 class=" self-center">{message}</h3>
   <div class="flex flex-col  align-middle self-center items-center">
-    <img src="/assets/images/financial/isha.jpg" class=" rounded-full" alt=""  width="120px" />
-    <h4 class=" text-center">Isha</h4>
+    <img src={mentorImage} class=" rounded-full" alt=""  width="120px" />
+    <h4 class=" text-center">{mentor}</h4>
   </div>
 </div>
 }
