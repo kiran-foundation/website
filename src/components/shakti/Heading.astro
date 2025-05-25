@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+  effect?: boolean;
+  head?: string;
+}
+const { title, effect=false,head } = Astro.props;
+---
+
+<div
+  class="d-flex flex-row gap-3 justify-content-center align-items-center mb-lg-4 mb-3"
+  style="margin-top: 50px;"
+>
+  <div class={head} style="color: #2b2e36;">{title}</div>
+</div>
