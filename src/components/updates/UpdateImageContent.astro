@@ -2,6 +2,7 @@
 import { getEntry } from "astro:content";
 const { path } = Astro.props;
 const componentContent = (await getEntry("updates", path)).data;
+import Button from "../common/button.astro";
 ---
 
 <div>
@@ -12,7 +13,7 @@ const componentContent = (await getEntry("updates", path)).data;
       <div class="heading-1">
         {componentContent.title}
       </div>
-      <div class="flex justify-between">
+      <div class="flex justify-between pt-[48px]">
         <div>
           Date: {componentContent.date}
         </div>
@@ -33,18 +34,81 @@ const componentContent = (await getEntry("updates", path)).data;
         </div>
       </div>
     </div>
+    <!-- content div -->
+
     <div class="updateFocus-content" style="padding-top: 120px;">
-      <div set:html={componentContent.content} />
-      <div class="overflow-hidden h-[600px] w-full">
-        <img
-          src={componentContent.featured_image}
-          alt={componentContent.alt}
-          class="w-full h-full object-cover [object-position:50%_20%]"
-          loading="lazy"
-        />
-      </div>
-      <p style="padding-top: 16px;">{componentContent.alt}</p>
-      <div set:html={componentContent.information} />
+      <!-- main text -->
+      {
+        componentContent.content.length > 0 && (
+          <div class="body-text-1">
+            {componentContent.content.map((item) => (
+              <div set:html={item} />
+            ))}
+          </div>
+        )
+      }
+
+      <!-- primary button -->
+       {
+        componentContent.mainButtonTitle && (
+          <div>
+            <Button btn="btn1" title={componentContent.mainButtonTitle} link={componentContent.mainButtonLink} />
+          </div>
+        )
+      }
+
+      <!-- secondary button -->
+      {
+        componentContent.secondaryButtonTitle && (
+          <div>
+            <Button btn="btn3" title={componentContent.secondaryButtonTitle} link={componentContent.secondaryButtonLink} />
+          </div>
+        )
+      }
+
+      <!-- image -->
+      {
+        componentContent.featured_image && (
+          <div class="h-auto w-full">
+            <img
+              src={componentContent.featured_image}
+              alt={componentContent.alt}
+              class="w-full h-full"
+              loading="lazy"
+            />
+          </div>
+          <p class="Error-text" style="padding-top: 16px; ">
+            {componentContent.alt}
+          </p>
+        )
+      }
+
+      <!-- video -->
+      {
+        componentContent.video_link && (
+          <div class="h-auto w-full">
+            <video
+              src={componentContent.video_link}
+              controls
+              width="100%"
+            />
+          </div>
+          <p class="Error-text" style="padding-top: 16px; ">
+            {componentContent.videoDescription}
+          </p>
+        )
+      }
+
+      <!-- secondary text -->
+      {
+        componentContent.information.length > 0 && (
+          <div class="body-text-1">
+            {componentContent.information.map((item) => (
+              <div set:html={item} />
+            ))}
+          </div>
+        )
+      }
     </div>
   </div>
 </div>

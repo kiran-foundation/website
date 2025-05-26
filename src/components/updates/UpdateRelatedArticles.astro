@@ -1,0 +1,39 @@
+---
+import type { MarkdownFile } from "../../types/Markdown";
+import RelatedArticlesCard from "./RelatedArticlesCard.astro";
+
+const allUpdates = import.meta.glob<MarkdownFile>("/src/content/updates/*.md");
+
+const updates = await Promise.all(
+  Object.values(allUpdates).map(async (update) => {
+    const { frontmatter } = await update();
+    return { ...frontmatter };
+  })
+);
+
+const { title } = Astro.props;
+
+const filteredUpdates = updates.filter(
+  (update) => update.title !== title && update.priority !== "high"
+);
+
+const updatesToDisplay = filteredUpdates.slice(0, 3);
+---
+
+<div class="pb-[120px]">
+  <div class="heading-3 pb-[52px]">Related Articles</div>
+
+  <div class="flex flex-wrap gap-6">
+    {updatesToDisplay.map((update) => <RelatedArticlesCard update={update} />)}
+  </div>
+
+  <div class="w-full pt-10 text-center">
+    <a
+      href="/updates"
+      class="inline-block font-poppins font-bold text-[18px] leading-[100%] tracking-[0] text-[#1E1E1E] cursor-pointer border border-[#1E1E1E] pt-3 pr-6 pb-3 pl-6 rounded-lg"
+      style="border-width: 0.5px;"
+    >
+      Show More
+    </a>
+  </div>
+</div>
