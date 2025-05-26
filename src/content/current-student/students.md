@@ -30,8 +30,8 @@ people:
     social: ""
     connectLink: "#"
 
-  - name: "Akhouri Rishabh"
-    image: "/assets/images/pratibha_page/akhouririshabh.png.jpeg"
+  - name: "Aghouri Rishabh"
+    image: "/assets/images/pratibha_page/aghouririshabh.jpeg"
     social: ""
     connectLink: "#"
 
@@ -60,8 +60,8 @@ people:
     social: ""
     connectLink: "#"
 
-  - name: "Rutika Kolhapure"
-    image: "/assets/images/pratibha_page/rutika.png"
+  - name: "Vanshika jain"
+    image: "/assets/images/pratibha_page/vanshika.png"
     social: ""
     connectLink: "#"
 
@@ -76,33 +76,62 @@ people:
     connectLink: "#"
 
   - name: "Nikita Rajput"
-    image: "/assets/images/pratibha_page/nikita.png.jpeg"
+    image: "/assets/images/pratibha_page/nikita.jpeg"
     social: ""
     connectLink: "#"
 
   - name: "Rutika Jain"
-    image: "/assets/images/pratibha_page/rutikajain.png.jpeg"
+    image: "/assets/images/pratibha_page/rutikajain.jpeg"
     social: ""
     connectLink: "#"
 
   - name: "Swathi Shetty "
-    image: "/assets/images/pratibha_page/swathishetty.png.jpeg"
+    image: "/assets/images/pratibha_page/swathishetty.jpeg"
     social: ""
     connectLink: "#"
 
   - name: "Sanyam Jain "
-    image: "/assets/images/pratibha_page/sanyamimage-2.jpeg"
+    image: "/assets/images/pratibha_page/sanyamimage.jpeg"
     social: ""
     connectLink: "#"
 
-  - name: "name123 "
-    image: "/assets/images/pratibha_page/name123-2-2.jpeg"
+  - name: "Tanuj Jain "
+    image: "/assets/images/pratibha_page/tanuj.jpeg"
     social: ""
     connectLink: "#"
 
   - name: "Aaruhi Jain"
-    image: "/assets/images/pratibha_page/aaruhi-2-2.jpeg"
+    image: "/assets/images/pratibha_page/aaruhi.jpeg"
     social: ""
     connectLink: "#"
 
+  - name: "Shivam Jain"
+    image: "/assets/images/pratibha_page/shivam.png"
+    social: ""
+    connectLink: "#"
+
+  - name: "Lakshit Sharma"
+    image: "/assets/images/pratibha_page/lakshit.jpeg"
+    social: ""
+    connectLink: "#"
+
+  - name: "neer jain"
+    image: "/assets/images/pratibha_page/neer.png"
+    social: ""
+    connectLink: "#"
+
+  - name: "Rashi Morwal"
+    image: "/assets/images/pratibha_page/rashi.jpeg"
+    social: ""
+    connectLink: "#"
+
+  - name: "Saktivel Jain"
+    image: "/assets/images/pratibha_page/saktivel.jpeg"
+    social: ""
+    connectLink: "#"
+  
+  - name: "Rishika sharma"
+    image: "/assets/images/pratibha_page/rishikasharma.jpeg"
+    social: ""
+    connectLink: "#"
 --- 
