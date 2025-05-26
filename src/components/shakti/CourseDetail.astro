@@ -1,22 +1,32 @@
 ---
+import { getEntry } from "astro:content";
 import MessageCard from "./MessageCard.astro";
-const { title } = Astro.props;
+const courseDetails = await getEntry("shakti", "financial-skills/course-details");
+const { title, messageCard,image } = courseDetails.data;
+
 ---
 
 <div class="mx-auto max-w-[1260px]">
   <div class="flex gap-2">
     <div class="md:w-[776px]">
       <h3 class="md:w-[736px] heading-1 mb-32">{title}</h3>
-      <MessageCard type="send"  mentorImage="/assets/images/financial/preeti.png"   mentor="Preeti"  />
-      <MessageCard
-        mentor="Isha"
-        mentorImage="/assets/images/financial/isha.jpg"
-        message="The course is free and divided into 8 sessions, once a week, for 2 months."
+      
+      {
+        messageCard.map((card) => (
+          <MessageCard
+            type={card.type}
+            mentorImage={card.mentorImage}
+            mentor={card.mentor}
+            message={card.message}
+          />
+        ))
+      }
+      
       />
     </div>
     <div class="my-auto">
       <img
-        src="/assets/images/financial/financial-visual.png"
+        src={image}
         alt=""
         width="500px"
         loading="lazy"

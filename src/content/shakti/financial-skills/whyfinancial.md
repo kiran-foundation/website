@@ -1,5 +1,6 @@
 ---
 title: "Why Learn Financial Skills?"
+image: "/assets/images/financial/financial-skills-2.png"
 bentifits:
     - title: "Financial Independence"
       desc: "Break traditional dependency cycles through personal finance management."

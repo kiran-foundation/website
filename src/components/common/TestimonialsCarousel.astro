@@ -9,63 +9,65 @@ import { getEntry } from "astro:content";
 //     text: string;
 // }
 const testimonialsData = (await getEntry("testimonials", "testimonials")).data;
-const { pageTag, bgcolor="bg-[#F1F1F1]" } = Astro.props;
+const { pageTag, bgcolor = "bg-[#F1F1F1]" } = Astro.props;
 const testimonials = testimonialsData.testimonials.filter((testimonial) =>
-    testimonial.tags.includes(pageTag),
+  testimonial.tags.includes(pageTag)
 );
 ---
- <div class="carousel mb-2 md:mb-16 max-w-[81rem] " >
-            <div class="carousel-inner ">
-                {
-                    testimonials.map((testimonial, index) => (
-                        <div class="carousel-item  max-w-[636px] max-h-[476px] px-6 py-2 md:px-[0.625rem]" data-index={index}>
-                            <TestimonialComponent {...testimonial} bgcolor={bgcolor} />
-                        </div>
-                    ))
-                }
-            </div>
-            <div class="carousel-controls">
-                {
-                    Array(Math.ceil(testimonials.length / 2))
-                        .fill(null)
-                        .map((_, index) => (
-                            <span class="carousel-bullet" data-index={index} />
-                        ))
-                }
-                <span class="carousel-bullet mybullet" data-index={2} />
-            </div>
+
+<div class="carousel mb-2 md:mb-16 max-w-[81rem]">
+  <div class="carousel-inner">
+    {
+      testimonials.map((testimonial, index) => (
+        <div
+          class="carousel-item  max-w-[636px] max-h-[476px] px-6 py-2 md:px-[0.625rem]"
+          data-index={index}
+        >
+          <TestimonialComponent {...testimonial} bgcolor={bgcolor} />
         </div>
+      ))
+    }
+  </div>
+  <div class="carousel-controls">
+    {
+      Array(Math.ceil(testimonials.length / 2))
+        .fill(null)
+        .map((_, index) => <span class="carousel-bullet" data-index={index} />)
+    }
+    <span class="carousel-bullet mybullet" data-index={2}></span>
+  </div>
+</div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const bullets = document.querySelectorAll(".carousel-bullet");
-        const inner = document.querySelector(".carousel-inner") as HTMLElement;
-        const newBullets=document.querySelector(".mybullet") as HTMLElement;
-        // const items = document.querySelectorAll(".carousel-item");
-        let currentIndex = 0;
+  document.addEventListener("DOMContentLoaded", () => {
+    const bullets = document.querySelectorAll(".carousel-bullet");
+    const inner = document.querySelector(".carousel-inner") as HTMLElement;
+    const newBullets = document.querySelector(".mybullet") as HTMLElement;
+    // const items = document.querySelectorAll(".carousel-item");
+    let currentIndex = 0;
 
-        function updateCarousel() {
-            const offset = (currentIndex * -100) / 2;
-            inner.style.transform = `translateX(${offset}%)`;
+    function updateCarousel() {
+      const offset = (currentIndex * -100) / 2;
+      inner.style.transform = `translateX(${offset}%)`;
 
-            bullets.forEach((bullet) => bullet.classList.remove("active"));
-            bullets[currentIndex].classList.add("active");
-        }
+      bullets.forEach((bullet) => bullet.classList.remove("active"));
+      bullets[currentIndex].classList.add("active");
+    }
 
-        bullets.forEach((bullet) => {
-            bullet.addEventListener("click", () => {
-                currentIndex = parseInt(bullet.getAttribute("data-index"));
-                updateCarousel();
-            });
-        });
-
+    bullets.forEach((bullet) => {
+      bullet.addEventListener("click", () => {
+        currentIndex = parseInt(bullet.getAttribute("data-index"));
         updateCarousel();
-        window.addEventListener('resize',()=>{
-            if(window.innerWidth<=430){
-                newBullets.style.display='block'
-            }else{
-                newBullets.style.display='none'
-            }
-        })
+      });
     });
+
+    updateCarousel();
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 430) {
+        newBullets.style.display = "block";
+      } else {
+        newBullets.style.display = "none";
+      }
+    });
+  });
 </script>
