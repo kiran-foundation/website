@@ -14,15 +14,13 @@ const updates = await Promise.all(
 const { title } = Astro.props;
 
 // Filter out updates where the title matches the prop `tittle`
-const filteredUpdates = updates.filter(
-  (update) => update.title !== title && update.priority === "high"
-);
+const filteredUpdates = updates.filter((update) => update.priority === "high");
 
 // Slice to get only 3 updates
 const updatesToDisplay = filteredUpdates.slice(0, 3);
 ---
 
 <div>
-  <h1>Important Updates</h1>
+  <div class="heading-4 pb-[24px]">Important Updates</div>
   {updatesToDisplay.map((update, index) => <ImportantCards update={update} />)}
 </div>
