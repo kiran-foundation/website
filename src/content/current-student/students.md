@@ -16,7 +16,7 @@ people:
     connectLink: "#"
 
   - name: "Astha Jain"
-    image: "/assets/images/current_student/Astha-jain-damoh.png"
+    image: "/assets/images/current_student/astha-jain-damoh.png"
     social: ""
     connectLink: "#"
 
@@ -46,7 +46,7 @@ people:
     connectLink: "#"
 
   - name: "Naman Kumar Jain"
-    image: "/assets/images/current_student/Naman-jain.png"
+    image: "/assets/images/current_student/naman-jain.png"
     social: ""
     connectLink: "#"
 
