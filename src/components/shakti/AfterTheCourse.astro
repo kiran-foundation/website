@@ -1,0 +1,25 @@
+---
+import { getEntry } from "astro:content";
+import MessageCard from "./MessageCard.astro";
+const data = await getEntry("shakti", "financial-skills/after-the-course");
+const {title, messageCard }=  data.data;
+// console.log(data.data);
+---
+
+<div class="mx-auto max-w-[1260px] mt-40">
+  <div class="flex gap-2 flex-col">
+    <h3 class="heading-1 mb-32">what after the course</h3>
+    <div class="lg:w-[1056px] mx-auto">
+      { messageCard.map((message,index) => (
+         <div class=`${index% 2 == 0 ? "justify-end flex" : ""}`>
+        <MessageCard
+          type={message.type}
+          mentorImage={message.mentorImage}
+          mentor={message.mentor}
+          message={message.message}
+        />
+      </div>))}
+     
+    </div>
+  </div>
+</div>

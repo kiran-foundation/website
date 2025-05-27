@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-const { slug, collection, imageWidth = 608, imageHeight = 630 } = Astro.props;
+const {bgcolor="#F1F1F1" ,slug, collection, imageWidth = 608, imageHeight = 630 } = Astro.props;
 
 const heroEntry = (await getEntry(collection, slug)) as {
   data: {
@@ -13,20 +13,20 @@ const heroEntry = (await getEntry(collection, slug)) as {
     image: string;
   };
 };
-
+console.log(heroEntry);
 const {
-  greenUnderline,
-  greenUnderlineSvg,
-  heading,
-  heading2,
-  description,
-  image,
-  heroSubtitle,
+  greenUnderline ="",
+  greenUnderlineSvg="",
+  heading="",
+  heading2="",
+  description="",
+  image="",
+  heroSubtitle="",
 } = heroEntry.data;
 ---
 
 <section
-  class="w-full bg-[#F1F1F1] mt-0 sm:mt-6 md:mt-8 lg:mt-8 xl:mt-8 relative"
+  class=`w-full bg-[${bgcolor}] mt-0 sm:mt-6 md:mt-8 lg:mt-8 xl:mt-8 relative`
 >
   <div
     class="relative max-w-[1296px] mx-auto flex flex-col md:flex-row items-center md:h-[512px]"
@@ -43,6 +43,7 @@ const {
               src={greenUnderlineSvg}
               alt="Green Underline"
               class="w-full h-auto"
+              loading="lazy"
             />
           </span>
         </span>
