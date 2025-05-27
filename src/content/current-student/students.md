@@ -60,7 +60,7 @@ people:
     social: ""
     connectLink: "#"
 
-  - name: "Vanshika jain"
+  - name: "Vanshika Jain"
     image: "/assets/images/current_student/vanshika-jain.png"
     social: ""
     connectLink: "#"
@@ -130,7 +130,7 @@ people:
     social: ""
     connectLink: "#"
   
-  - name: "Rishika sharma"
+  - name: "Rishika Sharma"
     image: "/assets/images/current_student/rishika-sharma.jpeg"
     social: ""
     connectLink: "#"
