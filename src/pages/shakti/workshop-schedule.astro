@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Shakti - Workshop Schedule">
+  <main class="min-h-screen mt-[85px] w-full px-4">
+    <h1
+      class="font-merriweather text-3xl mt-4 text-center md:text-4xl text-[#1E1E1E] mb-8"
+    >
+      Workshop Schedule
+    </h1>
+    <div
+      class="max-w-2xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm border border-gray-200"
+    >
+      <h2 class="font-poppins text-2xl font-semibold text-[#1E1E1E] mb-6">
+        Register for the Workshop
+      </h2>
+      <div id="eventbrite-widget-container-1387192753869"></div>
+    </div>
+  </main>
+
+  <script is:inline>
+    var exampleCallback = function () {
+      console.log("Order complete!");
+    };
+
+    window.EBWidgets.createWidget({
+      // Required
+      widgetType: "checkout",
+      eventId: "1387192753869",
+      iframeContainerId: "eventbrite-widget-container-1387192753869",
+
+      // Optional
+      iframeContainerHeight: 425, // Widget height in pixels. Defaults to a minimum of 425px if not provided
+      onOrderComplete: exampleCallback, // Method called when an order has successfully completed
+    });
+  </script>
+  <script
+    is:inline
+    src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+</Layout>
