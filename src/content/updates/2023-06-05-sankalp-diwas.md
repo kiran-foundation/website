@@ -46,4 +46,37 @@ content: |
   <div align="center">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/AATVpf5lG1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
+
+details:
+  - |
+    <div >
+    Ms. Shreya Jain, a distinguished scholar, was honored as one of the Kiran
+    Pratibha scholars, a prestigious recognition in the academic realm. This
+    accolade underscores her exceptional academic prowess and dedication to
+    her studies. Her commitment to excellence has not only earned her
+    admiration but also tangible recognition in the form of a gold medal.
+    </div>
+  - |
+    <div style="padding-top: 24px;">
+    The ceremony where Ms. Shreya Jain received her gold medal was graced by
+    the presence of the Honourable Chief Minister of Uttar Pradesh, Shri Yogi
+    Adityanath. His participation added significance and grandeur to the
+    event, highlighting the importance of academic achievements and scholarly
+    endeavors.
+    </div>
+  - |
+    <div class="heading-4" style="padding-top: 32px; padding-bottom: 16px;">
+     Ms. Shreya Jain was a testament to her outstanding academic
+     accomplishment.
+    </div>
+
+imageList:
+  - src: "/assets/images/hindidiwas/neer_jain.jpg"
+    description: "Description 1"
+  - src: "/assets/images/hindidiwas/sarika_jain.jpg"
+    description: "Description 2"
+  - src: "/assets/images/hindidiwas/anurima_jain.jpeg"
+    description: "Description 3"
+  - src: "/assets/images/hindidiwas/bindubala_jain.jpeg"
+    description: "Description 4"
 ---

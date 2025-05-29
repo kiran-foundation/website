@@ -6,8 +6,10 @@ import NextUpdates from "../updates/NextUpdate.astro";
 import TestimonialsCarousel from "../common/TestimonialsCarousel.astro";
 import Breadcrumb from "../common/Breadcrumb.astro";
 import UpdateImageContent from "./UpdateImageContent.astro";
+
 import ImportantUpdates from "./ImportantUpdates.astro";
 import UpdateRelatedArticles from "./UpdateRelatedArticles.astro";
+import UpdateGallery from "./UpdateGallery.astro";
 // Import all Markdown files from the updates directory
 const { path } = Astro.props;
 const updateFile = import.meta.glob<MarkdownFile>("/src/content/updates/*.md");
@@ -50,7 +52,11 @@ const { title, summary, date, priority, featured_image, link, content } =
         </div>
       </div>
 
-      <div class="mt-10 w-full pl-8">
+      <div>
+        <UpdateGallery path={path} />
+      </div>
+
+      <div class="mt-10 w-full pl-8 pt-[164px]">
         <UpdateRelatedArticles />
       </div>
     </div>

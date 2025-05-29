@@ -1,0 +1,24 @@
+---
+import { getEntry } from "astro:content";
+const { path } = Astro.props;
+const componentContent = (await getEntry("updates", path)).data;
+---
+
+{
+  componentContent.imageList && (
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full pt-[26px]">
+      {componentContent.imageList.map((item, index) => (
+        <div class="flex flex-col w-full">
+          <img
+            src={item.src}
+            alt={`Image ${index + 1}`}
+            class="w-full max-h-[800px] object-cover rounded pt-[96px]"
+          />
+          <p class="heading-4 text-center !text-[#49494C] pt-[55px]">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  )
+}
