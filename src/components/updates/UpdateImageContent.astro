@@ -39,7 +39,7 @@ import Button from "../common/button.astro";
     <div class="updateFocus-content" style="padding-top: 120px;">
       <!-- main text -->
       {
-        componentContent.content && (
+        componentContent.content && componentContent.content.map && (
           <div class="body-text-1">
             {componentContent.content.map((item) => (
               <div set:html={item} />
@@ -47,28 +47,38 @@ import Button from "../common/button.astro";
           </div>
         )
       }
+
+      {
+        componentContent.details && (
+          <div class="body-text-1">
+            {componentContent.details.map((item) => (
+              <div set:html={item} />
+            ))}
+          </div>
+        )
+      }
     
+    {componentContent.mainButtonTitle && (
       <div class="pt-[48px] pb-[40px]">
         <div class="flex gap-4">
-          {/* Primary button */}
-          {componentContent.mainButtonTitle && (
-            <Button
-              btn="btn1"
-              title={componentContent.mainButtonTitle}
-              link={componentContent.mainButtonLink}
-            />
-          )}
+              {/* Primary button */}
+              <Button
+                btn="btn1"
+                title={componentContent.mainButtonTitle}
+                link={componentContent.mainButtonLink}
+              />
 
-          {/* Secondary button */}
-          {componentContent.secondaryButtonTitle && (
-            <Button
+            {/* Secondary button */}
+            {componentContent.secondaryButtonTitle && (
+              <Button
               btn="btn3"
               title={componentContent.secondaryButtonTitle}
               link={componentContent.secondaryButtonLink}
-            />
-          )}
+              />
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
       <!-- image -->
       {
@@ -87,10 +97,10 @@ import Button from "../common/button.astro";
         )
       }
       <div>
-        <div class="heading-3 pt-[164px] pb-[96px]">Recording of event</div>
-        <!-- video -->
         {
           componentContent.video_link && (
+        <div class="heading-3 pt-[164px] pb-[96px]">Recording of event</div>
+        <!-- video -->
             <div class="h-auto w-full">
             <video
               src={componentContent.video_link}

@@ -3,18 +3,12 @@ date: 2023-03-18
 featured_image: /assets/images/posts/shreya.jpg
 priority: "high"
 more: false
-mainButtonTitle: "First action"
-mainButtonLink: "/"
-secondaryButtonTitle: "Second action"
-secondaryButtonLink: "/"
 summary: "Ms. Shreya Jain, one of the Kiran Pratibha scholars, received her gold medal from the CM of Uttar Pradesh."
 link: "/update/2023-03-18-shreya-gold-medal/"
 title: "Ms. Shreya Jain was a testament to her outstanding academic
   accomplishment."
 
 alt: "Ms. Shreya Jain receiving her gold medal"
-video_link: "https://www.youtube.com/embed/nT-C3FvFRro"
-videoDescription: "meow meow"
 content:
   - |
     <div >
