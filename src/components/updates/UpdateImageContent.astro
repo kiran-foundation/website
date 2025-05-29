@@ -39,7 +39,7 @@ import Button from "../common/button.astro";
     <div class="updateFocus-content" style="padding-top: 120px;">
       <!-- main text -->
       {
-        componentContent.content.length > 0 && (
+        componentContent.content && (
           <div class="body-text-1">
             {componentContent.content.map((item) => (
               <div set:html={item} />
@@ -47,29 +47,33 @@ import Button from "../common/button.astro";
           </div>
         )
       }
+    
+      <div class="pt-[48px] pb-[40px]">
+        <div class="flex gap-4">
+          {/* Primary button */}
+          {componentContent.mainButtonTitle && (
+            <Button
+              btn="btn1"
+              title={componentContent.mainButtonTitle}
+              link={componentContent.mainButtonLink}
+            />
+          )}
 
-      <!-- primary button -->
-       {
-        componentContent.mainButtonTitle && (
-          <div>
-            <Button btn="btn1" title={componentContent.mainButtonTitle} link={componentContent.mainButtonLink} />
-          </div>
-        )
-      }
-
-      <!-- secondary button -->
-      {
-        componentContent.secondaryButtonTitle && (
-          <div>
-            <Button btn="btn3" title={componentContent.secondaryButtonTitle} link={componentContent.secondaryButtonLink} />
-          </div>
-        )
-      }
+          {/* Secondary button */}
+          {componentContent.secondaryButtonTitle && (
+            <Button
+              btn="btn3"
+              title={componentContent.secondaryButtonTitle}
+              link={componentContent.secondaryButtonLink}
+            />
+          )}
+        </div>
+      </div>
 
       <!-- image -->
       {
         componentContent.featured_image && (
-          <div class="h-auto w-full">
+          <div class="h-auto w-full  pt-[80px]">
             <img
               src={componentContent.featured_image}
               alt={componentContent.alt}
@@ -82,26 +86,28 @@ import Button from "../common/button.astro";
           </p>
         )
       }
-
-      <!-- video -->
-      {
-        componentContent.video_link && (
-          <div class="h-auto w-full">
+      <div>
+        <div class="heading-3 pt-[164px] pb-[96px]">Recording of event</div>
+        <!-- video -->
+        {
+          componentContent.video_link && (
+            <div class="h-auto w-full">
             <video
               src={componentContent.video_link}
               controls
               width="100%"
-            />
+              />
           </div>
-          <p class="Error-text" style="padding-top: 16px; ">
+          <p class="font-poppins font-bold text-[20px] leading-[100%] tracking-[0%] pt-[32px] text-[#1E1E1E]">
             {componentContent.videoDescription}
           </p>
         )
       }
+      </div>
 
       <!-- secondary text -->
       {
-        componentContent.information.length > 0 && (
+        componentContent.information && (
           <div class="body-text-1">
             {componentContent.information.map((item) => (
               <div set:html={item} />
