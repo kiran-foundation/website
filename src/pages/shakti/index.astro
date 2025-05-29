@@ -38,25 +38,16 @@ import Join from "../../components/shakti/Join.astro";
 
    <Breadcrumb url={Astro.url} />
     <Hero collection="shakti" slug="hero"  imageWidth="560.28" height="580.26" />
-    <Pillars/>
-    <!-- <CertificateSection/>
-    <Videotestomonial/>
-    <PageBottom/> -->
+    <Pillars collection="shakti" slug="pillars"/>
+    <CertificateSection/>
+    <!-- <Videotestomonial/> -->
+    <Videotestomonial collection="shakti" slug="financial-skills/video" bg="bg-black" className="mb-[164px]"/>
 
+    <PageBottom slug="financial-skills/resilient-society" collection="shakti" sec="bottomSection" className=" mt-[164px]"/>
 
-
-
-    <!-- <Programe/>
-    <DigitalSkills/>
-    <SpeakingClub/>
-    <FinancialSkills/>
-    <Card/>
-    <TestimonialsCarousel pageTag="pratibha" />
-    <Join/>
-    
   </main>
 
-  <!-- Back to top button -->
+  
   <a
     class="btn-scroll-top"
     href="#top"

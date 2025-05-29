@@ -5,13 +5,9 @@ import VideoCard from './VideoCard.astro';
 import Heading from './Heading.astro';
 import { getEntry } from 'astro:content';
 const { collection, slug,className,bg } = Astro.props;
+const entry = await getEntry(collection, slug);
+const { title, videos } = (entry as { data: { title: string; videos: any[] } }).data;
 
-const videos = [
-  { videoUrl: 'https://www.youtube.com/embed/W_Ozar0vPAo?si=efJoCaEALx0J7d36', alt: 'Video 1 Title' , desc: 'vide 1 desc'},
-  { videoUrl: 'https://www.youtube.com/embed/-Cer8iOoPrw?si=uANs0ZRSn5-8_3p-', alt: 'Video 2 Title' },
-  { videoUrl: 'novideo', alt: 'Video 3 Title' },
-  { videoUrl: 'novideo', alt: 'Video 4 Title' }
-];
 ---
 
 <section class=`max-w-[1296px] mx-auto ${className}`>

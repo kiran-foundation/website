@@ -1,10 +1,9 @@
 ---
 interface Props {
-  title: string;
-  effect?: boolean;
+  title?: string;
   head?: string;
 }
-const { title, effect=false,head } = Astro.props;
+const { title='',head='' } = Astro.props;
 ---
 
 <div
