@@ -3,29 +3,29 @@ import { getEntry } from "astro:content";
 import Heading from "./Heading.astro";
 import Button from "../common/button.astro";
 
-const entry = (await getEntry("shakti", "pillars")) as any;
+const entry = await getEntry("shakti", "pillars");
 
 const pillars = entry?.data?.pillars ?? [];
 ---
-<section class="mx-auto max-w-[1296px]  mt-[164px] box-border">
+<section class="mx-auto max-w-[1296px]  mt-[164px] box-border ">
   <div class="flex flex-col lg:flex-row gap-[72px] min-h-screen">
     
     <!-- Left Sticky Section -->
    
 
-  <div class="lg:sticky lg:w-[363px] lg:h-[324px] lg:top-[120px] flex flex-col gap-24 mt-[402px]">
-    <div class="space-y-4">
-      <Heading  head="heading-1" />
-    </div>
-    
-    <Button
+  <div class="lg:sticky  mx-auto lg:w-[363px] lg:h-[324px] lg:top-[120px] flex flex-col gap-24 mt-[4px]">
+    <div class="space-y-4 ">
+      <Heading  title=`Shakti: Our Four-Pillar Framework` head="heading-1" />
+      
+      <Button
       link="/volunteering"
       title="See the Workshops Schedule"
       btn="btn1"
       widthClass="w-[342px] sm:w-[200px] md:w-[315px]"
       heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
       className="mt-8"
-    />
+      />
+    </div>
   </div>
 
 

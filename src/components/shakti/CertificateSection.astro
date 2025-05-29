@@ -2,35 +2,24 @@
 
 import { getEntry } from "astro:content";
 
-const entry = await getEntry({ collection: "shakti", slug: "certificates" }) as any;
+const entry = await getEntry(  "shakti",  "certificates" ) ;
 
 const {
- c1 = "",
- c2= "",
-  c3 = "",
-  c4 = "",
+title,button,certificates
 } = entry?.data ?? {};
 
-
-
 import CertificateCard from './CertificateCard.astro';
-// Duplicate import removed
 
-const certificates = [
-  { image: c1, alt: 'Everyday Law For Women' },
-  { image: c2, alt: 'Essential Financial Skills - Pratibha' },
-  { image: c3, alt: 'Advance Canva - Kanchan' },
-  { image: c4, alt: 'Essential Financial Skills - Anshu' }
-];
+
 
 
 import SectionTop from "./SectionTop.astro";
 ---
 
-<section class=" max-w-[1296px] mx-auto ">
+<section class=" max-w-[1296px] mx-auto px-4 ">
 
 
-  <SectionTop sec="certificateSection"/>
+  <SectionTop title={title} button={button} sec="certificateSection"/>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[1296px] mx-auto">
     {certificates.map(cert => (
