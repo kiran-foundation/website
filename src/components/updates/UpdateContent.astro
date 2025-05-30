@@ -4,7 +4,6 @@ import { getEntry } from "astro:content";
 const componentContent = (await getEntry("updates", path)).data;
 import Button from "../common/button.astro";
 import { SocialShare , FacebookShareButton, LinkedInShareButton, TwitterShareButton } from "astro-social-share";
-
 ---
 <div>
   <div
@@ -24,7 +23,7 @@ import { SocialShare , FacebookShareButton, LinkedInShareButton, TwitterShareBut
           <a
             class="pl-[4px]"
             id="telegram-share"
-            href={`https://t.me/share/url?url=${encodeURIComponent("https://kiran.foundation")}&text=${encodeURIComponent(componentContent.message_text)}`}
+            href={`https://t.me/share/url?url=${encodeURIComponent(Astro.url.href)}&text=${encodeURIComponent(componentContent.message_text)}`}
             aria-label="Telegram"
             target="_blank"
             rel="noopener noreferrer"
@@ -33,15 +32,15 @@ import { SocialShare , FacebookShareButton, LinkedInShareButton, TwitterShareBut
           </a>
 
 
-          <TwitterShareButton title={componentContent.message_text} description={componentContent.message_text} >
+          <TwitterShareButton url={Astro.url.href} title={componentContent.message_text} description={componentContent.message_text} >
             <i class="ai-x"></i>
           </TwitterShareButton>
 
-          <FacebookShareButton title={componentContent.message_text} description={componentContent.message_text} >
+          <FacebookShareButton url={Astro.url.href} title={componentContent.message_text} description={componentContent.message_text} >
             <i class="ai-facebook"></i>
           </FacebookShareButton>
 
-          <LinkedInShareButton title={componentContent.message_text} description={componentContent.message_text} > 
+          <LinkedInShareButton url={Astro.url.href} title={componentContent.message_text} description={componentContent.message_text} > 
             <i class="ai-linkedin"></i>
           </LinkedInShareButton>
         </div>
