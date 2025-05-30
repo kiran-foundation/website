@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-const {bgcolor="#F1F1F1" ,slug, collection, imageWidth = 608, imageHeight = 630 } = Astro.props;
+const {bgcolor="#F1F1F1" ,slug, collection, imageWidth = 608, imageHeight = 630, greenlineheight="bottom-[0.125rem]" } = Astro.props;
 
 const heroEntry = (await getEntry(collection, slug)) as {
   data: {
@@ -13,7 +13,7 @@ const heroEntry = (await getEntry(collection, slug)) as {
     image: string;
   };
 };
-console.log(heroEntry);
+// console.log(heroEntry);
 const {
   greenUnderline ="",
   greenUnderlineSvg="",
