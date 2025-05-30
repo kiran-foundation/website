@@ -14,8 +14,8 @@ navigation:
         url: "/pratibha/current-students"
       - name: "Become a Mentor"
         url: "/pratibha/become-a-mentor"
-      - name: "Apply"
-        url: "/pratibha/apply"
+      # - name: "Apply"
+      #   url: "/pratibha/apply"
 
   - menu:
       name: "Shakti Courses"
@@ -33,8 +33,8 @@ navigation:
         url: "/shakti/everyday-law-for-women"
       - name: "English Speaking Club"
         url: "/shakti/english-speaking-club"
-      - name: "Join Shakti"
-        url: "/shakti/join"
+      # - name: "Join Shakti"
+      #   url: "/shakti/join"
 
   - menu:
       name: "Who We Are?"
