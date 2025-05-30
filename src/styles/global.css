@@ -204,25 +204,4 @@
       font-size: 1.5rem;
     }
   }
-}.logo-shadow {
-  /* Base soft shadow */
-  box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.18),
-    0 1.5px 6px rgba(60, 60, 60, 0.08),
-    0 0.5px 1.5px rgba(0, 0, 0, 0.08);
-  
-  /* Gentle orange glow */
-  filter: drop-shadow(0 0 8px rgba(241, 89, 42, 0.4));
-  
-  /* Smooth transition for hover or dynamic effects */
-  transition: box-shadow 0.3s ease, filter 0.3s ease;
-}
-
-.logo-shadow:hover {
-  /* Slightly stronger glow on hover */
-  filter: drop-shadow(0 0 12px rgba(241, 89, 42, 0.6));
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.22),
-    0 3px 12px rgba(60, 60, 60, 0.10),
-    0 1px 3px rgba(0, 0, 0, 0.10);
 }
