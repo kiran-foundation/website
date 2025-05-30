@@ -25,15 +25,15 @@ content:
 
 detail:
 
-main_button_title:
-main_button_link:
-secondary_button_title:
-secondary_button_link:
+main_button_title: Join On Zoom
+main_button_link: https://us06web.zoom.us/j/84634757810?pwd=Vk1uck1MelhRMXhEZjBuNTI2eXJmQT09
+secondary_button_title: Join On YouTube
+secondary_button_link: https://www.youtube.com/watch?v=joyfQ37_dhQ
 
 featured_image: /assets/images/posts/SankalpDiwas.jpeg
 alt: "संकल्प दिवस - Kiran Foundation"
 
-video_link: https://www.youtube.com/embed/AATVpf5lG1A
+video_link: https://www.youtube.com/watch?v=joyfQ37_dhQ
 video_description: "संकल्प दिवस 2023 - Kiran Foundation का सांस्कृतिक एवं प्रेरणादायक कार्यक्रम"
 
 information:
