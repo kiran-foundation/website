@@ -9,13 +9,18 @@ import {
 } from "astro-social-share";
 
 export async function get({ request, params }) {
-  const path = params.path; // assuming your route is dynamic like [path].astro
+  const path = params.path;
   const entry = await getEntry("updates", path);
-
+  if (!entry) {
+    return {
+      status: 404,
+      body: "Not Found",
+    };
+  }
   return {
     props: {
       componentContent: entry.data,
-      currentUrl: request.url, // <-- this is your runtime URL
+      currentUrl: request.url,
       path,
     },
   };
