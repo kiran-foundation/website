@@ -1,5 +1,7 @@
 ---
+const { path } = Astro.props;
 import { getEntry } from "astro:content";
+const componentContent = (await getEntry("updates", path)).data;
 import Button from "../common/button.astro";
 import {
   SocialShare,
@@ -7,26 +9,6 @@ import {
   LinkedInShareButton,
   TwitterShareButton,
 } from "astro-social-share";
-
-export async function get({ request, params }) {
-  const path = params.path;
-  const entry = await getEntry("updates", path);
-  if (!entry) {
-    return {
-      status: 404,
-      body: "Not Found",
-    };
-  }
-  return {
-    props: {
-      componentContent: entry.data,
-      currentUrl: request.url,
-      path,
-    },
-  };
-}
-
-const { componentContent, currentUrl, path } = Astro.props;
 ---
 
 <div>
@@ -54,8 +36,8 @@ const { componentContent, currentUrl, path } = Astro.props;
           </a>
           <a
             class="pl-[4px]"
-            href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(componentContent.message_text)}`}
-            href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(componentContent.message_text)}`}
+            id="telegram-share"
+            href={`https://t.me/share/url?url=${encodeURIComponent("https://kiran.foundation")}&text=${encodeURIComponent(componentContent.message_text)}`}
             aria-label="Telegram"
             target="_blank"
             rel="noopener noreferrer"
@@ -64,7 +46,6 @@ const { componentContent, currentUrl, path } = Astro.props;
           </a>
 
           <TwitterShareButton
-            url={encodeURIComponent(currentUrl)}
             title={componentContent.message_text}
             description={componentContent.message_text}
           >
@@ -72,7 +53,6 @@ const { componentContent, currentUrl, path } = Astro.props;
           </TwitterShareButton>
 
           <FacebookShareButton
-            url={encodeURIComponent(currentUrl)}
             title={componentContent.message_text}
             description={componentContent.message_text}
           >
@@ -80,21 +60,11 @@ const { componentContent, currentUrl, path } = Astro.props;
           </FacebookShareButton>
 
           <LinkedInShareButton
-            url={encodeURIComponent(currentUrl)}
             title={componentContent.message_text}
             description={componentContent.message_text}
           >
             <i class="ai-linkedin"></i>
           </LinkedInShareButton>
-          <a
-            class="pl-[4px]"
-            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}&text=${encodeURIComponent(componentContent.message_text)}`}
-            aria-label="X"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="ai-x"></i>
-          </a>
         </div>
       </div>
     </div>
