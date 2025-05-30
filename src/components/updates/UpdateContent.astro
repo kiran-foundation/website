@@ -3,9 +3,7 @@ import { getEntry } from "astro:content";
 const { path } = Astro.props;
 const componentContent = (await getEntry("updates", path)).data;
 import Button from "../common/button.astro";
-import { SocialShare , FacebookShareButton, LinkedInShareButton, TwitterShareButton } from "astro-social-share";
-
-const currentUrl = Astro.url;
+const currentUrl = Astro.request.url;
 ---
 
 <div>
@@ -22,30 +20,42 @@ const currentUrl = Astro.url;
         </div>
         <div>
           Share post:
-
           <a
             class="pl-[4px]"
-            href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl.toString())}&text=${encodeURIComponent(componentContent.message_text)}`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`}
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="ai-facebook"></i>
+          </a>
+          <a
+            class="pl-[4px]"
+            href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(componentContent.message_text)}`}
             aria-label="Telegram"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i class="ai-telegram"></i>
           </a>
-
-
-          <TwitterShareButton url={currentUrl.toString()} title={componentContent.message_text} description={componentContent.message_text} >
-            <i class="ai-x"></i>
-          </TwitterShareButton>
-
-          <FacebookShareButton url={currentUrl.toString()} title={componentContent.message_text} description={componentContent.message_text} >
-            <i class="ai-facebook"></i>
-          </FacebookShareButton>
-
-          <LinkedInShareButton url={currentUrl.toString()} title={componentContent.message_text} description={componentContent.message_text} > 
+          <a
+            class="pl-[4px]"
+            href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(currentUrl)}`}
+            aria-label="Linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="ai-linkedin"></i>
-          </LinkedInShareButton>
-          
+          </a>
+          <a
+            class="pl-[4px]"
+            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(componentContent.message_text)}`}
+            aria-label="X"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="ai-x"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -73,29 +83,39 @@ const currentUrl = Astro.url;
         )
       }
 
-      {componentContent.main_button_title && (
-        <div class="pt-[48px] pb-[40px]">
-          <div class="flex gap-4">
-            {/* Primary button */}
-            <Button
-              btn="btn1"
-              widthClass={componentContent.secondary_button_title ? "w-auto" : "w-[247px]"}
-              heightClass={componentContent.secondary_button_title ? "h-auto" : "h-[60px]"}
-              title={componentContent.main_button_title}
-              link={componentContent.main_button_link}
-            />
-
-            {/* Secondary button */}
-            {componentContent.secondary_button_title && (
+      {
+        componentContent.main_button_title && (
+          <div class="pt-[48px] pb-[40px]">
+            <div class="flex gap-4">
+              {/* Primary button */}
               <Button
-                btn="btn3"
-                title={componentContent.secondary_button_title}
-                link={componentContent.secondary_button_link}
+                btn="btn1"
+                widthClass={
+                  componentContent.secondary_button_title
+                    ? "w-auto"
+                    : "w-[247px]"
+                }
+                heightClass={
+                  componentContent.secondary_button_title
+                    ? "h-auto"
+                    : "h-[60px]"
+                }
+                title={componentContent.main_button_title}
+                link={componentContent.main_button_link}
               />
-            )}
+
+              {/* Secondary button */}
+              {componentContent.secondary_button_title && (
+                <Button
+                  btn="btn3"
+                  title={componentContent.secondary_button_title}
+                  link={componentContent.secondary_button_link}
+                />
+              )}
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
       {/* image */}
       {
@@ -119,7 +139,9 @@ const currentUrl = Astro.url;
         {
           componentContent.video_link && (
             <>
-              <div class="heading-3 pt-[164px] pb-[96px]">Recording of event</div>
+              <div class="heading-3 pt-[164px] pb-[96px]">
+                Recording of event
+              </div>
               {/* video */}
               <div class="h-auto w-full">
                 <video
