@@ -1,0 +1,62 @@
+---
+import { getEntry } from "astro:content"
+
+const data = await getEntry("shakti", "financial-skills/whyfinancial");
+const { title, bentifits, image } = data.data;
+---
+
+<section class="max-w-full bg-[#F1F1F1] mx-auto mb-[160px] px-4">
+  <div
+    class="max-w-[1296px] mx-auto pt-[100px] flex md:flex-row gap-[158px] flex-col"
+  >
+    <div class="max-w-[636px] mx-auto mb-[48px]">
+      <h1 class="heading-1 mb-8">{title}</h1>
+      <div class=" ">
+        
+        
+{     bentifits.map((bentifit) => {
+    console.log(bentifit);
+  return (   <div class=" mb-[40px]">
+          <span class="flex gap-4">
+            <svg class=""
+                width="44"
+                height="45"
+                viewBox="0 0 44 45"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_10061_5760)">
+                  <path
+                    d="M32.5 4.18945H11.5C9.51161 4.19183 7.60534 4.98278 6.19933 6.38878C4.79332 7.79479 4.00238 9.70106 4 11.6895L4 32.6895C4.00238 34.6778 4.79332 36.5841 6.19933 37.9901C7.60534 39.3961 9.51161 40.1871 11.5 40.1895H32.5C34.4884 40.1871 36.3947 39.3961 37.8007 37.9901C39.2067 36.5841 39.9976 34.6778 40 32.6895V11.6895C39.9976 9.70106 39.2067 7.79479 37.8007 6.38878C36.3947 4.98278 34.4884 4.19183 32.5 4.18945ZM37 32.6895C37 33.8829 36.5259 35.0275 35.682 35.8714C34.8381 36.7153 33.6935 37.1895 32.5 37.1895H11.5C10.3065 37.1895 9.16193 36.7153 8.31802 35.8714C7.47411 35.0275 7 33.8829 7 32.6895V11.6895C7 10.496 7.47411 9.35139 8.31802 8.50747C9.16193 7.66356 10.3065 7.18945 11.5 7.18945H32.5C33.6935 7.18945 34.8381 7.66356 35.682 8.50747C36.5259 9.35139 37 10.496 37 11.6895V32.6895Z"
+                    fill="#1E1E1E"></path>
+                  <path
+                    d="M18.0012 28.0691L12.1227 22.1906C11.8414 21.9094 11.4599 21.7515 11.0622 21.7515C10.6644 21.7515 10.283 21.9094 10.0017 22.1906C9.72047 22.4719 9.5625 22.8534 9.5625 23.2511C9.5625 23.6489 9.72047 24.0303 10.0017 24.3116L15.8802 30.1901C16.1588 30.4688 16.4895 30.6899 16.8536 30.8408C17.2177 30.9916 17.6079 31.0692 18.0019 31.0692C18.396 31.0692 18.7862 30.9916 19.1503 30.8408C19.5143 30.6899 19.8451 30.4688 20.1237 30.1901L34.0017 16.3121C34.2829 16.0308 34.4409 15.6494 34.4409 15.2516C34.4409 14.8539 34.2829 14.4724 34.0017 14.1911C33.7204 13.9099 33.3389 13.752 32.9412 13.752C32.5434 13.752 32.162 13.9099 31.8807 14.1911L18.0012 28.0691Z"
+                    fill="#1E1E1E"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_10061_5760">
+                    <rect
+                      width="36"
+                      height="36"
+                      fill="white"
+                      transform="translate(4 4.18945)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            <span class="flex justify-center items-center self-center heading-4"> {bentifit.title}</span>
+          </span>
+          <p class="pl-[64px] body-text-1">
+            {bentifit.desc}
+          </p>
+        </div>)})
+}
+
+
+      </div>
+    </div>
+
+    <div class="max-w-[586px] flex justify-center items-center self-center">
+      <img src={image} alt="" loading="lazy" />
+    </div>
+  </div>
+</section>

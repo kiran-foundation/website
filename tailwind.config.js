@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        'xxs': {'min': '340px'}, 
         'xs': {'min': '400px'}, 
         'tb': {'min': '1024px'}, 
       },

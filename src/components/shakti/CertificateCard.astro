@@ -1,0 +1,7 @@
+---
+// Props: image (src), alt
+const { image, alt } = Astro.props;
+---
+<div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+  <img src={image} alt={alt} class="w-full h-auto" loading="lazy" />
+</div>

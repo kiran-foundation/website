@@ -62,7 +62,7 @@ const componentHero = (await getEntry("about", "hero")).data;
         </div>
       </div>
     </div>
-    {componentHero.Flatseal}
+   
     <!-- Text Content Container -->
     <div
       class="max-w-[342px] absolute inset-0 ml-[50%] mt-[10%] flex flex-col px-2 justify-between z-20"
@@ -130,29 +130,29 @@ const componentHero = (await getEntry("about", "hero")).data;
     </div>
   </div>
 </section>
-<style>
-  @media screen and (max-width: 2000px) {
-    .mobile-view {
-      display: none;
-    }
-    .tablet-view {
-      display: none;
-    }
-    .desktop-view {
-      display: block;
-    }
-  }
-  @media screen and (max-width: 808px) {
-    .mobile-view {
-      display: none;
-    }
-    .tablet-view {
-      display: block;
-    }
-    .desktop-view {
-      display: none;
-    }
-  }
+      <style>
+        @media screen and (max-width: 2500px) {
+          .mobile-view {
+            display: none;
+          }
+          .tablet-view {
+            display: none;
+          }
+          .desktop-view {
+            display: block;
+          }
+        }
+        @media screen and (max-width: 808px) {
+          .mobile-view {
+            display: none;
+          }
+          .tablet-view {
+            display: block;
+          }
+          .desktop-view {
+            display: none;
+          }
+        }
 
   @media screen and (max-width: 564px) {
     .mobile-view {

@@ -1,0 +1,44 @@
+---
+import Heading from "./Heading.astro";
+import { getEntry } from "astro:content";
+const  mentorsdata  = (
+  await getEntry("shakti", "financial-skills/mentors")
+);
+const {title,mentors} = mentorsdata.data;
+---
+
+<section class=`max-w-full mx-auto px-4  space-y-40`>
+  <Heading title={title} head="heading-1" />
+
+<div class="max-w-[1296px] mx-auto">
+  { mentors.map((mentor,index) => (    <div
+      class=`w-max-[1296px] mx-auto flex flex-col ${ (index % 2 == 0) ? "lg:flex-row" : "lg:flex-row-reverse" } items-center md:gap-[60px] gap-8  `
+    >
+      <div class=" mb-[164px]">
+        <img
+          src={mentor.image}
+          class="rounded-3xl"
+          width="390"
+          height="502"
+          alt=""
+        />
+        <h4 class="text-[#1E1E1E] body-text-2 tracking-[1px] text-center mt-4">
+          {mentor.title}
+        </h4>
+      </div>
+      <div class="">
+        <p class="max-w-[841px] body-text-3">
+          <span
+            class="lg:font-light lg:text-[96px] lg:leading-[68px] lg:tracking-[1px]"
+            >‘’</span
+          >{mentor.quote}<span
+            class="lg:font-light lg:text-[64px] lg:leading-[68px] lg:tracking-[1px]"
+            >’’</span
+          >
+        </p>
+      </div>
+    </div>
+  ))
+}
+  
+</section>

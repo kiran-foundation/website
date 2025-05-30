@@ -1,13 +1,19 @@
 ---
-import ComingSoon from "../../components/coming-soon/ComingSoon.astro";
 import Breadcrumb from "../../components/common/Breadcrumb.astro";
+import GreenUnderlineHeading from "../../components/common/GreenUnderlineHeading.astro";
 import Layout from "../../layouts/Layout.astro";
+import Gallery from "../../components/common/Gallery.astro";
+import BottomContainer from "../../components/common/BottomContainer.astro";
+
 
 ---
 <Layout title="Current Students">
   <main class="page-wrapper w-full">
     <Breadcrumb/>
-    <ComingSoon/>
+    <GreenUnderlineHeading   slug="heading" collection="current-student" recLen="md:-bottom-[.160rem] -bottom-[.00rem]" />
+     <Gallery collection="current-student" slug="students" />
+    <BottomContainer collection="current-student" slug="worth-beyond-wealth" />
+    
     
   </main>
 </Layout>
