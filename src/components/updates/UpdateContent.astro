@@ -3,6 +3,9 @@ import { getEntry } from "astro:content";
 const { path } = Astro.props;
 const componentContent = (await getEntry("updates", path)).data;
 import Button from "../common/button.astro";
+import { SocialShare , FacebookShareButton, LinkedInShareButton, TwitterShareButton } from "astro-social-share";
+
+const currentUrl = Astro.url;
 ---
 
 <div>
@@ -19,40 +22,30 @@ import Button from "../common/button.astro";
         </div>
         <div>
           Share post:
-          <a class="pl-[4px]"
-            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}`}
 
-            aria-label="Facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="ai-facebook"></i>
-          </a>
-          <a class="pl-[4px]"
-          href={`https://t.me/share/url?url=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}&text=${encodeURIComponent(componentContent.message_text)}`}
+          <a
+            class="pl-[4px]"
+            href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl.toString())}&text=${encodeURIComponent(componentContent.message_text)}`}
             aria-label="Telegram"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i class="ai-telegram"></i>
           </a>
-          <a class="pl-[4px]"
-          href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent("http://localhost:4321/update/" + path)}`}
 
-            aria-label="Linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="ai-linkedin"></i>
-          </a>
-          <a class="pl-[4px]"
-            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}&text=${encodeURIComponent(componentContent.message_text)}`} 
-            aria-label="X"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
+
+          <TwitterShareButton url={currentUrl.toString()} title={componentContent.message_text} description={componentContent.message_text} >
             <i class="ai-x"></i>
-          </a>
+          </TwitterShareButton>
+
+          <FacebookShareButton url={currentUrl.toString()} title={componentContent.message_text} description={componentContent.message_text} >
+            <i class="ai-facebook"></i>
+          </FacebookShareButton>
+
+          <LinkedInShareButton url={currentUrl.toString()} title={componentContent.message_text} description={componentContent.message_text} > 
+            <i class="ai-linkedin"></i>
+          </LinkedInShareButton>
+          
         </div>
       </div>
     </div>
@@ -79,67 +72,71 @@ import Button from "../common/button.astro";
           </div>
         )
       }
-    
-    {componentContent.main_button_title && (
-      <div class="pt-[48px] pb-[40px]">
-        <div class="flex gap-4">
-              {/* Primary button */}
-              <Button
-                btn="btn1"
-                widthClass= {componentContent.secondary_button_title ? "w-auto" : "w-[247px]"}
-                heightClass= {componentContent.secondary_button_title ? "h-auto" : "h-[60px]"}
-                title={componentContent.main_button_title}
-                link={componentContent.main_button_link}
-              />
+
+      {componentContent.main_button_title && (
+        <div class="pt-[48px] pb-[40px]">
+          <div class="flex gap-4">
+            {/* Primary button */}
+            <Button
+              btn="btn1"
+              widthClass={componentContent.secondary_button_title ? "w-auto" : "w-[247px]"}
+              heightClass={componentContent.secondary_button_title ? "h-auto" : "h-[60px]"}
+              title={componentContent.main_button_title}
+              link={componentContent.main_button_link}
+            />
 
             {/* Secondary button */}
             {componentContent.secondary_button_title && (
               <Button
-              btn="btn3"
-              title={componentContent.secondary_button_title}
-              link={componentContent.secondary_button_link}
+                btn="btn3"
+                title={componentContent.secondary_button_title}
+                link={componentContent.secondary_button_link}
               />
             )}
           </div>
         </div>
       )}
 
-      <!-- image -->
+      {/* image */}
       {
         componentContent.featured_image && (
-          <div class="h-auto w-full  pt-[80px]">
-            <img
-              src={componentContent.featured_image}
-              alt={componentContent.alt}
-              class="w-full h-full"
-              loading="lazy"
-            />
-          </div>
-          <p class="Error-text" style="padding-top: 16px; ">
-            {componentContent.alt}
-          </p>
+          <>
+            <div class="h-auto w-full pt-[80px]">
+              <img
+                src={componentContent.featured_image}
+                alt={componentContent.alt}
+                class="w-full h-full"
+                loading="lazy"
+              />
+            </div>
+            <p class="Error-text" style="padding-top: 16px;">
+              {componentContent.alt}
+            </p>
+          </>
         )
       }
       <div>
         {
           componentContent.video_link && (
-        <div class="heading-3 pt-[164px] pb-[96px]">Recording of event</div>
-        <!-- video -->
-            <div class="h-auto w-full">
-            <video
-              src={componentContent.video_link}
-              controls
-              width="100%"
-              />
-          </div>
-          <p class="font-poppins font-bold text-[20px] leading-[100%] tracking-[0%] pt-[32px] text-[#1E1E1E]">
-            {componentContent.video_description}
-          </p>
-        )
-      }
+            <>
+              <div class="heading-3 pt-[164px] pb-[96px]">Recording of event</div>
+              {/* video */}
+              <div class="h-auto w-full">
+                <video
+                  src={componentContent.video_link}
+                  controls
+                  width="100%"
+                />
+              </div>
+              <p class="font-poppins font-bold text-[20px] leading-[100%] tracking-[0%] pt-[32px] text-[#1E1E1E]">
+                {componentContent.video_description}
+              </p>
+            </>
+          )
+        }
       </div>
 
-      <!-- secondary text -->
+      {/* secondary text */}
       {
         componentContent.information && (
           <div class="body-text-1">

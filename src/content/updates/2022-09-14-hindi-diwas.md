@@ -3,7 +3,7 @@ title: "राष्ट्रीय हिंदी दिवस"
 
 date: 10.05.2024
 
-message_text: "Hey , check out this super duper cool update from kiran foundation"
+message_text: "Hey , check out this super duper cool update from kiran foundation "
 
 content:
   - |
