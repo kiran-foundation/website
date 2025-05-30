@@ -2,35 +2,29 @@
 import Button from "../common/button.astro";
 import Heading from "../shakti/Heading.astro"
 const { sec, title, button } = Astro.props;
+console.log(":::::::::::::::")
+console.log(button);
 ---
 
 
 <section class="max-w-[1296px] mx-auto mb-[120px]">
 
-    {sec === "certificateSection" && <Heading head="heading-1 text-center mb-[48px]" title={title} />}
-    {sec === "bottomSection" && <Heading head="heading-1  text-center mb-[48px]" title={title} />}
+    <Heading head="heading-1  text-center mb-[48px]" title={title} />
   
     <div class="flex justify-center flex-wrap gap-4 mb-10 ">
-      {
+      { button &&
         button.map((btn) => (
+          
           <Button
             link={btn.link}
             title={btn.title}
-            btn={btn.btn}
-            widthClass="w-[342px] sm:w-[200px] md:w-[234px]"
+            btn={btn.btn }
+            widthClass=""
             heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
           />
-        ))
-        
-        
+        ))      
       }
-      <!-- <Button
-        link={ "#"}
-        title={ "Learn More"}
-        btn="btn3"
-        widthClass="w-[342px] sm:w-[200px] md:w-[234px]"
-        heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
-      /> -->
+  
     </div>
   
   </section>

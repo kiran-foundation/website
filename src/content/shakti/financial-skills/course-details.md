@@ -2,7 +2,7 @@
 title: "Course Details"
 messageCard:
   - mentor: "Preeti"
-    message: "you tell me more about the course?"
+    message: "can you tell me more about the course?"
     mentorImage: "/assets/images/financial/preeti.png"
     type: "send"
 
