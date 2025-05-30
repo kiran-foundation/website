@@ -1,9 +1,27 @@
 ---
 import { getEntry } from "astro:content";
-const { path } = Astro.props;
-const componentContent = (await getEntry("updates", path)).data;
 import Button from "../common/button.astro";
-const currentUrl = Astro.request.url;
+import {
+  SocialShare,
+  FacebookShareButton,
+  LinkedInShareButton,
+  TwitterShareButton,
+} from "astro-social-share";
+
+export async function get({ request, params }) {
+  const path = params.path; // assuming your route is dynamic like [path].astro
+  const entry = await getEntry("updates", path);
+
+  return {
+    props: {
+      componentContent: entry.data,
+      currentUrl: request.url, // <-- this is your runtime URL
+      path,
+    },
+  };
+}
+
+const { componentContent, currentUrl, path } = Astro.props;
 ---
 
 <div>
@@ -32,24 +50,40 @@ const currentUrl = Astro.request.url;
           <a
             class="pl-[4px]"
             href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(componentContent.message_text)}`}
+            href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(componentContent.message_text)}`}
             aria-label="Telegram"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i class="ai-telegram"></i>
           </a>
-          <a
-            class="pl-[4px]"
-            href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(currentUrl)}`}
-            aria-label="Linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <TwitterShareButton
+            url={encodeURIComponent(currentUrl)}
+            title={componentContent.message_text}
+            description={componentContent.message_text}
+          >
+            <i class="ai-x"></i>
+          </TwitterShareButton>
+
+          <FacebookShareButton
+            url={encodeURIComponent(currentUrl)}
+            title={componentContent.message_text}
+            description={componentContent.message_text}
+          >
+            <i class="ai-facebook"></i>
+          </FacebookShareButton>
+
+          <LinkedInShareButton
+            url={encodeURIComponent(currentUrl)}
+            title={componentContent.message_text}
+            description={componentContent.message_text}
           >
             <i class="ai-linkedin"></i>
-          </a>
+          </LinkedInShareButton>
           <a
             class="pl-[4px]"
-            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(componentContent.message_text)}`}
+            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}&text=${encodeURIComponent(componentContent.message_text)}`}
             aria-label="X"
             target="_blank"
             rel="noopener noreferrer"
