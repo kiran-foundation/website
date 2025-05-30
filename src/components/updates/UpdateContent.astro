@@ -19,16 +19,38 @@ import Button from "../common/button.astro";
         </div>
         <div>
           Share post:
-          <a href={componentContent.instagram_link} aria-label="Instagram">
-            <i class="ai-instagram"></i>
-          </a>
-          <a href={componentContent.facebook_link} aria-label="Instagram">
+          <a class="pl-[4px]"
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}`}
+
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="ai-facebook"></i>
           </a>
-          <a href={componentContent.telegram_link} aria-label="Instagram">
+          <a class="pl-[4px]"
+          href={`https://t.me/share/url?url=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}&text=${encodeURIComponent(componentContent.message_text)}`}
+            aria-label="Telegram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="ai-telegram"></i>
           </a>
-          <a href={componentContent.x_link} aria-label="Instagram">
+          <a class="pl-[4px]"
+          href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent("http://localhost:4321/update/" + path)}`}
+
+            aria-label="Linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="ai-linkedin"></i>
+          </a>
+          <a class="pl-[4px]"
+            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}&text=${encodeURIComponent(componentContent.message_text)}`} 
+            aria-label="X"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             <i class="ai-x"></i>
           </a>
         </div>
