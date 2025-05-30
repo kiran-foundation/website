@@ -37,7 +37,7 @@ import {
           <a
             class="pl-[4px]"
             id="telegram-share"
-            href={`https://t.me/share/url?url=${encodeURIComponent("https://kiran.foundation")}&text=${encodeURIComponent(componentContent.message_text)}`}
+            href={`https://t.me/share/url?url=${encodeURIComponent(Astro.url.href)}&text=${encodeURIComponent(componentContent.message_text)}`}
             aria-label="Telegram"
             target="_blank"
             rel="noopener noreferrer"
@@ -46,6 +46,7 @@ import {
           </a>
 
           <TwitterShareButton
+            url={Astro.url.href}
             title={componentContent.message_text}
             description={componentContent.message_text}
           >
@@ -53,6 +54,7 @@ import {
           </TwitterShareButton>
 
           <FacebookShareButton
+            url={Astro.url.href}
             title={componentContent.message_text}
             description={componentContent.message_text}
           >
@@ -60,6 +62,7 @@ import {
           </FacebookShareButton>
 
           <LinkedInShareButton
+            url={Astro.url.href}
             title={componentContent.message_text}
             description={componentContent.message_text}
           >
