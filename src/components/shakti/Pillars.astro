@@ -7,64 +7,65 @@ const entry = await getEntry("shakti", "pillars");
 
 const pillars = entry?.data?.pillars ?? [];
 ---
-<section class="mx-auto max-w-[1296px]  mt-[164px] box-border ">
+
+<section class="mx-auto max-w-[1296px] mt-[164px] box-border">
   <div class="flex flex-col lg:flex-row gap-[72px] min-h-screen">
-    
     <!-- Left Sticky Section -->
-   
 
-  <div class="lg:sticky  mx-auto lg:w-[363px] lg:h-[324px] lg:top-[120px] flex flex-col gap-24 mt-[4px]">
-    <div class="space-y-4 ">
-      <Heading  title=`Shakti: Our Four-Pillar Framework` head="heading-1" />
-      
-      <Button
-      link="/volunteering"
-      title="See the Workshops Schedule"
-      btn="btn1"
-      widthClass="w-[342px] sm:w-[200px] md:w-[315px]"
-      heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
-      className="mt-8"
-      />
+    <div
+      class="lg:sticky mx-auto lg:w-[363px] lg:h-[324px] lg:top-[120px] flex flex-col gap-24 mt-[4px]"
+    >
+      <div class="space-y-4 flex flex-col  items-center !md:items-start">
+        <Heading title=`Shakti: Our Four-Pillar Framework` head="heading-1 text-center md:text-start " />
+
+        <Button
+          link="/volunteering"
+          title="See the Workshops Schedule"
+          btn="btn1"
+          widthClass="w-[342px] sm:w-[200px] md:w-[315px]"
+          heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
+          className="mt-8"
+        />
+      </div>
     </div>
-  </div>
-
-
 
     <!-- Right Scrollable Pillar Cards -->
-    <div class="lg:w-[802px] flex-shrink-0   ">
+    <div class="lg:w-[802px] flex-shrink-0">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16">
-        {pillars.map((pillar, index) => (
-          <div
-            class="group hover:shadow-xl hover:shadow-gray-400 transition duration-300 rounded-lg overflow-hidden bg-white w-[382px] h-[760px] px-6 pb-6 box-border flex flex-col"
-          >
-            <div class="w-full aspect-square bg-gray-100">
-              <img src={pillar.image} alt={pillar.title} class="w-full h-full object-cover" />
-            </div>
-
-            <div class="flex flex-col flex-grow">
-              <h3 class="font-medium text-[32px] leading-[100%] tracking-[0] font-poppins text-[#1E1E1E] mt-4">
-                {pillar.title}
-              </h3>
-              <p class="font-normal text-[18px] leading-[36px] tracking-[0] font-poppins text-[#49494C] mt-4 mb-4">
-                {pillar.text}
-              </p>
-
-              <div class="mt-auto">
-                <Button
-                  link={pillar.ctaLink}
-                  title={pillar.buttonText}
-                  btn="btn2"
-                  widthClass="w-[342px] sm:w-[200px] md:w-[150px]"
-                  heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
-                  className="mt-auto"
+        {
+          pillars.map((pillar, index) => (
+            <div class="group hover:shadow-xl hover:shadow-gray-400 transition duration-300 rounded-lg overflow-hidden bg-white w-[382px] h-[760px] px-6 pb-6 box-border flex flex-col">
+              <div class="w-full aspect-square bg-gray-100">
+                <img
+                  src={pillar.image}
+                  alt={pillar.title}
+                  class="w-full h-full object-cover"
                 />
               </div>
+
+              <div class="flex flex-col flex-grow">
+                <h3 class="font-medium text-[32px] leading-[100%] tracking-[0] font-poppins text-[#1E1E1E] mt-4">
+                  {pillar.title}
+                </h3>
+                <p class="font-normal text-[18px] leading-[36px] tracking-[0] font-poppins text-[#49494C] mt-4 mb-4">
+                  {pillar.text}
+                </p>
+
+                <div class="mt-auto">
+                  <Button
+                    link={pillar.ctaLink}
+                    title={pillar.buttonText}
+                    btn="btn2"
+                    widthClass="w-[342px] sm:w-[200px] md:w-[150px]"
+                    heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
+                    className="mt-auto"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </div>
 </section>
-
-
