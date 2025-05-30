@@ -3,13 +3,27 @@ const { path } = Astro.props;
 import { getEntry } from "astro:content";
 const componentContent = (await getEntry("updates", path)).data;
 import Button from "../common/button.astro";
-import {
-  SocialShare,
-  FacebookShareButton,
-  LinkedInShareButton,
-  TwitterShareButton,
-} from "astro-social-share";
 ---
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = encodeURIComponent(window.location.href);
+    const messageText =
+      "Hey , check out this super duper cool update from kiran foundation";
+
+    const shareLinks = {
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`,
+      telegram: `https://t.me/share/url?url=${currentUrl}&text=${messageText}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`,
+      twitter: `https://x.com/intent/tweet?url=${currentUrl}&text=${messageText}`,
+    };
+
+    for (const [id, url] of Object.entries(shareLinks)) {
+      const el = document.getElementById(`${id}-share`);
+      if (el) el.setAttribute("href", url);
+    }
+  });
+</script>
 
 <div>
   <div
@@ -25,19 +39,22 @@ import {
         </div>
         <div>
           Share post:
+
           <a
             class="pl-[4px]"
-            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`}
+            id="facebook-share"
             aria-label="Facebook"
             target="_blank"
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.request.url)}`}
             rel="noopener noreferrer"
           >
             <i class="ai-facebook"></i>
           </a>
+
           <a
             class="pl-[4px]"
             id="telegram-share"
-            href={`https://t.me/share/url?url=${encodeURIComponent(Astro.url.href)}&text=${encodeURIComponent(componentContent.message_text)}`}
+            href={`https://t.me/share/url?url=${encodeURIComponent(Astro.request.url)}&text=${encodeURIComponent(componentContent.message_text)}`}
             aria-label="Telegram"
             target="_blank"
             rel="noopener noreferrer"
@@ -45,29 +62,27 @@ import {
             <i class="ai-telegram"></i>
           </a>
 
-          <TwitterShareButton
-            url={Astro.url.href}
-            title={componentContent.message_text}
-            description={componentContent.message_text}
-          >
-            <i class="ai-x"></i>
-          </TwitterShareButton>
-
-          <FacebookShareButton
-            url={Astro.url.href}
-            title={componentContent.message_text}
-            description={componentContent.message_text}
-          >
-            <i class="ai-facebook"></i>
-          </FacebookShareButton>
-
-          <LinkedInShareButton
-            url={Astro.url.href}
-            title={componentContent.message_text}
-            description={componentContent.message_text}
+          <a
+            class="pl-[4px]"
+            id="linkedin-share"
+            aria-label="LinkedIn"
+            target="_blank"
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.request.url)}`}
+            rel="noopener noreferrer"
           >
             <i class="ai-linkedin"></i>
-          </LinkedInShareButton>
+          </a>
+
+          <a
+            class="pl-[4px]"
+            id="twitter-share"
+            aria-label="Twitter"
+            target="_blank"
+            href={`https://x.com/intent/tweet?url=${encodeURIComponent(Astro.request.url)}&text=${encodeURIComponent(componentContent.message_text)}`}
+            rel="noopener noreferrer"
+          >
+            <i class="ai-x"></i>
+          </a>
         </div>
       </div>
     </div>
