@@ -12,7 +12,6 @@ const updates = await Promise.all(
 );
 
 const { title } = Astro.props;
-
 const filteredUpdates = updates.filter(
   (update) => update.title !== title && update.priority !== "high"
 );

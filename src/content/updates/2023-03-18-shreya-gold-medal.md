@@ -1,14 +1,13 @@
 ---
-date: 2023-03-18
-featured_image: /assets/images/posts/shreya.jpg
-priority: "high"
-more: false
-summary: "Ms. Shreya Jain, one of the Kiran Pratibha scholars, received her gold medal from the CM of Uttar Pradesh."
-link: "/update/2023-03-18-shreya-gold-medal/"
-title: "Ms. Shreya Jain was a testament to her outstanding academic
-  accomplishment."
+title: "Ms. Shreya Jain was a testament to her outstanding academic accomplishment."
 
-alt: "Ms. Shreya Jain receiving her gold medal"
+date: 10.03.2023
+
+instagram_link:
+facebook_link:
+telegram_link:
+twitter_link:
+
 content:
   - |
     <div >
@@ -35,6 +34,19 @@ content:
     commitment to one's educational journey.
     </div>
 
+detail:
+
+main_button_title:
+main_button_link:
+secondary_button_title:
+secondary_button_link:
+
+featured_image: /assets/images/posts/shreya.jpg
+alt: "Ms. Shreya Jain receiving her gold medal"
+
+video_link:
+video_description:
+
 information:
   - |
     <div class="heading-4" style="padding-top: 80px;">
@@ -59,4 +71,9 @@ information:
        work had truly paid off.
      </p>
     </div>
+
+priority: "high"
+more: false
+summary: "Ms. Shreya Jain, one of the Kiran Pratibha scholars, received her gold medal from the CM of Uttar Pradesh."
+link: "/update/2023-03-18-shreya-gold-medal/"
 ---
