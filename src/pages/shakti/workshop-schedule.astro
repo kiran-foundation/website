@@ -1,60 +1,18 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getEntry } from "astro:content";
+// const heading = await getEntry("shakti", "workshop-schedule");
+const heading = await getEntry("common", "headings");
+console.log(heading);
 ---
 
 <Layout>
   <main class="w-full pt-[85px]">
-    <!-- <div class="hero">
-      <div
-        class="imageContainer relative flex flex-col items-center justify-center min-h-[300px] md:h-[500px] overflow-hidden"
-      >
-        {/* Background blurred image */}
-        <div class="absolute inset-0">
-          <img
-            src="/logo2.png"
-            class="h-full w-full object-cover blur-md opacity-50"
-            alt=""
-            aria-hidden="true"
-          />
-        </div>
-
-        {/* Main content */}
-        <div
-          class="relative z-10 flex flex-col items-center gap-4 md:gap-8 px-4"
-        >
-          {/* Logo */}
-          <img
-            src="/logo4.png"
-            class="w-[150px] h-[150px] md:w-[200px] md:h-[200px] rounded-full logo-shadow"
-            alt="Company Logo"
-          />
-
-          {/* Text box */}
-          <div
-            class="heroText w-full md:w-[60%] lg:w-[40%] bg-white/60 p-4 md:p-6 rounded-lg shadow-md"
-          >
-            <p
-              class="text-gray-700 leading-relaxed body-text-1 text-sm md:text-base"
-            >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
-              possimus saepe itaque eius vero adipisci quae voluptates nostrum
-              odio dolor tenetur eum totam dolores esse sequi ab, cumque enim
-              voluptas!
-            </p>
-          </div>
-          {/* Button */}
-          <div class="">
-            <a
-              href="https://www.eventbrite.com/o/kiran-foundation-111904539571"
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Follow on Eventbrite
-            </a>
-          </div>
-        </div>
-      </div> -->
+    <section class="mt-8 text-center px-4">
+      <h1 class="font-bold mb-4 heading-1">
+        {heading.data.workshop_schedule}
+      </h1>
+    </section>
 
     <section class="mt-8 flex justify-center items-center mb-5 px-4">
       <iframe
@@ -64,11 +22,3 @@ import Layout from "../../layouts/Layout.astro";
     </section>
   </main>
 </Layout>
-
-<style>
-  @media (max-width: 640px) {
-    iframe {
-      height: 600px;
-    }
-  }
-</style>
