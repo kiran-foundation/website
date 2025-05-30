@@ -20,6 +20,7 @@
     "@lottiefiles/lottie-player": "^2.0.2",
     "aos": "^2.3.4",
     "astro": "^4.15.12",
+    "astro-social-share": "^2.2.0",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.0",
     "cleave.js": "^1.6.0",

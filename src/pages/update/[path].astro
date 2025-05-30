@@ -28,10 +28,28 @@ export async function getStaticPaths() {
     <meta property="og:description" content={message_text} />
     <meta property="og:url" content={fullUrl} />
     <meta property="og:site_name" content="Kiran Foundation" />
+  </head>
+
+  <head>
+    <title>{title}</title>
+    <meta name="description" content={message_text} />
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={message_text} />
+    <meta property="og:url" content={fullUrl} />
+  
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={message_text} />
+  
+    <!-- Optional: canonical link -->
+    <link rel="canonical" href={fullUrl} />
   </head>
+  
+  
   <main class="page-wrapper">
     <Update path={path} />
   </main>
