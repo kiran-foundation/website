@@ -3,28 +3,35 @@ import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from "../../layouts/Layout.astro";
 import Update from "../../components/updates/Update.astro";
-import type { MarkdownFile } from "../../types/Markdown";
+import { getEntry } from "astro:content";
 
 const { path } = Astro.params;
+const updateEntry = await getEntry("updates", path);
+const { title, message_text } = updateEntry.data;
+const pageUrl = new URL(Astro.url);
+const fullUrl = `${pageUrl.origin}/update/${path}`;
 
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  // Fetch all markdown files from the 'updates' collection
   const allUpdates = await getCollection("updates");
-
-  // Generate static paths using slugs
-  const parameters = allUpdates.map((update) => ({
-    params: { path: update.slug }, // Using Astro's built-in slug
+  return allUpdates.map((update) => ({
+    params: { path: update.slug },
   }));
-
-  // console.log(parameters);
-
-  return parameters;
 }
 ---
 
-<Layout title="Updates">
+<Layout title={title}>
+  <head>
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={message_text} />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:site_name" content="Kiran Foundation" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={message_text} />
+  </head>
   <main class="page-wrapper">
     <Update path={path} />
   </main>
