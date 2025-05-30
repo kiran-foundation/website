@@ -19,16 +19,16 @@ import Button from "../common/button.astro";
         </div>
         <div>
           Share post:
-          <a href={componentContent.instagramLink} aria-label="Instagram">
+          <a href={componentContent.instagram_link} aria-label="Instagram">
             <i class="ai-instagram"></i>
           </a>
-          <a href={componentContent.facebookLink} aria-label="Instagram">
+          <a href={componentContent.facebook_link} aria-label="Instagram">
             <i class="ai-facebook"></i>
           </a>
-          <a href={componentContent.telegramLink} aria-label="Instagram">
+          <a href={componentContent.telegram_link} aria-label="Instagram">
             <i class="ai-telegram"></i>
           </a>
-          <a href={componentContent.xLink} aria-label="Instagram">
+          <a href={componentContent.x_link} aria-label="Instagram">
             <i class="ai-x"></i>
           </a>
         </div>
@@ -58,22 +58,24 @@ import Button from "../common/button.astro";
         )
       }
     
-    {componentContent.mainButtonTitle && (
+    {componentContent.main_button_title && (
       <div class="pt-[48px] pb-[40px]">
         <div class="flex gap-4">
               {/* Primary button */}
               <Button
                 btn="btn1"
-                title={componentContent.mainButtonTitle}
-                link={componentContent.mainButtonLink}
+                widthClass= {componentContent.secondary_button_title ? "w-auto" : "w-[247px]"}
+                heightClass= {componentContent.secondary_button_title ? "h-auto" : "h-[60px]"}
+                title={componentContent.main_button_title}
+                link={componentContent.main_button_link}
               />
 
             {/* Secondary button */}
-            {componentContent.secondaryButtonTitle && (
+            {componentContent.secondary_button_title && (
               <Button
               btn="btn3"
-              title={componentContent.secondaryButtonTitle}
-              link={componentContent.secondaryButtonLink}
+              title={componentContent.secondary_button_title}
+              link={componentContent.secondary_button_link}
               />
             )}
           </div>
@@ -109,7 +111,7 @@ import Button from "../common/button.astro";
               />
           </div>
           <p class="font-poppins font-bold text-[20px] leading-[100%] tracking-[0%] pt-[32px] text-[#1E1E1E]">
-            {componentContent.videoDescription}
+            {componentContent.video_description}
           </p>
         )
       }

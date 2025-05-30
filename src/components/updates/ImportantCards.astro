@@ -10,14 +10,15 @@ const update = Astro.props.update;
     border: 1px solid #49494c1a;
   }
 </style>
-
-<div>
-  <div class="pb-4">
-    <img src={update.featured_image} alt={update.alt} class="styled-image" />
+<a href={update.link}>
+  <div>
+    <div class="pb-4">
+      <img src={update.featured_image} alt={update.alt} class="styled-image" />
+    </div>
   </div>
-</div>
-<p
-  class="font-poppins font-normal text-base leading-6 tracking-[0px] text-[#1E1E1E] pb-12"
->
-  {update.title}
-</p>
+  <p
+    class="font-poppins font-normal text-base leading-6 tracking-[0px] text-[#1E1E1E] pb-12"
+  >
+    {update.title}
+  </p>
+</a>
