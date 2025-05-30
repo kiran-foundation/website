@@ -3,6 +3,7 @@ import { getEntry } from "astro:content";
 const { path } = Astro.props;
 const componentContent = (await getEntry("updates", path)).data;
 import Button from "../common/button.astro";
+const currentUrl = Astro.request.url;
 ---
 
 <div>
@@ -20,7 +21,7 @@ import Button from "../common/button.astro";
         <div>
           Share post:
           <a class="pl-[4px]"
-            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`}
 
             aria-label="Facebook"
             target="_blank"
@@ -29,7 +30,7 @@ import Button from "../common/button.astro";
             <i class="ai-facebook"></i>
           </a>
           <a class="pl-[4px]"
-          href={`https://t.me/share/url?url=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}&text=${encodeURIComponent(componentContent.message_text)}`}
+          href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(componentContent.message_text)}`}
             aria-label="Telegram"
             target="_blank"
             rel="noopener noreferrer"
@@ -37,7 +38,7 @@ import Button from "../common/button.astro";
             <i class="ai-telegram"></i>
           </a>
           <a class="pl-[4px]"
-          href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent("http://localhost:4321/update/" + path)}`}
+          href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(currentUrl)}`}
 
             aria-label="Linkedin"
             target="_blank"
@@ -46,7 +47,7 @@ import Button from "../common/button.astro";
             <i class="ai-linkedin"></i>
           </a>
           <a class="pl-[4px]"
-            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.kiran.foundation/update/" + path)}&text=${encodeURIComponent(componentContent.message_text)}`} 
+            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(componentContent.message_text)}`} 
             aria-label="X"
             target="_blank"
             rel="noopener noreferrer"
