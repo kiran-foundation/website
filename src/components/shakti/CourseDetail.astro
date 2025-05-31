@@ -6,10 +6,10 @@ const { title, messageCard,image } = courseDetails.data;
 
 ---
 
-<div class="mx-auto max-w-[1260px]">
-  <div class="flex gap-2">
-    <div class="md:w-[776px]">
-      <h3 class="md:w-[736px] heading-1 mb-32">{title}</h3>
+<div class="mx-auto max-w-[1260px] px-4">
+  <div class="flex md:gap-2 gap-0 lg:flex-row flex-col">
+    <div class="md:w-[48.5rem] ">
+      <h3 class="md:w-[736px] heading-1 md:mb-32 mb-10 ">{title}</h3>
       
       {
         messageCard.map((card) => (
@@ -24,7 +24,7 @@ const { title, messageCard,image } = courseDetails.data;
       
       
     </div>
-    <div class="my-auto">
+    <div class="my-auto mx-auto">
       <img
         src={image}
         alt=""

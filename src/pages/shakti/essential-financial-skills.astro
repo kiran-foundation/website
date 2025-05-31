@@ -13,6 +13,7 @@ import WhyFinancial from "../../components/shakti/WhyFinancial.astro";
 import CourseDetail from "../../components/shakti/CourseDetail.astro";
 import WhatWeWill from "../../components/shakti/WhatWeWill.astro";
 import AfterTheCourse from "../../components/shakti/AfterTheCourse.astro";
+import PlainImage from "../../components/shakti/PlainImage.astro";
 ---
 
 <Layout title="financial skills"
@@ -23,9 +24,10 @@ import AfterTheCourse from "../../components/shakti/AfterTheCourse.astro";
     <WhyFinancial />
     <CourseDetail />
     <WhatWeWill title="What we will do" />
-    <img src="/assets/images/financial/financial-skills-1.png" class="max-w-[920px] mx-auto  pt-40 "   />
+    <PlainImage image="/assets/images/financial/financial-skills-1.png" />
     <AfterTheCourse/>
-    <img src="/assets/images/financial/investments-visual-1.png" class="max-w-[920px] mx-auto  pt-40 "   />
+    
+    <PlainImage image="/assets/images/financial/investments-visual-1.png" />
     <PageBottom  slug="financial-skills/certificate" collection="shakti" sec="certificateSection" className=" mt-[164px]"/>
     <Videotestomonial collection="shakti" slug="financial-skills/video" bg="bg-black" className="mb-[164px]"/>
     <Mentors />
