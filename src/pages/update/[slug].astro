@@ -1,7 +1,7 @@
 ---
 // src/pages/updates/[slug].astro
 
-import update from "../../components/updates/update.astro";
+import Update from "../../components/updates/Update.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -19,5 +19,5 @@ const { slug } = Astro.params;
 ---
 
 <Layout>
-  <update path={slug}></update>
+  <Update path={slug} />
 </Layout>

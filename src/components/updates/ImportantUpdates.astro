@@ -1,0 +1,26 @@
+---
+import ImportantCards from "./ImportantCards.astro";
+import type { MarkdownFile } from "../../types/Markdown";
+
+const allUpdates = import.meta.glob<MarkdownFile>("/src/content/updates/*.md");
+
+const updates = await Promise.all(
+  Object.values(allUpdates).map(async (update) => {
+    const { frontmatter } = await update();
+    return { ...frontmatter };
+  })
+);
+
+const { title } = Astro.props;
+
+// Filter out updates where the title matches the prop `tittle`
+const filteredUpdates = updates.filter((update) => update.priority === "high");
+
+// Slice to get only 3 updates
+const updatesToDisplay = filteredUpdates.slice(0, 3);
+---
+
+<div>
+  <div class="heading-4 pb-[24px]">Important Updates</div>
+  {updatesToDisplay.map((update, index) => <ImportantCards update={update} />)}
+</div>

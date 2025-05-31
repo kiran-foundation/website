@@ -1,0 +1,93 @@
+---
+import { getEntry } from "astro:content";
+// Import basicLightbox CSS
+import 'basiclightbox/dist/basicLightbox.min.css';
+
+const { path } = Astro.props;
+const componentContent = (await getEntry("updates", path)).data;
+---
+
+<script>
+  // Add is:inline to ensure script runs in the browser
+  document.addEventListener('DOMContentLoaded', () => {
+    // Import basicLightbox dynamically when the component is mounted
+    import('basiclightbox').then((basicLightboxModule) => {
+      const basicLightbox = basicLightboxModule.default || basicLightboxModule;
+      
+      // Handle image clicks in the gallery
+      document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const img = target.closest('[data-lightbox]');
+        if (!img) return;
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const src = img.getAttribute('data-src') || '';
+        const description = img.getAttribute('data-description') || '';
+        
+        const lightboxContent = `
+          <div class="p-5 text-center" style="max-width: 90vw; max-height: 90vh; ">
+            <img 
+              src="${src}" 
+              alt="${description || 'Gallery Image'}" 
+              class="max-w-full max-h-[85vh] object-contain mx-auto"
+            />
+            ${description ? `<p class="mt-4 text-white text-lg">${description}</p>` : ''}
+          </div>`;
+        
+        const instance = basicLightbox.create(lightboxContent, {
+          onShow: (instance) => {
+            document.body.style.overflow = 'hidden';
+            // Close when clicking the background
+            instance.element().addEventListener('click', (e) => {
+              if (e.target === instance.element()) {
+                instance.close();
+              }
+            });
+          },
+          onClose: () => {
+            document.body.style.overflow = 'auto';
+          }
+        });
+        
+        instance.show();
+        
+        // Close with Escape key
+        const handleKeyDown = (e: KeyboardEvent) => {
+          if (e.key === 'Escape') {
+            instance.close();
+            document.removeEventListener('keydown', handleKeyDown);
+          }
+        };
+        
+        document.addEventListener('keydown', handleKeyDown);
+      });
+      
+    }).catch(error => {
+      console.error('Error loading basicLightbox:', error);
+    });
+  });
+</script>
+
+{
+  componentContent.imageList && (
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full pt-[26px]">
+      {componentContent.imageList.map((item, index) => (
+        <div class="flex flex-col w-full">
+          <img
+            src={item.src}
+            alt={`Image ${index + 1}`}
+            class="w-full max-h-[800px] object-cover rounded pt-[96px] cursor-pointer"
+            data-lightbox
+            data-src={item.src}
+            data-description={item.description}
+          />
+          <p class="heading-4 text-center !text-[#49494C] pt-[55px]">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  )
+}
