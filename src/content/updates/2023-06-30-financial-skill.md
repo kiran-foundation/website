@@ -3,11 +3,6 @@ title: "Essential Financial for Women"
 
 date: 30.06.2023
 
-instagram_link:
-facebook_link:
-telegram_link:
-twitter_link:
-
 content:
   - |
     <p>
