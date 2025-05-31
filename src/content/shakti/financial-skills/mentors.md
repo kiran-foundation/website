@@ -1,5 +1,5 @@
 ---
-title: "Meet Your Mentors"
+title: "Meet Your Trainers"
 mentors:
     - title: "Harshil Prajapati"
       image: "/assets/images/financial/mentor-harshil.png"
