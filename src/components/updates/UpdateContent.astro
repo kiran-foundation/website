@@ -161,10 +161,13 @@ import Button from "../common/button.astro";
               <div class="heading-3 pt-[164px] pb-[96px]">Recording of event</div>
               {/* video */}
               <div class="h-auto w-full">
-                <video
-                  src={componentContent.video_link}
-                  controls
+                <iframe
                   width="100%"
+                  height="500"
+                  src={`https://www.youtube.com/embed/${componentContent.video_link.split('v=')[1]}`}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
                 />
               </div>
               <p class="font-poppins font-bold text-[20px] leading-[100%] tracking-[0%] pt-[32px] text-[#1E1E1E]">

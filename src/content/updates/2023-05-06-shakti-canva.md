@@ -3,11 +3,6 @@ title: "Advance Canva"
 
 date: 06.05.2023
 
-instagram_link:
-facebook_link:
-telegram_link:
-twitter_link:
-
 content:
   - |
     <div>
