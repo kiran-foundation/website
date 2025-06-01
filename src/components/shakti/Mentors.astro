@@ -16,7 +16,7 @@ const {title,mentors} = mentorsdata.data;
     <div
       class=`w-max-[1296px] md:mb-[164px] mb-[80px] mx-auto flex flex-col ${ (index % 2 == 0) ? "lg:flex-row" : "lg:flex-row-reverse" } items-center md:gap-[60px] gap-8  `
     >
-      <div class=" ">
+      <div >
         <img
           src={mentor.image}
           class="rounded-3xl"
@@ -30,13 +30,7 @@ const {title,mentors} = mentorsdata.data;
       </div>
       <div class="m-0">
         <p class="max-w-[841px] body-text-3">
-          <span
-            class="lg:font-light lg:text-[96px] lg:leading-[68px] lg:tracking-[1px]"
-            >‘’</span
-          >{mentor.quote}<span
-            class="lg:font-light lg:text-[64px] lg:leading-[68px] lg:tracking-[1px]"
-            >’’</span
-          >
+          {mentor.quote}
         </p>
       </div>
     </div>
