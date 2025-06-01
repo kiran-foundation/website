@@ -15,7 +15,7 @@ const { title, videos } = (entry as { data: { title: string; videos: any[] } }).
 <Heading title={title} head='px-4 heading-1 md:mb-[120px] mb-10' />
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[1296px] mx-auto">
     {videos.map((video) => (
-      <VideoCard videoUrl={video.videoUrl} alt={video.alt}  desc  = {video.desc} />
+      <VideoCard videoUrl={video.videoUrl} alt={video.alt} bg={bg}  desc  = {video.desc} />
     ))}
   </div>
 </section>
