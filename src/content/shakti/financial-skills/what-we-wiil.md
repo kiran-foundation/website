@@ -2,7 +2,7 @@
 title: "What we will do"
 messageCard:
   - mentor: "Preeti"
-    message: "What I will learn? Will I understand everything?"
+    message: "What  will learn? Will I understand everything?"
     mentorImage: "/assets/images/financial/preeti.png"
     type: "send"
 
