@@ -5,11 +5,12 @@ messageCard:
     mentorImage: /assets/images/financial/preeti.png
     mentor: Preeti
     message: What happens after I attend all 8 sessions?
-  - mentorImage: /assets/images/financial/harshil.jpg
-    mentor: Harshil
+  - mentorImage: /assets/images/financial/mentor-isha.png
+    mentor: Isha
     message: |
       You will receive a Certificate of Successful Completion of the Financial Skills Course.
-      But there is more- you will receive additional guidance from me and Harshil.
+      
+      But there is more you will receive additional guidance from me and Harshil.
   - type: send
     mentorImage: /assets/images/financial/preeti.png
     mentor: Preeti
