@@ -1,136 +1,158 @@
 ---
 import { getEntry } from "astro:content";
 const componentheroData = (await getEntry("donation", "hero")).data;
+import Breadcrumb from "../common/Breadcrumb.astro";
+import Button from "../common/button.astro";
 ---
 
-<section
-  class="position-relative"
-  style="margin-top: 4rem;margin-bottom: 5rem;"
->
-  <div
-    class="position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4"
-    style="background-image: url(/assets/images/programs/donationhero1.png);"
-  >
-  </div>
+<Breadcrumb />
+<!-- Add responsive layout classes -->
 
-  <div class="hero-container">
-    <h1 class="hero-title display-0 text-white pt-5 z-2">
-      {componentheroData.heading}
-    </h1>
-
-    <div
-      class="container position-relative z-2 text-center pt-5 donation-form-container"
-    >
-      <div
-        class="donation-form-wrapper p-4 bg-white shadow rounded form-container"
+<!-- Wrapper: adjust height for mobile -->
+<div class="h-auto lg:h-[1200px] relative">
+  <div class="bg-[#F1F1F1] pt-16">
+    <div class="container max-w-[1296px] mb-24 px-4 sm:px-6">
+      <h1
+        class="font-merriweather text-[32px] sm:text-[40px] md:text-[48px] lg:text-[64px] font-bold leading-snug sm:leading-[130%] lg:leading-[150%]"
       >
-        <div class="form-img">
+        Make a Lasting Impact: Support the Future with Your Donation
+      </h1>
+    </div>
+
+    <div class="container max-w-[1296px] px-4 sm:px-6 mb-10 relative z-10">
+      <div
+        class="border shadow-lg bg-white p-4 rounded flex flex-col lg:flex-row gap-4"
+      >
+        <!-- Image Section -->
+        <div class="w-full lg:w-1/2 p-2 flex justify-center">
           <img
             src="/assets/images/programs/formimage.png"
             alt=""
-            class="formm-imgg"
+            class="w-full max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[760px] max-w-full object-cover rounded"
           />
         </div>
-        <div class="formm">
-          <h3 class="form-title mb-4">{componentheroData.subheading}</h3>
+
+        <!-- Form Section -->
+        <div class="bg-white p-4 sm:p-6 rounded-xl w-full lg:w-1/2">
+          <h1
+            class="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-webBlack mb-4"
+          >
+            Make a Donation
+          </h1>
+
           <form>
             <!-- Donation Amount -->
-            <div class="mb-3">
-              <label class="form-label">{componentheroData.label}</label>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="donationAmount"
-                  id="amount500"
-                  value="500"
-                  checked
-                />
-                <label class="form-check-label" for="amount500"
-                  >{componentheroData.price1}</label
-                >
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="donationAmount"
-                  id="amount1000"
-                  value="1000"
-                />
-                <label class="form-check-label" for="amount1000"
-                  >{componentheroData.price2}</label
-                >
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="donationAmount"
-                  id="amount5000"
-                  value="5000"
-                />
-                <label class="form-check-label" for="amount5000"
-                  >{componentheroData.price3}</label
-                >
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="donationAmount"
-                  id="customAmount"
-                  value="custom"
-                />
-                <label class="form-check-label" for="customAmount"
-                  >{componentheroData.custom}</label
-                >
+            <div class="mb-4">
+              <label
+                class="block font-semibold mb-2 text-[16px] sm:text-[18px] text-webBlack"
+              >
+                Choose a donation amount
+              </label>
+              <div class="space-y-3 text-gray-800">
+                <div class="flex items-center !mt-4">
+                  <input
+                    type="radio"
+                    id="amount500"
+                    name="donationAmount"
+                    value="500"
+                    class="!mr-4 !accent-orange scale-150"
+                    checked
+                  />
+                  <label for="amount500" class="text-xl sm:text-2xl"
+                    >₹ 500</label
+                  >
+                </div>
+                <div class="flex items-center !mt-4">
+                  <input
+                    type="radio"
+                    id="amount1000"
+                    name="donationAmount"
+                    value="1000"
+                    class="!mr-4 !accent-orange scale-150"
+                  />
+                  <label for="amount1000" class="text-xl sm:text-2xl"
+                    >₹ 1000</label
+                  >
+                </div>
+                <div class="flex items-center !mt-4">
+                  <input
+                    type="radio"
+                    id="amount5000"
+                    name="donationAmount"
+                    value="5000"
+                    class="!mr-4 !accent-orange scale-150"
+                  />
+                  <label for="amount5000" class="text-xl sm:text-2xl"
+                    >₹ 5000</label
+                  >
+                </div>
+                <div class="flex items-center !mt-4">
+                  <input
+                    type="radio"
+                    id="customAmount"
+                    name="donationAmount"
+                    value="custom"
+                    class="!mr-4 !accent-orange scale-150"
+                  />
+                  <label for="customAmount" class="text-xl sm:text-2xl"
+                    >Custom donation</label
+                  >
+                </div>
               </div>
             </div>
 
             <!-- Donation Frequency -->
-            <div class="mb-3">
-              <label class="form-label">{componentheroData.freq}</label>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="donationFrequency"
-                  id="monthly"
-                  value="monthly"
-                  checked
-                />
-                <label class="form-check-label" for="monthly"
-                  >{componentheroData.monthly}</label
-                >
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="donationFrequency"
-                  id="onetime"
-                  value="onetime"
-                />
-                <label class="form-check-label" for="onetime"
-                  >{componentheroData.onetime}</label
-                >
+            <div class="mb-8">
+              <label
+                class="block font-semibold mb-2 text-[16px] sm:text-[18px] text-webBlack"
+              >
+                Choose a donation frequency
+              </label>
+              <div class="space-y-3 text-gray-800">
+                <div class="flex items-center !mt-4">
+                  <input
+                    type="radio"
+                    id="monthly"
+                    name="donationFrequency"
+                    value="monthly"
+                    class="!mr-4 !accent-orange scale-150"
+                    checked
+                  />
+                  <label for="monthly" class="text-xl sm:text-2xl"
+                    >Monthly</label
+                  >
+                </div>
+                <div class="flex items-center !mt-4">
+                  <input
+                    type="radio"
+                    id="onetime"
+                    name="donationFrequency"
+                    value="onetime"
+                    class="!mr-4 !accent-orange scale-150"
+                  />
+                  <label for="onetime" class="text-xl sm:text-2xl"
+                    >One time</label
+                  >
+                </div>
               </div>
             </div>
-            <p class="form-text mt-3">
-              {componentheroData.para}
+
+            <!-- Paragraph -->
+            <p class="mb-4 text-[16px] sm:text-[18px] text-webBlack">
+              Your generosity fuels community-driven change. From scholarships
+              to mentorship, we’re ensuring children have the support they need
+              to succeed, today and tomorrow.
             </p>
-            <div class="d-flex justify-content-between mt-4">
-              <button type="button" class="btn btn-secondary"
-                >{componentheroData.cancel}</button
-              >
-              <button type="submit" class="btn btn-primary"
-                >{componentheroData.donate}</button
-              >
+
+            <!-- Button -->
+            <div class="flex justify-start">
+              <Button btn="btn1" title="Donate" />
             </div>
           </form>
         </div>
       </div>
     </div>
+    <div class="absolute  bottom-0 w-full h-96 bg-white ">
+    </div>
   </div>
-</section>
+</div>

@@ -3,7 +3,45 @@ import { getEntry } from "astro:content";
 const cardData = (await getEntry("donation", "donationmatter")).data;
 ---
 
-<section class="container py-5 pb-5 mb-lg-3 mb-xl-4 mb-xxl-5">
+<div
+  class="flex justify-center items-center my-[80px] md:my-[120px] lg:my-[164px] px-4"
+>
+  <section class="bg-white w-full max-w-[1296px]">
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6 xl:gap-0 items-center"
+    >
+      <!-- Left Text -->
+      <div>
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-8 font-merriweather text-webBlack"
+        >
+          Why your donation matters?
+        </h2>
+        <p
+          class="text-base sm:text-lg leading-relaxed font-poppins text-[#49494C]"
+        >
+          Your support transforms lives. At the Kiran Foundation, we empower
+          hardworking, talented youth through scholarships, personalized
+          mentoring, and critical resources. Your donation directly fuels these
+          initiatives, breaking down barriers to education and opportunity.
+          Together, we’re not just funding futures—we’re creating lasting change
+          for our community.
+        </p>
+      </div>
+
+      <!-- Right Image -->
+      <div class="flex justify-center md:justify-end mt-5 xl:mt-0">
+        <img
+          src="/assets/images/donation/donation.png"
+          alt="Certificate presentation"
+          class="rounded-2xl object-cover w-full max-w-[400px] sm:max-w-[500px] md:max-w-[572px] h-auto"
+        />
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- <section class="container py-5 pb-5 mb-lg-3 mb-xl-4 mb-xxl-5">
   <div class="row pb-sm-2 w-100 pb-md-3 pb-lg-4 mt-3 d-flex justify-content-center" 
     style="gap:10px; margin-left: 0.3rem">
 
@@ -81,4 +119,4 @@ const cardData = (await getEntry("donation", "donationmatter")).data;
     </section>
 
   </div>
-</section>
+</section> -->

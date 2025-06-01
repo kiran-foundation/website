@@ -1,89 +1,57 @@
 ---
-import { getEntry } from 'astro:content'
-const memberShipData = (await getEntry('donation', 'membership')).data
+// Load content
+import { getEntry } from "astro:content";
+import Button from "../common/button.astro";
+const memberShipData = (await getEntry("donation", "membership")).data;
+const cards = [
+  memberShipData.cardOneData,
+  memberShipData.cardSecondData,
+  memberShipData.cardThirdData,
+  memberShipData.cardFourthData,
+  memberShipData.cardFifthData,
+  memberShipData.cardSixthData,
+];
+
 ---
 
-<div class='donation-c1'>
-  <div class='donation-card-container'>
-    <div class='donation-card'>
-      <div class='donation-card-title1'>
-        {memberShipData.cardOneData.heading}
-      </div>
-      <div class='donation-card-title2'>
-        {memberShipData.cardOneData.lakh}
-      </div>
-      <div class='donation-card-permonth'>
-        {memberShipData.cardOneData.permonth}
-      </div>
-      <div class='donation-card-text'>
-        {memberShipData.cardOneData.paragraph}
-      </div>
-      <div class='donation-card-button'>
-        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
-      </div>
-    </div>
-    <div class='donation-card'>
-      <div class='donation-card-title1'>
-        {memberShipData.cardSecondData.heading}
-      </div>
-      <div class='donation-card-title2'>
-        {memberShipData.cardSecondData.lakh}
-      </div>
-      <div class='donation-card-permonth'>
-        {memberShipData.cardSecondData.permonth}
-      </div>
-      <div class='donation-card-text'>
-        {memberShipData.cardSecondData.paragraph}
-      </div>
-      <div class='donation-card-button'>
-        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
-      </div>
-    </div>
-    <div class='donation-card'>
-      <div class='donation-card-title3'>
-        {memberShipData.cardThirdData.heading}
-      </div>
-      <div class='donation-card-text'>
-        {memberShipData.cardThirdData.paragraph}
-      </div>
-      <div class='donation-card-button'>
-        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
-      </div>
-    </div>
-    <div class='donation-card'>
-      <div class='donation-card-title4'>
-        {memberShipData.cardFourthData.heading}
-      </div>
-      <div class='donation-card-text'>
-        {memberShipData.cardFourthData.paragraph}
-      </div>
-      <div class='donation-card-button'>
-        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
-      </div>
-    </div>
-    <div class='donation-card'>
-      <div class='donation-card-title3'>
-        {memberShipData.cardFifthData.heading}
-      </div>
-      <div class='donation-card-text'>
-        {memberShipData.cardFifthData.paragraph}
-      </div>
-      <div class='donation-card-button'>
-        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
-      </div>
-    </div>
-    <div class='donation-card'>
-      <div class='donation-card-title6'>
-        {memberShipData.cardSixthData.heading}
-      </div>
-      <div class='donation-card-text'>
-        {memberShipData.cardSixthData.paragraph}
-      </div>
-      <div class='donation-card-button'>
-        <a class='' href='/'>{memberShipData.membershipCardBtn}</a>
-      </div>
-    </div>
-    <button class='see-button'>See more</button>
-  </div>
-</div>
+<section class="py-16 bg-white text-center">
+  <h2 class="text-5xl font-merriweather font-normal text-webBlack mb-[120px]">
+    Membership & Sponsorship Options
+  </h2>
 
+  <div
+    class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
+  >
+    {
+      cards.map((card) => (
+        <div
+          class="bg-[#F5F5F5] shadow-md rounded-2xl p-8 flex flex-col justify-between items-center text-center 
+               gap-4 h-[416px] w-full  hover:shadow-lg transition-shadow duration-300"
+        >
+          <div class="flex flex-col justify-center gap-4 flex-grow">
+            <h3 class="text-2xl font-semibold text-gray-800 min-h-[48px] flex items-center justify-center">
+              {card.heading ?? ""}
+            </h3>
+
+            <div class="min-h-[32px] text-5xl font-bold text-gray-900">
+              {card.lakh ?? ""}
+            </div>
+
+            <div class="min-h-[20px] text-sm text-gray-600">
+              {card.permonth ?? ""}
+            </div>
+
+            <p class="text-sm text-gray-600 min-h-[64px] flex items-center justify-center text-center px-2">
+              {card.paragraph ?? ""}
+            </p>
+          </div>
+          <Button link="" title="Donate" btn="btn1" widthClass="w-full" />
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="mt-10">
+    <Button link="" title=" See More Options" btn="btn3" />
+  </div>
+</section>
