@@ -1,5 +1,12 @@
 ---
-title: "Join the Community of Strong and Confident Women "
+title: "Recording of Previous Sessions "
+
+button:
+  - link: "#"
+    title: "See New Upcoming Dates"
+  - link: "#"
+    title: "Connect on WhatsApp"
+
 videos: 
   - videoUrl: 'https://www.youtube.com/embed/W_Ozar0vPAo?si=efJoCaEALx0J7d36'
     alt: 'Video 1 Title'

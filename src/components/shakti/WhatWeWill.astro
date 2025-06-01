@@ -3,9 +3,9 @@ import MessageCard from "./MessageCard.astro";
 const { title } = Astro.props;
 ---
 
-<div class="mx-auto max-w-[1260px] mt-40 ">
+<div class="mx-auto max-w-[1260px] md:mt-40 mt-20 ">
   <div class=" flex flex-col gap-2 px-4">
-    <h3 class="heading-1 md:mb-32 mb-[40px] ">{title}</h3>
+    <h3 class="heading-1 md:mb-32 mb-[32px] ">{title}</h3>
     <div class="mx-auto max-w-[1056px]">
       <div class="mx-auto">
         <div class="flex justify-end">
@@ -13,6 +13,7 @@ const { title } = Astro.props;
             type="send"  mentorImage="/assets/images/financial/preeti.png"   mentor="Preeti" 
             message="What I will learn? Will I understand everything?"/>
     </div>
+
         <div class="flex justify-start">
          <div  class="body-text-2  py-6  self-center flex  flex-col-reverse md:flex-row-reverse  w-fit  rounded-lg mb-[120px] px-4 md:gap-16 bg-[#F1F1F1]">
         <h3 class="self-center pr-16 " style="
@@ -32,9 +33,9 @@ const { title } = Astro.props;
         </ul>
 You will become independent and confident in your financial decisions!
   </h3>
-  <div class="flex flex-col  align-top self-start items-center">
+  <div class="flex flex-col  align-top self-start md:items-center">
     <img src="/assets/images/financial/harshil.jpg" class=" rounded-full" alt=""  width="120px" />
-    <h4 class=" text-center">Harshil</h4>
+    <h4 class=" md:text-center">Harshil</h4>
   </div>
 </div>
         </div>

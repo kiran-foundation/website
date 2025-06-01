@@ -3,20 +3,20 @@ const {type,mentor,mentorImage, message = "Can you tell me more about the course
 ---
 { type=== "send" ?
 
-<div  class="heading-4 py-2 self-center flex xs:flex-row flex-col-reverse md:max-w-[786px]  justify-end  rounded-lg md:mb-[80px] mb-[48px] p-4 xs:p-0    bg-[#D9F3E6]">
-  <h3 class=" xs:self-center ">{message}</h3>
-  <div class="xs:self-center xs:ml-8 md:ml-16">
-    <img src={mentorImage} alt=""  width="120px" class="  h-[100px] w-[100px] xs:h-[120px] xs:w-[120px]"/>
-    <h4 class="text-[#1E1E1E] body-text-2 xs:text-center">{mentor}</h4>
+<div  class="heading-4 py-3 md:py-2 self-center flex md:flex-row flex-col-reverse md:max-w-[786px]  justify-end  rounded-lg md:mb-[80px] mb-[48px] p-4 xs:p-0    bg-[#D9F3E6]">
+  <h3 class=" md:self-center ">{message}</h3>
+  <div class="md:self-center  md:ml-16">
+    <img src={mentorImage} alt=""  width="120px" class=" !max-w-none "/>
+    <h4 class="text-[#1E1E1E] body-text-2 md:text-center">{mentor}</h4>
   </div>
 </div>
 :
 
-<div  class="heading-4 py-2  self-center flex xs:flex-row-reverse flex-col-reverse xs:max-w-[786px] w-fit  rounded-lg md:mb-[80px] mb-[48px] p-4 xs:p-0 xs:gap-8 md:gap-16 bg-[#F1F1F1]">
-  <h3 class=" xs:self-center ">{message}</h3>
-    <div class="xs:self-center ">
-    <img src={mentorImage} class=" rounded-full  !max-w-none" alt="" height="120px" width="120px"   />
-    <h4 class="text-[#1E1E1E] body-text-2 xs:text-center">{mentor}</h4>
+<div  class="heading-4 py-3 md:py-2  self-center flex md:flex-row-reverse flex-col-reverse xs:max-w-[786px] w-fit  rounded-lg md:mb-[80px] mb-[48px] p-4 xs:p-0  bg-[#F1F1F1]">
+  <h3 class=" md:self-center ">{message}</h3>
+    <div class="md:self-center md:mr-16">
+    <img src={mentorImage} class=" rounded-full !max-w-none" alt="" width="120px"   />
+    <h4 class="text-[#1E1E1E] body-text-2 md:text-center">{mentor}</h4>
   </div>
 </div>
 }

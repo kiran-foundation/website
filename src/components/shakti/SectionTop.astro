@@ -2,16 +2,15 @@
 import Button from "../common/button.astro";
 import Heading from "../shakti/Heading.astro"
 const { sec, title, button } = Astro.props;
-console.log(":::::::::::::::")
-console.log(button);
+
 ---
 
 
-<section class="max-w-[1296px] mx-auto mb-[120px]">
+<section class="max-w-[1296px] mx-auto md:mb-[120px] mb-[48px]">
 
-    <Heading head="heading-1  text-center mb-[48px]" title={title} />
+    <Heading head="heading-1  md:text-center mb-[48px]" title={title} />
   
-    <div class="flex justify-center flex-wrap gap-4 mb-10 ">
+    <div class="flex justify-center flex-wrap gap-4  ">
       { button &&
         button.map((btn) => (
           
@@ -19,7 +18,7 @@ console.log(button);
             link={btn.link}
             title={btn.title}
             btn={btn.btn }
-            widthClass=""
+            widthClass="md:max-w-[337px] w-full "
             heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
           />
         ))      

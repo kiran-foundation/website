@@ -6,9 +6,9 @@ const {title, messageCard }=  data.data;
 // console.log(data.data);
 ---
 
-<div class="mx-auto max-w-[1260px] mt-40 md:mt-80">
+<div class="mx-auto max-w-[1260px] md:mt-40  mt-[80px]">
   <div class="flex gap-2 flex-col mx-4" >
-    <h3 class="heading-1 mb-32">what after the course</h3>
+    <h3 class="heading-1 md:mb-32 mb-[32px]">what after the course</h3>
     <div class="lg:w-[1056px] mx-auto">
       { messageCard.map((message,index) => (
          <div class=`${index% 2 == 0 ? "justify-end flex" : ""}`>
