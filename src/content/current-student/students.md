@@ -1,6 +1,6 @@
 ---
 people:
-  - name: "Tanuj Jain "
+  - name: "Tanuj Samaddar "
     image: "/assets/images/current_student/tanuj-jain.jpeg"
     social: ""
     connectLink: "#"
