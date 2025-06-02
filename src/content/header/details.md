@@ -13,7 +13,7 @@ navigation:
       - name: "Current Students"
         url: "/pratibha/current-students"
       - name: "Become a Mentor"
-        url: "/pratibha/become-a-mentor"
+        url: "/work-with-us/opportunities/volunteering/become-a-mentor"
       - name: "Apply"
         url: "/pratibha/apply"
 
