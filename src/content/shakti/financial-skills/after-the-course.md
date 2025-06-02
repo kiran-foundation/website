@@ -6,7 +6,7 @@ messageCard:
     mentor: Preeti
     message: What happens after I attend all 8 sessions?
 
-  - mentorImage: /assets/images/financial/mentor-isha.png
+  - mentorImage: /assets/images/financial/isha.jpg
     mentor: Isha
     message: |
       You will receive a Certificate of Successful Completion of the Financial Skills Course.
