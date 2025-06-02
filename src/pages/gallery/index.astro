@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const albums = await getCollection("albums");
+const headings = await getEntry("common","headings");
 // console.log(albums);
 ---
 
@@ -12,8 +13,8 @@ const albums = await getCollection("albums");
   <div style="padding-top: 120px;">
     <!-- <Gallery /> -->
     <div class="text-center">
-      <h1 class="text-5xl font-bold heading-1">Photo Gallery</h1>
-      <p class="text-xl my-4 body-text-1">A collection of my photos</p>
+      <h1 class="text-5xl font-bold heading-1 mb-5">{headings.data.gallery}</h1>
+      
     </div>
     <div class="mx-auto container max-w-screen-sm grid grid-cols-2 gap-8">
       {
