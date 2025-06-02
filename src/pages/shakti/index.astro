@@ -6,7 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/common/Hero.astro";
 import CertificateSection from "../../components/shakti/CertificateSection.astro";
 import PageBottom from "../../components/shakti/PageBottom.astro";
-import Pillars from "../../components/shakti/Pillars.astro"
+import Pillars from "../../components/shakti/Pillars.astro";
 import Videotestomonial from "../../components/shakti/videotestomonial.astro";
 
 import Heading from "../../components/shakti/Heading.astro";
@@ -17,7 +17,6 @@ import SpeakingClub from "../../components/shakti/SpeakingClub.astro";
 import Card from "../../components/shakti/Card.astro";
 import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
 import Join from "../../components/shakti/Join.astro";
-
 ---
 
 <script src="/assets/js/theme.min.js" is:inline></script>
@@ -34,20 +33,26 @@ import Join from "../../components/shakti/Join.astro";
 <Layout title="Shakti">
   <!-- Page wrapper -->
   <main class="page-wrapper">
-
-
-   <Breadcrumb url={Astro.url} />
-    <Hero collection="shakti" slug="hero"  imageWidth="560.28" height="580.26" />
-    <Pillars collection="shakti" slug="pillars"/>
-    <CertificateSection/>
+    <Breadcrumb url={Astro.url} />
+    <Hero collection="shakti" slug="hero" imageWidth="560.28" height="580.26" />
+    <Pillars collection="shakti" slug="pillars" />
+    <CertificateSection />
     <!-- <Videotestomonial/> -->
-    <Videotestomonial collection="shakti" slug="video" bg="bg-black" className="md:mt-[164px] md:mb-[164px] mb-[80px] mt-[96px]"/>
+    <Videotestomonial
+      collection="shakti"
+      slug="video"
+      bg="bg-black"
+      className="md:mt-[164px] md:mb-[164px] mb-[80px] mt-[96px]"
+    />
 
-    <PageBottom slug="financial-skills/resilient-society" collection="shakti" sec="bottomSection" className=" md:mt-[164px] mt-[80px] mb-[96px] md:mb-[160px]"/>
-
+    <PageBottom
+      slug="financial-skills/resilient-society"
+      collection="shakti"
+      sec="bottomSection"
+      className=" md:mt-[164px] mt-[80px] mb-[96px] md:mb-[160px]"
+    />
   </main>
 
-  
   <a
     class="btn-scroll-top"
     href="#top"

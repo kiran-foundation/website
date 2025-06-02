@@ -1,5 +1,5 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry } from "astro:content";
 
 import MessageCard from "./MessageCard.astro";
 // const { title } = Astro.props;
@@ -8,30 +8,31 @@ const { title, messageCard, response } = courseDetails.data;
 console.log(courseDetails.data);
 ---
 
-
 <div class="mx-auto max-w-[1260px] md:mt-40 mt-20">
   <div class="flex flex-col gap-2 px-4">
     <h3 class="heading-1 md:mb-32 mb-[32px]">{title}</h3>
     <div class="mx-auto max-w-[1056px]">
       <div class="mx-auto">
-        {messageCard.map((msg) => (
-          <div class="flex justify-end">
-            <MessageCard
-              type={msg.type}
-              mentorImage={msg.mentorImage}
-              mentor={msg.mentor}
-              message={msg.message}
-            />
-          </div>
-        ))}
+        {
+          messageCard.map((msg) => (
+            <div class="flex justify-end">
+              <MessageCard
+                type={msg.type}
+                mentorImage={msg.mentorImage}
+                mentor={msg.mentor}
+                message={msg.message}
+              />
+            </div>
+          ))
+        }
         <div class="flex justify-start !text-[#1E1E1E]">
-          <div class="body-text-2 py-6 self-center flex flex-col-reverse md:flex-row-reverse w-fit rounded-lg mb-[120px] px-4 md:gap-16 bg-[#F1F1F1]">
+          <div
+            class="body-text-2 py-6 self-center flex flex-col-reverse md:flex-row-reverse w-fit rounded-lg mb-[120px] px-4 md:gap-16 bg-[#F1F1F1]"
+          >
             <h3 class="self-center pr-16 body-text-3">
               {response.intro}
               <ul class="list-disc pl-6 space-y-2 pt-3 pb-3">
-                {response.point.map(point => (
-                  <li>{point}</li>
-                ))}
+                {response.point.map((point) => <li>{point}</li>)}
               </ul>
               {response.outro}
             </h3>
