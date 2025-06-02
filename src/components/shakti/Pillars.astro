@@ -8,7 +8,7 @@ const entry = await getEntry("shakti", "pillars");
 const pillars = entry?.data?.pillars ?? [];
 ---
 
-<section class="mx-auto max-w-[1296px] mt-[164px] box-border">
+<section class="mx-auto max-w-[1296px] md:mt-[164px] mt-[80px] box-border">
   <div class="flex flex-col lg:flex-row gap-[72px] min-h-screen">
     <!-- Left Sticky Section -->
 
@@ -34,7 +34,7 @@ const pillars = entry?.data?.pillars ?? [];
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16">
         {
           pillars.map((pillar, index) => (
-            <div class="group hover:shadow-xl hover:shadow-gray-400 transition duration-300 rounded-lg overflow-hidden bg-white w-[382px] h-[760px] px-6 pb-6 box-border flex flex-col">
+            <div class="group hover:shadow-xl hover:shadow-gray-400 transition duration-300 rounded-lg overflow-hidden bg-white md:w-[382px] md:h-[760px] px-6 pb-6 box-border flex flex-col">
               <div class="w-full aspect-square bg-gray-100">
                 <img
                   src={pillar.image}
@@ -56,7 +56,7 @@ const pillars = entry?.data?.pillars ?? [];
                     link={pillar.ctaLink}
                     title={pillar.buttonText}
                     btn="btn2"
-                    widthClass="w-[342px] sm:w-[200px] md:w-[150px]"
+                    widthClass="w-full sm:w-[200px] md:w-[150px]"
                     heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
                     className="mt-auto"
                   />
