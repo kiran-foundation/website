@@ -1,0 +1,63 @@
+---
+// src/components/SimpleImageViewer.astro
+
+const { images, currentIndex = 0 } = Astro.props;
+---
+
+<div
+  id="image-viewer"
+  class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur p-4 flex flex-col items-center justify-center"
+>
+  <div class="relative max-w-full max-h-[90vh]">
+    <button
+      onclick="document.getElementById('image-viewer').classList.add('hidden')"
+      class="absolute -top-10 right-0 text-white text-2xl hover:text-gray-300"
+    >
+      ✕
+    </button>
+
+    <img
+      id="viewer-image"
+      src={images[currentIndex].src}
+      alt="Enlarged view"
+      class="max-w-full max-h-[80vh] object-contain"
+    />
+
+   
+  </div>
+</div>
+
+<script is:inline>
+  // Store images globally
+  window.galleryImages = [
+    ...document.querySelectorAll("[data-gallery-image]"),
+  ].map((img) => ({
+    src: img.src,
+    alt: img.alt,
+  }));
+
+  function showImage(index) {
+    const viewer = document.getElementById("image-viewer");
+    const img = document.getElementById("viewer-image");
+    img.src = window.galleryImages[index].src;
+    img.alt = window.galleryImages[index].alt;
+    viewer.classList.remove("hidden");
+    window.currentImageIndex = index;
+  }
+
+  function navigateImage(offset) {
+    const newIndex =
+      (window.currentImageIndex + offset + window.galleryImages.length) %
+      window.galleryImages.length;
+    showImage(newIndex);
+  }
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    const viewer = document.getElementById("image-viewer");
+    if (!viewer || viewer.classList.contains("hidden")) return;
+
+    if (e.key === "Escape") viewer.classList.add("hidden");
+   
+  });
+</script>
