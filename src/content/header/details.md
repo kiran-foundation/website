@@ -13,10 +13,9 @@ navigation:
       - name: "Current Students"
         url: "/pratibha/current-students"
       - name: "Become a Mentor"
-        url: "/pratibha/become-a-mentor"
+        url: "/work-with-us/opportunities/volunteering/become-a-mentor"
       # - name: "Apply"
       #   url: "/pratibha/apply"
-
   - menu:
       name: "Shakti Courses"
       url: "/shakti"
@@ -42,14 +41,15 @@ navigation:
     submenu:
       - name: "About Us"
         url: "/about"
-      - name: "Resources"
-        url: "/resources"
+      - name: "Our Team"
+        url: "/who-we-are/team"
+      - name: "Publications"
+        url: "/publications"
       - name: "News and Updates"
         url: "/updates"
       - name: "Gallery"
         url: "/gallery"
-      - name: "Our Team"
-        url: "/who-we-are/team"
+     
 
   - menu:
       name: "Work with Us"
