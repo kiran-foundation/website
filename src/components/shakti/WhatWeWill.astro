@@ -1,42 +1,51 @@
 ---
+import { getEntry } from "astro:content";
+
 import MessageCard from "./MessageCard.astro";
-const { title } = Astro.props;
+// const { title } = Astro.props;
+const courseDetails = await getEntry("shakti", "financial-skills/what-we-wiil");
+const { title, messageCard, response } = courseDetails.data;
+console.log(courseDetails.data);
 ---
 
-<div class="mx-auto max-w-[1260px] mt-40">
-  <div class="mx-auto flex flex-col gap-2">
-    <h3 class="heading-1 mb-32">{title}</h3>
-    <div class="mx-auto w-[1056px]">
+<div class="mx-auto max-w-[1260px] md:mt-40 mt-20">
+  <div class="flex flex-col gap-2 px-4">
+    <h3 class="heading-1 md:mb-32 mb-[32px]">{title}</h3>
+    <div class="mx-auto max-w-[1056px]">
       <div class="mx-auto">
-        <div class="flex justify-end">
-          <MessageCard
-            type="send"  mentorImage="/assets/images/financial/preeti.png"   mentor="Preeti" 
-            message="What I will learn? Will I understand everything?"/>
-    </div>
-        <div class="flex justify-start">
-         <div  class="body-text-2  py-6  self-center flex  flex-row-reverse  w-fit  rounded-lg mb-[120px] px-4 gap-16 bg-[#F1F1F1]">
-        <h3 class="self-center pr-16 " style="
-        font-family: Poppins;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 46px;
-        letter-spacing: 0%;" >
-    The sessions are in your local language and easy to understand. We will talk about:
-    <ul class="list-disc pl-6 space-y-2 pt-3 pb-3">
-        <li>Finance Management</li>
-        <li>Government saving schemes</li>
-        <li>How Mutual Funds can make you rich</li>
-        <li>How to protect your family from financial crisis</li> 
-        </li>How to stay safe and prevent fraud online</li>
-
-        </ul>
-You will become independent and confident in your financial decisions!
-  </h3>
-  <div class="flex flex-col  align-top self-start items-center">
-    <img src="/assets/images/financial/harshil.jpg" class=" rounded-full" alt=""  width="120px" />
-    <h4 class=" text-center">Harshil</h4>
-  </div>
-</div>
+        {
+          messageCard.map((msg) => (
+            <div class="flex justify-end">
+              <MessageCard
+                type={msg.type}
+                mentorImage={msg.mentorImage}
+                mentor={msg.mentor}
+                message={msg.message}
+              />
+            </div>
+          ))
+        }
+        <div class="flex justify-start !text-[#1E1E1E]">
+          <div
+            class="body-text-2 py-6 self-center flex flex-col-reverse md:flex-row-reverse w-fit rounded-lg mb-[120px] px-4 md:gap-16 bg-[#F1F1F1]"
+          >
+            <h3 class="self-center pr-16 body-text-3">
+              {response.intro}
+              <ul class="list-disc pl-6 space-y-2 pt-3 pb-3">
+                {response.point.map((point) => <li>{point}</li>)}
+              </ul>
+              {response.outro}
+            </h3>
+            <div class="flex flex-col align-top self-start md:items-center">
+              <img
+                src={response.mentorImage}
+                class="rounded-full"
+                alt=""
+                width="120px"
+              />
+              <h4 class="md:text-center">{response.mentor}</h4>
+            </div>
+          </div>
         </div>
       </div>
     </div>

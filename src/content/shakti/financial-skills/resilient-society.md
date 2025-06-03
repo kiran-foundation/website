@@ -1,11 +1,13 @@
 ---
 title: "Make Decisions with Knowledge and Help Build  a Strong and Resilient Society" 
-image: "/assets/images/financial/group1.jpg"
+image: "/assets/images/financial/women-together-shakti.png"
 
 button:
-  - link: "#"
+  - link: "/updates"
     title: "See New Upcoming Dates"
-  - link: "#"
+    btn: "btn1"
+  - link: "/contact"
     title: "Connect on WhatsApp"
+    btn: "btn3"
 
 ---
