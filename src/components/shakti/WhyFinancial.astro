@@ -8,6 +8,7 @@ const data = await getEntry(collection, slug) as {
     image: string;
   };
 };
+const { flip } = Astro.props;
 const { title, bentifits, image } = data.data;
 ---
 
