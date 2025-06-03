@@ -12,8 +12,8 @@ const publications = await getAllPublications();
 ---
 
 <Layout title="Publications">
-  <div class="container w-full md:w-3/4 mx-auto py-12 px-4">
-    <h1 class="text-4xl font-bold mb-8">{headings.data.publications} </h1>
+  <div class="container w-full md:w-3/4 mx-auto py-12 px-4 mt-[80px]">
+    <h1 class="text-4xl heading-1 mb-4 text-center lg:mb-[60px]">{headings.data.publications} </h1>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-[20px]">
       {publications.map((publication) => (
