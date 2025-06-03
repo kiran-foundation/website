@@ -105,8 +105,8 @@ people:
     social: ""
     connectLink: "#"
 
-  - name: "Rutika Jain"
-    image: "/assets/images/current_student/rutika-jain.jpeg"
+  - name: "Rutika Kolhapure"
+    image: "/assets/images/current_student/rutika-kolhapure.jpeg"
     social: ""
     connectLink: "#"
 
@@ -131,8 +131,8 @@ people:
     social: ""
     connectLink: "#"
 
-  - name: "Saktivel Jain"
-    image: "/assets/images/current_student/saktivel-jain.jpeg"
+  - name: "Sakthivel V"
+    image: "/assets/images/current_student/sakthivel-v.jpeg"
     social: ""
     connectLink: "#"
   
