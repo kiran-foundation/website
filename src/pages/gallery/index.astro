@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const albums = await getCollection("albums");
-const headings = await getEntry("common","headings");
+const headings = await getEntry("common", "headings");
 // console.log(albums);
 ---
 
@@ -14,7 +14,6 @@ const headings = await getEntry("common","headings");
     <!-- <Gallery /> -->
     <div class="text-center">
       <h1 class="text-5xl font-bold heading-1 mb-5">{headings.data.gallery}</h1>
-      
     </div>
     <div class="mx-auto container max-w-screen-sm grid grid-cols-2 gap-8">
       {
@@ -33,6 +32,9 @@ const headings = await getEntry("common","headings");
             />
             <div class="mt-4 text-center text-neutral-800 body-text-1">
               <strong class="font-normal">{item.data.title}</strong>
+              
+              <p class="text-md">{item.data.date}</p>
+
               <p class="text-xs">{item.data.description}</p>
             </div>
           </a>

@@ -8,6 +8,7 @@ const albums = defineCollection({
       description: z.string().optional(),
       cover: z.string(),
       root: z.string(),
+      date: z.string(),
     }),
 });
 
