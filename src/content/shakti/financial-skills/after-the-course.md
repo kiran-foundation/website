@@ -1,5 +1,5 @@
 ---
-title: What after the course
+title: What happens after the course
 messageCard:
   - type: send
     mentorImage: /assets/images/financial/preeti.png

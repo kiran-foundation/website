@@ -9,12 +9,12 @@ const {
 
 {
   type === "send" ? (
-    <div class="heading-4 py-3 md:py-2 self-center flex md:flex-row flex-col-reverse md:max-w-[786px]  justify-end  rounded-lg md:mb-[80px] mb-[48px] p-4 xs:p-0    bg-[#D9F3E6]">
+    <div class="heading-4 w-full  py-3 md:py-2 self-center flex md:flex-row flex-col-reverse md:w-[unset]  justify-end  rounded-lg md:mb-[80px] mb-[48px] p-4 xs:p-0    bg-[#D9F3E6]">
       <h3 class="md:self-center font-poppins font-normal md:text-[24px] text-[18px] leading-[36px] tracking-normal align-middle !text-[#1E1E1E]">
         {message}
       </h3>
       <div class="md:self-center  md:ml-10">
-        <img src={mentorImage} alt="" width="120px" class=" !max-w-none " />
+        <img src={mentorImage} alt="" width="120px" class=" rounded-full !max-w-none " />
         <h4 class="text-[#1E1E1E] body-text-2 md:text-center">{mentor}</h4>
       </div>
     </div>
