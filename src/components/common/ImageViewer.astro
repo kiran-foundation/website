@@ -1,56 +1,43 @@
 ---
-import { getEntry } from "astro:content";
-
-// src/components/SimpleImageViewer.astro
-
-const { image, currentIndex = 0 } = Astro.props;
-
+// src/components/common/ImageViewer.astro
 ---
 
 <div
   id="image-viewer"
-  class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur p-4 flex flex-col items-center justify-center"
+  class="hidden fixed inset-0 z-50 bg-black/30 backdrop-blur p-4 flex items-center justify-center"
 >
   <div class="relative max-w-full max-h-[90vh]">
     <button
-      onclick="document.getElementById('image-viewer').classList.add('hidden')"
+      onclick="closeViewer()"
       class="absolute -top-10 right-0 text-white text-2xl hover:text-gray-300"
     >
-      ✕
+      ✕ Close
     </button>
 
     <img
       id="viewer-image"
-      src={image}
+      src=""
       alt="Enlarged view"
-      class="max-w-full min-h-[60vh] max-h-[80vh] object-contain"
+      class="max-w-full max-h-[80vh] object-contain rounded-xl"
     />
-
-   
   </div>
 </div>
 
 <script is:inline>
-  // Store images globally
-  window.galleryImages = [
-    ...document.querySelectorAll("[data-gallery-image]"),
-  ].map((img) => ({
-    src: img.src,
-    alt: img.alt,
-  }));
-
-  function showImage(index) {
+  function showImage(imageUrl, altText = "") {
     const viewer = document.getElementById("image-viewer");
     const img = document.getElementById("viewer-image");
-    img.src = window.galleryImages[index].src;
-    img.alt = window.galleryImages[index].alt;
+    img.src = imageUrl;
+    img.alt = altText;
     viewer.classList.remove("hidden");
-    window.currentImageIndex = index;
   }
 
+  function closeViewer() {
+    document.getElementById("image-viewer").classList.add("hidden");
+  }
+
+  // Close with ESC key
   document.addEventListener("keydown", (e) => {
-    const viewer = document.getElementById("image-viewer");
-    if (!viewer || viewer.classList.contains("hidden")) return;
-    if (e.key === "Escape") viewer.classList.add("hidden");
+    if (e.key === "Escape") closeViewer();
   });
 </script>

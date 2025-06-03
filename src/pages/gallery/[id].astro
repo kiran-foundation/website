@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { getAlbumImages } from "../../utils/albums";
@@ -26,28 +25,21 @@ const images = await getAlbumImages(album.id);
       {album.data.description}
     </p>
 
-    <div
-      class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 text-center"
-    >
-      {
-        images.map((image, index) => (
-          <Image
-            src={image}
-            alt={`Image ${index + 1} from ${album.data.title}`}
-            width={400}
-            height={300}
-            quality={50}
-            class="rounded mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg cursor-zoom-in"
-            loading="lazy"
-            data-gallery-image
-            onclick={`showImage(${index})`}
-          />
-          <ImageViewer images={images} />
-        ))
-      }
+    <div class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 text-center">
+      {images.map((image, index) => (
+        <img
+          src={image.publicPath}
+          alt={`Image ${index + 1} from ${album.data.title}`}
+          width="400"
+          height="300"
+          class="rounded mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg cursor-zoom-in"
+          loading="lazy"
+          onclick={`showImage('${image.publicPath}', '${album.data.title} - Image ${index + 1}')`}
+        />
+      ))}
     </div>
 
-    
+    <ImageViewer />
 
     <p class="text-lg my-4 text-center body-text-1">
       <a href="/gallery/" class="hover:underline">View other albums</a>
