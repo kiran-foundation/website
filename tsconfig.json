@@ -3,5 +3,8 @@
   "exclude": [
     "src/components/common/DropDown.astro",
     "src/components/common/SlidbarDropdown.astro"
-  ]
+  ],
+  "compilerOptions": {
+    "types": ["astro/client"]
+  }
 }
