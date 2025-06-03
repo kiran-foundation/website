@@ -15,7 +15,6 @@ export async function getStaticPaths() {
 const { album } = Astro.props;
 const images = await getAlbumImages(album.id);
 ---
-
 <Layout title={album.data.title}>
   <div class="text-center pt-[120px]">
     <h1 class="text-5xl font-bold heading-1">
@@ -25,18 +24,24 @@ const images = await getAlbumImages(album.id);
       {album.data.description}
     </p>
 
-    <div class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 text-center">
-      {images.map((image, index) => (
-        <img
-          src={image.publicPath}
-          alt={`Image ${index + 1} from ${album.data.title}`}
-          width="400"
-          height="300"
-          class="rounded mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg cursor-zoom-in"
-          loading="lazy"
-          onclick={`showImage('${image.publicPath}', '${album.data.title} - Image ${index + 1}')`}
-        />
-      ))}
+    <div
+      class="mx-auto container my-8 columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-4"
+    >
+      {
+        images.map((image, index) => (
+          <div class="mb-4 break-inside-avoid">
+            <img
+              src={image.publicPath}
+              alt={`Image ${index + 1} from ${album.data.title}`}
+              width="400"
+              height="300"
+              class="w-full rounded border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg cursor-zoom-in"
+              loading="lazy"
+              onclick={`showImage('${image.publicPath}', '${album.data.title} - Image ${index + 1}')`}
+            />
+          </div>
+        ))
+      }
     </div>
 
     <ImageViewer />
