@@ -11,7 +11,16 @@ const albums = defineCollection({
       date: z.string(),
     }),
 });
+const publications = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    fileType: z.string(),
+    image: z.string() 
+  })
+});
+
 
 export const collections = {
-  albums,
+  albums, publications
 };
