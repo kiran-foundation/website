@@ -1,19 +1,21 @@
 ---
 import SectionTop from "./SectionTop.astro";
 import { getEntry } from "astro:content";
-const {
-  slug,collection,
-  sec = "certificateSection",
-  className,
-} = Astro.props;
+const { slug, collection, sec = "certificateSection", className } = Astro.props;
 const pagedata = await getEntry(collection, slug);
-const { title = " ", button = " ", image = " " } = (pagedata && typeof pagedata === "object" && "data" in pagedata ? (pagedata as { data: any }).data : {}) || {};
+const {
+  title = "",
+  button = "",
+  image = "",
+} = (pagedata && typeof pagedata === "object" && "data" in pagedata
+  ? (pagedata as { data: any }).data
+  : {}) || {};
 ---
 
-<section class=`max-w-[1296px] mx-auto ${className}`>
+<section class=`px-4 max-w-[1296px] mx-auto ${className} `>
   <SectionTop button={button} sec={sec} title={title} />
 
-  <div class="w-full h-auto sm:h-[500px] md:h-[600px] lg:h-[766px] mb-[120px]">
+  <div class="w-full h-auto sm:h-[500px] md:h-[600px] lg:h-[766px]">
     <img src={image} class="w-full h-full object-cover rounded-3xl" />
   </div>
 </section>

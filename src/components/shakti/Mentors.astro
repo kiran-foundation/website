@@ -7,14 +7,16 @@ const  mentorsdata  = (
 const {title,mentors} = mentorsdata.data;
 ---
 
-<section class=`max-w-full mx-auto px-4  space-y-40`>
-  <Heading title={title} head="heading-1" />
+<section class=`max-w-full mx-auto px-4     `>
+  <Heading title={title} head="heading-1 mb-10" />
 
 <div class="max-w-[1296px] mx-auto">
-  { mentors.map((mentor,index) => (    <div
-      class=`w-max-[1296px] mx-auto flex flex-col ${ (index % 2 == 0) ? "lg:flex-row" : "lg:flex-row-reverse" } items-center md:gap-[60px] gap-8  `
+  { mentors.map((mentor,index) => (   
+    
+    <div
+      class=`w-max-[1296px] md:mb-[164px] mb-[80px] mx-auto flex flex-col ${ (index % 2 == 0) ? "lg:flex-row" : "lg:flex-row-reverse" } items-center md:gap-[60px] gap-8  `
     >
-      <div class=" mb-[164px]">
+      <div >
         <img
           src={mentor.image}
           class="rounded-3xl"
@@ -26,15 +28,9 @@ const {title,mentors} = mentorsdata.data;
           {mentor.title}
         </h4>
       </div>
-      <div class="">
+      <div class="m-0">
         <p class="max-w-[841px] body-text-3">
-          <span
-            class="lg:font-light lg:text-[96px] lg:leading-[68px] lg:tracking-[1px]"
-            >‘’</span
-          >{mentor.quote}<span
-            class="lg:font-light lg:text-[64px] lg:leading-[68px] lg:tracking-[1px]"
-            >’’</span
-          >
+          {mentor.quote}
         </p>
       </div>
     </div>

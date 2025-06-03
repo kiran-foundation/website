@@ -3,9 +3,11 @@
 image: "/assets/images/financial/financial-certificate.png"
 title: "Learn for Free and Get Your Certificate"
 button:
-  - link: "#"
+  - link: "/updates"
     title: "See New Upcoming Dates"
-  - link: "#"
+    btn: "btn1"
+  - link: "/contact"
     title: "Connect on WhatsApp"
+    btn: "btn3"
 
 ---

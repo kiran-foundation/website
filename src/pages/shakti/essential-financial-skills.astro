@@ -13,6 +13,7 @@ import WhyFinancial from "../../components/shakti/WhyFinancial.astro";
 import CourseDetail from "../../components/shakti/CourseDetail.astro";
 import WhatWeWill from "../../components/shakti/WhatWeWill.astro";
 import AfterTheCourse from "../../components/shakti/AfterTheCourse.astro";
+import PlainImage from "../../components/shakti/PlainImage.astro";
 ---
 
 <Layout title="financial skills"
@@ -22,15 +23,15 @@ import AfterTheCourse from "../../components/shakti/AfterTheCourse.astro";
     <Hero bgcolor="none" collection="shakti" slug="financial-skills/hero" imageWidth="504" imageHeight="506" greenlineheight="-bottom-[0.260rem]" />
     <WhyFinancial />
     <CourseDetail />
-    <WhatWeWill title="What we will do" />
-    <img src="/assets/images/financial/financial-skills-1.png" class="max-w-[920px] mx-auto  pt-40 "   />
+    <WhatWeWill />
+    <PlainImage css="md:mt-40 mt-0 " image="/assets/images/financial/financial-skills-1.png" />
     <AfterTheCourse/>
-    <img src="/assets/images/financial/investments-visual-1.png" class="max-w-[920px] mx-auto  pt-40 "   />
-    <PageBottom  slug="financial-skills/certificate" collection="shakti" sec="certificateSection" className=" mt-[164px]"/>
-    <Videotestomonial collection="shakti" slug="financial-skills/video" bg="bg-black" className="mb-[164px]"/>
+    <PlainImage css="md:mt-40 mt-10 " image="/assets/images/financial/investments-visual-1.png" />
+    <PageBottom  slug="financial-skills/certificate" collection="shakti" sec="certificateSection" className="mb-[60px] md:mb-[120px] mt-[80px] md:mt-[164px]"/>
+    <Videotestomonial collection="shakti" slug="financial-skills/video" bg="bg-black" className="md:mt-[164px] mb-[164px] mt-[96px]"/>
     <Mentors />
     <TestimonialsCarousel pageTag="shakti" />
-    <PageBottom slug="financial-skills/resilient-society" collection="shakti" sec="bottomSection" className=" mt-[164px]"/>
+    <PageBottom slug="financial-skills/resilient-society" collection="shakti" sec="bottomSection" className=" md:mt-[164px] mt-[96px] mb-[96px] md:mb-[160px]"/>
   </main>
 </Layout>
 
