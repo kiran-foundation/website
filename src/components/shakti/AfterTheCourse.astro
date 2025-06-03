@@ -1,7 +1,18 @@
 ---
 import { getEntry } from "astro:content";
 import MessageCard from "./MessageCard.astro";
-const data = await getEntry("shakti", "financial-skills/after-the-course");
+const { collection, slug } = Astro.props;
+const data = await getEntry(collection, slug) as {
+  data: {
+    title: string;
+    messageCard: {
+      type: string;
+      mentorImage: string;
+      mentor: string;
+      message: string;
+    }[];
+  };
+};
 const {title, messageCard }=  data.data;
 ---
 

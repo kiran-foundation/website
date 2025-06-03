@@ -1,8 +1,13 @@
 ---
 import { getEntry } from "astro:content";
-
-const data = await getEntry("shakti", "financial-skills/whyfinancial");
-const { flip } = Astro.props;
+const { collection, slug } = Astro.props;
+const data = await getEntry(collection, slug) as {
+  data: {
+    title: string;
+    bentifits: { title: string; desc: string }[];
+    image: string;
+  };
+};
 const { title, bentifits, image } = data.data;
 ---
 

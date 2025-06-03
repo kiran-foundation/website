@@ -1,10 +1,11 @@
 ---
 import { getEntry } from "astro:content";
 import MessageCard from "./MessageCard.astro";
+const {collection, slug} = Astro.props;
 const courseDetails = await getEntry(
-  "shakti",
-  "financial-skills/course-details"
-);
+  collection, slug
+) as { data: { title: string; messageCard: any[]; image: string } };
+// Adjust the type above as per your actual data shape
 const { title, messageCard, image } = courseDetails.data;
 ---
 
