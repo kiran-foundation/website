@@ -1,4 +1,5 @@
 ---
+import 'remixicon/fonts/remixicon.css'
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { getAlbumImages } from "../../utils/albums";
@@ -51,8 +52,8 @@ const images = await getAlbumImages(album.id);
 
     <ImageViewer />
 
-    <p class="text-lg my-4 text-center body-text-1">
-      <a href="/gallery/" class="hover:underline">View other albums</a>
+    <p class="text-lg mb-4 text-center body-text-1 relative ">
+      <a href="/gallery/" class="text-neutral-400 text-4xl l hover:text-blue-800 rounded-full"><i class="ri-arrow-left-line"></i></a>
     </p>
   </div>
 </Layout>

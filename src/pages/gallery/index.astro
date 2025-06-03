@@ -30,10 +30,10 @@ const headings = await getEntry("common", "headings");
               class="rounded-lg transition-all group-hover:shadow-lg group-hover:opacity-90"
               loading="lazy"
             />
-            <div class="mt-4 text-center text-neutral-800 body-text-1">
-              <strong class="font-normal">{item.data.title}</strong>
-              
-              <p class="text-md">{item.data.date}</p>
+            <div class="mt-2 text-center text-neutral-800 body-text-1">
+              <h2 class="body-text-1  font-bold">{item.data.title}</h2>
+
+              <p class="text-sm -mt-2 mb-1 leading-tight font-normal">({item.data.date})</p>
 
               <p class="text-xs">{item.data.description}</p>
             </div>
