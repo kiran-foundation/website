@@ -1,20 +1,18 @@
 export async function getAlbumImages(albumId: string) {
-  let images = import.meta.glob<{ default: ImageMetadata }>(
-    "/src/content/albums/**/*.{jpeg,jpg,png}"
+  const images = import.meta.glob<{ default: string }>(
+    "/public/assets/albums/**/*.{jpeg,jpg,png}",
+    { eager: true }
   );
 
-  // Filter and extract filenames
-  const imageEntries = Object.entries(images)
-    .filter(([key]) => key.includes(albumId))
-    .map(([path]) => {
-      // Extract filename from path
-      const filename = path.split('/').pop() || '';
+  return Object.entries(images)
+    .filter(([path]) => path.includes(albumId))
+    .map(([path, image]) => {
+      const filename = path.split("/").pop() || "";
       return {
-        contentPath: path,
-        publicPath: `/assets/albums/${albumId}/${filename}`,
-        filename: filename
+        publicPath: path.replace("/public", ""),
+        filename: filename,
+
+        src: image.default,
       };
     });
-
-  return imageEntries;
 }
