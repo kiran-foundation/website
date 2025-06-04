@@ -3,5 +3,5 @@ const { image, css } = Astro.props;
 ---
 
 <div class=`   mx-auto px-4 md:px-0  ${css}`>
-  <img class="mx-auto" src={image} />
+  <img class="mx-auto" src={image} loading="lazy" />
 </div>
