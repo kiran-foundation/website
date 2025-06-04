@@ -1,30 +1,21 @@
 ---
 title: What after the course
 messageCard:
-  - type: send
-    mentorImage: /assets/images/financial/preeti.png
-    mentor: Preeti
-    message: What happens after I attend all 8 sessions?
+  - mentor: "Bahwa"
+    message: What happens after I attend all 8 sessions 
+     and do the homework after each one?
+    mentorImage: "/assets/images/digital-skills/bahwa.jpg"
+    type: "send"
 
-  - mentorImage: /assets/images/financial/isha.jpg
-    mentor: Isha
-    message: |
-      You will receive a Certificate of Successful Completion of the Financial Skills Course.
-      
-      But there is more you will receive additional guidance from me and Harshil.
+  - mentor: "Shreya"
+    message: "After the course you will get a practical assignment to apply your skills. When completed successfully you will be awarded a certificate for your achievements!"
+    mentorImage: "/assets/images/digital-skills/shreya.jpg"
+    type: ""
 
-  - type: send
-    mentorImage: /assets/images/financial/preeti.png
-    mentor: Preeti
-    message: What does that mean?
-  
-  - mentorImage: /assets/images/financial/harshil.jpg
-    mentor: Harshil
-    message: |
-      We are Certified Wealth Managers and we will provide you with free consultations and financial plan to continue your journey to financial freedom!
-  
-  - type: send
-    mentorImage: /assets/images/financial/preeti.png
-    mentor: Preeti
-    message: I would love that! Thank you both!
+  - mentor: "Bahwa"
+    message: "Thank you! I can’t wait!"
+    mentorImage: "/assets/images/digital-skills/bahwa.jpg"
+    type: "send"
+
+
 ---
