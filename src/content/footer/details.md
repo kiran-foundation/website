@@ -8,6 +8,7 @@ aboutTitle:
     story: 'Our Story'
     policy: 'Privacy Policy'
     report: 'Annual Report'
+    publications: 'Publications'
     statement: 'Financial Statement'
 contactTitle:
       contact: 'Contact Us' 
