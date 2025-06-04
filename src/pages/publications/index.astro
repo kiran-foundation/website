@@ -1,39 +1,15 @@
 ---
-import  { getEntry } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import {getAllPublications} from "../../utils/publications"
-
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { getAllPublications } from "../../utils/publications";
+import GridCardLayout from "../../components/publications/GridCardLayout.astro";
 
 const headings = await getEntry("common", "headings");
-
 
 const publications = await getAllPublications();
 // console.log(publications);
 ---
 
 <Layout title="Publications">
-  <div class="container w-full md:w-3/4 mx-auto py-12 px-4 mt-[80px]">
-    <h1 class="text-4xl heading-1 mb-4 text-center lg:mb-[60px]">{headings.data.publications} </h1>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-[20px]">
-      {publications.map((publication) => (
-        <div class="bg-neutral-200 w-72 h-fit p-3 relative">
-          {publication.data.image && (
-            <div class="relative">
-                <img 
-              src={publication.data.image} 
-              alt={publication.data.title} 
-              class="w-full  h-72 object-cover object-center border-black border-1"
-              />
-              <span class="bg-black absolute left-0 top-0 px-1 py-1  text-xs body-text-1 text-white rounded-br-md ">{publication.data.fileType.toUpperCase()}</span>
-            </div>
-          )}
-         <div class="details w-full mt-3 ">
-            <h3 class="body-text-2 leading-tight text-md  text-black/90">{publication.data.title}</h3>
-            <h5 class="text-sm text-neutral-600 font-normal body-text-3">{publication.data.author}</h5>
-         </div>
-        </div>
-      ))}
-    </div>
-  </div>
+  <GridCardLayout items={publications} heading={headings.data.publications} />
 </Layout>

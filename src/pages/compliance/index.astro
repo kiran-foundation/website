@@ -1,0 +1,15 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import GridCardLayout from "../../components/publications/GridCardLayout.astro";
+import { getAllCompliance } from "../../utils/compliance";
+
+const headings = await getEntry("common", "headings");
+
+const compliance = await getAllCompliance();
+console.log(compliance);
+---
+
+<Layout title="Compliance">
+  <GridCardLayout items={compliance} heading={headings.data.compliance} />
+</Layout>
