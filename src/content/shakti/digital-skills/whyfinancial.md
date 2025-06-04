@@ -1,6 +1,6 @@
 ---
 title: "Why Learn Digital Skills?"
-image: "/assets/images/digital-skills/digital-skills-2.png"
+image: "/assets/images/digital-skills/whyfinancial-visual.png"
 bentifits:
     - title: "Master Daily Essentials"
       desc: "Manage family schedules (Google Calendar), video call loved ones (Meet), and create school project templates (Docs) with confidence."
