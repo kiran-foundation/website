@@ -20,17 +20,29 @@ import PlainImage from "../../components/shakti/PlainImage.astro";
 >
   <main class="page-wrapper  ">
     <Breadcrumb hidden={false} />
+    
     <Hero bgcolor="none" collection="shakti" slug="digital-skills/hero" imageWidth="504" imageHeight="506" greenlineheight="-bottom-[0.260rem]" />
-    <WhyFinancial flip={true} />
-    <CourseDetail />
-    <WhatWeWill />
+    
+    <WhyFinancial flip={true} collection="shakti" slug="digital-skills/whyfinancial" />
+    
+    <CourseDetail collection="shakti" slug="digital-skills/course-details" />
+    
+    <WhatWeWill collection="shakti" slug="digital-skills/what-we-wiil" />
+    
     <PlainImage css="md:mt-40 mt-0 max-w-[1296px]" image="/assets/images/digital-skills/canva-certificate.png" />
-    <AfterTheCourse/>
+    
+    <AfterTheCourse collection="shakti" slug="digital-skills/after-the-course" />
+    
     <PlainImage css="md:mt-40 mt-10 max-w-[1296px]" image="/assets/images/digital-skills/digital-skills-3.png" />
+    
     <PageBottom  slug="digital-skills/certificate" collection="shakti" sec="certificateSection" className="mb-[60px] md:mb-[120px] mt-[80px] md:mt-[164px]"/>
+    
     <Videotestomonial collection="shakti" slug="digital-skills/video" bg="bg-black" className="md:mt-[164px] mb-[164px] mt-[96px]"/>
-    <Mentors />
+    
+    <Mentors collection="shakti" slug="digital-skills/mentors" />
+    
     <TestimonialsCarousel pageTag="shakti" />
+    
     <PageBottom slug="digital-skills/resilient-society" collection="shakti" sec="bottomSection" className=" md:mt-[164px] mt-[96px] mb-[96px] md:mb-[160px]"/>
   </main>
 </Layout>
