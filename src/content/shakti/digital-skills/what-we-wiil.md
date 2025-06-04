@@ -8,7 +8,7 @@ messageCard:
 
 
 
-image: "/assets/images/financial/financial-visual.png"
+# image: "/assets/images/financial/digital-skills-1.png"
 response:
     mentor: Keshu
     mentorImage: /assets/images/digital-skills/keshu.png

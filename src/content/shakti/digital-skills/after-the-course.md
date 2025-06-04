@@ -1,5 +1,5 @@
 ---
-title: What after the course
+title: What happens after the course
 messageCard:
   - mentor: "Bahwa"
     message: What happens after I attend all 8 sessions 
