@@ -5,6 +5,6 @@ heading: 'and Literacy'
 heading2: ''
 heroSubtitle: ''
 description: "Build confidence in today’s digital world with free practical training and guided projects."
-image: "/assets/images/financial/hero.png"
+image: "/assets/images/digital-skills/hero.png"
 
 ---
