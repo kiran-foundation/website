@@ -8,7 +8,7 @@ messageCard:
 
   - mentor: "Deepika"
     message: The course is 3 weeks long.Lessons are usaually on Wednesday and Friday at 15:30.
-    mentorImage: "/assets/images/law-for-women/mentor_deepika.png"
+    mentorImage: "/assets/images/law-for-women/deepika.jpg"
     type: ""
 
 image: "/assets/images/law-for-women/calender.png"
