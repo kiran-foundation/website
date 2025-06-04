@@ -6,7 +6,7 @@ messageCard:
     mentor: Astha
     message: What happens after I attend all 6 sessions?
 
-  - mentorImage: /assets/images/law-for-women/mentor_deepika.png
+  - mentorImage: /assets/images/law-for-women/deepika.jpg
     mentor: Deepika
     message: |
       You will receive a Certificate of Successful Completion of the law Course.
