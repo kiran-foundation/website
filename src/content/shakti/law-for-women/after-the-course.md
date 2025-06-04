@@ -1,5 +1,4 @@
 ---
-
 title: What happens after the course
 messageCard:
   - type: send
