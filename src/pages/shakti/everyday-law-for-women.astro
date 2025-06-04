@@ -21,17 +21,17 @@ import PlainImage from "../../components/shakti/PlainImage.astro";
   <main class="page-wrapper  ">
     <Breadcrumb hidden={false} />
     <Hero bgcolor="none" collection="shakti"  slug="law-for-women/hero" imageWidth="504" imageHeight="506" greenlineheight="-bottom-[0.260rem]" />
-    <WhyFinancial flip={true} slug="law-for-women/why-financial"/>
-    <CourseDetail slug="law-for-women/course-details"/>
-    <WhatWeWill slug="law-for-women/what-we-will"/>
+    <WhyFinancial flip={true}  collection="shakti" slug="law-for-women/whyfinancial"/>
+    <CourseDetail collection="shakti" slug="law-for-women/course-details"/>
+    <WhatWeWill  collection="shakti" slug="law-for-women/what-we-wiil"/>
     <PlainImage css="md:mt-40 mt-0 max-w-[1296px]" image="/assets/images/digital-skills/canva-certificate.png" />
-    <AfterTheCourse/>
+    <AfterTheCourse  collection="shakti" slug="law-for-women/after-the-course"/>
     <PlainImage css="md:mt-40 mt-10 max-w-[1296px]" image="/assets/images/digital-skills/digital-skills-3.png" />
     <PageBottom  slug="law-for-women/certificate" collection="shakti" sec="certificateSection" className="mb-[60px] md:mb-[120px] mt-[80px] md:mt-[164px]"/>
     <Videotestomonial collection="shakti" slug="law-for-women/video" bg="bg-black" className="md:mt-[164px] mb-[164px] mt-[96px]"/>
-    <Mentors />
+    <Mentors collection="shakti" slug="law-for-women/mentors" />
     <TestimonialsCarousel pageTag="shakti" />
-    <PageBottom slug="law-for-women/resilient-society" collection="shakti" sec="bottomSection" className=" md:mt-[164px] mt-[96px] mb-[96px] md:mb-[160px]"/>
+    <PageBottom collection="shakti" slug="law-for-women/resilient-society"  sec="bottomSection" className=" md:mt-[164px] mt-[96px] mb-[96px] md:mb-[160px]"/>
   </main>
 </Layout>
 
