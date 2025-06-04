@@ -1,6 +1,6 @@
 ---
 title: "Why Learn Law and Right for Women"
-image: "/assets/images/digital-skills/digital-skills-2.png"
+image: "/assets/images/law-for-women/law-and-right.png"
 bentifits:
     - title: "Know your rights"
       desc: "Understand constitutional guarantees (Equality under Articles 14-15) and laws like the Protection of Women from Domestic Violence Act (PWDVA) or Sexual Harassment at Workplace Act."
