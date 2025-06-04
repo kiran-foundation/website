@@ -1,5 +1,5 @@
 ---
-title: "Recording of Previous Sessions "
+title: "Recordings of Previous Sessions "
 
 button:
   - link: "#"
