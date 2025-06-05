@@ -10,8 +10,8 @@ messageCard:
 image: "/assets/images/financial/financial-visual.png"
 response:
     mentor: Deepika
-    mentorImage: /assets/images/law-for-women/mentor_deepika.png
-    intro: "We will cover"
+    mentorImage: /assets/images/law-for-women/deepika.jpg
+    intro: "We will cover:"
     outro: These are things every indian women should be aware of!
     point: [
       "Sexual harrasment in the workspace"
