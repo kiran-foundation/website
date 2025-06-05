@@ -23,6 +23,11 @@ const {title,mentors} = mentorsdata.data;
     
     <div
       class=`w-max-[1296px] md:mb-[164px] mb-[80px] mx-auto flex flex-col ${ (index % 2 == 0) ? "lg:flex-row" : "lg:flex-row-reverse" } items-center md:gap-[60px] gap-8  `
+      
+          data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
+          data-aos-duration="1000"
+          data-aos-offset="280"
+          data-disable-parallax-down="sm"
     >
       <div >
         <img
