@@ -1,6 +1,8 @@
 ---
 
-image: "/assets/images/shakti/certificates/c3.png"
+
+image: "/assets/images/law-for-women/law-for-women-certificate.png"
+
 title: "Learn for Free and Get Your Certificate"
 button:
   - link: "/shakti/workshop-schedule"

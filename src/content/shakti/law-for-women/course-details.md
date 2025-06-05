@@ -1,17 +1,18 @@
 ---
 title: "Course Details"
 messageCard:
-  - mentor: "Bahwa"
-    message: "Can you tell me more about the course 
-and how long is it?"
-    mentorImage: "/assets/images/digital-skills/bahwa.jpg"
+
+  - mentor: "Astha"
+    message: "How long is the course?"
+    mentorImage: "/assets/images/current_student/astha-jain-hata.png"
     type: "send"
 
-  - mentor: "Shreya"
-    message: "The course is free, divided into 8 sessions 1 hour each. The lessons are 1 time a week for 2 months."
-    mentorImage: "/assets/images/digital-skills/shreya.jpg"
+  - mentor: "Deepika"
+    message: The course is 3 weeks long. Lessons are usually on Wednesday and Friday at 15:30.
+    mentorImage: "/assets/images/law-for-women/deepika.jpg"
     type: ""
 
-image: "/assets/images/digital-skills/visual-for-financial-skills-1.png"
+image: "/assets/images/law-for-women/calender.png"
+
 ---
 

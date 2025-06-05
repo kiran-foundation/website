@@ -1,30 +1,23 @@
 ---
-title: What after the course
+
+title: What happens after the course
 messageCard:
   - type: send
-    mentorImage: /assets/images/financial/preeti.png
-    mentor: Preeti
-    message: What happens after I attend all 8 sessions?
+    mentorImage: /assets/images/current_student/astha-jain-hata.png
+    mentor: Astha
+    message: What happens after I attend all 6 sessions?
 
-  - mentorImage: /assets/images/financial/isha.jpg
-    mentor: Isha
+  - mentorImage: /assets/images/law-for-women/deepika.jpg
+    mentor: Deepika
     message: |
-      You will receive a Certificate of Successful Completion of the Financial Skills Course.
+      You will receive a Certificate of Successful Completion of the law Course.
       
-      But there is more you will receive additional guidance from me and Harshil.
+      After the course you will gain confidience in knowing your rights and this will give you POWER!
 
   - type: send
-    mentorImage: /assets/images/financial/preeti.png
-    mentor: Preeti
-    message: What does that mean?
+    mentorImage: /assets/images/current_student/astha-jain-hata.png
+    mentor: Astha
+    message: That is AMAZING! Thank you Deepika!
   
-  - mentorImage: /assets/images/financial/harshil.jpg
-    mentor: Harshil
-    message: |
-      We are Certified Wealth Managers and we will provide you with free consultations and financial plan to continue your journey to financial freedom!
-  
-  - type: send
-    mentorImage: /assets/images/financial/preeti.png
-    mentor: Preeti
-    message: I would love that! Thank you both!
+
 ---
