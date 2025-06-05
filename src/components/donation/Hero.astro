@@ -3,6 +3,7 @@ import { getEntry } from "astro:content";
 const componentheroData = (await getEntry("donation", "hero")).data;
 import Breadcrumb from "../common/Breadcrumb.astro";
 import Button from "../common/button.astro";
+const info = await getEntry("support-us", "support-us");
 ---
 
 <Breadcrumb />
@@ -14,9 +15,8 @@ import Button from "../common/button.astro";
     <div class="container max-w-[1296px] mb-24 px-4 sm:px-6">
       <h1
         class="font-merriweather text-[32px] sm:text-[40px] md:text-[48px] lg:text-[64px] font-bold leading-snug sm:leading-[130%] lg:leading-[150%]"
-      >
-        Make a Lasting Impact: Support the Future with Your Donation
-      </h1>
+        set:html={info.data.title}
+      />
     </div>
 
     <div class="container max-w-[1296px] px-4 sm:px-6 mb-10 relative z-10">
@@ -37,7 +37,7 @@ import Button from "../common/button.astro";
           <h1
             class="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-webBlack mb-4"
           >
-            Make a Donation
+            {info.data.makeADonation}
           </h1>
 
           <form>
@@ -46,58 +46,31 @@ import Button from "../common/button.astro";
               <label
                 class="block font-semibold mb-2 text-[16px] sm:text-[18px] text-webBlack"
               >
-                Choose a donation amount
+                {info.data.chooseAmount}
               </label>
               <div class="space-y-3 text-gray-800">
-                <div class="flex items-center !mt-4">
-                  <input
-                    type="radio"
-                    id="amount500"
-                    name="donationAmount"
-                    value="500"
-                    class="!mr-4 !accent-orange scale-150"
-                    checked
-                  />
-                  <label for="amount500" class="text-xl sm:text-2xl"
-                    >₹ 500</label
-                  >
-                </div>
-                <div class="flex items-center !mt-4">
-                  <input
-                    type="radio"
-                    id="amount1000"
-                    name="donationAmount"
-                    value="1000"
-                    class="!mr-4 !accent-orange scale-150"
-                  />
-                  <label for="amount1000" class="text-xl sm:text-2xl"
-                    >₹ 1000</label
-                  >
-                </div>
-                <div class="flex items-center !mt-4">
-                  <input
-                    type="radio"
-                    id="amount5000"
-                    name="donationAmount"
-                    value="5000"
-                    class="!mr-4 !accent-orange scale-150"
-                  />
-                  <label for="amount5000" class="text-xl sm:text-2xl"
-                    >₹ 5000</label
-                  >
-                </div>
-                <div class="flex items-center !mt-4">
-                  <input
-                    type="radio"
-                    id="customAmount"
-                    name="donationAmount"
-                    value="custom"
-                    class="!mr-4 !accent-orange scale-150"
-                  />
-                  <label for="customAmount" class="text-xl sm:text-2xl"
-                    >Custom donation</label
-                  >
-                </div>
+                {
+                  info.data.amounts.map((amount) => (
+                    <div class="flex items-center !mt-4">
+                      <input
+                        type="radio"
+                        id={`amount-${amount}`}
+                        name="donationAmount"
+                        value={amount}
+                        class="!mr-4 !accent-orange scale-150"
+                        checked={amount === 500}
+                      />
+                      <label
+                        for={`amount-${amount}`}
+                        class="text-xl sm:text-2xl"
+                      >
+                        {amount === "custom"
+                          ? "Custom donation"
+                          : `₹ ${amount}`}
+                      </label>
+                    </div>
+                  ))
+                }
               </div>
             </div>
 
@@ -106,53 +79,42 @@ import Button from "../common/button.astro";
               <label
                 class="block font-semibold mb-2 text-[16px] sm:text-[18px] text-webBlack"
               >
-                Choose a donation frequency
+                {info.data.frequency}
               </label>
               <div class="space-y-3 text-gray-800">
-                <div class="flex items-center !mt-4">
-                  <input
-                    type="radio"
-                    id="monthly"
-                    name="donationFrequency"
-                    value="monthly"
-                    class="!mr-4 !accent-orange scale-150"
-                    checked
-                  />
-                  <label for="monthly" class="text-xl sm:text-2xl"
-                    >Monthly</label
-                  >
-                </div>
-                <div class="flex items-center !mt-4">
-                  <input
-                    type="radio"
-                    id="onetime"
-                    name="donationFrequency"
-                    value="onetime"
-                    class="!mr-4 !accent-orange scale-150"
-                  />
-                  <label for="onetime" class="text-xl sm:text-2xl"
-                    >One time</label
-                  >
-                </div>
+                {
+                  info.data.frequencies.map((freq) => (
+                    <div class="flex items-center !mt-4">
+                      <input
+                        type="radio"
+                        id="onetime"
+                        name="donationFrequency"
+                        value="onetime"
+                        class="!mr-4 !accent-orange scale-150"
+                      />
+                      <label for="onetime" class="text-xl sm:text-2xl">
+                        {freq}
+                      </label>
+                    </div>
+                  ))
+                }
+                
               </div>
             </div>
 
             <!-- Paragraph -->
             <p class="mb-4 text-[16px] sm:text-[18px] text-webBlack">
-              Your generosity fuels community-driven change. From scholarships
-              to mentorship, we’re ensuring children have the support they need
-              to succeed, today and tomorrow.
+              {info.data.heroParagraph}
             </p>
 
             <!-- Button -->
             <div class="flex justify-start">
-              <Button btn="btn1" title="Donate" />
+              <Button btn="btn1" title={info.data.buttonTextHero} />
             </div>
           </form>
         </div>
       </div>
     </div>
-    <div class="absolute  bottom-0 w-full h-96 bg-white ">
-    </div>
+    <div class="absolute bottom-0 w-full h-96 bg-white"></div>
   </div>
 </div>
