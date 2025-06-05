@@ -1,0 +1,15 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { getAllPublications } from "../../utils/publications";
+import GridCardLayout from "../../components/publications/GridCardLayout.astro";
+
+const headings = await getEntry("common", "headings");
+
+const publications = await getAllPublications();
+// console.log(publications);
+---
+
+<Layout title="Publications">
+  <GridCardLayout items={publications} heading={headings.data.publications} />
+</Layout>
