@@ -4,7 +4,7 @@ const { videoUrl, alt,desc,bg } = Astro.props;
 const noVideo = videoUrl === 'novideo';
 ---
 
-<div class=` ${ bg  ? bg : "bg-white"} rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 p-8 w-full md:max-w-[632px] `>
+<div class=` ${ bg  ? bg : "bg-white"} rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 md:p-8 p-4 w-full md:max-w-[632px] `>
   {noVideo ? (
     <div class="w-full h-full flex items-center justify-center bg-black text-white text-xl">
       No Testimony Found
