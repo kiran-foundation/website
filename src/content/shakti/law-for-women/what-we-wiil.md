@@ -6,7 +6,6 @@ messageCard:
     mentorImage: "/assets/images/current_student/astha-jain-hata.png"
     type: "send"
 
-
 image: "/assets/images/financial/financial-visual.png"
 response:
     mentor: Deepika
@@ -20,6 +19,6 @@ response:
       ,How to get free legal aid"
       ,"Maternity Benifits"
       ,"Rights for an equal share in inheritance and many more"
-    ]
-    
+    ]    
 ---
+

@@ -1,4 +1,5 @@
 ---
+
 title: What happens after the course
 messageCard:
   - type: send
@@ -18,4 +19,5 @@ messageCard:
     mentor: Astha
     message: That is AMAZING! Thank you Deepika!
   
+
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Course Details"
 messageCard:
+
   - mentor: "Astha"
     message: "How long is the course?"
     mentorImage: "/assets/images/current_student/astha-jain-hata.png"
@@ -12,5 +13,6 @@ messageCard:
     type: ""
 
 image: "/assets/images/law-for-women/calender.png"
+
 ---
 
