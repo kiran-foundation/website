@@ -3,7 +3,7 @@ title: "Make Decisions with Knowledge and Help Build  a Strong and Resilient Soc
 image: "/assets/images/financial/women-together-shakti.png"
 
 button:
-  - link: "/updates"
+  - link: "/shakti/workshop-schedule"
     title: "See New Upcoming Dates"
     btn: "btn1"
   - link: "/contact"

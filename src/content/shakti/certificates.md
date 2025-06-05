@@ -1,7 +1,7 @@
 ---
 title: "Learn for Free and Get Your Certificate"
 button:
-  - link: "/updates"
+  - link: "/shakti/workshop-schedule"
     title: "See New Upcoming Dates"
     btn: "btn1"
   - link: "/contact"
