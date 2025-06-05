@@ -1,13 +1,24 @@
 ---
 import { getEntry } from "astro:content";
 import MessageCard from "./MessageCard.astro";
-const data = await getEntry("shakti", "financial-skills/after-the-course");
+const { collection, slug } = Astro.props;
+const data = await getEntry(collection, slug) as {
+  data: {
+    title: string;
+    messageCard: {
+      type: string;
+      mentorImage: string;
+      mentor: string;
+      message: string;
+    }[];
+  };
+};
 const {title, messageCard }=  data.data;
 ---
 
 <div class="mx-auto max-w-[1260px] md:mt-40  mt-[80px]">
   <div class="flex gap-2 flex-col mx-4" >
-    <h3 class="heading-1 md:mb-32 mb-[32px]">{title}</h3>
+    {title && <h3 class="heading-1 md:mb-32 mb-[32px]">{title}</h3>}
     <div class="lg:w-[1056px] mx-auto">
       { messageCard.map((message,index) => (
          <div class=`${index% 2 == 0 ? "justify-end flex" : ""}`>

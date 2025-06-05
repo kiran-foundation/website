@@ -1,9 +1,17 @@
 ---
 import Heading from "./Heading.astro";
 import { getEntry } from "astro:content";
-const  mentorsdata  = (
-  await getEntry("shakti", "financial-skills/mentors")
-);
+const { collection, slug } = Astro.props;
+const  mentorsdata  = await getEntry(collection, slug) as {
+  data: {
+    title: string;
+    mentors: {
+      image: string;
+      title: string;
+      quote: string;
+    }[];
+  };
+};
 const {title,mentors} = mentorsdata.data;
 ---
 
