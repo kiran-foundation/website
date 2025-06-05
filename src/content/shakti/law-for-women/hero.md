@@ -1,5 +1,5 @@
 ---
-greenUnderline: "Laws and Rights"
+greenUnderline: "Law and Rights"
 greenUnderlineSvg: "/assets/svg/green-line-under-text-volunteer.svg"
 heading: 'for Women' 
 heading2: ''
