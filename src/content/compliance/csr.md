@@ -1,6 +1,6 @@
 ---
-title: CSR
-author: Kiran Foundation Annual Report
+title: CSR Registrations
+author: Registrations for undertaking CSR activities.
 fileType: pdf
 file: /assets/compliance/csr.pdf
 ---
