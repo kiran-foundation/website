@@ -1,59 +1,34 @@
 ---
-import { getEntry } from 'astro:content'
-const statisticsData = (await getEntry('donation', 'statistics')).data
+import { getEntry } from "astro:content";
+const statisticsData = (await getEntry("donation", "statistics")).data;
+import Button from "../common/button.astro";
 ---
 
-<section
-  class='bg-secondary position-relative py-4 py-md-5'
-  style=' background-color: #051D40 !important; '
->
-  <div class='container position-relative'>
-    <div
-      class='d-flex justify-content-evenly align-items-center d-sm-flex-col flex-wrap'
-    >
-      <div class='' style=''>
-        <div class='statistics-container py-1 my-lg-2 my-xl-3'>
-          <div class='statistics-container-data text-light display-4 mb-1'>
-            {statisticsData.stat1.data}
-          </div>
-          <p class='statistics-title-p fs-xl mb-0 text-light'>
-            {statisticsData.stat1.title}
-          </p>
-        </div>
+<div class="bg-[#F1F1F1] py-20 md:py-40 lg:py-[264px] flex justify-center items-center my-16 md:my-24 lg:my-[120px] px-4">
+  <section class="w-full max-w-[1296px]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      
+      <!-- Left Text -->
+      <div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6 font-merriweather text-webBlack">
+          Worth Beyond Wealth
+        </h2>
+        <p class="text-base sm:text-lg font-poppins text-[#49494C] mb-12 leading-7 sm:leading-8">
+          No one should feel shame for their circumstances. Our students are
+          exceptional and strive to make a difference, your support will help us
+          grow.
+        </p>
+        <Button link="" title="Donate" btn="btn1" />
       </div>
-      <div class=''>
-        <div class='statistics-container py-1 ps-xl-4 my-lg-2 my-xl-3'>
-          <div class='statistics-container-data text-light display-4 mb-1'>
-            {statisticsData.stat2.data}
-          </div>
-          <p
-            class='statistics-title-p fs-xl mb-0 text-light'
-            style='width: 225px;'
-          >
-            {statisticsData.stat2.title}
-          </p>
-        </div>
-      </div>
-      <div class='d-flex justify-content-md-end'>
-        <div class='py-1 my-lg-2 my-xl-3'>
-          <div class='text-light display-4 mb-1 text-center'>
-            {statisticsData.stat3.data}
-          </div>
-          <p class='statistics-title-p fs-xl mb-0 text-light'>
-            {statisticsData.stat3.title}
-          </p>
-        </div>
-      </div>
-      <div class='d-flex justify-content-md-end'>
-        <div class='py-1 pe-xl-4 my-lg-2 my-xl-3'>
-          <div class='text-light display-4 mb-1 text-center'>
-            {statisticsData.stat4.data}
-          </div>
-          <p class='statistics-title-p fs-xl mb-0 text-light'>
-            {statisticsData.stat4.title}
-          </p>
-        </div>
+      
+      <!-- Right Image Grid -->
+      <div class="flex justify-center md:justify-end">
+        <img
+          src="/assets/images/donation/donation2.png"
+          alt="Certificate presentation"
+          class="rounded-lg object-cover w-full max-w-[400px] sm:max-w-[500px] md:max-w-[572px] h-auto"
+        />
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

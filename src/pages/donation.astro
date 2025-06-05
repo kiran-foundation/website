@@ -3,10 +3,11 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/donation/Hero.astro'
 import Membership from '../components/donation/Membership.astro'
 import Statistics from '../components/donation/Statistics.astro'
-import Faq from '../components/donation/Faq.astro'
+import Faq from '../components/common/Faq.astro'
 import Card from '../components/donation/Card.astro'
 import TestimonialsCarousel from '../components/common/TestimonialsCarousel.astro'
 import DonationMatter from '../components/donation/DonationMatter.astro'
+
 ---
 
 <script src='/assets/js/theme.min.js' is:inline></script>
@@ -24,12 +25,12 @@ import DonationMatter from '../components/donation/DonationMatter.astro'
   <!-- Page wrapper -->
   <main class='page-wrapper' style='overflow-x: hidden;'>
     <Hero />
-    <Membership />
-    <Statistics />
     <DonationMatter />
     <TestimonialsCarousel pageTag='home' />
-    <Card />
-    <Faq />
+    <Membership />
+    <Statistics />
+    <!-- <Card /> -->
+    <Faq collection="pratibha" slug="faq" />
   </main>
 
   <!-- Back to top button -->
