@@ -1,6 +1,6 @@
 ---
 title: NGO Darpan
-author: Kiran Foundation Annual Report
+author: NGO Darpan Registration
 fileType: pdf
 file: /assets/compliance/ngo-darpan.pdf
 ---
