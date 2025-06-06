@@ -1,0 +1,117 @@
+---
+import { getEntry } from "astro:content";
+const info = (await getEntry("support-us", "supportmatter")).data;
+---
+
+<div
+  class="flex justify-center items-center my-[10px] md:my-[15px] lg:mt-[20px] lg:mb-[30px] px-4"
+>
+  <section class="bg-white w-full max-w-[1296px]">
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6 xl:gap-0 items-center"
+    >
+      <!-- Left Text -->
+      <div>
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-8 font-merriweather text-webBlack"
+        >
+          {info.title}
+        </h2>
+        <p
+          class="text-base sm:text-lg leading-relaxed font-poppins text-[#49494C]"
+        >
+         {info.description}
+        </p>
+      </div>
+
+      <!-- Right Image -->
+      <div class="flex justify-center md:justify-end mt-5 xl:mt-0">
+        <img
+          src={info.img}
+          alt="Certificate presentation"
+          class="rounded-2xl object-cover w-full max-w-[400px] sm:max-w-[500px] md:max-w-[572px] h-auto"
+        />
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- <section class="container py-5 pb-5 mb-lg-3 mb-xl-4 mb-xxl-5">
+  <div class="row pb-sm-2 w-100 pb-md-3 pb-lg-4 mt-3 d-flex justify-content-center" 
+    style="gap:10px; margin-left: 0.3rem">
+
+
+    <section class="overflow-hidden" style="margin-top: 5rem;">
+      <div class="container pb-sm-3 mb-md-2 mb-lg-3">
+        <div class="row g-4">
+          <div
+            class="col-md-6"
+            data-aos="fade-right"
+            data-aos-duration="600"
+            data-aos-offset="280"
+            data-disable-parallax-down="md"
+          >
+            <img
+              class="object-fit-cover w-100 h-100 rounded-3"
+              src={cardData.img}
+              alt="Image"
+            />
+          </div>
+          <div
+            class="col-md-6"
+            data-aos="fade-left"
+            data-aos-duration="600"
+            data-aos-offset="280"
+            data-disable-parallax-down="md"
+          >
+            <div
+              class="d-flex flex-column h-100 bg-secondary rounded-3 py-5 px-4 px-lg-5"
+            >
+              {
+                cardData.description
+              }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row pb-sm-2 w-100 pb-md-3 pb-lg-4 mt-3 d-flex justify-content-center" style="gap:10px; margin-left: 0.3rem">
+      <div class="benefits-container-bg col-sm-6 col-lg-4" style="width: 355px;">
+        <div class="d-flex align-items-center mb-2">
+          <div class="flex-shrink-0 rounded-1 p-2" style="margin-left: -15px;">
+            <img src={cardData.point1.img} alt={cardData.point1.heading} />
+          </div>
+          <h3 class="benefits-title-h3 h5 mb-0">{cardData.point1.heading}</h3>
+        </div>
+        <p class="benefits-content-container-p2 fs-sm" style="word-wrap: break-word;">
+          {cardData.point1.desc}
+        </p>
+      </div>
+      <div class="benefits-container-bg col-sm-6 col-lg-4" style="width: 355px;">
+        <div class="d-flex align-items-center mb-2">
+          <div class="flex-shrink-0 rounded-1 p-2" style="margin-left:-15px;">
+            <img src={cardData.point2.img} alt={cardData.point2.heading} />
+          </div>
+          <h3 class="benefits-title-h3 h5 mb-0">{cardData.point2.heading}</h3>
+        </div>
+        <p class="benefits-content-container-p3 fs-sm" style="word-wrap: break-word;">
+          {cardData.point2.desc}
+        </p>
+      </div>
+      <div class="benefits-container-bg col-sm-6 col-lg-4" style="width: 355px;">
+        <div class="d-flex align-items-center mb-2">
+          <div class="flex-shrink-0 rounded-1 p-2" style="margin-left:-15px;">
+            <img src={cardData.point3.img} alt={cardData.point3.heading} />
+          </div>
+          <h3 class="benefits-title-h3 h5 mb-0">{cardData.point3.heading}</h3>
+        </div>
+        <p class="benefits-content-container-p3 fs-sm" style="word-wrap: break-word;">
+          {cardData.point3.desc}
+        </p>
+      </div>
+    </section>
+
+  </div>
+</section> -->

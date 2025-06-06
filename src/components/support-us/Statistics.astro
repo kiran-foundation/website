@@ -1,0 +1,32 @@
+---
+import { getEntry } from "astro:content";
+const info = (await getEntry("support-us", "statistics")).data;
+import Button from "../common/button.astro";
+---
+
+<div class="bg-[#F1F1F1] py-20 md:py-40 lg:py-[264px] flex justify-center items-center my-16 md:my-24 lg:my-[120px] px-4">
+  <section class="w-full max-w-[1296px]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      
+      <!-- Left Text -->
+      <div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6 font-merriweather text-webBlack">
+          {info.title}
+        </h2>
+        <p class="text-base sm:text-lg font-poppins text-[#49494C] mb-12 leading-7 sm:leading-8">
+          {info.paragraph}
+        </p>
+        <Button link="" title="Donate" btn="btn1" />
+      </div>
+      
+      <!-- Right Image Grid -->
+      <div class="flex justify-center md:justify-end">
+        <img
+          src={info.img}
+          alt="Certificate presentation"
+          class="rounded-lg object-cover w-full max-w-[400px] sm:max-w-[500px] md:max-w-[572px] h-auto"
+        />
+      </div>
+    </div>
+  </section>
+</div>
