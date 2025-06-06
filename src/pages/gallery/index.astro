@@ -10,7 +10,7 @@ const headings = await getEntry("common", "headings");
 ---
 
 <Layout title="Gallery">
-  <div style="padding-top: 120px;">
+  <div class="my-[120px]">
     <!-- <Gallery /> -->
     <div class="text-center">
       <h1 class="text-5xl font-bold heading-1 mb-5">{headings.data.gallery}</h1>
@@ -30,12 +30,12 @@ const headings = await getEntry("common", "headings");
               class="rounded-lg transition-all group-hover:shadow-lg group-hover:opacity-90"
               loading="lazy"
             />
-            <div class="mt-2 text-center text-neutral-800 body-text-1">
-              <h2 class="body-text-1  font-bold">{item.data.title}</h2>
+            <div class="mt-3 text-center text-neutral-800 body-text-1">
+              <h2 class="heading-3 font-semibold text-[20px] ">{item.data.title}</h2>
 
-              <p class="text-sm -mt-2 mb-1 leading-tight font-normal">({item.data.date})</p>
+              <p class="text-[18px] mt-1 mb-1 leading-tight font-normal">({item.data.date})</p>
 
-              <p class="text-xs">{item.data.description}</p>
+              {/* <p class="text-[18px]">{item.data.description}</p> */}
             </div>
           </a>
         ))
