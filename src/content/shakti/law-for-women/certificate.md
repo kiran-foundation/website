@@ -1,6 +1,5 @@
 ---
 
-
 image: "/assets/images/law-for-women/law-for-women-certificate.png"
 
 title: "Learn for Free and Get Your Certificate"

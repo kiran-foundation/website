@@ -19,5 +19,4 @@ messageCard:
     mentor: Astha
     message: That is AMAZING! Thank you Deepika!
   
-
 ---
