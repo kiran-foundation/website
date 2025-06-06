@@ -1,151 +1,59 @@
 ---
 import { getEntry } from "astro:content";
+import Button from "../common/button.astro";
 const comingSoonData = (await getEntry("common", "coming-soon")).data;
 ---
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const countdownElement = document.querySelector(".countdown");
-    const targetDate = new Date(
-      countdownElement.getAttribute("data-countdown-date")
-    ).getTime();
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const timeLeft = targetDate - now;
+  
 
-      if (timeLeft <= 0) {
-        clearInterval(interval);
-        document
-          .querySelectorAll(
-            "[data-days], [data-hours], [data-minutes], [data-seconds]"
-          )
-          .forEach((el) => (el.textContent = "00"));
-        return;
-      }
+    <!-- Page wrapper -->
+    <main class="page-wrapper mt-20 mx-auto py-10">
+      <div class="d-lg-flex position-relative h-100 ">
 
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        <!-- Logo visible on screens < 992px -->
+      
 
-      document.querySelector("[data-days]").textContent = String(days).padStart(
-        2,
-        "0"
-      );
-      document.querySelector("[data-hours]").textContent = String(
-        hours
-      ).padStart(2, "0");
-      document.querySelector("[data-minutes]").textContent = String(
-        minutes
-      ).padStart(2, "0");
-      document.querySelector("[data-seconds]").textContent = String(
-        seconds
-      ).padStart(2, "0");
-    }
+        <!-- Parallax gfx -->
+        <div class="w-sm-75 w-lg-100 p-4 overflow-hidden mx-auto mx-lg-0 order-lg-2" style="max-width: 1047px;">
+          <div class="p-sm-3 h-100">
+            <div class="position-relative h-100">
+             <img src="/assets/images/pratibha/pratibha-visual-4.webp" alt="Girl">
 
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-  });
-</script>
-
-<!-- Page wrapper -->
-<main class="page-wrapper py-5">
-  <div
-    class="container d-flex flex-column justify-content-center align-items-center h-100 text-center pb-2 py-sm-3 py-md-4 py-lg-5"
-  >
-    <h1 class="display-2 text-primary">{comingSoonData.title}</h1>
-    <p class="fs-xl mx-auto mb-5" style="max-width: 680px;">
-      {comingSoonData.p}
-    </p>
-
-    <!-- Countdown -->
-    <div
-      class="countdown flex flex-wrap justify-content-center mb-5"
-      data-countdown-date="08/01/2025 12:00:00"
-    >
-      <div class="text-center mb-2">
-        <div class="position-relative p-2">
-          <span
-            class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-1 d-dark-mode-none"
-          ></span>
-          <span
-            class="position-absolute top-0 start-0 w-100 h-100 bg-secondary rounded-1 d-none d-dark-mode-block"
-          ></span>
-          <div class="h3 fw-medium position-relative z-1 mb-0 mx-1" data-days>
+            </div>
           </div>
         </div>
-        <span class="fs-sm">{comingSoonData.days}</span>
-      </div>
-      <span class="blinking text-body-secondary fs-2 mx-2"
-        >{comingSoonData.colon}</span
-      >
-      <div class="text-center mb-2">
-        <div class="position-relative p-2">
-          <span
-            class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-1 d-dark-mode-none"
-          ></span>
-          <span
-            class="position-absolute top-0 start-0 w-100 h-100 bg-secondary rounded-1 d-none d-dark-mode-block"
-          ></span>
-          <div class="h3 fw-medium position-relative z-1 mb-0 mx-1" data-hours>
-          </div>
-        </div>
-        <span class="fs-sm">{comingSoonData.hours}</span>
-      </div>
-      <span class="blinking text-body-secondary fs-2 mx-2"
-        >{comingSoonData.colon}</span
-      >
-      <div class="text-center mb-2">
-        <div class="position-relative p-2">
-          <span
-            class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-1 d-dark-mode-none"
-          ></span>
-          <span
-            class="position-absolute top-0 start-0 w-100 h-100 bg-secondary rounded-1 d-none d-dark-mode-block"
-          ></span>
-          <div
-            class="h3 fw-medium position-relative z-1 mb-0 mx-1"
-            data-minutes
-          >
-          </div>
-        </div>
-        <span class="fs-sm">{comingSoonData.mins}</span>
-      </div>
-      <span class="blinking text-body-secondary fs-2 mx-2"
-        >{comingSoonData.colon}</span
-      >
-      <div class="text-center mb-2">
-        <div class="position-relative p-2">
-          <span
-            class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-1 d-dark-mode-none"
-          ></span>
-          <span
-            class="position-absolute top-0 start-0 w-100 h-100 bg-secondary rounded-1 d-none d-dark-mode-block"
-          ></span>
-          <div
-            class="h3 fw-medium position-relative z-1 mb-0 mx-1"
-            data-seconds
-          >
-          </div>
-        </div>
-        <span class="fs-sm">{comingSoonData.secs}</span>
-      </div>
-    </div>
 
-    <!-- Notification form -->
-    <form class="input-group mx-auto" style="max-width: 480px;">
-      <input
-        type="email"
-        class="form-control"
-        placeholder="Enter your email"
-        required
-      />
-      <button type="submit" class="btn btn-primary"
-        >{comingSoonData.notify}</button
-      >
-    </form>
-  </div>
-</main>
+
+        <!-- Page content -->
+        <div class="d-flex flex-column align-items-center  px-3 px-sm-4 px-xl-5 pt-lg-5 order-lg-1">
+
+          <!-- Text + Countdown + Form -->
+          <div class="w-100 text-center text-lg-start mt-auto pt-lg-5 pb-5" style="max-width: 420px;">
+            <h1 class="diskplay-3 mb-4 hero-title " >We are coming soon</h1>
+            <p class="fs-lg pb-3 mb-4 mb-xl-5 text-start body-text-3 !leading-normal text-[#49494C]">We can't wait to unveil what we've been working on, and we appreciate your patience. Thanks for being a part of our journey!</p>
+
+            <!-- Notification form -->
+            <form class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+              <Button widthClass="px-4 !rounded-lg"   link="#" title="Notify me" btn="btn1"   />
+            </form>
+          </div>
+
+          <!-- Social links -->
+          <!-- <div class="w-100 mt-auto pb-5" style="max-width: 420px;">
+            <div class="d-flex justify-content-center justify-content-lg-start gap-3">
+              <a class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle" href="#" aria-label="Facebook">
+                <i class="ai-facebook"></i>
+              </a>
+              <a class="btn btn-icon btn-sm btn-secondary btn-instagram rounded-circle" href="#" aria-label="Instagram">
+                <i class="ai-instagram"></i>
+              </a>
+              <a class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle" href="#" aria-label="LinkedIn">
+                <i class="ai-linkedin"></i>
+              </a>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </main>
