@@ -13,11 +13,13 @@ import { getMembershipCards } from "../../utils/membership";
 //   memberShipData.cardSixthData,
 // ];
 const cards = (await getMembershipCards()).map((c) => c.data);
+const info=await getEntry("support-us", "membership");
+// console.log(info)
 ---
 
 <section class="py-16 bg-white text-center">
   <h2 class="text-5xl font-merriweather font-normal text-webBlack mb-[120px]">
-    Membership & Sponsorship Options
+    {info.data.title}
   </h2>
 
   <div
@@ -56,7 +58,7 @@ const cards = (await getMembershipCards()).map((c) => c.data);
       link="/support-us/membership-options"
       title=" See More Options"
       btn="btn3"
-      widthClass=" w-full"
+      widthClass=" w-full md:w-auto"
     />
   </div>
 </section>
