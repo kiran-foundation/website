@@ -2,7 +2,7 @@
 import Button from "../components/common/button.astro";
 import Layout from "../layouts/Layout.astro";
 import { getEntry } from "astro:content";
-const pages404 = (await getEntry("pages", "404")).data;
+const text = (await getEntry("pages", "404")).data;
 ---
 
 
@@ -19,10 +19,10 @@ const pages404 = (await getEntry("pages", "404")).data;
     >
     </video>
     <div class="text-wrapper px-4 flex flex-col items-center justify-center mt-10 w-full h-fit">
-      <h1 class="heading-1 mt-10 text-center">Page Not Found</h1>
-    <h3 class="body-text-1 mb-6 text-center">The page you are looking for was moved, removed or might never existed.</h3>
-    <Button  link="/shakti/workshop-schedule"
-    title="See the Workshops Schedule"
+      <h1 class="heading-1 mt-10 text-center">{text.title}</h1>
+    <h3 class="body-text-1 mb-6 text-center">{text.description}</h3>
+    <Button  link="../"
+    title={text.link}
     btn="btn1"
     widthClass="w-[342px] sm:w-[200px] md:w-[315px]"
     heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
