@@ -1,0 +1,17 @@
+---
+import { getEntry } from "astro:content"
+const missionData = (await getEntry("donation","mission")).data
+---
+
+    <div class="container missionDonation-heading">{missionData.title}</div>
+    <div class="container missionDonation-container">
+        <img class="missionDonation-img" src={missionData.image} alt="Image">
+        <div class="missionDonation-text-box">
+           {missionData.description}
+        </div>
+    </div>
+    <div class="container missionDonation-container">
+        <div class="missionDonation-text-box-Second">
+           {missionData.descriptionSecond}
+        </div>
+    </div>

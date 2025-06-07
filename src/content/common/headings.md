@@ -6,4 +6,5 @@ workshop_schedule: "Workshop Schedule"
 gallery: "Gallery"
 publications: "Publications"
 compliance: "Compliance"
+membership: "Membership & Sponsorship Options"
 ---
