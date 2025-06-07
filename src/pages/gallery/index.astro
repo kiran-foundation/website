@@ -13,9 +13,12 @@ const headings = await getEntry("common", "headings");
   <div class="my-[120px]">
     <!-- <Gallery /> -->
     <div class="text-center">
-      <h1 class="text-5xl font-bold heading-1 mb-5">{headings.data.gallery}</h1>
+      <h1 class="text-5xl font-bold heading-1 z-10 mb-5 relative">{headings.data.gallery}
+        
+      </h1>
+      
     </div>
-    <div class="mx-auto container max-w-screen-sm grid grid-cols-2 gap-8">
+    <div class="mx-auto container max-w-screen-sm grid grid-col-1 md:grid-cols-2 lg:grid-col-3 gap-8">
       {
         albums.map((item) => (
           <a
