@@ -1,20 +1,32 @@
 ---
+import Button from "../components/common/button.astro";
 import Layout from "../layouts/Layout.astro";
 import { getEntry } from "astro:content";
 const pages404 = (await getEntry("pages", "404")).data;
 ---
 
-<link rel="stylesheet" href="/assets/css/404.css" />
-<script src="/js/404-handler.js" defer></script>
+
 
 <Layout title="404 - Kiran Foundation">
-  <main class="page-wrapper">
-    <div class="container-404">
-      <h1>{pages404.title}</h1>
-      <p>{pages404.subtitle}</p>
-      <p>
-        <a href="/">{pages404.link}</a>
-      </p>
+  <main class="flex flex-col items-center justify-center py-[120px]">
+    <video 
+      src="/assets/images/404.mp4" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      class="w-full max-w-[80vw] md:max-w-[70vw] lg:max-w-[60vw] mx-auto pointer-events-none"
+    >
+    </video>
+    <div class="text-wrapper px-4 flex flex-col items-center justify-center mt-10 w-full h-fit">
+      <h1 class="heading-1 mt-10">Page Not Found</h1>
+    <h3 class="body-text-1 mb-6">The page you are looking for was moved, removed or might never existed.</h3>
+    <Button  link="/shakti/workshop-schedule"
+    title="See the Workshops Schedule"
+    btn="btn1"
+    widthClass="w-[342px] sm:w-[200px] md:w-[315px]"
+    heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
+    className="mt-2"></Button>
     </div>
   </main>
 </Layout>
