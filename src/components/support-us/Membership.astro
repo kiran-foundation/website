@@ -3,18 +3,9 @@
 import { getEntry } from "astro:content";
 import Button from "../common/button.astro";
 import { getMembershipCards } from "../../utils/membership";
-// const memberShipData = (await getEntry("support-us", "membership")).data;
-// const cards = [
-//   memberShipData.cardOneData,
-//   memberShipData.cardSecondData,
-//   memberShipData.cardThirdData,
-//   memberShipData.cardFourthData,
-//   memberShipData.cardFifthData,
-//   memberShipData.cardSixthData,
-// ];
+
 const cards = (await getMembershipCards()).map((c) => c.data);
 const info = await getEntry("support-us", "membership");
-// console.log(info)
 ---
 
 <section class="py-16 bg-white text-center">
