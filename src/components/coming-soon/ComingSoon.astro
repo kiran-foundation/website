@@ -1,7 +1,9 @@
 ---
 import { getEntry } from "astro:content";
 import Button from "../common/button.astro";
-const comingSoonData = (await getEntry("common", "coming-soon")).data;
+const comingSoonData = await getEntry("common", "coming-soon");
+console.log(comingSoonData.data);
+const { title, description } = comingSoonData.data;
 ---
 
 
@@ -10,15 +12,10 @@ const comingSoonData = (await getEntry("common", "coming-soon")).data;
     <!-- Page wrapper -->
     <main class="page-wrapper mt-20 mx-auto py-10">
       <div class="d-lg-flex position-relative h-100 ">
-
-        <!-- Logo visible on screens < 992px -->
-      
-
-        <!-- Parallax gfx -->
         <div class="w-sm-75 w-lg-100 p-4 overflow-hidden mx-auto mx-lg-0 order-lg-2" style="max-width: 1047px;">
           <div class="p-sm-3 h-100">
             <div class="position-relative h-100">
-             <img src="/assets/images/pratibha/pratibha-visual-4.webp" alt="Girl">
+             <img src="/assets/images/pratibha/pratibha-visual-4.webp"  class="rounded-lg">
 
             </div>
           </div>
@@ -30,8 +27,8 @@ const comingSoonData = (await getEntry("common", "coming-soon")).data;
 
           <!-- Text + Countdown + Form -->
           <div class="w-100 text-center text-lg-start mt-auto pt-lg-5 pb-5" style="max-width: 420px;">
-            <h1 class="diskplay-3 mb-4 hero-title " >We are coming soon</h1>
-            <p class="fs-lg pb-3 mb-4 mb-xl-5 text-start body-text-3 !leading-normal text-[#49494C]">We can't wait to unveil what we've been working on, and we appreciate your patience. Thanks for being a part of our journey!</p>
+            <h1 class="diskplay-3 mb-4 hero-title " >{title}</h1>
+            <p class="fs-lg pb-3 mb-4 mb-xl-5 text-start body-text-3 !leading-normal text-[#49494C]">{description}</p>
 
             <!-- Notification form -->
             <form class="input-group">
@@ -40,20 +37,6 @@ const comingSoonData = (await getEntry("common", "coming-soon")).data;
             </form>
           </div>
 
-          <!-- Social links -->
-          <!-- <div class="w-100 mt-auto pb-5" style="max-width: 420px;">
-            <div class="d-flex justify-content-center justify-content-lg-start gap-3">
-              <a class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle" href="#" aria-label="Facebook">
-                <i class="ai-facebook"></i>
-              </a>
-              <a class="btn btn-icon btn-sm btn-secondary btn-instagram rounded-circle" href="#" aria-label="Instagram">
-                <i class="ai-instagram"></i>
-              </a>
-              <a class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle" href="#" aria-label="LinkedIn">
-                <i class="ai-linkedin"></i>
-              </a>
-            </div>
-          </div> -->
         </div>
       </div>
     </main>
