@@ -1,5 +1,4 @@
 ---
-const { path } = Astro.props;
 const redirectTo = "/work-with-us/opportunities/thank-you";
 
 import { getEntry } from "astro:content";
@@ -50,6 +49,3 @@ const componentForm = (await getEntry("work-with-us", "content/form")).data;
   </div>
 </section>
 
-<script>
-  import Internship from "../../../layouts/WorkwithusLayout.astro";
-</script>

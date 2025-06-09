@@ -7,5 +7,5 @@ image: "/assets/images/about/map.png"
 button: 
     type: "btn1"  # btn1 for primary, btn2 for secondary, btn3 for tertiary
     text: "Become a Volunteer"
-    path: ""
+    path: "/work-with-us"
 ---

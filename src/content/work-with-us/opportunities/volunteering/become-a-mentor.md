@@ -1,5 +1,5 @@
 ---
-title: "Kiran Pratibha Mentor(Remote)"
+title: "Kiran Pratibha Mentor (Remote)"
 quote: "Inspiring minds, shaping futures through mentorship."
 about: "We are seeking dedicated and accomplished mentors to guide and inspire talented students as they pursue their academic and personal goals. As a Mentor to Pratibha Students, you will play a crucial role in providing guidance, support, and valuable insights to help students reach their full potential."
 startDate: "Immediate"

@@ -5,7 +5,7 @@ image: "/assets/images/pratibha/pratibha-visual-4.webp"
 button: 
     - button: "Become a Volunteer" 
       type: "btn1"
-      path: "#"
+      path: "/work-with-us"
     - button: "Support Us"
       type: "btn3"
       path: "#"

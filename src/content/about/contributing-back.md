@@ -8,5 +8,5 @@ button:
 
     type: "btn3"  # btn1 for primary, btn2 for secondary, btn3 for tertiary
     text: "See our Fantastic Team"
-    path: "#"
+    path: "/who-we-are/team"
 ---

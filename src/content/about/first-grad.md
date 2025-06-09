@@ -6,5 +6,5 @@ image: "/assets/images/about/shreya1.png"
 button:
     button_type: "btn3"  # btn1 for primary, btn2 for secondary, btn3 for tertiary
     button_text: "Learn More about Pratibha"
-    button_path: "#"
+    button_path: "/pratibha"
 ---
