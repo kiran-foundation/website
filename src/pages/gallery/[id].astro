@@ -1,9 +1,13 @@
 ---
-import 'remixicon/fonts/remixicon.css'
+import "remixicon/fonts/remixicon.css";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { getAlbumImages } from "../../utils/albums";
 import ImageViewer from "../../components/common/ImageViewer.astro";
+import Button from "../../components/common/button.astro";
+import { getEntry } from "astro:content";
+
+const button = (await getEntry("pages", "gallery")).data;
 
 export async function getStaticPaths() {
   const albums = await getCollection("albums");
@@ -51,9 +55,13 @@ const images = await getAlbumImages(album.id);
     </div>
 
     <ImageViewer />
-
-    <p class="text-lg mb-4 text-center body-text-1 relative ">
-      <a href="/gallery/" class="text-neutral-400 text-4xl l hover:text-blue-800 rounded-full"><i class="ri-arrow-left-line"></i></a>
-    </p>
+    <span class="flex flex-col justify-center items-center px-[12px]">
+      <Button
+        link="/gallery/"
+        title={button.button}
+        btn="btn3"
+        widthClass=" w-full md:w-auto mb-[120px]"
+      />
+    </span>
   </div>
 </Layout>

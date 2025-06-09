@@ -1,0 +1,3 @@
+---
+button: "View other Gallery"
+---
