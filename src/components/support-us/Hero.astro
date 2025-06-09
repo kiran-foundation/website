@@ -40,7 +40,11 @@ const info = await getEntry("support-us", "hero");
             {info.data.makeADonation}
           </h1>
 
-          <form id="support-us-form" action="/support-form" method="get">
+          <form
+            id="support-us-form"
+            action="/support-us/support-form"
+            method="get"
+          >
             <!-- Donation Amount -->
             <div class="mb-4">
               <label
@@ -56,12 +60,17 @@ const info = await getEntry("support-us", "hero");
                         type="radio"
                         id={`amount-${amount}`}
                         name="donationAmount"
-                        value={amount} 
+                        value={amount}
                         class="!mr-4 !accent-orange scale-150"
                         checked={amount === 500}
                       />
-                      <label for={`amount-${amount}`} class="text-xl sm:text-2xl">
-                        {amount === "custom" ? "Custom donation" : `₹ ${amount}`}
+                      <label
+                        for={`amount-${amount}`}
+                        class="text-xl sm:text-2xl"
+                      >
+                        {amount === "custom"
+                          ? "Custom donation"
+                          : `₹ ${amount}`}
                       </label>
                     </div>
                   ))
@@ -84,11 +93,14 @@ const info = await getEntry("support-us", "hero");
                         type="radio"
                         id={freq.toLowerCase()}
                         name="donationFrequency"
-                        value={freq} 
+                        value={freq}
                         class="!mr-4 !accent-orange scale-150"
                         checked={freq === "Monthly"}
                       />
-                      <label for={freq.toLowerCase()} class="text-xl sm:text-2xl">
+                      <label
+                        for={freq.toLowerCase()}
+                        class="text-xl sm:text-2xl"
+                      >
                         {freq}
                       </label>
                     </div>
@@ -113,7 +125,7 @@ const info = await getEntry("support-us", "hero");
                 type="submit"
               /> -->
               <button
-               type="submit"
+                type="submit"
                 class={`font-poppins font-medium w-full md:w-fit  px-3 sm:px-5 md:px-6 py-2 sm:py-3 md:py-5 h-[60px]   text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E] `}
               >
                 <span class="mx-[12px]">
@@ -137,14 +149,22 @@ const info = await getEntry("support-us", "hero");
 
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("donationForm") as HTMLFormElement;
-    const planIdInput = document.getElementById("planIdInput") as HTMLInputElement;
-    const amountInput = document.getElementById("amountInput") as HTMLInputElement;
+    const planIdInput = document.getElementById(
+      "planIdInput"
+    ) as HTMLInputElement;
+    const amountInput = document.getElementById(
+      "amountInput"
+    ) as HTMLInputElement;
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      
-      const frequency = document.querySelector('input[name="donationFrequency"]:checked') as HTMLInputElement;
-      const selectedAmount = document.querySelector('input[name="donationAmount"]:checked') as HTMLInputElement;
+
+      const frequency = document.querySelector(
+        'input[name="donationFrequency"]:checked'
+      ) as HTMLInputElement;
+      const selectedAmount = document.querySelector(
+        'input[name="donationAmount"]:checked'
+      ) as HTMLInputElement;
 
       if (!frequency || !selectedAmount) {
         alert("Please select both frequency and amount");
@@ -158,18 +178,18 @@ const info = await getEntry("support-us", "hero");
         // Handle monthly donation
         amountInput.value = selectedAmount.value;
         planIdInput.value = monthlyPlans[selectedAmount.value] || "";
-        
+
         console.log("Monthly donation:", {
           amount: amountInput.value,
-          planId: planIdInput.value
+          planId: planIdInput.value,
         });
       } else {
         // Handle one-time donation
         amountInput.value = selectedAmount.value;
         planIdInput.value = "";
-        
+
         console.log("One-time donation:", {
-          amount: amountInput.value
+          amount: amountInput.value,
         });
       }
 
