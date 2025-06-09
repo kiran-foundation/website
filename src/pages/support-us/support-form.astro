@@ -16,8 +16,8 @@ import Layout from "../../layouts/Layout.astro";
           class="col-lg-8 custom-scroll"
           style="overflow: auto; height: 77vh;"
         >
-          <h1 class="h2 pb-4">Donor Information</h1>
-          <div class="row g-4 pb-4 pb-md-5 mb-3 mb-md-1">
+          <h1 class="heading-1 mb-4">Donor Information</h1>
+          <div class="row g-4 pb-4 pb-md-5 mb-3 mb-md-1 font-poppins">
             <div class="col-sm-6">
               <label class="form-label fs-base" for="name">Full Name</label>
               <input
@@ -105,7 +105,7 @@ import Layout from "../../layouts/Layout.astro";
         </div>
 
         <div
-          class="col pt-5"
+          class="col pt-5 font-poppins"
           style="min-width: 19rem; justify-content: center; align-items: center;"
         >
           <div
@@ -117,16 +117,21 @@ import Layout from "../../layouts/Layout.astro";
               class="card-body w-100 mx-auto text-center"
               style="max-width: 23rem; background-color:#feeeea; color:black"
             >
-              <h3 class="">Total Help</h3>
-              <div class="display-2" id="amountToDisplay">$72</div>
+              <h3 class="body-text-2 mb-0">Total Help</h3>
+              <div class="text-8xl my-4  font-semibold font-poppins" id="amountToDisplay">₹0</div>
               <div class="opacity-70 mb-4" id="toBeDisplay">per month</div>
-              <p class="opacity-70 mb-4 pb-4">
+              <p class="opacity-70 mb-4 pb-2">
                 Morbi et massa fames ac scelerisque sit commodo dignissim
                 aucibus
               </p>
-              <button class="btn text-light bg-primary w-100" type="button"
-                >Continue to Donate</button
-              >
+              <button
+              type="submit"
+              class="font-poppins font-medium w-full md:w-fit px-3 sm:px-5 md:px-6 py-2 sm:py-3 md:py-5 h-[60px] text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E]"
+            >
+              <span class="mx-[12px]">
+                Continue the Support
+              </span>
+            </button>
             </div>
           </div>
         </div>

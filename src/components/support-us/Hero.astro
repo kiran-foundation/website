@@ -7,9 +7,7 @@ const info = await getEntry("support-us", "hero");
 ---
 
 <Breadcrumb />
-<!-- Add responsive layout classes -->
 
-<!-- Wrapper: adjust height for mobile -->
 <div class="h-auto lg:h-[1200px] relative">
   <div class="bg-[#F1F1F1] pt-16">
     <div class="container max-w-[1296px] mb-6 px-4 sm:px-6">
@@ -27,7 +25,7 @@ const info = await getEntry("support-us", "hero");
         <div class="w-full lg:w-1/2 p-2 flex justify-center">
           <img
             src="/assets/images/programs/formimage.png"
-            alt=""
+            alt="Donation illustration"
             class="w-full max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[760px] max-w-full object-cover rounded"
           />
         </div>
@@ -63,6 +61,7 @@ const info = await getEntry("support-us", "hero");
                         value={amount}
                         class="!mr-4 !accent-orange scale-150"
                         checked={amount === 500}
+                        required
                       />
                       <label
                         for={`amount-${amount}`}
@@ -96,6 +95,7 @@ const info = await getEntry("support-us", "hero");
                         value={freq}
                         class="!mr-4 !accent-orange scale-150"
                         checked={freq === "Monthly"}
+                        required
                       />
                       <label
                         for={freq.toLowerCase()}
@@ -115,18 +115,10 @@ const info = await getEntry("support-us", "hero");
             </p>
 
             <!-- Button -->
-            <div class="flex justify-start px">
-              <!-- <Button
-                title="Support"
-                btn="btn1"
-                widthClass="w-[342px] sm:w-[180px]"
-                heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
-                className="mt-8"
-                type="submit"
-              /> -->
+            <div class="flex justify-start">
               <button
                 type="submit"
-                class={`font-poppins font-medium w-full md:w-fit  px-3 sm:px-5 md:px-6 py-2 sm:py-3 md:py-5 h-[60px]   text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E] `}
+                class="font-poppins font-medium w-full md:w-fit px-3 sm:px-5 md:px-6 py-2 sm:py-3 md:py-5 h-[60px] text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E]"
               >
                 <span class="mx-[12px]">
                   {info.data.button}
@@ -140,60 +132,3 @@ const info = await getEntry("support-us", "hero");
     <div class="absolute bottom-0 w-full h-96 bg-white"></div>
   </div>
 </div>
-<script>
-  const monthlyPlans = {
-    500: "plan_PFJa00kkaP1Tdb",
-    1000: "plan_PFJfPtteneZ7Tn",
-    5000: "plan_PFJfnMnXPs6TMS",
-  };
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("donationForm") as HTMLFormElement;
-    const planIdInput = document.getElementById(
-      "planIdInput"
-    ) as HTMLInputElement;
-    const amountInput = document.getElementById(
-      "amountInput"
-    ) as HTMLInputElement;
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const frequency = document.querySelector(
-        'input[name="donationFrequency"]:checked'
-      ) as HTMLInputElement;
-      const selectedAmount = document.querySelector(
-        'input[name="donationAmount"]:checked'
-      ) as HTMLInputElement;
-
-      if (!frequency || !selectedAmount) {
-        alert("Please select both frequency and amount");
-        return;
-      }
-
-      console.log("Frequency:", frequency.value);
-      console.log("Selected Amount:", selectedAmount.value);
-
-      if (frequency.value === "Monthly") {
-        // Handle monthly donation
-        amountInput.value = selectedAmount.value;
-        planIdInput.value = monthlyPlans[selectedAmount.value] || "";
-
-        console.log("Monthly donation:", {
-          amount: amountInput.value,
-          planId: planIdInput.value,
-        });
-      } else {
-        // Handle one-time donation
-        amountInput.value = selectedAmount.value;
-        planIdInput.value = "";
-
-        console.log("One-time donation:", {
-          amount: amountInput.value,
-        });
-      }
-
-      form.submit();
-    });
-  });
-</script>
