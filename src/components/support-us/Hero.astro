@@ -1,0 +1,125 @@
+---
+import { getEntry } from "astro:content";
+const componentheroData = (await getEntry("donation", "hero")).data;
+import Breadcrumb from "../common/Breadcrumb.astro";
+import Button from "../common/button.astro";
+const info = await getEntry("support-us", "hero");
+---
+
+<Breadcrumb />
+<!-- Add responsive layout classes -->
+
+<!-- Wrapper: adjust height for mobile -->
+<div class="h-auto lg:h-[1200px] relative">
+  <div class="bg-[#F1F1F1] pt-16">
+    <div class="container max-w-[1296px] mb-6 px-4 sm:px-6">
+      <h1
+        class="font-merriweather text-[32px] sm:text-[32px] md:text-[48px] lg:text-[64px] font-bold leading-snug sm:leading-[130%] lg:leading-[150%]"
+        set:html={info.data.title}
+      />
+    </div>
+
+    <div class="container max-w-[1296px] px-4 sm:px-6 mb-10 relative z-10">
+      <div
+        class="border shadow-lg bg-white p-4 rounded flex flex-col lg:flex-row gap-4 font-poppins"
+      >
+        <!-- Image Section -->
+        <div class="w-full lg:w-1/2 p-2 flex justify-center">
+          <img
+            src="/assets/images/programs/formimage.png"
+            alt=""
+            class="w-full max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[760px] max-w-full object-cover rounded"
+          />
+        </div>
+
+        <!-- Form Section -->
+        <div class="bg-white p-4 sm:p-6 rounded-xl w-full lg:w-1/2">
+          <h1
+            class="text-[24px] sm:text-[28px] lg:text-[32px] font-semibold text-webBlack mb-4"
+          >
+            {info.data.makeADonation}
+          </h1>
+
+          <form>
+            <!-- Donation Amount -->
+            <div class="mb-4">
+              <label
+                class="block font-semibold mb-2 text-[16px] sm:text-[18px] text-webBlack"
+              >
+                {info.data.amount}
+              </label>
+              <div class="space-y-3 text-gray-800">
+                {
+                  info.data.amounts.map((amount) => (
+                    <div class="flex items-center !mt-4">
+                      <input
+                        type="radio"
+                        id={`amount-${amount}`}
+                        name="donationAmount"
+                        value={amount}
+                        class="!mr-4 !accent-orange scale-150"
+                        checked={amount === 500}
+                      />
+                      <label
+                        for={`amount-${amount}`}
+                        class="text-xl sm:text-2xl"
+                      >
+                        {amount === "custom"
+                          ? "Custom donation"
+                          : `₹ ${amount}`}
+                      </label>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <!-- Donation Frequency -->
+            <div class="mb-8 font-poppins">
+              <label
+                class="block font-semibold mb-2 text-[16px] sm:text-[18px] text-webBlack"
+              >
+                {info.data.frequency}
+              </label>
+              <div class="space-y-3 text-gray-800">
+                {
+                  info.data.frequencies.map((freq) => (
+                    <div class="flex items-center !mt-4">
+                      <input
+                        type="radio"
+                        id="onetime"
+                        name="donationFrequency"
+                        value="onetime"
+                        class="!mr-4 !accent-orange scale-150"
+                      />
+                      <label for="onetime" class="text-xl sm:text-2xl">
+                        {freq}
+                      </label>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <!-- Paragraph -->
+            <p class="mb-4 text-[16px] sm:text-[18px] text-webBlack">
+              {info.data.paragraph}
+            </p>
+
+            <!-- Button -->
+            <div class="flex justify-start px">
+              <Button
+                title="Support"
+                btn="btn1"
+                widthClass="w-[342px] sm:w-[180px]"
+                heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
+                className="mt-8"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 w-full h-96 bg-white"></div>
+  </div>
+</div>

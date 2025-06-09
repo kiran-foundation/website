@@ -1,0 +1,53 @@
+---
+// Load content
+import { getEntry } from "astro:content";
+import Button from "../common/button.astro";
+import { getMembershipCards } from "../../utils/membership";
+
+const cards = (await getMembershipCards()).map((c) => c.data);
+const info = await getEntry("support-us", "membership");
+---
+
+<section class="py-16 bg-white text-center">
+  <h2 class="text-[24px] md:text-3xl lg:text-5xl font-merriweather font-normal text-webBlack mb-[30px] md:mb-[60px]">
+    {info.data.title}
+  </h2>
+
+  <div
+    class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
+  >
+    {
+      cards.slice(0, 6).map((card) => (
+        <div class="bg-[#F5F5F5] shadow-md rounded-2xl p-8 flex flex-col justify-between items-center text-center gap-4 h-[416px] w-full hover:shadow-lg transition-shadow duration-300 flex-shrink-0">
+          <div class="flex flex-col justify-center gap-4 flex-grow flex-shrink-0">
+            <h3 class="text-2xl font-semibold text-gray-800 min-h-[48px] flex items-center justify-center flex-shrink-0">
+              {card.heading ?? ""}
+            </h3>
+
+            <div class="min-h-[32px] text-5xl font-bold text-gray-900">
+              {card.amount ?? ""}
+            </div>
+
+            <div class="min-h-[20px] text-sm text-gray-600">
+              {card.permonth ?? ""}
+            </div>
+
+            <p class="text-sm text-gray-600 min-h-[64px] flex items-center justify-center text-center px-2">
+              {card.paragraph ?? ""}
+            </p>
+          </div>
+          <Button link="" title="Support Us" btn="btn1" widthClass="w-full" />
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="mt-10 flex justify-center items-center px-[24px]">
+    <Button
+      link="/support-us/membership-options"
+      title=" See More Options"
+      btn="btn3"
+      widthClass=" w-full md:w-auto"
+    />
+  </div>
+</section>

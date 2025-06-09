@@ -1,0 +1,37 @@
+---
+import { getEntry } from "astro:content";
+const info = (await getEntry("support-us", "supportmatter")).data;
+---
+
+<div
+  class="flex justify-center items-center my-[10px] md:my-[15px] lg:mt-[20px] lg:mb-[30px] px-4"
+>
+  <section class="bg-white w-full max-w-[1296px]">
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6 xl:gap-0 items-center"
+    >
+      <!-- Left Text -->
+      <div>
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-8 font-merriweather text-webBlack"
+        >
+          {info.title}
+        </h2>
+        <p
+          class="text-base sm:text-lg leading-relaxed font-poppins text-[#49494C]"
+        >
+          {info.description}
+        </p>
+      </div>
+
+      <!-- Right Image -->
+      <div class="flex justify-center md:justify-end mt-5 xl:mt-0">
+        <img
+          src={info.img}
+          alt="Certificate presentation"
+          class="rounded-2xl object-cover w-full max-w-[400px] sm:max-w-[500px] md:max-w-[572px] h-auto"
+        />
+      </div>
+    </div>
+  </section>
+</div>
