@@ -1,7 +1,7 @@
 ---
 title: "Kiran Pratibha 2023 Results Announced"
 
-date: 07-05-24
+date: 07-05-23
 
 content:
   - |
