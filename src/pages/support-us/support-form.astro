@@ -206,30 +206,34 @@ const info = (await getEntry("support-form", "form")).data;
     }
   }
   (document.getElementById("amountToDisplay") as HTMLDivElement).innerHTML =
-    "₹" + formatIndianNumber(donationAmount);
-    const amountDisplay = document.getElementById("amountToDisplay") as HTMLDivElement;
-const formattedAmount = formatIndianNumber(donationAmount);
-amountDisplay.innerHTML = `₹${formattedAmount}`;
+    "₹" + donationAmount;
+  const amountDisplay = document.getElementById(
+    "amountToDisplay"
+  ) as HTMLDivElement;
+  const formattedAmount = donationAmount;
+  amountDisplay.innerHTML = `₹${formattedAmount}`;
 
-// Add this to dynamically adjust text size if needed
-function adjustTextSize() {
-  const container = amountDisplay.parentElement;
-  if (!container) return;
+  // Add this to dynamically adjust text size if needed
+  function adjustTextSize() {
+    const container = amountDisplay.parentElement;
+    if (!container) return;
 
-  const containerWidth = container.offsetWidth;
-  const textWidth = amountDisplay.scrollWidth;
+    const containerWidth = container.offsetWidth;
+    const textWidth = amountDisplay.scrollWidth;
 
-  if (textWidth > containerWidth) {
-    const currentFontSize = parseFloat(window.getComputedStyle(amountDisplay).fontSize);
-    const newFontSize = (containerWidth / textWidth) * currentFontSize * 0.9; // 0.9 for some padding
-    amountDisplay.style.fontSize = `${newFontSize}px`;
+    if (textWidth > containerWidth) {
+      const currentFontSize = parseFloat(
+        window.getComputedStyle(amountDisplay).fontSize
+      );
+      const newFontSize = (containerWidth / textWidth) * currentFontSize * 0.9; // 0.9 for some padding
+      amountDisplay.style.fontSize = `${newFontSize}px`;
+    }
   }
-}
 
-// Call on load and resize
-window.addEventListener('load', adjustTextSize);
-window.addEventListener('resize', adjustTextSize);
-    
+  // Call on load and resize
+  window.addEventListener("load", adjustTextSize);
+  window.addEventListener("resize", adjustTextSize);
+
   if (
     paymentType === "onetime" ||
     paymentType === "One Time" ||
@@ -414,3 +418,159 @@ window.addEventListener('resize', adjustTextSize);
       initiatePayment();
     });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("donation-form");
+    const donateButton = document.getElementById("donate-now-button");
+    (donateButton as HTMLInputElement).disabled = true;
+
+    // Form field validation configuration
+    const formFieldConfig = {
+      name: {
+        validate: (value) => /^[a-zA-Z\s]+$/.test(value),
+        errorText: "Please enter your full name (letters only)",
+        emptyText: "Please enter your name",
+      },
+      email: {
+        validate: (value) =>
+          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value),
+        errorText: "Invalid email format (e.g., name@domain.com)",
+        emptyText: "Please enter your email",
+      },
+      phone: {
+        validate: (value) =>
+          /^\+?[1-9][0-9]{7,14}$/.test(value.replace(/[\s\-()]/g, "")),
+        errorText: "8-15 digits with optional '+' prefix",
+        emptyText: "Please enter your phone number",
+      },
+      country: {
+        validate: (value) => value.trim().length > 0,
+        errorText: "Please select a country",
+        emptyText: "Please select a country",
+      },
+      address: {
+        validate: (value) => value.trim().length > 0,
+        errorText: "Please enter your address",
+        emptyText: "Please enter your address",
+      },
+      city: {
+        validate: (value) => value.trim().length > 0,
+        errorText: "Please enter your city",
+        emptyText: "Please enter your city",
+      },
+      zipcode: {
+        validate: (value) => /^\d{6}$/.test(value),
+        errorText: "6-digit pin code required",
+        emptyText: "Please enter your pin code",
+      },
+    };
+
+    // Validate entire form
+    const validateEntireForm = () => {
+      const allValid = Object.entries(formFieldConfig).every(
+        ([fieldId, { validate }]) => {
+          const fieldValue =
+            (
+              document.getElementById(fieldId) as HTMLInputElement
+            )?.value.trim() || "";
+          return validate(fieldValue);
+        }
+      );
+      (donateButton as HTMLInputElement).disabled = !allValid;
+    };
+
+    // Validate individual field on blur
+    const validateFieldOnBlur = (fieldId) => {
+      const inputElement = document.getElementById(fieldId);
+      if (!inputElement) return;
+
+      const fieldValue = (inputElement as HTMLInputElement).value.trim();
+      const { validate, errorText, emptyText } = formFieldConfig[fieldId];
+
+      if (!fieldValue) {
+        showFieldError(fieldId, emptyText);
+      } else if (!validate(fieldValue)) {
+        showFieldError(fieldId, errorText);
+      }
+    };
+
+    // Set up event listeners for all fields
+    const setupFieldEventListeners = () => {
+      Object.keys(formFieldConfig).forEach((fieldId) => {
+        const inputElement = document.getElementById(fieldId);
+        if (!inputElement) return;
+
+        inputElement.addEventListener("input", () => {
+          validateEntireForm();
+          clearFieldError(fieldId);
+        });
+
+        inputElement.addEventListener("blur", () => {
+          validateFieldOnBlur(fieldId);
+        });
+      });
+    };
+
+    // Show field error message
+    const showFieldError = (fieldId, message) => {
+      const inputElement = document.getElementById(fieldId);
+      if (!inputElement) return;
+
+      inputElement.classList.add("error");
+      inputElement.style.borderColor = "#D33C0D";
+
+      const existingErrorElement = inputElement.nextElementSibling;
+      if (existingErrorElement?.classList.contains("form-error")) {
+        existingErrorElement.textContent = message;
+      } else {
+        const errorElement = document.createElement("div");
+        errorElement.className = "form-error text-[#D33C0D] text-sm mt-1";
+        errorElement.textContent = message;
+        inputElement.parentNode?.insertBefore(
+          errorElement,
+          inputElement.nextSibling
+        );
+      }
+    };
+
+    // Clear field error
+    const clearFieldError = (fieldId) => {
+      const inputElement = document.getElementById(fieldId);
+      if (!inputElement) return;
+
+      inputElement.classList.remove("error");
+      inputElement.style.borderColor = "";
+
+      const existingErrorElement = inputElement.nextElementSibling;
+      if (existingErrorElement?.classList.contains("form-error")) {
+        existingErrorElement.remove();
+      }
+    };
+
+    // Initialize form validation
+    setupFieldEventListeners();
+    validateEntireForm();
+
+    // Rest of your existing payment initiation code...
+    // (Keep all the existing Razorpay payment logic here)
+  });
+</script>
+<style>
+  /* Add these styles to your CSS */
+  .error {
+    border-color: #d33c0d !important;
+  }
+
+  .form-error {
+    color: #d33c0d;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  [type="tel"].error,
+  [type="text"].error,
+  [type="email"].error,
+  textarea.error {
+    border: 1px solid #d33c0d;
+  }
+</style>
