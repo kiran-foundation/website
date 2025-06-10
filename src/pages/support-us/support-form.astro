@@ -187,15 +187,18 @@ const info = (await getEntry("support-form", "form")).data;
   const urlParams = new URLSearchParams(window.location.search);
   const donationAmount =
     Number(urlParams.get("donationAmount")) ||
-    Number(urlParams.get("customAmount")) ||
     Number(urlParams.get("amount")) ||
     0;
-  const paymentType = String(urlParams.get("donationFrequency")) || "onetime";
+  const paymentType = String(urlParams.get("frequency")) || "onetime";
   const plan_id = String(urlParams.get("plan_id"));
 
   (document.getElementById("amountToDisplay") as HTMLDivElement).innerHTML =
     "₹" + donationAmount;
-  if (paymentType === "onetime" || paymentType === "One Time") {
+  if (
+    paymentType === "onetime" ||
+    paymentType === "One Time" ||
+    paymentType === "one time"
+  ) {
     (document.getElementById("toBeDisplay") as HTMLDivElement).innerHTML =
       "One Time";
   } else if (paymentType.toLowerCase() === "monthly") {

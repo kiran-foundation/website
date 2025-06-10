@@ -52,7 +52,7 @@ const info = await getEntry("support-us", "hero");
               </label>
               <div class="space-y-3 text-gray-800">
                 {
-                  info.data.amounts.map((amount) => (
+                  info.data.amounts.map((amount,i) => (
                     <div class="flex items-center !mt-4">
                       <input
                         type="radio"
@@ -101,13 +101,13 @@ const info = await getEntry("support-us", "hero");
               </label>
               <div class="space-y-3 text-gray-800">
                 {
-                  info.data.frequencies.map((freq) => (
+                  info.data.frequencies.map((freq,i) => (
                     <div class="flex items-center !mt-4">
                       <input
                         type="radio"
                         id={freq.toLowerCase()}
                         name="donationFrequency"
-                        value={freq}
+                        value={info.data.freqValue[i]}
                         data-frequency={freq}
                         class="!mr-4 !accent-orange scale-150"
                         checked={freq === "Monthly"}
