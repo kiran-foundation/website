@@ -1,7 +1,7 @@
 ---
 title: "Essential Financial for Women"
 
-date: 30.06.2023
+date: 06-30-23
 
 content:
   - |
