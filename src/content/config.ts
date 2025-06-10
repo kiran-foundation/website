@@ -36,9 +36,9 @@ const membershipCards = defineCollection({
     amount: z.string().optional(),
     paragraph: z.string(),
     permonth: z.string().optional(),
-    
   }),
 });
+
 export const collections = {
   albums,
   publications,
