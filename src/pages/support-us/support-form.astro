@@ -13,12 +13,12 @@ const info = (await getEntry("support-form", "form")).data;
     <form
       id="donation-form"
       class="needs-validation container position-relative z-2 pt-5 pb-lg-5 pb-md-4 pb-2
-      [&_input]:w-full [&_input]:h-[52px] [&_input]:px-4 
-    [&_input]:rounded-lg [&_input]:border [&_input]:border-gray-200 
+      [&_input]:w-full [&_input]:h-[52px] [&_input]:px-4
+    [&_input]:rounded-lg [&_input]:border [&_input]:border-gray-200
     [&_input]:focus:outline-none [&_input]:focus:border-gray-300
     
-    [&_textarea]:w-full [&_textarea]:px-4 [&_textarea]:py-3 
-    [&_textarea]:rounded-lg [&_textarea]:border [&_textarea]:border-gray-200 
+    [&_textarea]:w-full [&_textarea]:px-4 [&_textarea]:py-3
+    [&_textarea]:rounded-lg [&_textarea]:border [&_textarea]:border-gray-200
     [&_textarea]:focus:outline-none [&_textarea]:focus:border-gray-300"
       novalidate
     >
@@ -72,10 +72,10 @@ const info = (await getEntry("support-form", "form")).data;
               <input
                 class="form-control form-control-lg"
                 type="text"
-                placeholder={info.country.placeholder}
+                placeholder={info.country.value}
                 required
                 id="country"
-                value={info.country.placeholder}
+                value={info.country.value}
                 readonly
               />
             </div>
@@ -180,7 +180,6 @@ const info = (await getEntry("support-form", "form")).data;
     </form>
   </section>
 </Layout>
- 
 
 <script>
   declare var Razorpay: any;
