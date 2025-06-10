@@ -36,7 +36,7 @@ const info = await getEntry("support-us", "membership");
               {card.paragraph ?? ""}
             </p>
           </div>
-          <Button link="" title="Support Us" btn="btn1" widthClass="w-full" />
+          <Button link={card.url} title="Support Us" btn="btn1" widthClass="w-full" />
         </div>
       ))
     }

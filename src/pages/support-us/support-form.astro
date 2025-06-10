@@ -191,9 +191,45 @@ const info = (await getEntry("support-form", "form")).data;
     0;
   const paymentType = String(urlParams.get("frequency")) || "onetime";
   const plan_id = String(urlParams.get("plan_id"));
-
+  function formatIndianNumber(number: number): string {
+    if (number >= 10000000) {
+      // For crores
+      return (number / 10000000).toFixed(2) + " Crore";
+    } else if (number >= 100000) {
+      // For lakhs
+      return (number / 100000).toFixed(2) + " Lakh";
+    } else if (number >= 1000) {
+      // For thousands
+      return (number / 1000).toFixed(2) + " Thousand";
+    } else {
+      return number.toString();
+    }
+  }
   (document.getElementById("amountToDisplay") as HTMLDivElement).innerHTML =
-    "₹" + donationAmount;
+    "₹" + formatIndianNumber(donationAmount);
+    const amountDisplay = document.getElementById("amountToDisplay") as HTMLDivElement;
+const formattedAmount = formatIndianNumber(donationAmount);
+amountDisplay.innerHTML = `₹${formattedAmount}`;
+
+// Add this to dynamically adjust text size if needed
+function adjustTextSize() {
+  const container = amountDisplay.parentElement;
+  if (!container) return;
+
+  const containerWidth = container.offsetWidth;
+  const textWidth = amountDisplay.scrollWidth;
+
+  if (textWidth > containerWidth) {
+    const currentFontSize = parseFloat(window.getComputedStyle(amountDisplay).fontSize);
+    const newFontSize = (containerWidth / textWidth) * currentFontSize * 0.9; // 0.9 for some padding
+    amountDisplay.style.fontSize = `${newFontSize}px`;
+  }
+}
+
+// Call on load and resize
+window.addEventListener('load', adjustTextSize);
+window.addEventListener('resize', adjustTextSize);
+    
   if (
     paymentType === "onetime" ||
     paymentType === "One Time" ||
