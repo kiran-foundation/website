@@ -5,7 +5,7 @@ const info = (await getEntry("support-form", "conformation")).data;
 ---
 
 <Layout>
-  <div class="max-w-[50rem] mx-auto pt-[8rem] overflow-hidden pb-[500px]">
+  <div class="max-w-full mx-auto pt-[8rem] overflow-hidden pb-[500px]">
     <h1
       class="tracking-normal text-center heading-1 font-[600] text-[1.5rem] md:text-[2rem] leading-[140%]"
       set:html={info.amount}
