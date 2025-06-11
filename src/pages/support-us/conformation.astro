@@ -9,24 +9,20 @@ const info = (await getEntry("support-form", "conformation")).data;
     <h1
       class="tracking-normal text-center heading-1 font-[600] text-[1.5rem] md:text-[2rem] leading-[140%]"
       set:html={info.amount}
-    >
-      
-    </h1>
-    <h3 class="body-text-1 text-center pt-5" set:html={info.id}>
-      
-    </h3>
+    />
+    <h3 class="body-text-1 text-center pt-5" set:html={info.id} />
     <script
       src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"
       type="module"></script>
 
     <lottie-player
-      src={"/assets/json/animation-mail-send.json" ||
-        "/assets/animations/fallback.json"}
+      src={info.animation || "/assets/animations/fallback.json"}
       background="transparent"
       speed="1"
       style="width: 25rem; height: 25rem; overflow: hidden; margin: auto;"
       direction="1"
       playMode="normal"
+      loop
       autoplay
       id="lottie-player"
     >
