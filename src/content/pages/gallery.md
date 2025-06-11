@@ -1,3 +1,3 @@
 ---
-button: "View other Gallery"
+button: "Back to Gallery"
 ---
