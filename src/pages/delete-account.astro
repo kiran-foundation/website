@@ -40,7 +40,7 @@ const info = (await getEntry("pages", "delete-account")).data;
           </li>
 
           <li style="margin-top: 1.5em;">
-            <strong>Option 2:</strong> Contact us via email:<br />
+            <strong>{info.option2}</strong>{info.contact}<br />
             📧 <a href="mailto:support@kiran.foundation" style="color: #4285f4;"
               >{info.email}</a
             >

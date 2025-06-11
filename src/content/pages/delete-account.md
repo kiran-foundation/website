@@ -7,4 +7,6 @@ button: "Submit Request via Google Form"
 options: "<br/> <strong>Option 1:</strong> Fill out the account deletion request form:<br/>"
 email: "support@kiran.foundation"
 days: "We will process your request within 7 business days"
+option2: "Option 2:"
+contact: "Contact us via e-mail:"
 ---
