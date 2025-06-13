@@ -8,4 +8,5 @@ frequencies: ["One Time","Monthly", "Yearly"]
 freqValue: ["onetime","monthly","yearly"]
 paragraph: "Your generosity fuels community-driven change. From scholarships to mentorship, we’re ensuring children have the support they need  to succeed, today and tomorrow."
 button: "Support Us"
+amtPlaceholder: "Amount"
 ---
