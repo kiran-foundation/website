@@ -13,12 +13,6 @@ const info = (await getEntry("support-form", "form")).data;
     initializeSupportForm();
   });
 
-  // Also initialize immediately if DOM is already loaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeSupportForm);
-  } else {
-    initializeSupportForm();
-  }
 </script>
 <Layout>
   <section class="container donation-form py-[120px]">
@@ -45,9 +39,11 @@ const info = (await getEntry("support-form", "form")).data;
               <label class="form-label fs-base" for="name"
                 >{info.name.title}</label
               >
+              <!-- &entry.283978656=fullName&entry.1909208105=email&entry.1359110198=number&entry.218344457=country&entry.938609362=address&entry.1458813282=city&entry.726311981=pincode&entry.965069241=notes -->
               <input
                 class="form-control form-control-lg"
                 type="text"
+                name="entry.283978656"
                 placeholder={info.name.placeholder}
                 required
                 id="name"
@@ -60,6 +56,7 @@ const info = (await getEntry("support-form", "form")).data;
               <input
                 class="form-control form-control-lg"
                 type="email"
+                name="emailAddress"
                 placeholder={info.email.placeholder}
                 required
                 id="email"
@@ -72,6 +69,7 @@ const info = (await getEntry("support-form", "form")).data;
               <input
                 class="form-control form-control-lg"
                 type="tel"
+                name="entry.1909208105"
                 placeholder={info.phone.placeholder}
                 required
                 id="phone"
@@ -84,6 +82,7 @@ const info = (await getEntry("support-form", "form")).data;
               <input
                 class="form-control form-control-lg"
                 type="text"
+                name="entry.218344457"
                 placeholder={info.country.value}
                 required
                 id="country"
@@ -96,6 +95,7 @@ const info = (await getEntry("support-form", "form")).data;
                 >{info.address.title}</label
               >
               <input
+                name="entry.938609362"
                 class="form-control form-control-lg"
                 type="text"
                 placeholder={info.address.placeholder}
@@ -108,6 +108,7 @@ const info = (await getEntry("support-form", "form")).data;
                 >{info.city.title}</label
               >
               <input
+                name="entry.1458813282"
                 class="form-control form-control-lg"
                 type="text"
                 placeholder={info.city.placeholder}
@@ -120,6 +121,7 @@ const info = (await getEntry("support-form", "form")).data;
                 >{info.pin.title}</label
               >
               <input
+                name="entry.726311981"
                 class="form-control form-control-lg"
                 type="text"
                 placeholder={info.pin.placeholder}
@@ -131,6 +133,7 @@ const info = (await getEntry("support-form", "form")).data;
             <div class="col-12">
               <label class="form-label fs-base" for="notes">{info.other}</label>
               <textarea
+                name="entry.965069241"
                 class="form-control form-control-lg"
                 style="height: 150px;"
                 placeholder="Additional notes"
