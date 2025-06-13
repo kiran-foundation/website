@@ -1,262 +1,300 @@
-// src/utils/support-form.ts
-declare var Razorpay: any;
+export {};
 
-interface FormFieldConfig {
-  validate: (value: string) => boolean;
-  errorText: string;
-  emptyText: string;
+// Global types for TypeScript in browser
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
 }
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  country: string;
-  city: string;
-  zipcode: string;
-  address: string;
-  notes: {
-    additional_notes: string;
+  interface FormFieldConfig {
+    validate: (value: string) => boolean;
+    errorText: string;
+    emptyText: string;
+  }
+
+  interface PaymentFormData {
+    name: string;
+    email: string;
+    phone: string;
+    country: string;
     city: string;
     zipcode: string;
     address: string;
-  };
-  amount: number;
-  currency: string;
-  plan_id?: string;
-}
-
-export function initializeSupportForm() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const donationAmount = Number(urlParams.get("amount")) || 0;
-  const paymentType = String(urlParams.get("frequency")) || "onetime";
-  const plan_id = String(urlParams.get("plan_id"));
-
-  // Initialize amount display
-  const amountDisplay = document.getElementById("amountToDisplay") as HTMLDivElement;
-  amountDisplay.innerHTML = `₹${donationAmount}`;
-
-  // Initialize frequency display
-  const frequencyDisplay = document.getElementById("toBeDisplay") as HTMLDivElement;
-  switch(paymentType.toLowerCase()) {
-    case 'onetime':
-    case 'one time':
-      frequencyDisplay.innerHTML = "One Time";
-      break;
-    case 'monthly':
-      frequencyDisplay.innerHTML = "per month";
-      break;
-    case 'yearly':
-      frequencyDisplay.innerHTML = "per year";
-      break;
-    default:
-      frequencyDisplay.innerHTML = "";
-  }
-
-  // Setup form validation
-  setupFormValidation();
-
-  // Setup payment button
-  document.getElementById("donate-now-button")?.addEventListener("click", (e) => {
-    e.preventDefault();
-    initiatePayment(donationAmount, paymentType, plan_id);
-  });
-}
-
-function setupFormValidation() {
-  const form = document.getElementById("donation-form");
-  const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
-  if (!form || !donateButton) return;
-
-  donateButton.disabled = true;
-
-  const formFieldConfig: Record<string, FormFieldConfig> = {
-    name: {
-      validate: (value) => /^[a-zA-Z\s]+$/.test(value),
-      errorText: "Please enter your full name (letters only)",
-      emptyText: "Please enter your name"
-    },
-    email: {
-      validate: (value) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value),
-      errorText: "Invalid email format (e.g., name@domain.com)",
-      emptyText: "Please enter your email"
-    },
-    phone: {
-      validate: (value) => /^\+?[1-9][0-9]{7,14}$/.test(value.replace(/[\s\-()]/g, "")),
-      errorText: "8-15 digits with optional '+' prefix",
-      emptyText: "Please enter your phone number"
-    },
-    country: {
-      validate: (value) => value.trim().length > 0,
-      errorText: "Please select a country",
-      emptyText: "Please select a country"
-    },
-    address: {
-      validate: (value) => value.trim().length > 0,
-      errorText: "Please enter your address",
-      emptyText: "Please enter your address"
-    },
-    city: {
-      validate: (value) => value.trim().length > 0,
-      errorText: "Please enter your city",
-      emptyText: "Please enter your city"
-    },
-    zipcode: {
-      validate: (value) => /^\d{6}$/.test(value),
-      errorText: "6-digit pin code required",
-      emptyText: "Please enter your pin code"
-    }
-  };
-
-  const validateEntireForm = () => {
-    const allValid = Object.entries(formFieldConfig).every(
-      ([fieldId, { validate }]) => {
-        const fieldValue = (document.getElementById(fieldId) as HTMLInputElement)?.value.trim() || "";
-        return validate(fieldValue);
-      }
-    );
-    donateButton.disabled = !allValid;
-  };
-
-  const validateFieldOnBlur = (fieldId: string) => {
-    const inputElement = document.getElementById(fieldId) as HTMLInputElement;
-    if (!inputElement) return;
-
-    const fieldValue = inputElement.value.trim();
-    const { validate, errorText, emptyText } = formFieldConfig[fieldId];
-
-    if (!fieldValue) {
-      showFieldError(fieldId, emptyText);
-    } else if (!validate(fieldValue)) {
-      showFieldError(fieldId, errorText);
-    }
-  };
-
-  const setupFieldEventListeners = () => {
-    Object.keys(formFieldConfig).forEach((fieldId) => {
-      const inputElement = document.getElementById(fieldId) as HTMLInputElement;
-      if (!inputElement) return;
-
-      inputElement.addEventListener("input", () => {
-        validateEntireForm();
-        clearFieldError(fieldId);
-      });
-
-      inputElement.addEventListener("blur", () => {
-        validateFieldOnBlur(fieldId);
-      });
-    });
-  };
-
-  const showFieldError = (fieldId: string, message: string) => {
-    const inputElement = document.getElementById(fieldId) as HTMLInputElement;
-    if (!inputElement) return;
-
-    inputElement.classList.add("error");
-    inputElement.style.borderColor = "#D33C0D";
-
-    const existingErrorElement = inputElement.nextElementSibling as HTMLDivElement;
-    if (existingErrorElement?.classList.contains("form-error")) {
-      existingErrorElement.textContent = message;
-    } else {
-      const errorElement = document.createElement("div");
-      errorElement.className = "form-error text-[#D33C0D] text-sm mt-1";
-      errorElement.textContent = message;
-      inputElement.parentNode?.insertBefore(errorElement, inputElement.nextSibling);
-    }
-  };
-
-  const clearFieldError = (fieldId: string) => {
-    const inputElement = document.getElementById(fieldId) as HTMLInputElement;
-    if (!inputElement) return;
-
-    inputElement.classList.remove("error");
-    inputElement.style.borderColor = "";
-
-    const existingErrorElement = inputElement.nextElementSibling as HTMLDivElement;
-    if (existingErrorElement?.classList.contains("form-error")) {
-      existingErrorElement.remove();
-    }
-  };
-
-  setupFieldEventListeners();
-  validateEntireForm();
-}
-
-async function initiatePayment(donationAmount: number, paymentType: string, plan_id: string) {
-  const form = document.getElementById("donation-form") as HTMLFormElement;
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-
-  const formData: FormData = {
-    name: (document.getElementById("name") as HTMLInputElement).value,
-    email: (document.getElementById("email") as HTMLInputElement).value,
-    phone: (document.getElementById("phone") as HTMLInputElement).value,
-    country: (document.getElementById("country") as HTMLInputElement).value,
-    city: (document.getElementById("city") as HTMLInputElement).value,
-    zipcode: (document.getElementById("zipcode") as HTMLInputElement).value,
-    address: (document.getElementById("address") as HTMLInputElement).value,
     notes: {
-      additional_notes: (document.getElementById("notes") as HTMLTextAreaElement).value,
-      city: (document.getElementById("city") as HTMLInputElement).value,
-      zipcode: (document.getElementById("zipcode") as HTMLInputElement).value,
-      address: (document.getElementById("address") as HTMLInputElement).value,
-    },
-    amount: donationAmount * 100,
-    currency: "INR",
-    ...(paymentType !== "onetime" && { plan_id })
-  };
+      additional_notes: string;
+      city: string;
+      zipcode: string;
+      address: string;
+    };
+    amount: number;
+    currency: string;
+    frequency?: string;
+    plan_id?: string;
+  }
 
-  try {
-    const endpoint = paymentType === "onetime" 
-      ? "https://donation-backend-five.vercel.app/create-order"
-      : "https://donation-backend-five.vercel.app/create-subscription";
+  // Subscription plans mapping
+ 
+ export function initializeSupportForm(): void {
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log("URL Params:", urlParams.toString());
+    const donationAmount = Number(urlParams.get("amount") ?? "0");
+    const paymentType = String(urlParams.get("frequency") ?? "onetime").toLowerCase();
+    
+    // Get plan_id based on amount and frequency
 
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const amountDisplay = document.getElementById("amountToDisplay") as HTMLDivElement;
+    const frequencyDisplay = document.getElementById("toBeDisplay") as HTMLDivElement;
 
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.message || "Payment initiation failed");
+    if (amountDisplay) amountDisplay.innerHTML = `₹${donationAmount}`;
+    if (frequencyDisplay) {
+      frequencyDisplay.innerHTML =
+        paymentType === "monthly"
+          ? "per month"
+          : paymentType === "yearly"
+          ? "per year"
+          : "One Time";
     }
 
-    const options = {
-      key: "rzp_test_HmglXnBOLh8qwp",
-      amount: formData.amount,
-      currency: "INR",
-      name: "Kiran Foundations",
-      description: paymentType === "onetime" ? "Donation" : "Subscription for Premier Support",
-      image: "https://kfastro.netlify.app/favicon.ico",
-      ...(paymentType === "onetime" ? { order_id: data.orderId } : { subscription_id: data.subscription_id }),
-      handler: function(response: any) {
-        alert(paymentType === "onetime" ? "Payment Successful!" : "Subscription Successful!");
-        console.log(paymentType === "onetime" ? "Payment ID:" : "Subscription ID:", 
-          paymentType === "onetime" ? response.razorpay_payment_id : response.razorpay_subscription_id);
-        form.reset();
+    setupFormValidation();
+
+    const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
+    if (donateButton) {
+      donateButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        initiatePayment(donationAmount, paymentType);
+      });
+    }
+  }
+
+  function setupFormValidation(): void {
+    const form = document.getElementById("donation-form") as HTMLFormElement;
+    const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
+    if (!form || !donateButton) return;
+
+    donateButton.disabled = true;
+
+    const fields: Record<string, FormFieldConfig> = {
+      name: {
+        validate: (v) => /^[a-zA-Z\s]+$/.test(v) && v.trim().length > 0,
+        errorText: "Please enter a valid name (letters only)",
+        emptyText: "Name is required",
       },
-      prefill: {
-        name: formData.name,
-        email: formData.email,
-        contact: formData.phone,
+      email: {
+        validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+        errorText: "Invalid email format",
+        emptyText: "Email is required",
       },
-      notes: formData.notes,
-      theme: {
-        color: "#3399cc",
+      phone: {
+        validate: (v) => /^\+?[1-9][0-9]{7,14}$/.test(v.replace(/[\s\-()]/g, "")),
+        errorText: "Phone must be 8-15 digits",
+        emptyText: "Phone number is required",
+      },
+      country: {
+        validate: (v) => v.trim().length > 0,
+        errorText: "Country is required",
+        emptyText: "Country is required",
+      },
+      address: {
+        validate: (v) => v.trim().length > 0,
+        errorText: "Address is required",
+        emptyText: "Address is required",
+      },
+      city: {
+        validate: (v) => v.trim().length > 0,
+        errorText: "City is required",
+        emptyText: "City is required",
+      },
+      zipcode: {
+        validate: (v) => /^\d{6}$/.test(v),
+        errorText: "Pin code must be 6 digits",
+        emptyText: "Pin code is required",
       },
     };
 
-    const rzp = new Razorpay(options);
-    rzp.open();
-  } catch (error) {
-    console.error("Error initiating payment:", error);
-    alert("Payment initiation failed. Please try again.");
+    const validateForm = () => {
+      const valid = Object.entries(fields).every(([id, cfg]) => {
+        const element = document.getElementById(id) as HTMLInputElement;
+        const val = element?.value.trim() || "";
+        return cfg.validate(val);
+      });
+      donateButton.disabled = !valid;
+    };
+
+    const showError = (id: string, message: string) => {
+      const el = document.getElementById(id) as HTMLInputElement;
+      if (!el) return;
+
+      el.classList.add("error");
+      el.style.borderColor = "#D33C0D";
+
+      // Remove existing error message
+      const existingError = el.parentNode?.querySelector('.form-error');
+      if (existingError) {
+        existingError.remove();
+      }
+
+      // Add new error message
+      const error = document.createElement("div");
+      error.className = "form-error text-[#D33C0D] text-sm mt-1";
+      error.textContent = message;
+      el.parentNode?.insertBefore(error, el.nextSibling);
+    };
+
+    const clearError = (id: string) => {
+      const el = document.getElementById(id) as HTMLInputElement;
+      if (!el) return;
+
+      el.classList.remove("error");
+      el.style.borderColor = "";
+
+      const error = el.parentNode?.querySelector('.form-error');
+      if (error) error.remove();
+    };
+
+    Object.keys(fields).forEach((id) => {
+      const el = document.getElementById(id) as HTMLInputElement;
+      if (!el) return;
+
+      el.addEventListener("input", () => {
+        validateForm();
+        clearError(id);
+      });
+
+      el.addEventListener("blur", () => {
+        const val = el.value.trim();
+        if (!val) {
+          showError(id, fields[id].emptyText);
+        } else if (!fields[id].validate(val)) {
+          showError(id, fields[id].errorText);
+        }
+      });
+    });
+
+    validateForm();
   }
-}
+
+  async function initiatePayment(amount: number, type: string): Promise<void> {
+    const form = document.getElementById("donation-form") as HTMLFormElement;
+    
+    // Manual validation check
+    const fields = ['name', 'email', 'phone', 'country', 'address', 'city', 'zipcode'];
+    let isValid = true;
+    
+    for (const fieldId of fields) {
+      const field = document.getElementById(fieldId) as HTMLInputElement;
+      if (!field?.value.trim()) {
+        isValid = false;
+        break;
+      }
+    }
+    
+    if (!isValid) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // For subscriptions, validate that we have a valid plan
+    // if (type !== "onetime" && !plan_id) {
+    //   alert("Invalid subscription plan selected. Please choose a valid amount.");
+    //   return;
+    // }
+
+    const formData: PaymentFormData = {
+      name: (document.getElementById("name") as HTMLInputElement).value,
+      email: (document.getElementById("email") as HTMLInputElement).value,
+      phone: (document.getElementById("phone") as HTMLInputElement).value,
+      country: (document.getElementById("country") as HTMLInputElement).value,
+      city: (document.getElementById("city") as HTMLInputElement).value,
+      zipcode: (document.getElementById("zipcode") as HTMLInputElement).value,
+      address: (document.getElementById("address") as HTMLInputElement).value,
+      notes: {
+        additional_notes: (document.getElementById("notes") as HTMLTextAreaElement)?.value || "",
+        city: (document.getElementById("city") as HTMLInputElement).value,
+        zipcode: (document.getElementById("zipcode") as HTMLInputElement).value,
+        address: (document.getElementById("address") as HTMLInputElement).value,
+      },
+      amount: amount * 100,
+      currency: "INR",
+      frequency: type,
+    };
+
+    const endpoint =
+      type === "onetime"
+        ? "https://donation-backend-five.vercel.app/create-order"
+        : "https://donation-backend-five.vercel.app/create-subscription";
+
+    try {
+      // console.log("Sending payment request:", { endpoint, amount, type, plan_id });
+      
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(data.message || `HTTP ${res.status}: Payment creation failed`);
+      }
+
+      if (typeof window.Razorpay === "undefined") {
+        alert("Razorpay SDK not loaded. Please refresh the page and try again.");
+        return;
+      }
+
+      const options: any = {
+        key: "rzp_test_PoZqAR7MVlHjIz", // Updated to match backend
+        amount: formData.amount,
+        currency: "INR",
+        name: "Kiran Foundations",
+        description: type === "onetime" ? "Donation" : "Premier Subscription",
+        image: "https://kfastro.netlify.app/favicon.ico",
+        handler: (res: any) => {
+          alert(type === "onetime" ? "Payment Successful!" : "Subscription Active!");
+          console.log("Payment response:", res);
+          form.reset();
+          // Re-initialize form after reset
+          setTimeout(() => {
+            initializeSupportForm();
+          }, 100);
+        },
+        modal: {
+          ondismiss: function() {
+            console.log("Payment modal closed");
+          }
+        },
+        prefill: {
+          name: formData.name,
+          email: formData.email,
+          contact: formData.phone,
+        },
+        notes: formData.notes,
+        theme: { color: "#3399cc" },
+        ...(type === "onetime"
+          ? { order_id: data.orderId }
+          : { subscription_id: data.subscription_id }),
+      };
+
+      console.log("Opening Razorpay with options:", options);
+      const razorpay = new window.Razorpay(options);
+      razorpay.open();
+      
+    } catch (err: any) {
+      console.error("Payment error:", err);
+      
+      if (err.message.includes("CORS")) {
+        alert("Connection error. Please check if the server is running on port 3000.");
+      } else if (err.message.includes("Failed to fetch")) {
+        alert("Unable to connect to payment server. Please check your connection.");
+      } else {
+        alert(`Payment failed: ${err.message}`);
+      }
+    }
+  }
+
+  // Initialize when DOM is loaded
