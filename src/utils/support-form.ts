@@ -1,5 +1,4 @@
 export {};
-
 // Global types for TypeScript in browser
 declare global {
   interface Window {
@@ -49,8 +48,8 @@ interface RazorpayResponse {
 
 // Configuration
 const CONFIG = {
-  API_BASE_URL: 'https://donation-backend-five.vercel.app',
-  RAZORPAY_KEY: 'rzp_test_PoZqAR7MVlHjIz', // Will be fetched from backend
+  API_BASE_URL: process.env.API_BASE_URL || 'https://support-us-backend.onrender.com',
+  RAZORPAY_KEY: process.env.RAZORPAY_KEY || 'rzp_test_PoZqAR7MVlHjIz', // Will be fetched from backend
   COMPANY_NAME: 'Kiran Foundations',
   COMPANY_LOGO: 'https://kfastro.netlify.app/favicon.ico',
   THEME_COLOR: '#3399cc'
