@@ -7,12 +7,8 @@ const info = (await getEntry("support-form", "form")).data;
 ---
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script >
-  import {initializeSupportForm } from "../../utils/support-form.ts";
-    document.addEventListener('DOMContentLoaded', function() {
-    initializeSupportForm();
-  });
-
+<script>
+  import "../../utils/support-form.ts";
 </script>
 <Layout>
   <section class="container donation-form py-[120px]">
@@ -146,7 +142,9 @@ const info = (await getEntry("support-form", "form")).data;
           class="col pt-5 font-poppins min-w-[19rem] flex justify-center items-center"
         >
           {/* Main Card Container */}
-          <div class="w-full max-w-[23rem] bg-[#F5F5F5] rounded-3xl overflow-hidden py-4 lg:py-4">
+          <div
+            class="w-full max-w-[23rem] bg-[#F5F5F5] rounded-3xl overflow-hidden py-4 lg:py-4"
+          >
             {/* Card Content */}
             <div class="text-center text-black px-4">
               {/* Card Header */}
@@ -194,7 +192,6 @@ const info = (await getEntry("support-form", "form")).data;
     </form>
   </section>
 </Layout>
-
 
 <style>
   /* Add these styles to your CSS */
