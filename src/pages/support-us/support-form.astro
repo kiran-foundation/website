@@ -1,7 +1,6 @@
 ---
 import { getEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import { getEntries } from "astro:content";
 const card = (await getEntry("support-form", "card")).data;
 const info = (await getEntry("support-form", "form")).data;
 ---

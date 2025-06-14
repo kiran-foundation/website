@@ -9,7 +9,7 @@ const { path } = Astro.params;
 export async function getStaticPaths() {
   const filtersEntry = await getEntry("work-with-us", "opportunities/filters");
   const filters = filtersEntry.data.filters;
-  return filters.map((filter) => ({
+  return filters.map((filter: any) => ({
     params: { path: filter },
   }));
 }
