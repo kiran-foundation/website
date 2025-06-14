@@ -11,7 +11,7 @@ paragraphs: [
         mentor?"
 ]
 button:
-  herf: "work-with-us/opportunities/volunteering/become-a-mentor"
+  herf: "/work-with-us/opportunities/volunteering/become-a-mentor"
   text: "Become a Mentor"
   
 image: "/assets/images/pratibha/pratibha-visual-4.webp"

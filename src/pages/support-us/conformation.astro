@@ -1,0 +1,31 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+const info = (await getEntry("support-form", "conformation")).data;
+---
+
+<Layout>
+  <div class="max-w-full mx-auto pt-[8rem] overflow-hidden pb-[500px]">
+    <h1
+      class="tracking-normal text-center heading-1 font-[600] text-[1.5rem] md:text-[2rem] leading-[140%]"
+      set:html={info.amount}
+    />
+    <h3 class="body-text-1 text-center pt-5" set:html={info.id} />
+    <script
+      src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"
+      type="module"></script>
+
+    <lottie-player
+      src={info.animation || "/assets/animations/fallback.json"}
+      background="transparent"
+      speed="1"
+      style="width: 25rem; height: 25rem; overflow: hidden; margin: auto;"
+      direction="1"
+      playMode="normal"
+      loop
+      autoplay
+      id="lottie-player"
+    >
+    </lottie-player>
+  </div>
+</Layout>

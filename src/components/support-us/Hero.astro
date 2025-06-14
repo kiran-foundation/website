@@ -7,9 +7,7 @@ const info = await getEntry("support-us", "hero");
 ---
 
 <Breadcrumb />
-<!-- Add responsive layout classes -->
 
-<!-- Wrapper: adjust height for mobile -->
 <div class="h-auto lg:h-[1200px] relative">
   <div class="bg-[#F1F1F1] pt-16">
     <div class="container max-w-[1296px] mb-6 px-4 sm:px-6">
@@ -27,7 +25,7 @@ const info = await getEntry("support-us", "hero");
         <div class="w-full lg:w-1/2 p-2 flex justify-center">
           <img
             src="/assets/images/programs/formimage.png"
-            alt=""
+            alt="Donation illustration"
             class="w-full max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[760px] max-w-full object-cover rounded"
           />
         </div>
@@ -40,7 +38,11 @@ const info = await getEntry("support-us", "hero");
             {info.data.makeADonation}
           </h1>
 
-          <form>
+          <form
+            id="support-us-form"
+            action="/support-us/support-form"
+            method="get"
+          >
             <!-- Donation Amount -->
             <div class="mb-4">
               <label
@@ -50,23 +52,39 @@ const info = await getEntry("support-us", "hero");
               </label>
               <div class="space-y-3 text-gray-800">
                 {
-                  info.data.amounts.map((amount) => (
+                  info.data.amounts.map((amount,i) => (
                     <div class="flex items-center !mt-4">
                       <input
                         type="radio"
                         id={`amount-${amount}`}
                         name="donationAmount"
+                        data-amount={amount}
                         value={amount}
                         class="!mr-4 !accent-orange scale-150"
-                        checked={amount === 500}
+                        checked={amount === 501}
+                        required
                       />
                       <label
                         for={`amount-${amount}`}
-                        class="text-xl sm:text-2xl"
+                        class="text-xl sm:text-2xl flex items-center gap-4"
                       >
-                        {amount === "custom"
-                          ? "Custom donation"
-                          : `₹ ${amount}`}
+                        {amount === "custom" ? (
+                          <>
+                            Custom donation
+                            <div class="custom-amount-wrapper hidden ml-4">
+                              <input
+                                type="number"
+                                id="customAmount"
+                                name="customAmount"
+                                placeholder="Enter amount"
+                                class="h-10 px-3 rounded-md border border-gray-300 focus:outline-none focus:border-orange-500 text-base"
+                                min="1"
+                              />
+                            </div>
+                          </>
+                        ) : (
+                          `₹ ${amount}`
+                        )}
                       </label>
                     </div>
                   ))
@@ -83,16 +101,22 @@ const info = await getEntry("support-us", "hero");
               </label>
               <div class="space-y-3 text-gray-800">
                 {
-                  info.data.frequencies.map((freq) => (
+                  info.data.frequencies.map((freq,i) => (
                     <div class="flex items-center !mt-4">
                       <input
                         type="radio"
-                        id="onetime"
+                        id={freq.toLowerCase()}
                         name="donationFrequency"
-                        value="onetime"
+                        value={info.data.freqValue[i]}
+                        data-frequency={freq}
                         class="!mr-4 !accent-orange scale-150"
+                        checked={freq === "Monthly"}
+                        required
                       />
-                      <label for="onetime" class="text-xl sm:text-2xl">
+                      <label
+                        for={freq.toLowerCase()}
+                        class="text-xl sm:text-2xl"
+                      >
                         {freq}
                       </label>
                     </div>
@@ -107,14 +131,15 @@ const info = await getEntry("support-us", "hero");
             </p>
 
             <!-- Button -->
-            <div class="flex justify-start px">
-              <Button
-                title="Support"
-                btn="btn1"
-                widthClass="w-[342px] sm:w-[180px]"
-                heightClass="h-[60px] sm:h-[55px] md:h-[60px]"
-                className="mt-8"
-              />
+            <div class="flex justify-start">
+              <button
+                type="submit"
+                class="font-poppins font-medium w-full md:w-fit px-3 sm:px-5 md:px-6 py-2 sm:py-3 md:py-5 h-[60px] text-base lg:text-lg rounded-md sm:rounded-md transition-all bg-[#D33C0D] text-white hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E]"
+              >
+                <span class="mx-[12px]">
+                  {info.data.button}
+                </span>
+              </button>
             </div>
           </form>
         </div>
@@ -123,3 +148,73 @@ const info = await getEntry("support-us", "hero");
     <div class="absolute bottom-0 w-full h-96 bg-white"></div>
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("support-us-form");
+    const amountRadios = document.querySelectorAll('input[name="donationAmount"]');
+    const customAmountWrapper = document.querySelector(".custom-amount-wrapper");
+    const customAmountInput = document.getElementById("customAmount");
+
+    // Handle radio button changes
+    amountRadios.forEach((radio) => {
+      radio.addEventListener("change", (e) => {
+        const isCustom = (e.target as HTMLInputElement).value === "custom";
+
+        if (isCustom) {
+          customAmountWrapper.classList.remove("hidden");
+          (customAmountInput as HTMLInputElement).required = true;
+          customAmountInput.focus();
+        } else {
+          customAmountWrapper.classList.add("hidden");
+          (customAmountInput as HTMLInputElement).required = false;
+          (customAmountInput as HTMLInputElement).value = "";
+        }
+      });
+    });
+
+    // Handle form submission
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const selectedAmount = document.querySelector('input[name="donationAmount"]:checked') as HTMLInputElement;
+      const selectedFrequency = document.querySelector('input[name="donationFrequency"]:checked') as HTMLInputElement;
+
+      if (!selectedAmount || !selectedFrequency) {
+        alert("Please select both amount and frequency");
+        return;
+      }
+
+      let amountValue;
+      // Get the amount value based on selection
+      if (selectedAmount.value === "custom") {
+        amountValue = (customAmountInput as HTMLInputElement).value;
+        if (!amountValue || parseInt(amountValue) <= 0) {
+          alert("Please enter a valid donation amount");
+          return;
+        }
+      } else {
+        amountValue = selectedAmount.value;
+      }
+
+      // Build URL with only amount and frequency parameters
+      const baseUrl = form.getAttribute("action");
+      const params = new URLSearchParams();
+      params.append("amount", amountValue);
+      params.append("frequency", selectedFrequency.value.toLowerCase());
+
+      // Redirect to the form page
+      window.location.href = `${baseUrl}?${params.toString()}`;
+    });
+
+    // Handle custom amount input
+    if (customAmountInput) {
+      customAmountInput.addEventListener("input", (e) => {
+        let value = (e.target as HTMLInputElement).value.replace(/[^0-9]/g, "");
+        if (value) {
+          value = Math.max(1, parseInt(value)).toString();
+        }
+        (e.target as HTMLInputElement).value = value;
+      });
+    }
+  });
+</script>
