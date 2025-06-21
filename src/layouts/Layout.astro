@@ -37,6 +37,8 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+
     <meta name="description" content={description ?? common.description} />
     <meta name="keywords" content={keywords ?? common.keywords} />
     <meta name="author" content={author ?? common.author} />
@@ -48,6 +50,10 @@ import "../styles/global.css";
     />
     <meta property="og:image" content={ogImage ?? common.ogImage} />
     <meta property="og:url" content={ogUrl ?? common.ogUrl} />
+
+      <!-- Hotjar Tracking Code for https://www.kiran.foundation -->
+       <script src="/utils/hotjar.js" async></script>
+
 
     <link rel="stylesheet" href="/assets/css/global.css" />
     <link rel="stylesheet" href="/assets/css/theme.min.css" />
@@ -86,6 +92,10 @@ import "../styles/global.css";
     <meta name="apple-mobile-web-app-title" content="Kiran Foundation" />
     <link rel="manifest" href="/site.webmanifest" />
     <title>{title ?? common.title}</title>
+
+
+
+
 
     <script>
       (function () {
