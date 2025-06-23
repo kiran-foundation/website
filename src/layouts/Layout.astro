@@ -103,12 +103,13 @@ import "../styles/global.css";
           // Preloader logic
           const preloader = document.querySelector(".page-loading");
           const load = document.querySelector(".load");
+          console.log(load);
           preloader.classList.remove("active");
           setTimeout(function () {
             preloader.remove();
             load.classList.remove("load-Div");
             load.remove();
-          }, 150);
+          }, 50);
 
           // Tawk.to Script logic
           var Tawk_API = Tawk_API || {},
