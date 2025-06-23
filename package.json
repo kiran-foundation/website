@@ -46,5 +46,8 @@
     "swiper": "^11.2.5",
     "timezz": "^7.0.0",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.2"
   }
 }
