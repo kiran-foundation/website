@@ -14,6 +14,6 @@ author: "Kiran Foundation"
 ogTitle: "Kiran Foundation"
 ogDescription: "Welcome to Kiran Foundation"
 ogImage: "/previewImage.webp"
-ogUrl: "https://kiranfoundation.com"
+ogUrl: "https://kiran.foundation/"
 generator: "Astro"
 ---

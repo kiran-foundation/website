@@ -29,6 +29,7 @@ const {
 import { getEntry } from "astro:content";
 const common = (await getEntry("common", "common")).data;
 import "../styles/global.css";
+import { isJSDocCommentContainingNode } from "typescript";
 // import "/assets/css/global.css"
 ---
 
@@ -39,17 +40,26 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
 
-    <meta name="description" content={description ?? common.description} />
-    <meta name="keywords" content={keywords ?? common.keywords} />
-    <meta name="author" content={author ?? common.author} />
-    <meta name="generator" content={generator ?? common.generator} />
-    <meta property="og:title" content={ogTitle ?? common.ogTitle} />
-    <meta
-      property="og:description"
-      content={ogDescription ?? common.ogDescription}
-    />
-    <meta property="og:image" content={ogImage ?? common.ogImage} />
-    <meta property="og:url" content={ogUrl ?? common.ogUrl} />
+    <!-- Primary Meta Tags -->
+<title>Kiran Foundation</title>
+<meta name="title" content="Kiran Foundation" />
+<meta name="description" content={common.description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={common.ogUrl} />
+<meta property="og:title" content={common.ogTitle}/>
+<meta property="og:description" content={common.description} />
+<meta property="og:image" content={common.ogImage} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={common.ogUrl} />
+<meta property="twitter:title" content={common.ogTitle} />
+<meta property="twitter:description" content={common.description} />
+<meta property="twitter:image" content={common.ogImage} />
+
+<!-- Meta Tags Generated with https://metatags.io -->
 
       <!-- Hotjar Tracking Code for https://www.kiran.foundation -->
        <script src="/utils/hotjar.js" async></script>
