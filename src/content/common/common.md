@@ -13,7 +13,7 @@ keywords: "Kiran Foundation, Kiran Pratibha, Scholarship, India, Underprivileged
 author: "Kiran Foundation"
 ogTitle: "Kiran Foundation"
 ogDescription: "Welcome to Kiran Foundation"
-ogImage: "/assets/app-icons/favicon-96x96.png"
+ogImage: "/favicon-96x96.png"
 ogUrl: "https://kiranfoundation.com"
 generator: "Astro"
 ---
