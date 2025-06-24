@@ -38,32 +38,45 @@ import { isJSDocCommentContainingNode } from "typescript";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
 
-    <!-- Primary Meta Tags -->
-<title>Kiran Foundation</title>
-<meta name="title" content="Kiran Foundation" />
-<meta name="description" content={common.description} />
+    <!-- HTML Meta Tags -->
+    <title>Kiran Foundation</title>
+    <meta
+      name="description"
+      content="Kiran Foundation works with families from underprivileged and marginalised section of society, and helps them reach their full potential."
+    />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={common.ogUrl} />
-<meta property="og:title" content={common.ogTitle}/>
-<meta property="og:description" content={common.description} />
-<meta property="og:image" content={common.ogImage} />
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Kiran Foundation" />
+    <meta
+      itemprop="description"
+      content="Kiran Foundation works with families from underprivileged and marginalised section of society, and helps them reach their full potential."
+    />
+    <meta itemprop="image" content="/previewImage.webp" />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={common.ogUrl} />
-<meta property="twitter:title" content={common.ogTitle} />
-<meta property="twitter:description" content={common.description} />
-<meta property="twitter:image" content={common.ogImage} />
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="hhttps://kiran.foundation/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kiran Foundation" />
+    <meta
+      property="og:description"
+      content="Kiran Foundation works with families from underprivileged and marginalised section of society, and helps them reach their full potential."
+    />
+    <meta property="og:image" content="/previewImage.webp" />
 
-<!-- Meta Tags Generated with https://metatags.io -->
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kiran Foundation" />
+    <meta
+      name="twitter:description"
+      content="Kiran Foundation works with families from underprivileged and marginalised section of society, and helps them reach their full potential."
+    />
+    <meta name="twitter:image" content="/previewImage.webp" />
 
-      <!-- Hotjar Tracking Code for https://www.kiran.foundation -->
-       <script src="/utils/hotjar.js" async></script>
+    <!-- Meta Tags Generated via https://heymeta.com -->
 
+    <!-- Hotjar Tracking Code for https://www.kiran.foundation -->
+    <script src="/utils/hotjar.js" async></script>
 
     <link rel="stylesheet" href="/assets/css/global.css" />
     <link rel="stylesheet" href="/assets/css/theme.min.css" />
@@ -102,10 +115,6 @@ import { isJSDocCommentContainingNode } from "typescript";
     <meta name="apple-mobile-web-app-title" content="Kiran Foundation" />
     <link rel="manifest" href="/site.webmanifest" />
     <title>{title ?? common.title}</title>
-
-
-
-
 
     <script>
       (function () {
@@ -173,7 +182,7 @@ import { isJSDocCommentContainingNode } from "typescript";
     <script
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
       defer></script>
-    <script >
+    <script>
       import AOS from "aos";
       AOS.init();
       //test
