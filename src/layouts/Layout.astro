@@ -40,38 +40,26 @@ import { isJSDocCommentContainingNode } from "typescript";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- HTML Meta Tags -->
-    <title>Kiran Foundation</title>
-    <meta
-      name="description"
-      content="Kiran Foundation works with families from underprivileged and marginalised section of society, and helps them reach their full potential."
-    />
+    <title>{common.ogTitle}</title>
+    <meta name="description" content={common.ogTitle} />
 
     <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="Kiran Foundation" />
-    <meta
-      itemprop="description"
-      content="Kiran Foundation works with families from underprivileged and marginalised section of society, and helps them reach their full potential."
-    />
-    <meta itemprop="image" content="/previewImage.webp" />
+    <meta itemprop="name" content={common.ogTitle} />
+    <meta itemprop="description" content={common.ogDescription} />
+    <meta itemprop="image" content={common.ogImage} />
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="hhttps://kiran.foundation/" />
+    <meta property="og:url" content={common.ogUrl} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Kiran Foundation" />
-    <meta
-      property="og:description"
-      content="Kiran Foundation works with families from underprivileged and marginalised section of society, and helps them reach their full potential."
-    />
-    <meta property="og:image" content="/previewImage.webp" />
+    <meta property="og:title" content={common.ogTitle} />
+    <meta property="og:description" content={common.ogDescription} />
+    <meta property="og:image" content={common.ogImage} />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Kiran Foundation" />
-    <meta
-      name="twitter:description"
-      content="Kiran Foundation works with families from underprivileged and marginalised section of society, and helps them reach their full potential."
-    />
-    <meta name="twitter:image" content="/previewImage.webp" />
+    <meta name="twitter:title" content={common.ogTitle} />
+    <meta name="twitter:description" content={common.description} />
+    <meta name="twitter:image" content={common.ogImage} />
 
     <!-- Meta Tags Generated via https://heymeta.com -->
 
