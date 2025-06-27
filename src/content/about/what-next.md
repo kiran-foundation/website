@@ -11,6 +11,6 @@ button:
 
     type: "btn3"  # btn1 for primary, btn2 for secondary, btn3 for tertiary
     text: "Support Us"
-    path: "./support-us"
+    path: "../support-us"
 
 ---
