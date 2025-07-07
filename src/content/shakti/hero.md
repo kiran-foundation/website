@@ -6,7 +6,7 @@ heading2: 'Learn, Grow, and Lead.'
 description: "Building confidence through free accessible 
 
     resources and education."
-image: "/assets/images/shakti/shakti-hero.png"
+image: "/assets/images/shakti/shakti-hero.webp"
 heroSubtitle: ''
 ---
 
