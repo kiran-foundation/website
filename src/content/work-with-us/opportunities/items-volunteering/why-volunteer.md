@@ -5,7 +5,7 @@ description: "Volunteering isn’t just about giving back—it’s a journey of 
   motivates you, whether it’s mentoring students, tackling community
   challenges, or leading initiatives."
 imageTop: "/assets/images/work-with-us/volunteering/why-volunteer-img-top.png"
-imageBottom: "/assets/images/work-with-us/volunteering/why-volunteer-img-bottom.png"
+imageBottom: "/assets/images/work-with-us/volunteering/why-volunteer-img-bottom.webp"
 
 whyVolunteer:
   heading: "Why Volunteer?"
