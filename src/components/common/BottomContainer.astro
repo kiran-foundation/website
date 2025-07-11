@@ -18,8 +18,7 @@ const { title, paragraph, button, image } = data?.data || {};
         {
           button.map(
             (btn) => (
-              console.log(btn.button),
-              (
+              
                 <Button
                   btn={btn.type}
                   title={btn.button}
@@ -27,7 +26,7 @@ const { title, paragraph, button, image } = data?.data || {};
                   widthClass=""
                   heightClass="h-[60px]"
                 />
-              )
+              
             ),
           )
         }

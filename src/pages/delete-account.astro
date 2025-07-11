@@ -1,0 +1,54 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+const info = (await getEntry("pages", "delete-account")).data;
+---
+
+<Layout>
+  <main class="py-[120px]">
+    <div class="content">
+      <div class="container">
+        <h1 class="text-[#b00020] heading-1 mb-4" style="color: #b00020;">
+          {info.title}
+        </h1>
+        <p class="body-text-1">
+          {info.paragraph}
+        </p>
+
+        <p
+          class="body-text-1"
+          style="background-color: #fff3cd; padding: 1em; border-left: 5px solid #ffa500; margin-top: 1em;"
+          set:html={info.warning}
+        />
+      </div>
+
+      <div class="container">
+        <p class="body-text-1">
+          {info.paragraph2}
+        </p>
+
+        <ul class="body-text-1">
+          <li set:html={info.options}>
+            <a
+              href="https://forms.gle/Zbt3tjzyBYX9wENh6"
+              target="_blank"
+              style="display: inline-block; margin-top: 1em; padding: 0.75em 1.5em; background-color: #4285f4; color: white; text-decoration: none; border-radius: 5px;"
+              class="mb-3"
+            >
+              {info.button}
+            </a>
+          </li>
+
+          <li style="margin-top: 1.5em;">
+            <strong>{info.option2}</strong>{info.contact}<br />
+            📧 <a href="mailto:support@kiran.foundation" style="color: #4285f4;"
+              >{info.email}</a
+            >
+          </li>
+        </ul>
+
+        <p>{info.days}</p>
+      </div>
+    </div>
+  </main>
+</Layout>

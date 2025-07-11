@@ -1,7 +1,7 @@
 ---
 title: "Ms. Shreya Jain was a testament to her outstanding academic accomplishment."
 
-date: 10.03.2023
+date: 2023-03-10
 
 content:
   - |
