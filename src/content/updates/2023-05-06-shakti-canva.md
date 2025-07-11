@@ -1,7 +1,7 @@
 ---
 title: "Advance Canva"
 
-date: 06.05.2023
+date: 2023-05-06
 
 content:
   - |

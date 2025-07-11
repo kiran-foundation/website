@@ -7,20 +7,18 @@ export async function getAllUpdates() {
   return await getCollection("updates");
 }
 
-const allUpdates = await getAllUpdates();
+const allUpdates = await getCollection('updates');
 const updates = allUpdates.map((update) => ({
   ...update.data,
 }));
 
-const { showHighPriorityOnly = false, isMainPage = false } = Astro.props;
+const {  isMainPage = true } = Astro.props;
 
-const filteredUpdates = updates
-  .filter((update) => !showHighPriorityOnly || update.priority === "high")
+const filteredUpdates = updates  
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-const updatesToDisplay = showHighPriorityOnly
-  ? filteredUpdates.slice(0, 3)
-  : filteredUpdates;
+  const updatesToDisplay =  filteredUpdates.slice(0, 3)
+ 
 ---
 
 <!-- Main Container -->

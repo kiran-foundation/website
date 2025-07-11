@@ -35,7 +35,13 @@ import Button from "../common/button.astro";
       </div>
       <div id="update-meta" class="flex justify-between pt-[48px]">
         <div>
-          Date: {componentContent.date}
+          Date: {
+            new Date(componentContent.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
         </div>
         <div>
           Share post:
