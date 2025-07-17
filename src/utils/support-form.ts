@@ -68,7 +68,7 @@ const showNotification = (message: string, type: 'success' | 'error' | 'info' = 
   const notification = document.createElement('div');
   notification.className = `notification fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
     type === 'success' ? 'bg-green-500 text-white' :
-    type === 'error' ? 'bg-red-500 text-white' :
+    type === 'error' ? 'bg-[#992424] text-white' :
     'bg-blue-500 text-white'
   }`;
   notification.textContent = message;
@@ -252,13 +252,14 @@ export function initializeSupportForm(): void {
 function setupFormValidation(): void {
   const form = document.getElementById("donation-form") as HTMLFormElement;
   const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
-  
-  if (!form || !donateButton) {
-    console.error('Form or donate button not found');
-    return;
-  }
+  const buttonOverlay = document.getElementById("button-overlay") as HTMLDivElement;
+
+  if (!form || !donateButton) return;
 
   donateButton.disabled = true;
+  if (buttonOverlay) {
+    buttonOverlay.style.display = "block";
+  }
 
   const fields: Record<string, FormFieldConfig> = {
     name: {
@@ -298,33 +299,18 @@ function setupFormValidation(): void {
     },
   };
 
-  const validateForm = (): boolean => {
-    const isValid = Object.entries(fields).every(([id, cfg]) => {
-      const element = document.getElementById(id) as HTMLInputElement;
-      const val = element?.value.trim() || "";
-      return cfg.validate(val);
-    });
-    
-    donateButton.disabled = !isValid;
-    return isValid;
-  };
-
   const showError = (id: string, message: string): void => {
     const el = document.getElementById(id) as HTMLInputElement;
     if (!el) return;
 
     el.classList.add("error");
-    el.style.borderColor = "#D33C0D";
+    el.style.borderColor = "#992424";
 
-    // Remove existing error message
     const existingError = el.parentNode?.querySelector(".form-error");
-    if (existingError) {
-      existingError.remove();
-    }
+    if (existingError) existingError.remove();
 
-    // Add new error message
     const error = document.createElement("div");
-    error.className = "form-error text-[#D33C0D] text-sm mt-1";
+    error.className = "form-error text-[#992424] text-sm mt-1";
     error.textContent = message;
     el.parentNode?.insertBefore(error, el.nextSibling);
   };
@@ -341,35 +327,83 @@ function setupFormValidation(): void {
   };
 
   const clearAllErrors = (): void => {
-    Object.keys(fields).forEach(id => clearError(id));
+    Object.keys(fields).forEach((id) => clearError(id));
   };
 
-  // Set up event listeners
-  Object.keys(fields).forEach((id) => {
-    const el = document.getElementById(id) as HTMLInputElement;
-    if (!el) return;
-
-    el.addEventListener("input", () => {
-      validateForm();
-      clearError(id);
+  const isFormValid = (): boolean => {
+    return Object.entries(fields).every(([id]) => {
+      const el = document.getElementById(id) as HTMLInputElement;
+      return el?.value.trim() !== "";
     });
+  };
 
-    el.addEventListener("blur", () => {
-      const val = el.value.trim();
-      if (!val) {
-        showError(id, fields[id].emptyText);
-      } else if (!fields[id].validate(val)) {
-        showError(id, fields[id].errorText);
+  const checkEmptyFields = (): void => {
+    clearAllErrors();
+    
+    let firstErrorField: HTMLInputElement | null = null;
+    let emptyFieldCount = 0;
+    
+    Object.entries(fields).forEach(([id, cfg]) => {
+      const el = document.getElementById(id) as HTMLInputElement;
+      if (!el?.value.trim()) {
+        showError(id, cfg.emptyText);
+        emptyFieldCount++;
+        if (!firstErrorField) {
+          firstErrorField = el;
+        }
       }
     });
+    
+    // Focus on first empty field
+    if (firstErrorField) {
+      firstErrorField.focus();
+      firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    
+    // Show notification
+    if (emptyFieldCount > 0) {
+      const message = emptyFieldCount === 1 
+        ? "Please fill in the required field." 
+        : `Please fill in all ${emptyFieldCount} required fields.`;
+      showNotification(message, "error");
+    }
+  };
+
+  // Update button state on input
+  form.addEventListener("input", (e) => {
+    const target = e.target as HTMLInputElement;
+    
+    // Clear error when user starts typing
+    if (target.id && fields[target.id]) {
+      const error = target.parentNode?.querySelector(".form-error");
+      if (error && target.value.trim()) {
+        clearError(target.id);
+      }
+    }
+    
+    // Update button state
+    const formIsValid = isFormValid();
+    donateButton.disabled = !formIsValid;
+    
+    // Show/hide overlay based on form validity
+    if (buttonOverlay) {
+      buttonOverlay.style.display = formIsValid ? "none" : "block";
+    }
   });
 
-  // Initial validation
-  validateForm();
+  // Handle overlay click when form is invalid
+  if (buttonOverlay) {
+    buttonOverlay.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      checkEmptyFields();
+    });
+  }
 
-  // Store validation functions for external use
-  (window as any).validateForm = validateForm;
+  // Make functions available globally
+  (window as any).isFormValid = isFormValid;
   (window as any).clearAllErrors = clearAllErrors;
+  (window as any).checkEmptyFields = checkEmptyFields;
 }
 
 async function initiatePayment(amount: number, type: string): Promise<void> {
