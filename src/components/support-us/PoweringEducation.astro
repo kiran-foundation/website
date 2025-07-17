@@ -8,10 +8,11 @@ type Feature = {
 };
 
 const info = (await getEntry("support-us", "powering-education")).data;
-
 ---
 
-<div class="flex flex-col lg:flex-row items-center justify-between gap-10 max-w-[1296px] mx-auto px-4 py-12">
+<div
+  class="flex flex-col lg:flex-row items-center justify-between gap-10 max-w-[1296px] mx-auto px-4 py-12"
+>
   <!-- Left: Text Content -->
   <div class="flex-1 w-full">
     <h2 class="pratibha-heading mb-4">
@@ -21,39 +22,67 @@ const info = (await getEntry("support-us", "powering-education")).data;
       {info.intro}
     </p>
     <ul class="mb-6 space-y-6">
-      {info.features.map((f:Feature) => (
-        <li class="flex items-start gap-4">
-          <span class="mt-1">
-            {f.active ? (
-              // Checked box
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
-                <rect width="32" height="32" rx="6" fill="#222" />
-                <path d="M10 17l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            ) : (
-              // Unchecked box
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
-                <rect width="32" height="32" rx="6" fill="none" stroke="#222" stroke-width="2"/>
-              </svg>
-            )}
-          </span>
-          <div>
-            <div class={`font-semibold text-[1.5rem] leading-tight mb-1 ${f.active ? "text-[#222]" : "text-[#49494C] opacity-60"}`}>
-              {f.title}
+      {
+        info.features.map((f: Feature) => (
+          <li class="flex items-start gap-4">
+            <span class="flex-none pt-3 w-8 h-8 flex items-center justify-center">
+              {f.active ? (
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <rect
+                    x="3.5"
+                    y="3.5"
+                    width="25"
+                    height="25"
+                    rx="4.5"
+                    fill="none"
+                    stroke="#222"
+                    stroke-width="3"
+                  />
+                  <path
+                    d="M10 16l4 4 8-8"
+                    stroke="#222"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              ) : (
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <rect
+                    x="3.5"
+                    y="3.5"
+                    width="25"
+                    height="25"
+                    rx="4.5"
+                    fill="none"
+                    stroke="#222"
+                    stroke-width="3"
+                  />
+                </svg>
+              )}
+            </span>
+            <div>
+              <div
+                class={`font-semibold text-[1.5rem] leading-tight mb-1 ${f.active ? "text-[#222]" : "text-[#49494C] opacity-60"}`}
+              >
+                {f.title}
+              </div>
+              <div
+                class={`pratibha-description text-base ${f.active ? "text-[#49494C]" : "opacity-60"}`}
+              >
+                {f.desc}
+              </div>
             </div>
-            <div class={`pratibha-description text-base ${f.active ? "text-[#49494C]" : "opacity-60"}`}>
-              {f.desc}
-            </div>
-          </div>
-        </li>
-      ))}
+          </li>
+        ))
+      }
     </ul>
     <p class="pratibha-description mb-8">
       {info.outro}
     </p>
-    <Button 
-      link={info.button.link} 
-      title={info.button.title} 
+    <Button
+      link={info.button.link}
+      title={info.button.title}
       btn={info.button.btn}
       widthClass="w-[210px]"
       heightClass="h-[56px]"
@@ -62,7 +91,9 @@ const info = (await getEntry("support-us", "powering-education")).data;
 
   <!-- Right: Image -->
   <div class="flex-1 w-full flex justify-center">
-    <div class="rounded-2xl overflow-hidden shadow-lg w-full max-w-[420px] min-h-[340px] bg-gray-200 flex items-center justify-center">
+    <div
+      class="rounded-2xl overflow-hidden shadow-lg w-full max-w-[420px] min-h-[340px] bg-gray-200 flex items-center justify-center"
+    >
       <img
         src={info.image}
         alt={info.imageAlt}
