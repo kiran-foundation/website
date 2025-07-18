@@ -1,0 +1,31 @@
+---
+import { getEntry } from "astro:content";
+
+const heroEntry = await getEntry("support-us", "laptop/hero");
+
+const {
+  greenUnderline = "",
+  title = "",
+  subtitle = "",
+  description = "",
+} = heroEntry?.data ?? {};
+---
+
+<section class="w-full min-h-[40vh] bg-[#F1F1F1] flex flex-col items-center justify-center py-0">
+  <div class="w-full max-w-5xl mx-auto flex flex-col items-center text-center px-4">
+    <h1 class="hero-title text-center mb-2">
+      <span class="relative inline-block">
+        <span class="relative z-10">{greenUnderline}</span>
+        <span
+          class="absolute left-0 w-full h-[0.5rem] bg-[#1DB954] z-0"
+          style="bottom: 0.1em;"
+        ></span>
+      </span>
+      <br />
+      {subtitle}
+    </h1>
+    <p class="hero-subtitle mt-4 max-w-4xl mx-auto pb-3">
+      {description}
+    </p>
+  </div>
+</section>

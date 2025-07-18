@@ -1,0 +1,232 @@
+---
+import { getEntry } from "astro:content";
+const formEntry = await getEntry("support-us", "laptop/form");
+
+if (!formEntry) throw new Error("Form content not found");
+
+const { title, fields, submit, success, fail } = formEntry.data as {
+  title: string;
+  fields: Record<string, { label: string; placeholder: string }>;
+  submit: string;
+  success: string;
+  fail: string;
+};
+---
+
+<section
+  class="w-full min-h-[60vh] bg-[#F1F1F1] flex flex-col items-center justify-center py-0"
+>
+  <form
+    id="device-support-form"
+    class="w-full max-w-4xl mx-auto flex flex-col items-center text-center px-4 py-8"
+    novalidate
+  >
+    <h1 class="pratibha-heading text-left w-full mb-8">
+      {title}
+    </h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+      <div class="flex flex-col text-left">
+        <label for="name" class="body-text-2 mb-2">{fields.name.label}</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder={fields.name.placeholder}
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          required
+        />
+        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+      </div>
+      <div class="flex flex-col text-left">
+        <label for="email" class="body-text-2 mb-2">{fields.email.label}</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder={fields.email.placeholder}
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          required
+        />
+        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+      </div>
+      <div class="flex flex-col text-left">
+        <label for="phone" class="body-text-2 mb-2">{fields.phone.label}</label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          placeholder={fields.phone.placeholder}
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          required
+        />
+        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+      </div>
+      <div class="flex flex-col text-left">
+        <label for="country" class="body-text-2 mb-2"
+          >{fields.country.label}</label
+        >
+        <input
+          id="country"
+          name="country"
+          type="text"
+          value={fields.country.placeholder}
+          readonly
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors opacity-60"
+        />
+      </div>
+      <div class="flex flex-col text-left md:col-span-2">
+        <label for="address" class="body-text-2 mb-2"
+          >{fields.address.label}</label
+        >
+        <input
+          id="address"
+          name="address"
+          type="text"
+          placeholder={fields.address.placeholder}
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          required
+        />
+        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+      </div>
+      <div class="flex flex-col text-left">
+        <label for="city" class="body-text-2 mb-2">{fields.city.label}</label>
+        <input
+          id="city"
+          name="city"
+          type="text"
+          placeholder={fields.city.placeholder}
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          required
+        />
+        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+      </div>
+      <div class="flex flex-col text-left">
+        <label for="pincode" class="body-text-2 mb-2"
+          >{fields.pincode.label}</label
+        >
+        <input
+          id="pincode"
+          name="pincode"
+          type="text"
+          placeholder={fields.pincode.placeholder}
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          required
+        />
+        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+      </div>
+      <div class="flex flex-col text-left md:col-span-2">
+        <label for="laptopAddress" class="body-text-2 mb-2"
+          >{fields.laptopAddress.label}</label
+        >
+        <input
+          id="laptopAddress"
+          name="laptopAddress"
+          type="text"
+          placeholder={fields.laptopAddress.placeholder}
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          required
+        />
+        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+      </div>
+      <div class="flex flex-col text-left md:col-span-2">
+        <label for="description" class="body-text-2 mb-2"
+          >{fields.description.label}</label
+        >
+        <textarea
+          id="description"
+          name="description"
+          placeholder={fields.description.placeholder}
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] min-h-[120px] transition-colors resize-none"
+          required></textarea>
+        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+      </div>
+    </div>
+
+    <!-- Submit button wrapper -->
+    <div class="flex justify-start mt-8 w-full">
+      <div id="submit-button-wrapper">
+        <button
+          type="submit"
+          class="w-full md:w-auto h-[60px]
+           px-3 sm:px-5 md:px-6
+           py-2 sm:py-3 md:py-5
+           text-base lg:text-lg
+           font-poppins font-medium
+           rounded-md
+           bg-[#D33C0D] text-white
+           transition-all
+           hover:bg-[#72321E]
+           active:ring-2 active:ring-[#D33C0D]
+           mb-2
+           disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <span class="mx-3">{submit}</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="form-success" class="hidden mt-6 body-text-2 text-green-500">
+      {success}
+    </div>
+    <div id="form-fail" class="hidden mt-6 body-text-2 text-[#D33C0D]">
+      {fail}
+    </div>
+  </form>
+
+  <script>
+    import { setupForm } from "../../../utils/laptopForm";
+    setupForm("device-support-form", "form-success", "form-fail");
+  </script>
+</section>
+
+<style>
+  /* Toast animation styles */
+  .toast-notification {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Smooth transitions for error states */
+  input,
+  textarea {
+    transition: border-color 0.2s ease;
+  }
+
+  .form-error {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Error state for inputs */
+  input.error,
+  textarea.error {
+    border-color: #d33c0d !important;
+  }
+
+  /* Placeholder styling */
+  input::placeholder,
+  textarea::placeholder {
+    color: #49494c;
+    opacity: 0.6;
+  }
+</style>

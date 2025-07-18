@@ -1,0 +1,19 @@
+---
+import Breadcrumb from "../../../components/common/Breadcrumb.astro";
+import Form from "../../../components/support-us/Laptop/Form.astro";
+import Hero from "../../../components/support-us/Laptop/Hero.astro";
+import PoweringEducation from "../../../components/support-us/PoweringEducation.astro";
+import Layout from "../../../layouts/Layout.astro";
+
+
+---
+
+
+<Layout title="Laptop Sponser" >
+    <main class="pb-[120px]">
+        <Breadcrumb hidden="false"/>
+        <Hero collection='support-us' slug="laptop/hero"/>
+        <PoweringEducation class:list={"max-70%"}/>
+        <Form/>
+    </main>
+</Layout>
