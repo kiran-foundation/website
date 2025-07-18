@@ -14,17 +14,20 @@ const { title, fields, submit, success, fail } = formEntry.data as {
 ---
 
 <section
-  class="w-full min-h-[60vh] bg-[#F1F1F1] flex flex-col items-center justify-center py-0"
+  class="bg-[#F1F1F1] max-w-[81rem] mx-auto px-4 mb-[10.25rem] md:rounded-2xl mt-[120px]"
 >
   <form
     id="device-support-form"
-    class="w-full max-w-4xl mx-auto flex flex-col items-center text-center px-4 py-8"
+    class="mx-auto px-0 max-w-[50rem] py-[2.5rem] sm:pt-[7.5rem] sm:pb-[10.5rem]"
     novalidate
   >
-    <h1 class="pratibha-heading text-left w-full mb-8">
+    <h1
+      class="px-1 m-0 pb-[2rem] font-poppins !font-[500] text-center !text-[1.5rem] !md:text-[2rem] tracking-normal !leading-[120%]"
+    >
       {title}
     </h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
       <div class="flex flex-col text-left">
         <label for="name" class="body-text-2 mb-2">{fields.name.label}</label>
         <input
@@ -32,7 +35,7 @@ const { title, fields, submit, success, fail } = formEntry.data as {
           name="name"
           type="text"
           placeholder={fields.name.placeholder}
-          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#00AA5E] focus:shadow-[0_0_0_3px_#00AA5E66] transition-all"
           required
         />
         <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
@@ -44,7 +47,7 @@ const { title, fields, submit, success, fail } = formEntry.data as {
           name="email"
           type="email"
           placeholder={fields.email.placeholder}
-          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#00AA5E] focus:shadow-[0_0_0_3px_#00AA5E66] transition-all"
           required
         />
         <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
@@ -56,7 +59,7 @@ const { title, fields, submit, success, fail } = formEntry.data as {
           name="phone"
           type="tel"
           placeholder={fields.phone.placeholder}
-          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#00AA5E] focus:shadow-[0_0_0_3px_#00AA5E66] transition-all"
           required
         />
         <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
@@ -71,7 +74,7 @@ const { title, fields, submit, success, fail } = formEntry.data as {
           type="text"
           value={fields.country.placeholder}
           readonly
-          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors opacity-60"
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#00AA5E] focus:shadow-[0_0_0_3px_#00AA5E66] transition-all opacity-60"
         />
       </div>
       <div class="flex flex-col text-left md:col-span-2">
@@ -83,7 +86,7 @@ const { title, fields, submit, success, fail } = formEntry.data as {
           name="address"
           type="text"
           placeholder={fields.address.placeholder}
-          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#00AA5E] focus:shadow-[0_0_0_3px_#00AA5E66] transition-all"
           required
         />
         <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
@@ -95,7 +98,7 @@ const { title, fields, submit, success, fail } = formEntry.data as {
           name="city"
           type="text"
           placeholder={fields.city.placeholder}
-          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#00AA5E] focus:shadow-[0_0_0_3px_#00AA5E66] transition-all"
           required
         />
         <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
@@ -109,7 +112,7 @@ const { title, fields, submit, success, fail } = formEntry.data as {
           name="pincode"
           type="text"
           placeholder={fields.pincode.placeholder}
-          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#00AA5E] focus:shadow-[0_0_0_3px_#00AA5E66] transition-all"
           required
         />
         <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
@@ -123,7 +126,7 @@ const { title, fields, submit, success, fail } = formEntry.data as {
           name="laptopAddress"
           type="text"
           placeholder={fields.laptopAddress.placeholder}
-          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] transition-colors"
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#00AA5E] focus:shadow-[0_0_0_3px_#00AA5E66] transition-all"
           required
         />
         <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
@@ -136,7 +139,7 @@ const { title, fields, submit, success, fail } = formEntry.data as {
           id="description"
           name="description"
           placeholder={fields.description.placeholder}
-          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#1DB954] min-h-[120px] transition-colors resize-none"
+          class="bg-white border border-[#49494C] rounded-lg px-4 py-2 text-[#232323] body-text-1 focus:outline-none focus:border-[#00AA5E] focus:shadow-[0_0_0_3px_#00AA5E66] min-h-[120px] transition-all resize-none"
           required></textarea>
         <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
       </div>

@@ -5,27 +5,43 @@ const heroEntry = await getEntry("support-us", "laptop/hero");
 
 const {
   greenUnderline = "",
-  title = "",
-  subtitle = "",
+  greenUnderlineSvg = "",
+  heading = "",
+  heading2 = "",
   description = "",
+  heroSubtitle = "",
 } = heroEntry?.data ?? {};
 ---
 
-<section class="w-full min-h-[40vh] bg-[#F1F1F1] flex flex-col items-center justify-center py-0">
-  <div class="w-full max-w-5xl mx-auto flex flex-col items-center text-center px-4">
-    <h1 class="hero-title text-center mb-2">
+<section
+  class="w-full min-h-[45vh] flex flex-col items-center justify-center py-0"
+>
+  <div
+    class="w-full max-w-5xl mx-auto flex flex-col items-center text-center px-4"
+  >
+    <h1
+      class="text-[36px] sm:text-[48px] md:text-[56px] lg:text-[64px] font-merriweather font-[900] md:font-bold leading-[150%] tracking-[-2.2%] text-center mb-2"
+    >
       <span class="relative inline-block">
         <span class="relative z-10">{greenUnderline}</span>
-        <span
-          class="absolute left-0 w-full h-[0.5rem] bg-[#1DB954] z-0"
-          style="bottom: 0.1em;"
-        ></span>
+        <span class="absolute -bottom-[4px] left-0 w-full z-0">
+          <img
+            src={greenUnderlineSvg}
+            alt="Green Underline"
+            class="w-full h-auto"
+            loading="lazy"
+          />
+        </span>
       </span>
       <br />
-      {subtitle}
+      {heading}
     </h1>
-    <p class="hero-subtitle mt-4 max-w-4xl mx-auto pb-3">
-      {description}
+    <p
+      class="text-[20px] font-normal leading-[2.375rem] md:text-[32px] lg:text-[30px] text-[#49494C] font-poppins mt-4 max-w-4xl mx-auto pb-3"
+    >
+      <span class="block">
+        {heroSubtitle}
+      </span>{description}
     </p>
   </div>
 </section>
