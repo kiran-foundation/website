@@ -187,19 +187,13 @@ export function setupForm(formId: string, successId: string, failId: string) {
       // Simulate async submission (replace with your API call)
       await new Promise(resolve => setTimeout(resolve, 1200));
 
-      showToast("Form submitted successfully! We'll contact you soon.", 'success');
-      form.reset();
-
-      // Clear all errors after reset
-      for (const input of form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input, textarea')) {
-        clearError(input);
-      }
-
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = originalText;
-      }
+      console.log('Form submitted successfully, redirecting...');
+      
+      // Redirect to confirmation page
+      window.location.href = '/support-us/laptop/confirmation';
+      
     } catch (err) {
+      console.error('Form submission error:', err);
       showToast("Submission failed. Please try again later.", 'error');
       if (submitButton) {
         submitButton.disabled = false;
