@@ -216,32 +216,61 @@ export function initializeSupportForm(): void {
   const donationAmount = Number(urlParams.get("amount") ?? "0");
   const paymentType = String(urlParams.get("frequency") ?? "onetime").toLowerCase();
 
-  // Validate parameters
+  // Check if parameters are invalid and show helper message
+  const paramsInvalid = donationAmount <= 0 || !['onetime', 'monthly', 'yearly'].includes(paymentType);
+  const navigationHelper = document.getElementById('navigation-helper');
+  
+  if (paramsInvalid && navigationHelper) {
+    navigationHelper.classList.remove('hidden');
+    console.warn('Invalid URL parameters - showing navigation helper');
+  }
+
+  // Validate parameters - but don't return early, just show warnings
   if (donationAmount <= 0) {
-    showNotification('Invalid donation amount specified', 'error');
-    return;
+    showNotification('Please go back and select a donation amount', 'error');
+    console.warn('Invalid donation amount specified:', donationAmount);
   }
 
   if (!['onetime', 'monthly', 'yearly'].includes(paymentType)) {
-    showNotification('Invalid payment frequency specified', 'error');
-    return;
+    showNotification('Please go back and select a valid payment frequency', 'error');
+    console.warn('Invalid payment frequency specified:', paymentType);
   }
 
   // Update display elements
   const amountDisplay = document.getElementById("amountToDisplay") as HTMLDivElement;
   const frequencyDisplay = document.getElementById("toBeDisplay") as HTMLDivElement;
+  const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
 
-  if (amountDisplay) amountDisplay.innerHTML = `₹${donationAmount.toLocaleString()}`;
+  if (amountDisplay) {
+    if (donationAmount > 0) {
+      amountDisplay.innerHTML = `₹${donationAmount.toLocaleString()}`;
+    } else {
+      amountDisplay.innerHTML = `₹0`;
+      amountDisplay.style.color = '#999';
+    }
+  }
+  
   if (frequencyDisplay) {
-    frequencyDisplay.innerHTML = 
-      paymentType === "monthly" ? "per month" :
-      paymentType === "yearly" ? "per year" : "One Time";
+    if (['onetime', 'monthly', 'yearly'].includes(paymentType)) {
+      frequencyDisplay.innerHTML = 
+        paymentType === "monthly" ? "per month" :
+        paymentType === "yearly" ? "per year" : "One Time";
+    } else {
+      frequencyDisplay.innerHTML = "Please select frequency";
+      frequencyDisplay.style.color = '#999';
+    }
+  }
+
+  // Disable donate button if parameters are invalid
+  if (donateButton && (donationAmount <= 0 || !['onetime', 'monthly', 'yearly'].includes(paymentType))) {
+    donateButton.disabled = true;
+    donateButton.style.opacity = '0.5';
+    donateButton.innerHTML = '<span class="mx-3">Please go back and select amount & frequency</span>';
   }
 
   setupFormValidation();
 
-  const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
-  if (donateButton) {
+  if (donateButton && donationAmount > 0 && ['onetime', 'monthly', 'yearly'].includes(paymentType)) {
     donateButton.addEventListener("click", (e) => {
       e.preventDefault();
       initiatePayment(donationAmount, paymentType);
@@ -381,13 +410,19 @@ function setupFormValidation(): void {
       }
     }
     
-    // Update button state
+    // Update button state - only enable if form is valid AND URL params are valid
+    const urlParams = new URLSearchParams(window.location.search);
+    const donationAmount = Number(urlParams.get("amount") ?? "0");
+    const paymentType = String(urlParams.get("frequency") ?? "onetime").toLowerCase();
+    
     const formIsValid = isFormValid();
-    donateButton.disabled = !formIsValid;
+    const paramsValid = donationAmount > 0 && ['onetime', 'monthly', 'yearly'].includes(paymentType);
+    
+    donateButton.disabled = !(formIsValid && paramsValid);
     
     // Show/hide overlay based on form validity
     if (buttonOverlay) {
-      buttonOverlay.style.display = formIsValid ? "none" : "block";
+      buttonOverlay.style.display = (formIsValid && paramsValid) ? "none" : "block";
     }
   });
 
@@ -409,8 +444,22 @@ function setupFormValidation(): void {
 async function initiatePayment(amount: number, type: string): Promise<void> {
   const form = document.getElementById("donation-form") as HTMLFormElement;
   
+  // Validate amount and frequency parameters first
+  if (amount <= 0) {
+    showNotification("Invalid donation amount. Please go back and select a valid amount.", 'error');
+    return;
+  }
+
+  if (!['onetime', 'monthly', 'yearly'].includes(type)) {
+    showNotification("Invalid payment frequency. Please go back and select a valid frequency.", 'error');
+    return;
+  }
+  
   // Validate form before proceeding
-  if (typeof (window as any).validateForm === 'function' && !(window as any).validateForm()) {
+  if (typeof (window as any).isFormValid === 'function' && !(window as any).isFormValid()) {
+    if (typeof (window as any).checkEmptyFields === 'function') {
+      (window as any).checkEmptyFields();
+    }
     showNotification("Please fill in all required fields correctly.", 'error');
     return;
   }
