@@ -335,13 +335,32 @@ function setupFormValidation(): void {
     el.classList.add("error");
     el.style.borderColor = "#992424";
 
-    const existingError = el.parentNode?.querySelector(".form-error");
-    if (existingError) existingError.remove();
+    // Find the error container (either .form-error-container or create one)
+    let errorContainer = el.parentNode?.querySelector(".form-error-container") as HTMLElement;
+    if (!errorContainer) {
+      // Fallback: look for existing .form-error or create new one
+      const existingError = el.parentNode?.querySelector(".form-error");
+      if (existingError) existingError.remove();
+      
+      const error = document.createElement("div");
+      error.className = "form-error";
+      error.style.color = "#992424";
+      error.style.fontSize = "0.875rem";
+      error.style.marginTop = "0.25rem";
+      error.textContent = message;
+      el.parentNode?.insertBefore(error, el.nextSibling);
+      return;
+    }
 
+    // Clear existing error and add new one
+    errorContainer.innerHTML = "";
     const error = document.createElement("div");
-    error.className = "form-error text-[#992424] text-sm mt-1";
+    error.className = "form-error";
+    error.style.color = "#992424";
+    error.style.fontSize = "0.875rem";
+    error.style.marginTop = "0.25rem";
     error.textContent = message;
-    el.parentNode?.insertBefore(error, el.nextSibling);
+    errorContainer.appendChild(error);
   };
 
   const clearError = (id: string): void => {
@@ -351,8 +370,39 @@ function setupFormValidation(): void {
     el.classList.remove("error");
     el.style.borderColor = "";
 
+    // Clear error from both possible locations
     const error = el.parentNode?.querySelector(".form-error");
     if (error) error.remove();
+    
+    const errorContainer = el.parentNode?.querySelector(".form-error-container") as HTMLElement;
+    if (errorContainer) {
+      errorContainer.innerHTML = "";
+    }
+  };
+
+  const validateField = (id: string): boolean => {
+    const el = document.getElementById(id) as HTMLInputElement;
+    const fieldConfig = fields[id];
+    
+    if (!el || !fieldConfig) return true;
+    
+    const value = el.value.trim();
+    
+    // Check if field is empty
+    if (value === "") {
+      showError(id, fieldConfig.emptyText);
+      return false;
+    }
+    
+    // Check if field is valid
+    if (!fieldConfig.validate(value)) {
+      showError(id, fieldConfig.errorText);
+      return false;
+    }
+    
+    // Field is valid, clear any errors
+    clearError(id);
+    return true;
   };
 
   const clearAllErrors = (): void => {
@@ -397,6 +447,14 @@ function setupFormValidation(): void {
       showNotification(message, "error");
     }
   };
+
+  // Add blur event listeners for real-time validation
+  form.addEventListener("blur", (e) => {
+    const target = e.target as HTMLInputElement;
+    if (target.id && fields[target.id]) {
+      validateField(target.id);
+    }
+  }, true); // Use capture phase to catch all blur events
 
   // Update button state on input
   form.addEventListener("input", (e) => {

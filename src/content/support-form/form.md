@@ -24,4 +24,8 @@ country:
   placeholder: "Enter your country"
   value: "India"
 
+paymentLoader:
+  title: "Processing Payment"
+  description: "Please wait while we process your donation..."
+
 ---
