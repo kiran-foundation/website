@@ -1,3 +1,5 @@
+import { getTextSync } from './textLoader';
+
 export interface FieldValidators {
   [key: string]: (v: string) => boolean;
 }
@@ -13,26 +15,12 @@ export const validators: FieldValidators = {
   description: v => v.trim() !== '' && v.trim().length >= 10,
 };
 
-export const errorTexts: Record<string, string> = {
-  name: "Please enter a valid name (2-50 letters).",
-  email: "Please enter a valid email address.",
-  phone: "Please enter a valid phone number (8-15 digits).",
-  address: "Address must be at least 5 characters.",
-  city: "City must be at least 2 characters.",
-  pincode: "Pin code must be 4-10 digits.",
-  laptopAddress: "Laptop address must be at least 5 characters.",
-  description: "Description must be at least 10 characters.",
+export const getErrorText = (field: string): string => {
+  return getTextSync(`laptopValidation.${field}Error`);
 };
 
-export const emptyTexts: Record<string, string> = {
-  name: "Name is required.",
-  email: "Email is required.",
-  phone: "Phone number is required.",
-  address: "Address is required.",
-  city: "City is required.",
-  pincode: "Pin code is required.",
-  laptopAddress: "Laptop pickup address is required.",
-  description: "Description is required.",
+export const getEmptyText = (field: string): string => {
+  return getTextSync(`laptopValidation.${field}Empty`);
 };
 
 export function showToast(message: string, type: 'success' | 'error' | 'info' = 'info') {
@@ -84,11 +72,11 @@ export function validateField(input: HTMLInputElement | HTMLTextAreaElement): bo
   const name = input.name;
   if (!validators[name]) return true;
   if (input.value.trim() === '') {
-    showError(input, emptyTexts[name] || 'This field is required.');
+    showError(input, getEmptyText(name) || getTextSync('laptopValidation.fieldRequired'));
     return false;
   }
   if (!validators[name](input.value)) {
-    showError(input, errorTexts[name]);
+    showError(input, getErrorText(name));
     return false;
   }
   clearError(input);
@@ -161,14 +149,14 @@ export function setupForm(formId: string, successId: string, failId: string) {
       let toastMessage = '';
       if (emptyFieldCount > 0 && invalidFieldCount === 0) {
         toastMessage = emptyFieldCount === 1 
-          ? "Please fill in the required field." 
-          : `Please fill in all ${emptyFieldCount} required fields.`;
+          ? getTextSync("notifications.fillSingleField") 
+          : getTextSync("notifications.fillMultipleFields", { count: emptyFieldCount });
       } else if (invalidFieldCount > 0 && emptyFieldCount === 0) {
         toastMessage = invalidFieldCount === 1
-          ? "Please correct the invalid field."
-          : `Please correct ${invalidFieldCount} invalid fields.`;
+          ? getTextSync("notifications.correctInvalidField")
+          : getTextSync("notifications.correctMultipleFields", { count: invalidFieldCount });
       } else {
-        toastMessage = "Please fill in all required fields and correct any errors.";
+        toastMessage = getTextSync("notifications.fillAndCorrect");
       }
       showToast(toastMessage, 'error');
       return;
@@ -180,21 +168,18 @@ export function setupForm(formId: string, successId: string, failId: string) {
     if (submitButton) {
       originalText = submitButton.textContent || '';
       submitButton.disabled = true;
-      submitButton.textContent = 'Submitting...';
+      submitButton.textContent = getTextSync('buttons.submitting');
     }
 
     try {
       // Simulate async submission (replace with your API call)
       await new Promise(resolve => setTimeout(resolve, 1200));
-
-      console.log('Form submitted successfully, redirecting...');
       
       // Redirect to confirmation page
       window.location.href = '/support-us/laptop/confirmation';
       
     } catch (err) {
-      console.error('Form submission error:', err);
-      showToast("Submission failed. Please try again later.", 'error');
+      showToast(getTextSync("errors.submissionFailed"), 'error');
       if (submitButton) {
         submitButton.disabled = false;
         submitButton.textContent = originalText || 'Submit';

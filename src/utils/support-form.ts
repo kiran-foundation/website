@@ -1,5 +1,6 @@
 export {};
 import { CONFIG,PREDEFINED_PLANS } from './config';
+import { initializeTextLoader, getTextSync } from './textLoader';
 // Global types for TypeScript in browser
 declare global {
   interface Window {
@@ -99,10 +100,8 @@ const apiCall = async (endpoint: string, options: RequestInit = {}): Promise<Api
 
     return data;
   } catch (error) {
-    console.error(`API call failed for ${endpoint}:`, error);
-    
     if (error instanceof TypeError && error.message.includes('fetch')) {
-      throw new Error('Unable to connect to payment server. Please check your connection.');
+      throw new Error(getTextSync('errors.connectionError'));
     }
     
     throw error;
@@ -114,7 +113,6 @@ const getRazorpayKey = async (): Promise<string> => {
     const response = await apiCall('/razorpay-key');
     return response.data?.key || CONFIG.RAZORPAY_KEY;
   } catch (error) {
-    console.warn('Failed to fetch Razorpay key from backend, using default');
     return CONFIG.RAZORPAY_KEY;
   }
 };
@@ -180,9 +178,8 @@ const postToGoogleForm = async ({
       body: formData.toString(),
     });
     
-    console.log('Data successfully submitted to Google Form');
   } catch (error) {
-    console.error('Failed to submit to Google Form:', error);
+    // Silently handle Google Form submission errors
   }
 };
 
@@ -204,14 +201,12 @@ const verifyPayment = async (paymentData: RazorpayResponse): Promise<boolean> =>
 
     return response.success;
   } catch (error) {
-    console.error('Payment verification failed:', error);
     return false;
   }
 };
 
 export function initializeSupportForm(): void {
   const urlParams = new URLSearchParams(window.location.search);
-  console.log("URL Params:", urlParams.toString());
   
   const donationAmount = Number(urlParams.get("amount") ?? "0");
   const paymentType = String(urlParams.get("frequency") ?? "onetime").toLowerCase();
@@ -222,18 +217,15 @@ export function initializeSupportForm(): void {
   
   if (paramsInvalid && navigationHelper) {
     navigationHelper.classList.remove('hidden');
-    console.warn('Invalid URL parameters - showing navigation helper');
   }
 
   // Validate parameters - but don't return early, just show warnings
   if (donationAmount <= 0) {
-    showNotification('Please go back and select a donation amount', 'error');
-    console.warn('Invalid donation amount specified:', donationAmount);
+    showNotification(getTextSync('errors.selectAmount'), 'error');
   }
 
   if (!['onetime', 'monthly', 'yearly'].includes(paymentType)) {
-    showNotification('Please go back and select a valid payment frequency', 'error');
-    console.warn('Invalid payment frequency specified:', paymentType);
+    showNotification(getTextSync('errors.selectFrequency'), 'error');
   }
 
   // Update display elements
@@ -253,10 +245,10 @@ export function initializeSupportForm(): void {
   if (frequencyDisplay) {
     if (['onetime', 'monthly', 'yearly'].includes(paymentType)) {
       frequencyDisplay.innerHTML = 
-        paymentType === "monthly" ? "per month" :
-        paymentType === "yearly" ? "per year" : "One Time";
+        paymentType === "monthly" ? getTextSync("display.perMonth") :
+        paymentType === "yearly" ? getTextSync("display.perYear") : getTextSync("display.oneTime");
     } else {
-      frequencyDisplay.innerHTML = "Please select frequency";
+      frequencyDisplay.innerHTML = getTextSync("display.selectFrequency");
       frequencyDisplay.style.color = '#999';
     }
   }
@@ -265,7 +257,7 @@ export function initializeSupportForm(): void {
   if (donateButton && (donationAmount <= 0 || !['onetime', 'monthly', 'yearly'].includes(paymentType))) {
     donateButton.disabled = true;
     donateButton.style.opacity = '0.5';
-    donateButton.innerHTML = '<span class="mx-3">Please go back and select amount & frequency</span>';
+    donateButton.innerHTML = `<span class="mx-3">${getTextSync('buttons.selectAmountFrequency')}</span>`;
   }
 
   setupFormValidation();
@@ -293,38 +285,38 @@ function setupFormValidation(): void {
   const fields: Record<string, FormFieldConfig> = {
     name: {
       validate: (v) => /^[a-zA-Z\s]{2,50}$/.test(v.trim()),
-      errorText: "Name must be 2-50 characters (letters and spaces only)",
-      emptyText: "Name is required",
+      errorText: getTextSync("validation.nameError"),
+      emptyText: getTextSync("validation.nameEmpty"),
     },
     email: {
       validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) && v.length <= 100,
-      errorText: "Please enter a valid email address",
-      emptyText: "Email is required",
+      errorText: getTextSync("validation.emailError"),
+      emptyText: getTextSync("validation.emailEmpty"),
     },
     phone: {
       validate: (v) => /^\+?[1-9][0-9]{7,14}$/.test(v.replace(/[\s\-()]/g, "")),
-      errorText: "Phone must be 8-15 digits with optional country code",
-      emptyText: "Phone number is required",
+      errorText: getTextSync("validation.phoneError"),
+      emptyText: getTextSync("validation.phoneEmpty"),
     },
     country: {
       validate: (v) => v.trim().length >= 2 && v.trim().length <= 50,
-      errorText: "Country name must be 2-50 characters",
-      emptyText: "Country is required",
+      errorText: getTextSync("validation.countryError"),
+      emptyText: getTextSync("validation.countryEmpty"),
     },
     address: {
       validate: (v) => v.trim().length >= 5 && v.trim().length <= 200,
-      errorText: "Address must be 5-200 characters",
-      emptyText: "Address is required",
+      errorText: getTextSync("validation.addressError"),
+      emptyText: getTextSync("validation.addressEmpty"),
     },
     city: {
       validate: (v) => v.trim().length >= 2 && v.trim().length <= 50,
-      errorText: "City name must be 2-50 characters",
-      emptyText: "City is required",
+      errorText: getTextSync("validation.cityError"),
+      emptyText: getTextSync("validation.cityEmpty"),
     },
     zipcode: {
       validate: (v) => /^\d{5,10}$/.test(v.replace(/[\s\-]/g, "")),
-      errorText: "Pin/Zip code must be 5-10 digits",
-      emptyText: "Pin/Zip code is required",
+      errorText: getTextSync("validation.zipcodeError"),
+      emptyText: getTextSync("validation.zipcodeEmpty"),
     },
   };
 
@@ -442,8 +434,8 @@ function setupFormValidation(): void {
     // Show notification
     if (emptyFieldCount > 0) {
       const message = emptyFieldCount === 1 
-        ? "Please fill in the required field." 
-        : `Please fill in all ${emptyFieldCount} required fields.`;
+        ? getTextSync("notifications.fillSingleField") 
+        : getTextSync("notifications.fillMultipleFields", { count: emptyFieldCount });
       showNotification(message, "error");
     }
   };
@@ -504,12 +496,12 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
   
   // Validate amount and frequency parameters first
   if (amount <= 0) {
-    showNotification("Invalid donation amount. Please go back and select a valid amount.", 'error');
+    showNotification(getTextSync("errors.invalidAmountValue"), 'error');
     return;
   }
 
   if (!['onetime', 'monthly', 'yearly'].includes(type)) {
-    showNotification("Invalid payment frequency. Please go back and select a valid frequency.", 'error');
+    showNotification(getTextSync("errors.invalidFrequencyValue"), 'error');
     return;
   }
   
@@ -518,7 +510,7 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     if (typeof (window as any).checkEmptyFields === 'function') {
       (window as any).checkEmptyFields();
     }
-    showNotification("Please fill in all required fields correctly.", 'error');
+    showNotification(getTextSync("errors.fillRequiredFields"), 'error');
     return;
   }
 
@@ -556,7 +548,6 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
 
     // Determine endpoint and make API call
     const endpoint = type === "onetime" ? "/create-order" : "/create-subscription";
-    console.log(`Initiating ${type} payment:`, { amount: formData.amount, type, existingPlanId });
 
     const response = await apiCall(endpoint, {
       method: 'POST',
@@ -564,12 +555,12 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     });
 
     if (!response.success) {
-      throw new Error(response.message || 'Payment creation failed');
+      throw new Error(response.message || getTextSync('errors.paymentCreationFailed'));
     }
 
     // Check if Razorpay SDK is loaded
     if (typeof window.Razorpay === "undefined") {
-      throw new Error("Razorpay SDK not loaded. Please refresh the page and try again.");
+      throw new Error(getTextSync('errors.razorpayNotLoaded'));
     }
 
     // Prepare Razorpay options
@@ -587,7 +578,7 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
           if (type === "onetime") {
             const isVerified = await verifyPayment(razorpayResponse);
             if (!isVerified) {
-              throw new Error("Payment verification failed");
+              throw new Error(getTextSync("errors.paymentVerificationFailed"));
             }
           }
 
@@ -609,8 +600,8 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
           });
 
           showNotification(
-            type === "onetime" ? "Payment successful! Thank you for your donation." : 
-            "Subscription activated! Thank you for your ongoing support.",
+            type === "onetime" ? getTextSync("success.paymentSuccess") : 
+            getTextSync("success.subscriptionSuccess"),
             'success'
           );
 
@@ -626,9 +617,8 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
           }, 100);
 
         } catch (error) {
-          console.error('Post-payment processing failed:', error);
           showNotification(
-            'Payment completed but there was an issue with confirmation. Please contact support.',
+            getTextSync('errors.postPaymentIssue'),
             'error'
           );
         } finally {
@@ -637,7 +627,6 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
       },
       modal: {
         ondismiss: function () {
-          console.log("Payment modal closed by user");
           showLoader(false);
         },
       },
@@ -656,21 +645,17 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     } else if (type !== "onetime" && response.data.subscription_id) {
       options.subscription_id = response.data.subscription_id;
     } else {
-      throw new Error("Invalid response from payment server");
+      throw new Error(getTextSync("errors.invalidServerResponse"));
     }
-
-    console.log("Opening Razorpay with options:", options);
 
     // Open Razorpay checkout
     const razorpay = new window.Razorpay(options);
     razorpay.open();
 
   } catch (error: any) {
-    console.error("Payment initiation failed:", error);
-    
-    let errorMessage = "Payment failed. Please try again.";
+    let errorMessage = getTextSync("errors.paymentFailed");
     if (error.message.includes("connect")) {
-      errorMessage = "Unable to connect to payment server. Please check your connection.";
+      errorMessage = getTextSync("errors.connectionError");
     } else if (error.message.includes("Invalid")) {
       errorMessage = error.message;
     }
