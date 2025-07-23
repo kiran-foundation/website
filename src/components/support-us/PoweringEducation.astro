@@ -25,27 +25,9 @@ const info = (await getEntry("support-us", "powering-education")).data;
       {
         info.features.map((f: Feature) => (
           <li class="flex items-start gap-4">
-            <span class="flex-none pt-3 w-8 h-8 flex items-center justify-center">
+            <span class="flex-none w-8 h-8 flex items-center justify-center">
               {f.active ? (
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <rect
-                    x="3.5"
-                    y="3.5"
-                    width="25"
-                    height="25"
-                    rx="4.5"
-                    fill="none"
-                    stroke="#222"
-                    stroke-width="3"
-                  />
-                  <path
-                    d="M10 16l4 4 8-8"
-                    stroke="#222"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                <i class="text-nav text-2xl ai-check"></i>
               ) : (
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <rect
