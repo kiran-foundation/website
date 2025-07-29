@@ -65,6 +65,13 @@ navigation:
         url: "/work-with-us/opportunities/internship"
 
   - menu:
+      name: "Support Us"
+      url: "/support-us"
+    submenu:
+      - name: "Laptop Support"
+        url: "/support-us/laptop"
+
+  - menu:
       name: "Contact Us"
       url: "/contact"
 ---

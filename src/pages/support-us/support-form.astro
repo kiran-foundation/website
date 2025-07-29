@@ -1,6 +1,11 @@
 ---
 import { getEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import SupportFormFields from "../../components/support-us/SupportFormFields.astro";
+import DonationCard from "../../components/support-us/DonationCard.astro";
+import NavigationHelper from "../../components/support-us/NavigationHelper.astro";
+import PaymentLoader from "../../components/support-us/PaymentLoader.astro";
+
 const card = (await getEntry("support-form", "card")).data;
 const info = (await getEntry("support-form", "form")).data;
 ---
@@ -8,6 +13,31 @@ const info = (await getEntry("support-form", "form")).data;
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
   import "../../utils/support-form.ts";
+</script>
+
+<script>
+  // Additional validation check to ensure everything is working
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("Form validation check - DOM loaded");
+
+    // Verify key elements exist
+    const form = document.getElementById("donation-form");
+    const button = document.getElementById("donate-now-button");
+    const overlay = document.getElementById("button-overlay");
+
+    console.log("Form elements check:", {
+      form: !!form,
+      button: !!button,
+      overlay: !!overlay,
+    });
+
+    // Check if validation functions are available
+    console.log("Validation functions available:", {
+      isFormValid: typeof (window as any).isFormValid === "function",
+      checkEmptyFields: typeof (window as any).checkEmptyFields === "function",
+      clearAllErrors: typeof (window as any).clearAllErrors === "function",
+    });
+  });
 </script>
 <Layout>
   <section class="container donation-form py-[120px]">
@@ -29,177 +59,34 @@ const info = (await getEntry("support-form", "form")).data;
           style="overflow: auto; height: 77vh;"
         >
           <h1 class="heading-1 mb-4">{info.title}</h1>
-          <div class="row g-4 pb-4 pb-md-5 mb-3 mb-md-1 font-poppins">
-            <div class="col-sm-6">
-              <label class="form-label fs-base" for="name"
-                >{info.name.title}</label
-              >
-              <!-- &entry.283978656=fullName&entry.1909208105=email&entry.1359110198=number&entry.218344457=country&entry.938609362=address&entry.1458813282=city&entry.726311981=pincode&entry.965069241=notes -->
-              <input
-                class="form-control form-control-lg"
-                type="text"
-                name="entry.283978656"
-                placeholder={info.name.placeholder}
-                required
-                id="name"
-              />
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label fs-base" for="email"
-                >{info.email.title}</label
-              >
-              <input
-                class="form-control form-control-lg"
-                type="email"
-                name="emailAddress"
-                placeholder={info.email.placeholder}
-                required
-                id="email"
-              />
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label fs-base" for="phone"
-                >{info.phone.title}</label
-              >
-              <input
-                class="form-control form-control-lg"
-                type="tel"
-                name="entry.1909208105"
-                placeholder={info.phone.placeholder}
-                required
-                id="phone"
-              />
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label fs-base" for="country"
-                >{info.country.title}</label
-              >
-              <input
-                class="form-control form-control-lg"
-                type="text"
-                name="entry.218344457"
-                placeholder={info.country.value}
-                required
-                id="country"
-                value={info.country.value}
-                readonly
-              />
-            </div>
-            <div class="col-12">
-              <label class="form-label fs-base" for="address"
-                >{info.address.title}</label
-              >
-              <input
-                name="entry.938609362"
-                class="form-control form-control-lg"
-                type="text"
-                placeholder={info.address.placeholder}
-                required
-                id="address"
-              />
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label fs-base" for="city"
-                >{info.city.title}</label
-              >
-              <input
-                name="entry.1458813282"
-                class="form-control form-control-lg"
-                type="text"
-                placeholder={info.city.placeholder}
-                required
-                id="city"
-              />
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label fs-base" for="zipcode"
-                >{info.pin.title}</label
-              >
-              <input
-                name="entry.726311981"
-                class="form-control form-control-lg"
-                type="text"
-                placeholder={info.pin.placeholder}
-                required
-                id="zipcode"
-              />
-            </div>
-
-            <div class="col-12">
-              <label class="form-label fs-base" for="notes">{info.other}</label>
-              <textarea
-                name="entry.965069241"
-                class="form-control form-control-lg"
-                style="height: 150px;"
-                placeholder="Additional notes"
-                id="notes"></textarea>
-            </div>
-          </div>
+          <SupportFormFields info={info} />
         </div>
 
         <div
           class="col pt-5 font-poppins min-w-[19rem] flex justify-center items-center"
         >
-          {/* Main Card Container */}
-          <div
-            class="w-full max-w-[23rem] bg-[#F5F5F5] rounded-3xl overflow-hidden py-4 lg:py-4"
-          >
-            {/* Card Content */}
-            <div class="text-center text-black px-4">
-              {/* Card Header */}
-              <h3 class="text-xl mb-0">{card.total}</h3>
-
-              {/* Amount Display */}
-              <div
-                id="amountToDisplay"
-                class="text-6xl lg:text-8xl my-4 font-semibold font-poppins"
-              >
-                ₹0
-              </div>
-
-              {/* Frequency */}
-              <div id="toBeDisplay" class="text-black/70 mb-4">per month</div>
-
-              {/* Description */}
-              <p class="text-black/70 mb-4 pb-2">
-                {card.description}
-              </p>
-
-              {/* Action Button */}
-              <button
-                type="button"
-                id="donate-now-button"
-                class="w-full md:w-auto h-[60px]
-                       px-3 sm:px-5 md:px-6
-                       py-2 sm:py-3 md:py-5
-                       text-base lg:text-lg
-                       font-poppins font-medium
-                       rounded-md
-                       bg-[#D33C0D] text-white
-                       transition-all
-                       hover:bg-[#72321E]
-                       active:ring-2 active:ring-[#D33C0D]
-                       mb-2
-                       disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <span class="mx-3">{card.button}</span>
-              </button>
-            </div>
-          </div>
+          <NavigationHelper />
+          <DonationCard card={card} />
         </div>
       </div>
     </form>
   </section>
+
+  <PaymentLoader />
 </Layout>
 
 <style>
-  /* Add these styles to your CSS */
+  /* Form Error Styles */
   .error {
-    border-color: #d33c0d !important;
+    border-color: #992424 !important;
+  }
+  input.error,
+  textarea.error {
+    border-color: #992424 !important;
   }
 
   .form-error {
-    color: #d33c0d;
+    color: #992424;
     font-size: 0.875rem;
     margin-top: 0.25rem;
   }
@@ -208,6 +95,8 @@ const info = (await getEntry("support-form", "form")).data;
   [type="text"].error,
   [type="email"].error,
   textarea.error {
-    border: 1px solid #d33c0d;
+    border: 1px solid #992424;
   }
+
+
 </style>

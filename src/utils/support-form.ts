@@ -1,5 +1,6 @@
 export {};
 import { CONFIG,PREDEFINED_PLANS } from './config';
+import { initializeTextLoader, getTextSync } from './textLoader';
 // Global types for TypeScript in browser
 declare global {
   interface Window {
@@ -68,7 +69,7 @@ const showNotification = (message: string, type: 'success' | 'error' | 'info' = 
   const notification = document.createElement('div');
   notification.className = `notification fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
     type === 'success' ? 'bg-green-500 text-white' :
-    type === 'error' ? 'bg-red-500 text-white' :
+    type === 'error' ? 'bg-[#992424] text-white' :
     'bg-blue-500 text-white'
   }`;
   notification.textContent = message;
@@ -99,10 +100,8 @@ const apiCall = async (endpoint: string, options: RequestInit = {}): Promise<Api
 
     return data;
   } catch (error) {
-    console.error(`API call failed for ${endpoint}:`, error);
-    
     if (error instanceof TypeError && error.message.includes('fetch')) {
-      throw new Error('Unable to connect to payment server. Please check your connection.');
+      throw new Error(getTextSync('errors.connectionError'));
     }
     
     throw error;
@@ -114,7 +113,6 @@ const getRazorpayKey = async (): Promise<string> => {
     const response = await apiCall('/razorpay-key');
     return response.data?.key || CONFIG.RAZORPAY_KEY;
   } catch (error) {
-    console.warn('Failed to fetch Razorpay key from backend, using default');
     return CONFIG.RAZORPAY_KEY;
   }
 };
@@ -180,9 +178,8 @@ const postToGoogleForm = async ({
       body: formData.toString(),
     });
     
-    console.log('Data successfully submitted to Google Form');
   } catch (error) {
-    console.error('Failed to submit to Google Form:', error);
+    // Silently handle Google Form submission errors
   }
 };
 
@@ -204,44 +201,68 @@ const verifyPayment = async (paymentData: RazorpayResponse): Promise<boolean> =>
 
     return response.success;
   } catch (error) {
-    console.error('Payment verification failed:', error);
     return false;
   }
 };
 
 export function initializeSupportForm(): void {
   const urlParams = new URLSearchParams(window.location.search);
-  console.log("URL Params:", urlParams.toString());
   
   const donationAmount = Number(urlParams.get("amount") ?? "0");
   const paymentType = String(urlParams.get("frequency") ?? "onetime").toLowerCase();
 
-  // Validate parameters
+  // Check if parameters are invalid and show helper message
+  const paramsInvalid = donationAmount <= 0 || !['onetime', 'monthly', 'yearly'].includes(paymentType);
+  const navigationHelper = document.getElementById('navigation-helper');
+  
+  if (paramsInvalid && navigationHelper) {
+    navigationHelper.classList.remove('hidden');
+  }
+
+  // Validate parameters - but don't return early, just show warnings
   if (donationAmount <= 0) {
-    showNotification('Invalid donation amount specified', 'error');
-    return;
+    showNotification(getTextSync('errors.selectAmount'), 'error');
   }
 
   if (!['onetime', 'monthly', 'yearly'].includes(paymentType)) {
-    showNotification('Invalid payment frequency specified', 'error');
-    return;
+    showNotification(getTextSync('errors.selectFrequency'), 'error');
   }
 
   // Update display elements
   const amountDisplay = document.getElementById("amountToDisplay") as HTMLDivElement;
   const frequencyDisplay = document.getElementById("toBeDisplay") as HTMLDivElement;
+  const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
 
-  if (amountDisplay) amountDisplay.innerHTML = `₹${donationAmount.toLocaleString()}`;
+  if (amountDisplay) {
+    if (donationAmount > 0) {
+      amountDisplay.innerHTML = `₹${donationAmount.toLocaleString()}`;
+    } else {
+      amountDisplay.innerHTML = `₹0`;
+      amountDisplay.style.color = '#999';
+    }
+  }
+  
   if (frequencyDisplay) {
-    frequencyDisplay.innerHTML = 
-      paymentType === "monthly" ? "per month" :
-      paymentType === "yearly" ? "per year" : "One Time";
+    if (['onetime', 'monthly', 'yearly'].includes(paymentType)) {
+      frequencyDisplay.innerHTML = 
+        paymentType === "monthly" ? getTextSync("display.perMonth") :
+        paymentType === "yearly" ? getTextSync("display.perYear") : getTextSync("display.oneTime");
+    } else {
+      frequencyDisplay.innerHTML = getTextSync("display.selectFrequency");
+      frequencyDisplay.style.color = '#999';
+    }
+  }
+
+  // Disable donate button if parameters are invalid
+  if (donateButton && (donationAmount <= 0 || !['onetime', 'monthly', 'yearly'].includes(paymentType))) {
+    donateButton.disabled = true;
+    donateButton.style.opacity = '0.5';
+    donateButton.innerHTML = `<span class="mx-3">${getTextSync('buttons.selectAmountFrequency')}</span>`;
   }
 
   setupFormValidation();
 
-  const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
-  if (donateButton) {
+  if (donateButton && donationAmount > 0 && ['onetime', 'monthly', 'yearly'].includes(paymentType)) {
     donateButton.addEventListener("click", (e) => {
       e.preventDefault();
       initiatePayment(donationAmount, paymentType);
@@ -252,61 +273,51 @@ export function initializeSupportForm(): void {
 function setupFormValidation(): void {
   const form = document.getElementById("donation-form") as HTMLFormElement;
   const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
-  
-  if (!form || !donateButton) {
-    console.error('Form or donate button not found');
-    return;
-  }
+  const buttonOverlay = document.getElementById("button-overlay") as HTMLDivElement;
+
+  if (!form || !donateButton) return;
 
   donateButton.disabled = true;
+  if (buttonOverlay) {
+    buttonOverlay.style.display = "block";
+  }
 
   const fields: Record<string, FormFieldConfig> = {
     name: {
       validate: (v) => /^[a-zA-Z\s]{2,50}$/.test(v.trim()),
-      errorText: "Name must be 2-50 characters (letters and spaces only)",
-      emptyText: "Name is required",
+      errorText: getTextSync("validation.nameError"),
+      emptyText: getTextSync("validation.nameEmpty"),
     },
     email: {
       validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) && v.length <= 100,
-      errorText: "Please enter a valid email address",
-      emptyText: "Email is required",
+      errorText: getTextSync("validation.emailError"),
+      emptyText: getTextSync("validation.emailEmpty"),
     },
     phone: {
       validate: (v) => /^\+?[1-9][0-9]{7,14}$/.test(v.replace(/[\s\-()]/g, "")),
-      errorText: "Phone must be 8-15 digits with optional country code",
-      emptyText: "Phone number is required",
+      errorText: getTextSync("validation.phoneError"),
+      emptyText: getTextSync("validation.phoneEmpty"),
     },
     country: {
       validate: (v) => v.trim().length >= 2 && v.trim().length <= 50,
-      errorText: "Country name must be 2-50 characters",
-      emptyText: "Country is required",
+      errorText: getTextSync("validation.countryError"),
+      emptyText: getTextSync("validation.countryEmpty"),
     },
     address: {
       validate: (v) => v.trim().length >= 5 && v.trim().length <= 200,
-      errorText: "Address must be 5-200 characters",
-      emptyText: "Address is required",
+      errorText: getTextSync("validation.addressError"),
+      emptyText: getTextSync("validation.addressEmpty"),
     },
     city: {
       validate: (v) => v.trim().length >= 2 && v.trim().length <= 50,
-      errorText: "City name must be 2-50 characters",
-      emptyText: "City is required",
+      errorText: getTextSync("validation.cityError"),
+      emptyText: getTextSync("validation.cityEmpty"),
     },
     zipcode: {
       validate: (v) => /^\d{5,10}$/.test(v.replace(/[\s\-]/g, "")),
-      errorText: "Pin/Zip code must be 5-10 digits",
-      emptyText: "Pin/Zip code is required",
+      errorText: getTextSync("validation.zipcodeError"),
+      emptyText: getTextSync("validation.zipcodeEmpty"),
     },
-  };
-
-  const validateForm = (): boolean => {
-    const isValid = Object.entries(fields).every(([id, cfg]) => {
-      const element = document.getElementById(id) as HTMLInputElement;
-      const val = element?.value.trim() || "";
-      return cfg.validate(val);
-    });
-    
-    donateButton.disabled = !isValid;
-    return isValid;
   };
 
   const showError = (id: string, message: string): void => {
@@ -314,19 +325,34 @@ function setupFormValidation(): void {
     if (!el) return;
 
     el.classList.add("error");
-    el.style.borderColor = "#D33C0D";
+    el.style.borderColor = "#992424";
 
-    // Remove existing error message
-    const existingError = el.parentNode?.querySelector(".form-error");
-    if (existingError) {
-      existingError.remove();
+    // Find the error container (either .form-error-container or create one)
+    let errorContainer = el.parentNode?.querySelector(".form-error-container") as HTMLElement;
+    if (!errorContainer) {
+      // Fallback: look for existing .form-error or create new one
+      const existingError = el.parentNode?.querySelector(".form-error");
+      if (existingError) existingError.remove();
+      
+      const error = document.createElement("div");
+      error.className = "form-error";
+      error.style.color = "#992424";
+      error.style.fontSize = "0.875rem";
+      error.style.marginTop = "0.25rem";
+      error.textContent = message;
+      el.parentNode?.insertBefore(error, el.nextSibling);
+      return;
     }
 
-    // Add new error message
+    // Clear existing error and add new one
+    errorContainer.innerHTML = "";
     const error = document.createElement("div");
-    error.className = "form-error text-[#D33C0D] text-sm mt-1";
+    error.className = "form-error";
+    error.style.color = "#992424";
+    error.style.fontSize = "0.875rem";
+    error.style.marginTop = "0.25rem";
     error.textContent = message;
-    el.parentNode?.insertBefore(error, el.nextSibling);
+    errorContainer.appendChild(error);
   };
 
   const clearError = (id: string): void => {
@@ -336,48 +362,155 @@ function setupFormValidation(): void {
     el.classList.remove("error");
     el.style.borderColor = "";
 
+    // Clear error from both possible locations
     const error = el.parentNode?.querySelector(".form-error");
     if (error) error.remove();
+    
+    const errorContainer = el.parentNode?.querySelector(".form-error-container") as HTMLElement;
+    if (errorContainer) {
+      errorContainer.innerHTML = "";
+    }
+  };
+
+  const validateField = (id: string): boolean => {
+    const el = document.getElementById(id) as HTMLInputElement;
+    const fieldConfig = fields[id];
+    
+    if (!el || !fieldConfig) return true;
+    
+    const value = el.value.trim();
+    
+    // Check if field is empty
+    if (value === "") {
+      showError(id, fieldConfig.emptyText);
+      return false;
+    }
+    
+    // Check if field is valid
+    if (!fieldConfig.validate(value)) {
+      showError(id, fieldConfig.errorText);
+      return false;
+    }
+    
+    // Field is valid, clear any errors
+    clearError(id);
+    return true;
   };
 
   const clearAllErrors = (): void => {
-    Object.keys(fields).forEach(id => clearError(id));
+    Object.keys(fields).forEach((id) => clearError(id));
   };
 
-  // Set up event listeners
-  Object.keys(fields).forEach((id) => {
-    const el = document.getElementById(id) as HTMLInputElement;
-    if (!el) return;
-
-    el.addEventListener("input", () => {
-      validateForm();
-      clearError(id);
+  const isFormValid = (): boolean => {
+    return Object.entries(fields).every(([id]) => {
+      const el = document.getElementById(id) as HTMLInputElement;
+      return el?.value.trim() !== "";
     });
+  };
 
-    el.addEventListener("blur", () => {
-      const val = el.value.trim();
-      if (!val) {
-        showError(id, fields[id].emptyText);
-      } else if (!fields[id].validate(val)) {
-        showError(id, fields[id].errorText);
+  const checkEmptyFields = (): void => {
+    clearAllErrors();
+    
+    let firstErrorField: HTMLInputElement | null = null;
+    let emptyFieldCount = 0;
+    
+    Object.entries(fields).forEach(([id, cfg]) => {
+      const el = document.getElementById(id) as HTMLInputElement;
+      if (!el?.value.trim()) {
+        showError(id, cfg.emptyText);
+        emptyFieldCount++;
+        if (!firstErrorField) {
+          firstErrorField = el;
+        }
       }
     });
+    
+    // Focus on first empty field
+    if (firstErrorField) {
+      firstErrorField.focus();
+      firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    
+    // Show notification
+    if (emptyFieldCount > 0) {
+      const message = emptyFieldCount === 1 
+        ? getTextSync("notifications.fillSingleField") 
+        : getTextSync("notifications.fillMultipleFields", { count: emptyFieldCount });
+      showNotification(message, "error");
+    }
+  };
+
+  // Add blur event listeners for real-time validation
+  form.addEventListener("blur", (e) => {
+    const target = e.target as HTMLInputElement;
+    if (target.id && fields[target.id]) {
+      validateField(target.id);
+    }
+  }, true); // Use capture phase to catch all blur events
+
+  // Update button state on input
+  form.addEventListener("input", (e) => {
+    const target = e.target as HTMLInputElement;
+    
+    // Clear error when user starts typing
+    if (target.id && fields[target.id]) {
+      const error = target.parentNode?.querySelector(".form-error");
+      if (error && target.value.trim()) {
+        clearError(target.id);
+      }
+    }
+    
+    // Update button state - only enable if form is valid AND URL params are valid
+    const urlParams = new URLSearchParams(window.location.search);
+    const donationAmount = Number(urlParams.get("amount") ?? "0");
+    const paymentType = String(urlParams.get("frequency") ?? "onetime").toLowerCase();
+    
+    const formIsValid = isFormValid();
+    const paramsValid = donationAmount > 0 && ['onetime', 'monthly', 'yearly'].includes(paymentType);
+    
+    donateButton.disabled = !(formIsValid && paramsValid);
+    
+    // Show/hide overlay based on form validity
+    if (buttonOverlay) {
+      buttonOverlay.style.display = (formIsValid && paramsValid) ? "none" : "block";
+    }
   });
 
-  // Initial validation
-  validateForm();
+  // Handle overlay click when form is invalid
+  if (buttonOverlay) {
+    buttonOverlay.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      checkEmptyFields();
+    });
+  }
 
-  // Store validation functions for external use
-  (window as any).validateForm = validateForm;
+  // Make functions available globally
+  (window as any).isFormValid = isFormValid;
   (window as any).clearAllErrors = clearAllErrors;
+  (window as any).checkEmptyFields = checkEmptyFields;
 }
 
 async function initiatePayment(amount: number, type: string): Promise<void> {
   const form = document.getElementById("donation-form") as HTMLFormElement;
   
+  // Validate amount and frequency parameters first
+  if (amount <= 0) {
+    showNotification(getTextSync("errors.invalidAmountValue"), 'error');
+    return;
+  }
+
+  if (!['onetime', 'monthly', 'yearly'].includes(type)) {
+    showNotification(getTextSync("errors.invalidFrequencyValue"), 'error');
+    return;
+  }
+  
   // Validate form before proceeding
-  if (typeof (window as any).validateForm === 'function' && !(window as any).validateForm()) {
-    showNotification("Please fill in all required fields correctly.", 'error');
+  if (typeof (window as any).isFormValid === 'function' && !(window as any).isFormValid()) {
+    if (typeof (window as any).checkEmptyFields === 'function') {
+      (window as any).checkEmptyFields();
+    }
+    showNotification(getTextSync("errors.fillRequiredFields"), 'error');
     return;
   }
 
@@ -415,7 +548,6 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
 
     // Determine endpoint and make API call
     const endpoint = type === "onetime" ? "/create-order" : "/create-subscription";
-    console.log(`Initiating ${type} payment:`, { amount: formData.amount, type, existingPlanId });
 
     const response = await apiCall(endpoint, {
       method: 'POST',
@@ -423,12 +555,12 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     });
 
     if (!response.success) {
-      throw new Error(response.message || 'Payment creation failed');
+      throw new Error(response.message || getTextSync('errors.paymentCreationFailed'));
     }
 
     // Check if Razorpay SDK is loaded
     if (typeof window.Razorpay === "undefined") {
-      throw new Error("Razorpay SDK not loaded. Please refresh the page and try again.");
+      throw new Error(getTextSync('errors.razorpayNotLoaded'));
     }
 
     // Prepare Razorpay options
@@ -446,7 +578,7 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
           if (type === "onetime") {
             const isVerified = await verifyPayment(razorpayResponse);
             if (!isVerified) {
-              throw new Error("Payment verification failed");
+              throw new Error(getTextSync("errors.paymentVerificationFailed"));
             }
           }
 
@@ -468,8 +600,8 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
           });
 
           showNotification(
-            type === "onetime" ? "Payment successful! Thank you for your donation." : 
-            "Subscription activated! Thank you for your ongoing support.",
+            type === "onetime" ? getTextSync("success.paymentSuccess") : 
+            getTextSync("success.subscriptionSuccess"),
             'success'
           );
 
@@ -485,9 +617,8 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
           }, 100);
 
         } catch (error) {
-          console.error('Post-payment processing failed:', error);
           showNotification(
-            'Payment completed but there was an issue with confirmation. Please contact support.',
+            getTextSync('errors.postPaymentIssue'),
             'error'
           );
         } finally {
@@ -496,7 +627,6 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
       },
       modal: {
         ondismiss: function () {
-          console.log("Payment modal closed by user");
           showLoader(false);
         },
       },
@@ -515,21 +645,17 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     } else if (type !== "onetime" && response.data.subscription_id) {
       options.subscription_id = response.data.subscription_id;
     } else {
-      throw new Error("Invalid response from payment server");
+      throw new Error(getTextSync("errors.invalidServerResponse"));
     }
-
-    console.log("Opening Razorpay with options:", options);
 
     // Open Razorpay checkout
     const razorpay = new window.Razorpay(options);
     razorpay.open();
 
   } catch (error: any) {
-    console.error("Payment initiation failed:", error);
-    
-    let errorMessage = "Payment failed. Please try again.";
+    let errorMessage = getTextSync("errors.paymentFailed");
     if (error.message.includes("connect")) {
-      errorMessage = "Unable to connect to payment server. Please check your connection.";
+      errorMessage = getTextSync("errors.connectionError");
     } else if (error.message.includes("Invalid")) {
       errorMessage = error.message;
     }
