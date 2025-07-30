@@ -1,6 +1,6 @@
 export {};
-import { CONFIG,PREDEFINED_PLANS } from './config';
-import { initializeTextLoader, getTextSync } from './textLoader';
+import { CONFIG, PREDEFINED_PLANS } from "./config";
+import { initializeTextLoader, getTextSync } from "./textLoader";
 // Global types for TypeScript in browser
 declare global {
   interface Window {
@@ -50,27 +50,29 @@ interface RazorpayResponse {
 
 // Configuration
 
-
-
-
 // Utility functions
 const showLoader = (show: boolean) => {
-  const loader = document.getElementById('payment-loader');
+  const loader = document.getElementById("payment-loader");
   if (loader) {
-    loader.style.display = show ? 'block' : 'none';
+    loader.style.display = show ? "block" : "none";
   }
 };
 
-const showNotification = (message: string, type: 'success' | 'error' | 'info' = 'info') => {
+const showNotification = (
+  message: string,
+  type: "success" | "error" | "info" = "info"
+) => {
   // Remove existing notifications
-  const existing = document.querySelector('.notification');
+  const existing = document.querySelector(".notification");
   if (existing) existing.remove();
 
-  const notification = document.createElement('div');
+  const notification = document.createElement("div");
   notification.className = `notification fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
-    type === 'success' ? 'bg-green-500 text-white' :
-    type === 'error' ? 'bg-[#992424] text-white' :
-    'bg-blue-500 text-white'
+    type === "success"
+      ? "bg-green-500 text-white"
+      : type === "error"
+        ? "bg-[#992424] text-white"
+        : "bg-blue-500 text-white"
   }`;
   notification.textContent = message;
   document.body.appendChild(notification);
@@ -79,40 +81,80 @@ const showNotification = (message: string, type: 'success' | 'error' | 'info' = 
 };
 
 // API helper functions
-const apiCall = async (endpoint: string, options: RequestInit = {}): Promise<ApiResponse> => {
+const apiCall = async (
+  endpoint: string,
+  options: RequestInit = {}
+): Promise<ApiResponse> => {
   const url = `${CONFIG.API_BASE_URL}${endpoint}`;
-  
+
+  console.log("Making API call to:", url);
+  console.log("With options:", options);
+
   try {
     const response = await fetch(url, {
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        "Content-Type": "application/json",
+        Accept: "application/json",
         ...options.headers,
       },
       ...options,
     });
 
-    const data = await response.json();
-    
+    console.log("Response status:", response.status);
+    console.log("Response headers:", response.headers);
+
     if (!response.ok) {
-      throw new Error(data.message || `HTTP ${response.status}: Request failed`);
+      const errorText = await response.text();
+      console.error("API Error Response:", errorText);
+
+      let errorData;
+      try {
+        errorData = JSON.parse(errorText);
+      } catch {
+        errorData = { message: errorText };
+      }
+
+      throw new Error(
+        errorData.message || `HTTP ${response.status}: Request failed`
+      );
     }
+
+    const data = await response.json();
+    console.log("API Success Response:", data);
 
     return data;
   } catch (error) {
-    if (error instanceof TypeError && error.message.includes('fetch')) {
-      throw new Error(getTextSync('errors.connectionError'));
+    console.error("API Call Error:", error);
+
+    if (error instanceof TypeError && error.message.includes("fetch")) {
+      throw new Error(
+        "Connection error: Unable to reach the server. Please check your internet connection."
+      );
     }
-    
+
     throw error;
   }
 };
 
 const getRazorpayKey = async (): Promise<string> => {
   try {
-    const response = await apiCall('/razorpay-key');
-    return response.data?.key || CONFIG.RAZORPAY_KEY;
+    console.log("Fetching Razorpay key from backend...");
+    const response = await apiCall("/razorpay-key");
+    console.log("Razorpay key response:", response);
+
+    if (response.success && (response as any).key) {
+      console.log("Using backend Razorpay key");
+      return (response as any).key;
+    } else if (response.data?.key) {
+      console.log("Using backend Razorpay key from data");
+      return response.data.key;
+    } else {
+      console.log("Backend key not found, using fallback");
+      return CONFIG.RAZORPAY_KEY;
+    }
   } catch (error) {
+    console.error("Failed to fetch Razorpay key from backend:", error);
+    console.log("Using fallback Razorpay key");
     return CONFIG.RAZORPAY_KEY;
   }
 };
@@ -120,15 +162,15 @@ const getRazorpayKey = async (): Promise<string> => {
 // Function to get or create plan
 const getOrCreatePlan = (amount: number, frequency: string): string | null => {
   const amountInRupees = Math.floor(amount / 100);
-  
-  if (frequency === 'onetime') return null;
-  
+
+  if (frequency === "onetime") return null;
+
   // Check if predefined plan exists
   const plans = PREDEFINED_PLANS[frequency as keyof typeof PREDEFINED_PLANS];
   if (plans && plans[amountInRupees as keyof typeof plans]) {
     return plans[amountInRupees as keyof typeof plans];
   }
-  
+
   // Return null to indicate a new plan needs to be created
   return null;
 };
@@ -156,7 +198,8 @@ const postToGoogleForm = async ({
   donationDetails: string;
 }): Promise<void> => {
   try {
-    const url = "https://docs.google.com/forms/d/e/1FAIpQLSedxSOPskuroSb3hJSAjVebGa1EoW1OeYjx2WHE1Um5g4iipQ/formResponse";
+    const url =
+      "https://docs.google.com/forms/d/e/1FAIpQLSedxSOPskuroSb3hJSAjVebGa1EoW1OeYjx2WHE1Um5g4iipQ/formResponse";
 
     const formData = new URLSearchParams();
     formData.append("entry.283978656", fullName);
@@ -177,21 +220,26 @@ const postToGoogleForm = async ({
       },
       body: formData.toString(),
     });
-    
   } catch (error) {
     // Silently handle Google Form submission errors
   }
 };
 
 // Payment verification
-const verifyPayment = async (paymentData: RazorpayResponse): Promise<boolean> => {
-  if (!paymentData.razorpay_payment_id || !paymentData.razorpay_order_id || !paymentData.razorpay_signature) {
+const verifyPayment = async (
+  paymentData: RazorpayResponse
+): Promise<boolean> => {
+  if (
+    !paymentData.razorpay_payment_id ||
+    !paymentData.razorpay_order_id ||
+    !paymentData.razorpay_signature
+  ) {
     return false;
   }
 
   try {
-    const response = await apiCall('/verify-payment', {
-      method: 'POST',
+    const response = await apiCall("/verify-payment", {
+      method: "POST",
       body: JSON.stringify({
         razorpay_payment_id: paymentData.razorpay_payment_id,
         razorpay_order_id: paymentData.razorpay_order_id,
@@ -205,64 +253,101 @@ const verifyPayment = async (paymentData: RazorpayResponse): Promise<boolean> =>
   }
 };
 
+// Test backend connectivity
+const testBackendConnection = async (): Promise<void> => {
+  try {
+    console.log("Testing backend connection...");
+    const response = await apiCall("/health");
+    console.log("Backend health check successful:", response);
+    showNotification("Backend connection successful", "success");
+  } catch (error) {
+    console.error("Backend health check failed:", error);
+    showNotification(`Backend connection failed: ${error.message}`, "error");
+  }
+};
+
 export function initializeSupportForm(): void {
   const urlParams = new URLSearchParams(window.location.search);
-  
+
   const donationAmount = Number(urlParams.get("amount") ?? "0");
-  const paymentType = String(urlParams.get("frequency") ?? "onetime").toLowerCase();
+  const paymentType = String(
+    urlParams.get("frequency") ?? "onetime"
+  ).toLowerCase();
 
   // Check if parameters are invalid and show helper message
-  const paramsInvalid = donationAmount <= 0 || !['onetime', 'monthly', 'yearly'].includes(paymentType);
-  const navigationHelper = document.getElementById('navigation-helper');
-  
+  const paramsInvalid =
+    donationAmount <= 0 ||
+    !["onetime", "monthly", "yearly"].includes(paymentType);
+  const navigationHelper = document.getElementById("navigation-helper");
+
   if (paramsInvalid && navigationHelper) {
-    navigationHelper.classList.remove('hidden');
+    navigationHelper.classList.remove("hidden");
   }
 
   // Validate parameters - but don't return early, just show warnings
   if (donationAmount <= 0) {
-    showNotification(getTextSync('errors.selectAmount'), 'error');
+    showNotification(getTextSync("errors.selectAmount"), "error");
   }
 
-  if (!['onetime', 'monthly', 'yearly'].includes(paymentType)) {
-    showNotification(getTextSync('errors.selectFrequency'), 'error');
+  if (!["onetime", "monthly", "yearly"].includes(paymentType)) {
+    showNotification(getTextSync("errors.selectFrequency"), "error");
   }
 
   // Update display elements
-  const amountDisplay = document.getElementById("amountToDisplay") as HTMLDivElement;
-  const frequencyDisplay = document.getElementById("toBeDisplay") as HTMLDivElement;
-  const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
+  const amountDisplay = document.getElementById(
+    "amountToDisplay"
+  ) as HTMLDivElement;
+  const frequencyDisplay = document.getElementById(
+    "toBeDisplay"
+  ) as HTMLDivElement;
+  const donateButton = document.getElementById(
+    "donate-now-button"
+  ) as HTMLButtonElement;
 
   if (amountDisplay) {
     if (donationAmount > 0) {
       amountDisplay.innerHTML = `₹${donationAmount.toLocaleString()}`;
     } else {
       amountDisplay.innerHTML = `₹0`;
-      amountDisplay.style.color = '#999';
+      amountDisplay.style.color = "#999";
     }
   }
-  
+
   if (frequencyDisplay) {
-    if (['onetime', 'monthly', 'yearly'].includes(paymentType)) {
-      frequencyDisplay.innerHTML = 
-        paymentType === "monthly" ? getTextSync("display.perMonth") :
-        paymentType === "yearly" ? getTextSync("display.perYear") : getTextSync("display.oneTime");
+    if (["onetime", "monthly", "yearly"].includes(paymentType)) {
+      frequencyDisplay.innerHTML =
+        paymentType === "monthly"
+          ? getTextSync("display.perMonth")
+          : paymentType === "yearly"
+            ? getTextSync("display.perYear")
+            : getTextSync("display.oneTime");
     } else {
       frequencyDisplay.innerHTML = getTextSync("display.selectFrequency");
-      frequencyDisplay.style.color = '#999';
+      frequencyDisplay.style.color = "#999";
     }
   }
 
   // Disable donate button if parameters are invalid
-  if (donateButton && (donationAmount <= 0 || !['onetime', 'monthly', 'yearly'].includes(paymentType))) {
+  if (
+    donateButton &&
+    (donationAmount <= 0 ||
+      !["onetime", "monthly", "yearly"].includes(paymentType))
+  ) {
     donateButton.disabled = true;
-    donateButton.style.opacity = '0.5';
-    donateButton.innerHTML = `<span class="mx-3">${getTextSync('buttons.selectAmountFrequency')}</span>`;
+    donateButton.style.opacity = "0.5";
+    donateButton.innerHTML = `<span class="mx-3">${getTextSync("buttons.selectAmountFrequency")}</span>`;
   }
 
   setupFormValidation();
 
-  if (donateButton && donationAmount > 0 && ['onetime', 'monthly', 'yearly'].includes(paymentType)) {
+  // Test backend connection on initialization
+  testBackendConnection();
+
+  if (
+    donateButton &&
+    donationAmount > 0 &&
+    ["onetime", "monthly", "yearly"].includes(paymentType)
+  ) {
     donateButton.addEventListener("click", (e) => {
       e.preventDefault();
       initiatePayment(donationAmount, paymentType);
@@ -272,8 +357,12 @@ export function initializeSupportForm(): void {
 
 function setupFormValidation(): void {
   const form = document.getElementById("donation-form") as HTMLFormElement;
-  const donateButton = document.getElementById("donate-now-button") as HTMLButtonElement;
-  const buttonOverlay = document.getElementById("button-overlay") as HTMLDivElement;
+  const donateButton = document.getElementById(
+    "donate-now-button"
+  ) as HTMLButtonElement;
+  const buttonOverlay = document.getElementById(
+    "button-overlay"
+  ) as HTMLDivElement;
 
   if (!form || !donateButton) return;
 
@@ -328,12 +417,14 @@ function setupFormValidation(): void {
     el.style.borderColor = "#992424";
 
     // Find the error container (either .form-error-container or create one)
-    let errorContainer = el.parentNode?.querySelector(".form-error-container") as HTMLElement;
+    let errorContainer = el.parentNode?.querySelector(
+      ".form-error-container"
+    ) as HTMLElement;
     if (!errorContainer) {
       // Fallback: look for existing .form-error or create new one
       const existingError = el.parentNode?.querySelector(".form-error");
       if (existingError) existingError.remove();
-      
+
       const error = document.createElement("div");
       error.className = "form-error";
       error.style.color = "#992424";
@@ -365,8 +456,10 @@ function setupFormValidation(): void {
     // Clear error from both possible locations
     const error = el.parentNode?.querySelector(".form-error");
     if (error) error.remove();
-    
-    const errorContainer = el.parentNode?.querySelector(".form-error-container") as HTMLElement;
+
+    const errorContainer = el.parentNode?.querySelector(
+      ".form-error-container"
+    ) as HTMLElement;
     if (errorContainer) {
       errorContainer.innerHTML = "";
     }
@@ -375,23 +468,23 @@ function setupFormValidation(): void {
   const validateField = (id: string): boolean => {
     const el = document.getElementById(id) as HTMLInputElement;
     const fieldConfig = fields[id];
-    
+
     if (!el || !fieldConfig) return true;
-    
+
     const value = el.value.trim();
-    
+
     // Check if field is empty
     if (value === "") {
       showError(id, fieldConfig.emptyText);
       return false;
     }
-    
+
     // Check if field is valid
     if (!fieldConfig.validate(value)) {
       showError(id, fieldConfig.errorText);
       return false;
     }
-    
+
     // Field is valid, clear any errors
     clearError(id);
     return true;
@@ -410,10 +503,10 @@ function setupFormValidation(): void {
 
   const checkEmptyFields = (): void => {
     clearAllErrors();
-    
+
     let firstErrorField: HTMLInputElement | null = null;
     let emptyFieldCount = 0;
-    
+
     Object.entries(fields).forEach(([id, cfg]) => {
       const el = document.getElementById(id) as HTMLInputElement;
       if (!el?.value.trim()) {
@@ -424,34 +517,41 @@ function setupFormValidation(): void {
         }
       }
     });
-    
+
     // Focus on first empty field
     if (firstErrorField) {
       firstErrorField.focus();
-      firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      firstErrorField.scrollIntoView({ behavior: "smooth", block: "center" });
     }
-    
+
     // Show notification
     if (emptyFieldCount > 0) {
-      const message = emptyFieldCount === 1 
-        ? getTextSync("notifications.fillSingleField") 
-        : getTextSync("notifications.fillMultipleFields", { count: emptyFieldCount });
+      const message =
+        emptyFieldCount === 1
+          ? getTextSync("notifications.fillSingleField")
+          : getTextSync("notifications.fillMultipleFields", {
+              count: emptyFieldCount,
+            });
       showNotification(message, "error");
     }
   };
 
   // Add blur event listeners for real-time validation
-  form.addEventListener("blur", (e) => {
-    const target = e.target as HTMLInputElement;
-    if (target.id && fields[target.id]) {
-      validateField(target.id);
-    }
-  }, true); // Use capture phase to catch all blur events
+  form.addEventListener(
+    "blur",
+    (e) => {
+      const target = e.target as HTMLInputElement;
+      if (target.id && fields[target.id]) {
+        validateField(target.id);
+      }
+    },
+    true
+  ); // Use capture phase to catch all blur events
 
   // Update button state on input
   form.addEventListener("input", (e) => {
     const target = e.target as HTMLInputElement;
-    
+
     // Clear error when user starts typing
     if (target.id && fields[target.id]) {
       const error = target.parentNode?.querySelector(".form-error");
@@ -459,20 +559,25 @@ function setupFormValidation(): void {
         clearError(target.id);
       }
     }
-    
+
     // Update button state - only enable if form is valid AND URL params are valid
     const urlParams = new URLSearchParams(window.location.search);
     const donationAmount = Number(urlParams.get("amount") ?? "0");
-    const paymentType = String(urlParams.get("frequency") ?? "onetime").toLowerCase();
-    
+    const paymentType = String(
+      urlParams.get("frequency") ?? "onetime"
+    ).toLowerCase();
+
     const formIsValid = isFormValid();
-    const paramsValid = donationAmount > 0 && ['onetime', 'monthly', 'yearly'].includes(paymentType);
-    
+    const paramsValid =
+      donationAmount > 0 &&
+      ["onetime", "monthly", "yearly"].includes(paymentType);
+
     donateButton.disabled = !(formIsValid && paramsValid);
-    
+
     // Show/hide overlay based on form validity
     if (buttonOverlay) {
-      buttonOverlay.style.display = (formIsValid && paramsValid) ? "none" : "block";
+      buttonOverlay.style.display =
+        formIsValid && paramsValid ? "none" : "block";
     }
   });
 
@@ -493,24 +598,27 @@ function setupFormValidation(): void {
 
 async function initiatePayment(amount: number, type: string): Promise<void> {
   const form = document.getElementById("donation-form") as HTMLFormElement;
-  
+
   // Validate amount and frequency parameters first
   if (amount <= 0) {
-    showNotification(getTextSync("errors.invalidAmountValue"), 'error');
+    showNotification(getTextSync("errors.invalidAmountValue"), "error");
     return;
   }
 
-  if (!['onetime', 'monthly', 'yearly'].includes(type)) {
-    showNotification(getTextSync("errors.invalidFrequencyValue"), 'error');
+  if (!["onetime", "monthly", "yearly"].includes(type)) {
+    showNotification(getTextSync("errors.invalidFrequencyValue"), "error");
     return;
   }
-  
+
   // Validate form before proceeding
-  if (typeof (window as any).isFormValid === 'function' && !(window as any).isFormValid()) {
-    if (typeof (window as any).checkEmptyFields === 'function') {
+  if (
+    typeof (window as any).isFormValid === "function" &&
+    !(window as any).isFormValid()
+  ) {
+    if (typeof (window as any).checkEmptyFields === "function") {
       (window as any).checkEmptyFields();
     }
-    showNotification(getTextSync("errors.fillRequiredFields"), 'error');
+    showNotification(getTextSync("errors.fillRequiredFields"), "error");
     return;
   }
 
@@ -520,17 +628,36 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     // Get form data
     const formData: PaymentFormData = {
       name: (document.getElementById("name") as HTMLInputElement).value.trim(),
-      email: (document.getElementById("email") as HTMLInputElement).value.trim(),
-      phone: (document.getElementById("phone") as HTMLInputElement).value.trim(),
-      country: (document.getElementById("country") as HTMLInputElement).value.trim(),
+      email: (
+        document.getElementById("email") as HTMLInputElement
+      ).value.trim(),
+      phone: (
+        document.getElementById("phone") as HTMLInputElement
+      ).value.trim(),
+      country: (
+        document.getElementById("country") as HTMLInputElement
+      ).value.trim(),
       city: (document.getElementById("city") as HTMLInputElement).value.trim(),
-      zipcode: (document.getElementById("zipcode") as HTMLInputElement).value.trim(),
-      address: (document.getElementById("address") as HTMLInputElement).value.trim(),
+      zipcode: (
+        document.getElementById("zipcode") as HTMLInputElement
+      ).value.trim(),
+      address: (
+        document.getElementById("address") as HTMLInputElement
+      ).value.trim(),
       notes: {
-        additional_notes: (document.getElementById("notes") as HTMLTextAreaElement)?.value?.trim() || "",
-        city: (document.getElementById("city") as HTMLInputElement).value.trim(),
-        zipcode: (document.getElementById("zipcode") as HTMLInputElement).value.trim(),
-        address: (document.getElementById("address") as HTMLInputElement).value.trim(),
+        additional_notes:
+          (
+            document.getElementById("notes") as HTMLTextAreaElement
+          )?.value?.trim() || "",
+        city: (
+          document.getElementById("city") as HTMLInputElement
+        ).value.trim(),
+        zipcode: (
+          document.getElementById("zipcode") as HTMLInputElement
+        ).value.trim(),
+        address: (
+          document.getElementById("address") as HTMLInputElement
+        ).value.trim(),
       },
       amount: amount * 100, // Convert to paise
       currency: "INR",
@@ -547,20 +674,23 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     const razorpayKey = await getRazorpayKey();
 
     // Determine endpoint and make API call
-    const endpoint = type === "onetime" ? "/create-order" : "/create-subscription";
+    const endpoint =
+      type === "onetime" ? "/create-order" : "/create-subscription";
 
     const response = await apiCall(endpoint, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(formData),
     });
 
     if (!response.success) {
-      throw new Error(response.message || getTextSync('errors.paymentCreationFailed'));
+      throw new Error(
+        response.message || getTextSync("errors.paymentCreationFailed")
+      );
     }
 
     // Check if Razorpay SDK is loaded
     if (typeof window.Razorpay === "undefined") {
-      throw new Error(getTextSync('errors.razorpayNotLoaded'));
+      throw new Error(getTextSync("errors.razorpayNotLoaded"));
     }
 
     // Prepare Razorpay options
@@ -569,7 +699,10 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
       amount: formData.amount,
       currency: "INR",
       name: CONFIG.COMPANY_NAME,
-      description: type === "onetime" ? "Donation" : `${type.charAt(0).toUpperCase() + type.slice(1)} Subscription`,
+      description:
+        type === "onetime"
+          ? "Donation"
+          : `${type.charAt(0).toUpperCase() + type.slice(1)} Subscription`,
       image: CONFIG.COMPANY_LOGO,
       handler: async (razorpayResponse: RazorpayResponse) => {
         showLoader(true);
@@ -584,7 +717,9 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
 
           // Submit to Google Form
           const donationDetails = `Donation: ₹${amount} | Frequency: ${type} | Payment ID: ${
-            razorpayResponse.razorpay_payment_id || razorpayResponse.razorpay_subscription_id || 'N/A'
+            razorpayResponse.razorpay_payment_id ||
+            razorpayResponse.razorpay_subscription_id ||
+            "N/A"
           }`;
 
           await postToGoogleForm({
@@ -600,14 +735,15 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
           });
 
           showNotification(
-            type === "onetime" ? getTextSync("success.paymentSuccess") : 
-            getTextSync("success.subscriptionSuccess"),
-            'success'
+            type === "onetime"
+              ? getTextSync("success.paymentSuccess")
+              : getTextSync("success.subscriptionSuccess"),
+            "success"
           );
 
           // Reset form
           form.reset();
-          if (typeof (window as any).clearAllErrors === 'function') {
+          if (typeof (window as any).clearAllErrors === "function") {
             (window as any).clearAllErrors();
           }
 
@@ -615,12 +751,8 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
           setTimeout(() => {
             initializeSupportForm();
           }, 100);
-
         } catch (error) {
-          showNotification(
-            getTextSync('errors.postPaymentIssue'),
-            'error'
-          );
+          showNotification(getTextSync("errors.postPaymentIssue"), "error");
         } finally {
           showLoader(false);
         }
@@ -651,7 +783,6 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     // Open Razorpay checkout
     const razorpay = new window.Razorpay(options);
     razorpay.open();
-
   } catch (error: any) {
     let errorMessage = getTextSync("errors.paymentFailed");
     if (error.message.includes("connect")) {
@@ -659,15 +790,15 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     } else if (error.message.includes("Invalid")) {
       errorMessage = error.message;
     }
-    
-    showNotification(errorMessage, 'error');
+
+    showNotification(errorMessage, "error");
   } finally {
     showLoader(false);
   }
 }
 
 if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initializeSupportForm);
-  } else {
-    initializeSupportForm();
-  }
+  document.addEventListener("DOMContentLoaded", initializeSupportForm);
+} else {
+  initializeSupportForm();
+}
