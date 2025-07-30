@@ -139,23 +139,31 @@ const apiCall = async (
 const getRazorpayKey = async (): Promise<string> => {
   try {
     console.log("Fetching Razorpay key from backend...");
-    const response = await apiCall("/razorpay-key");
-    console.log("Razorpay key response:", response);
+    const response = await fetch(`${CONFIG.API_BASE_URL}/razorpay-key`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    });
 
-    if (response.success && (response as any).key) {
-      console.log("Using backend Razorpay key");
-      return (response as any).key;
-    } else if (response.data?.key) {
-      console.log("Using backend Razorpay key from data");
-      return response.data.key;
+    console.log("Razorpay key response status:", response.status);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: Failed to fetch Razorpay key`);
+    }
+
+    const data = await response.json();
+    console.log("Razorpay key response data:", data);
+
+    if (data.key) {
+      console.log("Successfully fetched Razorpay key from backend");
+      return data.key;
     } else {
-      console.log("Backend key not found, using fallback");
-      return CONFIG.RAZORPAY_KEY;
+      throw new Error("No key found in backend response");
     }
   } catch (error) {
     console.error("Failed to fetch Razorpay key from backend:", error);
-    console.log("Using fallback Razorpay key");
-    return CONFIG.RAZORPAY_KEY;
+    throw new Error(`Unable to fetch Razorpay key: ${error.message}`);
   }
 };
 
@@ -671,7 +679,16 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     }
 
     // Get Razorpay key
-    const razorpayKey = await getRazorpayKey();
+    let razorpayKey: string;
+    try {
+      razorpayKey = await getRazorpayKey();
+    } catch (error) {
+      showNotification(
+        "Unable to connect to payment service. Please try again later.",
+        "error"
+      );
+      return;
+    }
 
     // Determine endpoint and make API call
     const endpoint =

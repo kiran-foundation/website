@@ -1,6 +1,6 @@
 export const CONFIG = {
   API_BASE_URL: import.meta.env.PUBLIC_API_BASE_URL || "https://support-us-backend.onrender.com",
-  RAZORPAY_KEY: import.meta.env.PUBLIC_RAZORPAY_KEY || "rzp_test_PoZqAR7MVlHjIz", // Fallback test key for development only
+  // No hardcoded RAZORPAY_KEY - must be fetched from backend
   COMPANY_NAME: "Kiran Foundations",
   COMPANY_LOGO: "https://kfastro.netlify.app/favicon.ico",
   THEME_COLOR: "#3399cc",
