@@ -130,6 +130,19 @@ const apiCall = async (
 
 // Get Razorpay key from backend
 export const getRazorpayKey = async (): Promise<string> => {
+  // Check if current domain is production domain
+  const currentDomain = window.location.origin;
+  const isProduction = currentDomain === "https://kiran.foundation";
+
+  // If not production domain, use test key from config
+  if (!isProduction) {
+    console.log(
+      "Using test Razorpay key for non-production domain:",
+      currentDomain
+    );
+    return CONFIG.RAZORPAY_KEY;
+  }
+
   try {
     console.log("Fetching Razorpay key from backend...");
     const response = await fetch(`${CONFIG.API_BASE_URL}/razorpay-key`, {
@@ -154,14 +167,17 @@ export const getRazorpayKey = async (): Promise<string> => {
     } else {
       throw new Error("No key found in backend response");
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error("Failed to fetch Razorpay key from backend:", error);
     throw new Error(`Unable to fetch Razorpay key: ${error.message}`);
   }
 };
 
 // Function to get or create plan
-export const getOrCreatePlan = (amount: number, frequency: string): string | null => {
+export const getOrCreatePlan = (
+  amount: number,
+  frequency: string
+): string | null => {
   const amountInRupees = Math.floor(amount / 100);
 
   if (frequency === "onetime") return null;
@@ -255,7 +271,10 @@ export const verifyPayment = async (
 };
 
 // Main payment initiation function
-export async function initiatePayment(amount: number, type: string): Promise<void> {
+export async function initiatePayment(
+  amount: number,
+  type: string
+): Promise<void> {
   const form = document.getElementById("donation-form") as HTMLFormElement;
 
   // Validate amount and frequency parameters first
@@ -381,10 +400,10 @@ export async function initiatePayment(amount: number, type: string): Promise<voi
             if (!isVerified) {
               // Redirect to unsuccessful page with verification error
               const errorParams = new URLSearchParams({
-                error: 'verification_failed',
-                message: 'Payment verification failed',
-                txnId: razorpayResponse.razorpay_payment_id || 'N/A',
-                amount: amount.toString()
+                error: "verification_failed",
+                message: "Payment verification failed",
+                txnId: razorpayResponse.razorpay_payment_id || "N/A",
+                amount: amount.toString(),
               });
               window.location.href = `/support-us/unsuccessful?${errorParams.toString()}`;
               return;
@@ -413,20 +432,25 @@ export async function initiatePayment(amount: number, type: string): Promise<voi
           // Redirect to success page with transaction details
           const successParams = new URLSearchParams({
             amount: amount.toString(),
-            txnId: razorpayResponse.razorpay_payment_id || razorpayResponse.razorpay_subscription_id || 'N/A',
-            type: type
+            txnId:
+              razorpayResponse.razorpay_payment_id ||
+              razorpayResponse.razorpay_subscription_id ||
+              "N/A",
+            type: type,
           });
           window.location.href = `/support-us/confirmation?${successParams.toString()}`;
-
         } catch (error: any) {
-          console.error('Post-payment error:', error);
-          
+          console.error("Post-payment error:", error);
+
           // Redirect to unsuccessful page with error details
           const errorParams = new URLSearchParams({
-            error: 'server_error',
-            message: error.message || 'An error occurred after payment',
-            txnId: razorpayResponse.razorpay_payment_id || razorpayResponse.razorpay_subscription_id || 'N/A',
-            amount: amount.toString()
+            error: "server_error",
+            message: error.message || "An error occurred after payment",
+            txnId:
+              razorpayResponse.razorpay_payment_id ||
+              razorpayResponse.razorpay_subscription_id ||
+              "N/A",
+            amount: amount.toString(),
           });
           window.location.href = `/support-us/unsuccessful?${errorParams.toString()}`;
         } finally {
@@ -460,49 +484,59 @@ export async function initiatePayment(amount: number, type: string): Promise<voi
     options.modal.ondismiss = function () {
       showLoader(false);
       // User closed the payment modal - this is not necessarily an error
-      console.log('Payment modal dismissed by user');
+      console.log("Payment modal dismissed by user");
     };
 
     // Open Razorpay checkout
     const razorpay = new window.Razorpay(options);
-    razorpay.on('payment.failed', function (response: any) {
-      console.error('Payment failed:', response.error);
-      
+    razorpay.on("payment.failed", function (response: any) {
+      console.error("Payment failed:", response.error);
+
       // Redirect to unsuccessful page with payment failure details
       const errorParams = new URLSearchParams({
-        error: 'payment_failed',
-        message: response.error.description || 'Payment was declined',
-        txnId: response.error.metadata?.payment_id || 'N/A',
-        amount: amount.toString()
+        error: "payment_failed",
+        message: response.error.description || "Payment was declined",
+        txnId: response.error.metadata?.payment_id || "N/A",
+        amount: amount.toString(),
       });
       window.location.href = `/support-us/unsuccessful?${errorParams.toString()}`;
     });
-    
+
     razorpay.open();
   } catch (error: any) {
-    console.error('Payment initiation error:', error);
-    
+    console.error("Payment initiation error:", error);
+
     // Determine error type and redirect to unsuccessful page
-    let errorType = 'unknown';
-    let errorMessage = error.message || 'An unexpected error occurred';
-    
-    if (error.message.includes("connect") || error.message.includes("network")) {
-      errorType = 'network_error';
-      errorMessage = 'Network connection error. Please check your internet connection.';
-    } else if (error.message.includes("server") || error.message.includes("HTTP")) {
-      errorType = 'server_error';
-      errorMessage = 'Server error occurred. Please try again later.';
+    let errorType = "unknown";
+    let errorMessage = error.message || "An unexpected error occurred";
+
+    if (
+      error.message.includes("connect") ||
+      error.message.includes("network")
+    ) {
+      errorType = "network_error";
+      errorMessage =
+        "Network connection error. Please check your internet connection.";
+    } else if (
+      error.message.includes("server") ||
+      error.message.includes("HTTP")
+    ) {
+      errorType = "server_error";
+      errorMessage = "Server error occurred. Please try again later.";
     } else if (error.message.includes("Razorpay")) {
-      errorType = 'razorpay_error';
-      errorMessage = 'Payment gateway error. Please try again.';
+      errorType = "razorpay_error";
+      errorMessage = "Payment gateway error. Please try again.";
+    } else if (error.message.includes("Razorpay")) {
+      errorType = "razorpay_error";
+      errorMessage = "Payment gateway error. Please try again.";
     }
 
     // Redirect to unsuccessful page
     const errorParams = new URLSearchParams({
       error: errorType,
       message: errorMessage,
-      txnId: 'N/A',
-      amount: amount.toString()
+      txnId: "N/A",
+      amount: amount.toString(),
     });
     window.location.href = `/support-us/unsuccessful?${errorParams.toString()}`;
   } finally {
