@@ -1,5 +1,5 @@
 ---
-amount: "Your amount of Rs. <span>0</span> was successful"
-id: "Transaction ID: <span>xyz</span>"
+amount: "Your {type} of ₹{amount} was successful!"
+id: "Transaction ID: {txnId}"
 animation: "/assets/json/animation-mail-send.json"
 ---
