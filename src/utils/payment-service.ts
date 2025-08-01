@@ -133,7 +133,7 @@ export const getRazorpayKey = async (): Promise<string> => {
   // Check if current domain is production domain
   const currentDomain = window.location.origin;
   const isProduction = currentDomain === "https://kiran.foundation";
-
+  // const isProduction=true;
   // If not production domain, use test key from config
   if (!isProduction) {
     console.log(
