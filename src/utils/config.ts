@@ -6,16 +6,10 @@ export const CONFIG = {
   THEME_COLOR: "#3399cc",
 };
 
+// Note: All payment plans are now created dynamically by the backend
+// This eliminates the need for predefined plan IDs and ensures compatibility
+// with the backend's dynamic plan creation system
 export const PREDEFINED_PLANS = {
-  monthly: {
-    5000: "plan_PFJfnMnXPs6TMS", // Patron Test - ₹50
-    1001: "plan_PFJfPtteneZ7Tn", // Super Supporter Test - ₹10.01
-    501: "plan_PFJa00kkaP1Tdb", // Supporter Test - ₹5.01
-  },
-  yearly: {
-    // Add yearly plans if available
-    5000: null, // Will create dynamically
-    1001: null, // Will create dynamically
-    501: null, // Will create dynamically
-  },
+  // Removed predefined plans - all plans are now created dynamically by backend
+  // This ensures proper alignment with backend implementation
 };

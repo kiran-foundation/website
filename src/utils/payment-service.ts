@@ -1,4 +1,4 @@
-import { CONFIG, PREDEFINED_PLANS } from "./config";
+import { CONFIG } from "./config";
 import { getTextSync } from "./textLoader";
 
 // Global types for TypeScript in browser
@@ -99,7 +99,7 @@ const apiCall = async (
       const errorText = await response.text();
       console.error("API Error Response:", errorText);
 
-      let errorData;
+      let errorData: { message?: string };
       try {
         errorData = JSON.parse(errorText);
       } catch {
@@ -173,22 +173,16 @@ export const getRazorpayKey = async (): Promise<string> => {
   }
 };
 
-// Function to get or create plan
+// Function to get or create plan - simplified to always let backend handle plan creation
 export const getOrCreatePlan = (
   amount: number,
   frequency: string
 ): string | null => {
-  const amountInRupees = Math.floor(amount / 100);
-
+  // For one-time payments, no plan is needed
   if (frequency === "onetime") return null;
 
-  // Check if predefined plan exists
-  const plans = PREDEFINED_PLANS[frequency as keyof typeof PREDEFINED_PLANS];
-  if (plans && plans[amountInRupees as keyof typeof plans]) {
-    return plans[amountInRupees as keyof typeof plans];
-  }
-
-  // Return null to indicate a new plan needs to be created
+  // For all subscription payments, let the backend create plans dynamically
+  // This aligns with the backend's design which creates plans for any amount/frequency
   return null;
 };
 
@@ -275,8 +269,6 @@ export async function initiatePayment(
   amount: number,
   type: string
 ): Promise<void> {
-  const form = document.getElementById("donation-form") as HTMLFormElement;
-
   // Validate amount and frequency parameters first
   if (amount <= 0) {
     showNotification(getTextSync("errors.invalidAmountValue"), "error");
@@ -342,11 +334,8 @@ export async function initiatePayment(
       frequency: type,
     };
 
-    // Check for existing plan or prepare for new plan creation
-    const existingPlanId = getOrCreatePlan(formData.amount, type);
-    if (existingPlanId) {
-      formData.plan_id = existingPlanId;
-    }
+    // Let the backend handle all plan creation dynamically
+    // No need to set plan_id as the backend creates plans based on amount and frequency
 
     // Get Razorpay key - this MUST succeed
     let razorpayKey: string;
