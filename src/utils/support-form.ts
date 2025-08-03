@@ -197,6 +197,11 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
       formData.plan_id = existingPlanId;
     }
 
+    // Add total_count parameter for subscriptions
+    if (type !== "onetime") {
+      (formData as any).total_count = type === "monthly" ? 60 : 5;
+    }
+
     // Get Razorpay key
     const razorpayKey = await getRazorpayKey();
 
