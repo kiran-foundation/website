@@ -1,6 +1,7 @@
 export {};
 import { SUPPORT_US_CONFIG } from './config';
 import { initializeTextLoader, getTextSync } from './textLoader';
+import type { PaymentFormData, ApiResponse, RazorpayResponse } from '../types/payment';
 
 declare global {
   interface Window {
@@ -12,40 +13,6 @@ interface FormFieldConfig {
   validate: (value: string) => boolean;
   errorText: string;
   emptyText: string;
-}
-
-interface PaymentFormData {
-  name: string;
-  email: string;
-  phone: string;
-  country: string;
-  city: string;
-  zipcode: string;
-  address: string;
-  notes: {
-    additional_notes: string;
-    city: string;
-    zipcode: string;
-    address: string;
-  };
-  amount: number;
-  currency: string;
-  frequency?: string;
-  plan_id?: string;
-}
-
-interface ApiResponse {
-  success: boolean;
-  data?: any;
-  message?: string;
-  error?: string;
-}
-
-interface RazorpayResponse {
-  razorpay_payment_id?: string;
-  razorpay_order_id?: string;
-  razorpay_signature?: string;
-  razorpay_subscription_id?: string;
 }
 
 // Utility functions
