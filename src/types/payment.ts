@@ -32,3 +32,21 @@ export interface RazorpayResponse {
   razorpay_signature?: string;
   razorpay_subscription_id?: string;
 }
+
+export interface FormFieldConfig {
+  validate: (value: string) => boolean;
+  errorText: string;
+  emptyText: string;
+}
+
+export interface ValidationResult {
+  isValid: boolean;
+  firstErrorField?: HTMLInputElement;
+  emptyFieldCount: number;
+}
+
+export interface PaymentValidationResult {
+  isValid: boolean;
+  errorMessage?: string;
+}
+
