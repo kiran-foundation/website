@@ -1,95 +1,92 @@
 
-
-
 // Environment detection utilities
 const isProduction = (): boolean => {
-  // Method 1: Check environment variable (most reliable)
-  if (typeof import.meta !== 'undefined' && import.meta.env) {
-    return import.meta.env.PROD || import.meta.env.NODE_ENV === 'production';
-  }
-  
-  // Method 2: Check hostname (for browser environments)
   if (typeof window !== 'undefined') {
     const hostname = window.location.hostname;
-    // Add your production domains here
     const productionDomains = [
       'kiran.foundation',
-      'www.kiran.foundation',
-      // Add any other production domains
-    ];
+      'www.kiran.foundation'];
     return productionDomains.includes(hostname);
-  }
-  
-  // Method 3: Check process.env (for Node.js environments)
-  if (typeof process !== 'undefined' && process.env) {
-    return process.env.NODE_ENV === 'production';
-  }
-  
-  // Default to test environment for safety
+  }  
   return false;
 };
 
-// You can also add specific environment checks
-const getEnvironment = (): 'development' | 'test' | 'production' => {
-  if (typeof import.meta !== 'undefined' && import.meta.env) {
-    if (import.meta.env.DEV) return 'development';
-    if (import.meta.env.PROD) return 'production';
-  }
-  
-  if (typeof window !== 'undefined') {
-    const hostname = window.location.hostname;
-    if (hostname === 'localhost' || hostname === '127.0.0.1') return 'development';
-    if (hostname.includes('test') || hostname.includes('staging')) return 'test';
-    return 'production';
-  }
-  
-  return 'test'; // Default fallback
-};
-
+// Test/Development configuration
 const CONFIG_TEST = {
-  API_BASE_URL: "http://localhost:3000" || "https://support-us-test.kiran.foundation",
-  RAZORPAY_KEY: "rzp_test_PoZqAR7MVlHjIz", // Will be fetched from backend
+  API_BASE_URL: "https://support-us-test.kiran.foundation",
+  RAZORPAY_KEY: "not-defined",
   COMPANY_NAME: "Kiran Foundations Test",
   COMPANY_LOGO: "https://kfastro.netlify.app/favicon.ico",
   THEME_COLOR: "#3399cc",
   PREDEFINED_PLANS: {
     monthly: {
-      5000: "plan_PFJfnMnXPs6TMS", // Patron Test - ₹5000
-      1001: "plan_PFJfPtteneZ7Tn", // Super Supporter Test - ₹1001
-      501: "plan_PFJa00kkaP1Tdb", // Supporter Test - ₹501
+      10001: null,
+      5001: "plan_PFJfnMnXPs6TMS",
+      1001: "plan_PFJfPtteneZ7Tn",
+      501: "plan_PFJa00kkaP1Tdb",
     },
     yearly: {
-      // Add yearly plans if available
-      5000: null, // Will create dynamically
-      1001: null, // Will create dynamically
-      501: null, // Will create dynamically
+      108000: null,
+      51000: null,
+      1100: null,
+      5100: null,
     },
+  },
+  GOOGLE_FORM: {
+    URL: "https://docs.google.com/forms/d/e/1FAIpQLSeCSnUWYOT6yURnKDOVIqlAxjhPTyDIdo4RzJQhCM_rUgz5xA/formResponse",
+    ENTRIES: {
+      FULL_NAME: "entry.31137184",
+      EMAIL: "entry.1480524677",
+      PHONE: "entry.504971788",
+      COUNTRY: "entry.2040851156",
+      ADDRESS: "entry.189619044",
+      CITY: "entry.40687982",
+      PINCODE: "entry.1929245861",
+      NOTES: "entry.2091957290",
+      DONATION_DETAILS: "entry.2091957290"
+    }
   }
-};
+} as const;
 
+// Production configuration
 const CONFIG_LIVE = {
   API_BASE_URL: "https://support-us.kiran.foundation",
-  RAZORPAY_KEY: "rzp_test_PoZqAR7MVlHjIz", // Will be fetched from backend
+  RAZORPAY_KEY: "not-defined",
   COMPANY_NAME: "Kiran Foundations",
   COMPANY_LOGO: "https://kfastro.netlify.app/favicon.ico",
   THEME_COLOR: "#3399cc",
   PREDEFINED_PLANS: {
     monthly: {
-      5000: "plan_PFJfnMnXPs6TMS", // Patron Test - ₹50
-      1001: "plan_PFJfPtteneZ7Tn", // Super Supporter Test - ₹10.01
-      501: "plan_PFJa00kkaP1Tdb", // Supporter Test - ₹5.01
+      10001: null,
+      5001: "plan_PFJfnMnXPs6TMS",
+      1001: "plan_PFJfPtteneZ7Tn",
+      501: "plan_PFJa00kkaP1Tdb",
     },
     yearly: {
-      // Add yearly plans if available
-      5000: null, // Will create dynamically
-      1001: null, // Will create dynamically
-      501: null, // Will create dynamically
+      108000: null,
+      51000: null,
+      1100: null,
+      5100: null,
     },
+  },
+  GOOGLE_FORM: {
+    URL: "https://docs.google.com/forms/d/e/1FAIpQLSedxSOPskuroSb3hJSAjVebGa1EoW1OeYjx2WHE1Um5g4iipQ/formResponse",
+    ENTRIES: {
+      FULL_NAME: "entry.283978656",
+      EMAIL: "entry.1909208105", 
+      PHONE: "entry.1359110198",
+      COUNTRY: "entry.218344457",
+      ADDRESS: "entry.938609362",
+      CITY: "entry.1458813282",
+      PINCODE: "entry.726311981",
+      NOTES: "entry.965069241",
+      DONATION_DETAILS: "entry.1357525015"
+    }
   }
-};
+} as const;
 
-// Automatically select the correct configuration based on environment
-const CONFIG = isProduction() ? CONFIG_LIVE : CONFIG_TEST;
+// Select configuration based on environment
+const SUPPORT_US_CONFIG = isProduction() ? CONFIG_LIVE : CONFIG_TEST;
 
 // Export the selected configuration and utility functions
-export { CONFIG, isProduction, getEnvironment, CONFIG_TEST, CONFIG_LIVE };
+export { SUPPORT_US_CONFIG, isProduction };

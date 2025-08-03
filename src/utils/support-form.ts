@@ -1,9 +1,7 @@
 export {};
-import { CONFIG ,getEnvironment} from './config';
+import { SUPPORT_US_CONFIG } from './config';
 import { initializeTextLoader, getTextSync } from './textLoader';
-// Global types for TypeScript in browser
 
-console.log(getEnvironment());
 declare global {
   interface Window {
     Razorpay: any;
@@ -50,11 +48,6 @@ interface RazorpayResponse {
   razorpay_subscription_id?: string;
 }
 
-// Configuration
-
-
-
-
 // Utility functions
 const showLoader = (show: boolean) => {
   const loader = document.getElementById('payment-loader');
@@ -82,7 +75,7 @@ const showNotification = (message: string, type: 'success' | 'error' | 'info' = 
 
 // API helper functions
 const apiCall = async (endpoint: string, options: RequestInit = {}): Promise<ApiResponse> => {
-  const url = `${CONFIG.API_BASE_URL}${endpoint}`;
+  const url = `${SUPPORT_US_CONFIG.API_BASE_URL}${endpoint}`;
   
   try {
     const response = await fetch(url, {
@@ -113,9 +106,9 @@ const apiCall = async (endpoint: string, options: RequestInit = {}): Promise<Api
 const getRazorpayKey = async (): Promise<string> => {
   try {
     const response = await apiCall('/razorpay-key');
-    return response.data?.key || CONFIG.RAZORPAY_KEY;
+    return response.data?.key || SUPPORT_US_CONFIG.RAZORPAY_KEY;
   } catch (error) {
-    return CONFIG.RAZORPAY_KEY;
+    return SUPPORT_US_CONFIG.RAZORPAY_KEY;
   }
 };
 
@@ -128,7 +121,7 @@ const getOrCreatePlan = (amount: number, frequency: string): string | null => {
   console.log(`Looking for predefined plan: ${frequency}, ₹${amountInRupees}`);
   
   // Check if predefined plan exists
-  const plans = CONFIG.PREDEFINED_PLANS[frequency as keyof typeof CONFIG.PREDEFINED_PLANS];
+  const plans = SUPPORT_US_CONFIG.PREDEFINED_PLANS[frequency as keyof typeof SUPPORT_US_CONFIG.PREDEFINED_PLANS];
   console.log(`Available plans for ${frequency}:`, plans);
   
   if (plans && plans[amountInRupees as keyof typeof plans]) {
@@ -165,18 +158,18 @@ const postToGoogleForm = async ({
   donationDetails: string;
 }): Promise<void> => {
   try {
-    const url = "https://docs.google.com/forms/d/e/1FAIpQLSedxSOPskuroSb3hJSAjVebGa1EoW1OeYjx2WHE1Um5g4iipQ/formResponse";
+    const url = SUPPORT_US_CONFIG.GOOGLE_FORM.URL;
 
     const formData = new URLSearchParams();
-    formData.append("entry.283978656", fullName);
-    formData.append("entry.1909208105", email);
-    formData.append("entry.1359110198", number);
-    formData.append("entry.218344457", country);
-    formData.append("entry.938609362", address);
-    formData.append("entry.1458813282", city);
-    formData.append("entry.726311981", pincode);
-    formData.append("entry.965069241", notes);
-    formData.append("entry.1357525015", donationDetails);
+    formData.append(SUPPORT_US_CONFIG.GOOGLE_FORM.ENTRIES.FULL_NAME, fullName);
+    formData.append(SUPPORT_US_CONFIG.GOOGLE_FORM.ENTRIES.EMAIL, email);
+    formData.append(SUPPORT_US_CONFIG.GOOGLE_FORM.ENTRIES.PHONE, number);
+    formData.append(SUPPORT_US_CONFIG.GOOGLE_FORM.ENTRIES.COUNTRY, country);
+    formData.append(SUPPORT_US_CONFIG.GOOGLE_FORM.ENTRIES.ADDRESS, address);
+    formData.append(SUPPORT_US_CONFIG.GOOGLE_FORM.ENTRIES.CITY, city);
+    formData.append(SUPPORT_US_CONFIG.GOOGLE_FORM.ENTRIES.PINCODE, pincode);
+    formData.append(SUPPORT_US_CONFIG.GOOGLE_FORM.ENTRIES.NOTES, notes);
+    formData.append(SUPPORT_US_CONFIG.GOOGLE_FORM.ENTRIES.DONATION_DETAILS, donationDetails);
 
     await fetch(url, {
       method: "POST",
@@ -213,6 +206,13 @@ const verifyPayment = async (paymentData: RazorpayResponse): Promise<boolean> =>
     return false;
   }
 };
+
+const CONSTANTS = {
+  NOTIFICATION_TIMEOUT: 5000,
+  SCROLL_BEHAVIOR: 'smooth' as const,
+  CURRENCY: 'INR' as const,
+  AMOUNT_MULTIPLIER: 100, // Convert to paise
+} as const;
 
 export function initializeSupportForm(): void {
   const urlParams = new URLSearchParams(window.location.search);
@@ -585,9 +585,9 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
       key: razorpayKey,
       amount: formData.amount,
       currency: "INR",
-      name: CONFIG.COMPANY_NAME,
+      name: SUPPORT_US_CONFIG.COMPANY_NAME,
       description: type === "onetime" ? "Donation" : `${type.charAt(0).toUpperCase() + type.slice(1)} Subscription`,
-      image: CONFIG.COMPANY_LOGO,
+      image: SUPPORT_US_CONFIG.COMPANY_LOGO,
       handler: async (razorpayResponse: RazorpayResponse) => {
         showLoader(true);
         try {
@@ -653,7 +653,7 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
         contact: formData.phone,
       },
       notes: formData.notes,
-      theme: { color: CONFIG.THEME_COLOR },
+      theme: { color: SUPPORT_US_CONFIG.THEME_COLOR },
     };
 
     // Add order_id for one-time payments or subscription_id for subscriptions
@@ -687,4 +687,4 @@ if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initializeSupportForm);
   } else {
     initializeSupportForm();
-  }
+  } 
