@@ -1,4 +1,4 @@
-export {};
+export { };
 import { SUPPORT_US_CONFIG } from './config';
 import { initializeTextLoader, getTextSync } from './textLoader';
 import type { PaymentFormData, ApiResponse, RazorpayResponse } from '../types/payment';
@@ -29,11 +29,10 @@ const showNotification = (message: string, type: 'success' | 'error' | 'info' = 
   if (existing) existing.remove();
 
   const notification = document.createElement('div');
-  notification.className = `notification fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
-    type === 'success' ? 'bg-green-500 text-white' :
-    type === 'error' ? 'bg-[#992424] text-white' :
-    'bg-blue-500 text-white'
-  }`;
+  notification.className = `notification fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${type === 'success' ? 'bg-green-500 text-white' :
+      type === 'error' ? 'bg-[#992424] text-white' :
+        'bg-blue-500 text-white'
+    }`;
   notification.textContent = message;
   document.body.appendChild(notification);
 
@@ -43,7 +42,7 @@ const showNotification = (message: string, type: 'success' | 'error' | 'info' = 
 // API helper functions
 const apiCall = async (endpoint: string, options: RequestInit = {}): Promise<ApiResponse> => {
   const url = `${SUPPORT_US_CONFIG.API_BASE_URL}${endpoint}`;
-  
+
   try {
     const response = await fetch(url, {
       headers: {
@@ -55,7 +54,7 @@ const apiCall = async (endpoint: string, options: RequestInit = {}): Promise<Api
     });
 
     const data = await response.json();
-    
+
     if (!response.ok) {
       throw new Error(data.message || `HTTP ${response.status}: Request failed`);
     }
@@ -65,7 +64,7 @@ const apiCall = async (endpoint: string, options: RequestInit = {}): Promise<Api
     if (error instanceof TypeError && error.message.includes('fetch')) {
       throw new Error(getTextSync('errors.connectionError'));
     }
-    
+
     throw error;
   }
 };
@@ -81,27 +80,28 @@ const getRazorpayKey = async (): Promise<string> => {
 
 // Function to get or create plan
 const getOrCreatePlan = (amount: number, frequency: string): string | null => {
-  const amountInRupees = Math.floor(amount / 100);
-  
   if (frequency === 'onetime') return null;
-  
-  console.log(`Looking for predefined plan: ${frequency}, ₹${amountInRupees}`);
-  
-  // Check if predefined plan exists
+
+  // Validate frequency
+  if (!['monthly', 'yearly'].includes(frequency)) {
+    return null;
+  }
+
+  // Check if predefined plan exists (amount is already in paise)
   const plans = SUPPORT_US_CONFIG.PREDEFINED_PLANS[frequency as keyof typeof SUPPORT_US_CONFIG.PREDEFINED_PLANS];
-  console.log(`Available plans for ${frequency}:`, plans);
-  
-  if (plans && plans[amountInRupees as keyof typeof plans]) {
-    const planId = plans[amountInRupees as keyof typeof plans];
-    console.log(`Found predefined plan: ${planId} for ₹${amountInRupees} ${frequency}`);
-    return planId;
+
+  if (plans && amount in plans) {
+    const planId = plans[amount as keyof typeof plans];
+
+    // Check if plan ID is not null (some plans may be null in config)
+    if (planId !== null) {
+      return planId;
+    }
   }
   
-  console.log(`No predefined plan found for ₹${amountInRupees} ${frequency}, will create dynamically`);
   // Return null to indicate a new plan needs to be created
   return null;
 };
-
 // Posts data to the Google Form
 const postToGoogleForm = async ({
   fullName,
@@ -146,7 +146,7 @@ const postToGoogleForm = async ({
       },
       body: formData.toString(),
     });
-    
+
   } catch (error) {
     // Silently handle Google Form submission errors
   }
@@ -183,14 +183,14 @@ const CONSTANTS = {
 
 export function initializeSupportForm(): void {
   const urlParams = new URLSearchParams(window.location.search);
-  
+
   const donationAmount = Number(urlParams.get("amount") ?? "0");
   const paymentType = String(urlParams.get("frequency") ?? "onetime").toLowerCase();
 
   // Check if parameters are invalid and show helper message
   const paramsInvalid = donationAmount <= 0 || !['onetime', 'monthly', 'yearly'].includes(paymentType);
   const navigationHelper = document.getElementById('navigation-helper');
-  
+
   if (paramsInvalid && navigationHelper) {
     navigationHelper.classList.remove('hidden');
   }
@@ -217,12 +217,12 @@ export function initializeSupportForm(): void {
       amountDisplay.style.color = '#999';
     }
   }
-  
+
   if (frequencyDisplay) {
     if (['onetime', 'monthly', 'yearly'].includes(paymentType)) {
-      frequencyDisplay.innerHTML = 
+      frequencyDisplay.innerHTML =
         paymentType === "monthly" ? getTextSync("display.perMonth") :
-        paymentType === "yearly" ? getTextSync("display.perYear") : getTextSync("display.oneTime");
+          paymentType === "yearly" ? getTextSync("display.perYear") : getTextSync("display.oneTime");
     } else {
       frequencyDisplay.innerHTML = getTextSync("display.selectFrequency");
       frequencyDisplay.style.color = '#999';
@@ -309,7 +309,7 @@ function setupFormValidation(): void {
       // Fallback: look for existing .form-error or create new one
       const existingError = el.parentNode?.querySelector(".form-error");
       if (existingError) existingError.remove();
-      
+
       const error = document.createElement("div");
       error.className = "form-error";
       error.style.color = "#992424";
@@ -341,7 +341,7 @@ function setupFormValidation(): void {
     // Clear error from both possible locations
     const error = el.parentNode?.querySelector(".form-error");
     if (error) error.remove();
-    
+
     const errorContainer = el.parentNode?.querySelector(".form-error-container") as HTMLElement;
     if (errorContainer) {
       errorContainer.innerHTML = "";
@@ -351,23 +351,23 @@ function setupFormValidation(): void {
   const validateField = (id: string): boolean => {
     const el = document.getElementById(id) as HTMLInputElement;
     const fieldConfig = fields[id];
-    
+
     if (!el || !fieldConfig) return true;
-    
+
     const value = el.value.trim();
-    
+
     // Check if field is empty
     if (value === "") {
       showError(id, fieldConfig.emptyText);
       return false;
     }
-    
+
     // Check if field is valid
     if (!fieldConfig.validate(value)) {
       showError(id, fieldConfig.errorText);
       return false;
     }
-    
+
     // Field is valid, clear any errors
     clearError(id);
     return true;
@@ -386,10 +386,10 @@ function setupFormValidation(): void {
 
   const checkEmptyFields = (): void => {
     clearAllErrors();
-    
+
     let firstErrorField: HTMLInputElement | null = null;
     let emptyFieldCount = 0;
-    
+
     Object.entries(fields).forEach(([id, cfg]) => {
       const el = document.getElementById(id) as HTMLInputElement;
       if (!el?.value.trim()) {
@@ -400,17 +400,17 @@ function setupFormValidation(): void {
         }
       }
     });
-    
+
     // Focus on first empty field
     if (firstErrorField) {
       firstErrorField.focus();
       firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-    
+
     // Show notification
     if (emptyFieldCount > 0) {
-      const message = emptyFieldCount === 1 
-        ? getTextSync("notifications.fillSingleField") 
+      const message = emptyFieldCount === 1
+        ? getTextSync("notifications.fillSingleField")
         : getTextSync("notifications.fillMultipleFields", { count: emptyFieldCount });
       showNotification(message, "error");
     }
@@ -427,7 +427,7 @@ function setupFormValidation(): void {
   // Update button state on input
   form.addEventListener("input", (e) => {
     const target = e.target as HTMLInputElement;
-    
+
     // Clear error when user starts typing
     if (target.id && fields[target.id]) {
       const error = target.parentNode?.querySelector(".form-error");
@@ -435,17 +435,17 @@ function setupFormValidation(): void {
         clearError(target.id);
       }
     }
-    
+
     // Update button state - only enable if form is valid AND URL params are valid
     const urlParams = new URLSearchParams(window.location.search);
     const donationAmount = Number(urlParams.get("amount") ?? "0");
     const paymentType = String(urlParams.get("frequency") ?? "onetime").toLowerCase();
-    
+
     const formIsValid = isFormValid();
     const paramsValid = donationAmount > 0 && ['onetime', 'monthly', 'yearly'].includes(paymentType);
-    
+
     donateButton.disabled = !(formIsValid && paramsValid);
-    
+
     // Show/hide overlay based on form validity
     if (buttonOverlay) {
       buttonOverlay.style.display = (formIsValid && paramsValid) ? "none" : "block";
@@ -467,26 +467,67 @@ function setupFormValidation(): void {
   (window as any).checkEmptyFields = checkEmptyFields;
 }
 
-async function initiatePayment(amount: number, type: string): Promise<void> {
-  const form = document.getElementById("donation-form") as HTMLFormElement;
-  
-  // Validate amount and frequency parameters first
+// Validation function for payment initiation
+function validatePaymentInitiation(amount: number, type: string): { isValid: boolean; errorMessage?: string } {
+  // Validate amount parameter
   if (amount <= 0) {
-    showNotification(getTextSync("errors.invalidAmountValue"), 'error');
-    return;
+    return {
+      isValid: false,
+      errorMessage: getTextSync("errors.invalidAmountValue")
+    };
   }
 
+  // Validate frequency parameter
   if (!['onetime', 'monthly', 'yearly'].includes(type)) {
-    showNotification(getTextSync("errors.invalidFrequencyValue"), 'error');
-    return;
+    return {
+      isValid: false,
+      errorMessage: getTextSync("errors.invalidFrequencyValue")
+    };
   }
-  
-  // Validate form before proceeding
+
+  // Validate form fields
   if (typeof (window as any).isFormValid === 'function' && !(window as any).isFormValid()) {
     if (typeof (window as any).checkEmptyFields === 'function') {
       (window as any).checkEmptyFields();
     }
-    showNotification(getTextSync("errors.fillRequiredFields"), 'error');
+    return {
+      isValid: false,
+      errorMessage: getTextSync("errors.fillRequiredFields")
+    };
+  }
+
+  return { isValid: true };
+}
+
+// Function to collect form data from DOM elements
+function getFormData(amount: number, type: string): PaymentFormData {
+  return {
+    name: (document.getElementById("name") as HTMLInputElement).value.trim(),
+    email: (document.getElementById("email") as HTMLInputElement).value.trim(),
+    phone: (document.getElementById("phone") as HTMLInputElement).value.trim(),
+    country: (document.getElementById("country") as HTMLInputElement).value.trim(),
+    city: (document.getElementById("city") as HTMLInputElement).value.trim(),
+    zipcode: (document.getElementById("zipcode") as HTMLInputElement).value.trim(),
+    address: (document.getElementById("address") as HTMLInputElement).value.trim(),
+    notes: {
+      additional_notes: (document.getElementById("notes") as HTMLTextAreaElement)?.value?.trim() || "",
+      city: (document.getElementById("city") as HTMLInputElement).value.trim(),
+      zipcode: (document.getElementById("zipcode") as HTMLInputElement).value.trim(),
+      address: (document.getElementById("address") as HTMLInputElement).value.trim(),
+    },
+    amount: amount * 100, // Convert to paise
+    currency: "INR",
+    frequency: type,
+  };
+}
+
+async function initiatePayment(amount: number, type: string): Promise<void> {
+  const form = document.getElementById("donation-form") as HTMLFormElement;
+
+  // Validate payment initiation parameters and form
+  const validation = validatePaymentInitiation(amount, type);
+  if (!validation.isValid) {
+    showNotification(validation.errorMessage!, 'error');
     return;
   }
 
@@ -494,39 +535,14 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
 
   try {
     // Get form data
-    const formData: PaymentFormData = {
-      name: (document.getElementById("name") as HTMLInputElement).value.trim(),
-      email: (document.getElementById("email") as HTMLInputElement).value.trim(),
-      phone: (document.getElementById("phone") as HTMLInputElement).value.trim(),
-      country: (document.getElementById("country") as HTMLInputElement).value.trim(),
-      city: (document.getElementById("city") as HTMLInputElement).value.trim(),
-      zipcode: (document.getElementById("zipcode") as HTMLInputElement).value.trim(),
-      address: (document.getElementById("address") as HTMLInputElement).value.trim(),
-      notes: {
-        additional_notes: (document.getElementById("notes") as HTMLTextAreaElement)?.value?.trim() || "",
-        city: (document.getElementById("city") as HTMLInputElement).value.trim(),
-        zipcode: (document.getElementById("zipcode") as HTMLInputElement).value.trim(),
-        address: (document.getElementById("address") as HTMLInputElement).value.trim(),
-      },
-      amount: amount * 100, // Convert to paise
-      currency: "INR",
-      frequency: type,
-    };
+    const formData = getFormData(amount, type);
 
     // Check for existing plan or prepare for new plan creation
     const existingPlanId = getOrCreatePlan(formData.amount, type);
     if (existingPlanId) {
       formData.plan_id = existingPlanId;
-      console.log("✅ Using existing plan ID:", existingPlanId);
-    } else {
-      console.log("❌ No existing plan found, backend will create new plan");
     }
-    
-    console.log("Form data being sent:", {
-      amount: formData.amount,
-      frequency: formData.frequency,
-      plan_id: formData.plan_id || 'undefined'
-    });
+
     // Get Razorpay key
     const razorpayKey = await getRazorpayKey();
 
@@ -567,9 +583,8 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
           }
 
           // Submit to Google Form
-          const donationDetails = `Donation: ₹${amount} | Frequency: ${type} | Payment ID: ${
-            razorpayResponse.razorpay_payment_id || razorpayResponse.razorpay_subscription_id || 'N/A'
-          }`;
+          const donationDetails = `Donation: ₹${amount} | Frequency: ${type} | Payment ID: ${razorpayResponse.razorpay_payment_id || razorpayResponse.razorpay_subscription_id || 'N/A'
+            }`;
 
           await postToGoogleForm({
             fullName: formData.name,
@@ -584,8 +599,8 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
           });
 
           showNotification(
-            type === "onetime" ? getTextSync("success.paymentSuccess") : 
-            getTextSync("success.subscriptionSuccess"),
+            type === "onetime" ? getTextSync("success.paymentSuccess") :
+              getTextSync("success.subscriptionSuccess"),
             'success'
           );
 
@@ -631,7 +646,7 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     } else {
       throw new Error(getTextSync("errors.invalidServerResponse"));
     }
-    console.log("Razorpay options: ", options);
+    
     // Open Razorpay checkout
     const razorpay = new window.Razorpay(options);
     razorpay.open();
@@ -643,7 +658,7 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     } else if (error.message.includes("Invalid")) {
       errorMessage = error.message;
     }
-    
+
     showNotification(errorMessage, 'error');
   } finally {
     showLoader(false);
@@ -651,7 +666,7 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
 }
 
 if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initializeSupportForm);
-  } else {
-    initializeSupportForm();
-  } 
+  document.addEventListener("DOMContentLoaded", initializeSupportForm);
+} else {
+  initializeSupportForm();
+} 
