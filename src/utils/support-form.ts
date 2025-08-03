@@ -1,7 +1,9 @@
 export {};
-import { CONFIG,PREDEFINED_PLANS } from './config';
+import { CONFIG ,getEnvironment} from './config';
 import { initializeTextLoader, getTextSync } from './textLoader';
 // Global types for TypeScript in browser
+
+console.log(getEnvironment());
 declare global {
   interface Window {
     Razorpay: any;
@@ -123,12 +125,19 @@ const getOrCreatePlan = (amount: number, frequency: string): string | null => {
   
   if (frequency === 'onetime') return null;
   
+  console.log(`Looking for predefined plan: ${frequency}, ₹${amountInRupees}`);
+  
   // Check if predefined plan exists
-  const plans = PREDEFINED_PLANS[frequency as keyof typeof PREDEFINED_PLANS];
+  const plans = CONFIG.PREDEFINED_PLANS[frequency as keyof typeof CONFIG.PREDEFINED_PLANS];
+  console.log(`Available plans for ${frequency}:`, plans);
+  
   if (plans && plans[amountInRupees as keyof typeof plans]) {
-    return plans[amountInRupees as keyof typeof plans];
+    const planId = plans[amountInRupees as keyof typeof plans];
+    console.log(`Found predefined plan: ${planId} for ₹${amountInRupees} ${frequency}`);
+    return planId;
   }
   
+  console.log(`No predefined plan found for ₹${amountInRupees} ${frequency}, will create dynamically`);
   // Return null to indicate a new plan needs to be created
   return null;
 };
@@ -541,8 +550,16 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     const existingPlanId = getOrCreatePlan(formData.amount, type);
     if (existingPlanId) {
       formData.plan_id = existingPlanId;
+      console.log("✅ Using existing plan ID:", existingPlanId);
+    } else {
+      console.log("❌ No existing plan found, backend will create new plan");
     }
-
+    
+    console.log("Form data being sent:", {
+      amount: formData.amount,
+      frequency: formData.frequency,
+      plan_id: formData.plan_id || 'undefined'
+    });
     // Get Razorpay key
     const razorpayKey = await getRazorpayKey();
 
@@ -647,7 +664,7 @@ async function initiatePayment(amount: number, type: string): Promise<void> {
     } else {
       throw new Error(getTextSync("errors.invalidServerResponse"));
     }
-
+    console.log("Razorpay options: ", options);
     // Open Razorpay checkout
     const razorpay = new window.Razorpay(options);
     razorpay.open();
