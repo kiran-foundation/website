@@ -1,5 +1,5 @@
 ---
-button: "Continue the support"
-description: "Support our cause with a yearly donation of ILakh or a monthly donation of 10K."
-total: "Total Help"
+button: "Continue to support"
+description: "will make a real difference. We truly appreciate your support."
+total: "Your gift of"
 ---
