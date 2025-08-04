@@ -104,6 +104,7 @@ const getOrCreatePlan = (amount: number, frequency: string): string | null => {
   // Return null to indicate a new plan needs to be created
   return null;
 };
+
 const postToGoogleForm = async ({
   fullName,
   email,

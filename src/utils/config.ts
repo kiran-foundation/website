@@ -20,16 +20,16 @@ const CONFIG_TEST = {
   THEME_COLOR: "#3399cc",
   PREDEFINED_PLANS: {
     monthly: {
-      10001: null,
-      5001: "plan_PFJfnMnXPs6TMS",
-      1001: "plan_PFJfPtteneZ7Tn",
-      501: "plan_PFJa00kkaP1Tdb",
+      1000100: null,
+      500100: "plan_PFJfnMnXPs6TMS",
+      100100: "plan_PFJfPtteneZ7Tn",
+      50100: "plan_PFJa00kkaP1Tdb",
     },
     yearly: {
-      108000: null,
-      51000: null,
-      1100: null,
-      5100: null,
+      10800000: null,
+      5100000: null,
+      110000: null,
+      510000: null,
     },
   },
   GOOGLE_FORM: {
@@ -56,17 +56,17 @@ const CONFIG_LIVE = {
   COMPANY_LOGO: "https://kfastro.netlify.app/favicon.ico",
   THEME_COLOR: "#3399cc",
   PREDEFINED_PLANS: {
-    monthly: {
-      10001: null,
-      5001: "plan_PFJfnMnXPs6TMS",
-      1001: "plan_PFJfPtteneZ7Tn",
-      501: "plan_PFJa00kkaP1Tdb",
+     monthly: {
+      1000100: null,
+      500100: "plan_PFJfnMnXPs6TMS",
+      100100: "plan_PFJfPtteneZ7Tn",
+      50100: "plan_PFJa00kkaP1Tdb",
     },
     yearly: {
-      108000: null,
-      51000: null,
-      1100: null,
-      5100: null,
+      10800000: null,
+      5100000: null,
+      110000: null,
+      510000: null,
     },
   },
   GOOGLE_FORM: {
