@@ -8,19 +8,15 @@ const info = (await getEntry("support-form", "confirmation")).data;
 <Layout>
   <div class="max-w-full mx-auto pt-[8rem] overflow-hidden pb-[500px]">
     <h1
-      id="success-message"
       class="tracking-normal text-center heading-1 font-[600] text-[1.5rem] md:text-[2rem] leading-[140%]"
-    >
-      {info.amount}
-    </h1>
-    <h3 id="transaction-id" class="body-text-1 text-center pt-5">
-      {info.id}
-    </h3>
+      set:html={info.amount}
+    />
+    <h3 class="body-text-1 text-center pt-5" set:html={info.id} />
 
-    <script is:inline
+    <script
+      is:inline
       src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"
-      type="module">
-    </script>
+      type="module"></script>
 
     <lottie-player
       src={info.animation || "/assets/animations/fallback.json"}
@@ -38,24 +34,30 @@ const info = (await getEntry("support-form", "confirmation")).data;
     <script is:inline>
       // Get URL parameters from client-side
       const urlParams = new URLSearchParams(window.location.search);
-      const amount = urlParams.get('amount') || '0';
-      const transactionId = urlParams.get('txnId') || 'N/A';
-      const paymentType = urlParams.get('type') || 'onetime';
+      const amount = urlParams.get("amount") || "0";
+      const transactionId = urlParams.get("txnId") || "N/A";
+      const paymentType = urlParams.get("type") || "onetime";
 
       // Replace placeholders with actual values
-      const displayType = paymentType === 'onetime' ? 'donation' : paymentType + ' subscription';
+      const displayType =
+        paymentType === "onetime" ? "donation" : paymentType + " subscription";
       const amountText = `Your ${displayType} of ₹${amount} was successful!`;
-      const idText = transactionId !== 'N/A' ? `Transaction ID: ${transactionId}` : 'Payment completed successfully';
+      const idText =
+        transactionId !== "N/A"
+          ? `Transaction ID: ${transactionId}`
+          : "Payment completed successfully";
 
-      // Update the DOM elements
-      document.getElementById('success-message').innerHTML = amountText;
-      document.getElementById('transaction-id').innerHTML = idText;
+      // Update the DOM elements with dynamic content
+      const h1Element = document.querySelector("h1");
+      const h3Element = document.querySelector("h3");
 
-      // Optional: Add some celebration effects
-      setTimeout(() => {
-        document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-        document.body.style.transition = 'background 2s ease-in-out';
-      }, 1000);
+      if (h1Element) {
+        h1Element.innerHTML = amountText;
+      }
+
+      if (h3Element) {
+        h3Element.innerHTML = idText;
+      }
     </script>
   </div>
 </Layout>
