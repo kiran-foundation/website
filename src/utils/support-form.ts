@@ -52,6 +52,44 @@ const showNotification = (
   setTimeout(() => notification.remove(), CONSTANTS.NOTIFICATION_TIMEOUT);
 };
 
+function setupDurationEventListeners(): void {
+  const durationSelect = document.getElementById(
+    "subscription-duration"
+  ) as HTMLSelectElement;
+
+  if (durationSelect) {
+    durationSelect.addEventListener("change", (e) => {
+      const selectedYears = parseInt((e.target as HTMLSelectElement).value);
+      updateCommitmentDisplay(selectedYears);
+    });
+  }
+}
+
+function updateCommitmentDisplay(years: number): void {
+  const commitmentDisplay = document.getElementById("commitment-display");
+  if (commitmentDisplay) {
+    const text =
+      years === 1 ? "1 year commitment" : `${years} years commitment`;
+    commitmentDisplay.textContent = text;
+  }
+}
+
+function getSelectedDuration(): number {
+  const durationSelect = document.getElementById(
+    "subscription-duration"
+  ) as HTMLSelectElement;
+  if (!durationSelect) return 5; // Default fallback
+
+  const selectedValue = parseInt(durationSelect.value);
+  // Validate duration is within 1-5 years range
+  if (selectedValue >= 1 && selectedValue <= 5) {
+    return selectedValue;
+  }
+
+  console.warn(`Invalid duration ${selectedValue}, defaulting to 5 years`);
+  return 5; // Default fallback
+}
+
 export function initializeSupportForm(): void {
   const urlParams = new URLSearchParams(window.location.search);
 
@@ -89,6 +127,7 @@ export function initializeSupportForm(): void {
   const donateButton = document.getElementById(
     "donate-now-button"
   ) as HTMLButtonElement;
+  const durationSelector = document.getElementById("duration-selector");
 
   if (amountDisplay) {
     if (donationAmount > 0) {
@@ -110,6 +149,16 @@ export function initializeSupportForm(): void {
     } else {
       frequencyDisplay.innerHTML = getTextSync("display.selectFrequency");
       frequencyDisplay.style.color = "#999";
+    }
+  }
+
+  // Show/hide duration selector based on payment type
+  if (durationSelector) {
+    const isSubscription = ["monthly", "yearly"].includes(paymentType);
+    durationSelector.style.display = isSubscription ? "block" : "none";
+
+    if (isSubscription) {
+      setupDurationEventListeners();
     }
   }
 
@@ -423,8 +472,10 @@ function handlePaymentInitiation(amount: number, type: string): void {
     return;
   }
 
-  // Get form data
+  // Get form data with duration
+  const selectedDuration = getSelectedDuration();
   const formData = getFormData(amount, type);
+  (formData as any).selectedDuration = selectedDuration;
 
   // Create callbacks for the payment service
   const callbacks = {

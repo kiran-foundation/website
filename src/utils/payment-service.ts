@@ -210,7 +210,17 @@ const initiatePayment = async (
 
     // Add total_count parameter for subscriptions
     if (type !== "onetime") {
-      (formData as any).total_count = type === "monthly" ? 60 : 5;
+      const selectedDuration = (formData as any).selectedDuration || 5;
+      // Validate duration and fallback to 5 years if invalid
+      const validDuration =
+        selectedDuration >= 1 && selectedDuration <= 5 ? selectedDuration : 5;
+      if (validDuration !== selectedDuration) {
+        console.warn(
+          `Invalid duration ${selectedDuration}, using ${validDuration} years`
+        );
+      }
+      (formData as any).total_count =
+        type === "monthly" ? validDuration * 12 : validDuration;
     }
 
     // Get Razorpay key
@@ -259,7 +269,10 @@ const initiatePayment = async (
           }
 
           // Submit to Google Form
-          const donationDetails = `Donation: ₹${amount} | Frequency: ${type} | Payment ID: ${
+          const selectedDuration = (formData as any).selectedDuration || 5;
+          const durationText =
+            type !== "onetime" ? ` | Duration: ${selectedDuration} years` : "";
+          const donationDetails = `Donation: ₹${amount} | Frequency: ${type}${durationText} | Payment ID: ${
             razorpayResponse.razorpay_payment_id ||
             razorpayResponse.razorpay_subscription_id ||
             "N/A"

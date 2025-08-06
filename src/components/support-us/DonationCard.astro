@@ -6,7 +6,9 @@ interface Props {
 const { card } = Astro.props;
 ---
 
-<div class="w-full max-w-[23rem] bg-[#F5F5F5] rounded-3xl overflow-hidden py-4 lg:py-4">
+<div
+  class="w-full max-w-[23rem] bg-[#F5F5F5] rounded-3xl overflow-hidden py-4 lg:py-4"
+>
   {/* Card Content */}
   <div class="text-center text-black px-4">
     {/* Card Header */}
@@ -22,6 +24,24 @@ const { card } = Astro.props;
 
     {/* Frequency */}
     <div id="toBeDisplay" class="text-black/70 mb-4">per month</div>
+
+    {/* Duration Selector */}
+    <div id="duration-selector" class="mb-4" style="display: none;">
+      <label class="text-sm text-black/70 mb-2 block">Commitment Period</label>
+      <select
+        id="subscription-duration"
+        class="w-full px-3 py-2 rounded-lg border border-gray-200 bg-white text-black focus:outline-none focus:border-gray-300"
+      >
+        <option value="1">1 Year</option>
+        <option value="2">2 Years</option>
+        <option value="3">3 Years</option>
+        <option value="4">4 Years</option>
+        <option value="5" selected>5 Years</option>
+      </select>
+      <div id="commitment-display" class="text-xs text-black/60 mt-1">
+        5 years commitment
+      </div>
+    </div>
 
     {/* Description */}
     <p class="text-black/70 mb-4 pb-2">
