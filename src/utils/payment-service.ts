@@ -284,6 +284,18 @@ const initiatePayment = async (
             "success"
           );
 
+          // Redirect to confirmation page
+          const paymentId =
+            razorpayResponse.razorpay_payment_id ||
+            razorpayResponse.razorpay_subscription_id ||
+            "N/A";
+          const confirmationUrl = `/support-us/confirmation/?amount=${amount}&type=${type}&txnId=${paymentId}`;
+
+          // Small delay to ensure user sees the success message
+          setTimeout(() => {
+            window.location.href = confirmationUrl;
+          }, 1500);
+
           // Call success callback
           callbacks.onSuccess();
         } catch (error) {
@@ -291,6 +303,18 @@ const initiatePayment = async (
             getTextSync("errors.postPaymentIssue"),
             "error"
           );
+
+          // Redirect to unsuccessful page
+          const paymentId =
+            razorpayResponse.razorpay_payment_id ||
+            razorpayResponse.razorpay_subscription_id ||
+            "N/A";
+          const unsuccessfulUrl = `/support-us/unsuccessful/?amount=${amount}&type=${type}&txnId=${paymentId}&reason=verification_failed`;
+
+          // Small delay to ensure user sees the error message
+          setTimeout(() => {
+            window.location.href = unsuccessfulUrl;
+          }, 2000);
         } finally {
           callbacks.showLoader(false);
         }
@@ -298,6 +322,14 @@ const initiatePayment = async (
       modal: {
         ondismiss: function () {
           callbacks.showLoader(false);
+
+          // Redirect to unsuccessful page when payment is dismissed
+          const unsuccessfulUrl = `/support-us/unsuccessful/?amount=${amount}&type=${type}&txnId=N/A&reason=payment_cancelled`;
+
+          // Small delay before redirect
+          setTimeout(() => {
+            window.location.href = unsuccessfulUrl;
+          }, 1000);
         },
       },
       prefill: {
@@ -323,6 +355,14 @@ const initiatePayment = async (
     razorpay.open();
   } catch (error: any) {
     handlePaymentError(error, callbacks.showNotification);
+
+    // Redirect to unsuccessful page for payment initiation errors
+    const unsuccessfulUrl = `/support-us/unsuccessful/?amount=${amount}&type=${type}&txnId=N/A&reason=payment_failed`;
+
+    // Small delay to ensure user sees the error message
+    setTimeout(() => {
+      window.location.href = unsuccessfulUrl;
+    }, 2000);
   } finally {
     callbacks.showLoader(false);
   }

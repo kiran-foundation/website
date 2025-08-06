@@ -45,11 +45,17 @@ const info = (await getEntry("support-form", "confirmation")).data;
       // Replace placeholders with actual values
       const displayType = paymentType === 'onetime' ? 'donation' : paymentType + ' subscription';
       const amountText = `Your ${displayType} of ₹${amount} was successful!`;
-      const idText = `Transaction ID: ${transactionId}`;
+      const idText = transactionId !== 'N/A' ? `Transaction ID: ${transactionId}` : 'Payment completed successfully';
 
       // Update the DOM elements
       document.getElementById('success-message').innerHTML = amountText;
       document.getElementById('transaction-id').innerHTML = idText;
+
+      // Optional: Add some celebration effects
+      setTimeout(() => {
+        document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        document.body.style.transition = 'background 2s ease-in-out';
+      }, 1000);
     </script>
   </div>
 </Layout>
