@@ -20,16 +20,16 @@ const CONFIG_TEST = {
   THEME_COLOR: "#3399cc",
   PREDEFINED_PLANS: {
     monthly: {
-      1000100: null,
-      500100: "plan_PFJfnMnXPs6TMS",
+      1000100: "plan_R2sViPaAPpCQnd",
+      500100: "plan_R2sTq18DciEYZO",
       100100: "plan_PFJfPtteneZ7Tn",
       50100: "plan_PFJa00kkaP1Tdb",
     },
     yearly: {
-      10800000: null,
-      5100000: null,
-      110000: null,
-      510000: null,
+      10800000: "plan_R2sdSj9X0ZTobo",
+      5100000: "plan_R2scS7cMduilJS",
+      1100000: "plan_R2sbe0R9rYzRIO",
+      510000: "plan_R2sZPbueWU6ozk",
     },
   },
   GOOGLE_FORM: {
