@@ -20,16 +20,16 @@ const CONFIG_TEST = {
   THEME_COLOR: "#3399cc",
   PREDEFINED_PLANS: {
     monthly: {
-      1000100: "plan_R2sViPaAPpCQnd",
-      500100: "plan_R2sTq18DciEYZO",
-      100100: "plan_PFJfPtteneZ7Tn",
-      50100: "plan_PFJa00kkaP1Tdb",
+      1000100: "plan_R2sViPaAPpCQnd",//Patron
+      500100: "plan_R2sTq18DciEYZO", //Royal Supporter
+      100100: "plan_PFJfPtteneZ7Tn", //Super Supporter
+      50100: "plan_PFJa00kkaP1Tdb",  //supporter 
     },
     yearly: {
-      10800000: "plan_R2sdSj9X0ZTobo",
-      5100000: "plan_R2scS7cMduilJS",
-      1100000: "plan_R2sbe0R9rYzRIO",
-      510000: "plan_R2sZPbueWU6ozk",
+      10800000: "plan_R2sdSj9X0ZTobo",//Patron
+      5100000: "plan_R2scS7cMduilJS", //Royal Supporter
+      1100000: "plan_R2sbe0R9rYzRIO", //Super Supporter
+      510000: "plan_R2sZPbueWU6ozk",  //Supporter
     },
   },
   GOOGLE_FORM: {
