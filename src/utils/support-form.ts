@@ -52,6 +52,64 @@ const showNotification = (
   setTimeout(() => notification.remove(), CONSTANTS.NOTIFICATION_TIMEOUT);
 };
 
+function populateDurationOptions(paymentType: string): void {
+  const durationSelect = document.getElementById(
+    "subscription-duration"
+  ) as HTMLSelectElement;
+
+  if (!durationSelect) return;
+
+  // Clear existing options
+  durationSelect.innerHTML = "";
+
+  if (paymentType === "yearly") {
+    // For yearly subscriptions, start from 2 years (no 1 year option)
+    const yearlyOptions = [
+      { value: 2, text: "2 Years" },
+      { value: 3, text: "3 Years" },
+      { value: 4, text: "4 Years" },
+      { value: 5, text: "5 Years" },
+    ];
+
+    yearlyOptions.forEach((option, index) => {
+      const optionElement = document.createElement("option");
+      optionElement.value = option.value.toString();
+      optionElement.textContent = option.text;
+      // Default to 2 years for yearly subscriptions
+      if (index === 0) {
+        optionElement.selected = true;
+      }
+      durationSelect.appendChild(optionElement);
+    });
+
+    // Update commitment display for default selection
+    updateCommitmentDisplay(2);
+  } else {
+    // For monthly subscriptions, include all options (1-5 years)
+    const monthlyOptions = [
+      { value: 1, text: "1 Year" },
+      { value: 2, text: "2 Years" },
+      { value: 3, text: "3 Years" },
+      { value: 4, text: "4 Years" },
+      { value: 5, text: "5 Years" },
+    ];
+
+    monthlyOptions.forEach((option, index) => {
+      const optionElement = document.createElement("option");
+      optionElement.value = option.value.toString();
+      optionElement.textContent = option.text;
+      // Default to 5 years for monthly subscriptions
+      if (option.value === 5) {
+        optionElement.selected = true;
+      }
+      durationSelect.appendChild(optionElement);
+    });
+
+    // Update commitment display for default selection
+    updateCommitmentDisplay(5);
+  }
+}
+
 function setupDurationEventListeners(): void {
   const durationSelect = document.getElementById(
     "subscription-duration"
@@ -78,16 +136,25 @@ function getSelectedDuration(): number {
   const durationSelect = document.getElementById(
     "subscription-duration"
   ) as HTMLSelectElement;
-  if (!durationSelect) return 5; // Default fallback
+
+  // Get payment type from URL to determine appropriate default
+  const urlParams = new URLSearchParams(window.location.search);
+  const paymentType = urlParams.get("frequency") || "monthly";
+  const defaultDuration = paymentType === "yearly" ? 2 : 5;
+
+  if (!durationSelect) return defaultDuration;
 
   const selectedValue = parseInt(durationSelect.value);
-  // Validate duration is within 1-5 years range
-  if (selectedValue >= 1 && selectedValue <= 5) {
+  // Validate duration is within appropriate range
+  const minDuration = paymentType === "yearly" ? 2 : 1;
+  if (selectedValue >= minDuration && selectedValue <= 5) {
     return selectedValue;
   }
 
-  console.warn(`Invalid duration ${selectedValue}, defaulting to 5 years`);
-  return 5; // Default fallback
+  console.warn(
+    `Invalid duration ${selectedValue}, defaulting to ${defaultDuration} years`
+  );
+  return defaultDuration;
 }
 
 export function initializeSupportForm(): void {
@@ -158,6 +225,7 @@ export function initializeSupportForm(): void {
     durationSelector.style.display = isSubscription ? "block" : "none";
 
     if (isSubscription) {
+      populateDurationOptions(paymentType);
       setupDurationEventListeners();
     }
   }
