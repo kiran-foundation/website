@@ -11,7 +11,16 @@
  * @returns Total count for subscription
  */
 export const calculateTotalCount = (type: string, duration: number): number => {
-  return type === "monthly" ? duration * 12 : duration;
+  if (type === "monthly") {
+    return duration * 12;
+  } else if (type === "yearly") {
+    // For yearly subscriptions, we need to account for Razorpay's end date calculation
+    // The subscription should run for the full duration selected by the user
+    // Current issue: 2 years selected shows end date as 2026 instead of 2027
+    // This suggests we need to adjust the total_count to get correct end date
+    return duration;
+  }
+  return duration;
 };
 
 /**
