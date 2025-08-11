@@ -75,15 +75,15 @@ function populateDurationOptions(paymentType: string): void {
       const optionElement = document.createElement("option");
       optionElement.value = option.value.toString();
       optionElement.textContent = option.text;
-      // Default to 2 years for yearly subscriptions
-      if (index === 0) {
+      // Default to 5 years for yearly subscriptions
+      if (option.value === 5) {
         optionElement.selected = true;
       }
       durationSelect.appendChild(optionElement);
     });
 
     // Update commitment display for default selection
-    updateCommitmentDisplay(2);
+    updateCommitmentDisplay(5);
   } else {
     // For monthly subscriptions, include all options (1-5 years)
     const monthlyOptions = [
@@ -140,7 +140,7 @@ function getSelectedDuration(): number {
   // Get payment type from URL to determine appropriate default
   const urlParams = new URLSearchParams(window.location.search);
   const paymentType = urlParams.get("frequency") || "monthly";
-  const defaultDuration = paymentType === "yearly" ? 2 : 5;
+  const defaultDuration = 5; // Default to 5 years for both monthly and yearly
 
   if (!durationSelect) return defaultDuration;
 
