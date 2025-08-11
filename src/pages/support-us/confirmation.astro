@@ -37,15 +37,25 @@ const info = (await getEntry("support-form", "confirmation")).data;
       const amount = urlParams.get("amount") || "0";
       const transactionId = urlParams.get("txnId") || "N/A";
       const paymentType = urlParams.get("type") || "onetime";
+      const planId = urlParams.get("planId");
 
       // Replace placeholders with actual values
       const displayType =
         paymentType === "onetime" ? "donation" : paymentType + " subscription";
-      const amountText = `Your ${displayType} of ₹${amount} was successful!`;
-      const idText =
-        transactionId !== "N/A"
-          ? `Transaction ID: ${transactionId}`
-          : "Payment completed successfully";
+      const amountText = `Your ${displayType} of ₹${parseInt(amount).toLocaleString()} was successful!`;
+
+      let idText = "";
+      if (transactionId !== "N/A") {
+        idText = `Transaction ID: ${transactionId}`;
+        if (planId && paymentType !== "onetime") {
+          idText += `<br>Plan ID: ${planId}`;
+        }
+      } else {
+        idText = "Payment completed successfully";
+        if (planId && paymentType !== "onetime") {
+          idText += `<br>Plan ID: ${planId}`;
+        }
+      }
 
       // Update the DOM elements with dynamic content
       const h1Element = document.querySelector("h1");

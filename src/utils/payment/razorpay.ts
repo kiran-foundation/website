@@ -82,7 +82,8 @@ export const createRazorpayOptions = (
         formData,
         type,
         amount,
-        callbacks
+        callbacks,
+        response
       );
     },
     modal: {
@@ -116,13 +117,15 @@ export const createRazorpayOptions = (
  * @param type - Payment type
  * @param amount - Payment amount
  * @param callbacks - UI callback functions
+ * @param apiResponse - API response containing order/subscription details
  */
 export const handleRazorpaySuccess = async (
   razorpayResponse: RazorpayResponse,
   formData: PaymentFormData,
   type: string,
   amount: number,
-  callbacks: PaymentCallbacks
+  callbacks: PaymentCallbacks,
+  apiResponse?: ApiResponse
 ): Promise<void> => {
   callbacks.showLoader(true);
 
@@ -176,6 +179,8 @@ export const handleRazorpaySuccess = async (
       amount,
       type,
       txnId: paymentId,
+      planId:
+        (formData as any).plan_id || apiResponse?.data?.plan_id || undefined,
     });
 
     // Small delay to ensure user sees the success message
@@ -199,6 +204,8 @@ export const handleRazorpaySuccess = async (
       type,
       txnId: paymentId,
       reason: "verification_failed",
+      planId:
+        (formData as any).plan_id || apiResponse?.data?.plan_id || undefined,
     });
 
     // Small delay to ensure user sees the error message

@@ -44,6 +44,39 @@ const info = await getEntry("support-us", "hero");
             method="get"
           >
             <!-- Donation Amount -->
+
+            <!-- Donation Frequency -->
+            <div class="mb-8 font-poppins">
+              <label
+                class="block font-semibold mb-2 text-[16px] sm:text-[18px] text-webBlack"
+              >
+                {info.data.frequency}
+              </label>
+              <div class="space-y-3 text-gray-800">
+                {
+                  info.data.frequencies.map((freq, i) => (
+                    <div class="flex items-center !mt-4">
+                      <input
+                        type="radio"
+                        id={freq.toLowerCase()}
+                        name="donationFrequency"
+                        value={info.data.freqValue[i]}
+                        data-frequency={freq}
+                        class="!mr-4 !accent-orange scale-150"
+                        checked={freq === "Monthly"}
+                        required
+                      />
+                      <label
+                        for={freq.toLowerCase()}
+                        class="text-xl sm:text-2xl"
+                      >
+                        {freq}
+                      </label>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
             <div class="mb-4">
               <label
                 class="block font-semibold mb-2 text-[16px] sm:text-[18px] text-webBlack"
@@ -52,7 +85,7 @@ const info = await getEntry("support-us", "hero");
               </label>
               <div class="space-y-3 text-gray-800">
                 {
-                  info.data.amounts.map((amount,i) => (
+                  info.data.amounts.map((amount, i) => (
                     <div class="flex items-center !mt-4">
                       <input
                         type="radio"
@@ -77,7 +110,7 @@ const info = await getEntry("support-us", "hero");
                                 id="customAmount"
                                 name="customAmount"
                                 placeholder="Enter amount"
-                                class="h-10 px-3 rounded-md border border-gray-300 focus:outline-none focus:border-orange-500 text-base"
+                                class="h-10 w-32 sm:w-40 px-3 rounded-md border border-gray-300 focus:outline-none focus:border-orange-500 text-base"
                                 min="1"
                               />
                             </div>
@@ -91,40 +124,6 @@ const info = await getEntry("support-us", "hero");
                 }
               </div>
             </div>
-
-            <!-- Donation Frequency -->
-            <div class="mb-8 font-poppins">
-              <label
-                class="block font-semibold mb-2 text-[16px] sm:text-[18px] text-webBlack"
-              >
-                {info.data.frequency}
-              </label>
-              <div class="space-y-3 text-gray-800">
-                {
-                  info.data.frequencies.map((freq,i) => (
-                    <div class="flex items-center !mt-4">
-                      <input
-                        type="radio"
-                        id={freq.toLowerCase()}
-                        name="donationFrequency"
-                        value={info.data.freqValue[i]}
-                        data-frequency={freq}
-                        class="!mr-4 !accent-orange scale-150"
-                        checked={freq === "Monthly"}
-                        required
-                      />
-                      <label
-                        for={freq.toLowerCase()}
-                        class="text-xl sm:text-2xl"
-                      >
-                        {freq}
-                      </label>
-                    </div>
-                  ))
-                }
-              </div>
-            </div>
-
             <!-- Paragraph -->
             <p class="mb-4 text-[16px] sm:text-[18px] text-webBlack">
               {info.data.paragraph}
@@ -151,11 +150,204 @@ const info = await getEntry("support-us", "hero");
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("support-us-form");
-    const amountRadios = document.querySelectorAll('input[name="donationAmount"]');
-    const customAmountWrapper = document.querySelector(".custom-amount-wrapper");
+    const amountRadios = document.querySelectorAll(
+      'input[name="donationAmount"]'
+    );
+    const frequencyRadios = document.querySelectorAll(
+      'input[name="donationFrequency"]'
+    );
+    const customAmountWrapper = document.querySelector(
+      ".custom-amount-wrapper"
+    );
     const customAmountInput = document.getElementById("customAmount");
 
-    // Handle radio button changes
+    // Store original amounts for restoration
+    const originalAmounts = [501, 1001, "custom"];
+    const yearlyAmounts = [51000, 108000, "custom"];
+
+    // Handle frequency changes
+    frequencyRadios.forEach((radio) => {
+      radio.addEventListener("change", (e) => {
+        const selectedFrequency = (e.target as HTMLInputElement).value;
+        updateAmountOptions(selectedFrequency);
+      });
+    });
+
+    // Function to update amount options based on frequency
+    function updateAmountOptions(frequency) {
+      const amountContainer = document
+        .querySelector('input[name="donationAmount"]')
+        .closest(".space-y-3");
+
+      if (frequency === "yearly") {
+        // Show yearly amounts
+        amountContainer.innerHTML = "";
+        yearlyAmounts.forEach((amount, index) => {
+          const div = document.createElement("div");
+          div.className = "flex items-center !mt-4";
+
+          if (amount === "custom") {
+            div.innerHTML = `
+              <input
+                type="radio"
+                id="amount-${amount}"
+                name="donationAmount"
+                data-amount="${amount}"
+                value="${amount}"
+                class="!mr-4 !accent-orange scale-150"
+                required
+              />
+              <label
+                for="amount-${amount}"
+                class="text-xl sm:text-2xl flex items-center gap-4"
+              >
+                Custom donation
+                <div class="custom-amount-wrapper hidden ml-4">
+                  <input
+                    type="number"
+                    id="customAmount"
+                    name="customAmount"
+                    placeholder="Enter amount"
+                    class="h-10 w-32 sm:w-40 px-3 rounded-md border border-gray-300 focus:outline-none focus:border-orange-500 text-base"
+                    min="1"
+                  />
+                </div>
+              </label>
+            `;
+          } else {
+            div.innerHTML = `
+              <input
+                type="radio"
+                id="amount-${amount}"
+                name="donationAmount"
+                data-amount="${amount}"
+                value="${amount}"
+                class="!mr-4 !accent-orange scale-150"
+                ${index === 0 ? "checked" : ""}
+                required
+              />
+              <label
+                for="amount-${amount}"
+                class="text-xl sm:text-2xl"
+              >
+                ₹ ${amount.toLocaleString()}
+              </label>
+            `;
+          }
+          amountContainer.appendChild(div);
+        });
+
+        // Re-attach custom amount functionality for yearly
+        attachCustomAmountHandlers();
+      } else {
+        // Show original amounts (monthly/onetime)
+        amountContainer.innerHTML = "";
+        originalAmounts.forEach((amount, index) => {
+          const div = document.createElement("div");
+          div.className = "flex items-center !mt-4";
+
+          if (amount === "custom") {
+            div.innerHTML = `
+              <input
+                type="radio"
+                id="amount-${amount}"
+                name="donationAmount"
+                data-amount="${amount}"
+                value="${amount}"
+                class="!mr-4 !accent-orange scale-150"
+                required
+              />
+              <label
+                for="amount-${amount}"
+                class="text-xl sm:text-2xl flex items-center gap-4"
+              >
+                Custom donation
+                <div class="custom-amount-wrapper hidden ml-4">
+                  <input
+                    type="number"
+                    id="customAmount"
+                    name="customAmount"
+                    placeholder="Enter amount"
+                    class="h-10 w-32 sm:w-40 px-3 rounded-md border border-gray-300 focus:outline-none focus:border-orange-500 text-base"
+                    min="1"
+                  />
+                </div>
+              </label>
+            `;
+          } else {
+            div.innerHTML = `
+              <input
+                type="radio"
+                id="amount-${amount}"
+                name="donationAmount"
+                data-amount="${amount}"
+                value="${amount}"
+                class="!mr-4 !accent-orange scale-150"
+                ${amount === 501 ? "checked" : ""}
+                required
+              />
+              <label
+                for="amount-${amount}"
+                class="text-xl sm:text-2xl"
+              >
+                ₹ ${amount}
+              </label>
+            `;
+          }
+          amountContainer.appendChild(div);
+        });
+
+        // Re-attach custom amount functionality
+        attachCustomAmountHandlers();
+      }
+    }
+
+    // Function to attach custom amount handlers
+    function attachCustomAmountHandlers() {
+      const newAmountRadios = document.querySelectorAll(
+        'input[name="donationAmount"]'
+      );
+      const newCustomAmountWrapper = document.querySelector(
+        ".custom-amount-wrapper"
+      );
+      const newCustomAmountInput = document.getElementById("customAmount");
+
+      newAmountRadios.forEach((radio) => {
+        radio.addEventListener("change", (e) => {
+          const isCustom = (e.target as HTMLInputElement).value === "custom";
+
+          if (isCustom && newCustomAmountWrapper) {
+            newCustomAmountWrapper.classList.remove("hidden");
+            if (newCustomAmountInput) {
+              (newCustomAmountInput as HTMLInputElement).required = true;
+              newCustomAmountInput.focus();
+            }
+          } else if (newCustomAmountWrapper) {
+            newCustomAmountWrapper.classList.add("hidden");
+            if (newCustomAmountInput) {
+              (newCustomAmountInput as HTMLInputElement).required = false;
+              (newCustomAmountInput as HTMLInputElement).value = "";
+            }
+          }
+        });
+      });
+
+      // Handle custom amount input
+      if (newCustomAmountInput) {
+        newCustomAmountInput.addEventListener("input", (e) => {
+          let value = (e.target as HTMLInputElement).value.replace(
+            /[^0-9]/g,
+            ""
+          );
+          if (value) {
+            value = Math.max(1, parseInt(value)).toString();
+          }
+          (e.target as HTMLInputElement).value = value;
+        });
+      }
+    }
+
+    // Handle radio button changes (initial setup)
     amountRadios.forEach((radio) => {
       radio.addEventListener("change", (e) => {
         const isCustom = (e.target as HTMLInputElement).value === "custom";
@@ -176,8 +368,12 @@ const info = await getEntry("support-us", "hero");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const selectedAmount = document.querySelector('input[name="donationAmount"]:checked') as HTMLInputElement;
-      const selectedFrequency = document.querySelector('input[name="donationFrequency"]:checked') as HTMLInputElement;
+      const selectedAmount = document.querySelector(
+        'input[name="donationAmount"]:checked'
+      ) as HTMLInputElement;
+      const selectedFrequency = document.querySelector(
+        'input[name="donationFrequency"]:checked'
+      ) as HTMLInputElement;
 
       if (!selectedAmount || !selectedFrequency) {
         alert("Please select both amount and frequency");
@@ -187,7 +383,10 @@ const info = await getEntry("support-us", "hero");
       let amountValue;
       // Get the amount value based on selection
       if (selectedAmount.value === "custom") {
-        amountValue = (customAmountInput as HTMLInputElement).value;
+        const currentCustomAmountInput = document.getElementById(
+          "customAmount"
+        ) as HTMLInputElement;
+        amountValue = currentCustomAmountInput.value;
         if (!amountValue || parseInt(amountValue) <= 0) {
           alert("Please enter a valid donation amount");
           return;
@@ -206,15 +405,7 @@ const info = await getEntry("support-us", "hero");
       window.location.href = `${baseUrl}?${params.toString()}`;
     });
 
-    // Handle custom amount input
-    if (customAmountInput) {
-      customAmountInput.addEventListener("input", (e) => {
-        let value = (e.target as HTMLInputElement).value.replace(/[^0-9]/g, "");
-        if (value) {
-          value = Math.max(1, parseInt(value)).toString();
-        }
-        (e.target as HTMLInputElement).value = value;
-      });
-    }
+    // Initialize custom amount handlers for the initial load
+    attachCustomAmountHandlers();
   });
 </script>

@@ -33,7 +33,13 @@ export const formatPaymentDescription = (type: string): string => {
  */
 export const createRedirectUrl = (
   page: string,
-  params: { amount: number; type: string; txnId: string; reason?: string }
+  params: {
+    amount: number;
+    type: string;
+    txnId: string;
+    reason?: string;
+    planId?: string;
+  }
 ): string => {
   const baseUrl = `/support-us/${page}/`;
   const urlParams = new URLSearchParams();
@@ -44,6 +50,10 @@ export const createRedirectUrl = (
 
   if (params.reason) {
     urlParams.append("reason", params.reason);
+  }
+
+  if (params.planId) {
+    urlParams.append("planId", params.planId);
   }
 
   return `${baseUrl}?${urlParams.toString()}`;

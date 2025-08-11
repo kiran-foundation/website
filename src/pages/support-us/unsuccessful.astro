@@ -63,15 +63,25 @@ const info = (await getEntry("support-form", "unsuccessful")).data;
       const transactionId = urlParams.get("txnId") || "N/A";
       const paymentType = urlParams.get("type") || "onetime";
       const errorReason = urlParams.get("reason") || "unknown";
+      const planId = urlParams.get("planId");
 
       // Replace placeholders with actual values
       const displayType =
         paymentType === "onetime" ? "donation" : paymentType + " subscription";
-      const amountText = `Your ${displayType} of ₹${amount} was unsuccessful!`;
-      const idText =
-        transactionId !== "N/A"
-          ? `Transaction ID: ${transactionId}`
-          : "Payment was not completed";
+      const amountText = `Your ${displayType} of ₹${parseInt(amount).toLocaleString()} was unsuccessful!`;
+
+      let idText = "";
+      if (transactionId !== "N/A") {
+        idText = `Transaction ID: ${transactionId}`;
+        if (planId && paymentType !== "onetime") {
+          idText += `<br>Plan ID: ${planId}`;
+        }
+      } else {
+        idText = "Payment was not completed";
+        if (planId && paymentType !== "onetime") {
+          idText += `<br>Plan ID: ${planId}`;
+        }
+      }
 
       // Update the DOM elements
       document.getElementById("error-message").innerHTML = amountText;

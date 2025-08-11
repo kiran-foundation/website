@@ -5,6 +5,7 @@
  */
 
 import { getTextSync } from "../textLoader";
+import { createRedirectUrl } from "./utilities";
 
 /**
  * Creates appropriate error message based on error type and context
@@ -43,12 +44,20 @@ export const handlePaymentError = (
  * @param amount - Payment amount
  * @param type - Payment type
  * @param reason - Error reason code
+ * @param planId - Optional plan ID if available
  * @returns Formatted redirect URL
  */
 export const createErrorRedirectUrl = (
   amount: number,
   type: string,
-  reason: string
+  reason: string,
+  planId?: string
 ): string => {
-  return `/support-us/unsuccessful/?amount=${amount}&type=${type}&txnId=N/A&reason=${reason}`;
+  return createRedirectUrl("unsuccessful", {
+    amount,
+    type,
+    txnId: "N/A",
+    reason,
+    planId,
+  });
 };
