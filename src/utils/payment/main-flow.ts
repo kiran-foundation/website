@@ -39,6 +39,9 @@ export const preparePaymentData = (
     const selectedDuration = (formData as any).selectedDuration || 5;
     const validDuration = validateDuration(selectedDuration);
     (formData as any).total_count = calculateTotalCount(type, validDuration);
+
+    // Add original duration for backend reference (especially for yearly subscriptions)
+    (formData as any).duration_years = validDuration;
   }
 
   return formData;

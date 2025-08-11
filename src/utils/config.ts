@@ -1,13 +1,10 @@
-
 // Environment detection utilities
 const isProduction = (): boolean => {
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     const hostname = window.location.hostname;
-    const productionDomains = [
-      'kiran.foundation',
-      'www.kiran.foundation'];
+    const productionDomains = ["kiran.foundation", "www.kiran.foundation"];
     return productionDomains.includes(hostname);
-  }  
+  }
   return false;
 };
 
@@ -20,16 +17,16 @@ const CONFIG_TEST = {
   THEME_COLOR: "#3399cc",
   PREDEFINED_PLANS: {
     monthly: {
-      1000100: "plan_R2sViPaAPpCQnd",//Patron
+      1000100: "plan_R2sViPaAPpCQnd", //Patron
       500100: "plan_R2sTq18DciEYZO", //Royal Supporter
       100100: "plan_PFJfPtteneZ7Tn", //Super Supporter
-      50100: "plan_PFJa00kkaP1Tdb",  //supporter 
+      50100: "plan_PFJa00kkaP1Tdb", //supporter
     },
     yearly: {
-      10800000: "plan_R2sdSj9X0ZTobo",//Patron
+      10800000: "plan_R2sdSj9X0ZTobo", //Patron
       5100000: "plan_R2scS7cMduilJS", //Royal Supporter
       1100000: "plan_R2sbe0R9rYzRIO", //Super Supporter
-      510000: "plan_R2sZPbueWU6ozk",  //Supporter
+      510000: "plan_R2sZPbueWU6ozk", //Supporter
     },
   },
   GOOGLE_FORM: {
@@ -43,9 +40,9 @@ const CONFIG_TEST = {
       CITY: "entry.40687982",
       PINCODE: "entry.1929245861",
       NOTES: "entry.2091957290",
-      DONATION_DETAILS: "entry.2091957290"
-    }
-  }
+      DONATION_DETAILS: "entry.2091957290",
+    },
+  },
 } as const;
 
 // Production configuration
@@ -56,7 +53,7 @@ const CONFIG_LIVE = {
   COMPANY_LOGO: "https://kfastro.netlify.app/favicon.ico",
   THEME_COLOR: "#3399cc",
   PREDEFINED_PLANS: {
-     monthly: {
+    monthly: {
       1000100: null,
       500100: "plan_PFJfnMnXPs6TMS",
       100100: "plan_PFJfPtteneZ7Tn",
@@ -73,16 +70,16 @@ const CONFIG_LIVE = {
     URL: "https://docs.google.com/forms/d/e/1FAIpQLSedxSOPskuroSb3hJSAjVebGa1EoW1OeYjx2WHE1Um5g4iipQ/formResponse",
     ENTRIES: {
       FULL_NAME: "entry.283978656",
-      EMAIL: "entry.1909208105", 
+      EMAIL: "entry.1909208105",
       PHONE: "entry.1359110198",
       COUNTRY: "entry.218344457",
       ADDRESS: "entry.938609362",
       CITY: "entry.1458813282",
       PINCODE: "entry.726311981",
       NOTES: "entry.965069241",
-      DONATION_DETAILS: "entry.1357525015"
-    }
-  }
+      DONATION_DETAILS: "entry.1357525015",
+    },
+  },
 } as const;
 
 // Select configuration based on environment
