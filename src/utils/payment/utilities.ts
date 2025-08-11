@@ -14,10 +14,13 @@ export const calculateTotalCount = (type: string, duration: number): number => {
   if (type === "monthly") {
     return duration * 12;
   } else if (type === "yearly") {
-    // Temporary fix for yearly subscription end date issue
-    // This ensures the subscription runs for the correct duration
-    // Note: This might need adjustment based on actual Razorpay behavior
-    return duration;
+    // Fix for yearly subscription end date calculation
+    // Razorpay is showing 1 year less than expected, so we add 1 to compensate
+    // 2 years selected → send 3 → ends in 2027 ✓
+    // 3 years selected → send 4 → ends in 2028 ✓
+    // 4 years selected → send 5 → ends in 2029 ✓
+    // 5 years selected → send 6 → ends in 2030 ✓
+    return duration + 1;
   }
   return duration;
 };
