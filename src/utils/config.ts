@@ -48,22 +48,22 @@ const CONFIG_TEST = {
 // Production configuration
 const CONFIG_LIVE = {
   API_BASE_URL: "https://support-us.kiran.foundation",
-  RAZORPAY_KEY: "not-defined",
+  RAZORPAY_KEY: "rzp_live_4Y3zP0u7cdRg2b",
   COMPANY_NAME: "Kiran Foundations",
   COMPANY_LOGO: "https://kfastro.netlify.app/favicon.ico",
   THEME_COLOR: "#3399cc",
   PREDEFINED_PLANS: {
     monthly: {
-      1000100: null,
-      500100: "plan_PFJfnMnXPs6TMS",
-      100100: "plan_PFJfPtteneZ7Tn",
-      50100: "plan_PFJa00kkaP1Tdb",
+      1000100: "plan_R4raw3Btku01ps",
+      500100: "plan_R4ra0PedgZlt49",
+      100100: "plan_OIiau4cIHtH3iy",
+      50100: "plan_OPgoE4mY393tV7",
     },
     yearly: {
-      10800000: null,
-      5100000: null,
-      110000: null,
-      510000: null,
+      10800000: "plan_R4rdOTOvbHkSzK",
+      5100000: "plan_R4rdDUpXXppCJf",
+      110000: "plan_R4rcmtjIA2rLA1",
+      510000: "plan_R4rcZ8pt5eWWrd",
     },
   },
   GOOGLE_FORM: {
