@@ -32,13 +32,9 @@ export const preparePaymentData = (
   const existingPlanId = getOrCreatePlan(formData.amount, type);
   if (existingPlanId) {
     formData.plan_id = existingPlanId;
-    console.log(
-      `Using existing plan ID: ${existingPlanId} for amount: ${formData.amount} (${type})`
-    );
+    // Plan ID found and assigned for subscription
   } else {
-    console.log(
-      `No existing plan found for amount: ${formData.amount} (${type}), will create new plan`
-    );
+    // No existing plan found, backend will create new plan
   }
 
   // Add total_count parameter for subscriptions
