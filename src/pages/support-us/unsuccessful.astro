@@ -1,0 +1,100 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const info = (await getEntry("support-form", "unsuccessful")).data;
+---
+
+<Layout>
+  <div class="max-w-full mx-auto pt-[8rem] overflow-hidden pb-[500px]">
+    <h1
+      id="error-message"
+      class="tracking-normal text-center heading-1 font-[600] text-[1.5rem] md:text-[2rem] leading-[140%] text-red-600"
+    >
+      {info.amount}
+    </h1>
+    <h3 id="transaction-id" class="body-text-1 text-center pt-5 text-gray-600">
+      {info.id}
+    </h3>
+
+    <!-- Error SVG Icon -->
+    <div
+      class="flex justify-center items-center"
+      style="width: 25rem; height: 25rem; margin: auto;"
+    >
+      <svg
+        width="200"
+        height="200"
+        viewBox="0 0 200 200"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="text-red-500"
+      >
+        <circle
+          cx="100"
+          cy="100"
+          r="90"
+          stroke="currentColor"
+          stroke-width="8"
+          fill="none"></circle>
+        <path
+          d="M70 70L130 130M130 70L70 130"
+          stroke="currentColor"
+          stroke-width="8"
+          stroke-linecap="round"></path>
+      </svg>
+    </div>
+
+    <!-- Retry Button -->
+    <div class="text-center mt-8">
+      <button
+        id="retry-button"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+        onclick="goBackToForm()"
+      >
+        Try Again
+      </button>
+    </div>
+
+    <script is:inline>
+      // Get URL parameters from client-side
+      const urlParams = new URLSearchParams(window.location.search);
+      const amount = urlParams.get("amount") || "0";
+      const transactionId = urlParams.get("txnId") || "N/A";
+      const paymentType = urlParams.get("type") || "onetime";
+      const errorReason = urlParams.get("reason") || "unknown";
+      const planId = urlParams.get("planId");
+
+      // Replace placeholders with actual values
+      const displayType =
+        paymentType === "onetime" ? "donation" : paymentType + " subscription";
+      const amountText = `Your ${displayType} of ₹${parseInt(amount).toLocaleString()} was unsuccessful!`;
+
+      let idText = "";
+      if (transactionId !== "N/A") {
+        idText = `Transaction ID: ${transactionId}`;
+        if (planId && paymentType !== "onetime") {
+          idText += `<br>Plan ID: ${planId}`;
+        }
+      } else {
+        idText = "Payment was not completed";
+        if (planId && paymentType !== "onetime") {
+          idText += `<br>Plan ID: ${planId}`;
+        }
+      }
+
+      // Update the DOM elements
+      document.getElementById("error-message").innerHTML = amountText;
+      document.getElementById("transaction-id").innerHTML = idText;
+
+      // Function to go back to the form with the same parameters
+      function goBackToForm() {
+        const formUrl = `/support-us/?amount=${amount}&frequency=${paymentType}`;
+        window.location.href = formUrl;
+      }
+
+      // Make function globally available
+      window.goBackToForm = goBackToForm;
+    </script>
+  </div>
+</Layout>

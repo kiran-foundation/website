@@ -1,0 +1,73 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const info = (await getEntry("support-form", "confirmation")).data;
+---
+
+<Layout>
+  <div class="max-w-full mx-auto pt-[8rem] overflow-hidden pb-[500px]">
+    <h1
+      class="tracking-normal text-center heading-1 font-[600] text-[1.5rem] md:text-[2rem] leading-[140%]"
+      set:html={info.amount}
+    />
+    <h3 class="body-text-1 text-center pt-5" set:html={info.id} />
+
+    <script
+      is:inline
+      src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"
+      type="module"></script>
+
+    <lottie-player
+      src={info.animation || "/assets/animations/fallback.json"}
+      background="transparent"
+      speed="1"
+      style="width: 25rem; height: 25rem; overflow: hidden; margin: auto;"
+      direction="1"
+      playMode="normal"
+      loop
+      autoplay
+      id="lottie-player"
+    >
+    </lottie-player>
+
+    <script is:inline>
+      // Get URL parameters from client-side
+      const urlParams = new URLSearchParams(window.location.search);
+      const amount = urlParams.get("amount") || "0";
+      const transactionId = urlParams.get("txnId") || "N/A";
+      const paymentType = urlParams.get("type") || "onetime";
+      const planId = urlParams.get("planId");
+
+      // Replace placeholders with actual values
+      const displayType =
+        paymentType === "onetime" ? "donation" : paymentType + " subscription";
+      const amountText = `Your ${displayType} of ₹${parseInt(amount).toLocaleString()} was successful!`;
+
+      let idText = "";
+      if (transactionId !== "N/A") {
+        idText = `Transaction ID: ${transactionId}`;
+        if (planId && paymentType !== "onetime") {
+          idText += `<br>Plan ID: ${planId}`;
+        }
+      } else {
+        idText = "Payment completed successfully";
+        if (planId && paymentType !== "onetime") {
+          idText += `<br>Plan ID: ${planId}`;
+        }
+      }
+
+      // Update the DOM elements with dynamic content
+      const h1Element = document.querySelector("h1");
+      const h3Element = document.querySelector("h3");
+
+      if (h1Element) {
+        h1Element.innerHTML = amountText;
+      }
+
+      if (h3Element) {
+        h3Element.innerHTML = idText;
+      }
+    </script>
+  </div>
+</Layout>

@@ -7,7 +7,7 @@ const { title, subLinks = [], className = "w-[292px]" } = Astro.props;
     <button
       class="flex h-[56px] items-center font-poppins font-medium text-base text-[#1E1E1E] hover:text-[#D33C0D] py-[6px] pl-[32px] pr-[16px]"
     >
-      <a href={title.url || "#"} class="flex items-center font-poppins">
+      <a href={title.url || "#"} class="flex items-center font-poppins text-nowrap">
         {title.name}
         {
           subLinks.length > 0 && (

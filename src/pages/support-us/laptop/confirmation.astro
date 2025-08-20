@@ -1,7 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
-import Hero from "../../../components/support-us/Laptop/Hero.astro";
+import LaptopSupportHero from "../../../components/support-us/laptop/LaptopSupportHero.astro";
 
 const confirmationEntry = await getEntry("support-us", "laptop/confirmation");
 
@@ -12,7 +12,7 @@ const { title, subtitle, animation } = confirmationEntry.data;
 
 <Layout title="Laptop Support - Confirmation">
   <main class="py-[120px]">
-    <Hero collection="support-us" slug="laptop/hero" />
+    <LaptopSupportHero collection="support-us" slug="laptop/hero" />
 
     <!-- Confirmation Section -->
     <section class="w-full flex flex-col items-center justify-center py-[60px]">
