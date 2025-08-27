@@ -3,9 +3,6 @@ import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
 import Preloading from "./preloading.astro";
 
-
-
-
 interface Props {
   title?: string;
   description?: string;
@@ -16,6 +13,9 @@ interface Props {
   ogDescription?: string;
   ogImage?: string;
   ogUrl?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImage?: string;
 }
 
 const {
@@ -28,6 +28,9 @@ const {
   ogDescription,
   ogImage,
   ogUrl,
+  twitterTitle,
+  twitterDescription,
+  twitterImage,
 } = Astro.props;
 
 import { getEntry } from "astro:content";
@@ -41,21 +44,63 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
 
+    <!-- Primary Meta Tags -->
+    <meta name="title" content={title ?? common.title} />
     <meta name="description" content={description ?? common.description} />
     <meta name="keywords" content={keywords ?? common.keywords} />
     <meta name="author" content={author ?? common.author} />
     <meta name="generator" content={generator ?? common.generator} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={ogUrl ?? common.ogUrl} />
     <meta property="og:title" content={ogTitle ?? common.ogTitle} />
     <meta
       property="og:description"
       content={ogDescription ?? common.ogDescription}
     />
-    <meta property="og:image" content={ogImage ?? common.ogImage} />
-    <meta property="og:url" content={ogUrl ?? common.ogUrl} />
+    <meta
+      property="og:image"
+      content={(ogImage ?? common.ogImage)?.startsWith("http")
+        ? (ogImage ?? common.ogImage)
+        : `https://kiran.foundation${ogImage ?? common.ogImage}`}
+    />
 
-      <!-- Hotjar Tracking Code for https://www.kiran.foundation -->
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={ogUrl ?? common.ogUrl} />
+    <meta
+      property="twitter:title"
+      content={twitterTitle ??
+        ogTitle ??
+        title ??
+        common.twitterTitle ??
+        common.ogTitle ??
+        common.title}
+    />
+    <meta
+      property="twitter:description"
+      content={twitterDescription ??
+        ogDescription ??
+        description ??
+        common.twitterDescription ??
+        common.ogDescription ??
+        common.description}
+    />
+    <meta
+      property="twitter:image"
+      content={(
+        twitterImage ??
+        ogImage ??
+        common.twitterImage ??
+        common.ogImage
+      )?.startsWith("http")
+        ? (twitterImage ?? ogImage ?? common.twitterImage ?? common.ogImage)
+        : `https://kiran.foundation${twitterImage ?? ogImage ?? common.twitterImage ?? common.ogImage}`}
+    />
+
+    <!-- Hotjar Tracking Code for https://www.kiran.foundation -->
     <script is:inline src="/assets/js/hotjar.js"></script>
     <link rel="stylesheet" href="/assets/css/global.css" />
     <link rel="stylesheet" href="/assets/css/theme.min.css" />
@@ -93,11 +138,6 @@ import "../styles/global.css";
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Kiran Foundation" />
     <link rel="manifest" href="/site.webmanifest" />
-    <title>{title ?? common.title}</title>
-
-
-
-
 
     <script>
       (function () {
