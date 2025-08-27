@@ -56,6 +56,7 @@ import "../styles/global.css";
     <meta property="og:type" content="website" />
     <meta property="og:url" content={ogUrl ?? common.ogUrl} />
     <meta property="og:title" content={ogTitle ?? common.ogTitle} />
+    <meta property="og:site_name" content="Kiran Foundation" />
     <meta
       property="og:description"
       content={ogDescription ?? common.ogDescription}
@@ -66,6 +67,9 @@ import "../styles/global.css";
         ? (ogImage ?? common.ogImage)
         : `https://kiran.foundation${ogImage ?? common.ogImage}`}
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
     <!-- X (Twitter) -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -99,6 +103,8 @@ import "../styles/global.css";
         ? (twitterImage ?? ogImage ?? common.twitterImage ?? common.ogImage)
         : `https://kiran.foundation${twitterImage ?? ogImage ?? common.twitterImage ?? common.ogImage}`}
     />
+    <meta property="twitter:image:width" content="1200" />
+    <meta property="twitter:image:height" content="630" />
 
     <!-- Hotjar Tracking Code for https://www.kiran.foundation -->
     <script is:inline src="/assets/js/hotjar.js"></script>
