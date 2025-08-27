@@ -35,6 +35,15 @@ const {
 
 import { getEntry } from "astro:content";
 const common = (await getEntry("common", "common")).data;
+
+// Ensure we have fallback values
+const finalOgImage = ogImage || common.ogImage || "/preview.png";
+const finalTwitterImage =
+  twitterImage ||
+  ogImage ||
+  common.twitterImage ||
+  common.ogImage ||
+  "/preview.png";
 import "../styles/global.css";
 // import "/assets/css/global.css"
 ---
@@ -63,9 +72,9 @@ import "../styles/global.css";
     />
     <meta
       property="og:image"
-      content={(ogImage ?? common.ogImage)?.startsWith("http")
-        ? (ogImage ?? common.ogImage)
-        : `https://kiran.foundation${ogImage ?? common.ogImage}`}
+      content={finalOgImage.startsWith("http")
+        ? finalOgImage
+        : `https://kiran.foundation${finalOgImage}`}
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -94,14 +103,9 @@ import "../styles/global.css";
     />
     <meta
       property="twitter:image"
-      content={(
-        twitterImage ??
-        ogImage ??
-        common.twitterImage ??
-        common.ogImage
-      )?.startsWith("http")
-        ? (twitterImage ?? ogImage ?? common.twitterImage ?? common.ogImage)
-        : `https://kiran.foundation${twitterImage ?? ogImage ?? common.twitterImage ?? common.ogImage}`}
+      content={finalTwitterImage.startsWith("http")
+        ? finalTwitterImage
+        : `https://kiran.foundation${finalTwitterImage}`}
     />
     <meta property="twitter:image:width" content="1200" />
     <meta property="twitter:image:height" content="630" />
