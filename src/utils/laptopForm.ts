@@ -205,7 +205,7 @@ export function setupForm(formId: string, successId: string, failId: string) {
       await new Promise((resolve) => setTimeout(resolve, 1200));
 
       // Redirect to confirmation page
-      window.location.href = "/support-us/laptop/confirmation";
+      window.location.href = "/support-us/laptop-support/confirmation";
     } catch (err) {
       showToast(getTextSync("errors.submissionFailed"), "error");
       if (submitButton) {

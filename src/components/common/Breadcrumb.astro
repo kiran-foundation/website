@@ -25,7 +25,17 @@ const findBreadcrumbName = (path: string) => {
       }
     }
   }
-  return path.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()); // Fallback: Format path if not found
+
+  // Special cases for better formatting
+  if (path === "/support-us") {
+    return "Support Us";
+  }
+  if (path === "/support-us/laptop-support") {
+    return "Laptop Support";
+  }
+
+  // Fallback: Format path if not found
+  return path.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 };
 
 // Generate breadcrumbs dynamically

@@ -68,8 +68,7 @@ validation:
   cityEmpty: "City is required"
   zipcodeError: "Pin/Zip code must be 5-10 digits"
   zipcodeEmpty: "Pin/Zip code is required"
-  laptopAddressError: "Laptop address must be at least 5 characters"
-  laptopAddressEmpty: "Laptop pickup address is required"
+
   descriptionError: "Description must be at least 10 characters"
   descriptionEmpty: "Description is required"
 
@@ -81,7 +80,7 @@ laptopValidation:
   addressError: "Address must be at least 5 characters."
   cityError: "City must be at least 2 characters."
   pincodeError: "Pin code must be 4-10 digits."
-  laptopAddressError: "Laptop address must be at least 5 characters."
+
   descriptionError: "Description must be at least 10 characters."
   nameEmpty: "Name is required."
   emailEmpty: "Email is required."
@@ -89,7 +88,7 @@ laptopValidation:
   addressEmpty: "Address is required."
   cityEmpty: "City is required."
   pincodeEmpty: "Pin code is required."
-  laptopAddressEmpty: "Laptop pickup address is required."
+
   descriptionEmpty: "Description is required."
   fieldRequired: "This field is required."
 
@@ -112,5 +111,4 @@ display:
   perYear: "per year"
   oneTime: "One Time"
   selectFrequency: "Please select frequency"
-
 ---
