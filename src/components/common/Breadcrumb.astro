@@ -19,13 +19,13 @@ const findBreadcrumbName = (path: string) => {
       if (section.submenu) {
         for (const link of section.submenu) {
           if (link.url === path) {
-            return (link.name);
+            return link.name;
           }
         }
       }
     }
   }
-  return path.replace(/-/g, " "); // Fallback: Format path if not found
+  return path.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()); // Fallback: Format path if not found
 };
 
 // Generate breadcrumbs dynamically
@@ -37,7 +37,6 @@ const breadcrumbs = segments.map((_, index) => {
   };
 });
 // console.log(breadcrumbs.name);
-
 ---
 
 <div class="h-[5.25rem]"></div>

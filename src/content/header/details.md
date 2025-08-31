@@ -49,7 +49,6 @@ navigation:
         url: "/updates"
       - name: "Gallery"
         url: "/gallery"
-     
 
   - menu:
       name: "Work with Us"
@@ -63,13 +62,6 @@ navigation:
         url: "/work-with-us/opportunities/volunteering"
       - name: "Internship Opportunities"
         url: "/work-with-us/opportunities/internship"
-
-  - menu:
-      name: "Support Us"
-      url: "/support-us"
-    submenu:
-      - name: "Laptop Support"
-        url: "/support-us/laptop"
 
   - menu:
       name: "Contact Us"
