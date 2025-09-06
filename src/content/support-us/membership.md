@@ -23,7 +23,7 @@ cards:
     lakh: "1,08,000"
     permonth: " Per Year"
     frequency: yearly
-    paragraph: " Support a student for one full years with of ₹1,08,000 Per Year. "
+    paragraph: " Support one scholar for one full years with of ₹1,08,000 Per Year. "
 
 membershipCardBtn: " Donate now "
 ---
