@@ -27,109 +27,88 @@ const { title, fields, submit, success, fail } = formEntry.data as {
       {title}
     </h1>
 
-      <div class="form-input-container m-0 pt-0 pb-[3rem]">
-        <label for="name">{fields.name.label}</label>
+    <div class="form-input-container m-0 pt-0 pb-[3rem]">
+      <label for="name">{fields.name.label}</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder={fields.name.placeholder}
+        required
+      />
+      <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+    </div>
+    <div class="form-input-container m-0 pt-0 pb-[3rem]">
+      <label for="email">{fields.email.label}</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder={fields.email.placeholder}
+        required
+      />
+      <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+    </div>
+    <div class="form-input-container m-0 pt-0 pb-[3rem]">
+      <label for="phone">{fields.phone.label}</label>
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        placeholder={fields.phone.placeholder}
+        required
+      />
+      <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+    </div>
+
+    <!-- Two column layout for City and Pin code -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-[3rem]">
+      <div class="form-input-container m-0 pt-0 pb-0">
+        <label for="city">{fields.city.label}</label>
         <input
-          id="name"
-          name="name"
+          id="city"
+          name="city"
           type="text"
-          placeholder={fields.name.placeholder}
+          placeholder={fields.city.placeholder}
           required
         />
         <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
       </div>
-      <div class="form-input-container m-0 pt-0 pb-[3rem]">
-        <label for="email">{fields.email.label}</label>
+      <div class="form-input-container m-0 pt-0 pb-0">
+        <label for="pincode">{fields.pincode.label}</label>
         <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder={fields.email.placeholder}
-          required
-        />
-        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
-      </div>
-      <div class="form-input-container m-0 pt-0 pb-[3rem]">
-        <label for="phone">{fields.phone.label}</label>
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          placeholder={fields.phone.placeholder}
-          required
-        />
-        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
-      </div>
-      <div class="form-input-container m-0 pt-0 pb-[3rem]">
-        <label for="country">{fields.country.label}</label>
-        <input
-          id="country"
-          name="country"
+          id="pincode"
+          name="pincode"
           type="text"
-          value={fields.country.placeholder}
-          readonly
-          class="opacity-60"
-        />
-      </div>
-      
-      <!-- Two column layout for City and Pin code -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-[3rem]">
-        <div class="form-input-container m-0 pt-0 pb-0">
-          <label for="city">{fields.city.label}</label>
-          <input
-            id="city"
-            name="city"
-            type="text"
-            placeholder={fields.city.placeholder}
-            required
-          />
-          <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
-        </div>
-        <div class="form-input-container m-0 pt-0 pb-0">
-          <label for="pincode">{fields.pincode.label}</label>
-          <input
-            id="pincode"
-            name="pincode"
-            type="text"
-            placeholder={fields.pincode.placeholder}
-            required
-          />
-          <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
-        </div>
-      </div>
-      
-      <div class="form-input-container m-0 pt-0 pb-[3rem]">
-        <label for="address">{fields.address.label}</label>
-        <input
-          id="address"
-          name="address"
-          type="text"
-          placeholder={fields.address.placeholder}
+          placeholder={fields.pincode.placeholder}
           required
         />
         <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
       </div>
-      <div class="form-input-container m-0 pt-0 pb-[3rem]">
-        <label for="laptopAddress">{fields.laptopAddress.label}</label>
-        <input
-          id="laptopAddress"
-          name="laptopAddress"
-          type="text"
-          placeholder={fields.laptopAddress.placeholder}
-          required
-        />
-        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
-      </div>
-      <div class="form-input-container m-0 pt-0 md:pb-[5rem] pb-8">
-        <label for="description">{fields.description.label}</label>
-        <textarea
-          id="description"
-          name="description"
-          placeholder={fields.description.placeholder}
-          rows="5"
-          required></textarea>
-        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
-      </div>
+    </div>
+
+    <div class="form-input-container m-0 pt-0 pb-[3rem]">
+      <label for="address">{fields.address.label}</label>
+      <input
+        id="address"
+        name="address"
+        type="text"
+        placeholder={fields.address.placeholder}
+        required
+      />
+      <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+    </div>
+
+    <div class="form-input-container m-0 pt-0 md:pb-[5rem] pb-8">
+      <label for="description">{fields.description.label}</label>
+      <textarea
+        id="description"
+        name="description"
+        placeholder={fields.description.placeholder}
+        rows="5"
+        required></textarea>
+      <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+    </div>
 
     <button
       type="submit"

@@ -2,17 +2,15 @@
 import Breadcrumb from "../../../components/common/Breadcrumb.astro";
 import LaptopSupportForm from "../../../components/support-us/laptop/LaptopSupportForm.astro";
 import LaptopSupportHero from "../../../components/support-us/laptop/LaptopSupportHero.astro";
-import PoweringEducation from "../../../components/support-us/PoweringEducation.astro";
+import LaptopPoweringEducation from "../../../components/support-us/laptop/LaptopPoweringEducation.astro";
 import Layout from "../../../layouts/Layout.astro";
 ---
 
-<Layout title="Laptop Sponser">
+<Layout title="Laptop Sponsor">
   <main class="pb-[40px]">
     <Breadcrumb hidden="false" />
     <LaptopSupportHero collection="support-us" slug="laptop/hero" />
-    <!-- <div class="max-w-[70%] mx-auto flex justify-center">
-        <PoweringEducation />
-    </div> -->
+    <LaptopPoweringEducation />
     <LaptopSupportForm />
   </main>
 </Layout>

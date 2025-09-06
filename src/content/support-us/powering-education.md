@@ -14,7 +14,7 @@ features:
 outro: Every working device gives students professional-grade tools to turn ideas into career-ready skills.
 button:
   title: Sponsor Laptop
-  link: "/support-us/laptop"
+  link: "/support-us/laptop-support"
   btn: btn1
 image: /assets/images/support-us/studentWithLaptop.webp
 imageAlt: Student using laptop

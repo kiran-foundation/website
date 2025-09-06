@@ -4,46 +4,95 @@ import Button from "../../components/common/button.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getMembershipCards } from "../../utils/membership";
 
-const heading=(await getEntry("common","headings")).data.membership;
-const cards = (await getMembershipCards()).map((c)=>c.data);
+const heading = (await getEntry("common", "headings")).data.membership;
+const cards = (await getMembershipCards()).map((c) => c.data);
 ---
+
 <Layout>
-    <section class="py-16 bg-white text-center my-[120px]">
-        <h2 class="text-5xl font-merriweather font-normal text-webBlack mb-[120px]">
-          {heading}
-        </h2>
-      
-        <div
-          class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
-        >
-          {
-            cards.map((card) => (
-              <div
-                class="bg-[#F5F5F5] shadow-md rounded-2xl p-8 flex flex-col justify-between items-center text-center 
-                     gap-4 h-[416px] w-full  hover:shadow-lg transition-shadow duration-300"
-              >
-                <div class="flex flex-col justify-center gap-4 flex-grow">
-                  <h3 class="text-2xl font-semibold text-gray-800 min-h-[48px] flex items-center justify-center">
-                    {card.heading ?? ""}
-                  </h3>
-      
-                  <div class="min-h-[32px] text-5xl font-bold text-gray-900">
-                    {card.amount ?? ""}
-                  </div>
-      
-                  <div class="min-h-[20px] text-sm text-gray-600">
-                    {card.permonth ?? ""}
-                  </div>
-      
-                  <p class="text-sm text-gray-600 min-h-[64px] flex items-center justify-center text-center px-2">
-                    {card.paragraph ?? ""}
-                  </p>
-                </div>
-                <Button link="" title="Support Us" btn="btn1" widthClass="w-full" />
+  <section class="py-16 bg-white text-center my-[120px]">
+    <h2
+      class="text-[24px] md:text-3xl lg:text-5xl font-merriweather font-normal text-webBlack mb-[30px] md:mb-[60px]"
+    >
+      {heading}
+    </h2>
+
+    <!-- Mobile: Show all cards in single column -->
+    <div
+      class="max-w-[1296px] mx-auto px-4 flex flex-col gap-6 items-center lg:hidden"
+    >
+      {
+        cards.map((card) => (
+          <div class="bg-[#F5F5F5] max-w-[412px] shadow-md rounded-2xl p-8 flex flex-col justify-between items-center text-center gap-4 h-[416px] w-full hover:shadow-lg transition-shadow duration-300 flex-shrink-0">
+            <div class="flex flex-col justify-center gap-4 flex-grow flex-shrink-0">
+              <h3 class="text-2xl font-semibold text-gray-800 min-h-[48px] flex items-center justify-center flex-shrink-0">
+                {card?.heading ?? ""}
+              </h3>
+
+              <div class="min-h-[32px] text-5xl font-bold text-gray-900">
+                ₹{card?.lakh ?? ""}
               </div>
-            ))
-          }
-        </div>
-      
-        
+
+              <div class="min-h-[20px] text-sm text-gray-600">
+                {card?.permonth ?? ""}
+              </div>
+
+              <p class="text-sm text-gray-600 min-h-[64px] flex items-center justify-center text-center px-2">
+                {card?.paragraph ?? ""}
+              </p>
+            </div>
+            <Button
+              link={
+                card?.url ??
+                `/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`
+              }
+              title="Support Us"
+              btn="btn1"
+              widthClass="w-full"
+            />
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Desktop: Flex layout with 3 cards per row -->
+    <div class="max-w-[1296px] mx-auto px-4 hidden lg:block">
+      <div class="flex flex-wrap gap-6 justify-center">
+        {
+          cards.map((card) => (
+            <div
+              class="bg-[#F5F5F5] max-w-[412px] shadow-md rounded-2xl p-8 flex flex-col justify-between items-center text-center gap-4 h-[416px] w-full hover:shadow-lg transition-shadow duration-300 flex-shrink-0"
+              style="flex: 0 0 calc(33.333% - 1rem);"
+            >
+              <div class="flex flex-col justify-center gap-4 flex-grow flex-shrink-0">
+                <h3 class="text-2xl font-semibold text-gray-800 min-h-[48px] flex items-center justify-center flex-shrink-0">
+                  {card?.heading ?? ""}
+                </h3>
+
+                <div class="min-h-[32px] text-5xl font-bold text-gray-900">
+                  ₹{card?.lakh ?? ""}
+                </div>
+
+                <div class="min-h-[20px] text-sm text-gray-600">
+                  {card?.permonth ?? ""}
+                </div>
+
+                <p class="text-sm text-gray-600 min-h-[64px] flex items-center justify-center text-center px-2">
+                  {card?.paragraph ?? ""}
+                </p>
+              </div>
+              <Button
+                link={
+                  card?.url ??
+                  `/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`
+                }
+                title="Support Us"
+                btn="btn1"
+                widthClass="w-full"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </Layout>

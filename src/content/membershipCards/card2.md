@@ -1,7 +1,8 @@
 ---
-heading: " Supporter"
-amount: " 1Lakh"
-permonth: "  or a monthly donation of 10K."
-paragraph: " Support our cause with a yearly donation of 1Lakh or a monthly donation of 10K."
-url : "support-us/support-form?amount=10000&frequency=monthly"
+heading: " Super Supporter"
+lakh: "1001"
+permonth: " Per Month"
+frequency: monthly
+paragraph: " Support our cause with a monthly donation of ₹1001 Per Month."
+url: "/support-us/support-form?amount=1001&frequency=monthly"
 ---

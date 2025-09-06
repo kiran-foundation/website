@@ -22,9 +22,7 @@ fields:
   pincode:
     label: "Pin code"
     placeholder: "Pin code"
-  laptopAddress:
-    label: "Laptop Address"
-    placeholder: "Type in the laptop address"
+
   description:
     label: "Device Description"
     placeholder: "Describe the device"

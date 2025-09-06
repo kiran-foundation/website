@@ -1,4 +1,3 @@
-import { Schema } from "astro/zod";
 import { defineCollection, z } from "astro:content";
 
 const albums = defineCollection({
@@ -34,8 +33,10 @@ const membershipCards = defineCollection({
   schema: z.object({
     heading: z.string(),
     amount: z.string().optional(),
+    lakh: z.string().optional(),
     paragraph: z.string(),
     permonth: z.string().optional(),
+    frequency: z.string().optional(),
     url: z.string().optional(),
   }),
 });
