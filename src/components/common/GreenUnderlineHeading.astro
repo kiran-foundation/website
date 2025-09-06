@@ -1,0 +1,23 @@
+---
+import { getEntry } from "astro:content";
+const {slug,collection, recLen="2.7" } = Astro.props;
+const data = await getEntry(collection, slug) as { data?: { title?: string; } };
+const { title } = data?.data || {title: "null"};
+console.log(recLen);
+
+---
+
+<div class="mt-20 sm:mt-[80px] relative md:mb-8 mb-16">
+  <h1 class="text-[36px] text-center">
+    <span class="relative inline-block">
+      <span class="relative z-10 hero-title !ml-0">{title}</span>
+      <span class=` hidden xxs:block absolute ${recLen} left-0 w-full z-0 `>
+        <img
+          src="/assets/images/about/our-story-green-rectangle-line.png"
+          alt="Green Underline"
+          class="w-full h-auto"
+        />
+      </span>
+    </span>
+  </h1>
+</div>

@@ -1,0 +1,63 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/support-us/Hero.astro";
+import Membership from "../../components/support-us/Membership.astro";
+import Statistics from "../../components/support-us/Statistics.astro";
+// import Faq from '../../components/common/Faq.astro'
+
+// import Card from '../../components/support-us/Card.astro'
+import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
+import DonationMatter from "../../components/support-us/DonationMatter.astro";
+import PoweringEducation from "../../components/support-us/PoweringEducation.astro";
+---
+
+<script src="/assets/js/theme.min.js" is:inline></script>
+
+<script>
+  import AOS from "aos";
+  AOS.init();
+</script>
+<script src="jarallax/dist/jarallax.min.js"></script>
+<script src="simplebar/dist/simplebar.min.js"></script>
+<link rel="stylesheet" href="/assets/css/theme.min.css" />
+<link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
+
+<Layout title="Support us">
+  <!-- Page wrapper -->
+  <main class="page-wrapper" style="overflow-x: hidden;">
+    <Hero />
+    <DonationMatter />
+    <PoweringEducation />
+    <TestimonialsCarousel pageTag="home" />
+    <Membership />
+    <Statistics />
+    <!-- <Card /> -->
+    <span class="flex flex-col items-center justify-center px-[12px]">
+      <!-- <Faq  collection="support-us" slug="faq"  /> -->
+    </span>
+  </main>
+
+  <!-- Back to top button -->
+  <a
+    class="btn-scroll-top"
+    href="#top"
+    data-scroll
+    aria-label="Scroll back to top"
+  >
+    <svg
+      viewBox="0 0 40 40"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="20"
+        cy="20"
+        r="19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"></circle>
+    </svg>
+    <i class="ai-arrow-up"></i>
+  </a>
+</Layout>

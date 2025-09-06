@@ -1,0 +1,82 @@
+---
+/**
+ * About Page Layout
+ *
+ * This page uses the main `Layout` component to wrap its content.
+ *
+ * Main Sections:
+ * - `Hero`: Displays the hero section at the top of the page.
+ * - `Heading`: Renders the main heading for the about page.
+ * - Content Section: Contains a series of `GridContainer` components, each representing a different section of the about page.
+ *   - `GridContainer` props:
+ *     - `arrow`: Direction of the arrow indicator ("right" or "left").
+ *     - `flip`: Boolean or string to flip the layout of the grid.
+ *     - `slug`: Unique identifier for the content to be displayed.
+ * - Additional Components:
+ *   - `MissionVision`: Highlights the mission and vision statements.
+ *   - `EnduringSpirit`: Showcases the enduring spirit of the organization.
+ *   - `PartnerForProgress`: Displays partnership and progress information.
+ *
+ * Styling:
+ * - The main wrapper uses `overflow-x: hidden` to prevent horizontal scrolling.
+ * - Responsive padding and margin classes are applied for consistent spacing across devices.
+ */
+
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/about/Hero.astro";
+import GridContainer from "../components/about/GridContainer.astro";
+import Heading from "../components/about/Heading.astro";
+import MissionVision from "../components/common/MissionVision.astro";
+import EnduringSpirit from "../components/about/EnduringSpirit.astro";
+import BottomContainer from "../components/common/BottomContainer.astro";
+---
+
+
+<Layout title="About Us" description="About Us Page">
+  <main class="page-wrapper" style="overflow-x: hidden;">
+    <Hero />
+    <Heading />
+    <section class="overflow-hidden md:py-5 my-md-2 my-xl-4 my-xxl-5">
+      <div class="px-4 py-2 py-sm-4 py-lg-5">
+        <GridContainer arrow="right" slug="vision" />
+        <GridContainer flip={true} arrow="left" slug="first-std" />
+        <GridContainer arrow="right" slug="shakti" />
+        <GridContainer flip={true} arrow="left" slug="first-grad" />
+        <GridContainer arrow="right" slug="volunteer-led" />
+        <GridContainer flip={true} arrow="left" slug="nationwide-reach" />
+        <GridContainer arrow="right" slug="contributing-back" />
+        <GridContainer arrow="left" flip="true" slug="year-of-inspiration" />
+        <GridContainer slug="what-next" />
+      </div>
+    </section>
+    <MissionVision />
+    <EnduringSpirit />
+    <!-- <PartnerForProgress /> -->
+     <BottomContainer collection="about"  slug="panter-for-progress"/>
+  </main>
+</Layout>
+
+<a
+  class="btn-scroll-top"
+  href="#top"
+  data-scroll
+  aria-label="Scroll back to top"
+>
+  <svg
+    viewBox="0 0 40 40"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="20"
+      cy="20"
+      r="19"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-miterlimit="10"></circle>
+  </svg>
+  <i class="ai-arrow-up"></i>
+</a>

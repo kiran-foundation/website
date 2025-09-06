@@ -1,0 +1,45 @@
+---
+import { getEntry } from "astro:content";
+const componentHero = (await getEntry("work-with-us", "content/form")).data;
+---
+
+<section class="position-relative" style="margin-top: 4rem">
+  <div class="aboutVolunteering-frame1" id="responsiveNavContainer">
+    <a
+      id="responsiveLink"
+      style="font-family: Poppins; font-weight: 400; font-size: 14px; line-height: 100%; letter-spacing: 0%; color: #1E1E1E;"
+      href="/work-with-us/opportunities"
+    >
+      {componentHero.title}
+    </a>
+  </div>
+</section>
+
+<script>
+  function updateLinkText() {
+    const container = document.getElementById("responsiveNavContainer");
+    if (!container) return;
+
+    if (window.innerWidth < 0) {
+      container.innerHTML = `
+          <span style="font-family: Poppins; font-weight: 400; font-size: 14px; line-height: 150%; letter-spacing: 0%; color: #1E1E1E;">
+            <a href="/" style="color: #1E1E1E; text-decoration: none;">Home</a> &gt;
+            <a href="/work-with-us/opportunities" style="color: #1E1E1E; text-decoration: none;">Work with Us</a>
+          </span>
+        `;
+    } else {
+      container.innerHTML = `
+          <a
+            id="responsiveLink"
+            style="font-family: Poppins; font-weight: 400; font-size: 14px; line-height: 150%; letter-spacing: 0%; color: #1E1E1E;"
+            href="/work-with-us/opportunities"
+          >
+            &lt; Back to Volunteer and Internship Opportunities
+          </a>
+        `;
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", updateLinkText);
+  window.addEventListener("resize", updateLinkText);
+</script>

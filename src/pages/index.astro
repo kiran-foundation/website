@@ -1,0 +1,54 @@
+---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Layout from '../layouts/Layout.astro';
+import Hero from "../components/home/Hero.astro";
+// import Statistics from "../components/home/Statistics.astro";
+import Programs from "../components/home/Programs.astro";
+import Volunteer from "../components/home/Volunteer.astro";
+import Updates from "../components/common/UpdateComponent.astro";
+import Values from "../components/home/Values.astro";
+import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
+import OurSupporters from "../components/home/Supporters.astro";
+import Trusted from "../components/home/Accreditation.astro";
+---
+
+<Layout title="Kiran Foundation"
+>
+  <main class="page-wrapper">
+    <Hero />
+    <!-- <Statistics /> -->
+    <Programs />
+    <Values />
+    <Trusted/>
+    <Volunteer/>
+    <TestimonialsCarousel pageTag="home"/>
+    <OurSupporters/>
+    <Updates  isMainPage={true} /> 
+  </main>
+</Layout>
+
+<!-- Back to top button -->
+<a
+class="btn-scroll-top"
+href="#top"
+data-scroll
+aria-label="Scroll back to top"
+>
+<svg
+  viewBox="0 0 40 40"
+  fill="currentColor"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="20"
+    cy="20"
+    r="19"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-miterlimit="10"></circle>
+</svg>
+<i class="ai-arrow-up"></i>
+</a>
+

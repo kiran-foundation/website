@@ -1,0 +1,112 @@
+---
+import { getEntry } from "astro:content";
+const benefits = (await getEntry("pratibha", "benefits")).data;
+
+const { mt } = Astro.props;
+const { covers, supports, listtitle, title, description, imageGrid, image } =
+  benefits;
+---
+
+<section
+  class={`flex flex-col-reverse md:grid items-center justify-center overflow-hidden mx-auto lg:max-w-[81rem] gap-10 md:gap-16 md:grid-cols-2 ${mt}`}
+>
+  <!-- Content Column -->
+  <div
+    class="overflow-hidden mx-auto lg:max-w-[39.75rem]"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    <!-- Title -->
+    <h1 class="pratibha-heading mb-6" data-aos="fade-up">
+      {title}
+    </h1>
+
+    <!-- Description -->
+    {
+      description.map((item: string) => (
+        <p class="pratibha-description py-3 mb-4" data-aos="fade-up">
+          {item}
+        </p>
+      ))
+    }
+
+    <!-- Supports -->
+    {
+      supports.map((item: { support: string; desc: string }) => (
+        <div class="mb-8" data-aos="fade-up">
+          <h2 class="pratibha-subheading mb-3">{item?.support}</h2>
+          <p class="pratibha-description">{item?.desc}</p>
+        </div>
+      ))
+    }
+
+    <!-- Covers -->
+    <div class="mt-8">
+      <h3 class="pratibha-description mb-6 font-medium">
+        {listtitle}
+      </h3>
+      <div class="space-y-4">
+        {
+          covers.map((items: { svg: string; title: string }) => (
+            <div class="flex items-center gap-4" data-aos="fade-up">
+              <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center">
+                <i class="text-nav text-2xl ai-check"></i>
+                
+              </div>
+              <div class="pratibha-subtile">{items.title}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Column -->
+  <div
+    class="w-full mx-auto overflow-hidden lg:max-w-[37.25rem]"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    {
+      image ? (
+        <div class="singleImage">
+          <img
+            src={image}
+            alt=""
+            class="w-full aspect-[596/565] object-cover rounded-lg"
+            loading="lazy"
+
+          />
+        </div>
+      ) : (
+        <div class="grid grid-cols-2 gap-3 md:gap-4">
+          <div class="col-span-2">
+            <img
+              src={imageGrid.image1}
+              alt=""
+              class="w-full h-auto aspect-video object-cover rounded-lg"
+            />
+          </div>
+          <div>
+            <img
+              src={imageGrid.image2}
+              alt=""
+              class="w-full h-auto aspect-square object-cover rounded-lg"
+            />
+          </div>
+          <div>
+            <img
+              src={imageGrid.image3}
+              alt=""
+              class="w-full h-auto aspect-square object-cover rounded-lg"
+            />
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+import { getEntry } from "astro:content";
+const componentUpdateFocus = (
+  await getEntry("updates", "2023-03-18-shreya-gold-medal")
+).data;
+---
+
+<div class="container" style="text-align: center;">
+  <div class="updateFocus-header">
+    <h1>
+      {componentUpdateFocus.title}
+    </h1>
+  </div>
+  <div class="updateFocus-line"></div>
+  <div class="updateFocus-content">
+    <div set:html={componentUpdateFocus.content} />
+    <div class="image-container">
+      <img
+        src="/assets/images/posts/shreyagoldmedal.png"
+        alt={componentUpdateFocus.alt}
+      />
+    </div>
+    <div set:html={componentUpdateFocus.information} />
+  </div>
+</div>

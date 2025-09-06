@@ -1,0 +1,98 @@
+---
+import { getCollection } from "astro:content";
+import Modal from "./modal.astro";
+
+const { foldername, path,filter, title } = Astro.props;
+const workEntries = await getCollection(foldername);
+const teamEntries = workEntries
+  .filter((entry: any) => entry.id.startsWith(`${path}`))
+  .filter((entry: any) => 
+    !filter || 
+    (Array.isArray(entry.data.type) 
+      ? entry.data.type.includes(filter) 
+      : entry.data.type === filter)
+  );
+---
+
+<style>
+  .person-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #0073b1;
+    margin-bottom: 15px;
+  }
+
+  .linkedin-icon {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #0073b1;
+  }
+  @media (max-width: 768px) {
+    .card {
+      width: 250px;
+      margin: 0 auto;
+    }
+  }
+</style>
+
+<div class="container text-center py-5">
+  <h2 class="section-heading">{title}</h2>
+  <div class="row justify-content-center">
+    {teamEntries.map((person: any, index) => (
+      person.data.featured_image && (
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 shadow h-100 ">
+          <div class="card-body text-center">
+            <img
+              class="person-image"
+              src={person.data.featured_image}
+              alt={person.data.title}
+            />
+            <h5 class="card-title mt-2">{person.data.title}</h5>
+
+            {person.data.media?.linkedin && (
+              <div class="d-flex justify-content-center align-items-center gap-2">
+                <p class="m-0">{person.data.type}</p>
+                <a
+                  href={person.data.media.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    class="linkedin-icon"
+                    src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                    alt="LinkedIn"
+                  />
+                </a>
+              </div>
+            )}
+
+            {person.data.more && (
+              <>
+                <button
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target={`#personModal${index}`}
+                >
+                  Read More
+                </button>
+                <Modal info={person.data} id={`personModal${index}`} />
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+      )
+    ))}
+  </div>
+</div>

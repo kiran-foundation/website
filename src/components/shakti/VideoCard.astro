@@ -1,0 +1,39 @@
+---
+// VideoCard.astro
+const { videoUrl, alt,desc,bg } = Astro.props;
+const noVideo = videoUrl === 'novideo';
+---
+
+<div class=` ${ bg  ? bg : "bg-white"} rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 md:p-8 p-4 w-full md:max-w-[632px] `>
+  {noVideo ? (
+    <div class="w-full h-full flex items-center justify-center bg-black text-white text-xl">
+      No Testimony Found
+    </div>
+  ) : (
+    <>
+      <div class="w-full aspect-video bg-gray-100">
+        <iframe
+          width="632"
+          height="398"
+          src={videoUrl}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="flex flex-col w-full  gap-4 mt-8 ">
+        <h3 class=`font-semibold text-[20px] leading-[150%] tracking-[0] font-poppins  ${bg ? "text-white" : "text-[#1E1E1E]" }` >
+
+          {alt || console.log("no alt")}
+         
+        </h3>
+        <h3 class=`font-normal text-[16px] leading-[150%] tracking-[0]  font-poppins ${bg ? "text-white" : "text-[#1E1E1E]" }`>
+          {desc}
+        </h3>
+      </div>
+    </>
+  )}
+</div>

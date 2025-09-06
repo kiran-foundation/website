@@ -1,0 +1,14 @@
+---
+import ComingSoon from "../../components/coming-soon/ComingSoon.astro";
+import Breadcrumb from "../../components/common/Breadcrumb.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+    <!-- Page wrapper -->
+    <main class="page-wrapper" style="overflow-x: hidden;">
+        <Breadcrumb url={Astro.url} />
+        <!-- <FutuerBuilder mt="mt-[86px] lg:mt-[11.5rem] px-4 mb-[7.5rem]" /> -->
+        <ComingSoon />
+    </main>
+</Layout>

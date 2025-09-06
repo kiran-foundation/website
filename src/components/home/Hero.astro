@@ -1,0 +1,121 @@
+---
+import { getEntry } from "astro:content";
+const hero = (await getEntry("home", "hero")).data;
+import Button from "../common/button.astro";
+---
+
+<!-- -----hero swiper animation ---- -->
+<script type="module" src="/assets/js/common.js" is:inline></script>
+
+<section
+  class="position-relative hidden md:block h-[864px] py-5 mt-[5.5rem]"
+  data-bs-theme="light"
+>
+  <!-- Background image slider -->
+  <div
+    class="swiper swiper-scale-effect position-absolute top-0 start-0 w-100 h-100"
+  >
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div
+          class="swiper-slide-cover aspect-[4/4]"
+          style="background-image: url('/assets/images/Homepage/home-1.2.webp ');"
+        >
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div
+          class="swiper-slide-cover aspect-[4/4]"
+          style="background-image: url('/assets/images/Homepage/home-1.webp');"
+        >
+        </div>
+      </div>
+    </div>
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- ---------content box----------- -->
+  <div class="relative z-[2] container mx-auto px-4 lg:py-0">
+    <div class="flex flex-wrap -mx-4 my-8 md:my-12">
+      <div class="w-full px-4 py-8 md:py-12 mb-6 md:mb-8 lg:mb-10">
+        <h1
+          class="text-white font-merriweather text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] leading-tight md:leading-snug lg:leading-[150%] mb-8 max-w-full lg:max-w-[772px]"
+        >
+          {hero.title}
+        </h1>
+        <p
+          class="block text-[#CFCFCF] font-merriweather text-xl md:text-2xl xl:text-[2rem] leading-normal md:leading-relaxed mb-6 md:mb-12 max-w-full md:max-w-[650px] xl:max-w-[690px]"
+        >
+          {hero.titlehero}
+        </p>
+        <div class="relative inline-flex items-center group">
+          <Button
+            link="/work-with-us"
+            title="Become a Volunteer"
+            btn="btn1"
+            widthClass="w-[235px]"
+            heightClass="h-[60px]"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ----------mobile --- -->
+<section class="md:hidden block relative mt-[5.5rem]">
+  <div class="relative h-[760px]">
+    <!-- Swiper for mobile -->
+    <div
+      class="swiper mobile-swiper position-absolute top-0 start-0 w-100 h-100"
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div
+            class="swiper-slide-cover aspect-[4/4]"
+            style="background-image: url('/assets/images/Homepage/home-2-2.webp');"
+          >
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div
+            class="swiper-slide-cover aspect-[4/4]"
+            style="background-image: url('/assets/images/Homepage/home-2.webp');"
+          >
+          </div>
+        </div>
+      </div>
+      <!-- Pagination -->
+      <div class="swiper-pagination hidden"></div>
+    </div>
+
+    <!-- Text Content Container -->
+    <div class="absolute inset-0 flex flex-col p-4 justify-between z-20">
+      <!-- Title at Top -->
+      <h1
+        class="text-4xl leading-[3.3rem] font-bold pt-2 text-white"
+        style="font-family: 'Merriweather', serif;"
+      >
+        {hero.title}
+      </h1>
+
+      <!-- Bottom-aligned Content -->
+      <div class="pb-2">
+        <p
+          class="text-xl mb-10 text-gray-300"
+          style="font-family: 'Merriweather', serif;"
+        >
+          {hero.titlehero}
+        </p>
+        <Button
+          link="/work-with-us"
+          title="Become a Volunteer"
+          btn="btn1"
+          widthClass="w-full"
+          heightClass="h-[60px]"
+        />
+      </div>
+    </div>
+  </div>
+</section>

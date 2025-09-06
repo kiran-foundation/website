@@ -1,0 +1,44 @@
+---
+import { getEntry } from "astro:content"
+const benefitsSecond = (await getEntry("pratibha", "benefits-second")).data
+---
+
+<div class="container benefit-container">
+  <div class="row justify-content-center text-center">
+    <!-- Benefit 1 -->
+    <div class="col-12 col-lg-3 mb-4 d-flex flex-column align-items-center"data-aos="zoom-in-right"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
+        <img src={benefitsSecond.image.guidance} alt="Guidance Icon" style="width: 60%;" />
+      </div>
+      <h2 class="h5 text-black mb-2">{benefitsSecond.heading.guidance}</h2>
+      <p class="text-black opacity-80">{benefitsSecond.paragraph.guidance}</p>
+    </div>
+
+    <!-- Benefit 2 -->
+    <div class="col-12 col-lg-3 mb-4 d-flex flex-column align-items-center"data-aos="zoom-in-down"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
+        <img src={benefitsSecond.image.harmony} alt="Harmony Icon" style="width: 60%;" />
+      </div>
+      <h2 class="h5 text-black mb-2">{benefitsSecond.heading.harmony}</h2>
+      <p class="text-black opacity-80">{benefitsSecond.paragraph.harmony}</p>
+    </div>
+
+    <!-- Benefit 3 -->
+    <div class="col-12 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-up"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
+        <img src={benefitsSecond.image.coaching} alt="Coaching Icon" style="width: 60%;" />
+      </div>
+      <h2 class="h5 text-black mb-2">{benefitsSecond.heading.coaching}</h2>
+      <p class="text-black opacity-80">{benefitsSecond.paragraph.coaching}</p>
+    </div>
+
+    <!-- Benefit 4 -->
+    <div class="col-12 col-lg-3 mb-4 d-flex flex-column align-items-center" data-aos="zoom-in-left"  data-aos-duration="1700">
+      <div class="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 mb-3" style="width: 100px; height: 100px;">
+        <img src={benefitsSecond.image.involvement} alt="Involvement Icon" style="width: 60%;" />
+      </div>
+      <h2 class="h5 text-black mb-2">{benefitsSecond.heading.involvement}</h2>
+      <p class="text-black opacity-80">{benefitsSecond.paragraph.involvement}</p>
+    </div>
+  </div>
+</div>

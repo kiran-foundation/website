@@ -1,0 +1,122 @@
+---
+import type { MarkdownFile } from "../../../types/Markdown";
+import { remark } from "remark";
+import html from "remark-html";
+import { getEntry } from "astro:content";
+import InternshipComponent from "./InternshipComponent.astro";
+
+const roleFile = import.meta.glob<MarkdownFile>(
+  "/src/content/work-with-us/opportunities/internship/*.md"
+);
+
+const role = await (async () => {
+  const volunteerPath = `/src/content/work-with-us/opportunities/internship/${Astro.props.path}.md`;
+  const volunteer = roleFile[volunteerPath];
+
+  if (volunteer) {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  } else {
+    return null;
+  }
+})();
+
+const defaultRole = await (async () => {
+  const volunteerPath =
+    "/src/content/work-with-us/opportunities/default-content.md";
+  const volunteer = roleFile[volunteerPath];
+
+  if (volunteer) {
+    const { frontmatter, default: content } = await volunteer();
+    const processedContent = await remark().use(html).process(content);
+    return { ...frontmatter, content: processedContent.toString() };
+  } else {
+    return null;
+  }
+})();
+
+if (!role) {
+  console.warn(
+    "Role not found for path:",
+    `/src/content/work-with-us/opportunities/internship/${Astro.props.path}.md`
+  );
+}
+
+const fallback = (key, defaultValue) =>
+  role?.[key] ?? defaultRole?.[key] ?? defaultValue;
+
+const {
+  title = fallback("title", "Title not found"),
+  quote = fallback(
+    "quote",
+    "Build a thriving community that drives real changes."
+  ),
+  startDate = fallback("startDate", "Start date not provided"),
+  roleType = fallback("roleType", "Role type not specified"),
+  duration = fallback("duration", "Duration not specified"),
+  timeCommitment = fallback("timeCommitment", "Time commitment not mentioned"),
+  teamSize = fallback("teamSize", "Team size not defined"),
+  impact = fallback(
+    "impact",
+    "Lead a chapter that connects members, drives collaboration, and amplifies the Foundation's mission locally."
+  ),
+} = {};
+
+const componentInternship = (await getEntry("work-with-us", "content/listing"))
+  .data;
+---
+
+<div class="aboutVolunteering-frame1">
+  <div class="aboutVolunteering-frame2">
+    <h1>{title}</h1>
+    <h3>{quote}</h3>
+  </div>
+  <p class="aboutVolunteering-info-text">
+    <span>{componentInternship.sdate}</span>
+    {startDate}
+    <br />
+    <span>{componentInternship.rtype}</span>
+    {roleType}
+    <br />
+    <span>{componentInternship.dur}</span>
+    {duration}
+    <br />
+    <span>{componentInternship.time}</span>
+    {timeCommitment}
+    <br />
+    <span>{componentInternship.team}</span>
+    {teamSize + " Volunteers"}
+  </p>
+  <div class="aboutVolunteering-frame3">
+    <div class="aboutVolunteering-frame5">{componentInternship.todo}</div>
+    <p>
+      <span>{componentInternship.imp}</span>
+      {impact}
+    </p>
+    <div class="aboutVolunteering-frame4">
+      <InternshipComponent
+        path={Astro.props.path}
+        name="responsibilities"
+        title="🗒️ Responsibilities"
+      />
+    </div>
+    <div class="aboutVolunteering-frame4">
+      <div class="aboutVolunteering-frame5">{componentInternship.who}</div>
+      <InternshipComponent
+        path={Astro.props.path}
+        name="requirements"
+        title="✅ Requirements"
+      />
+    </div>
+    <div class="aboutVolunteering-frame4">
+      <div class="aboutVolunteering-frame5">{componentInternship.why}</div>
+
+      <InternshipComponent
+        path={Astro.props.path}
+        name="benefits"
+        title="🎁 Benefits"
+      />
+    </div>
+  </div>
+</div>

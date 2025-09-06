@@ -1,0 +1,102 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import SupportFormFields from "../../components/support-us/SupportUsForm.astro";
+import DonationCard from "../../components/support-us/DonationCard.astro";
+import NavigationHelper from "../../components/support-us/NavigationHelper.astro";
+import PaymentLoader from "../../components/support-us/PaymentLoader.astro";
+
+const card = (await getEntry("support-form", "card")).data;
+const info = (await getEntry("support-form", "form")).data;
+---
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  import "../../utils/support-form.ts";
+</script>
+
+<script>
+  // Additional validation check to ensure everything is working
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("Form validation check - DOM loaded");
+
+    // Verify key elements exist
+    const form = document.getElementById("donation-form");
+    const button = document.getElementById("donate-now-button");
+    const overlay = document.getElementById("button-overlay");
+
+    console.log("Form elements check:", {
+      form: !!form,
+      button: !!button,
+      overlay: !!overlay,
+    });
+
+    // Check if validation functions are available
+    console.log("Validation functions available:", {
+      isFormValid: typeof (window as any).isFormValid === "function",
+      checkEmptyFields: typeof (window as any).checkEmptyFields === "function",
+      clearAllErrors: typeof (window as any).clearAllErrors === "function",
+    });
+  });
+</script>
+<Layout>
+  <section class="container donation-form py-[120px]">
+    <form
+      id="donation-form"
+      class="needs-validation container position-relative z-2 pt-5 pb-lg-5 pb-md-4 pb-2
+      [&_input]:w-full [&_input]:h-[52px] [&_input]:px-4
+    [&_input]:rounded-lg [&_input]:border [&_input]:border-gray-200
+    [&_input]:focus:outline-none [&_input]:focus:border-gray-300
+    
+    [&_textarea]:w-full [&_textarea]:px-4 [&_textarea]:py-3
+    [&_textarea]:rounded-lg [&_textarea]:border [&_textarea]:border-gray-200
+    [&_textarea]:focus:outline-none [&_textarea]:focus:border-gray-300"
+      novalidate
+    >
+      <div class="row">
+        <div
+          class="col-lg-8 custom-scroll"
+          style="overflow: auto; height: 77vh;"
+        >
+          <h1 class="heading-1 mb-4">{info.title}</h1>
+          <SupportFormFields info={info} />
+        </div>
+
+        <div
+          class="col pt-5 font-poppins min-w-[19rem] flex justify-center items-center"
+        >
+          <NavigationHelper />
+          <DonationCard card={card} />
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <PaymentLoader />
+</Layout>
+
+<style>
+  /* Form Error Styles */
+  .error {
+    border-color: #992424 !important;
+  }
+  input.error,
+  textarea.error {
+    border-color: #992424 !important;
+  }
+
+  .form-error {
+    color: #992424;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  [type="tel"].error,
+  [type="text"].error,
+  [type="email"].error,
+  textarea.error {
+    border: 1px solid #992424;
+  }
+
+
+</style>

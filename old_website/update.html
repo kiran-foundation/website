@@ -1,0 +1,50 @@
+---
+layout: default
+title: More Updates | Kiran Foundation
+---
+<div class="update-align">
+<div class="darker">
+	<div class="container">
+		<h2 class="editable brand3-txt">More Updates</h2>
+		<p class="editor-link"><a href="cloudcannon:collections/_posts" class="btn"><strong>&#9998;</strong> Add Update</a></p>
+		<div class="posts">
+		<div class="row">
+			{% assign count = 0 %}
+			{% for post in site.posts %}
+				{% assign count = count | plus: 1 %}
+				{% if count == 1 %}
+				<div class="container">
+					<div class="posts">
+					    <div class="row">
+							
+				{% endif %}
+				<div class="col-sm-4 col-md-4">
+					<div class="post custom-size">
+						{% if post.more == true %}
+							<a href="{{ post.url }}"><div class="ima_ge" style="background-image: url({{ post.featured_image }})"></div></a>
+						{% else %}
+							<div class="ima_ge" style="background-image: url({{ post.featured_image }})"></div>
+						{% endif %}
+						<div class="post-content">
+							<h3><b>{{ post.title }}</b></h3>
+							{{ post.summary }}
+							{% if post.more == true %}
+								<p><a href="{{ post.url }}" class="btn">Read more</a></p>
+							{% endif %}
+						</div>
+					</div>
+					<br/>
+				</div>
+		
+				{% if count == 3 or forloop.last %}
+			         </div>
+					</div>
+				</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>

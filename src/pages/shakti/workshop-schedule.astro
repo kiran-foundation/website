@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getEntry } from "astro:content";
+
+const heading = await getEntry("common", "headings");
+
+---
+
+<Layout>
+  <main class="w-full pt-[85px]">
+    <section class="mt-8 text-center px-4">
+      <h1 class="font-bold mb-4 heading-1">
+        {heading.data.workshop_schedule}
+      </h1>
+    </section>
+
+    <section class="mt-8 flex justify-center items-center mb-5 px-4">
+      {
+        /*This is a third-party widget registered  at digital@kiran.foundation */
+      }
+      <iframe
+        src="https://widgets.sociablekit.com/eventbrite-events/iframe/25562444"
+        class="w-full md:w-[80%]"
+        height="600px"></iframe>
+    </section>
+  </main>
+</Layout>

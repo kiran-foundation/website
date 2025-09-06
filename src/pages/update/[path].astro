@@ -1,0 +1,49 @@
+---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Layout from "../../layouts/Layout.astro";
+import Update from "../../components/updates/Update.astro";
+import { getEntry } from "astro:content";
+
+const { path } = Astro.params;
+const updateEntry = await getEntry("updates", path);
+const { title, message_text } = updateEntry.data;
+const pageUrl = new URL(Astro.url);
+const fullUrl = `${pageUrl.origin}/update/${path}`;
+
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const allUpdates = await getCollection("updates");
+  return allUpdates.map((update) => ({
+    params: { path: update.slug },
+  }));
+}
+---
+
+<Layout title={title}>
+
+  <head>
+    <title>{title}</title>
+    <meta name="description" content={message_text} />
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={message_text} />
+    <meta property="og:url" content={fullUrl} />
+  
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={message_text} />
+  
+    <!-- Optional: canonical link -->
+    <link rel="canonical" href={fullUrl} />
+  </head>
+  
+  
+  <main class="page-wrapper">
+    <Update path={path} />
+  </main>
+</Layout>

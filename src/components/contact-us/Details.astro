@@ -1,0 +1,99 @@
+---
+import { getEntry } from "astro:content";
+const componentContacts = (await getEntry("contact", "contact")).data;
+---
+
+<div
+  class="!bg-none flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52 2xl:px-64 gap-8 w-full md:mb-[7.5rem] mb-0"
+>
+  <!-- Frame 1000006142 -->
+  <div
+    class="flex flex-col font-poppins flex-wrap md:flex-row items-center justify-center p-0 gap-6 w-full max-w-[70.125rem] sm:my-[6rem] mt-[6rem] mb-[7.5rem]"
+  >
+    <!-- Address Card -->
+    <div
+      class="w-full md:w-[358px] h-auto min-h-[315px] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[2.875rem] pr-4 pt-[2.625rem] flex-none"
+    >
+      <div class="flex flex-col items-start gap-8">
+        <div
+          class="w-full font-poppins text-[16px] font-semibold md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
+        >
+          {componentContacts.addresstitle}
+        </div>
+        <!-- Address Text -->
+        <div
+          class="w-full h-auto font-poppins text-[1rem] font-normal md:text-lg leading-[2rem] md:leading-[1.6875rem] text-[#49494C]"
+        >
+          {componentContacts.address}
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone Card -->
+    <div
+      class="w-full md:w-[22.375rem] h-auto min-h-[19.6875rem] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[2.875rem] pt-[2.625rem] flex-none"
+    >
+      <div class="flex flex-col items-start gap-8">
+        <!-- Heading 4 → Phone -->
+
+        <div
+          class="w-full font-poppins text-[1rem] font-semibold md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
+        >
+          {componentContacts.phonetitle}
+        </div>
+        <div class="flex flex-col items-start gap-6 w-full">
+          {
+            componentContacts.contactNo.map((componentContacts) => {
+              // console.log(contact);
+              return (
+                <div class="flex flex-col items-start w-full">
+                  <div class="w-full font-normal text-sm leading-[21px] text-[#49494C]">
+                    {componentContacts.option}
+                  </div>
+                  <a
+                    href={"tel:" + componentContacts.answer.replace(/ /g, "")}
+                    class="w-full font-poppins text-[1rem] font-normal md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
+                  >
+                    {componentContacts.answer}
+                  </a>
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Email Card -->
+    <div
+      class="w-full md:w-[22.375rem] h-auto min-h-[19.6875rem] bg-[#F1F1F1] rounded-2xl pl-[1.5rem] sm:pl-[2.875rem] pt-[2.625rem] flex-none"
+    >
+      <div class="flex flex-col items-start gap-8">
+        <div
+          class="w-full font-poppins text-[1rem] font-semibold md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
+        >
+          {componentContacts.emailtitle}
+        </div>
+        <div class="flex flex-col items-start gap-6 w-full">
+          {
+            componentContacts.contactEmails.map((componentContacts) => {
+              return (
+                <div class="flex flex-col items-start w-full">
+                  <div class="w-full font-poppins font-normal text-sm leading-[1.3125rem] text-[#49494C]">
+                    {componentContacts.option}
+                  </div>
+                  <a
+                    href={"mailto:" + componentContacts.answer}
+                    class="w-full font-poppins text-[1rem] font-normal md:text-lg leading-[2rem] md:leading-[100%] text-[#1E1E1E]"
+                  >
+                    {componentContacts.answer}
+                  </a>
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

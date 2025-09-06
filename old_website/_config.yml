@@ -1,0 +1,95 @@
+# ----
+# Site
+title: Kiran Foundation
+url: https://kiran.foundation
+baseurl: 
+google_analytics_key:
+
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /branding/logo.png
+image:
+  path: /branding/logo.png
+
+tagline: " Giving wings to the Hopes and Dreams!"
+description: "Kiran Foundation works with families from underprivileged and marginalised section of society, and helps them reach their full potential."
+author:
+  name: Kiran Foundation
+  email: info@kiran.foundation
+  twitter: kiran_trust
+twitter:
+  username: kiran_trust
+  card: summary_large_image
+social:
+  name: Kiran Foundation
+  links:
+    - https://www.facebook.com/foundation.kiran
+    - https://twitter.com/Kiran_Trust
+    - https://youtube.com/@kiran_foundation
+    - https://www.instagram.com/kiran_trust
+
+# -----
+# Build
+
+timezone: Etc/UTC
+
+collections:
+  shakti_course:
+    output: true
+  members:
+    output: true
+  testis:
+    output: true
+  staff_members:
+    _icon: account_circle
+    _hide_content: true
+    _options:
+      image:
+        width: 250
+        height: 250
+
+permalink: pretty
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      _options:
+        content:
+          width: 1880
+          height: 1880
+          uploads_dir: "/images/posts/"
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      image: /branding/logo.png
+
+
+donation_embed: '<script src="https://donorbox.org/widget.js" type="text/javascript"></script><iframe src="https://donorbox.org/embed/give-sheep-the-vote?hide_donation_meter=true" height="685px" width="100%" style="max-width:425px; min-width:310px" seamless="seamless" id="dbox-form-embed" name="donorbox" frameborder="0" scrolling="no"></iframe>'
+newsletter_action: "//your-mailchimp-action-url.com"
+volunteer_action:
+shakti_action:
+english_club_action:
+contact_action:
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
+
+# -----------
+_options:
+  header_background_image:
+    width: 1880
+    height: 1880
+  newsletter_background_image:
+    width: 1880
+    height: 1880

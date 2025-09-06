@@ -1,0 +1,23 @@
+---
+// src/pages/updates/[slug].astro
+
+import Update from "../../components/updates/Update.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  // Fetch all markdown files from the 'updates' collection
+  const allUpdates = await getCollection("updates");
+
+  // Generate static paths using slugs
+  return allUpdates.map((update) => ({
+    params: { slug: update.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+---
+
+<Layout>
+  <Update path={slug} />
+</Layout>

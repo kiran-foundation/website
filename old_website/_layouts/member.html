@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<div class="container">
+  <div class="columns col-wrapper">
+    <div style="margin-top: 70px;" align="center">
+      <span class="image-center">
+        <img src="{{ page.featured_image }}" style="border: 1px solid #888; width: 350px; border-radius: 50%; outline: 7px solid #f47a54;" alt="Pratibha"/>
+      </span>
+      <br/>
+      <br/>
+      <p>
+                 {% if page.media.email %}
+                    <a href="{{ page.media.email }}" target="_blank">
+                      <i class="fa fa-envelope" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+                  {% if page.media.linkedin %}
+                    <a href="{{ page.media.linkedin }}" target="_blank">
+                      <i class="fa fa-linkedin-square" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+                  {% if page.media.instagram %}
+                    <a href="{{ page.media.instagram }}" target="_blank">
+                      <i class="fa fa-instagram" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+      </p>
+    </div>	
+      
+    <div vertical-align="center">
+      <blockquote>
+        <p class="quote editable">{{ page.quote }}</p>
+      </blockquote>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="columns col-wrapper">
+    <div vertical-align="center">
+      <h3 class="editable brand-txt" align="center">ABOUT MY JOURNEY</h3>
+      <p class="editable" align="center">
+        {{ page.about }}
+      </p>
+      <br/>	
+      <br/>
+    </div>
+  </div>
+</div>

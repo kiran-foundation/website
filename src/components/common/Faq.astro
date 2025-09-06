@@ -1,0 +1,149 @@
+---
+import { getEntry } from "astro:content";
+
+// Extracting props passed to the component
+const { collection, slug, mt } = Astro.props;
+
+// Fetching FAQ data from the content collection
+const faq = (await getEntry(collection, slug)) as {
+  data: {
+    title: string;
+    title2: string;
+    paragraph: string;
+    questions: { question: string; answer: string }[];
+  };
+};
+
+// Destructuring the fetched data
+const { title, title2, paragraph, questions } = faq.data ?? {};
+---
+
+<section
+  class={`lg:max-w-[81rem] mx-auto max-w-[98%] flex flex-col md:flex-row lg:gap-[7.5rem] md:gap-[1.5rem] mb-[7.5rem] ${mt} px-4`}
+>
+  <!-- Left Section: Title, Subtitle, and Paragraph -->
+  <div class="w-full md:max-w-[26rem]">
+    <h2
+      class="pratibha-heading mb-2"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-offset="120px"
+      data-disable-parallax-down="lg"
+    >
+      {title}
+    </h2>
+    <h3
+      class="pratibha-heading mb-6"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-offset="120px"
+      data-disable-parallax-down="lg"
+    >
+      {title2}
+    </h3>
+    <p
+      class="md:min-w-[416px] md:max-h-[82px] md:pr-8 pratibha-description"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-offset="120px"
+      data-disable-parallax-down="lg"
+    >
+      {paragraph}
+    </p>
+  </div>
+
+  <!-- Right Section: FAQ Questions and Answers -->
+  <!-- FAQ Questions and Answers
+  /**
+   * This component renders a FAQ section with collapsible questions and answers.
+   * 
+   * Functionality:
+   * - Each question is displayed as a summary element inside a <details> tag.
+   * - Clicking on a question toggles the visibility of its corresponding answer.
+   * - When a question is clicked:
+   *   - If the question is closed, it opens to reveal the answer.
+   *   - If the question is open, it closes to hide the answer.
+   * - The plus (+) icon is displayed when the question is closed.
+   * - The minus (-) icon is displayed when the question is open.
+   * 
+   * Accessibility:
+   * - The <details> and <summary> elements are natively accessible, providing keyboard and screen reader support.
+   * 
+   * Styling:
+   * - The `group` and `group-open` classes are used to toggle the visibility of the icons.
+   * - The `block` and `hidden` classes control the display of the plus and minus icons based on the open/closed state.
+   * 
+   * Usage:
+   * - Pass an array of questions and answers as the `questions` prop.
+   * - Each question should have a `question` and `answer` property.
+   */
+   -->
+  <div class="w-full md:max-w-[47.5rem] pt-[1.5rem]">
+    <div
+      class="space-y-4"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-offset="120px"
+      data-disable-parallax-down="lg"
+    >
+      {questions.map((item) => (
+        <div
+          class="border-[#1E1E1E] border-solid border-[0.0376rem] rounded-lg"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+          data-aos-offset="120px"
+          data-disable-parallax-down="lg"
+        >
+          <details class="group">
+            <summary
+              class="font-poppins align-middle w-full px-6 py-4 flex items-center justify-between text-left font-medium cursor-pointer"
+            >
+              <span class="pratibha-description text-left font-poppins font-medium text-[#383D38] align-middle">
+                {item.question}
+              </span>
+              <span class="ml-4">
+                <!-- Plus icon (visible when closed) -->
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="block group-open:hidden"
+                >
+                  <path
+                    opacity="0.8"
+                    d="M8 3V13M3 8H13"
+                    stroke="#1E1E1E"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <!-- Minus icon (visible when open) -->
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="hidden group-open:block"
+                >
+                  <path
+                    opacity="0.8"
+                    d="M2.5 7.5H13.5"
+                    stroke="#1E1E1E"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </summary>
+            <div
+              class="answer font-Inter px-6 py-3 text-[#383D38] border-[#1E1E1E] border-solid border-t-[0.0313rem] font-normal text-[0.9437rem] align-middle"
+            >
+              {item.answer}
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

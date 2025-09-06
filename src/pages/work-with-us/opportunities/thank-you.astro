@@ -1,0 +1,87 @@
+---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Layout from "../../../layouts/WorkwithusLayout.astro";
+import { getEntry } from "astro:content";
+const pageThankyou = (await getEntry("work-with-us", "opportunities/thank-you"))
+  .data;
+---
+
+<Layout title="Internship Roles">
+  <main class="page-wrapper">
+    <section class="position-relative">
+      <div class="aboutVolunteering-frame1" id="responsiveNavContainer">
+        <a
+          style="font-family: Poppins; font-weight: 400; font-size: 14px; line-height: 100%; letter-spacing: 0%; color: #1E1E1E;"
+          href="/work-with-us/opportunities/"
+        >
+          &lt; {pageThankyou.navigationText}
+        </a>
+      </div>
+    </section>
+
+    <div
+      class="thankyou-image1 flex items-center justify-center pt-[40px] pb-[28px] hidden md:flex"
+    >
+      <script is:inline
+        src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"
+        type="module"></script>
+
+      <lottie-player
+        src="/assets/json/animation-greentick.json"
+        background="transparent"
+        speed="1"
+        style="width: 400px; height: 400px;"
+        direction="1"
+        playMode="normal"
+        autoplay
+      >
+      </lottie-player>
+    </div>
+
+    <div class="aboutVolunteering-frame1">
+      <div class="aboutVolunteering-frame2">
+        <h1 class="thankyou-title">{pageThankyou.thanksText}</h1>
+
+        <div
+          class="thankyou-image2 flex items-center justify-center pt-[80px] pb-[48px] md:hidden"
+        >
+          <lottie-player
+            src="/assets/json/animation-greentick.json"
+            background="transparent"
+            speed="1"
+            style="width: 400px; height: 400px;"
+            direction="1"
+            playMode="normal"
+            autoplay
+          >
+          </lottie-player>
+        </div>
+
+        <h2>{pageThankyou.reviewText}</h2>
+      </div>
+    </div>
+  </main>
+  <a
+    class="btn-scroll-top"
+    href="#top"
+    data-scroll
+    aria-label="Scroll back to top"
+  >
+    <svg
+      viewBox="0 0 40 40"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="20"
+        cy="20"
+        r="19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"></circle>
+    </svg>
+    <i class="ai-arrow-up"></i>
+  </a>
+</Layout>

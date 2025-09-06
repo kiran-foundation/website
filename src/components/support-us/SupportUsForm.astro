@@ -1,0 +1,113 @@
+---
+interface Props {
+  info: any;
+}
+
+const { info } = Astro.props;
+---
+
+<div class="row g-4 pb-4 pb-md-5 mb-3 mb-md-1 font-poppins">
+  <div class="col-sm-6">
+    <label class="form-label fs-base" for="name">{info.name.title}</label>
+    <!-- &entry.283978656=fullName&entry.1909208105=email&entry.1359110198=number&entry.218344457=country&entry.938609362=address&entry.1458813282=city&entry.726311981=pincode&entry.965069241=notes -->
+    <input
+      class="form-control form-control-lg"
+      type="text"
+      name="entry.283978656"
+      placeholder={info.name.placeholder}
+      required
+      id="name"
+    />
+    <div class="form-error-container"></div>
+  </div>
+  
+  <div class="col-sm-6">
+    <label class="form-label fs-base" for="email">{info.email.title}</label>
+    <input
+      class="form-control form-control-lg"
+      type="email"
+      name="entry.1909208105"
+      placeholder={info.email.placeholder}
+      required
+      id="email"
+    />
+    <div class="form-error-container"></div>
+  </div>
+  
+  <div class="col-sm-6">
+    <label class="form-label fs-base" for="phone">{info.phone.title}</label>
+    <input
+      class="form-control form-control-lg"
+      type="tel"
+      name="entry.1359110198"
+      placeholder={info.phone.placeholder}
+      required
+      id="phone"
+    />
+    <div class="form-error-container"></div>
+  </div>
+  
+  <div class="col-sm-6">
+    <label class="form-label fs-base" for="country">{info.country.title}</label>
+    <input
+      class="form-control form-control-lg"
+      type="text"
+      name="entry.218344457"
+      placeholder={info.country.value}
+      required
+      id="country"
+      value={info.country.value}
+      readonly
+    />
+  </div>
+  
+  <div class="col-12">
+    <label class="form-label fs-base" for="address">{info.address.title}</label>
+    <input
+      name="entry.938609362"
+      class="form-control form-control-lg"
+      type="text"
+      placeholder={info.address.placeholder}
+      required
+      id="address"
+    />
+    <div class="form-error-container"></div>
+  </div>
+  
+  <div class="col-sm-6">
+    <label class="form-label fs-base" for="city">{info.city.title}</label>
+    <input
+      name="entry.1458813282"
+      class="form-control form-control-lg"
+      type="text"
+      placeholder={info.city.placeholder}
+      required
+      id="city"
+    />
+    <div class="form-error-container"></div>
+  </div>
+  
+  <div class="col-sm-6">
+    <label class="form-label fs-base" for="zipcode">{info.pin.title}</label>
+    <input
+      name="entry.726311981"
+      class="form-control form-control-lg"
+      type="text"
+      placeholder={info.pin.placeholder}
+      required
+      id="zipcode"
+    />
+    <div class="form-error-container"></div>
+  </div>
+
+  <div class="col-12">
+    <label class="form-label fs-base" for="notes">{info.other}</label>
+    <textarea
+      name="entry.965069241"
+      class="form-control form-control-lg"
+      style="height: 150px;"
+      placeholder="Additional notes"
+      id="notes"
+    ></textarea>
+  </div>
+</div>

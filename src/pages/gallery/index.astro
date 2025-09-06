@@ -1,0 +1,48 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const albums = await getCollection("albums");
+const headings = await getEntry("common", "headings");
+// console.log(albums);
+---
+
+<Layout title="Gallery">
+  <div class="my-[120px]">
+    <!-- <Gallery /> -->
+    <div class="text-center">
+      <h1 class="text-5xl font-bold heading-1 z-10 mb-5 relative">{headings.data.gallery}
+        
+      </h1>
+      
+    </div>
+    <div class="mx-auto container max-w-screen-sm grid grid-col-1 md:grid-cols-2 lg:grid-col-3 gap-8">
+      {
+        albums.map((item) => (
+          <a
+            href={`/gallery/${item.id}`}
+            class="group transition-all mb-4 block"
+          >
+            <img
+              src={item.data.cover}
+              alt={item.data.title}
+              width="720"
+              height="480"
+              class="rounded-lg transition-all group-hover:shadow-lg group-hover:opacity-90"
+              loading="lazy"
+            />
+            <div class="mt-3 text-center text-neutral-800 body-text-1">
+              <h2 class="heading-3 font-semibold text-[20px] ">{item.data.title}</h2>
+
+              <p class="text-[18px] mt-1 mb-1 leading-tight font-normal">({item.data.date})</p>
+
+              {/* <p class="text-[18px]">{item.data.description}</p> */}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

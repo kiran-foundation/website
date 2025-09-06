@@ -1,0 +1,87 @@
+---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumb from "../../components/common/Breadcrumb.astro";
+import Hero from "../../components/common/Hero.astro";
+import TestimonialComponent from "../../components/common/TestimonialComponent.astro";
+import PageBottom from "../../components/shakti/PageBottom.astro";
+import TestimonialsCarousel from "../../components/common/TestimonialsCarousel.astro";
+import Videotestomonial from "../../components/shakti/videotestomonial.astro";
+import Mentors from "../../components/shakti/Mentors.astro";
+import WhyFinancial from "../../components/shakti/WhyFinancial.astro";
+import CourseDetail from "../../components/shakti/CourseDetail.astro";
+import WhatWeWill from "../../components/shakti/WhatWeWill.astro";
+import AfterTheCourse from "../../components/shakti/AfterTheCourse.astro";
+import PlainImage from "../../components/shakti/PlainImage.astro";
+---
+
+<Layout title="financial skills">
+  <main class="page-wrapper">
+    <Breadcrumb hidden={false} />
+    <Hero
+      bgcolor="none"
+      collection="shakti"
+      slug="financial-skills/hero"
+      imageWidth="504"
+      imageHeight="506"
+      greenlineheight="-bottom-[0.260rem]"
+    />
+    <WhyFinancial collection="shakti" slug="financial-skills/whyfinancial" />
+    <CourseDetail collection="shakti" slug="financial-skills/course-details" />
+    <WhatWeWill collection="shakti" slug="financial-skills/what-we-will" />
+    <PlainImage
+      css="md:mt-[84px]  max-w-[1296px]"
+      image="/assets/images/financial/financial-skills-1.png"
+    />
+    <AfterTheCourse collection="shakti" slug="financial-skills/after-the-course" />
+    <PlainImage
+      css="md:mt-40 mt-10 max-w-[960px]"
+      image="/assets/images/financial/investments-visual-1.png"
+    />
+    <PageBottom
+      slug="financial-skills/certificate"
+      collection="shakti"
+      sec="certificateSection"
+      className="mb-[60px] md:mb-[120px] mt-[80px] md:mt-[164px]"
+    />
+    <Videotestomonial
+      collection="shakti"
+      slug="financial-skills/video"
+      bg="bg-black"
+      className="md:mt-[164px] mb-[164px] mt-[96px]"
+    />
+    <Mentors collection="shakti" slug="financial-skills/mentors" />
+    <TestimonialsCarousel pageTag="shakti" />
+    <PageBottom
+      slug="financial-skills/resilient-society"
+      collection="shakti"
+      sec="bottomSection"
+      className=" md:mt-[164px] mt-[96px] mb-[96px] md:mb-[160px]"
+    />
+  </main>
+</Layout>
+
+<!-- Back to top button -->
+<a
+  class="btn-scroll-top"
+  href="#top"
+  data-scroll
+  aria-label="Scroll back to top"
+>
+  <svg
+    viewBox="0 0 40 40"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="20"
+      cy="20"
+      r="19"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-miterlimit="10"></circle>
+  </svg>
+  <i class="ai-arrow-up"></i>
+</a>

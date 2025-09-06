@@ -1,0 +1,82 @@
+---
+layout: default
+title: "Kiran Foundation : I am Possible!"
+---
+
+
+<div class="container">
+	<div class="columns col-wrapper">
+		<div>
+			<img src="{{ site.baseurl }}/images/ma/tribute.jpg" alt="Smt. Kiran Jain">
+		</div>
+		<div vertical-align="center">
+			<blockquote>
+				<p class="quote editable">“किसी प्रतिभाशाली युवा के सपने संसाधनों के अभाव में बिखर जाते हैं तो यह पूरे समाज की असफलता है, और हम समाज का ही हिस्सा हैं।”</p>
+			</blockquote>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+	<h1 class="editable brand-txt" align="center">About Us</h1>
+	<p class="editable para-offset " >
+		Ma Kiran Jain (17th Oct 1955 - 15th June 2015) used to say that "If a hardworking and talented youth, can not fulfill her/his dreams due to lack of resources, it is failure of the whole society". 
+		It was her wish that we must do all in our capability to fulfill the dream of a hardworking and talented youth. She strognly believed that diligent and hardworking people take the society on the path of progress.
+		If their dream are not supported, society starts to deteriorate. We must keep the hope and dreams alive! 
+	</p> <br/>
+	<p class="editable para-offset " >
+		Kiran Foundation was established with inspiration from her life. Her thoughts and vision are the foundation for our work. She had endured extreme hardship in her life, but always kept smile and hope true to her name. 
+		With this foundation we are hoping that her life will become inspiration for other people to bring happiness and progress in their life.
+	</p> <br/>
+ 	<p class="editable para-offset " >
+		
+	</p>
+</div>
+
+
+<!----div class="darker">
+	<div class="container">
+		<h2 class="editable brand3-txt">Volunteers</h2>
+		<div class="members">
+			{% assign volunteer_members = site.members | where: 'type', 'Volunteer' %}
+			
+			{% for member in volunteer_members limit:4 %}
+				<div class="member">
+					{% if member.more == true %}
+						<a href="{{ member.url }}"><div class="image" style="background-image: url({{ member.featured_image }})"></div></a>
+					{% else %}
+						<div class="image" style="background-image: url({{ member.featured_image }})"></div>
+					{% endif %}
+					<div class="member-content" align="center">
+						<h3><b>{{ member.title }}</b></h3>
+						<h3><b>{{ member.role }}</b></h3>
+						{% if member.media.email %}
+                    <a href="{{ member.media.email }}" target="_blank">
+                      <i class="fa fa-envelope" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+                  {% if member.media.linkedin %}
+                    <a href="{{ member.media.linkedin }}" target="_blank">
+                      <i class="fa fa-linkedin-square" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+                  {% if member.media.instagram %}
+                    <a href="{{ member.media.instagram }}" target="_blank">
+                      <i class="fa fa-instagram" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+						{% if member.more == true %}
+							<p><a href="{{ member.url }}" class="btn">Read more</a></p>
+						{% endif %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<br/>
+		<br/>
+		<div class="button" align="center">
+			<a class="#" href="/KF_Members/">See More</a>
+		</div>
+	</div>
+</div--->

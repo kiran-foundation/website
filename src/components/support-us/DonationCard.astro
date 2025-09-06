@@ -1,0 +1,100 @@
+---
+interface Props {
+  card: any;
+}
+
+const { card } = Astro.props;
+---
+
+<style>
+  #subscription-duration {
+    accent-color: #d33c0d !important;
+  }
+  select#subscription-duration {
+    accent-color: #d33c0d !important;
+  }
+</style>
+
+<div
+  class="w-full max-w-[23rem] bg-[#F5F5F5] rounded-3xl overflow-hidden py-4 lg:py-4"
+>
+  {/* Card Content */}
+  <div class="text-center text-black px-4">
+    {/* Card Header */}
+    <h3 class="text-xl mb-0">{card.total}</h3>
+
+    {/* Amount Display */}
+    <div
+      id="amountToDisplay"
+      class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl my-4 font-semibold font-poppins break-words"
+    >
+      ₹0
+    </div>
+
+    {/* Frequency */}
+    <div id="toBeDisplay" class="text-black/70 mb-4 text-sm sm:text-base">
+      per month
+    </div>
+
+    {/* Duration Selector */}
+    <div id="duration-selector" class="mb-6 px-2" style="display: none;">
+      <label class="text-sm text-black/70 mb-3 block font-poppins"
+        >Commitment Period</label
+      >
+      <select
+        id="subscription-duration"
+        class="w-full px-4 py-3 rounded-xl border-2 border-black/10 bg-white text-black font-poppins text-base
+               focus:outline-none focus:border-[#00AA5E] focus:ring-2 focus:ring-[#00AA5E]/20
+               hover:border-black/20 transition-all duration-200
+               appearance-none cursor-pointer shadow-sm"
+        style={`background-image: url('data:image/svg+xml;utf8,<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.3902 15.3957L16.8402 10.8508C16.9433 10.7457 17 10.6054 17 10.4557C17 10.3061 16.9433 10.1658 16.8402 10.0607L16.5126 9.72598C16.2991 9.50819 15.9521 9.50819 15.739 9.72598L12.0021 13.5424L8.26105 9.72175C8.15804 9.61663 8.02072 9.55859 7.8743 9.55859C7.72772 9.55859 7.5904 9.61663 7.48731 9.72175L7.15975 10.0564C7.05675 10.1616 7 10.3019 7 10.4515C7 10.6011 7.05675 10.7415 7.15975 10.8466L11.6139 15.3957C11.7172 15.5011 11.8552 15.5589 12.0018 15.5586C12.1491 15.5589 12.2869 15.5011 12.3902 15.3957Z" fill="%23666"/></svg>'); background-repeat: no-repeat; background-position: right 16px center; background-size: 26px;`}
+      >
+        <!-- Options will be populated dynamically by JavaScript -->
+      </select>
+      <div
+        id="commitment-display"
+        class="text-sm text-black/60 mt-2 font-poppins"
+      >
+        5 years commitment
+      </div>
+    </div>
+
+    {/* Description */}
+    <p class="text-black/70 mb-4 pb-2">
+      {card.description}
+    </p>
+
+    {/* Action Button */}
+    <div
+      id="donate-button-wrapper"
+      class="relative inline-block w-full md:w-auto"
+    >
+      <button
+        type="submit"
+        id="donate-now-button"
+        class="w-full md:w-auto h-[60px]
+         px-3 sm:px-5 md:px-6
+         py-2 sm:py-3 md:py-5
+         text-base lg:text-lg
+         font-poppins font-medium
+         rounded-md
+         bg-[#D33C0D] text-white
+         transition-all
+         hover:bg-[#D33C0D]
+         active:ring-2 active:ring-[#D33C0D]
+         mb-2
+         disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        <span class="mx-3">{card.button}</span>
+      </button>
+
+      <!-- Invisible overlay to capture clicks when button is disabled -->
+      <div
+        id="button-overlay"
+        class="absolute inset-0 cursor-not-allowed"
+        style="display: none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+---
+import { getEntry } from "astro:content";
+const aboutPratibha = (await getEntry("pratibha", "about")).data;
+const { title, description, imageGrid, image } = aboutPratibha;
+const { mt } = Astro.props;
+---
+<!-- 
+  Section: Intro
+  This section displays an introduction with a title, description, and images.
+  It dynamically renders content based on the `aboutPratibha` data.
+
+
+  .pratibha-heading
+  .pratibha-description  belong global css file tailwind once 
+  .pratibha-subtile 
+
+  mt props is used to set the margin-top of the section.
+  imageGrid is used to display a grid of images if no single image is provided.
+-->
+<section
+  class={`justify-center lg:max-w-[81rem] mx-auto ${mt} md:gap-16 gap-[40px] flex flex-col-reverse md:grid md:grid-cols-2  sm:gap-[1.5rem] md:items-center overflow-hidden`}
+>
+  <!-- Left Content: Title and Description -->
+  <div
+    class="lg:max-w-[39.75rem] mx-auto overflow-hidden my-auto"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    <h1 class="pratibha-heading py-[0.75rem] max-w-[39.75rem]">
+      {title}
+    </h1>
+
+    {description.map((item: string) => (
+      <p class="py-[0.75rem] pratibha-description">{item}</p>
+    ))}
+  </div>
+
+  <!-- Right Content: Image or Image Grid -->
+  <div
+    class="image-team-grid w-full xl:max-w-[39.75rem] mx-auto overflow-hidden"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    {image ? image && (
+      <!-- Single Image --> 
+      <div class="singleImage overflow-hidden">
+        <img src={image} alt="pratibha team image" class="w-full xl:max-w-[37.25rem] xl:max-h-[32.75rem]" />
+      </div>
+    ) : imageGrid && (
+      <!-- Image Grid -->
+      <div class="grid grid-cols-[65%_30%] grid-rows-[auto_1fr] gap-4 w-full h-full">
+        <!-- Top Image -->
+        <div class="team-top-image col-span-2 w-full h-full">
+          <img
+            src={imageGrid.image1}
+            alt="Top Image"
+            class="rounded-xl w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Bottom Left Image -->
+        <div class="bottom-left w-full h-full">
+          <img
+            src={imageGrid.image2}
+            alt="Bottom Left Image"
+            class="w-full h-full object-cover aspect-video rounded-xl"
+          />
+        </div>
+
+        <!-- Bottom Right Image -->
+        <div class="bottom-right w-full h-full">
+          <img
+            src={imageGrid.image3}
+            alt="Bottom Right Image"
+            class="rounded-xl w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    )}
+  </div>
+</section>

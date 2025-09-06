@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		{% seo %}
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+
+		<!-- Twitter -->
+		<meta property="twitter:url" content="https://kiran.foundation">
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+		<script src="https://kit.fontawesome.com/fa70a5b2a9.js" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+  				integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  				crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" 
+		      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" 
+			  crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" 
+				integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" 
+				crossorigin="anonymous"></script>
+		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
+			<script>
+				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', '{{ site.google_analytics_key }}', 'auto');
+				ga('send', 'pageview');
+			</script>
+			<script async src='https://www.google-analytics.com/analytics.js'></script>
+		{% endif %}
+
+		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
+
+       <!-- Favicons -->
+		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png" sizes="32x32">
+		<link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/favicons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="{{ site.baseurl }}/favicons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="{{ site.baseurl }}/favicons//apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="{{ site.baseurl }}/favicons//apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="{{ site.baseurl }}/favicons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="{{ site.baseurl }}/favicons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="{{ site.baseurl }}/favicons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/favicons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/favicons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="{{ site.baseurl }}/favicons//android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicons/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="{{ site.baseurl }}/favicons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicons/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png">
+	</head>
+	<body>	
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-nav">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="single-page-nav sticky-wrapper" id="tmNavbar">
+					<ul class="nav navbar-nav">
+						<a href="{{ site.baseurl }}/"><img class="kf-logo" src="{{ site.baseurl }}/branding/logo_home.png" height="75" alt="Logo" align="left"></a>
+						<li><a href="{{ site.baseurl }}/pratibha">Pratibha</a></li>
+						<li><a href="{{ site.baseurl }}/shakti">Shakti</a></li>
+						<li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+						<li><a href="{{ site.baseurl }}/donate">Donate</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="content">
+			{{content}}
+		</div>
+		<footer>
+			<p class="editor-link" style="margin-bottom: 20px;"><a href="cloudcannon:collections/_data/company.yml" class="btn"><strong>&#9998;</strong> Update footer</a></p>
+			<div class="container">
+
+				<div class="contact">
+					<p class="email">
+						<a href="mailto:{{ site.data.company.email }}">
+							{% include icons/footer.html icon="email" %} {{ site.data.company.email }}
+						</a>
+					</p>
+					<p class="phone">
+						<a href="tel:{{ site.data.company.phone | replace: ' ', '-' }}">
+							{% include icons/footer.html icon="phone" %} {{ site.data.company.phone }}
+						</a>
+					</p>
+				</div>
+
+				<div class="sharing">
+					<p>
+						<a class="facebook" href="https://www.facebook.com/{{ site.data.company.facebook }}">
+							{% include icons/social-media.html social_icon="facebook" %}
+						</a>
+						<a class="twitter" href="https://twitter.com/{{ site.data.company.twitter }}">
+							{% include icons/social-media.html social_icon="twitter" %}
+						</a>
+						<a class="youtube" href="https://youtube.com/{{ site.data.company.youtube }}">
+							{% include icons/social-media.html social_icon="youtube" %}
+						</a>
+						<a class="youtube" href=" https://www.instagram.com/kiran_trust/">
+							{% include icons/social-media.html social_icon="instagram" %}
+						</a>
+					</p>
+					<p class="phone">
+						<a href=" {{ site.data.company.whatsapp_link }}">
+							{% include icons/footer.html icon="whatsapp" %} {{ site.data.company.whatsapp }}
+						</a>
+					</p>
+					
+				</div>
+				<div class="about">
+					<p>
+						<a href="{{ site.baseurl }}/privacy">
+							Privacy Policy
+						</a>
+					</p>
+					<p>
+						<a href="{{ site.baseurl }}/about">
+							About Us
+						</a>
+					</p>
+				</div>
+			</div>
+			<!--div class="container">
+				<p>{{site.data.company.phrase }} </p>
+			</div-->
+		</footer>
+		<p class="copyright">
+			<a href="https://kiran.fooundation/">
+				Copyright © Kiran Social Foundation
+			</a>
+		</p>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$('a[href*=\\#]').on('click', function(event){
+				var el = $(this.hash);
+				if (el.length > 0) {
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+				}
+			});
+		$('.navbar-toggle').click(function(){
+        	$('.single-page-nav').toggleClass('show');
+        });
+
+        $('.single-page-nav a').click(function(){
+        	$('.single-page-nav').removeClass('show');
+        });
+        
+		</script>
+		<!--Start of Tawk.to Script-->
+		<script type="text/javascript">
+			var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+			(function(){
+			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+			s1.async=true;
+			s1.src='https://embed.tawk.to/649ed6b0cc26a871b0259146/1h467d8ii';
+			s1.charset='UTF-8';
+			s1.setAttribute('crossorigin','*');
+			s0.parentNode.insertBefore(s1,s0);
+			})();
+		</script>
+			<!--End of Tawk.to Script-->
+			<!-- Testimonial Script starts -->
+<script type="text/javascript">
+			
+	var swiper = new Swiper(".mySwiper", {
+	slidesPerView: 1,
+	grabCursor: true,
+	loop: true,
+	pagination: {
+	  el: ".swiper-pagination",
+	  clickable: true,
+	},
+	navigation: {
+	  nextEl: ".swiper-button-next",
+	  prevEl: ".swiper-button-prev",
+	},
+  });
+  
+  </script>
+  <!-- testimonial script ends -->
+
+	</body>
+</html>

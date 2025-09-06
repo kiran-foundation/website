@@ -1,0 +1,42 @@
+---
+layout: default
+title: Image Gallery | Kiran Foundation
+---
+
+
+<div class="container">
+    <div class="container-g">
+        
+        <div class="image-container">
+            <div class="image"><img src="/images/img-gallery/1.jpg" alt=""></div>
+            <div class="image"><img src="/images/img-gallery/2.jpg" alt=""></div>
+            <div class="image"><img src="/images/img-gallery/3.jpg" alt=""></div>
+            <div class="image"><img src="/images/img-gallery/4.jpg" alt=""></div>
+            <div class="image"><img src="/images/img-gallery/5.jpg" alt=""></div>
+            <div class="image"><img src="/images/img-gallery/1.jpg" alt=""></div>
+      
+                <div class="popup-image">
+                    <span>&times;</span>
+                    <h3>Welcome to Kiran Foundation</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iure adipisci
+                        eligendi nemo similique magni dicta officiis necessitatibus quos! Vel?</p>
+                    <img src="/images/img-gallery/1.jpg" alt="">
+                </div>       
+        
+        </div>
+
+    </div>
+</div>
+<script>
+document.querySelectorAll('.image-container img').forEach(image =>{
+    image.onclick =() =>{
+        document.querySelector('.popup-image').style.display ='block';
+        document.querySelector('.popup-image img').src = image.getAttribute('src');
+    } 
+        
+    });
+
+document.querySelector('.popup-image span').onclick = ()=>{
+    document.querySelector('.popup-image').style.display = 'none' ;
+}
+</script>

@@ -1,0 +1,262 @@
+---
+layout: default
+title: Kiran Pratibha | Kiran Foundation
+---
+<!--header>
+<div class="container">
+		{% include carousel.html height="50" unit="%" duration="7" number="1" %}
+	</div>
+</header-->
+
+<div class="container" >
+    <div class="columns col-wrapper" style="padding-top: 30px;" >
+        <div style="padding-top: 25px;">
+            <h1 class="editable brand-txt" align="center">Kiran Pratibha</h1>
+            
+            <p> Kiran Foundation offers scholarships to exceptional but underprivileged youth in their endeavors of
+               Education, Sports or Art, according to their interest and abilities. The foundation will be offering 
+               active guidance and personalized mentoring along with Financial Support. The sole aim of the foundation is 
+               to make these kids capable and successful.
+
+            </p>
+            <br/>
+            <div class="button" align="center">
+                <!-- a href="https://forms.gle/DUSrs5XhL5poHebA9">Apply</a-->
+
+                <a href="/faq/">FAQ</a>
+            </div>
+        </div>
+        <div >
+            <span class="image-center" ><img src="{{ site.baseurl }}/images/einstein.png" alt="Pratibha"/> </span>
+        </div>	 
+    </div>   
+</div>
+
+<div class="container">
+	<h1 class="editable" style="text-align: center;"> What we offfer </h1> <br/>  <br/>
+	<div class="columns">
+		<div>
+			<img src="{{ site.baseurl }}/images/money-plant.png"" width="600" alt="img">
+		</div>
+		<div>
+			<h2 class="editable">Financial Support</h2>
+			<p class="editable">The foundation will provide complete financial support to aid the scholar in his/her pursuit. This includes fees, accommodation, travel, purchase of books, equipment etc.
+            </p>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="columns col-wrapper">
+		
+		<div>
+			<h2 class="editable">Personal Mentoring</h2>
+
+			<p class="editable">Our team at foundation will work closely with each child. The team will gather nacessary resources and connections. Each child will be provided a personal mentor, who will be available for support at any given time.
+			</p> 
+		</div>
+		<div>
+			<img src="{{ site.baseurl }}/images/mentor.png" width="600" alt="img">
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<h1 class="editable" style="text-align: center;"> Selection </h1> <br/>  <br/>
+	<div class="columns">
+		<div>
+			<img src="{{ site.baseurl }}/images/selection.png" width="600" alt="img">
+		</div>
+		<div>
+			<h2 class="editable">Eligibility</h2>
+			<p class="editable">
+                <ul>
+                  <li>Monthly income of the Family should be less than Rs. 20,000. </li>
+                  <li>Child should have passed 8th Standard or 14 Years of age.</li>
+                  <li>Child should have shown enormous potential in his/her field of interest.</li> 
+                </ul>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="columns col-wrapper">
+		<div>
+			<h2 class="editable">Selection Process</h2>
+			<p class="editable">
+                <ul>
+                    <li> Application Submitted by the applicant </li>
+                    <li> Application filtering based on documents</li>
+                    <li> Due diligence and background checks</li>
+                    <li> Telephonic Inrerview</li>
+                    <li> Home Visit</li>
+                    <li> Decision Announced by the committee</li>
+                </ul>
+           </p> 
+		</div>
+		<div>
+			<img src="{{ site.baseurl }}/images/interview.png" width="600" alt="img">
+		</div>
+	</div>
+</div>
+		
+<div class="container">
+  <h2 style="color: #F1592A;">What Our Students Say </h2>
+  <section class="testi-container">
+    <div class="testimonial mySwiper">
+      <div class="testi-content swiper-wrapper">
+        {% assign pratibha_testi = site.testis | where: 'tags', 'kfpratibha' %}
+        {% for testi in pratibha_testi %}
+
+        <div class="slide swiper-slide">
+          <img src="{{ testi.featured_image }}" alt="" class="image" />
+          <p>{{ testi.content }}</p>
+          <i class="bx bxs-quote-alt-left quote-icon"></i>
+          <div class="details">
+            <span class="name">{{ testi.title }}</span>
+            <span class="job">{{ testi.place }}</span>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+      <div class="swiper-button-next nav-btn"></div>
+      <div class="swiper-button-prev nav-btn"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+</div>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      grabCursor: true,
+      loop: true,
+      autoplay: {
+delay: 3000, 
+},
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+<div class="darker0">
+	<div class="container">
+		<h2 class="editable brand3-txt">Kiran Pratibha Students</h2>
+		<div class="members">
+      {% assign student_members = site.members | where: 'type', 'Student' %}
+			
+			{% for member in student_members limit:4 %}
+				<div class="member">
+					{% if member.more == true %}
+						<a href="{{ member.url }}"><div class="image" style="background-image: url({{ member.featured_image }})"></div></a>
+					{% else %}
+						<div class="image" style="background-image: url({{ member.featured_image }})"></div>
+					{% endif %}
+					<div class="member-content">      
+						<h3><b>{{ member.title }}</b></h3>
+						        {% if member.media.email %}
+                    <a href="{{ member.media.email }}" target="_blank">
+                      <i class="fa fa-envelope" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+                  {% if member.media.linkedin %}
+                    <a href="{{ member.media.linkedin }}" target="_blank">
+                      <i class="fa fa-linkedin-square" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+                  {% if member.media.instagram %}
+                    <a href="{{ member.media.instagram }}" target="_blank">
+                      <i class="fa fa-instagram" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+						{% if member.more == true %}
+							<p><a href="{{ member.url }}" class="btn">Read more</a></p>
+						{% endif %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<br/>
+		<br/>
+		<div class="button" align="center">
+			<a class="#" href="/pratibha-students/">See More</a>
+		</div>
+	</div>
+</div>
+
+
+<!--div class="container">
+    <h2 class="editable">Current Students</h2>
+    <p class="editor-link"></p>
+    <ul class="thirds">
+        <li>
+            <div class="image">{% include icons/site.html icon = "population" %}</div>
+            <h3 class="editable">किरण प्रतिभा</h3>
+            <p class="editable"> Sports or Art according to their interest and abilities. </p>
+        </li>
+        <li>
+            <div class="image">{% include icons/site.html icon = "population" %}</div>
+            <h3 class="editable">किरण प्रतिभा</h3>
+            <p class="editable"> Sports or Art according to their interest and abilities. </p>
+        </li>
+        <li>
+            <div class="image">{% include icons/site.html icon="economy" %}</div>
+            <h3 class="editable">किरण शक्ति</h3>
+            <p class="editable"> . We not only train them but also connect them to opportunities based on thier skills and constraints.</p>
+        </li>
+
+        <li>
+            <div class="image">{% include icons/site.html icon="conditions" %}</div>
+            <h3 class="editable">किरण ज्ञान</h3>
+            <p class="editable">. We also provide one-on-one career counselling and guidence on the need basis.</p>
+        </li>
+
+        <li>
+            <div class="image">{% include icons/site.html icon="conditions" %}</div>
+            <h3 class="editable">किरण सम्मान</h3>
+            <p class="editable"> working on restoring the respect and equality for people with disability.</p>
+        </li>
+    </ul>
+</div>       
+<div class="container">
+    <h2 class="editable">FAQ</h2>
+    {% include accordion.html %}
+</div -->
+
+
+  <!--div class="darker">
+    <div class="container">
+      <h2 class="editable brand3-txt">Updates</h2>
+      <p class="editor-link"><a href="cloudcannon:collections/_posts" class="btn"><strong>&#9998;</strong> Add Update</a></p>
+      <div class="posts">
+        {% for post in site.posts limit:3 %}
+        
+          <div class="post">
+            {% if post.more == true %}
+            <a href="{{ post.url }}" ><div class="image" style="background-image: url({{ post.featured_image}})"></div> </a>
+            {% else %}
+            <div class="image" style="background-image: url({{ post.featured_image}})"></div>
+            {% endif %}
+            <div class="post-content">
+              <h3> <b>{{ post.title }}</b></h3>
+              {{ post.summary }}
+              {% if post.more == true %}
+                <p ><a href="{{ post.url }}" class="btn"> read more</a></p>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <br/>
+      <br/>
+      <center>
+      <a  class="know_more" href="/pratibhastudents/">Know More</a>
+      </center>
+    </div>
+  </div-->

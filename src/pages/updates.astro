@@ -1,0 +1,16 @@
+---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import UpdateComponent from "../components/common/UpdateComponent.astro";
+import Layout from "../layouts/Layout.astro";
+import { getEntry } from "astro:content";
+interface Props {
+  title: string;
+}
+---
+  <Layout title="Updates" generator={Astro.generator}>
+    <main class="page-wrapper">
+      <UpdateComponent />
+    </main>
+    
+  </Layout>

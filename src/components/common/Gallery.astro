@@ -1,0 +1,43 @@
+---
+import { getEntry } from "astro:content";
+const { collection, slug } = Astro.props;
+const team = await getEntry(collection, slug) as { data?: { people: any[] } } | undefined;
+const { people } = team?.data ?? { people: [] };
+---
+
+<div
+    class="row row-cols-1 row-cols-sm-2 g-4 max-w-[1296px] mx-auto mt-[96px] mb-[196px]"
+>
+    {
+        people.map(({ name, role, image, social, connectLink }) => (
+            <div class="col max-w-[400px] group">
+                <div class="card-hover pb-4 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3 flex flex-col justify-center items-center   ">
+                    <div class="position-relative ">
+                        <img
+                            class="rounded-3xl transition duration-100 group-hover:brightness-75"
+                            src={image}
+                            alt="Image"
+                            loading="lazy"
+                        />
+                   {social &&      <div class="d-flex justify-content-center position-absolute  bottom-0 w-full px-8 mb-8 opacity-0">
+                            <a
+                                class=" rounded-lg text-white border-white border-1 md:py-8  px-6 w-full  h-[60px]  py-2 font-bold mx-auto flex items-center justify-center"
+                                style="font-family: Poppins; font-weight: 700; font-size: 18px; line-height: 100%; letter-spacing: 0%; text-align: center;"
+                                href={connectLink}
+                                aria-label="Dribbble"
+                            >
+                                {social}
+                            </a>
+                        </div>}
+                    </div>
+                    <div class=" xs:w-[400px] max-w-[400px]  pt-4 space-y-4 pb-4">
+                        <h3 class=" mb-2 text-center heading-3">{name}</h3>
+                        <h3 class="fs-lg body-text-2 text-center text-[#1E1E1E]">
+                            {role}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        ))
+    }
+</div>

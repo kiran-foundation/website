@@ -1,0 +1,47 @@
+---
+const { heading, items } = Astro.props;
+---
+
+<div class="container w-full md:w-3/4 mx-auto py-12 px-4 my-[120px]">
+  <h1 class="text-4xl heading-1 mb-6 text-center lg:mb-[60px]">{heading}</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-[20px]">
+    {
+      items.map((item) => {
+        const filePath = item.data.file.startsWith("/")
+          ? item.data.file
+          : `/${item.data.file}`;
+
+        return (
+          <div class="bg-[#f1f1f1] w-72 h-fit p-3 relative hover:shadow-lg transition-shadow">
+            <a
+              href={filePath}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block"
+            >
+              <div class="relative">
+                <img
+                  src={item.data.image || "/assets/images/defaultImage.png"}
+                  alt={item.data.title}
+                  class="w-full h-72 object-contain object-center border-black border-1"
+                />
+                <span class="bg-black absolute left-0 top-0 px-1 py-1 text-xs body-text-1 text-white rounded-br-md">
+                  {item.data.fileType.toUpperCase()}
+                </span>
+              </div>
+            </a>
+            <div class="details w-full mt-3">
+              <h3 class="body-text-2 leading-tight text-md text-[#1e1e1e]">
+                {item.data.title}
+              </h3>
+              <h5 class="text-sm text-[#49494C] font-normal body-text-3">
+                {item.data.author}
+              </h5>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</div>

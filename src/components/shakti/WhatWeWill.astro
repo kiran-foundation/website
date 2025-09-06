@@ -1,0 +1,73 @@
+---
+import { getEntry } from "astro:content";
+
+import MessageCard from "./MessageCard.astro";
+const { collection, slug } = Astro.props;
+const courseDetails = (await getEntry(collection, slug)) as {
+  data: {
+    title: string;
+    messageCard: {
+      type: string;
+      mentorImage: string;
+      mentor: string;
+      message: string;
+    }[];
+    response: {
+      intro: string;
+      point: string[];
+      outro: string;
+      mentorImage: string;
+      mentor: string;
+    };
+  };
+};
+const { title, messageCard, response } = courseDetails.data;
+---
+
+<div class="mx-auto max-w-[1260px] md:mt-40 mt-20">
+  <div class="flex flex-col gap-2 px-4">
+    <h3 class="heading-1 md:mb-32 mb-[32px]">{title}</h3>
+    <div class="mx-auto max-w-[1056px]">
+      <div class="mx-auto">
+        {
+          messageCard.map((msg) => (
+            <div class="flex justify-end">
+              <MessageCard
+                type={msg.type}
+                mentorImage={msg.mentorImage}
+                mentor={msg.mentor}
+                message={msg.message}
+              />
+            </div>
+          ))
+        }
+        <div class="flex justify-start !text-[#1E1E1E]" data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-offset="280"
+          data-disable-parallax-down="sm"
+          >
+          <div
+            class="body-text-2 py-6 self-center flex flex-col-reverse md:flex-row-reverse w-fit rounded-lg mb-[48px] md:mb-[80px] px-4 md:gap-16 bg-[#F1F1F1]"
+          >
+            <h3 class="self-center pr-16 body-text-3">
+              {response.intro}
+              <ul class="list-disc pl-6 space-y-2 pt-3 pb-3">
+                {response.point.map((point) => <li>{point}</li>)}
+              </ul>
+              {response.outro}
+            </h3>
+            <div class="flex flex-col align-top self-start md:items-center">
+              <img
+                src={response.mentorImage}
+                class="rounded-full"
+                alt=""
+                width="120px"
+              />
+              <h4 class="md:text-center">{response.mentor}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

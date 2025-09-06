@@ -1,0 +1,348 @@
+---
+layout: default
+---  
+<div class="container">
+    <h2 class="orange-text section_title" style="text-align: center; color: white;"> . </h2>
+    <h2 class="orange-text section_title" style="text-align: center; color: white;"> . </h2>
+    <h2 class="orange-text section_title" style="text-align: center;"> {{ page.course_name }} </h2>
+    <h4 class="orange-text section_title" style="text-align: center;"> {{ page.course_teacher}}</h4><br>
+    <p class="tm-box-p">
+        {{ page.course_description }} <b> {{ page.course_status }}</b>
+    </p>
+
+    <div class="button" align="center">
+      <a href="{{page.google_classroom_link}}">Google Classroom</a>
+    </div> 
+    <br>
+
+    <div class="tm-box-p">
+        <p>
+            <!-- Week1 start -->
+            {% if page.session.week1.course_heading %}
+                <b style="font-size: 20px;">{{ page.session.week1.course_heading }} </b> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week1.homework_link %}
+                <b> Homework : </b> <a href="{{ page.session.week1.homework_link }}" target="_blank" style="color:#F1592A;"> Homework link  </a> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week1.presentation_link %}
+                <b> Presentation : </b> <a href="{{ page.session.week1.presentation_link }}" target="_blank" style="color: #F1592A;"> Presentation link </a> <br>  
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week1.presentation_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week1.presentation_status }} </b> <br>
+            {% endif %} <br>
+
+            {% if page.session.week1.classrecording_link %}
+                <b> Class Recording : </b><a href="{{ page.session.week1.classrecording_link }}" target="_blank" style="color: #F1592A;"> Class Recording link  </a> <br>
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week1.classrecording_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;">{{ page.session.week1.recording_status}} </b> <br>
+            {% endif %} <br>
+            <!--end-->
+
+
+
+            <!-- Week2 start -->
+            {% if page.session.week2.course_heading %}
+                <b style="font-size: 20px;">{{ page.session.week2.course_heading }} </b> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week2.homework_link %}
+                <b> Homework : </b> <a href="{{ page.session.week2.homework_link }}" target="_blank" style="color:#F1592A;"> Homework link  </a> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week2.presentation_link %}
+                <b> Presentation : </b> <a href="{{ page.session.week2.presentation_link }}" target="_blank" style="color: #F1592A;"> Presentation link </a> <br>  
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week2.presentation_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week2.presentation_status }} </b> <br>
+            {% endif %} <br>
+
+            {% if page.session.week2.classrecording_link %}
+                <b> Class Recording : </b><a href="{{ page.session.week2.classrecording_link }}" target="_blank" style="color: #F1592A;"> Class Recording link  </a> <br>
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week2.classrecording_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week2.recording_status}} </b> <br>
+            {% endif %} <br>
+            <!--end-->
+
+
+
+            <!-- Week3 start -->
+            {% if page.session.week3.course_heading %}
+                <b style="font-size: 20px;">{{ page.session.week3.course_heading }} </b> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week3.homework_link %}
+                <b> Homework : </b> <a href="{{ page.session.week3.homework_link }}" target="_blank" style="color:#F1592A;"> Homework link  </a> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week3.presentation_link %}
+                <b> Presentation : </b> <a href="{{ page.session.week3.presentation_link }}" target="_blank" style="color: #F1592A;"> Presentation link </a> <br>  
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week3.presentation_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week3.presentation_status }} </b> <br>
+            {% endif %} <br>
+
+            {% if page.session.week3.classrecording_link %}
+                <b> Class Recording : </b><a href="{{ page.session.week3.classrecording_link }}" target="_blank" style="color: #F1592A;"> Class Recording link  </a> <br>
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week3.classrecording_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;">{{ page.session.week3.recording_status }} </b> <br>
+                <br>
+            {% endif %} <br>
+            <!--end-->
+                
+            
+
+            <!-- Week4 start -->
+            {% if page.session.week4.course_heading %}
+                <b style="font-size: 20px;">{{ page.session.week4.course_heading }} </b> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week4.homework_link %}
+                <b> Homework : </b> <a href="{{ page.session.week4.homework_link }}" target="_blank" style="color:#F1592A;"> Homework link  </a> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week4.presentation_link %}
+                <b> Presentation : </b> <a href="{{ page.session.week4.presentation_link }}" target="_blank" style="color: #F1592A;"> Presentation link </a> <br>  
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week4.presentation_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week4.presentation_status }} </b> <br>
+            {% endif %} <br>
+
+            {% if page.session.week4.classrecording_link %}
+                <b> Class Recording : </b><a href="{{ page.session.week4.classrecording_link }}" target="_blank" style="color: #F1592A;"> Class Recording link  </a> <br>
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week4.classrecording_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week4.recording_status}} </b> <br>
+                <br>
+            {% endif %} <br>
+            <!--end-->
+
+
+
+            <!-- Week5 start -->
+            {% if page. session.week5.course_heading %}
+                <b style="font-size: 20px;">{{ page.session.week5.course_heading }} </b> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week5.homework_link %}
+                <b> Homework : </b> <a href="{{ page.session.week5.homework_link }}" target="_blank" style="color:#F1592A;"> Homework link  </a> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week5.presentation_link %}
+                <b> Presentation : </b> <a href="{{ page.session.week5.presentation_link }}" target="_blank" style="color: #F1592A;"> Presentation link </a> <br>  
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week1.presentation_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week5.presentation_status }} </b> <br>
+                <br>
+            {% endif %} <br>
+
+            {% if page.session.week5.classrecording_link %}
+                <b> Class Recording : </b><a href="{{ page.session.week5.classrecording_link }}" target="_blank" style="color: #F1592A;"> Class Recording link  </a> <br>
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week5.classrecording_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week5.recording_status}} </b> <br>
+                <br>
+            {% endif %} <br>
+            <!--end-->
+
+
+
+            <!-- Week6 start -->
+            {% if page.session.week6.course_heading %}
+                <b style="font-size: 20px;">{{ page.session.week6.course_heading }} </b> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week6.homework_link %}
+                <b> Homework : </b> <a href="{{ page.session.week6.homework_link }}" target="_blank" style="color:#F1592A;"> Homework link  </a> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week6.presentation_link %}
+                <b> Presentation : </b> <a href="{{ page.session.week6.presentation_link }}" target="_blank" style="color: #F1592A;"> Presentation link </a> <br>  
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week6.presentation_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week6.presentation_status }} </b> <br>
+                <br>
+            {% endif %} <br>
+
+            {% if page.session.week6.classrecording_link %}
+                <b> Class Recording : </b><a href="{{ page.session.week6.classrecording_link }}" target="_blank" style="color: #F1592A;"> Class Recording link  </a> <br>
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week6.classrecording_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week6.recording_status}} </b> <br>
+                <br>
+            {% endif %} <br>
+            <!--end-->
+
+
+
+            <!-- Week7 start -->
+            {% if page. session.week7.course_heading %}
+                <b style="font-size: 20px;">{{ page.session.week7.course_heading }} </b> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week7.homework_link %}
+                <b> Homework : </b> <a href="{{ page.session.week7.homework_link }}" target="_blank" style="color:#F1592A;"> Homework link  </a> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week7.presentation_link %}
+                <b> Presentation : </b> <a href="{{ page.session.week7.presentation_link }}" target="_blank" style="color: #F1592A;"> Presentation link </a> <br>  
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week7.presentation_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;">{{ page.session.week7.presentation_status }} </b> <br>
+            {% endif %} <br>
+
+            {% if page.session.week7.classrecording_link %}
+                <b> Class Recording : </b><a href="{{ page.session.week7.classrecording_link }}" target="_blank" style="color: #F1592A;"> Class Recording link  </a> <br>
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week7.classrecording_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week7.recording_status}}</b> <br>
+                <br>
+            {% endif %} <br>
+            <!--end-->
+
+
+            <!-- Week8 start -->
+            {% if page. session.week8.course_heading %}
+                <b style="font-size: 20px;">{{ page.session.week8.course_heading }} </b> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week8.homework_link %}
+                <b> Homework : </b> <a href="{{ page.session.week8.homework_link }}" target="_blank" style="color:#F1592A;"> Homework link  </a> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week8.presentation_link %}
+                <b> Presentation : </b> <a href="{{ page.session.week8.presentation_link }}" target="_blank" style="color: #F1592A;"> Presentation link </a> <br>  
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week8.presentation_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week8.presentation_status }} </b> <br>
+            {% endif %} <br>
+
+            {% if page.session.week8.classrecording_link %}
+                <b> Class Recording : </b><a href="{{ page.session.week8.classrecording_link }}" target="_blank" style="color: #F1592A;"> Class Recording link  </a> <br>
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week8.classrecording_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;">{{ page.session.week8.recording_status}} </b> <br>
+            {% endif %} <br>
+            <!--end-->
+
+
+
+            <!-- Week9 start -->
+            {% if page.session.week9.course_heading %}
+                <b style="font-size: 20px;">{{ page.session.week9.course_heading }} </b> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week9.homework_link %}
+                <b> Homework : </b> <a href="{{ page.session.week9.homework_link }}" target="_blank" style="color:#F1592A;"> Homework link  </a> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week9.presentation_link %}
+                <b> Presentation : </b> <a href="{{ page.session.week9.presentation_link }}" target="_blank" style="color: #F1592A;"> Presentation link </a> <br>  
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week9.presentation_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week9.presentation_status }} </b> <br>
+            {% endif %} <br>
+
+            {% if page.session.week9.classrecording_link %}
+                <b> Class Recording : </b><a href="{{ page.session.week9.classrecording_link }}" target="_blank" style="color: #F1592A;"> Class Recording link  </a> <br>
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week9.classrecording_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;">{{ page.session.week9.recording_status}} </b> <br>
+            {% endif %} <br>
+            <!--end-->
+
+
+
+            <!-- Week10 start -->
+            {% if page.session.week10.course_heading %}
+                <b style="font-size: 20px;">{{ page.session.week10.course_heading }} </b> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week10.homework_link %}
+                <b> Homework : </b> <a href="{{ page.session.week10.homework_link }}" target="_blank" style="color:#F1592A;"> Homework link  </a> <br>
+                <br>
+            {% endif %}
+
+            {% if page.session.week10.presentation_link %}
+                <b> Presentation : </b> <a href="{{ page.session.week10.presentation_link }}" target="_blank" style="color: #F1592A;"> Presentation link </a> <br>  
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week10.presentation_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;"> {{ page.session.week10.presentation_status }} </b> <br>
+            {% endif %} <br>
+
+            {% if page.session.week10.classrecording_link %}
+                <b> Class Recording : </b><a href="{{ page.session.week10.classrecording_link }}" target="_blank" style="color: #F1592A;"> Class Recording link  </a> <br>
+                <br>
+                <iframe width="100%" height="315" src="{{ page.session.week10.classrecording_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+                <br>
+                {% else %}
+                <b style="color: #F1592A;">{{ page.session.week10.recording_status}} </b> <br>
+            {% endif %} <br>
+            <!--end-->
+        </p>
+    </div>
+    <div class="content">
+        {{content}}
+    </div>
+</div>

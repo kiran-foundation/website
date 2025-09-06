@@ -1,0 +1,105 @@
+---
+import { getEntry } from "astro:content";
+const values = (await getEntry("home", "values")).data;
+import Button from "../common/button.astro";
+---
+
+<!-- Main Container with same styling as programs section -->
+<div
+  class="max-w-[1296px] mx-auto mt-[86px] lg:mt-[11.5rem] flex items-center flex-col !overflow-hidden"
+>
+  <!-- Values Heading Section -->
+  <div
+    class="flex items-center justify-center flex-col text-center space-y-4 w-full lg:mx-6 xl:mx-0"
+  >
+    <h3
+      class="text-4xl lg:text-5xl font-normal font-merriweather text-[#1E1E1E] tracking-[-2.25%] leading-[150%]"
+    >
+      {values.vision.title}
+    </h3>
+  </div>
+<!-- ------------mobile only---------------- -->
+  <div
+    class="flex lg:hidden lg:max-w-[480px] xl:max-w-[692px] xl:max-h-[652px] mx-[24px]  mt-10 xl:mt-[7.5rem]"
+    data-aos="fade-left"
+    data-aos-duration="600"
+    data-aos-offset="280"
+  >
+    <h2 class="text-3xl font-bold text-[#1E1E1E] font-merriweather">
+      {values.maa.title}
+    </h2>
+    <q class="text-2xl xl:text-6xl block mb-[1.5rem] xl:mb-12 text-center text-[#49494C] ">
+      <p
+        class="inline text-xl md:text-xl lg:text-3xl 2xl:text-[2.3rem] leading-[38px] xl:leading-[3rem] font-poppins italic text-[#49494C] font-light"
+      >
+        {values.maa.quote}
+      </p>
+    </q>
+  </div>
+
+  <!-- Values Content Container -->
+  <section
+    class="overflow-hidden mt-10 xl:mt-[7.5rem] w-full flex flex-col lg:flex-row items-center justify-center gap-16"
+  >
+    <div
+      class="xl:max-w-[540px] xl:max-h-[594px] mx-[24px] xl:mx-0"
+      data-aos="fade-right"
+      data-aos-duration="600"
+      data-aos-offset="100px"
+    >
+      <div>
+        <img
+          class="w-full md:w-[720px] lg:w-full h-full rounded-3xl filter"
+          src="/assets/images/Homepage/maa-kiran.webp"
+          alt="Maa Kiran portrait"
+          loading="lazy"
+        />
+      </div>
+      <div class="flex items-center justify-center mt-4">
+        <p
+          class="flex items-center flex-col sm:flex-row gap-2 sm:block font-bold text-xl text-gray-800"
+        >
+          {values.maa.name}
+          <span
+            class="font-poppins font-normal text-[18px] leading-[38px] tracking-[1px] text-center text-[#1E1E1E]"
+          >
+            {values.maa.lifespan}
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="lg:max-w-[480px] xl:max-w-[692px] xl:max-h-[652px] mx-[24px] xl:mx-0 p-1"
+      data-aos="fade-left"
+      data-aos-duration="600"
+      data-aos-offset="350"
+    >
+      <h2 class="text-3xl font-bold text-[#1E1E1E] font-merriweather">
+        {values.maa.title}
+      </h2>
+      <q class="hidden lg:block  text-2xl xl:text-6xl  mb-[1.5rem] xl:mb-12 text-[#49494C] ">
+        <p
+          class="inline text-xl md:text-xl lg:text-3xl 2xl:text-[2.3rem] leading-[38px] xl:leading-[3rem] font-poppins italic text-[#49494C] font-light"
+        >
+          {values.maa.quote}
+        </p>
+      </q>
+      <p
+        class="mb-[1.7rem] xl:mb-12 text-base lg:text-lg text-[#49494C] font-poppins font-normal !leading-[36px]"
+      >
+        {values.maa.step}
+      </p>
+      <div>
+        <Button link="/about" title="Read more" btn="btn2" widthClass="w-full md:w-[150px]" />
+      </div>
+    </div>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </section>
+</div>

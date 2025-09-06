@@ -1,0 +1,136 @@
+---
+import { getEntry } from "astro:content";
+const componentheroData = (await getEntry("donation", "hero")).data;
+---
+
+<section
+  class="position-relative"
+  style="margin-top: 4rem;margin-bottom: 5rem;"
+>
+  <div
+    class="position-absolute object-fit-cover w-100 h-100 top-0 start-0 bg-size-cover bg-position-center mt-4"
+    style="background-image: url(/assets/images/programs/donationhero1.png);"
+  >
+  </div>
+
+  <div class="hero-container">
+    <h1 class="hero-title display-0 text-white pt-5 z-2">
+      {componentheroData.heading}
+    </h1>
+
+    <div
+      class="container position-relative z-2 text-center pt-5 donation-form-container"
+    >
+      <div
+        class="donation-form-wrapper p-4 bg-white shadow rounded form-container"
+      >
+        <div class="form-img">
+          <img
+            src="/assets/images/programs/formimage.png"
+            alt=""
+            class="formm-imgg"
+          />
+        </div>
+        <div class="formm">
+          <h3 class="form-title mb-4">{componentheroData.subheading}</h3>
+          <form>
+            <!-- Donation Amount -->
+            <div class="mb-3">
+              <label class="form-label">{componentheroData.label}</label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationAmount"
+                  id="amount500"
+                  value="500"
+                  checked
+                />
+                <label class="form-check-label" for="amount500"
+                  >{componentheroData.price1}</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationAmount"
+                  id="amount1000"
+                  value="1000"
+                />
+                <label class="form-check-label" for="amount1000"
+                  >{componentheroData.price2}</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationAmount"
+                  id="amount5000"
+                  value="5000"
+                />
+                <label class="form-check-label" for="amount5000"
+                  >{componentheroData.price3}</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationAmount"
+                  id="customAmount"
+                  value="custom"
+                />
+                <label class="form-check-label" for="customAmount"
+                  >{componentheroData.custom}</label
+                >
+              </div>
+            </div>
+
+            <!-- Donation Frequency -->
+            <div class="mb-3">
+              <label class="form-label">{componentheroData.freq}</label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationFrequency"
+                  id="monthly"
+                  value="monthly"
+                  checked
+                />
+                <label class="form-check-label" for="monthly"
+                  >{componentheroData.monthly}</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="donationFrequency"
+                  id="onetime"
+                  value="onetime"
+                />
+                <label class="form-check-label" for="onetime"
+                  >{componentheroData.onetime}</label
+                >
+              </div>
+            </div>
+            <p class="form-text mt-3">
+              {componentheroData.para}
+            </p>
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn btn-secondary"
+                >{componentheroData.cancel}</button
+              >
+              <button type="submit" class="btn btn-primary"
+                >{componentheroData.donate}</button
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,222 @@
+---
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+import Preloading from "./preloading.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  author?: string;
+  generator?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogUrl?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImage?: string;
+}
+
+const {
+  title,
+  description,
+  keywords,
+  author,
+  generator,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogUrl,
+  twitterTitle,
+  twitterDescription,
+  twitterImage,
+} = Astro.props;
+
+import { getEntry } from "astro:content";
+const common = (await getEntry("common", "common")).data;
+
+// Ensure we have fallback values
+const finalOgImage = ogImage || common.ogImage || "/preview.png";
+const finalTwitterImage =
+  twitterImage ||
+  ogImage ||
+  common.twitterImage ||
+  common.ogImage ||
+  "/preview.png";
+import "../styles/global.css";
+// import "/assets/css/global.css"
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content={title ?? common.title} />
+    <meta name="description" content={description ?? common.description} />
+    <meta name="keywords" content={keywords ?? common.keywords} />
+    <meta name="author" content={author ?? common.author} />
+    <meta name="generator" content={generator ?? common.generator} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={ogUrl ?? common.ogUrl} />
+    <meta property="og:title" content={ogTitle ?? common.ogTitle} />
+    <meta property="og:site_name" content="Kiran Foundation" />
+    <meta
+      property="og:description"
+      content={ogDescription ?? common.ogDescription}
+    />
+    <meta
+      property="og:image"
+      content={finalOgImage.startsWith("http")
+        ? finalOgImage
+        : `https://deploy-preview-318--kfastro.netlify.app${finalOgImage}`}
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={ogUrl ?? common.ogUrl} />
+    <meta
+      property="twitter:title"
+      content={twitterTitle ??
+        ogTitle ??
+        title ??
+        common.twitterTitle ??
+        common.ogTitle ??
+        common.title}
+    />
+    <meta
+      property="twitter:description"
+      content={twitterDescription ??
+        ogDescription ??
+        description ??
+        common.twitterDescription ??
+        common.ogDescription ??
+        common.description}
+    />
+    <meta
+      property="twitter:image"
+      content={finalTwitterImage.startsWith("http")
+        ? finalTwitterImage
+        : `https://deploy-preview-318--kfastro.netlify.app${finalTwitterImage}`}
+    />
+    <meta property="twitter:image:width" content="1200" />
+    <meta property="twitter:image:height" content="630" />
+
+    <!-- Hotjar Tracking Code for https://www.kiran.foundation -->
+    <script is:inline src="/assets/js/hotjar.js"></script>
+    <link rel="stylesheet" href="/assets/css/global.css" />
+    <link rel="stylesheet" href="/assets/css/theme.min.css" />
+    <link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      id="google-font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Kiran Foundation" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <script>
+      (function () {
+        window.onload = function () {
+          // Preloader logic
+          const preloader = document.querySelector(".page-loading");
+          const load = document.querySelector(".load");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+            load.classList.remove("load-Div");
+            load.remove();
+          }, 150);
+
+          // Tawk.to Script logic
+          var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+          var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+          s1.async = true;
+          s1.src = "https://embed.tawk.to/649ed6b0cc26a871b0259146/1h467d8ii";
+          s1.charset = "UTF-8";
+          s1.setAttribute("crossorigin", "*");
+          s0.parentNode.insertBefore(s1, s0);
+        };
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Page loading spinner -->
+    <Header />
+    <Preloading />
+    <slot />
+    <Footer />
+    <a
+      class="btn-scroll-top"
+      href="#top"
+      data-scroll
+      aria-label="Scroll back to top"
+    >
+      <svg
+        viewBox="0 0 40 40"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="20"
+          cy="20"
+          r="19"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-miterlimit="10"></circle>
+      </svg>
+      <i class="ai-arrow-up"></i>
+    </a>
+
+    <script src="/assets/js/theme.min.js" is:inline></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"
+    ></script>
+    <script src="jarallax/dist/jarallax.min.js"></script>
+    <script src="simplebar/dist/simplebar.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer></script>
+    <script>
+      import AOS from "aos";
+      AOS.init();
+    </script>
+  </body>
+</html>

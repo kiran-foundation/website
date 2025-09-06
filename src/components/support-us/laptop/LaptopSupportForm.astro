@@ -1,0 +1,184 @@
+---
+import { getEntry } from "astro:content";
+const formEntry = await getEntry("support-us", "laptop/form");
+
+if (!formEntry) throw new Error("Form content not found");
+
+const { title, fields, submit, success, fail } = formEntry.data as {
+  title: string;
+  fields: Record<string, { label: string; placeholder: string }>;
+  submit: string;
+  success: string;
+  fail: string;
+};
+---
+
+<section
+  class="bg-[#F1F1F1] max-w-[81rem] mx-auto px-4 mb-[10.25rem] md:rounded-2xl mt-[120px]"
+>
+  <form
+    id="device-support-form"
+    class="mx-auto px-0 max-w-[50rem] py-[2.5rem] sm:pt-[7.5rem] sm:pb-[10.5rem]"
+    novalidate
+  >
+    <h1
+      class="px-1 m-0 pb-[5rem] font-poppins !font-[500] text-center !text-[1.5rem] !md:text-[2rem] tracking-normal !leading-[120%]"
+    >
+      {title}
+    </h1>
+
+    <div class="form-input-container m-0 pt-0 pb-[3rem]">
+      <label for="name">{fields.name.label}</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder={fields.name.placeholder}
+        required
+      />
+      <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+    </div>
+    <div class="form-input-container m-0 pt-0 pb-[3rem]">
+      <label for="email">{fields.email.label}</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder={fields.email.placeholder}
+        required
+      />
+      <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+    </div>
+    <div class="form-input-container m-0 pt-0 pb-[3rem]">
+      <label for="phone">{fields.phone.label}</label>
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        placeholder={fields.phone.placeholder}
+        required
+      />
+      <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+    </div>
+
+    <!-- Two column layout for City and Pin code -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-[3rem]">
+      <div class="form-input-container m-0 pt-0 pb-0">
+        <label for="city">{fields.city.label}</label>
+        <input
+          id="city"
+          name="city"
+          type="text"
+          placeholder={fields.city.placeholder}
+          required
+        />
+        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+      </div>
+      <div class="form-input-container m-0 pt-0 pb-0">
+        <label for="pincode">{fields.pincode.label}</label>
+        <input
+          id="pincode"
+          name="pincode"
+          type="text"
+          placeholder={fields.pincode.placeholder}
+          required
+        />
+        <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+      </div>
+    </div>
+
+    <div class="form-input-container m-0 pt-0 pb-[3rem]">
+      <label for="address">{fields.address.label}</label>
+      <input
+        id="address"
+        name="address"
+        type="text"
+        placeholder={fields.address.placeholder}
+        required
+      />
+      <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+    </div>
+
+    <div class="form-input-container m-0 pt-0 md:pb-[5rem] pb-8">
+      <label for="description">{fields.description.label}</label>
+      <textarea
+        id="description"
+        name="description"
+        placeholder={fields.description.placeholder}
+        rows="5"
+        required></textarea>
+      <div class="form-error Error-text text-[#D33C0D] mt-1 hidden"></div>
+    </div>
+
+    <button
+      type="submit"
+      class="form-submit-button h-[60px] px-[2rem] w-full md:w-[11.375rem] rounded-[8px] bg-[#D33C0D] text-[1rem] font-[700] leading-[2rem] text-center border-none cursor-pointer text-white disabled:bg-opacity-70 disabled:cursor-not-allowed hover:bg-[#72321E] active:ring-2 active:ring-[#D33C0D] active:bg-[#72321E]"
+    >
+      {submit}
+    </button>
+
+    <div id="form-success" class="hidden mt-6 body-text-2 text-green-500">
+      {success}
+    </div>
+    <div id="form-fail" class="hidden mt-6 body-text-2 text-[#D33C0D]">
+      {fail}
+    </div>
+  </form>
+
+  <script>
+    import { setupForm } from "../../../utils/laptopForm";
+    setupForm("device-support-form", "form-success", "form-fail");
+  </script>
+</section>
+
+<style>
+  /* Toast animation styles */
+  .toast-notification {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Smooth transitions for error states */
+  input,
+  textarea {
+    transition: border-color 0.2s ease;
+  }
+
+  .form-error {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Error state for inputs */
+  input.error,
+  textarea.error {
+    border-color: #d33c0d !important;
+  }
+
+  /* Placeholder styling */
+  input::placeholder,
+  textarea::placeholder {
+    color: #49494c;
+    opacity: 0.6;
+  }
+</style>

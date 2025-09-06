@@ -1,0 +1,60 @@
+---
+layout: default
+title: More Students | Kiran Foundation
+---
+<div class="darker">
+  <div class="container" style="padding: 20px 60px;">
+    <h2 class="editable brand3-txt">Kiran Pratibha Students</h2>
+    <div class="members">
+      <div class="row">
+        {% assign count = 0 %}
+        {% for member in site.members %}
+          {% if member.type == 'Student' %}
+            <div class="col-sm-3 col-md-3">
+              <div class="member">
+                {% if member.more == true %}
+                  <a href="{{ member.url }}"><div class="image" style="background-image: url({{ member.featured_image }})"></div></a>
+                {% else %}
+                  <div class="image" style="background-image: url({{ member.featured_image }})"></div>
+                {% endif %}
+                <div class="member-content" align="center">
+                  <h3><b>{{ member.title }}</b></h3>
+                  {% if member.media.email %}
+                    <a href="{{ member.media.email }}" target="_blank">
+                      <i class="fa fa-envelope" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+                  {% if member.media.linkedin %}
+                    <a href="{{ member.media.linkedin }}" target="_blank">
+                      <i class="fa fa-linkedin-square" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+                  {% if member.media.instagram %}
+                    <a href="{{ member.media.instagram }}" target="_blank">
+                      <i class="fa fa-instagram" style="font-size:24px"></i>
+                    </a>
+                  {% endif %}
+                  {% if member.more == true %}
+                    <p><a href="{{ member.url }}" class="btn">Read more</a></p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            
+            {% assign count = count | plus: 1 %}
+            {% if count == 4 %}
+             
+              {% assign count = 0 %}
+              {% if forloop.last == false %}
+                <div class="row">
+                </div>
+                <br/>
+                <br/>
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

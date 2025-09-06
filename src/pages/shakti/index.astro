@@ -1,0 +1,70 @@
+---
+import "aos/dist/aos.css";
+import "jarallax/dist/jarallax.min.css";
+import Breadcrumb from "../../components/common/Breadcrumb.astro";
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/common/Hero.astro";
+import CertificateSection from "../../components/shakti/CertificateSection.astro";
+import PageBottom from "../../components/shakti/PageBottom.astro";
+import Pillars from "../../components/shakti/Pillars.astro";
+import Videotestomonial from "../../components/shakti/videotestomonial.astro";
+
+---
+
+<script src="/assets/js/theme.min.js" is:inline></script>
+
+<script>
+  import AOS from "aos";
+  AOS.init();
+</script>
+<script src="jarallax/dist/jarallax.min.js"></script>
+<script src="simplebar/dist/simplebar.min.js"></script>
+<link rel="stylesheet" href="/assets/css/theme.min.css" />
+<link rel="stylesheet" href="/assets/icons/around-icons.min.css" />
+
+<Layout title="Shakti">
+  <!-- Page wrapper -->
+  <main class="page-wrapper">
+    <Breadcrumb url={Astro.url} />
+    <Hero collection="shakti" slug="hero" imageWidth="560.28" height="580.26" greenlineheight="-bottom-[0.260rem]" />
+    <Pillars collection="shakti" slug="pillars" />
+    <CertificateSection />
+    <!-- <Videotestomonial/> -->
+    <Videotestomonial
+      collection="shakti"
+      slug="video"
+      bg="bg-black"
+      className="md:mt-[164px] md:mb-[164px] mb-[80px] mt-[96px]"
+    />
+
+    <PageBottom
+      slug="financial-skills/resilient-society"
+      collection="shakti"
+      sec="bottomSection"
+      className=" md:mt-[164px] mt-[80px] mb-[96px] md:mb-[160px]"
+    />
+  </main>
+
+  <a
+    class="btn-scroll-top"
+    href="#top"
+    data-scroll
+    aria-label="Scroll back to top"
+  >
+    <svg
+      viewBox="0 0 40 40"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="20"
+        cy="20"
+        r="19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"></circle>
+    </svg>
+    <i class="ai-arrow-up"></i>
+  </a>
+</Layout>

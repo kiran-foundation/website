@@ -1,0 +1,213 @@
+---
+layout: default
+title: "Essential Law For Women : I am Possible!"
+---
+<header>
+	<div class="container">
+		<!--div class="lawvideo">
+		<video width="100%" controls>
+			<source src="/videos/PLANNING TO PURSUE LAW AFTER YOUR +2 (3).mp4" type="video/mp4">
+		 
+		  </video>
+		</div-->
+	</div>
+</header>
+
+
+<div class="container">
+	<div class="columns col-wrapper">
+		<div>
+			<img src="{{ site.baseurl }}/images/Law/law.png" width="600" alt="img">
+		</div>
+		<div vertical-align="center">
+			<h1 class="editable brand-txt" align="center" style="font-size: 30px;">Why learn LAW FOR WOMEN</h1>
+			<p class="editable" align="center">
+				Kiran Foundation presents "Everyday Law For Women", which is a special course designed with essential 
+				legal information, which every woman of this nation should be aware of. This course covers topics such 
+				as sexual harassment in the workplace, right to private defense, domestic violence, right to free legal 
+				aid, maternity benefits, right to get an equal share in the inheritance, and about national commision 
+				for women. The course will last three weeks, with two classes every week on Wednesday and Friday at 
+				2:00 p.m. We will try to answer all your queries during the course. The participants who complete all
+				6 classes will also receive a certificate at the end of the course.
+			</p>
+			<br>
+			<br>
+		</div>
+	</div>
+</div>
+
+
+
+<!---div class="shaktipage">
+<div class="darker">
+	<div class="container">
+		<h2 class="editable brand3-txt">Past Programs</h2>
+		<div class="row">
+			<div class="column">
+			  <img src="/images/Law/efs2021.png" alt="Snow" style="width:100%; border: 5px solid #fff; outline: 2px solid #f47a54;">
+			  <br/>
+			  <br/>
+			  <h2 style="color: black; font-size: 15px;">Law Course 2021</h2>
+			</div>
+			<div class="column">
+			  <img src="/images/Law/efs2022(1).png" alt="Forest" style="width:100%; border: 5px solid #fff; outline: 2px solid #f47a54;">
+			  <br/>
+			  <br/>
+			  <h2 style="color: black; font-size: 15px;">Law Course 2022</h2>
+			</div>
+			<div class="column">
+			  <img src="/images/Law/efs2022(2).png" alt="Mountains" style="width:100%; border: 5px solid #fff; outline: 2px solid #f47a54;">
+			  <br/>
+			  <br/> 
+			  <h2 style="color: black; font-size: 15px;">Law Course 2022</h2>
+			</div>
+		  </div>
+		  <div class="button" align="center">
+			<a class="#" href="https://classroom.google.com/c/NTM2MTE4OTExNDMz?cjc=nbo47zi" target="_blank">Join Classroom</a>
+		</div> 
+	</div>
+</div>
+</div--->
+
+
+
+<div class="shaktipage">
+	<div>
+		<div class="container">
+			<b>
+				<h1 class="editable brand-txt" align="center" style="font-size: 30px;">Videos</h1>
+			</b>
+
+			<div class="row">
+				<div class="column">
+					<iframe width="460" height="315" src="https://www.youtube.com/embed/-Cer8iOoPrw"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen alt="Snow"
+						style="width:100%; border: 5px solid #fff; outline: 5px solid #f47a54;"></iframe>
+				</div>
+				<div class="column">
+					<iframe width="460" height="315" src="https://www.youtube.com/embed/7lcvcUNrsOY"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen alt="Snow"
+						style="width:100%; border: 5px solid #fff; outline: 5px solid #f47a54;"></iframe>
+				</div>
+				<div class="column">
+					<iframe width="460" height="315" src="https://www.youtube.com/embed/e30pdt-JMJM"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen alt="Snow"
+						style="width:100%; border: 5px solid #fff; outline: 5px solid #f47a54;"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="darker">
+	<div class="container">
+		<h2 class="editable brand3-txt">MEET OUR TEACHERS</h2>
+		<div class="members" style="justify-content: center;">
+			{% assign teacher_members = site.members | where: 'type', 'lawTeacher' %}
+
+			{% for member in teacher_members limit:4 %}
+			<div class="member">
+				{% if member.more == true %}
+				<a href="{{ member.url }}">
+					<div class="image" style="background-image: url({{ member.featured_image }})"></div>
+				</a>
+				{% else %}
+				<div class="image" style="background-image: url({{ member.featured_image }})"></div>
+				{% endif %}
+				<div class="member-content" align="center">
+					<h3><b>{{ member.title }}</b></h3>
+					{% if member.media.email %}
+					<a href="{{ member.media.email }}" target="_blank">
+						<i class="fa fa-envelope" style="font-size:24px"></i>
+					</a>
+					{% endif %}
+					{% if member.media.linkedin %}
+					<a href="{{ member.media.linkedin }}" target="_blank">
+						<i class="fa fa-linkedin-square" style="font-size:24px"></i>
+					</a>
+					{% endif %}
+					{% if member.media.instagram %}
+					<a href="{{ member.media.instagram }}" target="_blank">
+						<i class="fa fa-instagram" style="font-size:24px"></i>
+					</a>
+					{% endif %}
+					{% if member.more == true %}
+					<p><a href="{{ member.url }}" class="btn">Read more</a></p>
+					{% endif %}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- testimonial -->
+
+<div class="container">
+	<h2>Course Reviews</h2>
+	<section class="testi-container">
+		<div class="testimonial mySwiper">
+			<div class="testi-content swiper-wrapper">
+				{% assign law_testi = site.testis | where: 'tags', 'law' %}
+				{% for testi in law_testi %}
+
+				<div class="slide swiper-slide">
+					<img src="{{ testi.featured_image }}" alt="" class="image" />
+					<p>{{ testi.content }}</p>
+					<i class="bx bxs-quote-alt-left quote-icon"></i>
+					<div class="details">
+						<span class="name">{{ testi.title }}</span>
+						<span class="job">{{ testi.place }}</span>
+					</div>
+				</div>
+
+				{% endfor %}
+			</div>
+			<div class="swiper-button-next nav-btn"></div>
+			<div class="swiper-button-prev nav-btn"></div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</section>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+	var swiper = new Swiper(".mySwiper", {
+		slidesPerView: 1,
+		grabCursor: true,
+		loop: true,
+		autoplay: {
+			delay: 3000,
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+	});
+</script>
+
+
+<div class="darker mt-10">
+	<div class="container">
+		<h2 class="editable"> Join Shakti Group </h2>
+		<p class="editable" style="text-align: center;"> We run regular courses and workshops under the Kiran Shakti
+			program, join our WhatsApp group to get the latest updates on Kiran Shakti Program and connect with
+			like-minded progressive women.
+			<br />
+			<br />
+		<div class="button" align="center">
+			<a href="{{site.data.company.whatsapp_link2 }}"> <i class="fa fa-whatsapp" aria-hidden="true"
+					style="font-size : 20px ;""></i> &nbsp; &nbsp; Conact on Whatsapp </a>
+		</div>
+	</div>
+</div>

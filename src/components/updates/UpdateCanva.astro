@@ -1,0 +1,29 @@
+---
+import { getEntry } from "astro:content";
+const componentUpdateCanva = (
+  await getEntry("updates", "2023-05-06-shakti-canva")
+).data;
+---
+
+<div class="container" style="margin-top: 150px;">
+  {componentUpdateCanva.info}
+  <br />
+  {componentUpdateCanva.paragraph}
+  <br />
+  <br />
+  <br />
+
+  <div class="button" style="align-items: center;">
+    <a href="https://forms.gle/wAMS7Ns9n7Sw1SKX8"
+      >{componentUpdateCanva.register}</a
+    >
+  </div>
+  <br />
+  <br />
+  <a href="https://forms.gle/wAMS7Ns9n7Sw1SKX8"
+    ><img
+      src="/images/posts/canva2023.png"
+      style="border: 1px solid #888;"
+    /></a
+  >
+</div>

@@ -1,0 +1,105 @@
+---
+import { getEntry } from "astro:content";
+import Button from "../common/button.astro";
+
+// Fetch the content entry for "future-builder"
+const futurebuilder = await getEntry("pratibha", "future-builder");
+
+// Destructure the fetched data
+const { title, paragraphs, button, imageGrid, image } = futurebuilder?.data ?? {};
+const { mt } = Astro.props;
+---
+<section class={`flex flex-col-reverse md:grid items-center justify-center mx-auto overflow-hidden max-w-[81rem] gap-20 md:gap-16 md:grid-cols-2 ${mt}`}>
+  <!-- Text Content Column -->
+  <div 
+    class="mx-auto w-full overflow-hidden lg:max-w-[39.75rem]"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    <!-- Title -->
+    <h1 class="pratibha-subheading mb-6">
+      {title}
+    </h1>
+
+    <!-- Paragraphs -->
+    {paragraphs && paragraphs.map((par: string) => (
+      <p class="pratibha-description mb-4" data-aos="fade-up">
+        {par}
+      </p>
+    ))}
+
+    <!-- Button -->
+    <div class="flex flex-col mt-[3rem] overflow-hidden sm:flex-row"     data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg">
+    <!-- <Button
+    link={button?.herf}
+    title={button?.text}
+    btn="btn2"
+    widthClass="w-[13.0625rem] !md:w-[13.0625rem] !lg:w-[13.0625rem] !xl:w-[13.0625rem] "
+    heightClass="h-[60px]"
+  /> -->
+  <button
+  onclick={`window.location.href='${button?.herf}'`}
+  class={`font-poppins font-semibold  h-[3.75rem] text-lg lg:text-lg lg:h-[3.75rem] w-full md:w-[13.0625rem]  !rounded-[0.5rem] sm:rounded-md bg-[#00AA5E] transition-all text-black hover:bg-[#00FF8D] active:ring-2 active:ring-[#00AA5E] active:bg-[#00FF8D]`}
+>
+  {button?.text}
+</button>
+    </div> 
+  </div>
+
+  <!-- Image Content Column -->
+  <div
+    class="w-full mx-auto overflow-hidden lg:max-w-[37.25rem]"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+    data-aos-offset="120px"
+    data-disable-parallax-down="lg"
+  >
+    {image ? (
+      <!-- Single Image -->
+      <div class="w-full aspect-[596/382]">
+        <img 
+          src={image} 
+          alt="" 
+          class="w-full h-full object-cover rounded-lg shadow-lg"
+          loading="lazy"
+
+        />
+      </div>
+    ) : (
+      <!-- Image Grid -->
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Top Image (full width) -->
+        <div class="col-span-2 aspect-video">
+          <img
+            src={imageGrid.image}
+            alt=""
+            class="w-full h-full object-cover rounded-xl shadow-xl"
+          />
+        </div>
+
+        <!-- Bottom Left Image -->
+        <div class="aspect-video">
+          <img
+            src={imageGrid.image2}
+            alt=""
+            class="w-full h-full object-cover rounded-xl shadow-xl"
+          />
+        </div>
+
+        <!-- Bottom Right Image -->
+        <div class="aspect-video">
+          <img
+            src={imageGrid.image3}
+            alt=""
+            class="w-full h-full object-cover rounded-xl shadow-xl"
+          />
+        </div>
+      </div>
+    )}
+  </div>
+</section>
