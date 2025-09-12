@@ -11,10 +11,10 @@ import Values from "../components/home/Values.astro";
 import TestimonialsCarousel from "../components/common/TestimonialsCarousel.astro";
 import OurSupporters from "../components/home/Supporters.astro";
 import Trusted from "../components/home/Accreditation.astro";
+import SankalpPage from "./sankalp/sankalpPage.astro"; //Just Checking how it works
 ---
 
-<Layout title="Kiran Foundation"
->
+<Layout title="Kiran Foundation">
   <main class="page-wrapper">
     <Hero />
     <!-- <Statistics /> -->
@@ -25,6 +25,7 @@ import Trusted from "../components/home/Accreditation.astro";
     <TestimonialsCarousel pageTag="home"/>
     <OurSupporters/>
     <Updates  isMainPage={true} /> 
+    <SankalpPage/>
   </main>
 </Layout>
 

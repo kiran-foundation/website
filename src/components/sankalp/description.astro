@@ -1,0 +1,593 @@
+---
+
+---
+
+<style>
+  /* CSS from your Tailwind classes converted to vanilla CSS */
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap');
+
+  :root {
+    --primary-color: #f97316; 
+    --primary-gradient: linear-gradient(90deg, #fb923c, #f97316);
+    --background-color: #fff7ed;
+    --card-color: #fff;
+    --text-foreground: #1a202c;
+    --text-muted: #718096; 
+    --shadow-warm: 0 10px 15px -3px rgba(251, 146, 60, 0.4);
+  }
+
+  body, html {
+    margin: 0; padding: 0;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    background: var(--background-color);
+    color: var(--text-foreground);
+  }
+
+  .min-h-screen {
+    min-height: 100vh;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .p-6 {
+    padding: 1.5rem;
+  }
+
+  .p-4 {
+    padding: 1rem;
+  }
+
+  .p-8 {
+    padding: 2rem;
+  }
+
+  .p-12 {
+    padding: 3rem;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .mt-6 {
+    margin-top: 1.5rem;
+  }
+
+  .mt-8 {
+    margin-top: 2rem;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .text-lg {
+    font-size: 1.125rem;
+  }
+
+  .text-muted-foreground {
+    color: var(--text-muted);
+  }
+
+  .bg-gradient-primary {
+    background: var(--primary-gradient);
+  }
+
+  .hover-opacity {
+    transition: opacity 0.3s ease;
+  }
+  .hover-opacity:hover {
+    opacity: 0.9;
+  }
+
+  .rounded-2xl {
+    border-radius: 1rem;
+  }
+
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+
+  .font-hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+
+ button {
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    color: white;
+    background: var(--primary-gradient);
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.125rem;
+    user-select: none;
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  button.outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+ 
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .book-container {
+    background: var(--card-color);
+    border-radius: 1rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    perspective: 1000px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+  }
+
+  .book-spine {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #fb923c, #f97316);
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  .page-left, .page-right {
+    position: relative;
+    padding: 3rem;
+    overflow: hidden;
+  }
+
+  .page-left {
+    border-right: 1px solid #fb923c;
+    background: linear-gradient(to bottom right, #fff, #fef3c7);
+    backface-visibility: hidden;
+transform-style: preserve-3d;
+  }
+
+  .page-right {
+    background: linear-gradient(to bottom left, #fff, #fef3c7);
+    backface-visibility: hidden;
+transform-style: preserve-3d;
+  }
+
+  .page-turn-left, .page-turn-right {
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes pageTurnLeft {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(-180deg); }
+  }
+
+  @keyframes pageTurnRight {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(180deg); }
+  }
+
+  
+  .page-turn-left {
+    animation-name: pageTurnLeft;
+  }
+
+  .page-turn-right {
+    animation-name: pageTurnRight;
+  }
+
+  .text-foreground {
+    color: var(--text-foreground);
+  }
+
+  .small-text {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .btn-center {
+    flex-grow: 1;
+  }
+
+  .emoji-large {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .thankyou-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .final-affirmation {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .close-ghost {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+  }
+
+  .nav-hint {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+ .book-cover-orange {
+   background: linear-gradient(135deg, #ffb347 0%, #ffcc33 40%, #f97316 80%, #b35300 100%);
+  box-shadow: 0px 8px 25px rgba(179, 83, 0, 0.6);
+  position: relative;
+  border: 1px solid #e67300; 
+  border-radius: 0.5rem;
+  }
+  
+
+    @media screen and (max-width: 768px) {
+      .book-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .page-left, .page-right {
+        padding: 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid #fb923c;
+      }
+      .page-left {
+        border-bottom: 1px solid #fb923c;
+      }
+      .book-spine {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .closed-book-wrapper {
+        max-width: 90%;
+        aspect-ratio: 3 / 4;
+      }
+      button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+   .open-book-btn {
+  background:linear-gradient(90deg, #5a4300, #963f02) ;
+  transition: background 0.3s ease;
+}
+
+.open-book-btn:hover {
+  background: var(--primary-gradient);
+}
+</style>
+
+<div id="book-interface" class="min-h-screen flex items-center justify-center p-6" 
+     style="background-image: url('/background.png'); background-size: cover; background-position: center; background-repeat: no-repeat; font-family: 'Noto Serif', serif;">
+
+ <template id="closed-book-template">
+  <div class="flex flex-col items-center justify-center relative" style="box-shadow:6px 0.5px 32px 10px #ffffff;">
+    <!-- Book Container with Perspective -->
+    <div class="relative w-72 h-96 perspective-2000" style="perspective: 2000px;">
+      <!-- Inner Book (3D container) -->
+      <div class="inner-book relative flex items-center w-full h-full" style="transform-style: preserve-3d; ">
+        
+        <!-- Front Cover -->
+        <div
+          class="book-cover-orange relative w-full h-full rounded-md shadow-lg border-[3px] border-orange-400 overflow-hidden"
+          style="transform: rotateY(-20deg); z-index: 5;"
+        >
+          <!-- Spine Simulation -->
+          <div class="absolute left-0 top-0 h-full w-4 rounded-l-md shadow-inner" style="background-color: #8f5e2c;"></div>
+          <!-- Book Title -->
+          <div class="flex flex-col items-center justify-center h-full px-6 text-center">
+            <img src="../../../public/logo.png" alt="" class="w-60 mb-4"/>
+           
+  <!-- Button -->
+    <button id="open-book-btn" class="open-book-btn mt-1 text-white font-semibold py-2 px-6 rounded shadow-md font-hindi">
+      Open
+    </button>
+          </div>
+        </div>
+
+        <!-- Pages behind the cover -->
+        <div class="page bg-amber-200 rounded-r-md shadow-inner" style="width: calc(100% - 20px); height: calc(100% - 2px); position: absolute; right: -3px; top: 0; border-radius: 0 0.75rem 0.75rem 0; box-shadow: inset 0 -1px 2px rgba(50,50,50,0.2), inset -1px 0 1px rgba(150,150,150,0.1); transform: rotateY(-20deg) translateZ(-5px); z-index: 4;"></div>
+        <div class="page bg-white rounded-r-md shadow-inner" style="width: calc(100% - 20px); height: calc(100% - 4px); position: absolute; right: -6px; top: 0; border-radius: 0 0.75rem 0.75rem 0; box-shadow: inset 0 -1px 2px rgba(50,50,50,0.2), inset -1px 0 1px rgba(150,150,150,0.1); transform: rotateY(-20deg) translateZ(-5px); z-index: 3;"></div>
+        <div class="page bg-amber-200 rounded-r-md shadow-inner" style="width: calc(100% - 20px); height: calc(100% - 6px); position: absolute; right: -9px; top: 0; border-radius: 0 0.75rem 0.75rem 0; box-shadow: inset 0 -1px 2px rgba(50,50,50,0.2), inset -1px 0 1px rgba(150,150,150,0.1); transform: rotateY(-20deg) translateZ(-5px); z-index: 2;"></div>
+        <div class="page bg-white rounded-r-md shadow-inner" style="width: calc(100% - 20px); height: calc(100% - 8px); position: absolute; right: -12px; top: 0; border-radius: 0 0.75rem 0.75rem 0; box-shadow: inset 0 -1px 2px rgba(50,50,50,0.2), inset -1px 0 1px rgba(150,150,150,0.1); transform: rotateY(-20deg) translateZ(-5px); z-index: 1;"></div>
+        <div class="page bg-amber-200 rounded-r-md shadow-inner" style="width: calc(100% - 20px); height: calc(100% - 10px); position: absolute; right: -15px; top: 0; border-radius: 0 0.75rem 0.75rem 0; box-shadow: inset 0 -1px 2px rgba(50,50,50,0.2), inset -1px 0 1px rgba(150,150,150,0.1); transform: rotateY(-20deg) translateZ(-5px); z-index: 0;"></div>
+        
+      </div>
+    </div>
+
+  
+  </div>
+</template>
+
+
+
+  <template id="open-book-template">
+    <div style="position:relative; max-width: 900px; width: 100%;">
+      <div class="book-container">
+        <div class="book-spine"></div>
+
+        <div id="left-page" class="page-left">
+          <!-- Left page content inserted by JS -->
+        </div>
+
+        <div id="right-page" class="page-right">
+          <!-- Right page content inserted by JS -->
+        </div>
+
+        <button id="close-book-btn" class="close-ghost" aria-label="पुस्तक बंद करें">&times;</button>
+      </div>
+
+      <div class="nav-hint text-center font-hindi text-white">
+        <p>Navigate using the arrow keys or the space bar • Press ESC to close</p>
+      </div>
+    </div>
+  </template>
+</div>
+
+<script is:inline>
+  const bookContent = [
+    {
+      title: "किरण फाउंडेशन: एक उन्नत समाज का संकल्प",
+      content: `15 जून 2025, को किरण फाउंडेशन द्वारा 'संकल्प दिवस' का आयोजन इंदौर में उत्साहपूर्वक संपन्न हुआ। कार्यक्रम की शुरुआत फाउंडेशन की प्रेरणा स्रोत मां किरण जैन को श्रद्धांजलि अर्पित कर की गई। किरण फाउंडेशन की संस्थापना के संकल्प को याद करते हुए आगामी वर्षों की कार्य योजना का सूत्रपात किया गया। संस्थापक अनुराग जैन ने आगामी वर्षों में भारतवर्ष के हर जिले के १० प्रतिभाशाली युवाओं तक पहुँच कर उनके सपनों को उड़ान देने के ध्येय की प्रस्तावना रखी।`
+    },
+    {
+      title: "कार्यक्रम में प्रतिभा का प्रदर्शन",
+      content: `कार्यक्रम में किरण प्रतिभा के युवाओं ने नुक्कड़ नाटक, लघु नाटिका और डॉक्यूमेंट्री के ज़रिए फाउंडेशन के कार्यों और सोच को प्रस्तुत किया। अदिति जैन एवं तनुज समद्दर को उनकी प्रेरणादायक उपलब्धियों के लिए अति विशिष्ट प्रतिभा से सम्मानित किया गया। किरण प्रतिभा के अंतर्गत चयनित सभी प्रतिभाशाली विद्यार्थियों को भी सम्मानित किया गया, जिससे उनका उत्साह और आत्मविश्वास बढ़ा।`
+    },
+    {
+      title: "समर्थन और भागीदारी",
+      content: `PW (फिजिक्सवाला) फाउंडेशन की ओर से सुश्री साक्षी राणा ने किरण फाउंडेशन का अनुमोदन किया एवं उनके समाजिक परिवर्तन के इस अभियान में पूर्ण समर्थन का आश्वासन दिया। इसके अलावा संस्था इंदौरियन, हिंदी साहित्य परिषद एवं भारतीय विद्या भवन की भागीदारी ने भी इस संकल्प को और अधिक मजबूत बनाया।`
+    },
+    {
+      title: "नवाचार और डिजिटल पहल",
+      content: `कार्यक्रम के दौरान संस्था की वार्षिक पत्रिका 'नवचेतना' का लोकार्पण किया गया। डिजिटल युग में कदम रखते हुए, इस अवसर पर किरण फाउंडेशन की नई वेबसाइट और मोबाइल ऐप का लोकार्पण किया गया, जिसे यूरोप और भारत में किरण फाउंडेशन के समर्पित वॉलंटियर्स ने पूर्ण किया।`
+    },
+    {
+      title: "किरण शक्ति और महिला सशक्तिकरण",
+      content: `इसके साथ ही किरण शक्ति से जुड़ी महिलाओं ने अपने जीवन के प्रेरक अनुभव साझा किए और महारानी अहिल्या बाई की इस पावन भूमि पर स्वयं को भी उतना ही दृढ़ और आत्मविश्वासी बनाने का संकल्प लिया। किरण शक्ति के अंतर्गत फाउंडेशन घरेलू महिलाओं को आत्मनिर्भर बनाने हेतु उन्हें दैनिक जीवनोपयोगी कौशलों से प्रशिक्षित करती है।`
+    },
+    {
+      title: "लक्ष्य और संकल्प",
+      content: `किरण फाउंडेशन का लक्ष्य ऐसे समाज का निर्माण करना है जहां प्रतिभा एवम् परिश्रम ही सफलता का सर्वोच्च मापदंड हो।`
+    }
+  ];
+
+  const finalAffirmation = "🌟 आपके छोटे प्रयास भी बड़े परिवर्तन ला सकते हैं। अपने संकल्प पर अडिग रहें। 🌟";
+
+  const bookInterface = document.getElementById('book-interface');
+  const closedBookTemplate = document.getElementById('closed-book-template');
+  const openBookTemplate = document.getElementById('open-book-template');
+
+  let isBookOpen = false;
+  let currentPage = 0;
+  let isPageTurning = false;
+
+  function renderClosedBook() {
+    bookInterface.innerHTML = '';
+    bookInterface.appendChild(closedBookTemplate.content.cloneNode(true));
+    const openBtn = bookInterface.querySelector('#open-book-btn');
+    openBtn.addEventListener('click', () => {
+      isBookOpen = true;
+      currentPage = 0;
+      renderOpenBook();
+    });
+  }
+
+  function renderOpenBook() {
+    bookInterface.innerHTML = '';
+    bookInterface.appendChild(openBookTemplate.content.cloneNode(true));
+
+    const leftPage = document.getElementById('left-page');
+    const rightPage = document.getElementById('right-page');
+    const closeBtn = document.getElementById('close-book-btn');
+
+    closeBtn.addEventListener('click', () => {
+      isBookOpen = false;
+      currentPage = 0;
+      renderClosedBook();
+    });
+
+    function updatePages(direction = 'next') {
+      if (isPageTurning) return;
+      isPageTurning = true;
+
+      const leftAnim = direction === 'next' ? 'page-turn-left' : 'page-turn-right';
+      const rightAnim = direction === 'next' ? 'page-turn-right' : 'page-turn-left';
+
+      leftPage.classList.add(leftAnim);
+      rightPage.classList.add(rightAnim);
+
+      leftPage.addEventListener('animationend', () => {
+        leftPage.classList.remove(leftAnim);
+        rightPage.classList.remove(rightAnim);
+
+        const isLastPage = currentPage >= bookContent.length;
+
+        if (!isLastPage && currentPage < bookContent.length) {
+          leftPage.innerHTML = `
+            <div style="display:flex; flex-direction: column; height: 100%; font-family: 'Noto Sans Devanagari', sans-serif;">
+              <div style="margin-bottom:1.5rem;">
+                <div style="width:3rem; height:0.25rem; background:var(--primary-color); border-radius:9999px; margin-bottom:1rem;"></div>
+                <h3 style="font-size:1.875rem; font-weight:700; color: var(--text-foreground); margin-bottom:1.5rem;">
+                  ${bookContent[currentPage].title}
+                </h3>
+              </div>
+              <div style="flex-grow:1;">
+                <p style="font-size:1.25rem; line-height:1.75rem; color: var(--text-foreground); font-weight:500;">
+                  ${bookContent[currentPage].content}
+                </p>
+              </div>
+              <div style="text-align:center; font-size:0.875rem; color: var(--text-muted); margin-top:2rem;">
+                Page ${currentPage + 1}
+              </div>
+            </div>
+          `;
+
+          rightPage.innerHTML = `
+            <div style="height: 100%; display:flex; flex-direction: column; justify-content: space-between; font-family: 'Noto Sans Devanagari', sans-serif;">
+              <div style="flex-grow:1; display:flex; align-items:center; justify-content:center;">
+                <div style="text-align:center;">
+                  <div style="width:6rem; height:6rem; background:var(--primary-color); border-radius:9999px; display:flex; align-items:center; justify-content:center; margin: 0 auto 1.5rem; box-shadow: 0 10px 15px -3px rgba(251, 146, 60, 0.4);">
+                    <span style="font-size:1.875rem; color:white;">📖</span>
+                  </div>
+                  <p style="font-size:1.125rem; color: var(--text-muted); margin-bottom:2rem;">
+                    Click the button below to read the next page.
+                  </p>
+                </div>
+              </div>
+              <div style="display:flex; justify-content: space-between; align-items:center;">
+                ${currentPage > 0 ? `<button id="prev-btn" class="font-hindi text-2xl">◀️</button>` : `<div></div>`}
+                <div style="flex-grow:1;"></div>
+                <button id="next-btn" class="font-hindi text-2xl">${currentPage < bookContent.length - 1 ? '▶️' : '➡️'}</button>
+              </div>
+            </div>
+          `;
+
+          const nextBtn = document.getElementById('next-btn');
+          const prevBtn = document.getElementById('prev-btn');
+
+          if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+              if (isPageTurning) return;
+              currentPage = Math.min(currentPage + 1, bookContent.length);
+              updatePages('next');
+            });
+          }
+
+          if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+              if (isPageTurning) return;
+              currentPage = Math.max(currentPage - 1, 0);
+              updatePages('prev');
+            });
+          }
+        } else {
+          leftPage.innerHTML = `
+            <div style="display:flex; flex-direction: column; justify-content:center; align-items:center; height: 100%; text-align:center; font-family: 'Noto Sans Devanagari', sans-serif;">
+              <div style="font-size:3rem; margin-bottom:1.5rem;">🙏</div>
+              <h3 style="font-size:1.5rem; font-weight:700; color: var(--text-foreground); margin-bottom:1rem;">धन्यवाद</h3>
+              <p style="font-size:1.125rem; color: var(--text-muted);">हमारी यात्रा में शामिल होने के लिए आपका आभार</p>
+            </div>
+          `;
+
+          rightPage.innerHTML = `
+            <div style="display:flex; flex-direction: column; justify-content:center; align-items:center; height: 100%; text-align:center; font-family: 'Noto Sans Devanagari', sans-serif;">
+              <div style="background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; font-size: 1.5rem; margin-bottom: 2rem;">
+                ${finalAffirmation}
+              </div>
+             <button id="close-final-btn" class="font-hindi" style="background: linear-gradient(90deg, #fb923c, #f97316); color: white; border: none; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; font-size: 1.125rem; box-shadow: 0 10px 15px -3px rgba(251, 146, 60, 0.4); cursor: pointer; transition: opacity 0.3s ease, transform 0.2s ease;">
+  ✖️ Click To Close
+</button>
+
+            </div>
+          `;
+
+          const closeFinalBtn = document.getElementById('close-final-btn');
+          closeFinalBtn.addEventListener('click', () => {
+            isBookOpen = false;
+            currentPage = 0;
+            renderClosedBook();
+          });
+        }
+
+        isPageTurning = false;
+      }, { once: true });
+    }
+
+    updatePages();
+    function handleKeyPress(e) {
+      if (!isBookOpen || isPageTurning) return;
+
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        if (currentPage < bookContent.length) {
+          currentPage++;
+          updatePages('next');
+        }
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        if (currentPage > 0) {
+          currentPage--;
+          updatePages('prev');
+        }
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        isBookOpen = false;
+        currentPage = 0;
+        renderClosedBook();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress);
+  }
+
+  renderClosedBook();
+</script>
