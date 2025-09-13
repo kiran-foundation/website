@@ -1,0 +1,59 @@
+.main {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #f9c846, #f28d35); 
+  margin: 0;
+  padding-bottom:20px ;
+  color: #222;
+}
+.hero {
+  text-align: center;
+  color: white;
+  padding: 70px 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.book-section {
+  background: #fff;
+  border-radius: 10px;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1200px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+.carousel-inner img {
+  background: rgb(184, 180, 180);
+  object-fit: contain;
+  height: 360px;
+}
+.content-panel {
+  padding: 20px;
+}
+.content-panel h3 {
+  font-weight: bold;
+  color: #f28d35;
+}
+.meta {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+footer {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #444;
+}
