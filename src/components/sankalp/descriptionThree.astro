@@ -1,0 +1,171 @@
+---
+import "./descriptionThree.css";
+---
+
+<main class="main-3d">
+  <section class="hero-3d">
+    <div class="hero-content">
+      <h1 class="hero-title">Experience Our Journey</h1>
+      <p class="hero-subtitle">Discover moments that shaped our mission</p>
+    </div>
+  </section>
+
+  <section class="carousel-3d-container">
+    <div class="section-header">
+      <h2>Highlights</h2>
+    </div>
+
+    <div class="carousel-3d-wrapper">
+      <div class="carousel-3d" id="carousel3d">
+        <div
+          class="carousel-item-3d active"
+          data-title="Our Guests"
+          data-desc="Honouring the leaders and supporters who joined us in our mission."
+        >
+          <div class="slide-image">
+            <img src="/Images/3.Our guests.jpeg" alt="Our Guests" />
+          </div>
+        </div>
+        <div
+          class="carousel-item-3d"
+          data-title="Star Students Awarded"
+          data-desc="Recognising brilliant students who achieved excellence."
+        >
+          <div class="slide-image">
+            <img
+              src="/Images/4.Star students awarded.jpeg"
+              alt="Star Students"
+            />
+          </div>
+        </div>
+        <div
+          class="carousel-item-3d"
+          data-title="Book Unveiled"
+          data-desc="Launching our inspirational publication for youth."
+        >
+          <div class="slide-image">
+            <img src="/Images/13.Book Unveiled_.jpeg" alt="Book Unveiled" />
+          </div>
+        </div>
+        <div
+          class="carousel-item-3d"
+          data-title="Dedicated Volunteers"
+           data-desc="Celebrating the selfless contributions of our volunteers who worked tirelessly behind the scenes."
+        >
+          <div class="slide-image">
+            <img src="/Images/15.Dedicated volunteers 2.jpeg" alt="Book Unveiled" />
+          </div>
+        </div>
+        <div
+          class="carousel-item-3d"
+          data-title="Nukkad Natika"
+      data-desc="Spreading awareness through powerful street performances that connected deeply with the community."
+        >
+          <div class="slide-image">
+            <img src="/Images/nukadNatak.jpg" alt="nukadNatak" />
+          </div>
+        </div>
+        <div
+          class="carousel-item-3d"
+          data-title="Dedicated Volunteers"
+          data-desc="Celebrating our hardworking volunteers."
+        >
+          <div class="slide-image">
+            <img
+              src="/Images/14.Dedicated volunteers 1.jpeg"
+              alt="Volunteers"
+            />
+          </div>
+        </div>
+        <div
+          class="carousel-item-3d"
+          data-title="Website & App Launch"
+          data-desc="Introducing our new digital platform."
+        >
+          <div class="slide-image">
+            <img src="/Images/11.Website App launch_.jpeg" alt="App Launch" />
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-indicators-3d">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+        <span class="indicator" data-slide="3"></span>
+        <span class="indicator" data-slide="4"></span>
+        <span class="indicator" data-slide="5"></span>
+        <span class="indicator" data-slide="6"></span>
+      </div>
+    </div>
+
+    <div class="content-panel-3d">
+      <div class="content-glass">
+        <h3 id="slideTitle3d">Our Guests</h3>
+        <div class="meta-info" id="slideDate3d">15 June 2025</div>
+        <p id="slideDesc3d">
+          Honouring the leaders and supporters who joined us in our mission.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("carousel3d") as HTMLElement;
+    const items = document.querySelectorAll<HTMLElement>(".carousel-item-3d");
+    const indicators = document.querySelectorAll<HTMLElement>(".indicator");
+    const title = document.getElementById("slideTitle3d") as HTMLElement;
+    const date = document.getElementById("slideDate3d") as HTMLElement;
+    const desc = document.getElementById("slideDesc3d") as HTMLElement;
+
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    function updateCarousel(index: number) {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      items.forEach((item, i) => {
+        item.classList.remove("active", "prev", "next");
+        indicators[i].classList.remove("active");
+      });
+
+      items[index].classList.add("active");
+      indicators[index].classList.add("active");
+
+      const prevIndex = (index - 1 + items.length) % items.length;
+      const nextIndex = (index + 1) % items.length;
+
+      items[prevIndex].classList.add("prev");
+      items[nextIndex].classList.add("next");
+
+      if (title) title.textContent = items[index].dataset.title || "";
+      if (date) date.textContent = items[index].dataset.date || "";
+      if (desc) desc.textContent = items[index].dataset.desc || "";
+
+      currentIndex = index;
+
+      setTimeout(() => {
+        isAnimating = false;
+      }, 800);
+    }
+
+    function nextSlide() {
+      updateCarousel((currentIndex + 1) % items.length);
+    }
+
+    function prevSlide() {
+      updateCarousel((currentIndex - 1 + items.length) % items.length);
+    }
+
+    indicators.forEach((indicator, idx) => {
+      indicator.addEventListener("click", () => updateCarousel(idx));
+    });
+
+    setInterval(nextSlide, 4000);
+
+    updateCarousel(0);
+  });
+</script>
