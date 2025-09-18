@@ -28,7 +28,7 @@ secondary_button_link:
 featured_image: /assets/images/posts/sankalp-diwas-report.jpg
 alt: "किरण फाउंडेशन - संकल्प दिवस रिपोर्ट"
 
-video_link: 
+video_link: https://www.youtube.com/watch?v=ukEkWC71lVc
 video_description: 
 
 information:
