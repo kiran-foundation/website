@@ -17,7 +17,7 @@ const {  isMainPage = true } = Astro.props;
 const filteredUpdates = updates  
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  const updatesToDisplay =  filteredUpdates.slice(0, 3)
+  const updatesToDisplay = isMainPage ? filteredUpdates.slice(0, 3) : filteredUpdates;
  
 ---
 

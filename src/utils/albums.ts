@@ -1,6 +1,6 @@
 export async function getAlbumImages(albumId: string) {
   const images = import.meta.glob<{ default: string }>(
-    "/public/assets/albums/**/*.{jpeg,jpg,png}",
+    "/public/assets/albums/**/*.{jpeg,jpg,png,webp}",
     { eager: true }
   );
 

@@ -2,7 +2,7 @@
 import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
 import Preloading from "./preloading.astro";
-
+import GoogleAnalytics from "../components/GoogleAnalytics/GoogleAnalytics.astro";
 interface Props {
   title?: string;
   description?: string;
@@ -175,6 +175,7 @@ import "../styles/global.css";
         };
       })();
     </script>
+      <GoogleAnalytics />
   </head>
   <body>
     <!-- Page loading spinner -->
