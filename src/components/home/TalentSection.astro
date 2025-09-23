@@ -1,0 +1,40 @@
+---
+import { getEntryBySlug } from 'astro:content';
+import Button from '../common/button.astro';
+const talent = await getEntryBySlug('home', 'talent');
+const {title,image1,image2,alt1,alt2} = talent?.data ?? {};
+const { Content } = await talent.render();
+---
+<section class="talent-section-wrapper">
+  <section class="talent-section">
+    <div class="images-container" id="talent-images">
+  <img src={image1} alt={alt1} class="image-front animate-on-scroll" />
+  <img src={image2} alt={alt2} class="image-back animate-on-scroll" />
+</div>
+
+    <div class="text-content">
+      <h2>{title}</h2>
+      <Content />
+      <Button btn="btn1" title="Support Us" link="/support-us"/>
+    </div>
+  </section>
+</section>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        } else {
+          entry.target.classList.remove('in-view'); 
+        }
+      });
+    }, {
+      threshold: 0.3,
+    });
+
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
