@@ -60,6 +60,8 @@ navigation:
         url: "/work-with-us/opportunities"
       - name: "Volunteer Opportunities"
         url: "/work-with-us/opportunities/volunteering"
+      - name: "Internship Opportunities"
+        url: "/work-with-us/opportunities/internship"
       - name: "Contact Us"
         url: "./contact"
   - menu:
