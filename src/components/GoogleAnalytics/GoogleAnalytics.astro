@@ -1,21 +1,18 @@
 ---
-const GA_TRACKING_ID = "";
-const inlineScript = `
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '${GA_TRACKING_ID}');
-`;
+import { GA_TRACKING_ID } from "../../utils/config.ts";
 ---
 
+<!-- Load GA script -->
 <script async src={"https://www.googletagmanager.com/gtag/js?id=" + GA_TRACKING_ID}></script>
-<script is:inline>{inlineScript}</script>
-<!-- For "OFF JAVASCRIPT USERS" -->
-<noscript>
-  <iframe
-    src={"https://www.googletagmanager.com/ns.html?id=" + GA_TRACKING_ID}
-    height="0"
-    width="0"
-    style="display:none;visibility:hidden"
-  ></iframe>
-</noscript>
+
+<!-- Initialize only after it's loaded -->
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    dataLayer.push(arguments);
+  };
+  window.addEventListener("load", function () {
+    gtag('js', new Date());
+    gtag('config', '{{GA_TRACKING_ID}}'.replace("{{GA_TRACKING_ID}}", "{GA_TRACKING_ID}"));
+  });
+</script>

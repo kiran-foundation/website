@@ -25,7 +25,9 @@ const findBreadcrumbName = (path: string) => {
       }
     }
   }
-
+if (path === "/update") {
+    return "Updates";
+  }
   // Special cases for better formatting
   if (path === "/support-us") {
     return "Support Us";
@@ -40,7 +42,10 @@ const findBreadcrumbName = (path: string) => {
 
 // Generate breadcrumbs dynamically
 const breadcrumbs = segments.map((_, index) => {
-  const path = "/" + segments.slice(0, index + 1).join("/");
+  let path = "/" + segments.slice(0, index + 1).join("/");
+   if (path === "/update") {
+    path = "/updates";
+  }
   return {
     name: findBreadcrumbName(path),
     path,
