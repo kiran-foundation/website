@@ -1,7 +1,5 @@
 ---
-import { GA_TEST_ID, GA_PROD_ID, isProduction } from "../../utils/config.ts";
-
-const GA_TRACKING_ID = isProduction() ? GA_PROD_ID : GA_TEST_ID;
+import { GA_TRACKING_ID } from "../../utils/config.ts";
 ---
 
 <!-- Load GA script -->
