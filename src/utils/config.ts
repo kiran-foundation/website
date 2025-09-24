@@ -91,4 +91,4 @@ const SUPPORT_US_CONFIG = isProduction() ? CONFIG_LIVE : CONFIG_TEST;
 const GA_TRACKING_ID = isProduction() ? GA_PROD_ID : GA_TEST_ID;
 
 // Export the selected configuration and utility functions
-export { SUPPORT_US_CONFIG, isProduction,GA_TEST_ID, GA_PROD_ID, GA_TRACKING_ID,};
+export { SUPPORT_US_CONFIG, isProduction,GA_TRACKING_ID,};
