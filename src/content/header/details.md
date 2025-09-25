@@ -68,8 +68,9 @@ navigation:
       name: "Support Us"
       url: "./support-us"
     submenu:
-      - name: "Support Laptop"
-        url: "./support-us"
       - name: "Support Us"
         url: "./support-us"
+      - name: "Support Laptop"
+        url: "./support-us"
+      
 ---
