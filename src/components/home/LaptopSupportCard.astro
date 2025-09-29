@@ -1,7 +1,7 @@
 ---
 import { getEntryBySlug } from "astro:content";
 import "../../styles/global.css";
-
+import Button from "../common/button.astro";
 const post = await getEntryBySlug('home', 'laptop-support');
 const { data, body } = post;
 ---
@@ -24,7 +24,13 @@ const { data, body } = post;
           {body.split('\n\n')[1]}
         </p>
 
-        <a href={data.ctaLink} class="support-btn">{data.ctaText}</a>
+         <Button
+            link="/support-laptop"
+            title="Support Laptop"
+            btn="btn1"
+            widthClass="w-full md:w-[235px] lg:w-full xl:w-[235px]"
+            heightClass="h-[60px]"
+          />
       </div>
 
       <div class="laptop-support-image">
