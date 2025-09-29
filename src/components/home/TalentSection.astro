@@ -16,9 +16,9 @@ const { Content } = await talent.render();
 <TalentSectionImage/>
   <!-- Heading Section -->
   <div
-    class="relative flex items-center justify-center flex-col text-left space-y-4 mb-[64px] xl:mb-[7.5rem] mx-6 xl:mx-0 max-w-[1074px]"
+    class="relative flex items-center justify-center flex-col text-left space-y-4 mb-[1rem] xl:mb-[1rem] mx-6 xl:mx-0 max-w-[1200px] customWrapper"
   >
-    <h2 class="heading-3 w-full py-1 mb-3 font-merriweather">
+    <h2 class="heading-3 w-full py-1 mb-3 font-merriweather line-height">
       {title}
     </h2>
     <div class="body-text-1">
@@ -36,6 +36,15 @@ const { Content } = await talent.render();
 <style>
   .margin-bottom{
     margin-bottom: 2rem;
+  }
+  .line-height {
+  line-height: inherit
+}
+  @media screen  and (min-width: 1300px) {
+    .customWrapper{
+      padding-right: 14rem;
+    }
+    
   }
 </style>
 
