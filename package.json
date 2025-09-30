@@ -22,6 +22,7 @@
     "aos": "^2.3.4",
     "astro": "^4.15.12",
     "astro-icon": "^1.1.5",
+    "astro-seo": "^0.8.4",
     "basiclightbox": "^5.0.4",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.0",
@@ -47,5 +48,8 @@
     "swiper": "^11.2.5",
     "timezz": "^7.0.0",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "rollup-plugin-visualizer": "^6.0.3"
   }
 }
