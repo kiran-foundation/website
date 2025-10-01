@@ -1,0 +1,82 @@
+---
+import { getEntryBySlug } from "astro:content";
+import "../../styles/global.css";
+import Button from "../common/button.astro";
+const post = await getEntryBySlug('home', 'laptop-support');
+const { data, body } = post;
+---
+
+<section class="laptop-support-section">
+  <div class="laptop-support-container">
+    <div class="laptop-support-card">
+      <div class="laptop-support-text">
+<h2 id="responsive-title" data-title={data.title}>
+  <span id="line1"></span><br />
+  <span id="line2"></span>
+</h2>
+
+
+        <p>
+          {body.split('\n\n')[0]}
+        </p>
+
+        <p>
+          {body.split('\n\n')[1]}
+        </p>
+
+         <Button
+            link="/support-laptop"
+            title="Support Laptop"
+            btn="btn1"
+            widthClass="w-full md:w-[235px] lg:w-full xl:w-[235px]"
+            heightClass="h-[60px]"
+          />
+      </div>
+
+      <div class="laptop-support-image">
+        <img
+          src={data.heroImage}
+          alt="The Young & Unstoppable achiever"
+        />
+      </div>
+    </div>
+
+    <div class="laptop-support-bottom">
+      {data.sections.map((section) => (
+        <div class="bottom-card">
+          <h3>{section.heading}</h3>
+          <p>{section.content}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<script is:inline>
+  (() => {
+    const titleElement = document.getElementById('responsive-title');
+    if (!titleElement) return;
+
+    const titleText = titleElement.getAttribute('data-title');
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+
+    function updateTitle() {
+      const width = window.innerWidth;
+
+      if (!titleText || !line1 || !line2) return;
+
+      const words = titleText.split(' ');
+
+      if (width >= 1023 && words.length > 2) {
+        line1.textContent = words.slice(0, 2).join(' ');
+        line2.textContent = words.slice(2).join(' ');
+      } else {
+        line1.textContent = titleText;
+        line2.textContent = '';
+      }
+    }
+
+    window.addEventListener('load', updateTitle);
+    window.addEventListener('resize', updateTitle);
+  })();
+</script>

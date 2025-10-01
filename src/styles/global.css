@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-  
-  
-  
+
+
+
   /* Style Guide Fonts Desktop */
   .hero-title {
     font-family: "Merriweather", serif;
@@ -15,6 +15,7 @@
     letter-spacing: -2.2%;
     color: #1E1E1E;
   }
+
   .hero-subtitle {
     font-family: Merriweather;
     font-weight: 400;
@@ -25,6 +26,7 @@
 
 
   }
+
   .heading-1 {
     font-family: Merriweather;
     font-weight: 400;
@@ -34,6 +36,7 @@
     color: #1E1E1E;
 
   }
+
   .heading-2 {
     font-family: Poppins;
     font-weight: 400;
@@ -43,6 +46,7 @@
     color: #49494C;
 
   }
+
   .heading-3 {
     font-family: Poppins;
     font-weight: 500;
@@ -52,6 +56,7 @@
     color: #1E1E1E;
 
   }
+
   .heading-4 {
     font-family: Poppins;
     font-weight: 600;
@@ -61,6 +66,7 @@
     color: #1E1E1E;
 
   }
+
   .body-text-1 {
     font-family: Poppins;
     font-weight: 400;
@@ -80,6 +86,7 @@
     color: #49494C;
 
   }
+
   .body-text-3 {
     font-family: Poppins;
     font-weight: 400;
@@ -98,6 +105,7 @@
     color: #49494C;
 
   }
+
   .Error-text {
     font-family: Poppins;
     font-weight: 400;
@@ -115,51 +123,61 @@
       font-size: 2.25rem;
       font-weight: 900;
     }
+
     .hero-subtitle {
       font-size: 1.25rem;
       line-height: 1.75rem;
 
     }
-    .heading-1{
+
+    .heading-1 {
       font-size: 1.875rem;
-  
+
     }
-    .heading-2{
+
+    .heading-2 {
       font-size: 1.25rem;
-    line-height: 2.375rem;
-    letter-spacing: 0%;
+      line-height: 2.375rem;
+      letter-spacing: 0%;
     }
-    .heading-3{
+
+    .heading-3 {
       font-size: 1.5rem;
       font-weight: 600;
     }
-    .heading-4{
+
+    .heading-4 {
       font-size: 1.25rem;
-  
+
     }
-    .body-text-1{
+
+    .body-text-1 {
       font-size: 1rem;
       line-height: 2rem;
     }
-    .body-text-2{
+
+    .body-text-2 {
       font-size: 1rem;
       line-height: 2rem;
     }
-    .body-text-3{
+
+    .body-text-3 {
       font-size: 1.125rem;
       line-height: 2.25rem;
     }
- 
+
   }
 
   .pratibha-heading {
     font-family: "Merriweather", serif;
-    font-size: 3rem; /* 32px */
+    font-size: 3rem;
+    /* 32px */
     line-height: 150%;
     letter-spacing: -2.2%;
     font-weight: 400;
     color: #1e1e1e;
   }
+
   .pratibha-subheading {
     font-family: "Poppins", serif;
     font-weight: 500;
@@ -177,6 +195,7 @@
     letter-spacing: 0%;
     color: #1e1e1e;
   }
+
   .pratibha-description {
     font-family: Poppins;
     font-weight: 400;
@@ -186,7 +205,7 @@
     color: #49494c;
   }
 
-  .singleImage > img {
+  .singleImage>img {
     width: 100%;
     margin: 0% auto;
     height: auto;
@@ -196,12 +215,386 @@
     .pratibha-heading {
       font-size: 1.875rem;
     }
+
     .pratibha-description,
     .pratibha-subtile {
       font-size: 1rem;
     }
+
     .pratibha-subheading {
       font-size: 1.5rem;
+    }
+  }
+
+  .margin-bottom {
+    margin-bottom: 2rem;
+  }
+
+  .line-height {
+    line-height: inherit
+  }
+
+  @media screen and (min-width: 1300px) {
+    .customWrapper {
+      padding-right: 14rem;
+    }
+
+  }
+
+  .images-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    min-height: 460px;
+    margin: 4rem 4rem;
+    object-fit: cover;
+  }
+
+  .images-container img {
+    border-radius: 24px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+  }
+
+  /* Front image */
+  .image-front {
+    width: clamp(280px, 50vw, 380px);
+    z-index: 2;
+    transform: translate(-90%, -45%) rotate(-13deg);
+    opacity: 0;
+  }
+
+  /* Back image */
+  .image-back {
+    width: clamp(240px, 45vw, 310px);
+    z-index: 1;
+    transform: translate(10%, -55%) rotate(20deg);
+    opacity: 0;
+    animation-delay: 0.3s;
+  }
+
+  /* Animation classes */
+  .image-front.in-view {
+    animation: fadeInSlideFront 1.2s ease-out forwards;
+  }
+
+  .image-back.in-view {
+    animation: fadeInSlideBack 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+
+  /* Tablet screens (up to 768px) */
+  @media (max-width: 768px) {
+    .images-container {
+      max-width: 500px;
+      min-height: 350px;
+      margin: 5rem auto 3rem;
+    }
+
+    .image-front {
+      width: clamp(180px, 40vw, 280px);
+      transform: translate(-75%, -50%) rotate(-13deg);
+    }
+
+    .image-back {
+      width: clamp(140px, 35vw, 240px);
+      transform: translate(-25%, -45%) rotate(20deg);
+    }
+  }
+
+  /* Mobile screens (up to 480px) */
+  @media (max-width: 480px) {
+    .images-container {
+      max-width: 320px;
+      min-height: 240px;
+      margin: 3rem auto 2rem;
+    }
+
+    .image-front {
+      width: clamp(120px, 50vw, 220px);
+      transform: translate(-70%, -55%) rotate(-13deg);
+    }
+
+    .image-back {
+      width: clamp(100px, 41vw, 180px);
+      transform: translate(-30%, -45%) rotate(20deg);
+    }
+
+  }
+
+  /* Animation Keyframes */
+  @keyframes fadeInSlideFront {
+    0% {
+      transform: translate(-50%, -50%) scale(0.9) rotate(0deg);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(-90%, -45%) rotate(-13deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInSlideBack {
+    0% {
+      transform: translate(-50%, -50%) scale(0.9) rotate(0deg);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(10%, -55%) rotate(20deg);
+      opacity: 1;
+    }
+  }
+
+  .laptop-support-section {
+    margin-top: 120px;
+    padding: 0 16px;
+  }
+
+  .laptop-support-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .laptop-support-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (min-width: 1024px) {
+    .laptop-support-card {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .laptop-support-text,
+    .laptop-support-image {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .laptop-support-text {
+    background: #f1f1f1;
+    border: 1px solid #e6eef2;
+    border-radius: 24px;
+    padding: 24px;
+    box-sizing: border-box;
+    max-width: 515px;
+    height: auto;
+    min-height: auto;
+    flex: 1;
+  }
+
+  .laptop-support-text h2 {
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.2;
+    color: #0f2430;
+    margin-bottom: 24px;
+    max-width: 100% !important;
+    font-family: 'Merriweather', serif;
+
+  }
+
+  .laptop-support-text p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0;
+    color: #49494C;
+    margin-bottom: 24px;
+    font-family: 'Poppins', sans-serif;
+
+  }
+
+  .laptop-support-text p:last-of-type {
+    margin-bottom: 32px;
+  }
+
+  .support-btn {
+    display: inline-block;
+    background: #D33C0D;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    align-self: flex-start;
+  }
+
+
+
+  .laptop-support-image {
+    border: 1px solid #e6eef2;
+    border-radius: 24px;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .laptop-support-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+
+  .laptop-support-bottom {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .bottom-card {
+    background: #f1f1f1;
+    border: 1px solid #e6eef2;
+    border-radius: 24px;
+    padding: 28px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    max-width: 390px;
+    width: 30%;
+  }
+
+  .bottom-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+    color: #000;
+    margin-bottom: 12px;
+  }
+
+  .bottom-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #49494C;
+    flex-grow: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .laptop-support-bottom {
+      flex-direction: row;
+      gap: 24px;
+    }
+
+  }
+
+
+
+  @media (max-width: 1024px) {
+    .laptop-support-card {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .laptop-support-text h2 {
+      font-size: 40px;
+
+    }
+
+    .laptop-support-text,
+    .laptop-support-image {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .laptop-support-bottom {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .bottom-card {
+      flex: 1 1 45%;
+      max-width: 45%;
+      min-height: auto;
+    }
+  }
+
+  /* Mobile screens (≤768px) */
+  @media (max-width: 768px) {
+    .laptop-support-card {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .laptop-support-text {
+      width: 100%;
+      max-width: 100%;
+      padding: 20px;
+    }
+
+    .laptop-support-image {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .laptop-support-bottom {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .bottom-card {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .laptop-support-text h2 {
+      font-size: 34px;
+
+    }
+  }
+
+  /* Desktop (>=1024px) */
+  .laptop-support-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  /* Tablet + Mobile (<=1023px) */
+  @media (max-width: 1023px) {
+    .laptop-support-card {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .laptop-support-text,
+    .laptop-support-image {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .laptop-support-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .laptop-support-bottom {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .bottom-card {
+      width: 100%;
+      max-width: 100%;
     }
   }
 }
