@@ -3,13 +3,13 @@ title: Testimonials
 testimonials:
   - name: Kanchan Jha
     location: Nerul, Navi Mumbai
-    image: '/assets/images/people/kanchan.png'
+    image: '/assets/images/people/kanchan.webp'
     tags: [home ,shakti]
     text: >
       I completed the Advanced Canva course, which far exceeded my expectations. The well-structured program offered in-depth insights into advanced design techniques and features. I now feel confident in my ability to create professional designs. Trainers Shreya and Keshu were exceptional, providing clear explanations and patiently addressing all our doubts. I highly recommend this course!
       
       I would like to extend my heartfelt gratitude to each and every member of the Kiran Foundation for their support and guidance 🙏
-  - image: '/assets/images/people/naman.png'
+  - image: '/assets/images/people/naman.webp'
     name: 'Naman Jain'
     location: 'Harda, Madhya Pradesh'
     text: >
