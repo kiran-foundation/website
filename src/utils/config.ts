@@ -81,12 +81,9 @@ const CONFIG_LIVE = {
     },
   },
 } as const;
-// Google Analytics Measurement IDs
-const GA_TEST_ID = "G-WEK98QPZEZ";
-const GA_PROD_ID = "G-VXGS4TBSNE";
 
 // Select configuration based on environment
 const SUPPORT_US_CONFIG = isProduction() ? CONFIG_LIVE : CONFIG_TEST;
 
 // Export the selected configuration and utility functions
-export { SUPPORT_US_CONFIG, isProduction,GA_TEST_ID, GA_PROD_ID };
+export { SUPPORT_US_CONFIG, isProduction};
