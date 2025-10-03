@@ -44,7 +44,7 @@ const finalTwitterImage =
   common.ogImage ||
   "/preview.png";
 import "../styles/global.css";
-// import "/assets/css/global.css"
+import GoogleAnalytics from "../components/GoogleAnalytics/GoogleAnalytics.astro";
 ---
 
 <!doctype html>
@@ -148,6 +148,7 @@ import "../styles/global.css";
     <meta name="apple-mobile-web-app-title" content="Kiran Foundation" />
     <link rel="manifest" href="/site.webmanifest" />
 
+    <GoogleAnalytics />
     <script>
       (function () {
         window.onload = function () {

@@ -1,0 +1,19 @@
+---
+import { GA_TRACKING_ID } from "../../utils/config.ts";
+---
+
+<!-- Google Analytics script -->
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}></script>
+
+<!-- Initialize GA -->
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  window.addEventListener("load", function () {
+    gtag('js', new Date());
+    gtag('config', `${GA_TRACKING_ID}`);
+  });
+</script>
