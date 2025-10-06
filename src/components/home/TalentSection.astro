@@ -1,9 +1,9 @@
 ---
-import { getEntryBySlug } from 'astro:content';
+import { getEntry} from 'astro:content';
 import Button from '../common/button.astro';
 import TalentSectionImage from './TalentSectionImage.astro';
-
-const talent = await getEntryBySlug('home', 'talent');
+import "../../styles/global.css";
+const talent = await getEntry('home', 'talent');
 const { title, buttonText, image1, image2, alt1, alt2 } = talent?.data ?? {};
 const { Content } = await talent.render();
 ---
@@ -33,18 +33,4 @@ const { Content } = await talent.render();
     </div>
   </div>
 </div>
-<style>
-  .margin-bottom{
-    margin-bottom: 2rem;
-  }
-  .line-height {
-  line-height: inherit
-}
-  @media screen  and (min-width: 1300px) {
-    .customWrapper{
-      padding-right: 14rem;
-    }
-    
-  }
-</style>
 
