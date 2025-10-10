@@ -1,6 +1,6 @@
 ---
 title: "Tanuj Samaddar – Kiran Pratibha Scholar, 2024"
-date: 2025-9-10
+date: 2025-09-10
 content:
   - |
     <p>
@@ -48,5 +48,5 @@ video_description:
 information: ""
 more: true
 summary: "Tanuj Samaddar, Kiran Pratibha Scholar 2024 – an artist, researcher, and youth leader from Assam contributing to global policy and social change."
-link: "/update/2025-9-10-tanuj-samaddar/"
+link: "/update/2025-09-10-tanuj-samaddar/"
 ---
