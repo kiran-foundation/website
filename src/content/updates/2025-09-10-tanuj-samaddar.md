@@ -5,7 +5,7 @@ content:
   - |
 
     <p>
-    Heartily congratulations to Tanuj Samaddar for participiating in and representing India  as <strong>UN delegate</strong> in the <strong>IUCN World Conservation Congress 2025</strong> in Abu Dhabi.  
+    Heartily congratulations to Tanuj Samaddar for representing India  as <strong>UN delegate</strong> in the <strong>IUCN World Conservation Congress 2025</strong> in Abu Dhabi.  
     In 2025, and also beingalso named a <strong>Billion Acts Peace Fellow</strong> by the PeaceJam Foundation, USA.
     </p>
     <p>
