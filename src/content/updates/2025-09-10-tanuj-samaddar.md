@@ -3,6 +3,11 @@ title: "Tanuj Samaddar – Kiran Pratibha Scholar, 2024"
 date: 2025-09-10
 content:
   - |
+
+    <p>
+    Heartily congratulations to  Tanuj Samaddar India for  participating as <strong>UN delegate</strong> in the <strong>IUCN World Conservation Congress 2025</strong> in Abu Dhabi.  
+    In 2025, and also beingalso named a <strong>Billion Acts Peace Fellow</strong> by the PeaceJam Foundation, USA.
+    </p>
     <p>
     <strong>Tanuj Samaddar</strong> is a penultimate-year student at <strong>Kirori Mal College, University of Delhi</strong>, an accomplished artist and youth leader from Assam.  
     His journey reflects an inspiring blend of creativity, leadership, and social commitment.
@@ -21,10 +26,7 @@ content:
     His work has been recognized by several heads of state, cabinet ministers, and the Prime Minister of India.
     </p>
     <br>
-    <p>
-    He has represented India as a <strong>UN delegate</strong> and is set to participate in the <strong>IUCN World Conservation Congress 2025</strong> in Abu Dhabi.  
-    In 2025, he was also named a <strong>Billion Acts Peace Fellow</strong> by the PeaceJam Foundation, USA.
-    </p>
+  
     <br>
     <p>
     Currently, Tanuj is serving as a <strong>Research Intern</strong> in the office of the National Spokesperson of BJP, Shri Shehzad Poonawala.  
