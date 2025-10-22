@@ -18,7 +18,7 @@ const headings = await getEntry("common", "headings");
       </h1>
       
     </div>
-    <div class="mx-auto container max-w-screen-sm grid grid-col-1 md:grid-cols-2 lg:grid-col-3 gap-8">
+    <div class="mx-auto container max-w-screen-sm grid grid-cols-1 md:grid-cols-2 lg:grid-col-3 gap-8">
       {
         albums.map((item) => (
           <a
@@ -29,7 +29,7 @@ const headings = await getEntry("common", "headings");
               src={item.data.cover}
               alt={item.data.title}
               width="720"
-              height="480"
+              height="500"
               class="rounded-lg transition-all group-hover:shadow-lg group-hover:opacity-90"
               loading="lazy"
             />

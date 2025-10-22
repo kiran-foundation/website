@@ -17,7 +17,7 @@ const update = await (async () => {
   }
 
   // Construct the path to the Markdown file
-  const updatePath = `/src/content/updates/${Astro.props.path}.md`;
+  const updatePath = `/src/content/update/${Astro.props.path}.md`;
   const updt = updateFile[updatePath];
 
   if (updt) {
@@ -53,7 +53,7 @@ const { title, summary, date, priority, featured_image, link, content } =
         <UpdateGallery path={path} />
       </div>
 
-      <div class="mt-10 w-full pl-8 pt-[164px]">
+      <div class="mt-10 w-full pl-8 pt-[140px]">
         <UpdateRelatedArticles title={title} />
       </div>
     </div>

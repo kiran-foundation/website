@@ -62,8 +62,15 @@ navigation:
         url: "/work-with-us/opportunities/volunteering"
       - name: "Internship Opportunities"
         url: "/work-with-us/opportunities/internship"
-
+      - name: "Contact Us"
+        url: "./contact"
   - menu:
-      name: "Contact Us"
-      url: "/contact"
+      name: "Support Us"
+      url: "./support-us"
+    submenu:
+      - name: "Support Us"
+        url: "./support-us"
+      - name: "Support Laptop"
+        url: "./support-us"
+      
 ---
