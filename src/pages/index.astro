@@ -1,4 +1,5 @@
 ---
+import { SEO } from "astro-seo";
 import "aos/dist/aos.css";
 import "jarallax/dist/jarallax.min.css";
 import Layout from '../layouts/Layout.astro';
@@ -13,7 +14,20 @@ import OurSupporters from "../components/home/Supporters.astro";
 import Trusted from "../components/home/Accreditation.astro";
 import TalentSection from "../components/home/TalentSection.astro";
 import LaptopSupportCard from "../components/home/LaptopSupportCard.astro";
+const seo = {
+  title: "Kiran Foundation",
+  description: "Welcome to Kiran Foundation – Discover our programs, values, and ways to volunteer. Together we create brighter futures.",
+  canonicalURL: "https://kiran.foundation/",
+  ogType: "website",
+  ogImage: {
+    url: "https://kiran.foundation/og-image.jpg",
+    alt: "Kiran Foundation - Empowering Community",
+    width: 1200,
+    height: 630
+  }
+};
 ---
+<SEO {...seo} />
 <Layout title="Kiran Foundation">
   <main class="page-wrapper">
     <Hero />

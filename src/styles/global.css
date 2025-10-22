@@ -584,4 +584,10 @@
       max-width: 100%;
     }
   }
+  @font-face {
+  font-family: 'tawk-font-icon-3';
+  src: url('https://embed.tawk.to/fonts/tawk-font-icon-3.woff') format('woff');
+  font-display: swap;
+}
+
 }
