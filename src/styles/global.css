@@ -3,15 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-<<<<<<< HEAD
-  
-  
-  
-=======
 
 
 
->>>>>>> develop
   /* Style Guide Fonts Desktop */
   .hero-title {
     font-family: "Merriweather", serif;
@@ -21,10 +15,6 @@
     letter-spacing: -2.2%;
     color: #1E1E1E;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
   .hero-subtitle {
     font-family: Merriweather;
     font-weight: 400;
@@ -35,10 +25,6 @@
 
 
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
   .heading-1 {
     font-family: Merriweather;
     font-weight: 400;
@@ -48,10 +34,6 @@
     color: #1E1E1E;
 
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
   .heading-2 {
     font-family: Poppins;
     font-weight: 400;
@@ -61,10 +43,6 @@
     color: #49494C;
 
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
   .heading-3 {
     font-family: Poppins;
     font-weight: 500;
@@ -74,10 +52,6 @@
     color: #1E1E1E;
 
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
   .heading-4 {
     font-family: Poppins;
     font-weight: 600;
@@ -87,10 +61,6 @@
     color: #1E1E1E;
 
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
   .body-text-1 {
     font-family: Poppins;
     font-weight: 400;
@@ -110,10 +80,6 @@
     color: #49494C;
 
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
   .body-text-3 {
     font-family: Poppins;
     font-weight: 400;
@@ -132,10 +98,6 @@
     color: #49494C;
 
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
   .Error-text {
     font-family: Poppins;
     font-weight: 400;

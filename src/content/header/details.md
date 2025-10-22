@@ -66,11 +66,11 @@ navigation:
         url: "./contact"
   - menu:
       name: "Support Us"
-      url: "./support-us"
+      url: "/support-us"
     submenu:
       - name: "Support Us"
-        url: "./support-us"
+        url: "/support-us"
       - name: "Support Laptop"
-        url: "./support-us"
+        url: "/support-us/laptop-support"
       
 ---
