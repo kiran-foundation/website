@@ -54,4 +54,9 @@ information: ""
 more: true
 summary: "Aditi Jain, Kiran Pratibha Scholar, secures 10th rank in MPPSC and becomes Deputy Collector — a story of grit, discipline, and transformation."
 link: "/update/2025-11-09-aditi-jain/"
+
+og_title: "Aditi Jain – Kiran Pratibha Scholar, Deputy Collector, 2025"
+og_description: "Aditi Jain, Kiran Pratibha Scholar, secures 10th rank in MPPSC and becomes Deputy Collector — a story of grit, discipline, and transformation."
+og_image: "/assets/images/aditiJain.jpg"
+og_type: "article"
 ---
