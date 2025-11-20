@@ -63,7 +63,7 @@ navigation:
       - name: "Internship Opportunities"
         url: "/work-with-us/opportunities/internship"
       - name: "Contact Us"
-        url: "./contact"
+        url: "/contact"
   - menu:
       name: "Support Us"
       url: "/support-us"
