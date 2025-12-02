@@ -1,6 +1,6 @@
 ---
 title: "Digital Skills Course"
-date: 2025-07-19
+date: 2025-09-01
 content:
   - |
     The Kiran Foundation is delighted to share the remarkable success of our <b>Essential Digital Skills Program</b>, an empowering initiative created to support women and digital beginners in gaining practical knowledge needed in today’s connected world.
@@ -37,5 +37,5 @@ video_description:
 information:
 more: true
 summary: "The Essential Digital Skills Program empowers women and beginners with hands-on digital learning for confidence and independence."
-link: "/update/2025-19-07-digital-skills-course"
+link: "/update/2025-01-09-digital-skills-course"
 ---
