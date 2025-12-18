@@ -23,13 +23,13 @@ import Button from "../common/button.astro";
         >
         </div>
       </div>
-      <div class="swiper-slide">
+      <!--div class="swiper-slide">
         <div
           class="swiper-slide-cover aspect-[4/4]"
           style="background-image: url('/assets/images/Homepage/home-1.webp');"
         >
         </div>
-      </div>
+      </div-->
     </div>
     <!-- Pagination -->
     <div class="swiper-pagination"></div>
@@ -52,7 +52,7 @@ import Button from "../common/button.astro";
         <div class="relative inline-flex items-center group">
           <Button
             link="/support-us"
-            title="Support Us"
+            title={hero.buttonText}
             btn="btn1"
             widthClass="w-[235px]"
             heightClass="h-[60px]"
@@ -78,14 +78,14 @@ import Button from "../common/button.astro";
           >
           </div>
         </div>
-        <div class="swiper-slide">
+        <!--div class="swiper-slide">
           <div
             class="swiper-slide-cover aspect-[4/4]"
             style="background-image: url('/assets/images/Homepage/home-2.webp');"
           >
           </div>
         </div>
-      </div>
+      </div-->
       <!-- Pagination -->
       <div class="swiper-pagination hidden"></div>
     </div>
@@ -110,7 +110,7 @@ import Button from "../common/button.astro";
         </p>
         <Button
           link="/support-us"
-          title="Support Us"
+          title="{hero.buttonText}"
           btn="btn1"
           widthClass="w-full"
           heightClass="h-[60px]"

@@ -1,7 +1,7 @@
 ---
 title: Our Programmes
 heading:
-  head1: "Helping Youth and Women Thrive "
+  head1: "Empowering Youth and Women"
   head2: " We dream of a society  where everyone has equal opportunity to succeed. "
   head3: "A place where merit, dedication and hard-work strive over wealth, social status and connections. "
 pratibha:

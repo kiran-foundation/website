@@ -1,5 +1,6 @@
 ---
-title: "Impacting Dreams and Building the Future"
-titlehero: "Unlocking Career Opportunities for Students and Building Confidence in Women"
+title: "The Kiran Pratibha Scholarship"
+titlehero: "Empowering exceptionally talented students from under-resourced families realise their dream."
 description: "Empowering Change, Enriching Lives - Together, We Make a Difference."
+buttonText: "Support Us"
 ---
