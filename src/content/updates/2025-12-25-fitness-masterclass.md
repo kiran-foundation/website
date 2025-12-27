@@ -14,15 +14,15 @@ content:
     </p>
 
     <p>
-      In today’s fast-paced and demanding environment, many individuals face ongoing health challenges while struggling to find reliable guidance, time for self-care, or a comfortable space to discuss their concerns. This masterclass has been thoughtfully designed to address these challenges by offering expert insights, simple strategies, and actionable knowledge that can be easily incorporated into daily life.
+      In today’s fast-paced and demanding environment, many individuals face ongoing <strong> health challenges </strong> while struggling to find reliable guidance, time for self-care, or a comfortable space to discuss their concerns. This masterclass has been thoughtfully designed to address these challenges by offering expert insights, simple strategies, and actionable knowledge that can be easily incorporated into daily life.
     </p>
 
     <p>
-      In this masterclass, participants will gain a deeper understanding of how hormonal balance affects overall health and learn natural, non-invasive ways to manage hormonal imbalances. The session will also cover effective pain management techniques through posture correction and body alignment, helping reduce everyday discomfort caused by poor ergonomics or sedentary habits.
+      In this masterclass, participants <strong> will gain </strong> a deeper understanding of how hormonal balance affects overall health and learn natural, non-invasive ways to manage hormonal imbalances. The session will also cover effective pain management techniques through posture correction and body alignment, helping reduce everyday <strong> discomfort caused by poor ergonomics or sedentary habits.</strong>
     </p>
 
     <p>
-      Additionally, participants will be guided on the importance of balanced nutrition, with practical advice on building a precise and sustainable meal plan suited to individual needs. The masterclass will further address the management of common lifestyle and metabolic conditions such as diabetes, thyroid disorders, PCOS, obesity, high blood pressure, and digestive issues, focusing on long-term health improvement through informed choices and consistent habits.
+      Additionally, participants will be guided on the importance of balanced nutrition, with practical advice on building a precise and sustainable meal plan suited to individual needs. The masterclass will further address the management of common <strong> lifestyle and metabolic conditions </strong> such as diabetes, thyroid disorders, PCOS, obesity, high blood pressure, and digestive issues, focusing on long-term health improvement through informed choices and consistent habits.
     </p>
 
     <h3>Event Details</h3>
