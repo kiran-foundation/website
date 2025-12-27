@@ -39,7 +39,7 @@ content:
     rel="noopener noreferrer"
     class="font-poppins font-medium
          h-[20px] !min-h-[48px]
-         text-[16px] font-bold
+         text-[16px] 
          !min-w-[138px]
          px-3 sm:px-5 md:px-6
          py-2 sm:py-3 md:py-5
