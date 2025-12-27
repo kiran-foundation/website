@@ -37,10 +37,26 @@ content:
     href="https://forms.gle/UEFh9DnhAYWdQKFG8"
     target="_blank"
     rel="noopener noreferrer"
-    style="color: blue; text-decoration: underline; font-weight: 600;">
-    Click here to register for the Fitness Masterclass
+    class="font-poppins font-medium
+         h-[20px] !min-h-[48px]
+         text-[16px] font-bold
+         !min-w-[138px]
+         px-3 sm:px-5 md:px-6
+         py-2 sm:py-3 md:py-5
+         w-auto text-base lg:text-lg
+         rounded-md sm:rounded-md
+         transition-all
+         bg-[#D33C0D] text-white
+         hover:bg-[#72321E]
+         active:ring-2 active:ring-[#D33C0D]
+         active:bg-[#72321E]"
+    >
+    Register Now
     </a>
+
     </p>
+
+
 
     <p>
       Join Kiran Foundation in this initiative to learn, grow, and take a proactive step towards better health.
