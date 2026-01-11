@@ -18,7 +18,7 @@ city:
 pin:
   title: "Pin code"
   placeholder: "Pin code"
-other: "Order Notes (Optional)"
+other: "Message(Optional)"
 country:
   title: "Country"
   placeholder: "Enter your country"
