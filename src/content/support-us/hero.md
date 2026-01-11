@@ -2,7 +2,7 @@
 title: "Make a Lasting Impact:<br>Support the Future"
 makeDonation: "Make a donation"
 amount: "Choose a donation amount:"
-amounts: [501, 1001, "custom"]
+amounts: [1001, 501, "custom"]
 frequency: "Choose a donation frequency:"
 frequencies: ["One Time", "Monthly", "Yearly"]
 freqValue: ["onetime", "monthly", "yearly"]

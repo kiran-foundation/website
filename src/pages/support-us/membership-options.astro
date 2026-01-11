@@ -29,7 +29,7 @@ const cards = (await getMembershipCards()).map((c) => c.data);
               </h3>
 
               <div class="min-h-[32px] text-5xl font-bold text-gray-900">
-                ₹{card?.lakh ?? ""}
+                ₹{card?.amount ?? ""}
               </div>
 
               <div class="min-h-[20px] text-sm text-gray-600">
@@ -43,7 +43,7 @@ const cards = (await getMembershipCards()).map((c) => c.data);
             <Button
               link={
                 card?.url ??
-                `/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`
+                `/support-us/support-form?amount=${card?.amount}&frequency=${card?.frequency}`
               }
               title="Support Us"
               btn="btn1"
@@ -69,7 +69,7 @@ const cards = (await getMembershipCards()).map((c) => c.data);
                 </h3>
 
                 <div class="min-h-[32px] text-5xl font-bold text-gray-900">
-                  ₹{card?.lakh ?? ""}
+                  ₹{card?.amount ?? ""}
                 </div>
 
                 <div class="min-h-[20px] text-sm text-gray-600">
@@ -83,7 +83,7 @@ const cards = (await getMembershipCards()).map((c) => c.data);
               <Button
                 link={
                   card?.url ??
-                  `/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`
+                  `/support-us/support-form?amount=${card?.amount}&frequency=${card?.frequency}`
                 }
                 title="Support Us"
                 btn="btn1"

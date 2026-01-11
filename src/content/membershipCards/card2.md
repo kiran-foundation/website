@@ -1,6 +1,6 @@
 ---
 heading: " Super Supporter"
-lakh: "1001"
+amount: "1001"
 permonth: " Per Month"
 frequency: monthly
 paragraph: " Support our cause with a monthly donation of ₹1001 Per Month."

@@ -94,7 +94,7 @@ const info = await getEntry("support-us", "hero");
                         data-amount={amount}
                         value={amount}
                         class="!mr-4 !accent-orange scale-150"
-                        checked={amount === 501}
+                        checked={amount === 1001}
                         required
                       />
                       <label
@@ -162,7 +162,7 @@ const info = await getEntry("support-us", "hero");
     const customAmountInput = document.getElementById("customAmount");
 
     // Store original amounts for restoration
-    const originalAmounts = [501, 1001, "custom"];
+    const originalAmounts = [1001, 501, "custom"];
     const yearlyAmounts = [51000, 108000, "custom"];
 
     // Handle frequency changes
@@ -283,7 +283,7 @@ const info = await getEntry("support-us", "hero");
                 data-amount="${amount}"
                 value="${amount}"
                 class="!mr-4 !accent-orange scale-150"
-                ${amount === 501 ? "checked" : ""}
+                ${amount === 1001 ? "checked" : ""}
                 required
               />
               <label
