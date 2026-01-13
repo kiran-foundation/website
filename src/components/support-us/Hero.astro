@@ -85,7 +85,7 @@ const info = await getEntry("support-us", "hero");
               </label>
               <div class="space-y-3 text-gray-800">
                 {
-                  info.data.amounts.map((amount, i) => (
+                  info.data.monthlyAmounts.map((amount, i) => (
                     <div class="flex items-center !mt-4">
                       <input
                         type="radio"
@@ -179,10 +179,10 @@ const info = await getEntry("support-us", "hero");
         .querySelector('input[name="donationAmount"]')
         .closest(".space-y-3");
 
-      if (frequency === "yearly") {
+      if (frequency === "monthly") {
         // Show yearly amounts
         amountContainer.innerHTML = "";
-        yearlyAmounts.forEach((amount, index) => {
+        originalAmounts.forEach((amount, index) => {
           const div = document.createElement("div");
           div.className = "flex items-center !mt-4";
 
@@ -242,7 +242,7 @@ const info = await getEntry("support-us", "hero");
       } else {
         // Show original amounts (monthly/onetime)
         amountContainer.innerHTML = "";
-        originalAmounts.forEach((amount, index) => {
+        yearlyAmounts.forEach((amount, index) => {
           const div = document.createElement("div");
           div.className = "flex items-center !mt-4";
 
