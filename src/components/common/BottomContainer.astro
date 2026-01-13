@@ -2,8 +2,23 @@
 import { getEntry } from "astro:content";
 import Button from "../common/button.astro";
 const {slug,collection,py="160px"} = Astro.props;
-const data = await getEntry(collection, slug) as { data?: { title?: string; paragraph?: string[]; button?: any[]; image?: string; } };
-const { title, paragraph, button, image } = data?.data || {};
+const entry = await getEntry(collection, slug) as {
+  data?: {
+    title?: string;
+    paragraph?: string[];
+    button?: any[];
+    image?: string;
+  };
+};
+
+// ✅ SAFE DEFAULTS
+const {
+  title = "",
+  paragraph = [],
+  button = [],
+  image = ""
+} = entry?.data ?? {};
+
 ---
 
 <section class="bg-[#F1F1F1] my-auto px-4">
