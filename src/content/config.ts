@@ -41,9 +41,18 @@ const membershipCards = defineCollection({
   }),
 });
 
+const currentStudents = defineCollection({
+  schema: z.object({
+    name: z.string(),
+    image: z.string(),
+    social: z.string().optional(),
+    connectLink: z.string().optional(),
+  }),
+});
 export const collections = {
   albums,
   publications,
   compliance,
   membershipCards,
+  currentStudents,
 };
