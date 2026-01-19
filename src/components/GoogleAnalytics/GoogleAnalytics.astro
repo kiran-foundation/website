@@ -6,7 +6,7 @@ import { GA_TRACKING_ID } from "../../utils/config.ts";
 <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}></script>
 
 <!-- Initialize GA -->
-<script is:inline>
+<script is:inline define:vars={{ gaTrackingId: GA_TRACKING_ID }}>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
@@ -14,6 +14,6 @@ import { GA_TRACKING_ID } from "../../utils/config.ts";
 
   window.addEventListener("load", function () {
     gtag('js', new Date());
-    gtag('config', `${GA_TRACKING_ID}`);
+    gtag('config', gaTrackingId);
   });
 </script>

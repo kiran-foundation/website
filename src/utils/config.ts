@@ -32,15 +32,15 @@ const CONFIG_TEST = {
   GOOGLE_FORM: {
     URL: "https://docs.google.com/forms/d/e/1FAIpQLSeCSnUWYOT6yURnKDOVIqlAxjhPTyDIdo4RzJQhCM_rUgz5xA/formResponse",
     ENTRIES: {
-      FULL_NAME: "entry.31137184",
-      EMAIL: "entry.1480524677",
-      PHONE: "entry.504971788",
-      COUNTRY: "entry.2040851156",
-      ADDRESS: "entry.189619044",
-      CITY: "entry.40687982",
-      PINCODE: "entry.1929245861",
-      NOTES: "entry.2091957290",
-      DONATION_DETAILS: "entry.2091957290",
+      FULL_NAME: "entry.283978656",
+      EMAIL: "entry.1909208105",
+      PHONE: "entry.1359110198",
+      COUNTRY: "entry.218344457",
+      ADDRESS: "entry.938609362",
+      CITY: "entry.1458813282",
+      PINCODE: "entry.726311981",
+      NOTES: "entry.965069241",
+      DONATION_DETAILS: "entry.965069241",
     },
   },
 } as const;
@@ -88,5 +88,6 @@ const GA_PROD_ID = "G-VXGS4TBSNE";
 const SUPPORT_US_CONFIG = isProduction() ? CONFIG_LIVE : CONFIG_TEST;
 
 const GA_TRACKING_ID = isProduction() ? GA_PROD_ID : GA_TEST_ID;
+
 // Export the selected configuration and utility functions
-export { SUPPORT_US_CONFIG, isProduction,GA_TRACKING_ID};
+export { SUPPORT_US_CONFIG, isProduction, GA_TRACKING_ID};
