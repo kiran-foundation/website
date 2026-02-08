@@ -27,8 +27,8 @@ querys:
 
 
 applyButton:
-    herf: "/pratibha/apply"
-    title: "Apply for Scholarship"
+  href: "https://docs.google.com/forms/d/e/1FAIpQLSf0QVTPz-FGFflZPywUXC__jOjQyfRWtzpPrJIXxiym4_aLDg/viewform"
+  title: "Apply for Scholarship"
 statusButton:
     herf: "/pratibha/current-students"
     title: "See All Current Students"

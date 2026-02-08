@@ -40,10 +40,14 @@ const membershipCards = defineCollection({
     url: z.string().optional(),
   }),
 });
-
+const home = defineCollection({
+  type: "data",
+  schema: z.any(), // 👈 THIS restores old behavior
+});
 export const collections = {
   albums,
   publications,
   compliance,
   membershipCards,
+  home,
 };
