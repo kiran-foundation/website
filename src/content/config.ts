@@ -41,7 +41,7 @@ const membershipCards = defineCollection({
   }),
 });
 const home = defineCollection({
-  type: "data",
+  type: "content",
   schema: z.any(), // 👈 THIS restores old behavior
 });
 export const collections = {
