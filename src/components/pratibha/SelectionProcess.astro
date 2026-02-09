@@ -59,15 +59,16 @@ const { mt, px = "px-6" } = Astro.props;
     >
       <!-- Apply Button -->
       <Button
-        link={applyButton?.herf}
+        link={applyButton?.href}
         title={applyButton?.title}
         btn="btn1"
-        widthClass="w-full md:w-[247px]  !font-bold !text-[18px] !p-0 !m-0 lg:w-[247px] xl:w-[247px]"
+        widthClass="w-full md:w-[247px] !font-bold !text-[18px] !p-0 !m-0 lg:w-[247px] xl:w-[247px]"
         heightClass="h-[3.75rem]"
+        target="_blank"
       />
       <!-- Status Button -->
       <Button
-        link={statusButton?.herf}
+        link={statusButton?.href}
         title={statusButton?.title}
         btn="btn3"
         widthClass="w-full md:w-[272px] !font-bold !text-[18px] !p-0 !m-0 lg:w-[272px] xl:w-[272px]"
