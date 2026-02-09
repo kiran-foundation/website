@@ -1,0 +1,107 @@
+---
+import Button from "../common/button.astro";
+
+const applyButton = {
+    button_path: "https://docs.google.com/forms/d/e/1FAIpQLSf0QVTPz-FGFflZPywUXC__jOjQyfRWtzpPrJIXxiym4_aLDg/viewform"
+};
+---
+
+<section class="w-full max-w-[1200px] mx-auto py-16 px-6 bg-white font-sans">
+  <div class="text-center mb-10"> 
+    <h2 class="text-3xl md:text-4xl font-bold text-[#1E1E1E]">
+      <a 
+        href={applyButton.button_path} 
+        target="_blank" 
+        class="text-[#D33C0D] hover:underline"
+      >
+        APPLY NOW
+      </a> – Kiran Prathibha 2026
+    </h2>
+    <p class="mt-4 text-lg text-[#1E1E1E] font-medium">
+      Scholarship support for students pursuing <span class="font-bold text-[#D33C0D]">Education, Arts, and Sports.</span>
+    </p>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-12 items-start">
+    <div class="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-lg">
+        <div class="absolute inset-0 focus-slide slide-1">
+          <img src="/assets/images/Homepage/8.webp" alt="Scholarship Education" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute inset-0 focus-slide slide-2">
+          <img src="/assets/images/Homepage/9.webp" alt="Scholarship Arts" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute inset-0 focus-slide slide-3">
+          <img src="/assets/images/Homepage/10.webp" alt="Scholarship Sports" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute inset-0 focus-slide slide-4">
+          <img src="/assets/images/Homepage/11.webp" alt="Scholarship General" class="w-full h-full object-cover" />
+        </div>
+    </div>
+
+    <div class="space-y-8">
+      <p class="text-lg text-[#1E1E1E] leading-relaxed border-l-4 border-[#D33C0D] pl-6 font-medium">
+        Kiran Foundation has been supporting talented and economically underprivileged students since 2016. Along with financial assistance, students receive mentorship and personal guidance to help them excel in their chosen fields.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-500 hover:shadow-md">
+          <h3 class="font-bold text-xl mb-4 text-[#1E1E1E] flex items-center gap-2">
+            <div class="w-1.5 h-6 bg-[#D33C0D] rounded-full"></div>
+            Eligibility
+          </h3>
+          <ul class="space-y-3 text-[#1E1E1E] font-medium">
+            <li class="flex items-start gap-2">✓ Class 8 passed or 14+ years</li>
+            <li class="flex items-start gap-2">✓ Family income &lt; &#8377;20,000/month</li>
+            <li class="flex items-start gap-2">✓ No other Government scholarships</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-100 bg-white shadow-sm transition-all duration-500 hover:shadow-md">
+          <h3 class="font-bold text-xl mb-4 text-[#1E1E1E] flex items-center gap-2">
+            <div class="w-1.5 h-6 bg-[#D33C0D] rounded-full"></div>
+            Important Dates
+          </h3>
+          <div class="space-y-3 text-base">
+            <div class="flex justify-between border-b border-gray-100 pb-1">
+              <span class="text-[#49494C] font-semibold uppercase text-xs">Deadline</span>
+              <span class="text-[#D33C0D] font-bold">30 APR 2026</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-100 pb-1">
+              <span class="text-[#49494C] font-semibold uppercase text-xs">Shortlist</span>
+              <span class="text-[#1E1E1E] font-bold">15 MAY 2026</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-[#49494C] font-semibold uppercase text-xs">Selection</span>
+              <span class="text-[#1E1E1E] font-bold">02 JUN 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center pt-8">
+        <button 
+          onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf0QVTPz-FGFflZPywUXC__jOjQyfRWtzpPrJIXxiym4_aLDg/viewform', '_blank')" 
+          class="font-sans font-bold h-[3.75rem] text-base lg:text-lg w-full md:w-[240px] lg:w-[16rem] !rounded-[0.5rem] bg-[#00AA5E] transition-all text-black hover:bg-[#00FF8D] active:ring-2 active:ring-[#00AA5E] whitespace-nowrap px-4"
+        >
+          Apply for Scholarship
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes simple-fade {
+    0%, 20% { opacity: 0; }
+    25%, 45% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  .focus-slide {
+    opacity: 0;
+    animation: simple-fade 12s infinite ease-in-out;
+  }
+  .slide-1 { animation-delay: 0s; }
+  .slide-2 { animation-delay: 3s; }
+  .slide-3 { animation-delay: 6s; }
+  .slide-4 { animation-delay: 9s; }
+</style>
