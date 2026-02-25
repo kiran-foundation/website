@@ -1,19 +1,26 @@
 ---
-import { GA_TRACKING_ID } from "../../utils/config.ts";
+import { GA_TEST_ID, GA_PROD_ID } from "../../utils/config.ts";
 ---
 
 <!-- Google Analytics script -->
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}></script>
+<script is:inline define:vars={{ GA_TEST_ID, GA_PROD_ID }}>
+  const hostname = window.location.hostname;
+  const productionDomains = ["kiran.foundation", "www.kiran.foundation"];
+  const isProduction = productionDomains.includes(hostname);
+  const GA_TRACKING_ID = isProduction ? GA_PROD_ID : GA_TEST_ID;
+  
+  // Inject the script
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
+  document.head.appendChild(script);
 
-<!-- Initialize GA -->
-<script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
   }
+  window.gtag = gtag;
 
-  window.addEventListener("load", function () {
-    gtag('js', new Date());
-    gtag('config', `${GA_TRACKING_ID}`);
-  });
+  gtag('js', new Date());
+  gtag('config', GA_TRACKING_ID);
 </script>

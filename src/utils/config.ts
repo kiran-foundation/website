@@ -84,9 +84,12 @@ const CONFIG_LIVE = {
 
 const GA_TEST_ID = "G-WEK98QPZEZ";
 const GA_PROD_ID = "G-VXGS4TBSNE";
+
+export { GA_TEST_ID, GA_PROD_ID };
+
 // Select configuration based on environment
 const SUPPORT_US_CONFIG = isProduction() ? CONFIG_LIVE : CONFIG_TEST;
 
 const GA_TRACKING_ID = isProduction() ? GA_PROD_ID : GA_TEST_ID;
 // Export the selected configuration and utility functions
-export { SUPPORT_US_CONFIG, isProduction,GA_TRACKING_ID};
+export { SUPPORT_US_CONFIG, isProduction, GA_TRACKING_ID };
