@@ -1,0 +1,109 @@
+/* Kiran Foundation Loading Rays Animation */
+
+.page-loading-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rays-container {
+  position: relative;
+  width: 126px;
+  height: 70px;
+  margin: 0 auto 0.75rem;
+}
+
+.ray {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 6px;
+  height: 34px;
+  border-radius: 999px;
+  background: #f05a28;
+  transform-origin: 50% 100%;
+  opacity: 0;
+  animation-duration: 2.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.ray-1 { transform: translateX(-50%) rotate(-80deg); animation-name: ray-1-seq; }
+.ray-2 { transform: translateX(-50%) rotate(-60deg); animation-name: ray-2-seq; }
+.ray-3 { transform: translateX(-50%) rotate(-40deg); animation-name: ray-3-seq; }
+.ray-4 { transform: translateX(-50%) rotate(-20deg); animation-name: ray-4-seq; }
+.ray-5 { transform: translateX(-50%) rotate(0deg); animation-name: ray-5-seq; }
+.ray-6 { transform: translateX(-50%) rotate(20deg); animation-name: ray-6-seq; }
+.ray-7 { transform: translateX(-50%) rotate(40deg); animation-name: ray-7-seq; }
+.ray-8 { transform: translateX(-50%) rotate(60deg); animation-name: ray-8-seq; }
+.ray-9 { transform: translateX(-50%) rotate(80deg); animation-name: ray-9-seq; }
+
+@keyframes ray-1-seq {
+  0%, 94.444% { opacity: 1; }
+  94.445%, 100% { opacity: 0; }
+}
+
+@keyframes ray-2-seq {
+  0%, 5.555% { opacity: 0; }
+  5.556%, 88.889% { opacity: 1; }
+  88.890%, 100% { opacity: 0; }
+}
+
+@keyframes ray-3-seq {
+  0%, 11.111% { opacity: 0; }
+  11.112%, 83.333% { opacity: 1; }
+  83.334%, 100% { opacity: 0; }
+}
+
+@keyframes ray-4-seq {
+  0%, 16.667% { opacity: 0; }
+  16.668%, 77.778% { opacity: 1; }
+  77.779%, 100% { opacity: 0; }
+}
+
+@keyframes ray-5-seq {
+  0%, 22.222% { opacity: 0; }
+  22.223%, 72.222% { opacity: 1; }
+  72.223%, 100% { opacity: 0; }
+}
+
+@keyframes ray-6-seq {
+  0%, 27.778% { opacity: 0; }
+  27.779%, 66.667% { opacity: 1; }
+  66.668%, 100% { opacity: 0; }
+}
+
+@keyframes ray-7-seq {
+  0%, 33.333% { opacity: 0; }
+  33.334%, 61.111% { opacity: 1; }
+  61.112%, 100% { opacity: 0; }
+}
+
+@keyframes ray-8-seq {
+  0%, 38.889% { opacity: 0; }
+  38.890%, 55.556% { opacity: 1; }
+  55.557%, 100% { opacity: 0; }
+}
+
+@keyframes ray-9-seq {
+  0%, 44.444% { opacity: 0; }
+  44.445%, 50% { opacity: 1; }
+  50.001%, 100% { opacity: 0; }
+}
+
+[data-bs-theme='dark'] .ray {
+  background: #f05a28;
+}
+
+.loading-text {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #6f788b;
+}
+
+[data-bs-theme='dark'] .loading-text {
+  color: #fff;
+  opacity: 0.6;
+}
