@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 const programs = (await getEntry("home", "programs")).data;
+const extra = await getEntry("home", "my-new-section");
 const common = (await getEntry("common", "common")).data;
 import Button from "../common/button.astro";
 ---
@@ -9,10 +10,13 @@ import Button from "../common/button.astro";
 <div
   class="max-w-[1296px] mx-auto   mt-[80px] lg:mt-[7.5rem] flex items-center justify-center flex-col  !overflow-hidden"
 >
+
   <!-- Heading Section -->
+  
   <div
     class="flex items-center justify-center flex-col text-center max-w-[1034px] space-y-4 mx-[1.5rem] lg:mx-0  "
   >
+  
     <h2
       class="text-[1.875rem] lg:text-[3rem] font-normal mb-8 font-merriweather leading-[150%] lg:leading-10 text-[#1E1E1E] w-full lg:!py-2  "
     >
@@ -30,10 +34,13 @@ import Button from "../common/button.astro";
   <div
     class="mt-[86px] lg:mt-[7.5rem] mx-2 w-full  flex flex-col gap-[86px] lg:gap-[11.5rem] "
   >
+  
     <!-- --------------------------------------------Pratibha Program------------------------------------------------------ -->
     <section
       class="flex flex-col lg:flex-row items-center gap-16 lg:gap-8 xl:gap-16 justify-center lg:mx-6 xl:mx-0 overflow-hidden  "
     >
+    
+    
       <!-- --------------------------------------------Image Column------------------------------------------------------ -->
       <div
         class="   xl:max-w-[750px]"
