@@ -10,11 +10,11 @@ const cards = (await getMembershipCards()).map((c) => c.data);
 
 <Layout>
   <section class="py-16 bg-white text-center my-[120px]">
-    <h2
+    <h1
       class="text-[24px] md:text-3xl lg:text-5xl font-merriweather font-normal text-webBlack mb-[30px] md:mb-[60px]"
     >
       {heading}
-    </h2>
+    </h1>
 
     <!-- Mobile: Show all cards in single column -->
     <div
@@ -45,7 +45,7 @@ const cards = (await getMembershipCards()).map((c) => c.data);
                 card?.url ??
                 `/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`
               }
-              title="Support Us"
+              title="Support Now"
               btn="btn1"
               widthClass="w-full"
             />
@@ -85,7 +85,7 @@ const cards = (await getMembershipCards()).map((c) => c.data);
                   card?.url ??
                   `/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`
                 }
-                title="Support Us"
+                title="Support Now"
                 btn="btn1"
                 widthClass="w-full"
               />
