@@ -1,5 +1,5 @@
 ---
-title: "Supporter's Details"
+title: "Your Details"
 name:
   title: "Full Name"
   placeholder: "Enter your full name"
