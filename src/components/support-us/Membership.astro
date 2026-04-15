@@ -14,11 +14,11 @@ const desktopCards = cards.slice(0, 6); // Show only 6 cards on desktop
 ---
 
 <section class="py-16 bg-white text-center">
-  <h2
-    class="text-[24px] md:text-3xl lg:text-5xl font-merriweather font-normal text-webBlack mb-[30px] md:mb-[60px]"
+  <h1
+        class="font-merriweather text-[32px] sm:text-[32px] md:text-[48px] lg:text-[64px] font-bold leading-snug sm:leading-[130%] lg:leading-[150%]"
   >
     {title}
-  </h2>
+  </h1>
 
   <!-- Mobile: Show 1 card -->
   <div class="max-w-[1296px] mx-auto px-4 flex justify-center lg:hidden">
@@ -44,7 +44,7 @@ const desktopCards = cards.slice(0, 6); // Show only 6 cards on desktop
           </div>
           <Button
             link={`/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`}
-            title="Support Us"
+            title="Support Now"
             btn="btn1"
             widthClass="w-full"
           />
@@ -81,7 +81,7 @@ const desktopCards = cards.slice(0, 6); // Show only 6 cards on desktop
             </div>
             <Button
               link={`/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`}
-              title="Support Us"
+              title="Support Now"
               btn="btn1"
               widthClass="w-full"
             />
