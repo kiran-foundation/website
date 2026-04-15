@@ -2,6 +2,7 @@
 // Load content
 import { getEntry } from "astro:content";
 import Button from "../common/button.astro";
+import { formatIndianNumber } from "../../utils/formatting";
 // import { getMembershipCards } from "../../utils/membership";
 
 // const cards = (await getMembershipCards()).map((c) => c.data);
@@ -31,7 +32,7 @@ const desktopCards = cards.slice(0, 6); // Show only 6 cards on desktop
             </h3>
 
             <div class="min-h-[32px] text-5xl font-bold text-gray-900">
-              ₹{card?.lakh ?? ""}
+              ₹{formatIndianNumber(card?.lakh ?? "")}
             </div>
 
             <div class="min-h-[20px] text-sm text-gray-600">
@@ -53,14 +54,14 @@ const desktopCards = cards.slice(0, 6); // Show only 6 cards on desktop
     }
   </div>
 
-  <!-- Desktop: Flex layout with 3 cards per row -->
+  <!-- Desktop: Flex layout with 2 cards per row -->
   <div class="max-w-[1296px] mx-auto px-4 hidden lg:block">
     <div class="flex flex-wrap gap-6 justify-center">
       {
         desktopCards.map((card) => (
           <div
             class="bg-[#F5F5F5] max-w-[412px] shadow-md rounded-2xl p-8 flex flex-col justify-between items-center text-center gap-4 h-[416px] w-full hover:shadow-lg transition-shadow duration-300 flex-shrink-0"
-            style="flex: 0 0 calc(33.333% - 1rem);"
+            style="flex: 0 0 calc(50% - 1rem);"
           >
             <div class="flex flex-col justify-center gap-4 flex-grow flex-shrink-0">
               <h3 class="text-2xl font-semibold text-gray-800 min-h-[48px] flex items-center justify-center flex-shrink-0">
@@ -68,7 +69,7 @@ const desktopCards = cards.slice(0, 6); // Show only 6 cards on desktop
               </h3>
 
               <div class="min-h-[32px] text-5xl font-bold text-gray-900">
-                ₹{card?.lakh ?? ""}
+                ₹{formatIndianNumber(card?.lakh ?? "")}
               </div>
 
               <div class="min-h-[20px] text-sm text-gray-600">
