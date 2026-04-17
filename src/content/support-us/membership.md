@@ -1,5 +1,5 @@
 ---
-title: " Membership & Sponsorship Options"
+title: " Sponsorship Options"
 cards:
   - heading: "Patron"
     amount: 10001

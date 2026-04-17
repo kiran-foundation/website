@@ -60,7 +60,7 @@ testimonials:
       The Kiran Foundation is not just a organization, it is a family. Beyond the significant financial support, we also receive mentorship and emotional support. We have regular career guidance sessions and advice on study planning. Kiran Foundation helps every capable student achieve their full potential. One of the most invaluable aspects of being a part of Kiran Foundation is the sense of belonging and support. It's not merely about financial aid; it's about creating a support system that nurtures personal growth.
       Thank you.
     tags: [home ,pratibha]
-  - image: '/images/testimonial/archana.png'
+  - image: '/assets/images/people/archana.png'
     name: 'Archana Jain'
     location: 'Garhakota, Madhya Pradesh'
     text: >
@@ -73,7 +73,7 @@ testimonials:
       <li>- ऑनलाइन fraud से कैसे बचें </li>
       <li>- गोल्ड खरीदते समय हॉलमार्क का ध्यान रखें</li>
       <li>- पक्का बिल लें </li>
-      <k/ul>
+      </ul>
       <p>इस कोर्स ने हमें अपने निर्णय लेने में बहुत ही सक्षम बनाया है| 
       किरण फाउंडेशन के सभी कोर्स हम सभी महिलाओं के लिए बहुत ही उपयोगी हैं और मैं किरण       फाउंडेशन की पूरी टीम को बहुत-बहुत धन्यवाद देती हूं| |</p>
     tags: [home, shakti]
