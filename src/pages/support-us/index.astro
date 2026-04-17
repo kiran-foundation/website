@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/support-us/Hero.astro";
 import Membership from "../../components/support-us/Membership.astro";
 import Statistics from "../../components/support-us/Statistics.astro";
+import Breadcrumb from "../../components/common/Breadcrumb.astro";
 // import Faq from '../../components/common/Faq.astro'
 
 // import Card from '../../components/support-us/Card.astro'
@@ -25,11 +26,12 @@ import PoweringEducation from "../../components/support-us/PoweringEducation.ast
 <Layout title="Support us">
   <!-- Page wrapper -->
   <main class="page-wrapper" style="overflow-x: hidden;">
-    <Hero />
-    <DonationMatter />
-    <PoweringEducation />
-    <TestimonialsCarousel pageTag="home" />
+    <Breadcrumb />
     <Membership />
+    <DonationMatter />
+    <TestimonialsCarousel pageTag="pratibha" />
+    <Hero />
+    <PoweringEducation />
     <Statistics />
     <!-- <Card /> -->
     <span class="flex flex-col items-center justify-center px-[12px]">
