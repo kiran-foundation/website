@@ -1,5 +1,6 @@
 ---
 import { getEntry } from "astro:content";
+import Hero from "../../components/support-us/Hero.astro";
 import Button from "../../components/common/button.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getMembershipCards } from "../../utils/membership";
@@ -95,4 +96,6 @@ const cards = (await getMembershipCards()).map((c) => c.data);
       </div>
     </div>
   </section>
+  <Hero />
+
 </Layout>
