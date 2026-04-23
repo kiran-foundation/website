@@ -1,21 +1,23 @@
 ---
 import { getEntry } from "astro:content";
+import "../styles/loading-rays.css";
 const layoutPreloading = (await getEntry("pages", "preloading")).data;
 ---
 
-<style>
-  .load-Div {
-    position: fixed;
-    width: 100%;
-    background-color: red;
-    z-index: 1000;
-  }
-</style>
-<div class="load load-Div">
-  <div class="page-loading active">
-    <div class="page-loading-inner">
-      <div class="page-spinner"></div>
-      <span>{layoutPreloading.title}</span>
+<div class="page-loading active">
+  <div class="page-loading-inner">
+    <!-- Kiran Logo Rays Animation -->
+    <div class="rays-container">
+      <div class="ray ray-1"></div>
+      <div class="ray ray-2"></div>
+      <div class="ray ray-3"></div>
+      <div class="ray ray-4"></div>
+      <div class="ray ray-5"></div>
+      <div class="ray ray-6"></div>
+      <div class="ray ray-7"></div>
+      <div class="ray ray-8"></div>
+      <div class="ray ray-9"></div>
     </div>
+    <span class="loading-text">{layoutPreloading.title}</span>
   </div>
 </div>
