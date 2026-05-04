@@ -6,7 +6,7 @@ description: ["The first batch of 10 talented students joined Kiran Pratibha Sch
 image: "/assets/images/about/about-us-1-updated.webp"
 button: 
 
-    type: "btn3"  # btn1 for primary, btn2 for secondary, btn3 for tertiary
+    type: "btn3"  
     text: "Learn More about Pratibha"
     path: "/pratibha"
 ---
