@@ -19,10 +19,9 @@ querys:
                   
     
     - title: "How can you apply?"
-      description: [ "Click on the Apply now button below" , 
-                     "Fill out the necessary information in the online application form.", 
-                     "Upload relevant documents", 
-                     "If all details in the application are accurately displayed on the preview screen, click the 'Submit' button to finalize and complete the application process."
+      description: [ "Kiran Pratibha 2026 Applicatons are now closed." , 
+                     "Our selection process is now underway.", 
+                     "Final results will be announced by 15th June 2026.", 
      ]
 
 
