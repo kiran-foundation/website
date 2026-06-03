@@ -2,6 +2,7 @@
 // Load content
 import { getEntry } from "astro:content";
 import Button from "../common/button.astro";
+import { formatIndianNumber } from "../../utils/formatting";
 // import { getMembershipCards } from "../../utils/membership";
 
 // const cards = (await getMembershipCards()).map((c) => c.data);
@@ -9,58 +10,25 @@ const info = await getEntry("support-us", "membership");
 const { title, cards } = info.data;
 
 // Limit cards for initial display
-const mobileCards = cards.slice(0, 1); // Show only 1 card on mobile
+const mobileCards = cards.slice(0, 6); // Show only 1 card on mobile
 const desktopCards = cards.slice(0, 6); // Show only 6 cards on desktop
 ---
 
 <section class="py-16 bg-white text-center">
-  <h2
-    class="text-[24px] md:text-3xl lg:text-5xl font-merriweather font-normal text-webBlack mb-[30px] md:mb-[60px]"
+  <h1
+        class="font-merriweather text-[32px] sm:text-[32px] md:text-[48px] lg:text-[64px] font-bold leading-snug sm:leading-[130%] lg:leading-[150%]"
   >
     {title}
-  </h2>
+  </h1>
 
-  <!-- Mobile: Show 1 card -->
+  <!-- Mobile: Show 1 card per line -->
   <div class="max-w-[1296px] mx-auto px-4 flex justify-center lg:hidden">
-    {
-      mobileCards.map((card) => (
-        <div class="bg-[#F5F5F5] max-w-[412px] shadow-md rounded-2xl p-8 flex flex-col justify-between items-center text-center gap-4 h-[416px] w-full hover:shadow-lg transition-shadow duration-300 flex-shrink-0">
-          <div class="flex flex-col justify-center gap-4 flex-grow flex-shrink-0">
-            <h3 class="text-2xl font-semibold text-gray-800 min-h-[48px] flex items-center justify-center flex-shrink-0">
-              {card?.heading ?? ""}
-            </h3>
-
-            <div class="min-h-[32px] text-5xl font-bold text-gray-900">
-              ₹{card?.lakh ?? ""}
-            </div>
-
-            <div class="min-h-[20px] text-sm text-gray-600">
-              {card?.permonth ?? ""}
-            </div>
-
-            <p class="text-sm text-gray-600 min-h-[64px] flex items-center justify-center text-center px-2">
-              {card?.paragraph ?? ""}
-            </p>
-          </div>
-          <Button
-            link={`/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`}
-            title="Support Us"
-            btn="btn1"
-            widthClass="w-full"
-          />
-        </div>
-      ))
-    }
-  </div>
-
-  <!-- Desktop: Flex layout with 3 cards per row -->
-  <div class="max-w-[1296px] mx-auto px-4 hidden lg:block">
-    <div class="flex flex-wrap gap-6 justify-center">
+   <div class="flex flex-wrap gap-6 justify-center">
       {
-        desktopCards.map((card) => (
+        mobileCards.map((card) => (
           <div
             class="bg-[#F5F5F5] max-w-[412px] shadow-md rounded-2xl p-8 flex flex-col justify-between items-center text-center gap-4 h-[416px] w-full hover:shadow-lg transition-shadow duration-300 flex-shrink-0"
-            style="flex: 0 0 calc(33.333% - 1rem);"
+            style="flex: 0 0 calc(100% - 1rem);"
           >
             <div class="flex flex-col justify-center gap-4 flex-grow flex-shrink-0">
               <h3 class="text-2xl font-semibold text-gray-800 min-h-[48px] flex items-center justify-center flex-shrink-0">
@@ -68,7 +36,7 @@ const desktopCards = cards.slice(0, 6); // Show only 6 cards on desktop
               </h3>
 
               <div class="min-h-[32px] text-5xl font-bold text-gray-900">
-                ₹{card?.lakh ?? ""}
+                ₹{formatIndianNumber(card?.lakh ?? "")}
               </div>
 
               <div class="min-h-[20px] text-sm text-gray-600">
@@ -81,7 +49,7 @@ const desktopCards = cards.slice(0, 6); // Show only 6 cards on desktop
             </div>
             <Button
               link={`/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`}
-              title="Support Us"
+              title="Support Now"
               btn="btn1"
               widthClass="w-full"
             />
@@ -91,19 +59,43 @@ const desktopCards = cards.slice(0, 6); // Show only 6 cards on desktop
     </div>
   </div>
 
-  <!-- Conditional View More Button -->
-  {
-    cards.length > 1 && (
-      <div class="mt-10 flex justify-center items-center px-[24px]">
-        <Button
-          link="/support-us/membership-options"
-          title="View More Options"
-          btn="btn3"
-          widthClass="w-full md:w-auto lg:hidden"
-        />
-      </div>
-    )
-  }
+  <!-- Desktop: Flex layout with 2 cards per row -->
+  <div class="max-w-[1296px] mx-auto px-4 hidden lg:block">
+    <div class="flex flex-wrap gap-6 justify-center">
+      {
+        desktopCards.map((card) => (
+          <div
+            class="bg-[#F5F5F5] max-w-[412px] shadow-md rounded-2xl p-8 flex flex-col justify-between items-center text-center gap-4 h-[416px] w-full hover:shadow-lg transition-shadow duration-300 flex-shrink-0"
+            style="flex: 0 0 calc(50% - 1rem);"
+          >
+            <div class="flex flex-col justify-center gap-4 flex-grow flex-shrink-0">
+              <h3 class="text-2xl font-semibold text-gray-800 min-h-[48px] flex items-center justify-center flex-shrink-0">
+                {card?.heading ?? ""}
+              </h3>
+
+              <div class="min-h-[32px] text-5xl font-bold text-gray-900">
+                ₹{formatIndianNumber(card?.lakh ?? "")}
+              </div>
+
+              <div class="min-h-[20px] text-sm text-gray-600">
+                {card?.permonth ?? ""}
+              </div>
+
+              <p class="text-sm text-gray-600 min-h-[64px] flex items-center justify-center text-center px-2">
+                {card?.paragraph ?? ""}
+              </p>
+            </div>
+            <Button
+              link={`/support-us/support-form?amount=${card?.lakh}&frequency=${card?.frequency}`}
+              title="Support Now"
+              btn="btn1"
+              widthClass="w-full"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
 
   {
     cards.length > 6 && (

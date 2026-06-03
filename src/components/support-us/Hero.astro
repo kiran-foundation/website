@@ -1,12 +1,11 @@
 ---
 import { getEntry } from "astro:content";
 const componentheroData = (await getEntry("donation", "hero")).data;
-import Breadcrumb from "../common/Breadcrumb.astro";
 import Button from "../common/button.astro";
 const info = await getEntry("support-us", "hero");
 ---
 
-<Breadcrumb />
+
 
 <div class="h-auto lg:h-[1200px] relative">
   <div class="bg-[#F1F1F1] pt-16">

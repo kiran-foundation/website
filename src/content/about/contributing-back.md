@@ -7,6 +7,6 @@ image: "/assets/images/about/about-us-group.webp"
 button: 
 
     type: "btn3"  # btn1 for primary, btn2 for secondary, btn3 for tertiary
-    text: "See our Fantastic Team"
+    text: "See our Team"
     path: "/who-we-are/team"
 ---
