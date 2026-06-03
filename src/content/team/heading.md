@@ -1,6 +1,6 @@
 ---
 
-title: "Our Fantastic Team"
+title: "Our Team"
 
 
 ---

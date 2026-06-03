@@ -18,15 +18,20 @@ const volunteer = (await getEntry("home", "supporters")).data;
   </div>
 
   <!-- Supporters Grid -->
-  <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-4 lg:gap-2 items-center justify-center w-full ">
+   <h1 class="text-3xl md:text-[2.5rem] xl:text-[3rem] font-normal mb-8 font-merriweather leading-[150%] text-[#1E1E1E] ">
+    Our Partners
+    </h1>
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 lg:gap-2 items-center justify-center w-full ">
     {volunteer.supporters.map((supporter:any, index:any) => (
       <div class={`w-full aspect-[7/2.25] flex items-center justify-center p-2 rounded-lg  ${index === 4 ? 'hidden lg:flex' : ''}`}>
-        <img
-          src={supporter.image}
-          alt={supporter.name}
-          class="w-full h-full object-scale-down max-w-[160px] sm:max-w-[150px] lg:max-w-[140px]"
-          loading="lazy"
-        />
+        <a href={supporter.link} target="_blank" rel="noopener noreferrer" class="w-full h-full flex items-center justify-center">
+          <img
+            src={supporter.image}
+            alt={supporter.name}
+            class="w-full h-full object-scale-down max-w-[160px] sm:max-w-[150px] lg:max-w-[140px]"
+            loading="lazy"
+          />
+        </a>
       </div>
     ))}
   </div>
