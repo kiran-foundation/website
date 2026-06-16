@@ -37,7 +37,7 @@ content:
     <li>Saumya Pal</li>
     <li>Gaurav Kumar Singh</li>
     <li>Sachin Yadav</li>
-    <li>Anurban Pal</li>
+    <li>Anirban Pal</li>
     <li>Jyot Prakash</li>
     <li>Abhishek Sharma</li>
     <li>Pankaj Kumar</li>
