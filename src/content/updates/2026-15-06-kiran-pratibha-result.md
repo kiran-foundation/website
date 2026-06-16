@@ -45,7 +45,6 @@ content:
     <li>Shashwat Singh</li>
     <li>Puneeth Kumar H. S.</li>
     <li>Srishti Tyagi</li>
-    <li>Pankaj Kumar</li>
     <li>Kinjal</li>
     <li>Koterash Shivamurthy</li>
     <li>M. Sumanth Kumar</li>
