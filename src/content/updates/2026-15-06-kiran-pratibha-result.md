@@ -43,7 +43,7 @@ content:
     <li>Pankaj Kumar</li>
     <li>K Rashmi</li>
     <li>Shashwat Singh</li>
-    <li>Punit Kumar H. S.</li>
+    <li>Puneeth Kumar H. S.</li>
     <li>Shrishti Tyagi</li>
     <li>Pankaj Kumar</li>
     <li>Kinjal</li>
