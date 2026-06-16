@@ -1,7 +1,7 @@
 ---
 title: "Kiran Pratibha 2026 Results Announced"
 
-date: 2026-15-06
+date: 2026-06-15
 
 content:
   - |
