@@ -44,7 +44,7 @@ content:
     <li>K Rashmi</li>
     <li>Shashwat Singh</li>
     <li>Puneeth Kumar H. S.</li>
-    <li>Shrishti Tyagi</li>
+    <li>Srishti Tyagi</li>
     <li>Pankaj Kumar</li>
     <li>Kinjal</li>
     <li>Koterash Shivamurthy</li>
