@@ -48,7 +48,6 @@ content:
     <li>Kinjal</li>
     <li>Koterash Shivamurthy</li>
     <li>M. Sumanth Kumar</li>
-    <li>Adithya H S </li>
     </ol>
     </div>
   - |
